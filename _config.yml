@@ -359,3 +359,4 @@ defaults:
       layout: list
       author_profile: false
       share: true
+theme: jekyll-theme-merlot
