@@ -1,0 +1,57 @@
+# main links
+main:
+  - title: "About"
+    url: /about/
+  - title: "Posts"
+    url: /year-archive/
+  - title: "Categories"
+    url: /categories/
+  - title: "Tags"
+    url: /tags/
+  - title: "Most Popular"
+    url: /most_popular/
+  # - title: "Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
+
+# sidebar navigation list sample
+sidebar-series:
+  - title: "新能源汽车"
+    children:
+       - title: "蔚来汽车"
+         url: https://kewtgh.github.io/flower/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/
+       - title: "理想汽车"
+         url: https://kewtgh.github.io/flower/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-lixiang/
+       - title: "小鹏汽车"
+         url: https://kewtgh.github.io/flower/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-Xiaopeng/
+       - title: "吉利汽车"
+         url: https://kewtgh.github.io/flower/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-Geelyauto/
+       - title: "哪吒汽车和威马汽车"
+         url: https://kewtgh.github.io/flower/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-hozonauto-wmmotor/
+  - title: "通用电气大盘点"
+    children:
+       - title: "通用的崛起——杰克韦尔奇时代（1）"
+         url: https://kewtgh.github.io/flower/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/ge/GE-Gault-welch/
+       - title: "通用的崛起——杰克韦尔奇时代（2）"
+         url: https://kewtgh.github.io/flower/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/ge/GE-Burlingame-hood/
+       - title: "通用的崛起——伊梅尔特时代（1）"
+         url: https://kewtgh.github.io/flower/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/ge/GE-mcnerney-nardelli/
+       - title: "通用的崛起——伊梅尔特时代（2）"
+         url: https://kewtgh.github.io/flower/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/ge/GE-emmelt-welch-jones/
+       - title: "通用的崛起——拉里·卡尔普时代"
+         url: https://kewtgh.github.io/flower/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/ge/GE-flannery-culp/
+  # - title: "Parent Page C"
+  #   children:
+  #     - title: "Child Page C1"
+  #       url: /child-page-c1/
+  #     - title: "Child Page C2"
+  #       url: /child-page-c2/
+  #  - title: "Parent Page D"
+  #     children:
+  #       - title: "Child Page D1"
+  #         url: /child-page-d1/
+  #       - title: "Child Page D2"
+  #         url: /child-page-d2/
+  #        - title: "Child Page D3 (External)"
+  #         url: https://your-domain.com
