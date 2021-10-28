@@ -77,8 +77,8 @@ show_date: false
 
 ### 四、专业的体系和服务
 
-<<<<<<< HEAD
 {% include gallery id="layouts_gallery" class="full" caption="To see this great company!" %}
-=======
+
 {% include gallery id="layouts_gallery" layout="half" caption="The Best Service!" %}
->>>>>>> 26b3a537fea4c0eaca2817aeefb4c9ec340ee914
+
+{% include gallery id="layouts_gallery" caption="Great Companies!" %}
