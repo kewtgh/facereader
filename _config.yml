@@ -12,7 +12,7 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "sunrise" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "zh-CN"
@@ -284,7 +284,7 @@ compress_html:
 
 # Collections
 collections:
-    documents:
+    docs:
       output: true
       permalink: /:collection/:path/
     recipes:
@@ -314,9 +314,9 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _documents
+  # _docs
   - scope:
-      path: "_documents"
+      path: "_docs"
       type: docs
     values:
       layout: single
@@ -325,7 +325,7 @@ defaults:
       share: false
       comments: false
       sidebar:
-        nav: "documents"
+        nav: "docs"
   # _recipes
   - scope:
       path: ""
