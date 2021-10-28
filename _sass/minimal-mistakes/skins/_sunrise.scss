@@ -4,32 +4,27 @@
 
 /* Colors */
 $dark-gray: #0e2431 !default;
-$background-color: #f3f9f1 !default;
-$text-color: #292C2D !default;
-$accent-color: #8B4513 !default;
+$background-color: #e8d5b7 !default;
+$text-color: #000 !default;
 $muted-text-color: $dark-gray !default;
-$primary-color: #282a2e !default;
+$primary-color: #fc3a52 !default;
 $border-color: mix(#000, $background-color, 20%) !default;
 $code-background-color: mix(#fff, $background-color, 20%) !default;
 $code-background-color-dark: mix(#000, $background-color, 10%) !default;
 $form-background-color: mix(#fff, $background-color, 15%) !default;
-$footer-background-color: #F0E68C !default;
-$link-color: mix(#8B4513, $primary-color, 15%) !default;
-$link-color-hover: mix(#8B4513, $link-color, 45%) !default;
-$link-color-visited: mix(#8B4513, $link-color, 55%) !default;
+$footer-background-color: #f9b248 !default;
+$link-color: mix(#000, $primary-color, 10%) !default;
+$link-color-hover: mix(#fff, $link-color, 25%) !default;
+$link-color-visited: mix(#000, $link-color, 25%) !default;
 $masthead-link-color: $text-color !default;
-$masthead-backgroud-color: #f1f3f9 !default;
-$masthead-link-color-hover: mix(#8B4513, $text-color, 30%) !default;
-$navicon-link-color-hover: mix(#8B4513, $background-color, 40%) !default;
-
-$nav-color: #FAFAD2 !default;
-$nav-background-color: #000 !default;
+$masthead-link-color-hover: mix(#000, $text-color, 20%) !default;
+$navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
 
 /* notices */
 $notice-background-mix: 75% !default;
 
 /* sunrise syntax highlighting (base16) */
-$base00: #B8860B !default;
+$base00: #1d1f21 !default;
 $base01: #282a2e !default;
 $base02: #373b41 !default;
 $base03: #969896 !default;
