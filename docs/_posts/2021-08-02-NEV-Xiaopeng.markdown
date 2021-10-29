@@ -2,10 +2,10 @@
 title: 为什么小鹏汽车的何小鹏最有雷军的气质
 excerpt: "上期粗谈了新能源汽车的市场战略，简单剖析了理想汽车的核心团队，这期我们来剖析蔚来汽车的核心团队。"
 header:
-  teaser: /assets/img/yue-teaser.png
+  teaser: /assets/img/page-header-image-manufacture-teaser.jpg
   og_image: /assets/img/unsplash-image-2.jpg
   overlay_filter: linear-gradient(rgba(255, 0, 0, 0.5), rgba(0, 255, 255, 0.5))
-  caption: "Photo credit: [**Unsplash**](https://facereader.witbacon.com)"
+  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
   actions:
     - label: "查看系列文章"
       url: "https://facereader.witbacon.com/categories/#%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA"

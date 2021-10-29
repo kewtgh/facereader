@@ -1,5 +1,6 @@
 ---
 title: 《孙子兵法》：中国传统文化简思及《孙子兵法》概述
+
 categories:
   - 孙子兵法
 tags: 
@@ -8,8 +9,11 @@ tags:
 share: true
 toc: true
 header:
-  teaser: /assets/img/sunzi-teaser.png
+  teaser: /assets/img/sunzi-teaser.jpg
   image: /assets/img/sunzi.jpg # Add image post (optional)
+sidebar:
+  title: "相关系列"
+  nav: sidebar-sunzi
 last_modified_at: 2021-08-15T20:25:52-05:00
 ---
 

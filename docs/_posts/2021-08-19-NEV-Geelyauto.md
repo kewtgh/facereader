@@ -1,8 +1,9 @@
 ---
 title: 新能源汽车行业（5）—— 吉利汽车的新能源战略能成功吗？
 header:
-  teaser: /assets/img/yue-teaser.png
-  image: /assets/img/so-simple-sample-image-6.jpg # Add image post (optional)
+  teaser: /assets/img/page-header-image-manufacture-teaser.jpg
+  overlay_image: /assets/img/page-header-image-manufacture.jpg
+  overlay_filter: rgba(255, 0, 0, 0.5)
 categories:
   - 阅相识人
   - 新能源汽车

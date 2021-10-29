@@ -2,14 +2,8 @@
 title: 从面相分析，字节跳动的核心团队是什么样的
 excerpt: "前几期跟大家分享了新能源汽车行业中几家新兴公司的核心团队，但看下来却都差强人意，这一期我们来看目前最具潜力的一家互联网公司字节跳动的核心团队。"
 header:
-  teaser: /assets/img/yue-teaser.png
+  teaser: /assets/img/page-header-image-tech11-teaser.jpg
   overlay_image: /assets/img/unsplash-image-1.jpg
-  caption: "Photo credit: [**Unsplash**](https://facereader.witbacon.com)"
-  actions:
-    - label: "Foo Button"
-      url: "#foo"
-    - label: "Bar Button"
-      url: "#bar"
 categories:
   - 阅相识人
   - TMT

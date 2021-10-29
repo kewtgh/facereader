@@ -7,7 +7,7 @@ header:
   actions:
     - label: "More Info"
       url: "https://facereader.witbacon.com"
-  teaser: /assets/img/xin-teaser.png
+  teaser: /assets/img/page-header-image-wit2-teaser.jpg
 categories:
   - 心灵高汤
 tags: 

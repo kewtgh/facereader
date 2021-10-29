@@ -2,10 +2,10 @@
 title: 哪吒汽车和威马汽车
 excerpt: "目前新能源汽车领域一片火热，短短三年之内有三家公司在美上市，而未上市的数家公司估值也超过数十亿，到底这些企业都怎么样呢？下面我就给大家扒一扒这些公司的管理团队，分析一下到底哪些公司更有潜力。"
 header:
-  teaser: /assets/img/yue-teaser.png
-  overlay_image: /assets/img/unsplash-image-1.jpg
+  teaser: /assets/img/page-header-image-manufacture-teaser.jpg
+  overlay_image: /assets/img/unsplash-image-7.jpg
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
-  caption: "Photo credit: [**Unsplash**](https://facereader.witbacon.com)"
+  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
   actions:
     - label: "查看系列文章"
       url: "https://facereader.witbacon.com/categories/#%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA"

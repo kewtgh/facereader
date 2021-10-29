@@ -1,8 +1,9 @@
 ---
 title: 从遗嘱看千古第一贤后
+excerpt: "长孙皇后13岁时嫁李世民，随李世民南征北战，后来李世民做了天子，长孙皇后掌管后宫，并且不断匡正李世民为政的失误，保护忠正得力的大臣。但因久病加操劳，36岁便病逝。但临终仍不忘国事，立下三条遗嘱，而这三条遗嘱见证了其所有的贤德与智慧。"
 header:
-  teaser: /assets/img/wen-teaser.png
-  image: /assets/img/so-simple-sample-image-1.jpg # Add image post (optional)
+  teaser: /assets/img/page-header-image-literacy-teaser.jpg
+  image: /assets/img/page-header-image-literacy.jpg # Add image post (optional)
 categories:
   - 文言经典
 tags: 
@@ -15,7 +16,7 @@ toc: true
 last_modified_at: 2021-09-05T19:25:52-05:00
 ---
 
->长孙皇后13岁时嫁李世民，随李世民南征北战，后来李世民做了天子，长孙皇后掌管后宫，并且不断匡正李世民为政的失误，保护忠正得力的大臣。但因久病加操劳，36岁便病逝。但临终仍不忘国事，立下三条遗嘱，而这三条遗嘱见证了其所有的贤德与智慧
+>长孙皇后13岁时嫁李世民，随李世民南征北战，后来李世民做了天子，长孙皇后掌管后宫，并且不断匡正李世民为政的失误，保护忠正得力的大臣。但因久病加操劳，36岁便病逝。但临终仍不忘国事，立下三条遗嘱，而这三条遗嘱见证了其所有的贤德与智慧。
 
 &emsp;&emsp;长孙皇后(601年-636年)，小字观音婢，其名于史无载，中国唐朝太宗李世民的皇后。长孙皇后是北魏皇族拓跋氏之后，生父长孙晟是隋右骁卫将军、著名外交家，平突厥之功臣；生母高氏，为北齐皇族后裔，名臣高士廉之妹。
 

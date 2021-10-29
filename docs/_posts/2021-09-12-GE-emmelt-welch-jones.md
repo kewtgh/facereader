@@ -1,8 +1,8 @@
 ---
 title: 为什么杰克·韦尔奇选错了接班人？你会选谁？（二）
 header:
-  teaser: /assets/img/yue-teaser.png
-  image: /assets/img/so-simple-sample-image-3.jpg # Add image post (optional)
+  teaser: /assets/img/ge-teaser.jpg
+  image: /assets/img/ge.jpg # Add image post (optional)
 categories:
   - 阅相识人
   - GE
