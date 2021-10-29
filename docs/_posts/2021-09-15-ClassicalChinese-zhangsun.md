@@ -4,6 +4,7 @@ excerpt: "长孙皇后13岁时嫁李世民，随李世民南征北战，后来�
 header:
   teaser: /assets/img/page-header-image-literacy-teaser.jpg
   overlay_image: /assets/img/page-header-image-literacy.jpg # Add image post (optional)
+  overlay_filter: 0.3
 categories:
   - 文言经典
 tags: 

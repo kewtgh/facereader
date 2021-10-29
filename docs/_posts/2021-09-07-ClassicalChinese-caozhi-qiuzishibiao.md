@@ -2,7 +2,7 @@
 title: 曹植《求自试表》，不亚于诸葛亮《出师表》
 header:
   teaser: /assets/img/wen-teaser.png
-  overlay_image: /assets/img/so-simple-sample-image-5.jpg # Add image post (optional)
+  overlay_image: /assets/img/so-simple-sample-image-7.jpg # Add image post (optional)
 categories:
   - 文言经典
 tags: 

@@ -2,7 +2,7 @@
 title: GE的未来会走向哪里？
 header:
   teaser: /assets/img/page-header-image-ge-teaser.jpg
-  overlay_image: /assets/img/page-header-image-ge.jpg # Add image post (optional)
+  image: /assets/img/page-header-image-ge.jpg # Add image post (optional)
 categories:
   - 阅相识人
   - GE

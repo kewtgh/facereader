@@ -3,7 +3,7 @@ title: 新能源汽车行业（5）—— 吉利汽车的新能源战略能成�
 header:
   teaser: /assets/img/page-header-image-manufacture-teaser.jpg
   overlay_image: /assets/img/page-header-image-manufacture.jpg
-  overlay_filter: rgba(255, 0, 0, 0.5)
+  overlay_filter: rgba(0, 0, 255, 0.5)
 categories:
   - 阅相识人
   - 新能源汽车
