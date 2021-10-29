@@ -1,7 +1,6 @@
 ---
 permalink: /about/
 title: "About"
-excerpt: "Witbacon是一家提供组织结构诊断和咨询的公司，通过组织架构图和核心人员非修饰正面照片，即可帮助您发现管理问题，解决管理症结。"
 layout: single
 layouts_gallery:
   - url: /assets/img/busi1_c.jpg
@@ -20,6 +19,11 @@ layouts_gallery:
     image_path: /assets/img/busi4_c.jpg
     alt: "research"
     title: "严谨的行业研究"
+sidebar:
+  - title: "更多内容"
+    nav: sidebar-about
+  - title: "联系邮箱"
+  - text: "horolf.ma@witbacon.com"
 classes: wide
 author_profile: false
 show_date: false

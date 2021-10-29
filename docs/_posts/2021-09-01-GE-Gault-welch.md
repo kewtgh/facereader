@@ -32,7 +32,7 @@ last_modified_at: 2021-09-01T19:25:52-05:00
 
 &emsp;由此，《财富》杂志评选其为“二十世纪最佳经理人”，《产业周刊》称其为“最令人尊敬的CEO”,并且被“现代管理学之父”彼得·德鲁克称为“本世纪最优秀的公司领导”。
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Jack-Welch7.jpg" alt="Jack-Welch7" style="zoom: 15%;" />
+<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Jack-Welch7.jpg" alt="Jack-Welch7" style="zoom: 65%;" />
 
 &emsp;杰克·韦尔奇取得如此成就，也有人怀疑是因为韦尔奇在GE的岁月正是全球经济最旺盛的时代。但是很多其他公司却没能像GE一样创造如此的辉煌，并且韦尔奇也在GE施行了许多极为成功的管理实践，包括“二七一”人才结构、克罗顿维尔培训模式、“数一数二”策略等等。那么这些是否就能证明只有韦尔奇能带领GE创造如此成就呢？我们从1980年GE掌门人的候选人中寻找答案。
 

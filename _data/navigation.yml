@@ -1,14 +1,14 @@
 # main links
 main:
-  - title: "关于"
+  - title: "About"
     url: /about/
-  - title: "文章"
+  - title: "Posts"
     url: /year-archive/
-  - title: "类别"
+  - title: "Categories"
     url: /categories/
-  - title: "标签"
+  - title: "Tags"
     url: /tags/
-  - title: "最受欢迎"
+  - title: "Most Popular"
     url: /most_popular/
   # - title: "Collections"
   #   url: /collection-archive/
