@@ -1,29 +1,14 @@
 # main links
 main:
-  - titles:
-        en: "About"
-        zh-Hans: "关于"
-        zh-Hant: "關於"
+  - title: "关于"
     url: /about/
-  - titles:
-        en: "Posts"
-        zh-Hans: "文章"
-        zh-Hant: "文章"
+  - title: "文章"
     url: /year-archive/
-  - titles:
-        en: "Categories"
-        zh-Hans: "类别"
-        zh-Hant: "類別"
+  - title: "类别"
     url: /categories/
-  - titles:
-        en: "Tags"
-        zh-Hans: "标签"
-        zh-Hant: "標籤"
+  - title: "标签"
     url: /tags/
-  - titles:
-        en: "Most Popular"
-        zh-Hans: "最受欢迎"
-        zh-Hant: "最受歡迎"
+  - title: "最受欢迎"
     url: /most_popular/
   # - title: "Collections"
   #   url: /collection-archive/
