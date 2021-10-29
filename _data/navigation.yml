@@ -8,22 +8,22 @@ main:
   - titles:
         en: "Posts"
         zh-Hans: "文章"
-        zh-Hans: "文章"
+        zh-Hant: "文章"
     url: /year-archive/
   - titles:
         en: "Categories"
         zh-Hans: "类别"
-        zh-Hans: "類別"
+        zh-Hant: "類別"
     url: /categories/
   - titles:
         en: "Tags"
         zh-Hans: "标签"
-        zh-Hans: "標籤"
+        zh-Hant: "標籤"
     url: /tags/
   - titles:
         en: "Most Popular"
         zh-Hans: "最受欢迎"
-        zh-Hans: "最受歡迎"
+        zh-Hant: "最受歡迎"
     url: /most_popular/
   # - title: "Collections"
   #   url: /collection-archive/
