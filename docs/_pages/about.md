@@ -20,7 +20,7 @@ layouts_gallery:
     alt: "research"
     title: "严谨的行业研究"
 sidebar:
-  - title: "更多内容"
+  - title: "Witbacon介绍"
     nav: sidebar-about
   - title: "联系邮箱"
   - text: "horolf.ma@witbacon.com"
