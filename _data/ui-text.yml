@@ -1,119 +1,5 @@
 # User interface text and labels
 
-# Chinese (Tranditional)
-# -----------------
-zh: &DEFAULT_CHT
-  skip_links                 : "點選連結"
-  skip_primary_nav           : "跳到導航"
-  skip_content               : "跳到內容"
-  skip_footer                : "跳到頁腳"
-  page                       : "頁面"
-  pagination_previous        : "前一項"
-  pagination_next            : "後一項"
-  breadcrumb_home_label      : "主頁"
-  breadcrumb_separator       : "/"
-  menu_label                 : "切換菜單"
-  search_label               : "切換搜索"
-  toc_label                  : "本頁"
-  ext_link_label             : "直接連結"
-  less_than                  : "少於"
-  minute_read                : "分鐘"
-  share_on_label             : "分享於"
-  meta_label                 :
-  tags_label                 : "標籤:"
-  categories_label           : "類別:"
-  date_label                 : "更新:"
-  comments_label             : "留下評論"
-  comments_title             : "評論"
-  more_label                 : "瞭解更多"
-  most_popular             : "最受歡迎"
-  related_label              : "你可能同時還喜歡"
-  follow_label               : "訂閱:"
-  feed_label                 : "Feed"
-  powered_by                 : "Powered by"
-  website_label              : "網站"
-  email_label                : "Email"
-  recent_posts               : "近期發佈"
-  undefined_wpm              : "Undefined parameter words_per_minute at _config.yml"
-  comment_form_info          : "您的電子郵寄地址將不會發佈。標記的欄位為必填選項。"
-  comment_form_comment_label : "評論"
-  comment_form_md_info       : "支援Markdown語言。"
-  comment_form_name_label    : "姓名"
-  comment_form_email_label   : "Email地址"
-  comment_form_website_label : "網站 (可選)"
-  comment_btn_submit         : "提交評論"
-  comment_btn_submitted      : "已提交"
-  comment_success_msg        : "感謝您的評論！一旦審核通過後，您的評論將顯示在網站上。"
-  comment_error_msg          : "對不起，你的提交有錯誤。請確保所有所需的欄位已填寫，並再次嘗試。"
-  loading_label              : "載入中..."
-  search_label_text          : "輸入您的搜索內容..."
-  search_placeholder_text    : "輸入您的搜索內容..."
-  search_algolia_no_results  : "沒有結果"
-  results_found              : "找到的結果"
-  back_to_top                : "回到頂部"
-zh-TW:
-  <<: *DEFAULT_CHT
-zh-HK:
-  <<: *DEFAULT_CHT
-zh-SG:
-  <<: *DEFAULT_CHT
-zh-MO:
-  <<: *DEFAULT_CHT
-
-# Chinese (Simplified)
-# -----------------
-zh: &DEFAULT_CHS
-  skip_links                 : "点击链接"
-  skip_primary_nav           : "跳到导航"
-  skip_content               : "跳到内容"
-  skip_footer                : "跳到页脚"
-  page                       : "页面"
-  pagination_previous        : "前一项"
-  pagination_next            : "后一项"
-  breadcrumb_home_label      : "主页"
-  breadcrumb_separator       : "/"
-  menu_label                 : "切换菜单"
-  search_label               : "切换搜索"
-  toc_label                  : "本页"
-  ext_link_label             : "直接连结"
-  less_than                  : "少于"
-  minute_read                : "分钟"
-  share_on_label             : "分享于"
-  meta_label                 :
-  tags_label                 : "标签:"
-  categories_label           : "类别:"
-  date_label                 : "更新:"
-  comments_label             : "留下评论"
-  comments_title             : "评论"
-  more_label                 : "了解更多"
-  most_popular             : "最受欢迎"
-  related_label              : "你可能同时还喜欢"
-  follow_label               : "订阅:"
-  feed_label                 : "Feed"
-  powered_by                 : "Powered by"
-  website_label              : "网站"
-  email_label                : "Email"
-  recent_posts               : "近期发布"
-  undefined_wpm              : "Undefined parameter words_per_minute at _config.yml"
-  comment_form_info          : "您的电子邮件地址将不会发布。标记的字段为必填选项。"
-  comment_form_comment_label : "评论"
-  comment_form_md_info       : "支持Markdown语言。"
-  comment_form_name_label    : "姓名"
-  comment_form_email_label   : "Email地址"
-  comment_form_website_label : "网站 (可选)"
-  comment_btn_submit         : "提交评论"
-  comment_btn_submitted      : "已提交"
-  comment_success_msg        : "感谢您的评论！一旦审核通过后，您的评论将显示在网站上。"
-  comment_error_msg          : "对不起，你的提交有错误。请确保所有所需的字段已填写，并再次尝试。"
-  loading_label              : "载入中..."
-  search_label_text          : "输入您的搜索内容..."
-  search_placeholder_text    : "输入您的搜索内容..."
-  search_algolia_no_results  : "没有结果"
-  results_found              : "找到的结果"
-  back_to_top                : "回到顶部"
-zh-CN:
-  <<: *DEFAULT_CHS
-
 # English (default)
 # -----------------
 en: &DEFAULT_EN
@@ -514,10 +400,11 @@ zh: &DEFAULT_ZH_HANS
   comments_label             : "留下评论"
   comments_title             : "评论"
   more_label                 : "了解更多"
+ most_popular             : "最受欢迎"
   related_label              : "猜您还喜欢"
   follow_label               : "关注:"
   feed_label                 : "Feed"
-  powered_by                 : "技术来自于"
+  powered_by                 : "Powered by"
   website_label              : "网站"
   email_label                : "电子邮箱"
   recent_posts               : "最新文章"
@@ -530,7 +417,7 @@ zh: &DEFAULT_ZH_HANS
   comment_form_website_label : "网站（可选）"
   comment_btn_submit         : "提交评论"
   comment_btn_submitted      : "已提交"
-  comment_success_msg        : "感谢您的评论！被批准后它会立即在此站点展示。"
+  comment_success_msg        : "感谢您的评论！一旦审核通过后，会立即在此站点展示。"
   comment_error_msg          : "很抱歉，您的提交存在错误。请确保所有必填字段都已填写正确，然后再试一次。"
   loading_label              : "正在加载..."
   search_label_text          : "输入您要搜索的关键词..."
