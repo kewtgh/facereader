@@ -1,8 +1,8 @@
 ---
 title: 从面相上看，为什么推动GE变革的是杰克·韦尔奇而不是别人！（一）
 header:
-  teaser: /assets/img/ge-teaser.jpg
-  image: /assets/img/ge.jpg # Add image post (optional)
+  teaser: /assets/img/page-header-image-ge-teaser.jpg
+  image: /assets/img/page-header-image-ge.jpg # Add image post (optional)
 categories:
   - 阅相识人
   - GE
