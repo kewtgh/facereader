@@ -1,5 +1,4 @@
 # User interface text and labels
-
 # English (default)
 # -----------------
 en: &DEFAULT_EN
@@ -13,7 +12,7 @@ en: &DEFAULT_EN
   breadcrumb_home_label      : "Home"
   breadcrumb_separator       : "/"
   menu_label                 : "Toggle menu"
-  most_popular             : "Most Popular"
+  most_popular_label    : "Most Popular"
   search_label               : "Toggle search"
   toc_label                  : "On this page"
   ext_link_label             : "Direct link"
@@ -400,7 +399,7 @@ zh: &DEFAULT_ZH_HANS
   comments_label             : "留下评论"
   comments_title             : "评论"
   more_label                 : "了解更多"
- most_popular             : "最受欢迎"
+  most_popular_label    : "最受欢迎"
   related_label              : "猜您还喜欢"
   follow_label               : "关注:"
   feed_label                 : "Feed"
@@ -454,6 +453,7 @@ zh-TW: &DEFAULT_ZH_HANT
   comments_label             : "留言"
   comments_title             : "留言內容"
   more_label                 : "了解更多"
+  most_popular_label    : "最受歡迎"
   related_label              : "猜您有與趣"
   follow_label               : "追蹤:"
   feed_label                 : "RSS Feed"
