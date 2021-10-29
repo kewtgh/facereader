@@ -74,7 +74,7 @@ sidebar-sunzi:
 sidebar-about:
   - title: "关于我们："
     children:
-       - title: "详细介绍"
+       - title: "一、详细内容"
          url: /about/
   - title: "服务内容："
     children:

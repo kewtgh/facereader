@@ -3,7 +3,7 @@ title: 面试：技能和技巧
 excerpt: "筛选面试：四大关键问题，“什么”、“如何”、“告诉我更多”了解信息。"
 header:
   overlay_image: /assets/img/page-header-image-tech7.jpg
-  overlay_filter: linear-gradient(rgba(255, 0, 0, 0.5), rgba(0, 255, 255, 0.5))
+  overlay_filter: linear-gradient(rgba(255, 215, 0, 0.5), rgba(0, 255, 255, 0.5))
   teaser: /assets/img/page-header-image-tech7-teaser.jpg
 sidebar:
   title: "经典系列"
