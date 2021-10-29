@@ -393,11 +393,6 @@ zh: &DEFAULT_ZH_HANS
   minute_read                : "分钟阅读"
   share_on_label             : "分享"
   meta_label                 :
-  about_navigation                 : "关于"
-  posts_navigation                 : "文章"
-  categories_navigation          : "类别"
-  tags_navigation                 : "标签"
-  most_popular_navigation           : "最受欢迎"
   tags_label                 : "标签:"
   categories_label           : "分类:"
   date_label                 : "更新时间:"
@@ -451,11 +446,6 @@ zh-TW: &DEFAULT_ZH_HANT
   minute_read                : "分鐘閱讀"
   share_on_label             : "分享到"
   meta_label                 :
-  about_navigation                 : "關於"
-  posts_navigation                 : "文章"
-  categories_navigation          : "類別"
-  tags_navigation                 : "標籤"
-  most_popular_navigation           : "最受歡迎"
   tags_label                 : "標籤:"
   categories_label           : "分類:"
   date_label                 : "更新時間:"
