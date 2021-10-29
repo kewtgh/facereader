@@ -10,7 +10,7 @@ share: true
 toc: true
 header:
   teaser: /assets/img/sunzi-teaser.jpg
-  image: /assets/img/sunzi.jpg # Add image post (optional)
+  overlay_image: /assets/img/sunzi.jpg # Add image post (optional)
 sidebar:
   title: "相关系列"
   nav: sidebar-sunzi

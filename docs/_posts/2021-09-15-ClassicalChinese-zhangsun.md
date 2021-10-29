@@ -3,7 +3,7 @@ title: 从遗嘱看千古第一贤后
 excerpt: "长孙皇后13岁时嫁李世民，随李世民南征北战，后来李世民做了天子，长孙皇后掌管后宫，并且不断匡正李世民为政的失误，保护忠正得力的大臣。但因久病加操劳，36岁便病逝。但临终仍不忘国事，立下三条遗嘱，而这三条遗嘱见证了其所有的贤德与智慧。"
 header:
   teaser: /assets/img/page-header-image-literacy-teaser.jpg
-  image: /assets/img/page-header-image-literacy.jpg # Add image post (optional)
+  overlay_image: /assets/img/page-header-image-literacy.jpg # Add image post (optional)
 categories:
   - 文言经典
 tags: 
