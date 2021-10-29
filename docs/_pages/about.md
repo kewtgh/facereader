@@ -20,7 +20,7 @@ layouts_gallery:
     image_path: /assets/img/busi4_c.jpg
     alt: "research"
     title: "严谨的行业研究"
-class: wide
+classes: wide
 author_profile: false
 show_date: false
 ---

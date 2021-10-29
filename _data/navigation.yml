@@ -70,3 +70,15 @@ sidebar-sunzi:
          url: https://kewtgh.github.io/reading/docs/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-10dixing/
        - title: "十二、九地篇"
          url: https://kewtgh.github.io/reading/docs/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-11jiudi/
+
+sidebar-about:
+  - title: "关于我们："
+    url: /about/
+  - title: "服务内容："
+    children:
+       - title: "一、战略咨询"
+         url: /docs/strategy/
+       - title: "二、管理诊断"
+         url: /docs/management/
+       - title: "三、人才评估"
+         url: /docs/talents/
