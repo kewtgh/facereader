@@ -1,7 +1,7 @@
 ---
 title: "组织重构"
 permalink: /docs/organization/
-excerpt: "评估企业组织特点及资源配置，协助进行有效的结构调整，帮助企业构建自我优化的高效组织。"
+excerpt: "评估企业组织特点及资源配置，进行合理的结构调整，帮助企业构建自我优化的高效组织。"
 layout: single
 sidebar:
   - title: "Witbacon介绍"
