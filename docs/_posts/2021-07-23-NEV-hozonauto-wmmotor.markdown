@@ -8,7 +8,7 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
   actions:
     - label: "查看系列文章"
-      url: "https://facereader.witbacon.com/categories/#%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA"
+      url: "/reading/categories/#%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA"
 categories:
   - 阅相识人
   - 新能源汽车

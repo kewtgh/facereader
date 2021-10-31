@@ -3,7 +3,7 @@ title: 行业战略浅谈及理想汽车核心团队分析
 excerpt: "理想汽车的核心团队是一支非常精干的团队，但团队也有非常明显的短板，用人的单一，权力的平衡，关键职位缺任等等，都是非常关键的问题。"
 header:
   teaser: /assets/img/page-header-image-manufacture-teaser.jpg
-  overlay_image: /assets/img/unsplash-image-7.jpg
+  overlay_image: /assets/img/page-header-image-manufacture.jpg
   overlay_filter: rgba(255, 0, 0, 0.5)
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
   actions:

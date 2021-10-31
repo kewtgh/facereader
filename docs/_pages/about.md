@@ -1,24 +1,11 @@
 ---
 permalink: /about/
-title: "About"
+title: "从“人”出发"
+excerpt: ""
+header:
+  overlay_image: /assets/img/page-header-image-vision10.jpg
+  overlay_filter: rgba(51, 117, 255, 0.5)
 layout: single
-layouts_gallery:
-  - url: /assets/img/busi1_c.jpg
-    image_path: /assets/img/busi1_c.jpg
-    alt: "pure"
-    title: "成熟的体系"
-  - url: /assets/img/busi2_c.jpg
-    image_path: /assets/img/busi2_c.jpg
-    alt: "process"
-    title: "完善的流程"
-  - url: /assets/img/busi3_c.jpg
-    image_path: /assets/img/busi3_c.jpg
-    alt: "科学的评估模型"
-    title: "科学的评估模型"
-  - url: /assets/img/busi4_c.jpg
-    image_path: /assets/img/busi4_c.jpg
-    alt: "research"
-    title: "严谨的行业研究"
 sidebar:
   - title: "Witbacon介绍"
     nav: sidebar-about
@@ -29,9 +16,9 @@ author_profile: false
 show_date: false
 ---
 
-### 一、基本介绍
+### 一、概述
 
-&emsp;&emsp;Witbacon是一家卓越的人力资源服务商，主要业务包括招聘咨询，人才测评，校园招聘解决方案和中高端猎聘服务。我们为全球1000强企业提供服务，专长行业包括快速消费品、大宗商品贸易、互联网、金融、制造、化工等。
+&emsp;&emsp;我们帮助领导者解决因用人不当而
 
 &emsp;&emsp;Witbacon拥有独特的“五指文化”。Witbacon的“五指文化”代表了一只手的五指，只有将这五指结合起来，才能凝聚成一只充满力量的手，向客户提供最满意的服务。
 

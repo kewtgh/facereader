@@ -2,7 +2,8 @@
 title: 做自己？——这样会害了你！
 excerpt: "你还不够成功，或者当你还没有足够的阅历时，放弃“做自己”的想法。在很长，至少30～40年的时间中，你需要做的第一步是“认识你自己”，而不是“做自己”。"
 header:
-  overlay_image: /assets/img/page-header-image-warm.jpg
+  overlay_image: /assets/img/page-header-image-wit2.jpg
+  overlay_filter: 0.5
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
   actions:
     - label: "More Info"

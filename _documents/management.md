@@ -1,7 +1,7 @@
 ---
 title: "管理诊断"
 permalink: /docs/management/
-excerpt: "分析企业组织结构及关键岗位人才特质，寻找管理症结，并帮助企业发展自我优化的自组织能力，成就卓越企业。"
+excerpt: "分析企业组织结构及关键岗位人才特质，寻找管理症结，帮助企业解决管理症结。"
 layout: single
 sidebar:
   - title: "Witbacon介绍"
