@@ -9,8 +9,6 @@ layout: single
 sidebar:
   - title: "Witbacon介绍"
     nav: sidebar-about
-  - title: "联系邮箱"
-  - text: "horolf.ma@witbacon.com"
 classes: wide
 author_profile: false
 show_date: false
