@@ -22,7 +22,7 @@ subtitle                 : "用智慧阅读一切" # site tagline that appears b
 name                     : "Face Reader"
 description              : "Read a team by their portraits."
 url                      : "https://kewtgh.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "/facereader"# the subpath of your site, e.g. "/blog"
+baseurl                  : "/"# the subpath of your site, e.g. "/blog"
 repository               : "kewtgh/facereader"# GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "/assets/img/bio-photo-500x300.png"# path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/img/logo-witbacon.png"# path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
