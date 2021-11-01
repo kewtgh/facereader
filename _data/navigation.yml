@@ -84,3 +84,8 @@ sidebar-about:
          url: /docs/management/
        - title: "三、人才评估"
          url: /docs/talents/
+  - title: "联系邮箱："
+    children:
+       - title: "horolf.ma@witbacon.com"
+  - title: "咨询留言："
+     url: /docs/registration/

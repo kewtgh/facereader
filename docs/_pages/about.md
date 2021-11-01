@@ -1,7 +1,7 @@
 ---
 permalink: /about/
 title: "从“人”出发"
-excerpt: ""
+excerpt: "帮助企业，人尽其才，物尽其用。"
 header:
   overlay_image: /assets/img/page-header-image-vision10.jpg
   overlay_filter: rgba(51, 117, 255, 0.5)
@@ -18,13 +18,11 @@ show_date: false
 
 ### 一、概述
 
-&emsp;&emsp;我们帮助领导者解决因用人不当而
+&emsp;&emsp;我们帮助企业和领导者们改善用人决策，解决因用人不当而造成的困境，塑造拥有优质基因的企业。
 
-&emsp;&emsp;Witbacon拥有独特的“五指文化”。Witbacon的“五指文化”代表了一只手的五指，只有将这五指结合起来，才能凝聚成一只充满力量的手，向客户提供最满意的服务。
+&emsp;&emsp;我们拥有富有天赋的专家和团队，为您提供建议，帮助您将雄心勃勃的目标变为现实。
 
-&emsp;&emsp;Witbacon拥有卓越的团队。Witbacon的顾问团队拥有扎实的专业和行业知识基础，并拥有优秀的服务意识和敬业精神。
 
-&emsp;&emsp;Witbacon拥有成熟的运营系统。Witbacon有着多年的运营积累，形成了成熟的流程管理和运营管理体系，严格保障对客户的服务质量。
 
 ### 二、五指文化
 
@@ -48,28 +46,16 @@ show_date: false
 
 &emsp;&emsp;Witbacon总是在找寻那群能经得住考验的人，工作总会遇到各种挑战，最卓越的人，是那些不断战胜挑战的人。
 
-### 三、Witbacon服务
+### 三、我们的服务
 
-- **招聘咨询**
+- **管理诊断**
 
-&emsp;&emsp;针对招聘策略、流程、体系等障碍，提供解决方案
+&emsp;&emsp;分析企业组织结构及关键岗位人才特质，寻找管理症结，帮助领导者们解决管理难题。
 
-- **人才测评**
+- **组织重构**
 
-&emsp;&emsp; 针对企业人才深度评估需求提供针对性的人才测评工具、方法及咨询服务
+&emsp;&emsp;评估企业组织特点及资源配置，进行合理的结构调整，帮助企业构建自我优化的高效组织。
 
-- **校园招聘解决方案**
+- **人才评估**
 
-&emsp;&emsp;针对企业人才需求提供专业的应届生招聘设计、职业化培训等解决方案 
-
-- **猎头服务**
-
-&emsp;&emsp;针对中高级管理、专业技术人才短缺，提供深入的行业及职能解决方案
-
-### 四、专业的体系和服务
-
-{% include gallery id="layouts_gallery" class="full" caption="To see this great company!" %}
-
-{% include gallery id="layouts_gallery" layout="half" caption="The Best Service!" %}
-
-{% include gallery id="layouts_gallery" caption="Great Companies!" %}
+&emsp;&emsp;通过专有人格理论框架，剖析不同人才性格优势、短板，及核心需求，准确评估人才特质。 
