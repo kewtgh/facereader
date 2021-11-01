@@ -78,7 +78,7 @@ yandex_site_verification :
 naver_site_verification  :
 
 # sitemap
-  sitemap: true
+sitemap: true
 
 # Social Sharing
 twitter:
