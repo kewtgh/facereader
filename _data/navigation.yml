@@ -87,5 +87,7 @@ sidebar-about:
   - title: "联系邮箱："
     children:
        - title: "horolf.ma@witbacon.com"
-  - title: "咨询留言："
-     url: /docs/registration/
+  - title: "咨询："
+    children:
+       - title: "留言"
+         url: /docs/registration/
