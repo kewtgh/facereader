@@ -13,24 +13,24 @@ excerpt: >
   <small><a href="/reading/categories/#阅相识人">查看观点文章</a></small>
 feature_row:
   - image_path: /assets/img/page-header-image-wit-500x300.jpg
-    alt: "face reader"
-    title: "企业剖析"
-    excerpt: "分析企业组织架构及核心人才，分析企业管理问题，评价企业发展潜力。"
-    url: "/reading/categories/#阅相识人"
+    alt: "management diagnosing"
+    title: "管理诊断"
+    excerpt: "分析企业组织结构及关键岗位人才特质，寻找管理症结，帮助领导者们解决管理难题。"
+    url: "/docs/management/"
     btn_class: "btn--primary"
     btn_label: "Learn more"
   - image_path: /assets/img/page-header-image-tech4-500x300.jpg
-    alt: "books of management"
-    title: "经典解读"
-    excerpt: "解读和评析管理经典书籍，学习管理知识，汲取大师智慧。"
-    url: "/reading/categories/#经典解读"
+    alt: "organization restructuring "
+    title: "组织重构"
+    excerpt: "评估企业组织特点及资源配置，进行合理的结构调整，帮助企业构建自我优化的高效组织。"
+    url: "/docs/organization/"
     btn_class: "btn--primary"
     btn_label: "Learn more"
   - image_path: /assets/img/page-header-image-eye4-500x300.jpg
-    alt: "characteristics"
-    title: "人格成长"
-    excerpt: "成长随笔，人力资源笔记，管理心得等。"
-    url: "/reading/categories/#人格成长"
+    alt: "talents assessing"
+    title: "人才评估"
+    excerpt: "通过专有人格理论框架，剖析不同人才性格优势、短板，及核心需求，准确评估人才特质。"
+    url: "/docs/talents/"
     btn_class: "btn--primary"
     btn_label: "Learn more"      
 ---

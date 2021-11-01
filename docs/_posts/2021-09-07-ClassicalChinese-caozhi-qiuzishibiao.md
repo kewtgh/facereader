@@ -4,6 +4,7 @@ header:
   teaser: /assets/img/wen-teaser.png
   overlay_image: /assets/img/so-simple-sample-image-7.jpg # Add image post (optional)
 categories:
+  - 经典解读
   - 文言经典
 tags: 
   - 曹植

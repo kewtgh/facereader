@@ -6,6 +6,7 @@ header:
   overlay_image: /assets/img/page-header-image-literacy.jpg # Add image post (optional)
   overlay_filter: 0.3
 categories:
+  - 人格成长
   - 文言经典
 tags: 
   - 长孙皇后

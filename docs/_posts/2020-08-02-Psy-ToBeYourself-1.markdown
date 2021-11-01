@@ -10,7 +10,7 @@ header:
       url: "https://facereader.witbacon.com"
   teaser: /assets/img/page-header-image-wit2-teaser.jpg
 categories:
-  - 心灵高汤
+  - 人格成长
 tags: 
   - 做自己
   - 自我探索

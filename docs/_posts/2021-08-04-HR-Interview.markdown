@@ -9,11 +9,12 @@ sidebar:
   title: "经典系列"
   nav: sidebar-series
 categories:
-  - Human Resource
+  - 人格成长
+  - 人力资源
 tags: 
   - HR
   - 招聘
-  - 人力资源管理
+  - 人力资源
   - 面试方法
   - SMART
 share: true
