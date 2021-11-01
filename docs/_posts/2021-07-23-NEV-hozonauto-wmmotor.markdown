@@ -8,7 +8,7 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
   actions:
     - label: "查看系列文章"
-      url: "/reading/categories/#%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA"
+      url: "https://facereader.witbacon.com/categories/#%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6"
 categories:
   - 阅相识人
   - 企业剖析
