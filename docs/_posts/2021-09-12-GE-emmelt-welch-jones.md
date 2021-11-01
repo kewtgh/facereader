@@ -5,6 +5,7 @@ header:
   image: /assets/img/page-header-image-ge.jpg # Add image post (optional)
 categories:
   - 阅相识人
+  - 企业剖析
   - GE
 tags: 
   - GE

@@ -11,6 +11,7 @@ header:
       url: "/reading/categories/#%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA"
 categories:
   - 阅相识人
+  - 企业剖析
   - 新能源汽车
 tags: 
   - 蔚来汽车

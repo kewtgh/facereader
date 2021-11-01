@@ -6,6 +6,7 @@ header:
   overlay_image: /assets/img/unsplash-image-1.jpg
 categories:
   - 阅相识人
+  - 企业剖析
   - TMT
 tags: 
   - 字节跳动

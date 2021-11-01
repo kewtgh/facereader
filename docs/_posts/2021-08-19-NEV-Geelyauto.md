@@ -7,6 +7,7 @@ header:
   overlay_filter: rgba(0, 0, 255, 0.5)
 categories:
   - 阅相识人
+  - 企业剖析
   - 新能源汽车
 tags: 
   - 吉利汽车

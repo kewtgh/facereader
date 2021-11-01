@@ -6,6 +6,7 @@ header:
   teaser: /assets/img/page-header-image-tech1-teaser.jpg
 categories:
   - 阅相识人
+  - 企业剖析
   - AI
 tags: 
   - 人工智能
