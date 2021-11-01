@@ -1,6 +1,6 @@
 ---
 title: "Witbacon咨询"
-permalink: /docs/registation/
+permalink: /docs/registration/
 layout: single
 sidebar:
   - title: "Witbacon介绍"
