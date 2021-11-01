@@ -78,10 +78,10 @@ sidebar-about:
          url: /about/
   - title: "服务内容："
     children:
-       - title: "一、战略咨询"
-         url: /docs/strategy/
-       - title: "二、管理诊断"
+       - title: "一、管理诊断"
          url: /docs/management/
+       - title: "二、组织重构"
+         url: /docs/organization/
        - title: "三、人才评估"
          url: /docs/talents/
   - title: "联系邮箱："
@@ -89,5 +89,5 @@ sidebar-about:
        - title: "horolf.ma@witbacon.com"
   - title: "咨询："
     children:
-       - title: "留言"
+       - title: "点此留言"
          url: /docs/registration/
