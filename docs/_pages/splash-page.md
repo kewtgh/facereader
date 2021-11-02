@@ -11,9 +11,9 @@ header:
     - label: "了解更多"
       url: "https://facereader.witbacon.com/about/"
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
-excerpt: "Witbacon，阅读人性，通透管理！给您最好的组织架构建议！"
+excerpt: "Witbacon"
 intro: 
-  - excerpt: '只需要核心管理人员的正面照片和组织架构，就可以告诉您公司的组织结构问题，帮助您解决管理难题！ Centered with `type="center"`'
+  - excerpt: 'splash page. Centered with `type="center"`'
 feature_row:
   - image_path: assets/images/unsplash-gallery-image-1-th.jpg
     alt: "placeholder image 1"

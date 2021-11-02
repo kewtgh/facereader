@@ -64,6 +64,13 @@ search                   : true # true, false (default)
 search_full_content      : false # true, false (default)
 search_provider          : algolia # lunr (default), algolia, google
 algolia:
+  files_to_exclude:
+    - index.html
+    - index.md
+    - /docs/_pages/*.md
+    - /docs/_pages/*.html
+    - /docs/_drafts/*.md
+    - _documents/*.md
   application_id         : 9C0NU6FBIH # YOUR_APPLICATION_ID
   index_name             : Face Reader Search in Site# YOUR_INDEX_NAME
   search_only_api_key    : 51384fc8e05a85a035065d162dca8d76 # YOUR_SEARCH_ONLY_API_KEY
