@@ -116,7 +116,7 @@ author:
   avatar           : "/assets/img/hor-photo.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "爱看点书，略知人性，稍通管理，心存正义"
 #  location         : ""
-  email            : "horolf.ma@witbacon.com"
+  email            : "facereader@witbacon.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -135,7 +135,7 @@ author:
       # url: "https://github.com/"
     - label: "Linkedin"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/horolf-ma-70a83a35/"
+      url: "https://www.linkedin.com/"
 
 # Site Footer
 footer:
