@@ -52,7 +52,7 @@ last_modified_at: 2021-11-04T22:25:52-05:00
 
    4. 针对汽车和自动驾驶的汽车出行智能化。
 
-      详情如下图（大图请[点击](https://raw.githubusercontent.com/kewtgh/PicSunflowers/main/img/商汤科技-产品服务.jpg)）：
+      详情如下图（大图请[点击](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/商汤科技-产品服务.jpg)）：
 
       ![商汤科技-产品服务](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/商汤科技-产品服务.jpg)
       
