@@ -16,6 +16,9 @@ tags:
   - 企业管理
 share: true
 toc: true
+sidebar:
+  title: "经典系列"
+  nav: sidebar-series-AI
 last_modified_at: 2021-07-21T20:25:52-05:00
 ---
 > ​	最近受朋友之托，分析了一家目前的独角兽公司——第四范式，第一期的结论很简单，看起来光鲜亮丽，但是走不远。公司的CEO和COO角色都不合适，如果一两年之内找不到合适的继任者，公司必定难以避免破产的命运。

@@ -17,7 +17,7 @@ tags:
 share: true
 sidebar:
   title: "经典系列"
-  nav: sidebar-series
+  nav: sidebar-series-manufacture
 toc: true
 last_modified_at: 2021-08-19T22:25:52-05:00
 ---

@@ -16,7 +16,7 @@ main:
   #   url: /sitemap/
 
 # sidebar navigation list sample
-sidebar-series:
+sidebar-series-manufacture:
   - title: "新能源汽车"
     children:
        - title: "蔚来汽车"
@@ -41,6 +41,8 @@ sidebar-series:
          url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ge/GE-emmelt-welch-jones/
        - title: "通用的崛起——拉里·卡尔普时代"
          url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ge/GE-flannery-culp/
+
+sidebar-series-AI:
   - title: "AI四小龙"
     children:
        - title: "一、商汤科技剖析"
@@ -51,6 +53,14 @@ sidebar-series:
          url: 
        - title: "四、旷视科技剖析"
          url: 
+  - title: "其他AI企业"
+    children:
+       - title: "一、第四范式群像分析（一）"
+         url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ai/AI-4Paradigm(1)/
+       - title: "二、第四范式群像分析（二）"
+         url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ai/AI-4Paradigm(2)/
+       - title: "三、被呼吁令美国政府禁止的涂鸦智能，到底怎么样？"
+         url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ai/AI-Tuya/
 
 sidebar-sunzi:
   - title: "孙子兵法："
