@@ -1,8 +1,10 @@
 ---
 title: 从面相上看，为什么推动GE变革的是杰克·韦尔奇而不是别人！（二）
+excerpt: "1979年，GE的“接班人”计划正如火如荼地进行着，当时杰克·韦尔奇的竞争者中最有竞争力的有三位候选人：斯坦利·格尔特（Stanley Gault）、约翰·柏林盖姆（John F. Burlingame）、埃德·胡德（Ed hood）。如果他们其中一位当选，GE是否仍然能有辉煌的二十年？"
 header:
   teaser: /assets/img/page-header-image-ge-teaser.jpg
-  image: /assets/img/page-header-image-ge.jpg # Add image post (optional)
+  overlay_image: /assets/img/page-header-image-ge.jpg # Add image post (optional)
+  overlay_filter: 0.5
 categories:
   - 阅相识人
   - 企业剖析
@@ -22,8 +24,6 @@ toc: true
 last_modified_at: 2021-09-05T19:25:52-05:00
 
 ---
-
->1979年，GE的“接班人”计划正如火如荼地进行着，当时杰克·韦尔奇的竞争者中最有竞争力的有三位候选人：斯坦利·格尔特（Stanley Gault）、约翰·柏林盖姆（John F. Burlingame）、埃德·胡德（Ed hood）。如果他们其中一位当选，GE是否仍然能有辉煌的二十年？
 
 &emsp;&emsp;上期中，我们分析了杰克·韦尔奇的竞争对手斯坦·戈尔特的性格，这期我们来看杰克·韦尔奇的另外两位竞争对手：约翰·柏林盖姆（John F. Burlingame）、埃德·胡德（Ed hood）。
 
