@@ -1,5 +1,5 @@
 ---
-title: 面试：技能和技巧
+title: 《Who：the a method for hiring》读书笔记及ICCME面试评估法
 excerpt: "筛选面试：四大关键问题，“什么”、“如何”、“告诉我更多”了解信息。"
 header:
   overlay_image: /assets/img/page-header-image-tech7.jpg

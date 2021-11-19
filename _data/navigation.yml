@@ -65,7 +65,7 @@ sidebar-series-AI:
 sidebar-sunzi:
   - title: "孙子兵法："
     children:
-       - title: "前述"
+       - title: "《孙子兵法》前述"
          url: https://facereader.witbacon.com/docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-0wordsbefore/
        - title: "一、始计篇"
          url: https://facereader.witbacon.com/docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/
