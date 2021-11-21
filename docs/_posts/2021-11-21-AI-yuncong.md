@@ -1,5 +1,7 @@
 ---
 title: 从面相告诉你，拥有“国家队”光环的云从科技到底怎么样！
+redirect_from: 
+  - https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ai/AI-yuncong/
 excerpt: "商汤科技拥有大V汤晓鸥，依图科技拥有“霍金徒孙”的光环且有一支优秀的团队，但都在人工智能领域艰难挣扎，那么作为唯一一家拥有“国家队”光环的“人工智能四小龙”企业，云从科技能否在人工智能领域拥有不凡的表现？"
 header:
   teaser: /assets/img/page-header-image-tech2-teaser.jpg
