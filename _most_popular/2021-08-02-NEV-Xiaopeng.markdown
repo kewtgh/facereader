@@ -8,9 +8,10 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
   actions:
     - label: "查看系列文章"
-      url: "https://facereader.witbacon.com/categories/#%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA"
+      url: "https://facereader.witbacon.com/categories/#%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6"
 categories:
   - 阅相识人
+  - 企业剖析
   - 新能源汽车
 tags: 
   - 小鹏汽车
@@ -18,7 +19,7 @@ tags:
   - 企业管理
 sidebar:
   title: "经典系列"
-  nav: sidebar-series
+  nav: sidebar-series-manufacture
 share: true
 toc: true
 last_modified_at: 2021-08-02T20:25:52-05:00
