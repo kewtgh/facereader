@@ -6,6 +6,7 @@ header:
   overlay_image: /assets/img/page-header-image-vision10.jpg
   overlay_filter: rgba(51, 117, 255, 0.5)
 layout: single
+classes: wide
 sidebar:
   - title: "Witbacon介绍"
     nav: sidebar-about
