@@ -16,6 +16,7 @@ tags:
   - 自我探索
   - 心理
 classes: wide
+canonical_url: https://facereader.witbacon.com/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/
 last_modified_at: 2021-08-02T20:25:52-05:00
 ---
 >你还不够成功，或者当你还没有足够的阅历时，放弃“做自己”的想法。在很长，至少30～40年的时间中，你需要做的第一步是“认识你自己”，而不是“做自己”。
