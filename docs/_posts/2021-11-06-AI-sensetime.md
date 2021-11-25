@@ -219,7 +219,9 @@ last_modified_at: 2021-11-04T22:25:52-05:00
 
 &emsp;&emsp;就其核心管理层的角色搭配来看，更像是“**一家亲”的家庭作坊**，并非以企业需求为考虑而进行人员配置。商汤科技目前的所有成就都是依托于汤晓鸥先生个人的学术光环之下的，倘若将这光环剥掉，其商业境况则不啻为另一个麦道夫投资证券公司。
 
-&emsp;&emsp;整体评价，商汤科技的团队评分为6.7分（满分10分）。
+&emsp;&emsp;整体评价，商汤科技的团队评分为：
+
+![sensetime](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/sensetime.png)
 
 ---
 

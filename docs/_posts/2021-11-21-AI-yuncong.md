@@ -164,7 +164,9 @@ last_modified_at: 2021-11-21T22:25:52-05:00
 
 &emsp;&emsp;云从科技的核心团队的实干性还是不错的，这与周曦、李继伟等人的特质有关，但是因为学界的背景，商业运营和商业资源都有欠缺，这也极有可能会成为他们成长中最大的障碍。
 
-&emsp;&emsp;整体评价，云从科技的团队评分为7.6分（满分10分）。
+&emsp;&emsp;整体评价，云从科技的团队评分为：
+
+![yuncong](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/yuncong.png)
 
 ---
 
