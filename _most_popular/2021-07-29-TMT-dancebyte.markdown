@@ -121,5 +121,6 @@ last_modified_at: 2021-07-29T20:25:52-05:00
 
   &emsp;&emsp;这一点字节跳动和前述个别公司相比则高下立见。
 
-&emsp;&emsp;字节跳动的核心人员任用情况评分：9.0分（满分10分）。
+&emsp;&emsp;字节跳动的核心人员任用情况评分：
 
+![bytedance](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/bytedance.png)
