@@ -1,5 +1,5 @@
 ---
-title: 旷视科技
+title: 拥有清华“姚班”光环的旷视科技，为什么毛利率远低于行业平均水平？
 excerpt: "旷视科技的三位创始人都毕业于知名的“清华大学计算机科学实验班”（姚班），拥有“姚班”光环的三人是否创立了一家更好的企业呢？"
 header:
   teaser: /assets/img/page-header-image-tech5-teaser.jpg
