@@ -20,6 +20,9 @@ tags:
   - 人脸识别
   - 自动驾驶
 toc: true
+sidebar:
+  title: "经典系列"
+  nav: sidebar-series-AI
 last_modified_at: 2021-11-28T22:25:52-05:00
 ---
 
