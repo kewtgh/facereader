@@ -94,6 +94,14 @@ sidebar-sunzi:
        - title: "十三、用间篇"
          url: https://facereader.witbacon.com/docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-13yongjian/
 
+sidebar-series-masters:
+  - title: "大师百态"
+    children:
+       - title: "现代史学四大家（1）：陈垣，陈寅恪"
+         url: 
+       - title: "现代史学四大家（2）：吕思勉，钱穆"
+         url: 
+
 sidebar-about:
   - title: "关于我们："
     children:
