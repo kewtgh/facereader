@@ -30,7 +30,7 @@ last_modified_at: 2021-12-06T22:25:52-05:00
 
 ---
 
-### 一、Tesla的故事
+## 一、Tesla的故事
 
 &emsp;&emsp;2003年，毕业于加州大学伯克利分校的马克·塔彭宁，与毕业于伊利诺伊大学香槟分校的马丁·艾伯哈德，再次合作，创立了Tesla Motors，公司的命名用以纪念物理学家尼古拉·特斯拉。二人此前曾于1997年创立电子书公司NuvoMedia，并于2000年出售给Gemstar–TV Guide International。
 
