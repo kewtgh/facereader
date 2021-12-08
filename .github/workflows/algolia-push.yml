@@ -27,5 +27,5 @@ jobs:
         env:
           ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
           ADMIN_API_KEY: ${{ secrets.ADMIN_API_KEY }}
-          INDEX_NAME: ${{ INDEX_NAME }}
-          FILE_PATH: ${{ FILE_PATH }}
+          INDEX_NAME: ${{ secrets.INDEX_NAME }}
+          FILE_PATH: ${{ secrets.FILE_PATH }}
