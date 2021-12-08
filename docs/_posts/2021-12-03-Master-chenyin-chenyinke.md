@@ -1,5 +1,5 @@
 ---
-title: 各领风骚的“近代史学四大家”面相如何，又有怎样的性格？
+title: 各领风骚的“近代史学四大家”面相如何，又有怎样的性格？（一）
 excerpt: "严耕望先生将陈垣、陈寅恪、吕思勉及钱穆四位先生成为“现代四大史学家”，四位先生在史学界各领风骚，声名远扬，那么他们又有怎样的经历？其面相又反映了什么样的性格呢？"
 header:
   teaser: /assets/img/page-header-image-literacy-teaser.jpg
@@ -42,7 +42,7 @@ last_modified_at: 2021-12-03T19:25:52-05:00
 
 > “避讳为中国特有之风俗，其俗起于周，成于秦，盛于唐宋，其历史垂二千年。其流弊足以淆乱古文书，然反而利用之，则可以解释古文书之疑滞，辨别古文书之真伪及时代，识者便焉。盖讳字各朝不同，不啻为时代之标志。”
 > 
-> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;——摘自吕陈垣先生之《史讳举例》
+> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;——摘自陈垣先生之《史讳举例》
 
 ### 1、经历简介
 
