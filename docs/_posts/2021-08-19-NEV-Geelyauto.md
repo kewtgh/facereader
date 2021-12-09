@@ -14,6 +14,15 @@ tags:
   - 新能源汽车
   - 企业管理
   - 李书福
+  - CEO
+  - CFO
+  - CHO
+  - CMO
+  - CTO
+  - 首席执行官
+  - 首席运营官
+  - 首席技术官
+  - 董事长
 share: true
 sidebar:
   title: "经典系列"

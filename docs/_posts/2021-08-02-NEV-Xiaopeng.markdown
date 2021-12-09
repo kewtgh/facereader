@@ -17,6 +17,16 @@ tags:
   - 小鹏汽车
   - 新能源汽车
   - 企业管理
+  - 何小鹏
+  - 董事长
+  - CEO
+  - CFO
+  - CHO
+  - CMO
+  - CTO
+  - 首席执行官
+  - 首席运营官
+  - 首席技术官
 sidebar:
   title: "经典系列"
   nav: sidebar-series-manufacture

@@ -17,6 +17,10 @@ tags:
   - 新能源汽车
   - 自动驾驶
   - 面相
+  - CEO
+  - 首席执行官
+  - 首席技术官
+  - 董事长
 sidebar:
   title: "经典系列"
   nav: sidebar-series-manufacture

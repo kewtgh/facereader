@@ -19,8 +19,17 @@ tags:
   - 四小龙
   - 人脸识别
   - 自动驾驶
-toc: true
+  - CEO
+  - CFO
+  - CHO
+  - CMO
+  - CTO
+  - 首席执行官
+  - 首席运营官
+  - 首席技术官
+  - 董事长
 canonical_url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ai/AI-sensetime/
+toc: true
 sidebar:
   title: "经典系列"
   nav: sidebar-series-AI

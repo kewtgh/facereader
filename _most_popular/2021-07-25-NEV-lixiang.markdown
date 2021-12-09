@@ -18,10 +18,19 @@ tags:
   - 新能源汽车
   - 企业管理
   - 企业战略
+  - CEO
+  - CFO
+  - CHO
+  - CMO
+  - CTO
+  - 首席执行官
+  - 首席运营官
+  - 首席技术官
+  - 董事长
+canonical_url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-lixiang/
 sidebar:
   title: "经典系列"
   nav: sidebar-series-manufacture
-canonical_url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-lixiang/
 share: true
 toc: true
 last_modified_at: 2021-07-25T20:25:52-05:00

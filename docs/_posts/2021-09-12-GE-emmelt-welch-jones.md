@@ -16,6 +16,9 @@ tags:
   - 杰克·韦尔奇
   - 杰夫·伊梅尔特
   - 雷吉·琼斯
+  - CEO
+  - 首席执行官
+  - 董事长
 share: true
 sidebar:
   title: "经典系列"

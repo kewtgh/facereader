@@ -15,6 +15,15 @@ tags:
   - 张一鸣
   - TMT
   - 企业管理
+  - CEO
+  - CFO
+  - CHO
+  - CMO
+  - CTO
+  - 首席执行官
+  - 首席运营官
+  - 首席技术官
+  - 董事长
 share: true
 classes: wide
 toc: true

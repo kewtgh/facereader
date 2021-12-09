@@ -16,6 +16,9 @@ tags:
   - 杰克·韦尔奇
   - 詹姆斯·麦克纳尼
   - 罗伯特·纳代利
+  - CEO
+  - 首席执行官
+  - 董事长
 share: true
 sidebar:
   title: "经典系列"

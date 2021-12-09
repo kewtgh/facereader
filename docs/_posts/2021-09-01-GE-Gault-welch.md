@@ -15,6 +15,9 @@ tags:
   - 企业管理
   - 杰克·韦尔奇
   - 斯坦利·格尔特
+  - CEO
+  - 首席执行官
+  - 董事长
 share: true
 sidebar:
   title: "经典系列"

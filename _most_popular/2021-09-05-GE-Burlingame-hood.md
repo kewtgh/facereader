@@ -15,12 +15,15 @@ tags:
   - 企业管理
   - 杰克·韦尔奇
   - 埃德·胡德
+  - CEO
+  - 首席执行官
+  - 董事长
+canonical_url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ge/GE-Burlingame-hood/
 share: true
 sidebar:
   title: "经典系列"
   nav: sidebar-series-manufacture
 classes: wide
-canonical_url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ge/GE-Burlingame-hood/
 toc: true
 last_modified_at: 2021-09-05T19:25:52-05:00
 

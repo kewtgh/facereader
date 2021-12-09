@@ -15,9 +15,18 @@ tags:
   - 张一鸣
   - TMT
   - 企业管理
+  - CEO
+  - CFO
+  - CHO
+  - CMO
+  - CTO
+  - 首席执行官
+  - 首席运营官
+  - 首席技术官
+  - 董事长
+canonical_url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/tmt/TMT-dancebyte/
 share: true
 classes: wide
-canonical_url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/tmt/TMT-dancebyte/
 toc: true
 last_modified_at: 2021-07-29T20:25:52-05:00
 ---
@@ -120,6 +129,8 @@ last_modified_at: 2021-07-29T20:25:52-05:00
 - **第三，体现于实干的特质上，**创业公司需要塑造良好的外在形象，但也应该仅仅局限于个别极为相关的职位，而如果绝大多数人员都是投机者则注定又会是一个“乐视集团“。
 
   &emsp;&emsp;这一点字节跳动和前述个别公司相比则高下立见。
+  
+  
 
 &emsp;&emsp;字节跳动的核心人员任用情况评分：
 
