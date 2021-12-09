@@ -353,6 +353,14 @@ defaults:
       layout: single
       author_profile: false
       share: true
+#  foo
+  - scope:
+      path: ""
+      type: foo
+    values:
+      layout: list
+      author_profile: false
+      share: true
 #  foo-bar
   - scope:
       path: ""

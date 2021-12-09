@@ -19,6 +19,9 @@ tags:
   - 大师百相
   - 自卑
   - 自尊
+sidebar:
+  title: "经典系列"
+  nav: sidebar-series-masters
 share: true
 classes: wide
 toc: true
