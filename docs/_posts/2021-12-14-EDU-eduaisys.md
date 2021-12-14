@@ -2,8 +2,8 @@
 title: 给新东方们指条路
 excerpt: "新东方最近提出的新的方向，做海外市场的中文教育。这个方向有出路吗？"
 header:
-  teaser: /assets/img/page-header-image-literacy2-teaser.jpg
-  overlay_image: /assets/img/page-header-image-literacy2.jpg # Add image post (optional)
+  teaser: /assets/img/page-header-image-light-teaser.jpg
+  overlay_image: /assets/img/page-header-image-light.jpg # Add image post (optional)
   overlay_filter: 0.3
 categories:
   - 教育行业
