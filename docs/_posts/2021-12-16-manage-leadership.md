@@ -1,6 +1,6 @@
 ---
 title: 不靠谱领导力（1)——优秀领导者应有的品质
-excerpt: "有朋友看了我的文章后给我留言说，对面相和公司管理的分析似乎是有点儿道理，但是看了后总觉得隔靴瘙痒，症状是描述出来了，但是背后的原因是什么呢？"
+excerpt: "管理学领域有各种各样的领导力模型，但几乎没有一个能概括曹操这样复杂个性的领导者，那什么样的领导力模型可以概括曹操这样复杂个性的领导者呢？"
 header:
   teaser: /assets/img/page-header-image-leadership-teaser.jpg
   overlay_image: /assets/img/page-header-image-leadership.jpg # Add image post (optional)
