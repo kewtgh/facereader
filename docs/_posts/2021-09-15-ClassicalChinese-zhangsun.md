@@ -12,6 +12,7 @@ tags:
   - 长孙皇后
   - 唐朝
   - 唐太宗
+  - 中国传统文化
 share: true
 classes: wide
 toc: true

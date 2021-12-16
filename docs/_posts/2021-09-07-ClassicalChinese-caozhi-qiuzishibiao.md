@@ -8,6 +8,7 @@ categories:
   - 文言经典
 tags: 
   - 曹植
+  - 中国传统文化
   - 《求自试表》
 share: true
 classes: wide
