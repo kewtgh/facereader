@@ -1,7 +1,7 @@
 ---
 permalink: /about/
 title: "从“人”出发"
-excerpt: "管理就是——人尽其才，物尽其用。"
+excerpt: ""
 header:
   overlay_image: /assets/img/page-header-image-vision10.jpg
   overlay_filter: rgba(51, 117, 255, 0.5)

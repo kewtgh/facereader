@@ -154,7 +154,7 @@ footer:
       url: "https://linkedin.com/"
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "facereader@witbacon.com"
+      : "facereader@witbacon.com"
     - label: "Bitbucket"
       icon: "fab fa-fw fa-bitbucket"
       # url:
