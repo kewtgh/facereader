@@ -1,6 +1,6 @@
 ---
-title: 不靠谱领导力（1)——优秀领导者应有的品质
-excerpt: "管理学领域有各种各样的领导力模型，但几乎没有一个能概括曹操这样复杂个性的领导者，那什么样的领导力模型可以概括曹操这样复杂个性的领导者呢？"
+title: 不靠谱领导力（1)——优秀领导者的七项品质
+excerpt: "管理学领域有各种各样的领导力模型，但几乎没有一个能概括曹操这样复杂个性的领导者，那什么样的领导力模型可以概括曹操这样的领导者呢？"
 header:
   teaser: /assets/img/page-header-image-leadership-teaser.jpg
   overlay_image: /assets/img/page-header-image-leadership.jpg # Add image post (optional)
@@ -12,6 +12,9 @@ tags:
   - 领导力
   - 领导者
   - 优秀品质
+sidebar:
+  title: "经典系列"
+  nav: sidebar-series-leadership
 toc: true
 last_modified_at: 2021-12-16T19:25:52-05:00
 ---
@@ -26,7 +29,7 @@ last_modified_at: 2021-12-16T19:25:52-05:00
 
   动物中有不少是以一到两只首领来领导整个族群的，比如象群、狮群、狼群、虎鲸群等。我们就以狮群来举例，假如你是东非一个狮群中的领袖雄狮，那么你应该如何做才能算是一位优秀的狮王呢？
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/16-23-17-54-Lion.jpg" title="" alt="Lion.jpg" data-align="center">
+<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/16-23-17-54-Lion.jpg" title="" alt="Lion.jpg" data-align="center"></div>
 
 - 首先，你需要组建领导狮群的雄狮联盟，击退那些胆敢挑战你的流浪雄狮们；
 

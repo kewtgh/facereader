@@ -46,7 +46,7 @@ last_modified_at: 2021-12-06T22:25:52-05:00
 
 &emsp;&emsp;Tesla在2008年2月份交付了第一辆电动车，Tesla Roadster；之后又于2009年推出Tesla Model S，并于2012年开始交付；此后又分别于2012年和2016年推出Model X和Model 3；不久后又推出Model Y；截至目前，Tesla总计推出包括卡车在内七款车型，交付总量超过200万辆。
 
-![Model-S-X-3.jpg](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/05-16-38-11-Model-S-X-3.jpg)
+<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/05-16-38-11-Model-S-X-3.jpg" alt="Model-S-X-3.jpg" style="zoom:75%;" /></div>
 
 &emsp;&emsp;如今，Tesla的估值已经超过1万亿美金，在已公布的2021年前三季度财报中，营收为361亿美金，净利润近32亿美金，前三季度的交付量更是高达62万辆，各项数据均超过去年全年水平。马斯克持有的Tesla股份占比超过20%，这也是推高他身价的主要原因。
 

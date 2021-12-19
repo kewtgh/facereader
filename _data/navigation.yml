@@ -63,6 +63,10 @@ sidebar-series-AI:
          url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ai/AI-4Paradigm(2)/
        - title: "三、被呼吁令美国政府禁止的涂鸦智能，到底怎么样？"
          url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ai/AI-Tuya/
+       - title: "四、领创集团（一）"
+         url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ai/AI-advancegroup-1/
+       - title: "五、领创集团（二）"
+         url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ai/AI-advancegroup-2/
 
 sidebar-sunzi:
   - title: "孙子兵法："
@@ -103,6 +107,14 @@ sidebar-series-masters:
          url: https://facereader.witbacon.com/docs/%E5%A4%A7%E5%B8%88%E7%99%BE%E7%9B%B8/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/Master-chenyin-chenyinke/
        - title: "现代史学四大家（2）：吕思勉，钱穆"
          url: https://facereader.witbacon.com/docs/%E5%A4%A7%E5%B8%88%E7%99%BE%E7%9B%B8/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/Master-lvsimian-qianmu/
+
+sidebar-series-leadership:
+  - title: "不靠谱领导力系列"
+    children:
+       - title: "一、优秀领导者的七项品质"
+         url: https://facereader.witbacon.com/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E4%B8%8D%E9%9D%A0%E8%B0%B1%E9%A2%86%E5%AF%BC%E5%8A%9B/manage-leadership/
+       - title: "二、建立权威的必要性"
+         url: 
 
 sidebar-about:
   - title: "关于我们："
