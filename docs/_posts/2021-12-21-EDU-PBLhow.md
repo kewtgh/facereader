@@ -1,6 +1,6 @@
 ---
 title:  改变教育理念的PBL为什么效果不好？
-excerpt: "PBL为什么看着吸引人，但做起来却似乎效果并不好？如何能将PBL做得引人入胜的？"
+excerpt: "PBL为什么看着吸引人，但做起来却似乎效果并不好？如何能将PBL做得引人入胜？"
 header:
   teaser: /assets/img/page-header-image-light-teaser.jpg
   overlay_image: /assets/img/page-header-image-light.jpg # Add image post (optional)

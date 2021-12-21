@@ -19,17 +19,17 @@ main:
 sidebar-series-manufacture:
   - title: "新能源汽车"
     children:
-       - title: "蔚来汽车"
+       - title: "一、蔚来汽车"
          url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/
-       - title: "理想汽车"
+       - title: "二、理想汽车"
          url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-lixiang/
-       - title: "小鹏汽车"
+       - title: "三、小鹏汽车"
          url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-Xiaopeng/
-       - title: "吉利汽车"
+       - title: "四、吉利汽车"
          url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-Geelyauto/
-       - title: "哪吒汽车和威马汽车"
+       - title: "五、哪吒汽车和威马汽车"
          url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-hozonauto-wmmotor/
-       - title: "特斯拉 Tesla"
+       - title: "六、特斯拉 Tesla"
          url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-Tesla-musk/
   - title: "通用电气大盘点"
     children:
@@ -111,11 +111,11 @@ sidebar-series-masters:
 sidebar-series-edu:
   - title: "教育观点"
     children:
-       - title: "轻轻家教为什么失败？"
+       - title: "一、轻轻家教为什么失败？"
          url: https://facereader.witbacon.com/docs/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A/EDU-qingqing/
-       - title: "给新东方们指条路"
+       - title: "二、给新东方们指条路"
          url: https://facereader.witbacon.com/docs/%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A/EDU-eduaisys/
-       - title: "改变教育理念的PBL为什么效果不好？"
+       - title: "三、改变教育理念的PBL为什么效果不好？"
          url: https://facereader.witbacon.com/docs/%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A/EDU-PBLhow/
 
 sidebar-series-leadership:
