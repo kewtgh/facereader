@@ -13,10 +13,10 @@
         {% endif %}
       {% endfor %}
       
-      {% case link in site.footer.links %}              
+      {% case link in site.footer.links %}            
       {% when label.email and url %}
         <li><a href="mailto:{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
-      
+      {% endcase %}
     {% endif %}
   
     {% unless site.atom_feed.hide %}
