@@ -8,10 +8,13 @@ header:
 categories:
   - 教育行业
 tags: 
-  - 教育行业
+  - 教育
   - 新东方
   - AI
   - 义务教育新规
+sidebar:
+  title: "经典系列"
+  nav: sidebar-series-edu
 toc: true
 last_modified_at: 2021-12-14T19:25:52-05:00
 ---
