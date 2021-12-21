@@ -131,7 +131,7 @@ sidebar-about:
     children:
        - title: "一、概述"
          url: /about/
-  - title: "服务内容："
+  - title: "文章类别："
     children:
        - title: "一、企业剖析"
          url: /categories/#企业剖析
