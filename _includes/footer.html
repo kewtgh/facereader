@@ -14,7 +14,7 @@
       {% endfor %}
       
       {% case link in site.footer.links %}            
-      {% when label.email and url %}
+      {% when link.label.email and link.url %}
         <li><a href="mailto:{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
       {% endcase %}
     {% endif %}
