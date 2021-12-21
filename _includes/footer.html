@@ -11,13 +11,11 @@
         {% endif %}
       {% endfor %}
     {% endif %}
-      
-      <li>
-        <a href="mailto:facereader@witbacon.com" title="Email" rel="nofollow noopener noreferrer">
-            <i class="fas fa-envelope-square fa-inverse" aria-hidden="true"></i>
 
-        </a>
-      </li>
+    {% if site.footer.email %}
+        {% if email.label and email.url %}
+          <li><a href="mailto:{{ mail.url }}" rel="nofollow noopener noreferrer"><i class="{{ mail.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ mail.label }}</a></li>
+        {% endif %}     
       
     {% unless site.atom_feed.hide %}
       <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>

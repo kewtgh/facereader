@@ -158,7 +158,10 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: 
-
+  email:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "facereader@witbacon.com"
 
 # Reading Files
 include:
