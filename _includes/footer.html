@@ -9,10 +9,12 @@
         {% if link.label and link.url %}
           <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
         {% endif %}
-        {% unless link.label.email %}
-          <li><a href="mailto:{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
+        {% unless link.label.email and link.url %}
         {% endunless %}
       {% endfor %}
+      {% if site.footer.links.label.email and link.url %}
+        <li><a href="mailto:{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
+      {% endif %}
     {% endif %}
   
     {% unless site.atom_feed.hide %}
