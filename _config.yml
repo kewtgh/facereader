@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "sunrise" # "air", "aqua", "contrast", "dark", "dirt"
 locale                   : "zh-CN"
 title                    : "Witbacon"
 title_separator          : "|"
-subtitle                 : "用智慧阅读一切" # site tagline that appears below site title in masthead
+subtitle                 : "解读人性，分析企业，洞悉社会，掌握趋势。" # site tagline that appears below site title in masthead
 name                     : "Witbacon"
 description              : "Write for Thinkers."
 url                      : "https://kewtgh.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"

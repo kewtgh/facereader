@@ -5,31 +5,34 @@ header:
   overlay_color: "#333"
   teaser: /assets/img/page-header-image-tech1-teaser.jpg
 categories:
-  - 阅相识人
-  - 企业剖析
-  - AI
-tags: 
-  - 人工智能
-  - 大数据
-  - 第四范式
-  - 4 Paradigm
-  - 企业管理
-  - CEO
-  - CFO
-  - CHO
-  - CMO
-  - CTO
-  - 首席执行官
-  - 首席运营官
-  - 首席技术官
-share: true
-toc: true
-sidebar:
+
+- 阅相识人
+- 企业剖析
+- AI
+  tags: 
+- 人工智能
+- 大数据
+- 第四范式
+- 4 Paradigm
+- 企业管理
+- CEO
+- CFO
+- CHO
+- CMO
+- CTO
+- 首席执行官
+- 首席运营官
+- 首席技术官
+  share: true
+  toc: true
+  sidebar:
   title: "经典系列"
   nav: sidebar-series-AI
-last_modified_at: 2021-07-21T20:25:52-05:00
+  last_modified_at: 2021-07-21T20:25:52-05:00
+
 ---
-> ​	最近受朋友之托，分析了一家目前的独角兽公司——第四范式，第一期的结论很简单，看起来光鲜亮丽，但是走不远。公司的CEO和COO角色都不合适，如果一两年之内找不到合适的继任者，公司必定难以避免破产的命运。
+
+> ​    最近受朋友之托，分析了一家目前的独角兽公司——第四范式，第一期的结论很简单，看起来光鲜亮丽，但是走不远。公司的CEO和COO角色都不合适，如果一两年之内找不到合适的继任者，公司必定难以避免破产的命运。
 
 &emsp;&emsp;目前简单更新了一下人员资料，补充三位：COO，CFO 和Delivery Head。
 
@@ -51,5 +54,4 @@ last_modified_at: 2021-07-21T20:25:52-05:00
 
 &emsp;&emsp;第四范式的核心团队情况评分：
 
-![4paradigm](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/4paradigm.png)
-
+![4paradigm](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/23-21-54-55-4paradigm.png)
