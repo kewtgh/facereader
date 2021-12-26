@@ -70,7 +70,7 @@ last_modified_at: 2021-08-02T20:25:52-05:00
 
 &emsp;&emsp;小鹏汽车的核心人员任用情况评分：
 
-![xiaopeng](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/xiaopeng.png)
+<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/xiaopeng.png" alt="xiaopeng"  />
 
 ---
 

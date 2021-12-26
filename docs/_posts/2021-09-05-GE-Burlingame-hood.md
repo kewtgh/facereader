@@ -42,7 +42,7 @@ last_modified_at: 2021-09-05T19:25:52-05:00
 
 ### 埃德·胡德（Ed hood）
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Edward E. Hood.jpg" alt="Edward E. Hood" style="vertical-align:middle;" />
+<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Edward E. Hood.jpg" alt="Edward E. Hood" style="vertical-align:middle;" /></div>
 
 &emsp;两次“机舱面试”中，埃德·胡德都获得了高层的投票，所获得的高层票数也仅次于斯坦利·格尔特，可见其是非常被认可的。但最后或许是因为斯坦利·格尔特的性格过于倔强，或许是雷吉·琼斯有意推举杰克·韦尔奇做接班人，所以特意淘汰了和韦尔奇有矛盾的斯坦利·格尔特。但这也使得埃德·胡德看起来更有胜算，那他又有什么样的履历呢？
 
@@ -50,7 +50,7 @@ last_modified_at: 2021-09-05T19:25:52-05:00
 
 &emsp;胡德的性格和斯坦利·格尔特完全不同，胡德**平和、稳健，颇有长者之风**，是副手的不二人选。也因此胡德接班人的竞争中落败后，依然能和杰克·韦尔奇共事十三年。也因此我们能有另一张胡德的照片：
 
-![Welch-with-Lawrence-Bossidy-and-Ed-Hood-scaled](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Welch-with-Lawrence-Bossidy-and-Ed-Hood-scaled.jpg)
+<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Welch-with-Lawrence-Bossidy-and-Ed-Hood-scaled.jpg" alt="Welch-with-Lawrence-Bossidy-and-Ed-Hood-scaled"  />
 
 &emsp;照片中最左边就是胡德，最后边则是韦尔奇。
 

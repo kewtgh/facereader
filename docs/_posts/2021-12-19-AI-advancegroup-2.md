@@ -86,7 +86,7 @@ last_modified_at: 2021-12-19T19:25:52-05:00
 
 &emsp;&emsp;对于企业的一把手而言，极度聪明，以及极度聪明产生的高冷，都不利于其成功。大多数有所成就的企业家，都非常谦逊，没有丝毫高人一等的感觉，比如下面几位：
 
-![俞敏洪-王兴-张邦鑫-雷军.jpg](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/19-17-37-47-%E4%BF%9E%E6%95%8F%E6%B4%AA-%E7%8E%8B%E5%85%B4-%E5%BC%A0%E9%82%A6%E9%91%AB-%E9%9B%B7%E5%86%9B.jpg)
+<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/19-17-37-47-%E4%BF%9E%E6%95%8F%E6%B4%AA-%E7%8E%8B%E5%85%B4-%E5%BC%A0%E9%82%A6%E9%91%AB-%E9%9B%B7%E5%86%9B.jpg" alt="俞敏洪-王兴-张邦鑫-雷军.jpg"  />
 
 ## 五、CSO  [Bernard Chan](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/18-21-38-06-Bernard%20Chan.jpg)
 
@@ -148,7 +148,8 @@ last_modified_at: 2021-12-19T19:25:52-05:00
     - 智慧零售货架识别：
     
       
-     
+    
+      
    
    **这几项服务，中国大陆企业遍地都是，惶且不论AI视觉类的“AI四小龙”，单是文件识别方面，合合信息的扫描全能王的地位就无法撼动**。但在中国大陆也并非完全没有市场，**中国大陆的海外客户可能会是更好的选择**，比如银行领域的汇丰、渣打、花旗、星展、德意志银行、华侨银行、瑞银、恒生银行、东亚银行和南商等等。**因为中国大陆的人工智能企业都有面临美国制裁的风险，外资企业对使用中国大陆的AI服务心存芥蒂**。 所以，此类服务也许会获得这些外资企业的亲睐。
    
@@ -170,7 +171,7 @@ last_modified_at: 2021-12-19T19:25:52-05:00
 
 &emsp;&emsp;整体评价，领创集团的团队评分为：
 
-![advancegroup-team-assess.png](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/19-14-36-13-advancegroup-team-assess.png)
+<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/19-14-36-13-advancegroup-team-assess.png" alt="advancegroup-team-assess.png"  />
 
 ---
 

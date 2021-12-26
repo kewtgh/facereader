@@ -79,7 +79,7 @@ last_modified_at: 2021-10-19T22:25:52-05:00
 
 &emsp;&emsp;专诸是春秋时吴国的刺客，在公子光宴请吴王僚的酒席上，不顾生死，以一人之力刺死吴王僚，最后他自己也被吴王僚的侍卫当场杀死；曹刿是春秋时鲁国人，周文王的后人，在齐国攻打鲁国的战争中，帮助鲁国战胜齐国，著名的“一鼓作气”典故就出自于此。随后，齐桓公与鲁庄公相会时，他又持匕首胁迫齐桓公订立盟约，并收回鲁国失地。
 
-![1-150](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/1-150.jpg)
+<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/1-150.jpg" alt="曹刿论战"  />
 
 ## **第四段原文**
 

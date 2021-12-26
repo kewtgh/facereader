@@ -48,7 +48,7 @@ last_modified_at: 2021-08-15T20:25:52-05:00
 
 
 
-![战争耗费](https://raw.githubusercontent.com/kewtgh/PicSunflowers/main/img/战争耗费.jpg)
+<img src="https://raw.githubusercontent.com/kewtgh/PicSunflowers/main/img/战争耗费.jpg" alt="战争耗费"  />
 
 &emsp;再介绍一下“千里馈粮”：
 
@@ -60,7 +60,7 @@ last_modified_at: 2021-08-15T20:25:52-05:00
 
 &emsp;&emsp;按照一半粮食，一半干草来计算，去时一头牛每天需要11公斤饲料，返回时需要6.7公斤饲料。来回运送一趟，牛就需要消耗320.5公斤饲料；
 
-![战争耗费1](https://raw.githubusercontent.com/kewtgh/PicSunflowers/main/img/战争耗费1.jpg)
+<img src="https://raw.githubusercontent.com/kewtgh/PicSunflowers/main/img/战争耗费1.jpg" alt="战争耗费1"  />
 
 &emsp;&emsp;假设每辆车需要一位赶车人，来回一趟赶车人就需要耗费52.5公斤粮食；合计来回一趟在运输过程中吃掉的口粮就高达373公斤，还不算运输途中的其他损耗。
 
@@ -68,7 +68,7 @@ last_modified_at: 2021-08-15T20:25:52-05:00
 
 &emsp;&emsp;假设按照500里分两次接力运输，来回就需要17天，人和牛路上要吃掉182.4公斤口粮，算下来半程的运输效率只有46.0%，因为需要分2次接力，所以两次的合计运输效率就是46.0%的2次方，运输效率只有21.1%。
 
-![战争耗费2](https://raw.githubusercontent.com/kewtgh/PicSunflowers/main/img/战争耗费2.jpg)
+<img src="https://raw.githubusercontent.com/kewtgh/PicSunflowers/main/img/战争耗费2.jpg" alt="战争耗费2"  />
 
 &emsp;&emsp;这17天中，10万部队要吃掉2550吨粮食，随行牲畜大约要吃掉867吨饲料，合计3417吨，按照前面牛的运输效率，需要调动约47984辆牛车不间断运输。
 
@@ -78,7 +78,7 @@ last_modified_at: 2021-08-15T20:25:52-05:00
 
 &emsp;&emsp;如果没办法征集到这么多的牛和车，牛和车的数量只能有一半，那另外一半就只能靠人来扛了。就算一个人能扛50公斤，按照人的运力，每天行程可能远远无法达到50里，那需要的人力就不止是牛车数量的6倍，60万人了，可能就需要100万人来弥补运力。
 
-![战争耗费3](https://raw.githubusercontent.com/kewtgh/PicSunflowers/main/img/战争耗费3.jpg)
+<img src="https://raw.githubusercontent.com/kewtgh/PicSunflowers/main/img/战争耗费3.jpg" alt="战争耗费3"  />
 
 &emsp;&emsp;这仅仅是计算了口粮的耗费，更不用说打仗时要缔结外邦，结交各类贤达，收买对方的人员和情报等等的花费。
 

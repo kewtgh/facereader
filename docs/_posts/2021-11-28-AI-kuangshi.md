@@ -57,7 +57,7 @@ last_modified_at: 2021-11-28T22:25:52-05:00
 
 具体服务和产品如下图（大图请[点击](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/旷视科技-产品和服务.jpg)）：
 
-![旷视科技-产品和服务](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/旷视科技-产品和服务.jpg)
+<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/旷视科技-产品和服务.jpg" alt="旷视科技-产品和服务"  />
 
 &emsp;&emsp;上图内容为根据其官网内容整理。
 
@@ -199,7 +199,7 @@ last_modified_at: 2021-11-28T22:25:52-05:00
 
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;二）从财务表现方面来看
 
-![旷视科技财务数据表](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/旷视科技财务数据表.png)
+<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/旷视科技财务数据表.png" alt="旷视科技财务数据表"  />
 
 &emsp;&emsp;从财务数据来看，旷视科技四年的总营收约为38亿元，亏损额却高达近138亿，并且其毛利率是“四小龙”中唯一逐年降低的，**2020年的毛利率低到只有33%左右，远低于行业平均水平**。
 
@@ -219,7 +219,7 @@ last_modified_at: 2021-11-28T22:25:52-05:00
 
 &emsp;&emsp;整体评价，商汤科技的团队评分为：
 
-![yitu](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/megvii.png)
+<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/megvii.png" alt="yitu"  />
 
 ---
 

@@ -36,7 +36,7 @@ last_modified_at: 2021-09-12T10:25:52-05:00
 
 ### 杰夫·伊梅尔特（Jeff Immelt）
 
-![Jeff-Immelt7](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Jeff-Immelt7.jpg)
+<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Jeff-Immelt7.jpg" alt="Jeff-Immelt7"  /></div>
 
 &emsp;伊梅尔特1956年生于辛辛那提，其父亲就是一位GE人，并且在GE工作了38年，直至退休。伊梅尔特就读于达特茅斯学院，并于1978年获得应用数学和经济学双学士学位。毕业后，他加入P&G短暂工作了一段时间。离开之后，进入哈佛商学院就读，于1982年获得MBA学位。
 
@@ -52,7 +52,7 @@ last_modified_at: 2021-09-12T10:25:52-05:00
 
 &emsp;我必须放上一张他三个年龄段的对比才能准确描述他的性格：
 
-![Jeff-Immelt-3pic](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Jeff-Immelt-3pic.jpg)
+<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Jeff-Immelt-3pic.jpg" alt="Jeff-Immelt-3pic"  />
 
 &emsp;**青年**的伊梅尔特刚刚升任GE的GEO，意气风发，他身上最明显的特点是：**自信，野心，喜欢冒险，掌控力高。**
 
@@ -64,7 +64,7 @@ last_modified_at: 2021-09-12T10:25:52-05:00
 
 &emsp;我们来比较一下这两位超过六旬的老人：
 
-![Baffet&Munger](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Baffet&Munger.jpg)
+<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Baffet&Munger.jpg" alt="Baffet&Munger"  />
 
 &emsp;上图中，巴菲特63岁，芒格71岁，两位老人所展现出的斗志和敏锐与逾六旬的伊梅尔特相比，有天壤之别。
 
@@ -78,11 +78,11 @@ last_modified_at: 2021-09-12T10:25:52-05:00
 
 ### 为什么韦尔奇会选择伊梅尔特？
 
-![welch&Immelt](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/welch&Immelt.jpg)
+<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/welch&Immelt.jpg" alt="welch&Immelt"  />
 
 &emsp;韦尔奇在选择伊梅尔特的时候是否意识到伊梅尔特过于乐观的状态？我们来看看2000年时韦尔奇的照片。
 
-![Jack-Welch3-2000](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Jack-Welch3-2000.jpg)
+<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Jack-Welch3-2000.jpg" alt="Jack-Welch3-2000"  />
 
 &emsp;照片中的韦尔奇并非像伊梅尔特一样得意忘形，多年的GE掌门人的经验让他一直保留着对任何事审慎的态度！但是韦尔奇太渴望一个完美的结局了！他的GE生涯非常成功，也成为全球历史上最成功的CEO之一，所以**他希望自己的落幕更加完美**。
 
@@ -103,7 +103,7 @@ last_modified_at: 2021-09-12T10:25:52-05:00
 
 ### 那雷吉·琼斯为什么能选出韦尔奇呢？
 
-![Welch & Jones](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Welch & Jones.jpg)
+<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Welch & Jones.jpg" alt="Welch & Jones"  /></div>
 
 &emsp;琼斯的性格特点是：**眼光犀利，精明能干。**而且琼斯完全不是一个把**“名”**放在自己心理追求上的人。
 
