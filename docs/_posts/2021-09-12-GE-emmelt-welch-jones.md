@@ -78,7 +78,7 @@ last_modified_at: 2021-09-12T10:25:52-05:00
 
 ### 为什么韦尔奇会选择伊梅尔特？
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/welch&Immelt.jpg" alt="welch&Immelt"  />
+<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/welch&Immelt.jpg" alt="welch&Immelt"  /></div>
 
 &emsp;韦尔奇在选择伊梅尔特的时候是否意识到伊梅尔特过于乐观的状态？我们来看看2000年时韦尔奇的照片。
 
