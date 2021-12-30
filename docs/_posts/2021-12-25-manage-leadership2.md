@@ -19,6 +19,9 @@ tags:
   - 传统权威
   - 魅力权威
   - 法理权威
+sidebar:
+  title: "经典系列"
+  nav: sidebar-series-leadership
 toc: true
 last_modified_at: 2021-12-25T19:25:52-05:00
 ---
