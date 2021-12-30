@@ -18,7 +18,7 @@ sidebar:
   title: "经典系列"
   nav: sidebar-series-leadership
 toc: true
-last_modified_at: 2021-12-16T19:25:52-05:00
+last_modified_at: 2021-12-30T19:25:52-05:00
 ---
 
 &emsp;&emsp;上期介绍了“权威的必要性”，这期介绍“如何树立及维持权威”。
