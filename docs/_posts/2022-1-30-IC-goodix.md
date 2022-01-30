@@ -27,8 +27,8 @@ tags:
   - 智能终端
   - 汽车电子
 sidebar:
-  title: "经典系列"
-  nav: sidebar-series-manufacture
+  title: "系列企业剖析"
+  nav: sidebar-series-IC
 toc: true
 last_modified_at: 2021-11-28T22:25:52-05:00
 ---

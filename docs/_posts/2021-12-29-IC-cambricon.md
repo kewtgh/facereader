@@ -25,8 +25,8 @@ tags:
   - 陈天石
   - 陈云霁
 sidebar:
-  title: "经典系列"
-  nav: sidebar-series-manufacture
+  title: "系列企业剖析"
+  nav: sidebar-series-IC
 toc: true
 last_modified_at: 2021-12-29T22:25:52-05:00
 ---

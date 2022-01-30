@@ -43,7 +43,9 @@ sidebar-series-manufacture:
          url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ge/GE-emmelt-welch-jones/
        - title: "通用的崛起——拉里·卡尔普时代"
          url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ge/GE-flannery-culp/
-  - title: "芯片半导体"
+
+sidebar-series-IC:
+  - title: "芯片半导体系列企业解析"
     children:
        - title: "一、寒武纪"
          url: https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-cambricon/
