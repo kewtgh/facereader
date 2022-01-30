@@ -1,5 +1,5 @@
 ---
-title: 汇顶科技
+title: 全球安卓手机第一大指纹识别芯片供应商——汇顶科技大解析
 excerpt: "作为全球安卓手机第一大指纹识别芯片供应商，汇顶科技2020年的市值曾达到1700亿规模，但是2021年却辉煌不再，市值迅速降到420多亿，是什么导致了市值的巨幅降低，汇顶科技又有哪些经营隐患呢？"
 header:
   teaser: /assets/img/page-header-image-tech5-teaser.jpg
@@ -26,6 +26,9 @@ tags:
   - 物联网
   - 智能终端
   - 汽车电子
+sidebar:
+  title: "经典系列"
+  nav: sidebar-series-manufacture
 toc: true
 last_modified_at: 2021-11-28T22:25:52-05:00
 ---
