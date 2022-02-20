@@ -2,7 +2,7 @@
 title: 从那条“徐州八孩母亲”脖子上的铁链说起
 excerpt: "当一个人被像狗一样拴住时，旁观者却习以为常，这就已经是毫无人性的表现了；但却有人向被铁链拴住者施以虚伪的同情，再将此表演拍做视频炫耀，以示自己的仁慈与高尚。"
 header:
-  teaser: /assets/img/page-header-image-eye4-teaser.jpg
+  teaser: /assets/img/page-header-image-eye4-500x300.jpg
   overlay_image: /assets/img/page-header-image-eye4.jpg # Add image post (optional)
   overlay_filter: 0.4
 categories:
