@@ -24,7 +24,7 @@ sidebar:
   title: "经典系列"
   nav: sidebar-series-leadership
 toc: true
-last_modified_at: 2021-12-16T19:25:52-05:00
+last_modified_at: 2021-01-26T19:25:52-05:00
 ---
 
 &emsp;&emsp;不知道是谁先起了这个头，将“正直”列为优秀领导者的品质之一。但最先提出这个词的，肯定是一位非常有影响力的人，因为后来者几乎都毫不犹豫地将之列入优秀领导者的必要品质之中，但是真的如此吗？
