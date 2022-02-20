@@ -47,7 +47,7 @@ last_modified_at: 2022-02-20T22:25:52-05:00
 
 &emsp;&emsp;韦尔股份一跃成为国内最顶尖的芯片企业之一，但是其快速的成长主要基于不间断的并购，而这会影响企业的发展吗？韦尔股份的前景如何呢？
 
-## 一、服务与产品简介
+## 一、服务与产品简介【[大图](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/韦尔股份.jpg)】
 
 ![韦尔股份](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/韦尔股份.jpg)
 
