@@ -2,8 +2,8 @@
 title: 普京的面相与战争的分析
 excerpt: "俄罗斯发动了对乌克兰的侵略战争，普京的性格有多大影响呢？从面相中，我们能看出普京的什么性格？"
 header:
-  teaser: /assets/img/page-header-image-tesla-wit-500x300.jpg
-  overlay_image: /assets/img/page-header-image-wit.jpg # Add image post (optional)
+  teaser: /assets/img/page-header-image-politics3-teaser.jpg
+  overlay_image: /assets/img/page-header-image-politics3.jpg # Add image post (optional)
   overlay_filter: 0.5
 categories:
   - 阅相识人
@@ -50,7 +50,7 @@ last_modified_at: 2022-03-04T22:25:52-05:00
 
 &emsp;&emsp;1966年时，普京十四岁，上中学。
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-1966.jpg" alt="putin-1966" style="zoom:50%;" /></div>
+<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-1966.jpg" alt="putin-1966" style="zoom:80%;" /></div>
 
 &emsp;&emsp;此时赫鲁晓夫已经在政变后下台，勃烈日涅夫成为苏联的第一书记。勃烈日涅夫上台初期进行了一定的改革，提高了民众的福利，但却同时鼓吹斯大林的功绩，虽然在军事上苏联的发展很快，但经济上却趋于停滞，整个勃烈日涅夫统治的十八年被称为“停滞时代”。
 
@@ -88,7 +88,7 @@ last_modified_at: 2022-03-04T22:25:52-05:00
 
 &emsp;&emsp;第二任期中，普京开始他的野心筹划，打击竞争对手，打压媒体言论。在2007年成功将梅德韦杰夫送上总统之位后，卸任总统的普京又被梅德韦杰夫任命为俄罗斯总理。随后，在总统梅德韦杰夫的推动下，俄罗斯国家杜马修改宪法，将总统任期由四年延长为六年。随后，普京又于2012年被选为总统，并于2018年成功连任。
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-2012..jpg" alt="putin-2012." style="zoom:50%;" /></div>
+<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-2012.jpg" alt="putin-2012." style="zoom:50%;" /></div>
 
 &emsp;&emsp;普京的这一系列操作，可谓司马昭之心——路人皆知。为了实现自己独裁统治的愿望，巧立名目，不择手段，普京统治期间多次发生利用刺杀手段打击竞争对手。而此次发动的侵略乌克兰的战争，更是令其与萨达姆、卡扎菲一样，臭名昭著！
 
