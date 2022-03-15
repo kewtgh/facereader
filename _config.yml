@@ -16,17 +16,17 @@ minimal_mistakes_skin    : "sunrise" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "zh-CN"
-title                    : "Witbacon-Write for Profound Thinkers!"
+title                    : "FaceReader-Write for Profound Thinkers!"
 title_separator          : "|"
 subtitle                 : "解读人性，分析企业，洞悉社会，掌握趋势。" # site tagline that appears below site title in masthead
-name                     : "Witbacon"
+name                     : "FaceReader-企业观察"
 description              : "Write for Profound Thinkers."
 url                      : "https://kewtgh.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/"# the subpath of your site, e.g. "/blog"
 repository               : "kewtgh/facereader"# GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "/assets/img/bio-photo-500x300.png"# path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : "/assets/img/logo-witbacon.png"# path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "Witbacon"# overrides the website title displayed in the masthead, use " " for no title
+logo                     : "/assets/img/logo-facereader.png"# path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+masthead_title           : "FaceReader"# overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs            : false # true, false (default)
 words_per_minute         : 350
 chinese_words_per_minute         : 450
