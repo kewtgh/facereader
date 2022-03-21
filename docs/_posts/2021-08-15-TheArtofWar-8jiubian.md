@@ -15,6 +15,7 @@ header:
 sidebar:
   title: "相关系列"
   nav: sidebar-sunzi
+classes: wide
 last_modified_at: 2021-08-17T20:25:52-05:00
 ---
 
