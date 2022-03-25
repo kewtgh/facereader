@@ -8,7 +8,7 @@ header:
 layout: single
 classes: wide
 sidebar:
-  - title: "Witbacon介绍"
+  - title: "FaceReader介绍"
     nav: sidebar-about
 author_profile: false
 show_date: false
