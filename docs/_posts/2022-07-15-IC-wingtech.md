@@ -1,5 +1,5 @@
 ---
-title: 闻泰科技
+title: 闻泰科技——看脸的解读与分析
 excerpt: "安世半导体无疑是2021年以来国内最亮眼的半导体芯片企业，那么收购它的闻泰科技又是怎么样的企业呢？"
 header:
   teaser: /assets/img/page-header-image-tech5-teaser.jpg
