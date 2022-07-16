@@ -38,11 +38,11 @@ last_modified_at: 2021-12-06T22:25:52-05:00
 
 &emsp;&emsp;2003年，毕业于加州大学伯克利分校的马克·塔彭宁，与毕业于伊利诺伊大学香槟分校的马丁·艾伯哈德，再次合作，创立了Tesla Motors，公司的命名用以纪念物理学家尼古拉·特斯拉。二人此前曾于1997年创立电子书公司NuvoMedia，并于2000年出售给Gemstar–TV Guide International。
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/05-16-33-18-%E5%A1%94%E5%BD%AD%E5%AE%81-%E8%89%BE%E4%BC%AF%E5%93%88%E5%BE%B7-Tesla-founder.jpg" alt="塔彭宁-艾伯哈德-Tesla-founder.jpg"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/05-16-33-18-%E5%A1%94%E5%BD%AD%E5%AE%81-%E8%89%BE%E4%BC%AF%E5%93%88%E5%BE%B7-Tesla-founder.jpg" alt="塔彭宁-艾伯哈德-Tesla-founder.jpg"  />
 
 &emsp;&emsp;创立公司后的第二年，塔彭宁和艾伯哈特通过AC Propulsion公司的CEO结识伊隆·马斯克，说服马斯克成为Tesla的A轮投资人，并且任命马斯克担任公司董事长，而艾伯哈特则担任公司CEO。因为公司的经营并不顺利，艾伯哈特在2007年被迫卸任CEO职位，交由Monolithic内存公司的创始人Ze'ev Drori接任；2008年，塔彭宁也从CFO和副总裁的职位退下。至此，Tesla的两位创始人均离开。2008年10月份，马斯克继任为Tesla的CEO。
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/05-16-38-00-Tesla-roadster.jpg" alt="Tesla-roadster.jpg"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/05-16-38-00-Tesla-roadster.jpg" alt="Tesla-roadster.jpg"  />
 
 &emsp;&emsp;Tesla在2008年2月份交付了第一辆电动车，Tesla Roadster；之后又于2009年推出Tesla Model S，并于2012年开始交付；此后又分别于2012年和2016年推出Model X和Model 3；不久后又推出Model Y；截至目前，Tesla总计推出包括卡车在内七款车型，交付总量超过200万辆。
 
@@ -60,11 +60,11 @@ last_modified_at: 2021-12-06T22:25:52-05:00
 
 &emsp;&emsp;伊隆·马斯克1971年生于南非的行政首都，比勒陀利亞。父亲是英荷混血南非人，是一名飞行员、水手和工程师；母亲生于加拿大，长于南非，是一名模特和营养师。
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/05-16-38-49-Maye-Errol-Musk-father-mother.jpg" alt="Maye-Errol-Musk-father-mother.jpg"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/05-16-38-49-Maye-Errol-Musk-father-mother.jpg" alt="Maye-Errol-Musk-father-mother.jpg"  />
 
 马斯克有一名小一岁的弟弟和一名小三岁的妹妹，    在他九岁时父母离婚，跟随父亲生活。
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/05-16-38-59-Musk-brother-sister.jpg" alt="Musk-brother-sister.jpg"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/05-16-38-59-Musk-brother-sister.jpg" alt="Musk-brother-sister.jpg"  />
 
 &emsp;&emsp;马斯克大学之前都在南非度过；十岁时，拥有了第一台电脑，并开始学习编程；十二岁时曾将自己编程的电子游戏卖出500美金。马斯克在申请护照期间曾短暂就读于南非比勒陀利亞大学，之后便前往了加拿大。
 
@@ -84,7 +84,7 @@ last_modified_at: 2021-12-06T22:25:52-05:00
 
 ## 三、面相与性格分析
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/05-16-39-23-Elon-musk-all.jpg" alt="Elon-musk-all.jpg"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/05-16-39-23-Elon-musk-all.jpg" alt="Elon-musk-all.jpg"  />
 
 &emsp;&emsp;马斯克的**幼年**真是单纯，**心地纯善而又富于幻想**；从**青春期到初创业时**，马斯克依然**保持着他的善良和单纯**，对世界充满美好的期望，略有不同的是，青春期显得性格更为柔弱些，这或许与他在成年之前曾经受到同学的欺凌有关。他曾被同学殴打至住院，还因此做了鼻子整容手术。长期被欺凌的情况下，人会丧失挺身而出的勇气，他在上图中表现出较明显的此类气质。但也正如杰夫·贝佐斯曾说过的，“聪明是一种天赋，而善良是一种选择 ，选择比天赋更重要。”因为马斯克内心的善良，年少时经历的暴力和欺凌，并没有给他性格带来多少负面能量，他没有变得更易退缩，也没有变得充满仇恨，他用善良消解了这些。但是，相对他中年时体现出的强硬，青年时他还是显得柔弱许多，这也许是源于心理补偿，激励他不断变得更加强大。
 

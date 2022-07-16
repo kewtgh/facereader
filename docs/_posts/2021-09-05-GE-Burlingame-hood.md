@@ -50,7 +50,7 @@ last_modified_at: 2021-09-05T19:25:52-05:00
 
 &emsp;胡德的性格和斯坦利·格尔特完全不同，胡德**平和、稳健，颇有长者之风**，是副手的不二人选。也因此胡德接班人的竞争中落败后，依然能和杰克·韦尔奇共事十三年。也因此我们能有另一张胡德的照片：
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Welch-with-Lawrence-Bossidy-and-Ed-Hood-scaled.jpg" alt="Welch-with-Lawrence-Bossidy-and-Ed-Hood-scaled"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Welch-with-Lawrence-Bossidy-and-Ed-Hood-scaled.jpg" alt="Welch-with-Lawrence-Bossidy-and-Ed-Hood-scaled"  />
 
 &emsp;照片中最左边就是胡德，最后边则是韦尔奇。
 

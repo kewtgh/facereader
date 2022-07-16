@@ -39,7 +39,7 @@ last_modified_at: 2021-12-30T19:25:52-05:00
 
 &emsp;&emsp;听起来你说的是：
 
-![american-captain.jpg](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/30-00-19-54-american-captain.jpg)
+![american-captain.jpg](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/30-00-19-54-american-captain.jpg)
 
 &emsp;&emsp;哈哈！没错！美国队长就是人们对完美领导者期望的投射。
 

@@ -33,7 +33,7 @@ last_modified_at: 2021-07-29T20:25:52-05:00
 
 &emsp;&emsp;因为字节跳动已经相当有规模，高管数量达数十人，不便于一一分析，我们只挑选其中最核心的六人，分别是创始人张一鸣，现任董事长张利东，联合创始人兼CEO梁汝波，北京字节跳动CEO、中国区业务总负责人张楠，CFO兼TikTok CEO周受资，大力教育CEO陈林。
 
-## 一、创始人 张一鸣 [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/张一鸣.jpeg)
+## 一、创始人 张一鸣 [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/张一鸣.jpeg)
 
 &emsp;&emsp;张一鸣2006年2月加入酷讯，2007年被提拔为技术总监，2008年相继进入微软和饭否。2009年酷讯被亿客行收购，同年10月，他首次创业，成立了垂直房产搜索引擎公司九九房。 2011年， 辞去九九房CEO的职位，于2012年创立了字节跳动。
 
@@ -47,7 +47,7 @@ last_modified_at: 2021-07-29T20:25:52-05:00
 
 &emsp;&emsp;
 
-## 二、董事长 张利东 [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/张利东.jpg)
+## 二、董事长 张利东 [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/张利东.jpg)
 
 &emsp;&emsp;张利东曾任职于太原都市生活网，2002年加入《京华时报》担任编辑和记者，后升任副总裁兼广告中心主任。2013年加入字节跳动担任高级副总裁，曾在内部孵化穿山甲、懂车帝、幸福里，以及部分小游戏等产品。2020年3月12日升任北京字节跳动董事长。
 
@@ -61,7 +61,7 @@ last_modified_at: 2021-07-29T20:25:52-05:00
 
 &emsp;&emsp;
 
-## 三、联合创始人兼CEO 梁汝波 [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/梁汝波1.png)
+## 三、联合创始人兼CEO 梁汝波 [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/梁汝波1.png)
 
 &emsp;&emsp;梁汝波 2009年与张一鸣共同创办垂直房产搜索引擎“九九房”。2012年与张一鸣共同创办字节跳动。2012年到2016年担任字节跳动产品研发负责人，负责字节跳动、头条号、广告系统和用户增长系统等产品和业务。2016年起负责飞书和效率工程。2020年起负责集团人力资源和管理等工作。2021年5月20日任字节跳动CEO。 
 
@@ -71,11 +71,11 @@ last_modified_at: 2021-07-29T20:25:52-05:00
 
 &emsp;&emsp;但让梁汝波担任CEO也并非完全没有问题。在从事研发时，梁汝波完全能发挥其性格优势，因为研发是一件苦力活。但是从事CEO则需要更多决策，而梁汝波在这些方面还稍稍欠缺，在最新的一张[照片](https://www.36kr.com/p/1238042714427783)中，就能看出他一夜之间成为CEO的受宠若惊。这往往会助长其不足的决策力造成的失误程度。
 
-## 四、北京字节跳动CEO 张楠 [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/张楠.png)
+## 四、北京字节跳动CEO 张楠 [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/张楠.png)
 
 &emsp;&emsp;2013年，张楠创立了图片类社区App“图吧”，之后该App被字节跳动收购。此后，张楠加入字节跳动开始负责字节跳动的UGC业务，主导内涵段子产品。 2016年9月，张楠带领字节跳动团队推出了抖音短视频等产品的初始版本。 2018年，张楠担任北京字节跳动CEO兼市场品牌负责人，负责抖音短视频、抖音火山版、市场品牌等工作。 2020年3月12日起，张楠担任北京字节跳动CEO，负责字节跳动中国业务的产品、运营、市场和内容合作，包括内涵段子/皮皮虾、今日头条、抖音、直播、电商、西瓜视频、搜索等业务和产品。
 
-&emsp;&emsp;也许是女孩子比较擅长化妆的关系，网上能找到至少十张看起来完全不同个性的张楠照片【[Photo2](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/张楠1.jpg),&emsp;[Photo3](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/张楠3.jpg),&emsp;[Photo4](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/张楠4.jpg),&emsp;[Photo5](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/张楠5.jpg)】，其不同的照片中，大致能体现三个性格特征：**热爱生活，充满决心和凌厉**。
+&emsp;&emsp;也许是女孩子比较擅长化妆的关系，网上能找到至少十张看起来完全不同个性的张楠照片【[Photo2](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/张楠1.jpg),&emsp;[Photo3](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/张楠3.jpg),&emsp;[Photo4](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/张楠4.jpg),&emsp;[Photo5](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/张楠5.jpg)】，其不同的照片中，大致能体现三个性格特征：**热爱生活，充满决心和凌厉**。
 
 &emsp;&emsp;热爱生活，则会成为一个**有趣的人**，才能创造满足大众的生活型产品。不过这点上，张楠的照片有很矛盾的两面，偶尔极具生活气息，偶尔则又有些不近烟火。但能打造内涵段子这样产品的人，应该是有生活气息的人。
 
@@ -83,7 +83,7 @@ last_modified_at: 2021-07-29T20:25:52-05:00
 
 &emsp;&emsp;**凌厉，主要表现于行事果决而又能超脱情感的约束。**张楠的众多照片中能看出她是一位行动迅速的人，但部分照片表现出了果决。理论上，一位凭能力而成为身居高位的人，如不能果决行事是极为困难的。所以，我倾向于认可她部分照片中表现出的果决力。
 
-## 五、CFO 周受资 [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/周受资2.jpg)
+## 五、CFO 周受资 [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/周受资2.jpg)
 
 &emsp;&emsp;周受资之前曾为小米国际部总裁兼CFO，2021年出任字节跳动CFO兼 TikTok CEO。
 
@@ -97,7 +97,7 @@ last_modified_at: 2021-07-29T20:25:52-05:00
 
 &emsp;&emsp;综合看来，字节跳动任命其为TikTok CEO兼字节跳动CFO更多是看重其带来的讨人喜爱的效应，而在管理整个公司方面我认为其能力略欠缺。主要还是因为其**性格过于Nice**，不能洞察人性之恶。但前者的需求和后者的需求不能兼顾，在平衡利弊后，仍然任命了他，是一种妥协的结果。
 
-## 六、大力教育CEO 陈林 [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/陈林1.jpg)
+## 六、大力教育CEO 陈林 [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/陈林1.jpg)
 
 &emsp;&emsp;陈林于2012年3月作为早期核心员工加入字节跳动，先后担任多款核心产品的产品经理，2018年11月起，陈林出任今日头条CEO一职。 2019年，成为字节跳动创新业务负责人。 2020年10月，陈林出任大力教育CEO。
 
@@ -131,4 +131,4 @@ last_modified_at: 2021-07-29T20:25:52-05:00
 
 &emsp;&emsp;字节跳动的核心人员任用情况评分：
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/bytedance.png" alt="bytedance"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/bytedance.png" alt="bytedance"  />

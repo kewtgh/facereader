@@ -32,7 +32,7 @@ last_modified_at: 2021-12-09T19:25:52-05:00
 
 ## 三、吕思勉先生
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/吕思勉-all.jpg" title="" alt="吕思勉-all" data-align="center">
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/吕思勉-all.jpg" title="" alt="吕思勉-all" data-align="center">
 
 > “秦桧一定要跑回来，正是他爱国之处，始终坚持和议，是他有识力、肯负责任之处。”
 > 
@@ -58,7 +58,7 @@ last_modified_at: 2021-12-09T19:25:52-05:00
 
 ## 四、钱穆先生
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/钱穆-all.jpg" title="" alt="钱穆-all" data-align="center">
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/钱穆-all.jpg" title="" alt="钱穆-all" data-align="center">
 
 > - “一、当信任何一国之国民，尤其是自称知识在水平线以上之国民，对其本国已往历史，应该略有所知。(否则只算一有知识的人，不能算一有知识的国民。)
 > - 二、所谓对其本国已往历史略有所知者，尤必附随一种对其本国已往历史之温情与敬意。(否则只算知道了一些外国史，不得云对本国史有知识。)

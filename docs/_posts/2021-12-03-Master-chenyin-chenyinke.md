@@ -38,7 +38,7 @@ last_modified_at: 2021-12-03T19:25:52-05:00
 
 ## 一、陈垣先生
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/陈垣-all.jpg" title="" alt="陈垣-all" data-align="center">
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/陈垣-all.jpg" title="" alt="陈垣-all" data-align="center">
 
 > “避讳为中国特有之风俗，其俗起于周，成于秦，盛于唐宋，其历史垂二千年。其流弊足以淆乱古文书，然反而利用之，则可以解释古文书之疑滞，辨别古文书之真伪及时代，识者便焉。盖讳字各朝不同，不啻为时代之标志。”
 > 
@@ -68,7 +68,7 @@ last_modified_at: 2021-12-03T19:25:52-05:00
 
 ## 二、陈寅恪先生
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/陈寅恪-all.jpg" title="" alt="陈寅恪-all" data-align="center">
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/陈寅恪-all.jpg" title="" alt="陈寅恪-all" data-align="center">
 
 > “士之读书治学，盖将以脱心志于俗谛之桎梏，真理因得以发扬。思想而不自由，毋宁死耳。斯古今仁圣所同殉之精义，夫岂庸鄙之敢望。先生以一死见其独立自由之意志，非所论于一人之恩怨，一姓之兴亡。”
 > 

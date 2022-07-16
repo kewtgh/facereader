@@ -52,7 +52,7 @@ last_modified_at: 2021-09-12T10:25:52-05:00
 
 &emsp;我必须放上一张他三个年龄段的对比才能准确描述他的性格：
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Jeff-Immelt-3pic.jpg" alt="Jeff-Immelt-3pic"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Jeff-Immelt-3pic.jpg" alt="Jeff-Immelt-3pic"  />
 
 &emsp;**青年**的伊梅尔特刚刚升任GE的GEO，意气风发，他身上最明显的特点是：**自信，野心，喜欢冒险，掌控力高。**
 
@@ -64,7 +64,7 @@ last_modified_at: 2021-09-12T10:25:52-05:00
 
 &emsp;我们来比较一下这两位超过六旬的老人：
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Baffet&Munger.jpg" alt="Baffet&Munger"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Baffet&Munger.jpg" alt="Baffet&Munger"  />
 
 &emsp;上图中，巴菲特63岁，芒格71岁，两位老人所展现出的斗志和敏锐与逾六旬的伊梅尔特相比，有天壤之别。
 
@@ -82,7 +82,7 @@ last_modified_at: 2021-09-12T10:25:52-05:00
 
 &emsp;韦尔奇在选择伊梅尔特的时候是否意识到伊梅尔特过于乐观的状态？我们来看看2000年时韦尔奇的照片。
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Jack-Welch3-2000.jpg" alt="Jack-Welch3-2000"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Jack-Welch3-2000.jpg" alt="Jack-Welch3-2000"  />
 
 &emsp;照片中的韦尔奇并非像伊梅尔特一样得意忘形，多年的GE掌门人的经验让他一直保留着对任何事审慎的态度！但是韦尔奇太渴望一个完美的结局了！他的GE生涯非常成功，也成为全球历史上最成功的CEO之一，所以**他希望自己的落幕更加完美**。
 

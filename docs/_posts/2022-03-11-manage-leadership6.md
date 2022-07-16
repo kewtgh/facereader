@@ -101,7 +101,7 @@ last_modified_at: 2022-02-24T19:25:52-05:00
 
 3. **“牺牲”行为在平常应仅仅用做象征性的意义，表明领导者对团队的看重；而在重要时刻，则要凸显关键性的意义。**比如李世民在攻打王世充时，就身先士卒，亲自诱敌，差点被活捉，在这样重要时刻的牺牲，也是李世民最终能消灭王世充的关键原因之一。
 
-   <img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/李世民.jpg" alt="李世民" style="zoom:50%;" />
+   <img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/李世民.jpg" alt="李世民" style="zoom:50%;" />
 
 ---
 

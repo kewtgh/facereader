@@ -120,11 +120,11 @@ last_modified_at: 2021-12-25T19:25:52-05:00
 
 &emsp;&emsp;《三国演义》中有多处片段，很形象地表现诸葛亮初随刘备时被质疑的情况，但之后的数次战役中，诸葛亮就证明了自己的实力，从而树立了权威。
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/25-21-38-58-%E8%AF%B8%E8%91%9B%E4%BA%AE.jpg" title="" alt="诸葛亮" data-align="center">
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/25-21-38-58-%E8%AF%B8%E8%91%9B%E4%BA%AE.jpg" title="" alt="诸葛亮" data-align="center">
 
 &emsp;&emsp;但天才若诸葛亮，也需要一些时间和成果证明自己，来树立自己的权威。即使后来刘备死后，诸葛亮的地位更是一人之下，万人之上，但仍然有魏延不服其领导。
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/25-21-39-53-%E9%AD%8F%E5%BB%B6.jpg" title="" alt="魏延" data-align="center">
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/25-21-39-53-%E9%AD%8F%E5%BB%B6.jpg" title="" alt="魏延" data-align="center">
 
 &emsp;&emsp;**可见领导者树立并保持权威是任职全期的重要任务。**
 

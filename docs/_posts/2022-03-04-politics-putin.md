@@ -36,7 +36,7 @@ last_modified_at: 2022-03-04T22:25:52-05:00
 
 &emsp;&emsp;普京1952年出生于圣彼得堡，父亲是苏联海军的一员 ，母亲则是一名工厂女工。他有两个哥哥，不过都在他出生前丧生，一位早夭，一位死于白喉。
 
-![putin-father-mother](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-father-mother.jpg)
+![putin-father-mother](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-father-mother.jpg)
 
 &emsp;&emsp;普京出生的时期正值斯大林统治末期，铁腕统治控制着整个国家，人民生活水平刚刚得以温饱，但因为刚刚结束二战不久，百废待兴，经济发展较快，所以人们都充满乐观；此时，也正值朝鲜战争的胶着时期，联合国军与中国军队正在“三八线”附近进行激烈的战斗，其中就有知名的“上甘岭之战”。
 
@@ -44,7 +44,7 @@ last_modified_at: 2022-03-04T22:25:52-05:00
 
 &emsp;&emsp;此时，正值赫鲁晓夫统治时期，尽管不再有斯大林的警察恐怖统治，但是因为社会结构的问题，经济增长却进一步放缓。对于老百姓来说，这种变化很缓慢，人民的生活不会有太明显的变化。
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-tony.jpg" title="" alt="putin-tony" data-align="center">
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-tony.jpg" title="" alt="putin-tony" data-align="center">
 
 &emsp;&emsp;从照片中可以看出，**普京的性格略有些顽劣成性。他的叛逆心很强，也有极高的自主心理。他只会按照自己的想法做事，并不会在意其他人的看法。**这种情况很大程度是因为环境与教育的关系，**他的父亲笃信男人就该坚强、可靠的信条，且对自己的信念与想法自信满满；他的母亲则宽厚朴实，知道不能对孩子太过溺爱，但对普京却忍不住地纵容。**但幼年时，普京的家庭还是非常和睦的。这让我想到一部纪录片中的人物，《7UP》中的Tony。但二人的不同之处在于，普京非常清楚自己要什么，而Tony只是觉得捣乱很有趣！
 
@@ -112,7 +112,7 @@ last_modified_at: 2022-03-04T22:25:52-05:00
 
 ## 三、普京性格的关系
 
-![putin-2017-2021](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-2017-2021.jpg)
+![putin-2017-2021](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-2017-2021.jpg)
 
 &emsp;&emsp;普京年轻时的判断力很高，对国家形势有比较清楚的认识，**但是在高位越久，能获取的信息就会越来越单一，这种认知能力就会逐渐退化。**
 

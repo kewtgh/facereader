@@ -25,25 +25,25 @@ last_modified_at: 2021-08-16T20:25:52-05:00
 
 &emsp;&emsp;《兵势篇》开始之前，我们先看一个案例，**大西庇阿在第二次布匿战争中如何巧妙取胜**，从而奠定罗马对迦太基的胜利的。
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/第二次布匿战争局势.png" alt="第二次布匿战争局势"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/第二次布匿战争局势.png" alt="第二次布匿战争局势"  />
 
 &emsp;&emsp;第二次布匿战争开始于公元前218年，是罗马灭掉迦太基最重要的战争，是双方实力的转折之战。这场战争一共持续了18年，终止于公元前201年。在战争初期，汉尼拔率领迦太基连战连捷，并且在坎尼会战中重创罗马军队，接近七万罗马军队被俘或者阵亡，罗马军队的统帅，执政官保卢斯也被击杀。之后在进攻西班牙的战役中，大西庇阿的父亲和叔叔都牺牲了。而后大西庇阿临危受命，承担起了海外作战的统帅之责。
 
 &emsp;&emsp;大西庇阿领军进攻西班牙的第一场会战是进攻迦太基人在西班牙的基地新迦太基城。大西庇阿先命令部队正面佯攻，另外派一支精锐从西面的泻湖偷袭，当迦太基人发现泻湖进攻的部队后，来不及回防，于是一天之内，大西庇阿就攻下了新迦太基城。
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/新迦太基攻灭战.png" alt="新迦太基攻灭战"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/新迦太基攻灭战.png" alt="新迦太基攻灭战"  />
 
 &emsp;&emsp;而后，在巴埃库拉战役中，大西庇阿命令轻步兵正面进攻，重步兵从两侧山坡绕上，从侧面伏击汉尼拔的弟弟哈斯德鲁巴·巴卡的军队，迅速将其击溃。哈斯德鲁巴被迫逃向阿尔卑斯山，准备与他哥哥汉尼拔会合。而后，大西庇阿又在伊利帕战役中，通过将西班牙和意大利同盟军排阵于中央，将战力强盛的罗马军队设立于两侧，以利用剪刀之势对迦太基人形成合围，同时利用灵活的骑兵不断出击，逼迫迦太基人后退。见势不妙的迦太基人纷纷撤退，此一战，大西庇阿以损失800人的代价，歼灭了15000多迦太基军队，一举夺取了西班牙。汉尼拔也就失去了他进攻罗马本土的后方基地。
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/巴埃库拉战役路线图.png" alt="巴埃库拉战役路线图"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/巴埃库拉战役路线图.png" alt="巴埃库拉战役路线图"  />
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/伊利帕战役.png" alt="伊利帕战役"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/伊利帕战役.png" alt="伊利帕战役"  />
 
 &emsp;&emsp;公元前204年，大西庇阿率领军队开伐北非，进攻迦太基本土。汉尼拔被迫撤军，于是双方就在札马平原展开了最后的决战。此时，大西庇阿拥有2.9万步兵和6千骑兵，汉尼拔拥有3.6万步兵、4千骑兵和80头战象。
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/扎马会战路线图.png" alt="扎马会战路线图"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/扎马会战路线图.png" alt="扎马会战路线图"  />
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/扎马战役布阵图.png" alt="扎马战役布阵图"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/扎马战役布阵图.png" alt="扎马战役布阵图"  />
 
 &emsp;&emsp;汉尼拔的布阵，第一排是由高卢、利古里亚和巴利阿里的雇佣兵组成的混合步兵；第二排是迦太基本国老兵和利比亚征募兵；第三排是意大利老兵。另外，他将80头战象安排在最前线，充当前锋，以冲破敌军阵线。骑兵则分列两翼，右侧为没有经验的迦太基骑兵，左侧为努米底亚骑兵。
 

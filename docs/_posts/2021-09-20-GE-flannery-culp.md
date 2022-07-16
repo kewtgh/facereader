@@ -74,7 +74,7 @@ last_modified_at: 2021-09-20T10:25:52-05:00
 
 &emsp;&emsp;上图中卡尔普照片中的表情千年不变，可以再看两张：
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Lawrence-Culp-2.jpg" alt="Lawrence-Culp-2"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Lawrence-Culp-2.jpg" alt="Lawrence-Culp-2"  />
 
 &emsp;&emsp;他这机器般的笑容让人不寒而栗！这副笑容之下暗藏狠厉！只有一种表情和永远面无表情的人，往往是最需要人们谨慎而待，这样的人性格很复杂，更不会将个人感情作为决策考量的重要参考，所以他们既能洞悉人性之恶，也不忌于利用人性之恶。就比如刘备，《三国演义》中到哪儿是一副好人相，但其实心机很深，《三国志》的描述就说，刘备“喜怒不形于色”。要不然，他这个三国中真正的屌丝就绝不可能跟曹操、孙权三分天下。
 
@@ -98,7 +98,7 @@ last_modified_at: 2021-09-20T10:25:52-05:00
 
 &emsp;&emsp;伊梅尔特在任的最后几年中，GE的股价就一直“跌跌不休”。弗兰纳里上任之初给大家以短暂的信心，但随后便暴露了实质，股价继续下挫。卡尔普接任时，也给了大家一些信心，股价收稳并持续了一段时间。但2020年初，因为疫情期间GE的表现不够理想，股价迅速下跌，跌到难以置信的每股5.48美元。之后企稳，持续缓慢上升了一年左右，至2021年7月30日进行了反向拆分，股价达到100多美元。
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Snipaste_2021-09-19_20-19-42.png" alt="GE Stock"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Snipaste_2021-09-19_20-19-42.png" alt="GE Stock"  />
 
 
 
@@ -110,7 +110,7 @@ last_modified_at: 2021-09-20T10:25:52-05:00
 
 &emsp;&emsp;而对于新晋人选的评价，我认为也是优的表现，其中有代表性的就是新任CFO Carolina Dybeck Happe和航空事业部的CEO John Slattery。
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/John-Slattery&Carolina-Dybeck-Happe.jpg" alt="John-Slattery&Carolina-Dybeck-Happe"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/John-Slattery&Carolina-Dybeck-Happe.jpg" alt="John-Slattery&Carolina-Dybeck-Happe"  />
 
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;那GE的财务表现如何呢？
 
@@ -118,11 +118,11 @@ last_modified_at: 2021-09-20T10:25:52-05:00
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GE营业收入统计
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/GE-Financial-Revenue.png" alt="GE-Financial-Revenue"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/GE-Financial-Revenue.png" alt="GE-Financial-Revenue"  />
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GE毛利润统计
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/GE-Financial-Profit.png" alt="GE-Financial-Profit"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/GE-Financial-Profit.png" alt="GE-Financial-Profit"  />
 
 &emsp;&emsp;从GE的营收和毛利统计可以看出，卡尔普上任的第一年表现尚可，但是2020年受疫情影响，公司营收和利润表现都有巨额下降。2021年开始，疫情得到一定程度的控制，GE的业务情况好转，都有非常高的增长。
 
