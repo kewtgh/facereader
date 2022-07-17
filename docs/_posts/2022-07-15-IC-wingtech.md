@@ -29,6 +29,9 @@ tags:
   - 张学政
   - 光学影像
   - 得尔塔科技
+sidebar:
+  title: "企业剖析"
+  nav: sidebar-series-IC
 toc: true
 last_modified_at: 2022-07-15T22:25:52-05:00
 ---
