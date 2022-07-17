@@ -2,8 +2,8 @@
 title: 恶人是否值得同情？——从受害的河南储户说起
 excerpt: "河南村镇银行爆雷，当加害者们变为受害者，我们当如何以对，同情他们，还是拍手称快？"
 header:
-  teaser: /assets/img/page-header-image-laugh01-teaser.jpg
-  overlay_image: /assets/img/page-header-image-laugh01.jpg # Add image post (optional)
+  teaser: /assets/img/page-header-image-emotions01-teaser.jpg
+  overlay_image: /assets/img/page-header-image-emotions01.jpg # Add image post (optional)
   overlay_filter: 0.4
 categories:
   - 人格成长
