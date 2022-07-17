@@ -1,6 +1,6 @@
 ---
 title: 中小企业的经营之道（1)——创业企业生存的基础
-excerpt: "大多数创业者们都拥有错误的创业思维，而这种根本性的思维错误，很难从各种创业书籍中学习，那么怎样才是正确的创业思维呢？"
+excerpt: "大多数创业者们都未能把握初创企业经营的核心，那么哪些点是创业者们最需要关注的呢？"
 header:
   teaser: /assets/img/page-header-image-people-teaser.jpg
   overlay_image: /assets/img/page-header-image-people.jpg # Add image post (optional)
