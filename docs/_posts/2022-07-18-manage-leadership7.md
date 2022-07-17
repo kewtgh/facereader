@@ -1,6 +1,6 @@
 ---
 title: 不靠谱领导力（7)——尊重规则
-excerpt: "英国前首相鲍里斯·约翰逊到底犯了什么忌讳，他的下台是忽视了领导者重要品质中的哪一项？如果不再犯鲍里斯·约翰逊一样的失误呢？"
+excerpt: "英国前首相鲍里斯·约翰逊到底犯了什么忌讳，他的下台是忽视了领导者重要品质中的哪一项？我们如何能不犯同样的失误呢"
 header:
   teaser: /assets/img/page-header-image-leadership-teaser.jpg
   overlay_image: /assets/img/page-header-image-leadership.jpg # Add image post (optional)
