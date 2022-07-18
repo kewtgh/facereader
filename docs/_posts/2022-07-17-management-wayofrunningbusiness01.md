@@ -18,6 +18,9 @@ tags:
   - 业务能力
   - 经营能力
   - 精益创业
+sidebar:
+  title: "经典系列"
+  nav: sidebar-series-wayofrunningbusiness
 toc: true
 last_modified_at: 2022-07-17T19:25:52-05:00
 ---
