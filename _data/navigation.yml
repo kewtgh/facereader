@@ -152,6 +152,16 @@ sidebar-series-leadership:
        - title: "七、尊重规则"
          url: https://facereader.witbacon.com/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E4%B8%8D%E9%9D%A0%E8%B0%B1%E9%A2%86%E5%AF%BC%E5%8A%9B/manage-leadership7/
 
+sidebar-series-wayofrunningbusiness:
+  - title: "中小企业经营之道"
+    children:
+       - title: "一、创业企业生存的基础"
+         url: https://facereader.witbacon.com/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/management-wayofrunningbusiness01/
+       - title: "二、招募优秀人才"
+         url: https://facereader.witbacon.com/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/management-wayofrunningbusiness02/
+       - title: "三、制度与体系"
+         url: https://facereader.witbacon.com/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/management-wayofrunningbusiness03/
+
 sidebar-about:
   - title: "关于我们："
     children:
