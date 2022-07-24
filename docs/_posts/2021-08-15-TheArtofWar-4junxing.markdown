@@ -7,7 +7,7 @@ tags:
   - 孙子兵法
   - 军形篇
   - 中国传统文化
-share: true
+share: true [2021-08-15-TheArtofWar-4junxing.markdown](2021-08-15-TheArtofWar-4junxing.markdown) 
 toc: true
 header:
   teaser: /assets/img/sunzi-teaser.jpg

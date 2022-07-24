@@ -47,9 +47,9 @@ last_modified_at: 2022-02-20T22:25:52-05:00
 
 &emsp;&emsp;韦尔股份一跃成为国内最顶尖的芯片企业之一，但是其快速的成长主要基于不间断的并购，而这会影响企业的发展吗？韦尔股份的前景如何呢？
 
-## 一、服务与产品简介【[大图](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/韦尔股份.jpg)】
+## 一、服务与产品简介【[大图](https://kewtgh.github.io/PicSunflowers/img/2022/韦尔股份.jpg)】
 
-![韦尔股份](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/韦尔股份.jpg)
+![韦尔股份](https://kewtgh.github.io/PicSunflowers/img/2022/韦尔股份.jpg)
 
 &emsp;&emsp;韦尔股份的业务主要分两大类：半导体产品设计与半导体产品分销。
 
@@ -122,7 +122,7 @@ last_modified_at: 2022-02-20T22:25:52-05:00
 
 &emsp;目前韦尔股份的高管包括四位：创始人兼董事长虞仁荣先生，总经理王崧先生，董事兼副总经理纪刚先生，以及董事兼财务总监贾渊先生。
 
-### 1、创始人兼董事长  [虞仁荣](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/虞仁荣.jpg)
+### 1、创始人兼董事长  [虞仁荣](https://kewtgh.github.io/PicSunflowers/img/2022/虞仁荣.jpg)
 
 &emsp;&emsp;虞仁荣先生于1966年生于浙江宁波，本科就读于清华大学，并获得无线电系学士学位。毕业后，加入浪潮集团担任工程师；两年后离开浪潮集团，于1992年加入香港龙跃电子，任北京办事处销售经理；1998年，虞仁荣离职创立北京华清兴昌科贸有限公司，主要业务为代理分销国外优质电子元器件。
 
@@ -130,7 +130,7 @@ last_modified_at: 2022-02-20T22:25:52-05:00
 
 &emsp;&emsp;因为芯片的研发需要大量投入，同时需要多年的技术积累，因此虞仁荣的经营策略主要以持续的并购为主，除了上述提到的香港华清、北京京鸿志、北京泰和志、无锡中普微之外，韦尔股份还并购了思比科、视信源、Synaptics Incorporated亚洲地区TDDI业务、深圳吉迪思等。其中，最为著名，影响最大的即是并购豪威科技。并购前，韦尔股份的年营收还不到豪威科技的一半，这一举蛇吞象的操作，足见虞仁荣的操盘能力。
 
-![虞仁荣](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/虞仁荣.jpg)
+![虞仁荣](https://kewtgh.github.io/PicSunflowers/img/2022/虞仁荣.jpg)
 
 &emsp;&emsp;而从其面相来看，虞仁荣的性格也反映了其能力特点。其最大的性格特点是**浑厚有力**，而这一特点反应在三个方面：
 
@@ -142,11 +142,11 @@ last_modified_at: 2022-02-20T22:25:52-05:00
    
    这一点与另一位企业家曹德旺就非常不同。
    
-   <div align=center><img src="https://raw.githubusercontent.com/kewtgh/PicSunflowers/main/img/2022/曹德旺-1.jpg" alt="曹德旺-1" style="zoom:80%;" /></div>
+   <div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/2022/曹德旺-1.jpg" alt="曹德旺-1" style="zoom:80%;" /></div>
    
    **曹德旺是厚重而有力，他的厚重有力几乎是完全靠实干积累起来的，不仅是知行合一，而且行超乎于知。**因此，曹德旺的厚重有力是**厉行**的结果，在外的表现也给人感觉非常严厉。要打动曹德旺，只有一种语言——行动！
 
-### 2、总经理  [王崧](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/王崧.jpg)
+### 2、总经理  [王崧](https://kewtgh.github.io/PicSunflowers/img/2022/王崧.jpg)
 
 &emsp;&emsp;王崧先生生于1976年，毕业于天津大学，获无线电技术和技术经济双学士学位，并拥有西安交通大学EMBA学位。1998年8月至1999年5月，王崧先生任东芝电子亚洲有限公司北京事务所销售；1999年5月至2000年8月，任松下电器中国有限公司市场工程师；2000年8月至2013年10月，任安森美半导体（香港）有限公司北京代表处首席代表、总监；2013年10月至2015年10月，任尼得科压缩机（北京）有限公司总监；2015年10月至2017年10月，任楼市电子（上海）有限公司高级总监；2017年10月起，任豪威科技（上海）有限公司高级副总裁。
 
@@ -159,7 +159,7 @@ last_modified_at: 2022-02-20T22:25:52-05:00
 
 &emsp;&emsp;整体而言，**他的综合素质为中等略上的水平，但也很难看出其有明显的天赋。但他有丰富的欧美企业经验，对于帮助韦尔股份架构优秀制度体系，极有助益。**
 
-### 3、董事兼副总经理  [纪刚](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/纪刚-1.jpg)
+### 3、董事兼副总经理  [纪刚](https://kewtgh.github.io/PicSunflowers/img/2022/纪刚-1.jpg)
 
 &emsp;&emsp;纪刚先生生于1976年，拥有复旦大学硕士学位，曾于2001年7月至2002年4月，任先驱微电子（上海）有限公司设计工程师；2002年5月至2007年5月，历任上海先进半导体制造股份有限公司设计支持工程师、设计支持经理。
 
@@ -169,7 +169,7 @@ last_modified_at: 2022-02-20T22:25:52-05:00
 
 &emsp;&emsp;纪刚先生在领导团队方面可能偏弱一些，他在领导一个技术领域的项目小组不会有太大问题，**他很善于带领循规蹈矩的团队，并指导团队完成项目。但是如果是一只充满天赋的团队，则会充满变化，而这些变化是他不喜欢驾驭的。**
 
-### 4、董事兼财务总监  [贾渊](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/贾渊.jpg)
+### 4、董事兼财务总监  [贾渊](https://kewtgh.github.io/PicSunflowers/img/2022/贾渊.jpg)
 
 &emsp;&emsp;贾渊先生生于1974年，大学毕业后，曾于1996年8月至2001年7月，任上海会计师事务所有限公司审计经理；2001年8月至2011年1月，任立信会计师事务所有限公司高级经理。
 
@@ -215,7 +215,7 @@ last_modified_at: 2022-02-20T22:25:52-05:00
 
 ### 二）财务情况
 
-![韦尔股份财务数据](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/韦尔股份财务数据.png)
+![韦尔股份财务数据](https://kewtgh.github.io/PicSunflowers/img/2022/韦尔股份财务数据.png)
 
 &emsp;&emsp;韦尔股份的财务表现非常亮眼，2020年全年营收同比增幅高达45%，净利润同比增幅高达280%；2021年前三季度营收同比增幅高达31%，净利润同比增幅高达110%。并且其毛利率也在逐年增长，由2019年的27.39%，增长到2021年上半年的33.85%。
 
@@ -237,7 +237,7 @@ last_modified_at: 2022-02-20T22:25:52-05:00
 
 &emsp;&emsp;整体评价，韦尔股份的团队评分为：
 
-![韦尔股份-团队评价](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/韦尔股份-团队评价.png)
+![韦尔股份-团队评价](https://kewtgh.github.io/PicSunflowers/img/2022/韦尔股份-团队评价.png)
 
 ---
 

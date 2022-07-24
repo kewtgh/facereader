@@ -52,9 +52,9 @@ last_modified_at: 2021-11-21T22:25:52-05:00
    3. 智慧商业：以精准定位客户，进行数据营销和销售支持，服务购物中心和4S店。
    3. 智慧出行：以人脸识别和运营数据为基础，服务于民航、公交、轨交及客运站。
 
-具体服务和产品如下图（大图请[点击](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/云从科技-产品及服务.png)）：
+具体服务和产品如下图（大图请[点击](https://kewtgh.github.io/PicSunflowers/img/云从科技-产品及服务.png)）：
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/云从科技-产品及服务.png" alt="云从科技-产品及服务"  />
+<img src="https://kewtgh.github.io/PicSunflowers/img/云从科技-产品及服务.png" alt="云从科技-产品及服务"  />
 
 &emsp;&emsp;上图内容为根据其官网内容整理，云从科技的服务和产品主要在于两类：
 
@@ -67,7 +67,7 @@ last_modified_at: 2021-11-21T22:25:52-05:00
 
 
 
-### 二、董事长兼总经理     周曦     [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/周曦-9.jpg)
+### 二、董事长兼总经理     周曦     [Photo](https://kewtgh.github.io/PicSunflowers/img/周曦-9.jpg)
 
 &emsp;&emsp;周曦先生，1981 年出生于四川。在中国科学技术大学获得本科和硕士学位，2010 年8 月毕业于美国伊利诺伊大学电子与计算机工程专业，获得博士学位。2011 年11 月至2015 年5 月担任中科院重庆绿色智能技术研究院智能多媒体技术研究中心主任、电子信息技术研究所副所长。
 
@@ -85,7 +85,7 @@ last_modified_at: 2021-11-21T22:25:52-05:00
 
 ---
 
-### 三、董事兼副总经理     杨桦     [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/杨桦-4.jpg)
+### 三、董事兼副总经理     杨桦     [Photo](https://kewtgh.github.io/PicSunflowers/img/杨桦-4.jpg)
 
 &emsp;&emsp;杨桦女士，1975 年出生，1998年7 月毕业于电子科技大学经济法专业，获得学士学位。2005 年8 月至2014 年6 月历任上海盛大网络发展有限公司经理、总监、副总裁；2015 年8 月至2018年10 月担任利欧集团数字科技有限公司副总裁及首席人才官。
 
@@ -101,7 +101,7 @@ last_modified_at: 2021-11-21T22:25:52-05:00
 
 ---
 
-### 四、董事兼副总经理     李继伟     [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/周曦-xx-李继伟-温浩.png)
+### 四、董事兼副总经理     李继伟     [Photo](https://kewtgh.github.io/PicSunflowers/img/周曦-xx-李继伟-温浩.png)
 
 &emsp;&emsp;李继伟先生，1981 年出生，2006年7 月毕业于中国科学技术大学电子科学与技术专业，获得硕士学位。2006 年7月至2012 年10 月历任微软亚洲研究院搜索技术中心网页相关组工程师、系统平台组高级工程师；2013 年8 月至2014 年10 月担任微软（亚洲）互联网工程院高级软件工程师；2014 年10 月至2015 年4 月担任中国科学院重庆绿色智能技术研究院算法负责人。
 
@@ -115,7 +115,7 @@ last_modified_at: 2021-11-21T22:25:52-05:00
 
 ---
 
-### 五、副总经理     姜迅     [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/姜迅-1.jpg)
+### 五、副总经理     姜迅     [Photo](https://kewtgh.github.io/PicSunflowers/img/姜迅-1.jpg)
 
 &emsp;&emsp;姜迅先生，1979 年出生，2002年7 月毕业于浙江大学，获得学士学位。2002 年7 月至2006 年月担任 AMDOCS（中国）有限公司项目理/DBA；2006 年至2008 年6 月，担任惠普科技（上海）有限公司解决方案架构师；2008 年6 月至2011 年7 月担任阿里巴巴（中国）网络技术有限公司 B2B 技术总监；2011 年7 月至2012 年7 月担任上海盛大网络发展有限公司高级总监；2012 年7 月至2014 年1 月担任盛大网络发展有限公司创新院中国院院长；2014 年1 月至2014 年9 月担任平安健康保险股份有限公司（平安好医生）副总裁；2014 年10 月至2018 年6 月担任苏州医云健康管理有限公司联合创始人/联席总裁；2018 年7 月至2018 年12 月担任上海筑康医疗科技有限公司总裁。
 
@@ -151,7 +151,7 @@ last_modified_at: 2021-11-21T22:25:52-05:00
 
 #### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;二）从财务表现方面来看
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/云从科技-财务数据.png" alt="云从科技-财务数据"  />
+<img src="https://kewtgh.github.io/PicSunflowers/img/云从科技-财务数据.png" alt="云从科技-财务数据"  />
 
 &emsp;&emsp;从财务数据来看，云从科技四年的总营收为21亿元，亏损额为28亿。虽然营收并不高，但却高于依图科技的14.7亿，而亏损额相对商汤科技的282亿和依图科技的73亿则低很多，其财务的整体表现远远好于商汤和依图。
 
@@ -175,7 +175,7 @@ last_modified_at: 2021-11-21T22:25:52-05:00
 
 &emsp;&emsp;整体评价，云从科技的团队评分为：
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/yuncong.png" alt="yuncong"  />
+<img src="https://kewtgh.github.io/PicSunflowers/img/yuncong.png" alt="yuncong"  />
 
 ---
 

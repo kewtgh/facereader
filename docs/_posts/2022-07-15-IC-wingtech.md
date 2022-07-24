@@ -58,9 +58,9 @@ last_modified_at: 2022-07-15T22:25:52-05:00
 
 &emsp;目前闻泰科技的高管包括四位：创始人、董事长兼总裁张学政先生，闻泰科技董事兼闻泰通讯董事长张秋红女士，副总裁高岩先生，及财务总监曾海成先生。下面我们就逐一分析其核心团队成员。
 
-### 1、创始人、董事长兼总裁  [张学政](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/张学政.jpg)
+### 1、创始人、董事长兼总裁  [张学政](https://kewtgh.github.io/PicSunflowers/img/2022/张学政.jpg)
 
-![张学政](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/张学政.jpg)
+![张学政](https://kewtgh.github.io/PicSunflowers/img/2022/张学政.jpg)
 
 &emsp;&emsp;张学政生于1975 年，1997年获得广东工业大学电子信息工程学士学位；毕业后，加入ST 意法半导体，担任工程师；1998 年加入中兴通讯股份有限公司，担任总经理助理；2002 年至 2004 年担任深圳市永盛通讯有限公司、深圳市永盛科技有限公司和上海唐劲数码科技有限公司总经理；2006 年，创立闻泰通讯股份有限公司。2014年，张学政先生又获得清华大学硕士学位。
 
@@ -68,13 +68,13 @@ last_modified_at: 2022-07-15T22:25:52-05:00
 
 &emsp;&emsp;张学政**极为聪明也富有野心**，这是他能成功创立闻泰科技的关键性格。**这两点性格可以使他发现机遇，同时也敢于冒险，展示魄力**。
 
-&emsp;&emsp;但他身上也有另外两点略显矛盾的性格，**一是温和**，大多数情况下他都给人平和易处的感觉，若无深交则绝大多数都认为他性格很好；但是深入相处就会发现他性格的**另一面，计较**！这个性格特点在遇到他非常看重的事情时，会因别人的失误而动怒；而如果遇到伤害，他也会记仇，并且极有可能会报复。这让我立刻想到另一个人：[照片](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/刘强东.jpg)，刘强东；二人性格却有许多相似之处。
+&emsp;&emsp;但他身上也有另外两点略显矛盾的性格，**一是温和**，大多数情况下他都给人平和易处的感觉，若无深交则绝大多数都认为他性格很好；但是深入相处就会发现他性格的**另一面，计较**！这个性格特点在遇到他非常看重的事情时，会因别人的失误而动怒；而如果遇到伤害，他也会记仇，并且极有可能会报复。这让我立刻想到另一个人：[照片](https://kewtgh.github.io/PicSunflowers/img/2022/刘强东.jpg)，刘强东；二人性格却有许多相似之处。
 
 &emsp;&emsp;张学政也是一位**掌控能力非常出众的领导者，既有看懂局势的洞察力，也有游刃其中的应对力**。这利于其领导较大规模的企业。
 
 ---
 
-### 2、闻泰科技董事兼闻泰通讯董事长  [张秋红](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/张秋红.jpg)
+### 2、闻泰科技董事兼闻泰通讯董事长  [张秋红](https://kewtgh.github.io/PicSunflowers/img/2022/张秋红.jpg)
 
 &emsp;&emsp;张秋红女士生于1972生，拥有学士学位，曾任嘉兴精塑通讯科技有限公司副总经理，现任闻泰科技董事、闻泰通讯董事长。
 
@@ -88,9 +88,9 @@ last_modified_at: 2022-07-15T22:25:52-05:00
 
 ---
 
-### 3、副总裁  [高岩](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/高岩.jpg)
+### 3、副总裁  [高岩](https://kewtgh.github.io/PicSunflowers/img/2022/高岩.jpg)
 
-![高岩](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/高岩.jpg)
+![高岩](https://kewtgh.github.io/PicSunflowers/img/2022/高岩.jpg)
 
 &emsp;&emsp;高岩出生于1971年 ，拥有硕士学位，于2013年加入闻泰科技，是闻泰科技最为倚赖的技术核心。
 
@@ -102,7 +102,7 @@ last_modified_at: 2022-07-15T22:25:52-05:00
 
 ---
 
-### 4、财务总监  [曾海成](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/曾海成-1.jpg)
+### 4、财务总监  [曾海成](https://kewtgh.github.io/PicSunflowers/img/2022/曾海成-1.jpg)
 
 &emsp;&emsp;曾海成生于1982 年，拥有学士学位。曾任闻泰通讯股份有限公司审计经理。
 
@@ -148,7 +148,7 @@ last_modified_at: 2022-07-15T22:25:52-05:00
 
 ### 二）财务情况
 
-![闻泰科技-财务分析](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/闻泰科技-财务分析.png)
+![闻泰科技-财务分析](https://kewtgh.github.io/PicSunflowers/img/2022/闻泰科技-财务分析.png)
 
 &emsp;&emsp;闻泰科技的营收增速从2021年开始就已经迅速减缓，2020年的快速增长一方面与其收购安世半导体有关，另一方面也与疫情影响有关。**2021年的整体表现比较一般，各项数据的增长都现乏力之势。**
 
@@ -178,7 +178,7 @@ last_modified_at: 2022-07-15T22:25:52-05:00
 
 &emsp;&emsp;整体评价，闻泰科技的团队评分为：
 
-![闻泰科技-团队评分](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/闻泰科技-团队评分.png)
+![闻泰科技-团队评分](https://kewtgh.github.io/PicSunflowers/img/2022/闻泰科技-团队评分.png)
 
 ---
 

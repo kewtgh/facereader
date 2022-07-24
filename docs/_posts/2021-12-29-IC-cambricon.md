@@ -99,9 +99,9 @@ last_modified_at: 2021-12-29T22:25:52-05:00
 
 3. **封测厂**：国内企业包括通富微电、长电科技、华天科技等，国际企业包括日月光半导体、安靠（Amkor）、力成科技（PTI）等。
 
-具体内容如下图（大图请[点击](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/27-21-09-08-%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93%E6%B5%81%E7%A8%8B%E5%88%86%E7%B1%BB.jpg)）：
+具体内容如下图（大图请[点击](https://kewtgh.github.io/PicSunflowers/2021/12/27-21-09-08-%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93%E6%B5%81%E7%A8%8B%E5%88%86%E7%B1%BB.jpg)）：
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/27-21-09-08-%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93%E6%B5%81%E7%A8%8B%E5%88%86%E7%B1%BB.jpg" title="" alt="芯片半导体流程分类.jpg" data-align="center">
+<img src="https://kewtgh.github.io/PicSunflowers/2021/12/27-21-09-08-%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93%E6%B5%81%E7%A8%8B%E5%88%86%E7%B1%BB.jpg" title="" alt="芯片半导体流程分类.jpg" data-align="center">
 
 &emsp;&emsp;上面即是芯片半导体行业的简单介绍，下面我们来分析企业，先来看被称为全球第一家量产商业人工智能芯片的企业——寒武纪。
 
@@ -147,7 +147,7 @@ last_modified_at: 2021-12-29T22:25:52-05:00
 
 &emsp;目前寒武纪的高管包括六位：创始人、董事长兼CEO陈天石先生，COO王在先生，CTO梁军先生，CFO叶淏尹女士，副总经理叶淏尹先生，副总经理刘少礼先生，另外还包括其未在公司介绍中署名的联合创始人，陈天石的哥哥，陈云霁。下面我们就逐一分析其核心团队成员。
 
-### 1、创始人、董事长兼CEO  [陈天石](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/29-00-25-24-%E9%99%88%E5%A4%A9%E7%9F%B3-4.jpg)
+### 1、创始人、董事长兼CEO  [陈天石](https://kewtgh.github.io/PicSunflowers/2021/12/29-00-25-24-%E9%99%88%E5%A4%A9%E7%9F%B3-4.jpg)
 
 &emsp;&emsp;陈天石先生1985年生于江西南昌，2005年毕业于中国科学技术大学少年班，获得数学与应用数学学士学位；2010年毕业于中国科学技术大学计算机学院，获得计算机软件与理论专业博士学位；同年进入中国科学院计算技术研究所工作，历任助理研究员、副研究员和研究员，研究方向为计算机体系结构和计算智能。陈天石先生曾获ASPLOS、MICRO等多个最佳论文奖，并入选中科院计算所百星计划，主持国家自然科学基金青年基金项目、面上项目、优秀青年基金项目）。
 
@@ -165,7 +165,7 @@ last_modified_at: 2021-12-29T22:25:52-05:00
 
 ---
 
-### 2、COO兼副总经理  [王在](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/29-00-28-36-%E7%8E%8B%E5%9C%A8-3.jpg)
+### 2、COO兼副总经理  [王在](https://kewtgh.github.io/PicSunflowers/2021/12/29-00-28-36-%E7%8E%8B%E5%9C%A8-3.jpg)
 
 &emsp;&emsp;王在先生出生于 1984 年，拥有中国科学技术大学计算机应用技术博士学位。2011年至 2015 年就职于郑州商品交易所并任核心交易系统工程师，2015 年至 2016 年就职于中原银行并任信息科技部电子银行系统主管，2016 年至2018 年就职于中科院计算所从事科研工作。
 &emsp;&emsp;2016 年，王在先生作为寒武纪创始团队成员加入公司，现任公司董事、副总经理兼首席运营官。
@@ -180,7 +180,7 @@ last_modified_at: 2021-12-29T22:25:52-05:00
 
 ---
 
-### 3、CTO兼副总经理  [梁军](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/梁军.jpg)
+### 3、CTO兼副总经理  [梁军](https://kewtgh.github.io/PicSunflowers/img/2022/梁军.jpg)
 
 &emsp;&emsp;梁军先生出生于 1976 年，拥有中国科学技术大学通信与信息系统硕士学位。梁军先生曾于2000年至2003年，就职于华为技术有限公司北京研究所，任工程师；2003 年至 2017 年，就职于华为技术有限公司基础业务部、深圳市海思半导体有限公司，历任工程师、高级工程师、主任工程师、技术专家、高级技术专家。
 
@@ -196,7 +196,7 @@ last_modified_at: 2021-12-29T22:25:52-05:00
 
 ---
 
-### 4、CFO兼副总经理  [叶淏尹](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/29-00-30-22-%E5%8F%B6%E6%B7%8F%E5%B0%B9-2.JPG.jpg)
+### 4、CFO兼副总经理  [叶淏尹](https://kewtgh.github.io/PicSunflowers/2021/12/29-00-30-22-%E5%8F%B6%E6%B7%8F%E5%B0%B9-2.JPG.jpg)
 
 &emsp;&emsp;叶淏尹女士出生于1988 年，拥有北京大学西方经济学硕士学位。叶淏尹女士曾于2012年至2016年就职于中国高新投资集团公司，并任投资经理、高级投资经理；2016年至2019年就职于国投创业投资管理有限公司，并任投资副总裁。
 
@@ -210,7 +210,7 @@ last_modified_at: 2021-12-29T22:25:52-05:00
 
 ---
 
-### 5、副总经理  [刘少礼](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/29-00-32-05-%E5%88%98%E5%B0%91%E7%A4%BC-2.jpg)
+### 5、副总经理  [刘少礼](https://kewtgh.github.io/PicSunflowers/2021/12/29-00-32-05-%E5%88%98%E5%B0%91%E7%A4%BC-2.jpg)
 
 &emsp;&emsp;刘少礼先生出生于1987年，拥有中科院计算所计算机系统结构博士学位。刘少礼先生2014年至2019年就职于中科院计算所，并任副研究员。
 
@@ -218,11 +218,11 @@ last_modified_at: 2021-12-29T22:25:52-05:00
 
 &emsp;&emsp;刘少礼先生的两张照片也略显不同，上面的照片是其正面照，但这张照片是年轻时的照片。这张照片体现的性格是：**好胜心和功利心较强，聪明也较喜欢社交，** 因而在成绩上就会有一两个方面很突出，而其他方面则多属于中等或者偏上的情况。
 
-&emsp;&emsp;后面这张[Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/29-20-46-18-%E5%88%98%E5%B0%91%E7%A4%BC-3.jpg)，则年纪比上一张要大十岁左右，性格则有些不同：**实干性比之前提升很多，但好胜心仍然还有，不过已经磨砺得弱了不少，仍然很懂得处理关系，但也不会那么活跃。**
+&emsp;&emsp;后面这张[Photo](https://kewtgh.github.io/PicSunflowers/2021/12/29-20-46-18-%E5%88%98%E5%B0%91%E7%A4%BC-3.jpg)，则年纪比上一张要大十岁左右，性格则有些不同：**实干性比之前提升很多，但好胜心仍然还有，不过已经磨砺得弱了不少，仍然很懂得处理关系，但也不会那么活跃。**
 
 ---
 
-### 6、副总经理  [刘道福](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/29-00-34-19-%E5%88%98%E9%81%93%E7%A6%8F-6.jpg)
+### 6、副总经理  [刘道福](https://kewtgh.github.io/PicSunflowers/2021/12/29-00-34-19-%E5%88%98%E9%81%93%E7%A6%8F-6.jpg)
 
 &emsp;&emsp;刘道福先生出生于1988年，拥有中科院计算所计算机系统结构博士学位。刘道福先生曾于2015年至2019年就职于中科院计算所，历任助理研究员、高级工程师。
 
@@ -236,7 +236,7 @@ last_modified_at: 2021-12-29T22:25:52-05:00
 
 ---
 
-### 7、联合创始人 [陈云霁](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/29-00-35-25-%E9%99%88%E4%BA%91%E9%9C%81-1.jpg)
+### 7、联合创始人 [陈云霁](https://kewtgh.github.io/PicSunflowers/2021/12/29-00-35-25-%E9%99%88%E4%BA%91%E9%9C%81-1.jpg)
 
 &emsp;&emsp;陈云霁先生1983年生于江西南昌，目前为中国科学院计算技术研究所研究员，博士生导师；同时，他担任了中国科学院脑科学卓越中心特聘研究员，以及中国科学院大学岗位教授。陈云霁先生曾获得首届国家自然科学基金“优秀青年基金”、首届国家万人计划“青年拔尖人才”、中国计算机学会青年科学家奖以及中科院青年人才奖，并曾先后负责或参与了多款龙芯处理器的设计。
 
@@ -278,7 +278,7 @@ last_modified_at: 2021-12-29T22:25:52-05:00
 
 ### 二）财务情况
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/28-20-19-52-%E5%AF%92%E6%AD%A6%E7%BA%AA%E8%B4%A2%E5%8A%A1%E6%95%B0%E6%8D%AE.png" title="" alt="寒武纪财务数据.png" data-align="center">
+<img src="https://kewtgh.github.io/PicSunflowers/2021/12/28-20-19-52-%E5%AF%92%E6%AD%A6%E7%BA%AA%E8%B4%A2%E5%8A%A1%E6%95%B0%E6%8D%AE.png" title="" alt="寒武纪财务数据.png" data-align="center">
 
 &emsp;&emsp;**因为2020年的上半年正是疫情高发期，所以2021年和2020年的上半年度报告不具有可比性，我们只比较2021年的第三季度和2020年的第三季度。** 相较而言，2021年第三季度的营收同比2020年第三季度增长20.2%，属于尚可；但是同期的亏损额却增加了一倍还多，而且毛利率也在下降，因而未必是良好的表现，极有可能是竞争的激烈以及IP业务的缩水导致。
 
@@ -288,7 +288,7 @@ last_modified_at: 2021-12-29T22:25:52-05:00
 
 &emsp;&emsp;再从几项核心业务的收入占比来看：
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/28-23-29-01-%E5%AF%92%E6%AD%A6%E7%BA%AA2021-1-6-%E4%BA%A7%E5%93%81%E6%94%B6%E5%85%A5%E5%8D%A0%E6%AF%94.png" title="" alt="寒武纪2021-1-6-产品收入占比.png" data-align="center">
+<img src="https://kewtgh.github.io/PicSunflowers/2021/12/28-23-29-01-%E5%AF%92%E6%AD%A6%E7%BA%AA2021-1-6-%E4%BA%A7%E5%93%81%E6%94%B6%E5%85%A5%E5%8D%A0%E6%AF%94.png" title="" alt="寒武纪2021-1-6-产品收入占比.png" data-align="center">
 
 &emsp;&emsp;**边缘智能芯片和加速卡**是其最为核心的业务，这类主要是智能终端的应用，这方面因为目前的产品并不完善，寒武纪的市场空间很大，但是竞争对手也只需要半年至一年就可以赶上其相应的技术，所以时间窗口并不大。而训练整机的需求不知是具体哪个大客户在采用，因为这方面的需求并不稳定；依照其对前五大客户的依赖程度来看，甚至几乎都难以分析其产品的潜力，因为一家客户的大量需求并不能代表市场的普遍需求。
 
@@ -298,7 +298,7 @@ last_modified_at: 2021-12-29T22:25:52-05:00
 
 &emsp;&emsp;仅从其上市之后的股价走势，就证明最初的估值明显偏高；目前寒武纪的股价已经从高点的超过250元人民币跌到现在不足100元；而且以其面临的挑战，现在的股价我认为仍然偏高。
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/28-20-36-14-%E5%AF%92%E6%AD%A6%E7%BA%AA%E8%82%A1%E4%BB%B7.png" title="" alt="寒武纪股价.png" data-align="center">
+<img src="https://kewtgh.github.io/PicSunflowers/2021/12/28-20-36-14-%E5%AF%92%E6%AD%A6%E7%BA%AA%E8%82%A1%E4%BB%B7.png" title="" alt="寒武纪股价.png" data-align="center">
 
 &emsp;&emsp;**最后稍稍吐槽一下，寒武纪的财报，是我看过最累的！** 需要的数据不列举，还都得翻好几个财报才能算出来！怕不是认为财报不好看，股东们时间又很紧，要是看起来费精力，就去看其他家了吧？！希望其对产品的底气也能放在财报上！
 
@@ -316,7 +316,7 @@ last_modified_at: 2021-12-29T22:25:52-05:00
 
 &emsp;&emsp;整体评价，寒武纪的团队评分为：
 
-![寒武纪团队评分.png](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/29-00-40-50-%E5%AF%92%E6%AD%A6%E7%BA%AA%E5%9B%A2%E9%98%9F%E8%AF%84%E5%88%86.png)
+![寒武纪团队评分.png](https://kewtgh.github.io/PicSunflowers/2021/12/29-00-40-50-%E5%AF%92%E6%AD%A6%E7%BA%AA%E5%9B%A2%E9%98%9F%E8%AF%84%E5%88%86.png)
 
 ---
 
