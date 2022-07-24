@@ -77,7 +77,7 @@ last_modified_at: 2021-11-21T22:25:52-05:00
 
 &emsp;&emsp;那周曦先生为什么选择创业呢？继续做自己的研究中心主任不好吗？更何况他做主任时性格已经修得足够和善，上下都应该比较喜欢他。当你看完他年轻时的照片，就能知道背后的原因了：
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/周曦-xx-李继伟-温浩.png" alt="周曦-xx-李继伟-温浩"  /></div>
+<div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/周曦-xx-李继伟-温浩.png" alt="周曦-xx-李继伟-温浩"  /></div>
 
 &emsp;&emsp;左边第一位就是他本人，此时的他，在学习之外应该有**很强烈的自卑**的，很可能在体育上不擅长，且并不是最受大家欢迎的一位，**性格上还可能略有些冲**，家庭条件也可能一般。而从右数第二位，李继伟先生，也是云从科技的合伙人之一，反而性格更加具有包容性，也是较有领导力的一位。
 
