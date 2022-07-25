@@ -7,7 +7,7 @@ header:
   overlay_filter: 0.4
 categories:
   - 人格成长
-  - 不靠谱领导力
+  - 管理思想
 tags: 
   - 领导力
   - 领导者
