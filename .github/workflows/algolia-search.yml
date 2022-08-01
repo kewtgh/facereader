@@ -3,7 +3,7 @@ on:
     branches:
       - main
 
-name: algolia-push
+name: algolia-search
 jobs:
   algolia-search:
     runs-on: ubuntu-latest
