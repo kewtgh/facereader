@@ -29,7 +29,7 @@ last_modified_at: 2022-07-17T19:25:52-05:00
 
 &emsp;&emsp;很多人可能看过不少创业相关的书籍，比如本·霍洛维茨的《创业维艰》，埃里克·莱斯的《精益创业》，彼得·蒂尔的《从0到1》等，也可能有很多人看过各种成功人士的传记，乔布斯、马斯克、马云等等。
 
-![booksofstartup](https://kewtgh.github.io/PicSunflowers/img/2022/booksofstartup.jpg)
+![booksofstartup](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/booksofstartup.jpg)
 
 &emsp;&emsp;那么这会帮到你吗？
 
@@ -126,7 +126,7 @@ last_modified_at: 2022-07-17T19:25:52-05:00
 
 ## 五、总结
 
-![创业企业的成功之道](https://kewtgh.github.io/PicSunflowers/img/2022/创业企业的成功之道.png)
+![创业企业的成功之道](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/创业企业的成功之道.png)
 
 &emsp;&emsp;通过上面的讨论，我们就能看出：
 

@@ -27,7 +27,7 @@ last_modified_at: 2022-07-20T19:25:52-05:00
 
 &emsp;&emsp;**生物不同物种之间的竞争，到底是在竞争什么？比如狮子和羚羊之间的竞争。**
 
-<div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/2022/狮子-羚羊.jpg" alt="狮子-羚羊"  /></div>
+<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/狮子-羚羊.jpg" alt="狮子-羚羊"  /></div>
 
 &emsp;&emsp;是两种不同的生物形体的竞争吗？是捕食者与被捕食者之间的竞争吗？
 
@@ -61,7 +61,7 @@ last_modified_at: 2022-07-20T19:25:52-05:00
 
 &emsp;&emsp;正如同一生境下，很难有生存模式完全一致的生物一样！每一个生物都必须依靠**特别**，才能保留其在生境中的**生态位**。
 
-<div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/2022/生态位.jpg" alt="生态位"  /></div>
+<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/生态位.jpg" alt="生态位"  /></div>
 
 &emsp;&emsp;因此，“**Copy卓越企业的制度与体系**”对于很多中小企业而言，是相对容易，却非常不利的做法。
 

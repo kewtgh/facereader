@@ -39,7 +39,7 @@ last_modified_at: 2021-12-30T19:25:52-05:00
 
 &emsp;&emsp;听起来你说的是：
 
-![american-captain.jpg](https://kewtgh.github.io/PicSunflowers/2021/12/30-00-19-54-american-captain.jpg)
+![american-captain.jpg](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/30-00-19-54-american-captain.jpg)
 
 &emsp;&emsp;哈哈！没错！美国队长就是人们对完美领导者期望的投射。
 
@@ -119,7 +119,7 @@ last_modified_at: 2021-12-30T19:25:52-05:00
 
 3. **“徙木为信”的行为**：这是秦国变法者商鞅的一个故事，讲商鞅初到秦国变法时民众都不信任他，因此他在城南立了一根一米长的木头，并告示大家，“如果能将此木头从南门搬到北门，就能获赏金十两。”最初并没有人相信，没人来搬。后来商鞅将赏金提高到五十两，有个莽汉就壮着胆子搬了，果然获得了五十两赏金。于是民众们就确信了商鞅变法的决心。所有可以让大家确信你魅力权威的行动，都可以迅速增加权威。
    
-   <div align=center><img src="https://kewtgh.github.io/PicSunflowers/2021/12/30-20-52-23-%E5%BE%99%E6%9C%A8%E7%AB%8B%E4%BF%A1.jpg" title="" alt="徙木立信.jpg" data-align="center"></div>
+   <div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/30-20-52-23-%E5%BE%99%E6%9C%A8%E7%AB%8B%E4%BF%A1.jpg" title="" alt="徙木立信.jpg" data-align="center"></div>
 
 &emsp;&emsp;这就是三种迅速增加权威的方法。
 

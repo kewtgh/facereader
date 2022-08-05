@@ -24,7 +24,7 @@ last_modified_at: 2022-07-28T19:25:52-05:00
 
 &emsp;&emsp;欣赏他人的苦难有何开心之处？而且我从“二舅”的脸上，也没看到多少快乐，看到的仅仅只是不甘！
 
-<div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/2022/二舅.jpg" alt="二舅"  /></div>
+<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/二舅.jpg" alt="二舅"  /></div>
 
 &emsp;&emsp;试问，从这张脸上，能看到多少快乐？
 

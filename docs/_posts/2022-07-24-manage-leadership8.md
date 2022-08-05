@@ -45,7 +45,7 @@ last_modified_at: 2022-07-24T19:25:52-05:00
 
 &emsp;&emsp;具有这两种不同能力的人，有两个非常鲜明的代表，即三国时期蜀国的两位大将，马谡和王平。
 
-<div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/2022/马谡-王平.jpg" alt="马谡-王平"  /></div>
+<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/马谡-王平.jpg" alt="马谡-王平"  /></div>
 
 &emsp;&emsp;马谡是谋略能力见长的人。他不但是诸葛亮的参军，而且深得诸葛亮赏识。陈寿在《三国志》中对马谡的评价为“才器过人，好论军计”。可见马谡对问题有很深的认知。
 
@@ -79,7 +79,7 @@ last_modified_at: 2022-07-24T19:25:52-05:00
 
 &emsp;&emsp;楚霸王项羽是最佳案例！他出身显贵，是楚国贵族，也是名将项燕的孙子。之后又继承了叔叔项梁给他的遗产，势力最强大的秦末起义军。在群雄并起之时，这支起义军一举灭了秦国。
 
-<div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/2022/项羽.jpg" alt="项羽"  /></div>
+<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/项羽.jpg" alt="项羽"  /></div>
 
 &emsp;&emsp;可是就这样一手好牌，被他打得稀烂！最终兵败垓下，乌江自刎！
 
@@ -97,7 +97,7 @@ last_modified_at: 2022-07-24T19:25:52-05:00
 
 &emsp;&emsp;比如这几位：
 
-<div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/2022/柳传志-曹德旺-张瑞敏-任正非.jpg" alt="柳传志-曹德旺-张瑞敏-任正非"  /></div>
+<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/柳传志-曹德旺-张瑞敏-任正非.jpg" alt="柳传志-曹德旺-张瑞敏-任正非"  /></div>
 
 &emsp;&emsp;我上面列举的这些领导者，个个都是身经百战历练出来的，他们具有非常高的运筹能力。任何人向其提出一项建议时，他们一听就知道这项建议是否可行，有哪些风险和不确定性。
 
@@ -105,7 +105,7 @@ last_modified_at: 2022-07-24T19:25:52-05:00
 
 &emsp;&emsp;前面介绍的马谡就是最典型的案例。二战时，也有一位著名的将军非常具有代表性。他就是二战爆发时的法军总司令，**莫里斯·古斯塔夫·甘末林**。
 
-<div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/2022/莫里斯-古斯塔夫-甘末林.jpg" alt="莫里斯-古斯塔夫-甘末林"  /></div>
+<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/莫里斯-古斯塔夫-甘末林.jpg" alt="莫里斯-古斯塔夫-甘末林"  /></div>
 
 &emsp;&emsp;甘末林成名于“第一次马恩河战役”，这场战役中，协约国击退了德军，阻止了德军的进攻势头，使得双方进入堑壕战的对峙期。与马谡类似的是，甘末林同样出身显贵，毕业于法国最著名的军校圣西尔军校；也同样是统帅的参谋，在一战时，担任法军总司令约瑟夫·霞飞的参谋，深受其赏识。
 

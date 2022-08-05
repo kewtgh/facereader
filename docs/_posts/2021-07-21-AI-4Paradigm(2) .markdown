@@ -34,15 +34,15 @@ last_modified_at: 2021-07-21T20:25:52-05:00
 
 &emsp;&emsp;目前简单更新了一下人员资料，补充三位：COO，CFO 和Delivery Head。
 
-## 一、先来看COO——严梦辉：[Photo](https://kewtgh.github.io/PicSunflowers/img/pc-yanmenghui-main.png)
+## 一、先来看COO——严梦辉：[Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/pc-yanmenghui-main.png)
 
 &emsp;&emsp;引进严梦辉是一项不错的举措，严梦辉很显然相较第一期中的几位，是非常胜任这个职位的。严梦辉比较**严肃**，有很**强烈的事业追求**，也很**擅长琢磨人**，善与不善者都能任用！但是严梦辉目前的状态太像是一位职业经理人，对于还在创业阶段的公司，使命感不足。这也导致他在很多决策中，会更注重短期表现，而错失于公司的长远发展。
 
-## 二、CFO——于中灏：[Photo](https://kewtgh.github.io/PicSunflowers/img/1550058748282.jpg)
+## 二、CFO——于中灏：[Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/1550058748282.jpg)
 
 &emsp;&emsp;**非常善于察言观色**，也**极为聪明**！但容易失于小聪明，**厚重度明显不足**。于中灏的聪明，或者更准确说，应该是**精明**，使得他非常善于处理利益相关者的人际关系。但很显然，在这个位置上，缺乏厚重度是致命的。他的聪明足以应付中短期的发展，但长期、潜在性的问题会是公司发展中最大的隐患。
 
-## 三、Delivery Head——柴亦飞：[Photo](https://kewtgh.github.io/PicSunflowers/img/pc-chaiyifei-main.png)
+## 三、Delivery Head——柴亦飞：[Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/pc-chaiyifei-main.png)
 
 &emsp;&emsp;柴是一位**不可多得的人才，既有情怀，又有能力，也足够正直，他行为谨慎又不失胆魄，堪当大用**。但是目前第四范式的整体高层管理团队会让他很苦恼，因为这个团队和他格格不入。因为他要苦于应对各种人员错配的无奈，很显然这个位置上会有很多让他揪心的内部问题。
 
@@ -52,4 +52,4 @@ last_modified_at: 2021-07-21T20:25:52-05:00
 
 &emsp;&emsp;第四范式的核心团队情况评分：
 
-<img src="https://kewtgh.github.io/PicSunflowers/2021/12/23-21-54-55-4paradigm.png" alt="4paradigm"  />
+<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/23-21-54-55-4paradigm.png" alt="4paradigm"  />
