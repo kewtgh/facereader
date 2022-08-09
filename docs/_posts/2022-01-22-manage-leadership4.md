@@ -239,9 +239,9 @@ last_modified_at: 2021-01-22T19:25:52-05:00
 
 &emsp;&emsp;最终评估：这个风险不可承受，因而否定这一方案。
 
-&emsp;&emsp;营建餐厅案例（查看[大图](https://kewtgh.github.io/PicSunflowers/2022/01/22-20-27-08-%E8%90%A5%E5%BB%BA%E6%97%97%E8%88%B0%E9%A4%90%E5%8E%85%E9%A3%8E%E9%99%A9%E8%AF%84%E4%BC%B0.jpg)）
+&emsp;&emsp;营建餐厅案例（查看[大图](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2022/01/22-20-27-08-%E8%90%A5%E5%BB%BA%E6%97%97%E8%88%B0%E9%A4%90%E5%8E%85%E9%A3%8E%E9%99%A9%E8%AF%84%E4%BC%B0.jpg)）
 
-![营建旗舰餐厅风险评估.jpg](https://kewtgh.github.io/PicSunflowers/2022/01/22-20-27-08-%E8%90%A5%E5%BB%BA%E6%97%97%E8%88%B0%E9%A4%90%E5%8E%85%E9%A3%8E%E9%99%A9%E8%AF%84%E4%BC%B0.jpg)
+![营建旗舰餐厅风险评估.jpg](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2022/01/22-20-27-08-%E8%90%A5%E5%BB%BA%E6%97%97%E8%88%B0%E9%A4%90%E5%8E%85%E9%A3%8E%E9%99%A9%E8%AF%84%E4%BC%B0.jpg)
 
 #### 那么谨慎行动又该怎么做呢？
 

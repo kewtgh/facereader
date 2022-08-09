@@ -48,7 +48,7 @@ last_modified_at: 2022-07-18T19:25:52-05:00
 
 ### 2、那么那些卓越的领导者们如何看待规则呢？
 
-<div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/2022/曹操.jpg" alt="曹操" style="zoom:80%;" /></div>
+<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/曹操.jpg" alt="曹操" style="zoom:80%;" /></div>
 
 &emsp;&emsp;**曹操就有“割发代首”的典故**：建安三年，曹操出兵行至麦田，便下令，士卒不可毁坏麦田，违令者处死。他自己的马却受惊闯入麦田中，于是召来主簿论罪，主簿回答他：“自古刑罚不加于尊贵之人。”曹操答复：“自己制定的法律，自己却违反，这样如何能统帅下属呢？身为一军统帅，不能贸然自杀，但也应该对自己施以刑罚。”于是，拿起剑割断头发扔在地上！
 
@@ -56,7 +56,7 @@ last_modified_at: 2022-07-18T19:25:52-05:00
 
 &emsp;&emsp;**另一位被封神的西方领袖，罗马帝国的开创者，奥古斯都，盖乌斯·屋大维·图里努斯，则正是因其对规则的尊重而获得至高荣誉，同时也为罗马带来了四十年的和平与繁荣。**
 
-<div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/2022/奥古斯都-屋大维.jpg" alt="奥古斯都-屋大维" style="zoom:80%;" /></div>
+<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/奥古斯都-屋大维.jpg" alt="奥古斯都-屋大维" style="zoom:80%;" /></div>
 
 &emsp;&emsp;屋大维最初接掌的罗马，是被其养父**尤利乌斯·恺撒**为了自身独裁，几乎败坏了全部规则的局面。因此当时的罗马混乱不堪，内战不断！在屋大维消灭所有竞争对手之后，并没有靠军队的威慑力获取统治权，而是立刻解散军队，重新进行选举，回归到规则的体系中。
 

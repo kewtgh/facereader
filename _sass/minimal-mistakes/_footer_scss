@@ -42,7 +42,9 @@
   .fab,
   .far,
   .fal {
-    color: $muted-text-color;
+    font-style: normal;
+    text-align: center;
+    color: $muted-text-color; 
   }
 }
 

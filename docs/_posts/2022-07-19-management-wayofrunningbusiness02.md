@@ -69,7 +69,7 @@ last_modified_at: 2022-07-19T19:25:52-05:00
 
 &emsp;&emsp;如果你喜欢NBA，就会发现：身体强壮的，往往投篮能力比较弱；善于突破灌篮的，外线三分经常是短板。
 
-<div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/2022/篮球五个位置.jpg" alt="篮球五个位置"  /></div>
+<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/篮球五个位置.jpg" alt="篮球五个位置"  /></div>
 
 &emsp;&emsp;所以，篮球场上五个人，分别打五个位置，控球和局势判断能力强的**控球后卫**，投篮终结能力强的**得分后卫**，突破能力强的**小前锋**，身体又高又灵活的**大前锋**，篮下控制力强的**中锋**。
 
@@ -208,7 +208,7 @@ last_modified_at: 2022-07-19T19:25:52-05:00
 
 &emsp;&emsp;还是前面韩信的案例。可以说，如果没有韩信，刘邦就不可能打败项羽，也就不会有刘邦的江山，萧何称韩信“国士无双”。
 
-<div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/2022/韩信.jpg" alt="韩信" style="zoom:80%;" /></div>
+<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/韩信.jpg" alt="韩信" style="zoom:80%;" /></div>
 
 &emsp;&emsp;但是韩信最初并不是跟着刘邦的，而是跟着项羽的叔叔项梁。项梁被杀后，又跟了项羽。
 
