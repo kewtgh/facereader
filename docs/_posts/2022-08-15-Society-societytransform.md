@@ -2,10 +2,10 @@
 title: 从塔利班占领阿富汗一周年谈对社会的改良型变革
 excerpt: "今天是塔利班执掌阿富汗一周年，塔利班在短短11天便重新控制了整个阿富汗，那么为什么以西方国家支持建立的阿富汗伊斯兰共和国如此不堪，社会制度改良变革到底需要什么条件？"
 header:
-  teaser: /assets/img/page-header-image-tech5-teaser.jpg
+  teaser: /assets/img/page-header-image-country01-teaser.jpg
+  overlay_image: /assets/img/page-header-image-country01.jpg # Add image post (optional)
   caption: "Photo credit: [**Unsplash**](https://unsplash.com/photos/-IhgLixx7Z8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
   overlay_filter: 0.5
-  overlay_image: /assets/img/page-header-image-tech5.jpg # Add image post (optional)
 categories:
   - 社会领域
 tags: 
