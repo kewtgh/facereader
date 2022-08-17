@@ -1,6 +1,6 @@
 ---
 title: RSS订阅教程
-excerpt: "因为目前网站并不支持国内用户的关注和订阅，很多用户抱怨很不方便。这里就为大家介绍一下使用Calibre通过RSS订阅并制作成电子书阅读的方法。"
+excerpt: "因为目前网站并不支持国内用户的关注和订阅，许多用户抱怨很不方便。这里就为大家介绍一下使用Calibre通过RSS订阅并制作成电子书阅读的方法。"
 header:
   teaser: /assets/img/page-header-image-rss-teaser.jpg
   overlay_image: /assets/img/page-header-image-rss.jpg # Add image post (optional)
@@ -17,7 +17,7 @@ last_modified_at: 2022-08-17T19:25:52-05:00
 
 ---
 
-&emsp;&emsp;因为目前网站并不支持国内用户的关注和订阅，很多用户抱怨很不方便。这里就为大家介绍一下使用Calibre通过RSS订阅并制作成电子书阅读的方法。
+&emsp;&emsp;因为目前网站并不支持国内用户的关注和订阅，许多用户抱怨很不方便。这里就为大家介绍一下使用Calibre通过RSS订阅并制作成电子书阅读的方法。
 
 ## 一、获取工具和资源
 
@@ -25,17 +25,17 @@ last_modified_at: 2022-08-17T19:25:52-05:00
 
 &emsp;&emsp;Calibre是目前最受欢迎的电子书管理软件，其完善的功能和易用性使其广受欢迎，网上相关的使用教程也有很多，想使用更多功能，可以搜索查询，这里就不再赘述。
 
-&emsp;&emsp;打开Calibre官网的下载页面：https://calibre-ebook.com/download
+&emsp;&emsp;打开Calibre官网的[下载页面](https://calibre-ebook.com/download)
 
 <div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/2022/Calibre-download.png" alt="Calibre-download" style="zoom:50%;" /></div>
 
-&emsp;&emsp;目前Calibre支持Windows、MacOS、Linux等主流平台，不过目前并没有Android和iOS客户端，但有很多工具支持Calibre的电子书，并且也可以通过服务器自己架设平台，支持Android和iOS端。
+&emsp;&emsp;Calibre支持Windows、MacOS、Linux等主流平台，不过目前并没有Android和iOS客户端，但有很多工具支持Calibre的电子书，并且也可以通过服务器自己架设平台，支持Android和iOS端。
 
-&emsp;&emsp;安装软件，各平台正常安装即可。
+&emsp;&emsp;安装软件过程：各平台正常安装即可。
 
 ### 2、获取RSS源
 
-&emsp;&emsp;打开FaceReader博客首页：https://facereader.witbacon.com/
+&emsp;&emsp;打开FaceReader[博客首页](https://facereader.witbacon.com/)
 
 <div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/2022/FaceReader-RSS.png" alt="FaceReader-RSS" style="zoom:50%;" /></div>
 
