@@ -7,7 +7,7 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com/photos/-IhgLixx7Z8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
   overlay_filter: 0.5
 categories:
-  - 社会领域
+  - 社会杂论
 tags: 
   - 阿富汗
   - 政治改革
