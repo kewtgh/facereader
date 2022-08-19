@@ -12,9 +12,10 @@ tags:
   - FEED
   - Calibre
   - 订阅源
+comments: true
 toc: true
+share: true
 last_modified_at: 2022-08-17T19:25:52-05:00
-
 ---
 
 &emsp;&emsp;因为目前网站并不支持国内用户的关注和订阅，许多用户抱怨很不方便。这里就为大家介绍一下使用Calibre通过RSS订阅并制作成电子书阅读的方法。
@@ -185,6 +186,6 @@ last_modified_at: 2022-08-17T19:25:52-05:00
 
 - leaf
 
-
+---
 
 &emsp;&emsp;全文完。
