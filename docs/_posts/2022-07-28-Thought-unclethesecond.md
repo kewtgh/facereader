@@ -6,7 +6,7 @@ header:
   overlay_image: /assets/img/page-header-image-hero.jpg # Add image post (optional)
   overlay_filter: 0.4
 categories:
-  - 人格成长
+  - 社会杂论
 tags: 
   - 二舅
   - 正能量
