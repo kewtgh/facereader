@@ -1,5 +1,5 @@
 ---
-title: 为什么“竟无一人是男儿”
+title: 组织中反对声音消失的原因——组织驯化
 excerpt: "因为众人对中国的未来抱有极大的期望，所以期待能出现反对的声音。但是最终的结局还是很令人失望，“竟无一人是男儿”的情况依然发生了。那么真正的原因是什么呢？"
 header:
   teaser: /assets/img/page-header-image-politics1-teaser.jpg
