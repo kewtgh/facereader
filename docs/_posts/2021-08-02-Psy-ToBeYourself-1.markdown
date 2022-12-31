@@ -7,7 +7,7 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
   actions:
     - label: "More Info"
-      url: "https://facereader.witbacon.com/categories/#%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF"
+      url: "https://facereader.witbacon.com/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-2/"
   teaser: /assets/img/page-header-image-wit2-teaser.jpg
 categories:
   - 人格成长
