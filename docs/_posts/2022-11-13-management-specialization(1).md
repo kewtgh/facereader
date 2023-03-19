@@ -5,6 +5,9 @@ header:
   teaser: /assets/img/page-content-image-wide-people-teaser.jpg
   overlay_image: /assets/img/page-content-image-wide-people.jpg # Add image post (optional)
   caption: "Photo credit: [**Unsplash**](https://unsplash.com/photos/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
+  actions:
+    - label: "查看下篇"
+      url: "https://facereader.witbacon.com/docs/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/management-specialization(2)/"
   overlay_filter: 0.4
 categories:
   - 管理思想

@@ -1,6 +1,6 @@
 ---
 title: 再谈做自己
-excerpt: "多年前曾写过一篇文章，《做自己？你会害了你自己》。这是我不及而立之时，对“做自己”的思考。如今，已过而立，未及不惑，对于“做自己”也有了新的认识。"
+excerpt: "多年前曾写过一篇文章，《做自己？这样会害了你》。这是我不及而立之时，对“做自己”的思考。如今，已过而立，未及不惑，对于“做自己”也有了新的认识。"
 header:
   teaser: /assets/img/page-header-image-meteor01-teaser.jpg
   overlay_image: /assets/img/page-header-image-meteor01.jpg # Add image post (optional)
@@ -28,7 +28,7 @@ toc: true
 last_modified_at: 2022-12-31T23:59:59-05:00
 ---
 
-&emsp;&emsp;多年前曾写过一篇文章，[《做自己？你会害了你自己》](https://facereader.witbacon.com/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/)。这是我不及而立之时，对“做自己”的思考。
+&emsp;&emsp;多年前曾写过一篇文章，[《做自己？这样会害了你》](https://facereader.witbacon.com/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/)。这是我不及而立之时，对“做自己”的思考。
 
 &emsp;&emsp;如今，已过而立，未及不惑，对于“做自己”也有了新的认识。
 
