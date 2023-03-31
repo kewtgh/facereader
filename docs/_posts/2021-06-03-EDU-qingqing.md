@@ -4,7 +4,7 @@ excerpt: "这是我这个人博客的第一篇文章，原本未有意，但因�
 header:
   teaser: /assets/img/page-header-image-literacy2-teaser.jpg
   overlay_image: /assets/img/page-header-image-literacy2.jpg # Add image post (optional)
-  overlay_filter: 0.3
+  overlay_filter: 0.5
 categories:
   - 企业剖析
   - 教育行业

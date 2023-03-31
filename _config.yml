@@ -21,15 +21,16 @@ title_separator          : "|"
 subtitle                 : "解读人性，分析企业，洞悉社会，掌握趋势。" # site tagline that appears below site title in masthead
 name                     : "FaceReader-企业观察"
 description              : "For Profound Thinkers."
-url                      : "https://kewtgh.github.io" # the base hostname & protocol for your site e.g. "https://kewtgh.github.io"
+url                      : "https://facereader.witbacon.com" # the base hostname & protocol for your site e.g. "https://kewtgh.github.io"
 baseurl                  : ""# the subpath of your site, e.g. "/blog"
 repository               : "kewtgh/facereader"# GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "/assets/img/bio-photo-500x300.png"# path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/img/logo-facereader.png"# path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : "FaceReader-企业观察"# overrides the website title displayed in the masthead, use " " for no title
-breadcrumbs            : false # true, false (default)
+breadcrumbs              : false # true, false (default)
 words_per_minute         : 350
 chinese_words_per_minute         : 450
+github                   : [metadata]
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
@@ -129,7 +130,7 @@ author:
       # url: "https://twitter.com/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
+      url: "https://www.facebook.com/profile.php?id=100088693703792"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       # url: "https://github.com/"
