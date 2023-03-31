@@ -21,7 +21,7 @@ title_separator          : "|"
 subtitle                 : "解读人性，分析企业，洞悉社会，掌握趋势。" # site tagline that appears below site title in masthead
 name                     : "FaceReader-企业观察"
 description              : "For Profound Thinkers."
-url                      : "https://kewtgh.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://kewtgh.github.io" # the base hostname & protocol for your site e.g. "https://kewtgh.github.io"
 baseurl                  : ""# the subpath of your site, e.g. "/blog"
 repository               : "kewtgh/facereader"# GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "/assets/img/bio-photo-500x300.png"# path of fallback teaser image, e.g. "/assets/images/500x300.png"
