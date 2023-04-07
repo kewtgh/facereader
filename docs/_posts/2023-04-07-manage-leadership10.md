@@ -1,6 +1,6 @@
 ---
 title: 不靠谱领导力（10)——知人善任
-excerpt: " "
+excerpt: "在我的咨询案例中，遇到最多的情况就是，企业因其创始人的某项独特能力而成功，比如创始人是超级销售，或者超级外交家，但是大多数这类企业在发展到一定规模的时候便面临发展瓶颈，或者规模无法再增长，或者企业因管理问题层出不穷而陷入困境。而这类企业面临发展困境最根本的原因，都是创始人用人方面的问题所造成的。"
 header:
   teaser: /assets/img/page-header-image-leadership-teaser.jpg
   overlay_image: /assets/img/page-header-image-leadership.jpg # Add image post (optional)
