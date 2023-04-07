@@ -34,7 +34,7 @@ sidebar:
   title: "经典系列"
   nav: sidebar-series-leadership
 toc: true
-last_modified_at: 2022-04-07T19:25:52-05:00
+last_modified_at: 2023-04-07T19:25:52-05:00
 ---
 
 &emsp;&emsp;本期我们来谈关键领导力中的第六项：知人善任。
