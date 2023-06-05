@@ -58,63 +58,83 @@ last_modified_at: 2023-06-04T19:25:52-05:00
 > 
 >
 > Two roads diverged in a yellow wood,
+>
 > 金色树林里分出两条路，
 >
 > And sorry I could not travel both
+>
 > 可惜我无法都涉足，
 >
 > And be one traveler, long I stood
+>
 > 我一个旅人，在那路口久久伫立
 >
 > And looked down one as far as I could
+>
 > 向其中一条路，我极目望去，
 >
 > To where it bent in the undergrowth;
+>
 > 直到它消失在丛林的深处。
 >
 > Then took the other, as just as fair,
+>
 > 但我却选择了另一条路，
 >
 > And having perhaps the better claim,
+>
 > 这也许是个更好的选择，
 >
 > Because it was grassy and wanted wear;
+>
 > 因为这条路绿草如茵，待人踏足，
 >
 > Though as for that the passing there
+>
 > 尽管当我经过之后，
 >
 > Had worn them really about the same,
+>
 > 也会留下与他人相同的足迹。
 >
 > 
 >
 > And both that morning equally lay
+>
 > 那天清晨落叶满地，
 >
 > In leaves no step had trodden black.
+>
 > 两条路都未被足迹染涉，
 >
 > Oh, I kept the first for another day!
+>
 > 哦，我把第一条路留待他日！
 >
 > Yet knowing how way leads on to way,
+>
 > 尽管我知道路都会延绵无尽，
 >
 > I doubted if I should ever come back.
+>
 > 恐怕我难以再返回，
 >
 > I shall be telling this with a sigh
+>
 > 我将带着一声叹息回顾往事，
 >
 > Somewhere ages and ages hence:
+>
 > 多少年后的某个地方：
 >
 > Two roads diverged in a wood, and I-
+>
 > 一片树林里分出两条路，而我
 >
 > I took the one less traveled by,
+>
 > 而我选择了人迹更少的一条，
 >
 > And that has made all the difference.
+>
 > 而这，铸就了我不凡的一生。
