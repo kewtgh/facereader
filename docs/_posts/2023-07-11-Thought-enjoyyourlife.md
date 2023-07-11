@@ -1,6 +1,6 @@
 ---
 title: Enjoy Your Life
-excerpt: "This is the best Canon I've knew. Siting at your balcony. Enjoy it!"
+excerpt: "This is the best Canon I've heard. Sitting at your balcony. Enjoy it!"
 header:
   teaser: /assets/img/page-header-image-vision3-teaser.jpg
   overlay_image: /assets/img/page-header-image-vision3.jpg # Add image post (optional)
