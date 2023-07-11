@@ -40,9 +40,7 @@ Even I didn't got the life I expected,
 
 I still miss those moment I staring at the night sky.
 
-```
 {% include video id="eo7DcpEx6pQ" provider="youtube" %}
-```
 
 
 
