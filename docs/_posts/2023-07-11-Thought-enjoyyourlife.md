@@ -24,7 +24,7 @@ last_modified_at: 2023-07-11T19:25:52-05:00
 
 When I was a kid,
 
-I used to stared at the night sky,
+I used to stare at the night sky,
 
 which was full of stars.
 
