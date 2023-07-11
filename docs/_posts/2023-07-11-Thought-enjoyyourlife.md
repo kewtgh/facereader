@@ -26,7 +26,7 @@ When I was a kid,
 
 I used to stared at the night sky,
 
-which full of stars.
+which was full of stars.
 
 I thought,
 
