@@ -1,6 +1,6 @@
 ---
 title: 一本正经的讨论：卖饭的被禁止后，人们会不会吃屎
-excerpt: "最近中国网信办出了新规，其中要求各社媒平台和网站加强"自媒体"管理，其中有些规定让人匪夷所思。这让人联想到，吃屎和吃饭的问题。"
+excerpt: "最近中国网信办出了新规，其中要求各社媒平台和网站加强“自媒体”管理，其中有些规定让人匪夷所思。这让人联想到，吃屎和吃饭的问题。"
 header:
   teaser: /assets/img/page-header-image-holyshit-teaser.jpg
   overlay_image: /assets/img/page-header-image-holyshit.jpg # Add image post (optional)
@@ -16,7 +16,7 @@ tags:
   - 人格
   - 自尊
 toc: true
-last_modified_at: 2023-07-14T19:25:52-05:00 
+last_modified_at: 2023-07-15T19:25:52-05:00 
 ---
 
 &emsp;&emsp;最近中国网信办出了新规，其中要求各社媒平台和网站加强"自媒体"管理，其中有些规定让人匪夷所思，比如，“要求“自媒体”不得集纳负面信息、翻炒旧闻旧事、蹭炒社会热点事件、消费灾难事故”。
