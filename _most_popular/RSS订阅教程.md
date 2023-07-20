@@ -1,3 +1,25 @@
+---
+title: RSS订阅教程
+excerpt: "因为目前网站并不支持国内用户的关注和订阅，许多用户抱怨很不方便。这里就为大家介绍一下使用Calibre通过RSS订阅并制作成电子书阅读的方法。"
+header:
+  teaser: /assets/img/page-header-image-rss-teaser.jpg
+  overlay_image: /assets/img/page-header-image-rss.jpg # Add image post (optional)
+  overlay_filter: 0.4
+categories:
+  - 教程
+tags: 
+  - RSS
+  - FEED
+  - Calibre
+  - 订阅源
+  - Inoreader
+  - 阅读
+comments: true
+toc: true
+share: true
+last_modified_at: 2022-08-17T19:25:52-05:00
+---
+
 目前网站并没有在平台发布，所以很多使用手机的小伙伴阅读每次都需要网站，这里就为大家介绍一下两种订阅RSS的方法
 
 ## 第一种 使用Inoreader订阅
