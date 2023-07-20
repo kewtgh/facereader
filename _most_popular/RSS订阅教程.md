@@ -24,7 +24,7 @@ last_modified_at: 2022-08-17T19:25:52-05:00
 
 ## 第一种 使用Inoreader订阅
 
-Inoreader是非常方便的RSS阅读工具，直接点击左上角==设置==，点击==Feeds==右侧的“+”号。
+Inoreader是非常方便的RSS阅读工具，直接点击左上角*设置*，点击*Feeds*右侧的“**+**”号。
 
 打开后，在搜索栏输入：https://facereader.witbacon.com
 
