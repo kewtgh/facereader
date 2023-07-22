@@ -108,6 +108,7 @@ analytics:
   provider               : "custom" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
     tracking_id          : G-5WFQ96DEVR
+    tag_id               : GTM-5CDPW57
     anonymize_ip         : true # true, false (default)
 
 
