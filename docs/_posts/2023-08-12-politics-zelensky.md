@@ -3,7 +3,8 @@ title: 泽连斯基生来就是英雄吗?
 excerpt: "At the end of February 2022，Russia launched the war against Ukraine. At the beginning,Ukraine was isolated without help. No one is optimistic about Ukraine's ultimate ending. But Zelensky's bravery inspired the Ukrainian people，and also moved the entire world. The war's situation was changing to be more favorable to Ukraine. Was Zelensky born to be a Hero?"
 header:
   teaser: /assets/img/page-header-image-hero-teaser.jpg
-  overlay_image: /assets/img/page-header-hero.jpg # Add image post (optional)
+  overlay_image: /assets/img/page-header-image-hero.jpg # Add image post (optional)
+  caption: "Photo credit: [**Unsplash**](https://unsplash.com/photos/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
   overlay_filter: 0.5
 categories:
   - 阅相识人
