@@ -52,7 +52,7 @@ last_modified_at: 2023-08-12T22:25:52-05:00
 
 &emsp;&emsp;第一次看到这句话时，我就被震撼了！就像我看到威廉·华莱士在《勇敢的心》中，喊出那句“Freedom！”一样。
 
-![brave-heart-william-wallace-shouted-freedom](https://kewtgh.github.io/PicSunflowers/img/2023/brave-heart-william-wallace-shouted-freedom.jpg)
+<img src="https://kewtgh.github.io/PicSunflowers/img/2023/brave-heart-william-wallace-shouted-freedom.jpg" alt="brave-heart-william-wallace-shouted-freedom" />
 
 &emsp;&emsp;这是怎样的一个人呀？他的早年生活是什么样的？他生来就是英雄吗？
 
@@ -66,12 +66,13 @@ last_modified_at: 2023-08-12T22:25:52-05:00
 
 &emsp;&emsp;泽连斯基1978年生于乌克兰中部城市克里维里赫（**Kryvyi Rih**，又称克里沃罗格，**Krivoy Rog**），父母都是犹太人，泽连斯基也信奉犹太教。他父亲亚历山大·塞梅诺维奇·泽连斯基是一位采矿学教授，担任克里维里赫州立大学控制论和计算硬件系主任，泽连斯基的母亲是一名工程师。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/克里维里赫.jpg" alt="克里维里赫" /></br>
+<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/克里维里赫.jpg" alt="克里维里赫" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
     padding: 2px;">克里维里赫位置</div>
 </center>
+
 
 &emsp;&emsp;泽连斯基出生时，正值勃烈日涅夫统治时期，政策整体趋向于计划经济和极权，处于苏联实力开始转衰之时。一年后，苏联入侵阿富汗，苏阿战争打响，这场战争也是苏联瓦解的重要原因之一。
 
@@ -79,11 +80,12 @@ last_modified_at: 2023-08-12T22:25:52-05:00
 
 &emsp;&emsp;之后，泽连斯基随父亲返回乌克兰。而这时苏阿战争还在继续，苏联在这场持续了九年的战争中，每年投入40亿美金以上。在持续九年的战争期间，苏联的民生和经济已经严重下滑，到1985年时，苏联人每天要花2小时排队买面包。克里维里赫这时也帮派盛行，街头经常出现帮派的暴力争斗。不过，泽连斯基年纪尚小，小学二年级，面对这种事情，往往带着憧憬，只能象征性的在过家家的游戏中扮演古惑仔，偶尔跟在几个大年纪的兄长后面蹭蹭热闹而已。不过随着他年纪渐长，耳濡目染这种帮派行为就难免。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/zelensky-Child.jpg" alt="zelensky-Child" /></br>
+<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/zelensky-Child.jpg" alt="zelensky-Child" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
     padding: 2px;">幼年泽连斯基</div></center>
+
 
 &emsp;&emsp;但看泽连斯基幼年的照片，性格非常单纯，调皮且聪明，想象力丰富。这张照片没查到具体的年龄，但目测差不多刚上小学的时候，完全没有帮派气息浸染的迹象。
 
@@ -95,37 +97,41 @@ last_modified_at: 2023-08-12T22:25:52-05:00
 
 &emsp;&emsp;三年后，九年级的泽连斯基通过了托福考试，并获得了以色列一所大学的录取通知，打算去以色列留学。但父亲没有同意，最后他留在了乌克兰，进入基辅国立经济大学克里维里赫经济学院，并最后获得法学学士学位。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/zelensky-teenage.jpg" alt="zelensky-teenage" /></br>
+<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/zelensky-teenage.jpg" alt="zelensky-teenage" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
     padding: 2px;">少年泽连斯基和父亲</div></center>
+
 &emsp;&emsp;17岁时，泽连斯基与好友一起参与了喜剧电视节目国际竞赛KVN，并随后获邀加入了更优秀的队伍*Zaporizhia-Kryvyi Rih-Transit*。之后，泽连斯基与几位队友离开并创建了“95街区”团队，团队因其出色的表演得以在前苏联国家中进行巡演。
 
 ### 3、青年
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/zelensky-youth.jpg" alt="zelensky-youth" /></br>
+<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/zelensky-youth.jpg" alt="zelensky-youth" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
     padding: 2px;">泽连斯基青年</div></center>
 
+
 &emsp;&emsp;这个阶段对泽连斯基影响很大，他已经展现出成功者的一些特质，你能从他脸上看出不甘居人后的决心，和果决的行动力。因此在新组建的“95街区”团队中，他不但担任队长，还是大多数作品的主要创作者。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/the-95th-block-kvn-team.jpg" alt="the-95th-block-kvn-team" /></br>
+<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/the-95th-block-kvn-team.jpg" alt="the-95th-block-kvn-team" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
     padding: 2px;">泽连斯基和"95街区"KVN团队</div></center>
+
 &emsp;&emsp;2003年，“95街区”与AMiK公司发生矛盾，最后整个团队都离开了KVN，并开始与电视频道“1+1”合作。
 
 &emsp;&emsp;同年，泽连斯基与奥琳娜·基亚什科步入婚姻殿堂，二人曾是中学和大学同学。二人的婚姻幸福美满，一直持续到现在，并且共同育有一个女儿和一个儿子。虽然奥琳娜读的是建筑学，但更多投入在泽连斯基的艺术事业中，并且也是“95街区”的创始成员之一。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/泽伦斯基与奥琳娜结婚.jpg" alt="泽伦斯基与奥琳娜结婚" /></br>
+<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/泽伦斯基与奥琳娜结婚.jpg" alt="泽伦斯基与奥琳娜结婚" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
     padding: 2px;">泽连斯基与奥琳娜婚礼当日照片</div></center>
+
 
 &emsp;&emsp;两年后于2005年，团队开始与电视台“Inter”合作，泽连斯基担任该电视台的制作人、导演和主要演员，并且逐渐获得知名度。“95街区”也转为工作室，创作了一系列脍炙人口的电视节目“搏击俱乐部”、“乌克兰，起床”、“晚间时分”等。
 
@@ -149,11 +155,12 @@ last_modified_at: 2023-08-12T22:25:52-05:00
 
 &emsp;&emsp;在2019年4月2日的初选中，泽连斯基将与波罗申科分别得票30.24%和15.95%共同进入第二轮，在随后的第二轮选举中，泽连斯基以73.22%的得票率完败得票率仅为24.45%的波罗申科，成功获选成为乌克兰总统。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/zelensky-2019.jpg" alt="zelensky-2019" /></br>
+<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/zelensky-2019.jpg" alt="zelensky-2019" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
     padding: 2px;">泽连斯基当选乌克兰总统 2019</div></center>
+
 &emsp;&emsp;三年后，俄罗斯入侵乌克兰。正是当时民众所亲睐的这位演员，在俄罗斯兵临城下之际说出了文首的那句话：“这可能是你们最后一次看到我。”
 
 &emsp;&emsp;也正是他，不懈地向美国、英国和欧盟求助，最终打动了西方国家的领导者们，使得乌克兰在最危急的时刻获得援助。并且在之后的一年多时间中，领导乌克兰击退了势不可挡的俄罗斯入侵者，让俄罗斯人节节败退，并且撕下了这个独裁国的纸老虎外衣，让其羸弱不堪的内脏示之于人。
@@ -170,11 +177,12 @@ last_modified_at: 2023-08-12T22:25:52-05:00
 
 &emsp;&emsp;但这些困难，完全没有办法和战争相比。在面对战争的这一年多时间中，能明显看出他脸上的沧桑，这是长期经历苦难所获得的，也帮助他获得了更多的成长。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/zelensky-2023-4.webp" alt="zelensky-2023" /></br>
+<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/zelensky-2023-4.webp" alt="zelensky-2023" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
     padding: 2px;">泽连斯基，2023年4月</div></center>
+
 
 &emsp;&emsp;这个过程，和很多国内的大型民营企业的企业家们的经历是一样的，在引领企业迈向成功之路的过程中，需要克服各种困难和险阻，这些企业家们没有多少精力去虚荣、狂妄和娱乐。
 
@@ -192,11 +200,12 @@ last_modified_at: 2023-08-12T22:25:52-05:00
 
 &emsp;&emsp;最后，让我们看看泽连斯基在战争前后的领导力的变化：
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/Leadership-of-zelensky.png" alt="zelensky-leadership" /></br>
+<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/Leadership-of-zelensky.png" alt="zelensky-leadership" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
     padding: 2px;">泽连斯基领导力图表</div></center>
+
 
 &emsp;&emsp;希望战争胜利的那一天早日到来！
 
