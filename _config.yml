@@ -29,7 +29,7 @@ logo                     : "/assets/img/logo-facereader.png"# path of logo image
 masthead_title           : "FaceReader-企业观察"# overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 350
-chinese_words_per_minute         : 450
+chinese_words_per_minute         : 350
 github                   : [metadata]
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
@@ -108,7 +108,7 @@ analytics:
   provider               : "google-gtag" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
     tracking_id          : G-5WFQ96DEVR
-    anonymize_ip         : true # true, false (default)
+    anonymize_ip         : false # true, false (default)
 
 
 # Site Author
@@ -158,7 +158,7 @@ footer:
       # url:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url: 
+      # url:
 
 # Reading Files
 include:
