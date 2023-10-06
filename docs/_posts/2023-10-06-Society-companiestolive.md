@@ -1,13 +1,11 @@
 ---
-title: 活着：中国企业一切问题的根源
-excerpt: "根据世界银行的数据，2021年中国的宏观税负为36.1%。这是什么意思呢？意思就是，任何两个中国人之间发生3块钱的交易，就有一块多的钱是被政府拿走的。"
+title: 活着——中国企业一切问题的根源
+excerpt: "根据世界银行的数据，2021年中国的宏观税负为36.1%，这是什么意思呢？意思就是，任何两个中国人之间发生3块钱的交易，就有一块多的钱是被政府拿走的"
 header:
   teaser: /assets/img/page-header-image-tolive-teaser.jpg
   overlay_image: /assets/img/page-header-image-tolive.jpg # Add image post (optional)
   overlay_filter: 0.4
 categories:
-  - 社会杂论
-tags: 
   - 活着
   - 企业
   - 管理
