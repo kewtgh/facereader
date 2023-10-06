@@ -1,32 +1,25 @@
 ---
-title: 活着——中国企业一切问题的根源
-excerpt: "根据世界银行的数据，2021年中国的宏观税负为36.1%，这是什么意思呢？意思就是，任何两个中国人之间发生3块钱的交易，就有一块多的钱是被政府拿走的。"
+title: 一个体制的烂，往往反映在体育上
+excerpt: "自2022年中国男足以1：3历史上首次输给越南后，近日中国男篮又史无前例地输给了南苏丹，一个人口仅1400万，人均GDP排名全球倒数第四的国家。中国体育败绩连创纪录的原因是什么呢？和体制有没有关系呢？"
 header:
-  teaser: /assets/img/page-header-image-tolive-teaser.jpg
-  overlay_image: /assets/img/page-header-image-tolive.jpg # Add image post (optional)
-  overlay_filter: 0.4
+  teaser: /assets/img/page-header-image-holyshit-teaser.jpg
+  overlay_image: /assets/img/page-header-image-holyshit.jpg # Add image post (optional)
+  caption: "Photo credit: [**Unsplash**](https://unsplash.com/photos/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
+  overlay_filter: 0.5
 categories:
-  - 活着
-  - 企业
-  - 管理
-  - 经营
-  - 中国税负
-  - 中国企业
-  - 2001
-  - 利润
-  - 经营数据
-  - GDP
-  - 财政收入
-  - 宏观税负
-  - 税负压力
-  - 目光短浅
-  - 生存第一
-  - 企业文化
-  - 企业制度
-  - 压力
-  - 老板
-  - 中小企业
-  - 政府
+  - 社会杂论
+tags: 
+  - 中国体育
+  - 中国体制
+  - 中国男篮
+  - 举国体制
+  - 集中力量办大事
+  - 中国足球
+  - 社会制度
+  - 中国女排
+  - 开放社会
+  - 自由体制
+  - 自由开放
 toc: true
 last_modified_at: 2023-10-06T19:25:52-05:00
 ---
