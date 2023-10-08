@@ -6,6 +6,8 @@ header:
   overlay_image: /assets/img/page-header-image-tolive.jpg # Add image post (optional)
   overlay_filter: 0.4
 categories:
+  - 社会杂论
+tags: 
   - 活着
   - 企业
   - 管理
