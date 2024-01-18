@@ -46,7 +46,12 @@ last_modified_at: 2024-01-18T19:25:52-05:00
 
 &emsp;&emsp;刚刚看了一部Netflix的动画短剧，《Carol & The End Of The World》，中文名叫做《凯洛的末日日常》。讲的是，地球将在7个月后被一颗地外行星撞击，整个世界即将毁灭，一位年过四十的，平平无奇的名叫Carol单身女性，在面临世界末日前的几个月内如何生活的故事。
 
-![Carol-and-the-end-of-the-world](https://kewtgh.github.io/PicSunflowers/img/2023/Carol-and-the-end-of-the-world.jpg)
+<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/Carol-and-the-end-of-the-world.jpg" alt="Carol and the end of the world" /><br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">Carol and The End Of The World</div>
+</center>
 
 &emsp;&emsp;这样的关于世界末日作品，正是存在主义心理学中关于人的四大命题的探讨：死亡、自由、孤独与无意义。
 
@@ -154,11 +159,21 @@ last_modified_at: 2024-01-18T19:25:52-05:00
 
 &emsp;&emsp;《Carol & The End Of The World》的第五集，介绍了Carol的一位同事David，在办公室猝死的故事。
 
-![Carol-The-End-of-the-World-david](https://kewtgh.github.io/PicSunflowers/img/2023/Carol-The-End-of-the-World-david.jpg)
+<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/Carol-The-End-of-the-World-david.jpg" alt="Carol and the end of the world, the dead David" /><br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">Carol and The End Of The World, 死去的David</div>
+</center>
 
 &emsp;&emsp;David几乎是住在办公室里，当所有的人都下班回家后，David依然在办公室。最后，孤独地死在他的工位上，却没有其他人发现，甚至他的家人也没有任何问询。最后Carol发现了他，与另外两个同事Luis和Donna一起决定，将David的遗体送回家。
 
-![Carol-The-End-of-the-World-carol-donna-luis](https://kewtgh.github.io/PicSunflowers/img/2023/Carol-The-End-of-the-World-carol-donna-luis.webp)
+<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/Carol-The-End-of-the-World-carol-donna-luis.webp" alt="Carol and the end of the world, Carol,Donna,and Luis" /><br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">Carol and The End Of The World, Carol,Donna,and Luis</div>
+</center>
 
 &emsp;&emsp;当他们回到David的家后，发现他的妻子和孩子正在和五六个男人一起同居，却没人注意到David不见了，他们对David也毫不关心。最后，Carol找到David入职时填写的紧急联系人，他的叔叔查尔斯。
 
@@ -182,7 +197,12 @@ last_modified_at: 2024-01-18T19:25:52-05:00
 
 &emsp;&emsp;Eric的形象是个妻子跟别人跑了的Loser，他因为害怕孤独，和Carol发生了一夜情，最终在Carol离开后痛苦不堪，更加自暴自弃。儿子Steven看不下去了，骗他说自己联系了妈妈，要跟妈妈去一起生活。Eric在送儿子离开时，写下了这封信：
 
-![Carol-The-End-of-the-World-eric-steven](https://kewtgh.github.io/PicSunflowers/img/2023/Carol-The-End-of-the-World-eric-steven.jpg)
+<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/Carol-The-End-of-the-World-eric-steven.jpg" alt="Carol and the end of the world, " /><br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">Carol and The End Of The World, Eric和儿子Steven</div>
+</center>
 
 > 亲爱的Brooke，
 >
