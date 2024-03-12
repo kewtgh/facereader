@@ -3,7 +3,7 @@ title: 为什么中国的恶性报复事件总是针对孩子？
 excerpt: "报复社会的恐怖袭击各地都会发生，但是专门针对孩子的恐怖袭击事件在中国之多见，令人乍舌。仅仅疫情前的2019年，针对学生的恶性报复社会事件就发生了5起。到底为什么这些对社会不满的人要将怨气撒向孩子呢？"
 header:
   teaser: /assets/img/page-header-image-shouting-teaser.jpg
-  overlay_image: /assets/img/page-header-image-shou.jpg # Add image post (optional)
+  overlay_image: /assets/img/page-header-image-shouting.jpg # Add image post (optional)
   caption: "Photo credit: [**Unsplash**](https://unsplash.com/photos/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
   overlay_filter: 0.4
 categories:
@@ -122,7 +122,7 @@ last_modified_at: 2024-03-12T19:25:52-05:00
 
 &emsp;&emsp;**什么样的报复会让他们最有快感呢？就是对那些同样无辜的人下手。而孩子，就是最无辜的人群。**
 
-&emsp;&emsp;这个社会对我的所有不公，以我对这社会上最无辜的人的报复而结束。
+&emsp;&emsp;“这个社会对我的所有不公，以我对这社会上最无辜的人的报复而结束。”
 
 &emsp;&emsp;我相信那些决心向孩子们伸出毒手的人，没几个会考虑继续活下去。因此，他们最后的所作所为，就是最大程度地向这社会怒吼。
 
