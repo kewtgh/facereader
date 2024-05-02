@@ -1,6 +1,8 @@
 source "https://rubygems.org"
 gemspec
 
+gem "csv"
+
 gem "github-pages", group: :jekyll_plugins
 
 gem "tzinfo-data"
@@ -15,4 +17,5 @@ group :jekyll_plugins do
   gem "jemoji"
   gem "jekyll-include-cache"
   gem "jekyll-algolia"
+  gem 'jekyll-relative-links', '~> 0.6.1'
 end
