@@ -1,31 +1,19 @@
 name: Algolia push records
 on:
-  [push] #推送时执行
+  push:
+    branches:
+      - master
+      - main
+
+name: algolia-search
 jobs:
-  algolia:
+  algolia-search:
     runs-on: ubuntu-latest
+    env:
+      JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Ruby 2.6
-        uses: actions/setup-ruby@v1
+      - uses: actions/checkout@v3
+      - name: Algolia Jekyll Action
+        uses: dieghernan/algolia-jekyll-action@main
         with:
-          ruby-version: 2.6.x
-      - uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-      - name: Install ruby dependencies
-        run: |
-          gem install bundler
-          bundle config path vendor/bundle
-          bundle install --jobs 4 --retry 3
-      - name: Push algolia records
-        if: success() && github.ref == 'refs/heads/main'
-        run: bundle exec jekyll algolia
-        env:
-          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
-          ADMIN_API_KEY: ${{ secrets.ADMIN_API_KEY }}
-          INDEX_NAME: ${{ secrets.INDEX_NAME }}
-          FILE_PATH: ${{ secrets.FILE_PATH }}
+          APIKEY: '${{ secrets.ALGOLIA_API_KEY }}'
