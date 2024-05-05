@@ -12,7 +12,6 @@ tags:
   - 《求自试表》
 share: true
 classes: wide
-toc: true
 last_modified_at: 2021-09-05T19:25:52-05:00
 ---
 

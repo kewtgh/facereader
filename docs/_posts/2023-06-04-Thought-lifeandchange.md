@@ -19,6 +19,7 @@ tags:
   - 未走过的路
   - The Road Not Taken
 toc: true
+toc_sticky: true
 last_modified_at: 2023-06-04T19:25:52-05:00
 ---
 

@@ -32,6 +32,7 @@ sidebar:
   nav: sidebar-series-manufacture
 share: true
 toc: true
+toc_sticky: true
 last_modified_at: 2021-08-02T20:25:52-05:00
 ---
 > ​	小鹏汽车是我最看好的新能源汽车新兴企业，而其创始人何小鹏某个角度的照片也和雷军出其的相似，这也使得二人拥有一些相似的性格。那么到底小鹏汽车的核心团队的优秀到底体现在哪些方面呢？下面我们具体分析。

@@ -24,6 +24,7 @@ sidebar:
   nav: sidebar-series-manufacture
 classes: wide
 toc: true
+toc_sticky: true
 last_modified_at: 2021-09-05T19:25:52-05:00
 
 ---

@@ -19,8 +19,8 @@ locale                   : "zh-CN"
 title                    : "FaceReader-企业观察"
 title_separator          : "|"
 subtitle                 : "解读人性，分析企业，洞悉社会，掌握趋势。" # site tagline that appears below site title in masthead
-name                     : "FaceReader-企业观察"
-description              : "For Profound Thinkers."
+name                     : &name "FaceReader-企业观察"
+description              : &description "For Profound Thinkers."
 url                      : "https://facereader.witbacon.com" # the base hostname & protocol for your site e.g. "https://kewtgh.github.io"
 baseurl                  : ""# the subpath of your site, e.g. "/blog"
 repository               : "kewtgh/facereader"# GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -30,13 +30,16 @@ masthead_title           : "FaceReader-企业观察"# overrides the website titl
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 350
 chinese_words_per_minute         : 350
+enable_copy_code_button  : # true, false (default)
 github                   : [metadata]
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
     shortname            : "facereader-witbacon-com" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+
   facebook:
     # https://developers.facebook.com/docs/plugins/comments
     appid                :
@@ -45,6 +48,7 @@ comments:
   utterances:
     theme                : # "github-light" (default), "github-dark"
     issue_term           : # "pathname" (default)
+
   giscus:
     repo_id              : # Shown during giscus setup at https://giscus.app
     category_name        : # Full text name of the category
@@ -58,12 +62,14 @@ comments:
 reCaptcha:
   siteKey                :
   secret                 :
+
 atom_feed:
   path                   : # blank (default) uses feed.xml
   hide                   : # true, false (default)
+
 search                   : true # true, false (default)
 search_full_content      : false # true, false (default)
-search_provider          : algolia # lunr (default), algolia, google
+search_provider          : algolia # lunr (default), algolia
 algolia:
   files_to_exclude:
     - index.html
@@ -72,21 +78,21 @@ algolia:
     - /docs/_pages/*.html
     - /docs/_drafts/*.md
     - _documents/*.md
+    - /assets/
+    - /docs/_drafts/*.md
   application_id         : 9C0NU6FBIH # YOUR_APPLICATION_ID
   index_name             : Face Reader Search in Site# YOUR_INDEX_NAME
   search_only_api_key    : 51384fc8e05a85a035065d162dca8d76 # YOUR_SEARCH_ONLY_API_KEY
   powered_by             : true# true (default), false
-google:
-  search_engine_id       : 8f9d63aadc2c360f0 # YOUR_SEARCH_ENGINE_ID
-  instant_search         :  false # false (default), true
-# SEO Related
-google_site_verification :
-bing_site_verification   : 1FD730781DA0DB27E4000504190B0505
-yandex_site_verification : 5377dac57a028857
-naver_site_verification  :
+  files_to_exclude:
+    - _posts/2017-11-28-post-exclude-search.md
 
-# sitemap
-sitemap: true
+# SEO Related
+google_site_verification : "" # Replace this with your ID, or delete
+bing_site_verification   :
+naver_site_verification  :
+yandex_site_verification :
+baidu_site_verification  :
 
 # Social Sharing
 twitter:
@@ -108,7 +114,7 @@ analytics:
   provider               : "google-gtag" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
     tracking_id          : G-5WFQ96DEVR
-    anonymize_ip         : false # true, false (default)
+    anonymize_ip         : true # true, false (default)
 
 
 # Site Author
@@ -198,11 +204,6 @@ keep_files:
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-# Liquid
-strict_front_matter: true
-liquid:
-  error_mode: strict
-
 # Conversion
 markdown: kramdown
 highlighter: rouge
@@ -230,14 +231,32 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-# paginate: 10 # amount of posts to show
-# paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
+# Pagination with jekyll-paginate-v2
+# See https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
+#   for configuration details
+pagination:
+  # Set enabled to true to use paginate v2
+  enabled: true
+  debug: false
+  collection: 'posts'
+  per_page: 10
+  permalink: '/page/:num/'
+  title: ':title - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  category: 'posts'
+  tag: ''
+  locale: ''
+  trail:
+    before: 2
+    after: 2
 
 # Plugins (previously gems:)
 plugins:
-  - jekyll-paginate-v2
+  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
@@ -247,7 +266,7 @@ plugins:
 
 # mimic GitHub Pages with --safe
 whitelist:
-  - jekyll-paginate-v2
+  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
@@ -316,6 +335,7 @@ defaults:
       comments: true
       share: true
       related: true
+      show_date: true
   # _pages
   - scope:
       path: "_pages"

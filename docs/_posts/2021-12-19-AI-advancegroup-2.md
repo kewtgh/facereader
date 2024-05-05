@@ -39,6 +39,7 @@ sidebar:
   title: "经典系列"
   nav: sidebar-series-AI
 toc: true
+toc_sticky: true
 last_modified_at: 2021-12-19T19:25:52-05:00
 ---
 

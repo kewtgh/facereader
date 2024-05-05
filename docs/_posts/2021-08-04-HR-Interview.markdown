@@ -20,6 +20,7 @@ tags:
 share: true
 classes: wide
 toc: true
+toc_sticky: true
 last_modified_at: 2021-08-04T20:25:52-05:00
 ---
 

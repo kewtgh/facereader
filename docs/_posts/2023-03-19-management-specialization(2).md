@@ -21,6 +21,7 @@ tags:
   - 价值观
   - 双因素理论
 toc: true
+toc_sticky: true
 last_modified_at: 2023-03-19T19:25:52-05:00
 ---
 书接上文，继续阐述后四种专业化表现的实现方法。
