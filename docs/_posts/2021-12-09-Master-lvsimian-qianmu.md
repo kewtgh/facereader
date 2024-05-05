@@ -25,6 +25,7 @@ sidebar:
 share: true
 classes: wide
 toc: true
+toc_sticky: true
 last_modified_at: 2021-12-09T19:25:52-05:00
 ---
 

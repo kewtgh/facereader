@@ -21,6 +21,7 @@ tags:
   - 总理
   - 总统
 toc: true
+toc_sticky: true
 last_modified_at: 2022-03-04T22:25:52-05:00
 ---
 

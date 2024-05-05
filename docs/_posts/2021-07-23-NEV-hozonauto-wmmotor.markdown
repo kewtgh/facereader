@@ -32,6 +32,7 @@ sidebar:
   nav: sidebar-series-manufacture
 share: true
 toc: true
+toc_sticky: true
 last_modified_at: 2021-07-23T20:25:52-05:00
 ---
 >目前新能源汽车领域一片火热，短短三年之内有三家公司在美上市，而未上市的数家公司估值也超过数十亿，到底这些企业都怎么样呢？下面我就给大家扒一扒这些公司的管理团队，分析一下到底哪些公司更有潜力。

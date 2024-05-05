@@ -22,6 +22,7 @@ sidebar:
   title: "经典系列"
   nav: sidebar-series-leadership
 toc: true
+toc_sticky: true
 last_modified_at: 2022-02-24T19:25:52-05:00
 ---
 

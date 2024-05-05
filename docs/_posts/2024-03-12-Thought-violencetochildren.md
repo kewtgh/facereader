@@ -24,6 +24,7 @@ tags:
   - 极权社会
   - 社会报复
 toc: true
+toc_sticky: true
 last_modified_at: 2024-03-12T19:25:52-05:00
 ---
 

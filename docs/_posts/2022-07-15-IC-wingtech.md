@@ -33,6 +33,7 @@ sidebar:
   title: "企业剖析"
   nav: sidebar-series-IC
 toc: true
+toc_sticky: true
 last_modified_at: 2022-07-15T22:25:52-05:00
 ---
 

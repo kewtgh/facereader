@@ -21,6 +21,7 @@ tags:
   - 自由体制
   - 自由开放
 toc: true
+toc_sticky: true
 last_modified_at: 2023-09-15T19:25:52-05:00
 ---
 

@@ -21,6 +21,7 @@ tags:
   - 价值观
   - 管理制度
 toc: true
+toc_sticky: true
 last_modified_at: 2022-11-13T19:25:52-05:00
 ---
 ## 一、中国企业的专业化进程

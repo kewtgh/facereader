@@ -43,6 +43,7 @@ tags:
   - Leadership
   - 领导力图表
 toc: true
+toc_sticky: true
 last_modified_at: 2023-08-12T22:25:52-05:00
 ---
 

@@ -31,6 +31,7 @@ sidebar:
   nav: sidebar-series-manufacture
 share: true
 toc: true
+toc_sticky: true
 last_modified_at: 2021-07-28T20:25:52-05:00
 ---
 > ​	上期粗谈了新能源汽车的市场战略，简单剖析了理想汽车的核心团队，这期我们来剖析蔚来汽车的核心团队。目前李斌所创立的蔚来汽车已经遥遥领先其他新进新能源汽车企业，究竟是什么样的团队得以成就如此的成绩？而这支团队是否也有缺陷呢？

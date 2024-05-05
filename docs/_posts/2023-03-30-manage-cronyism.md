@@ -17,6 +17,7 @@ tags:
   - 资源保存理论
   - cronyism
 toc: true
+toc_sticky: true
 last_modified_at: 2023-03-30T19:25:52-05:00
 ---
 

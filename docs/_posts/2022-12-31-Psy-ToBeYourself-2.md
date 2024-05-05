@@ -25,6 +25,7 @@ tags:
   - 稻盛和夫
   - 感悟
 toc: true
+toc_sticky: true
 last_modified_at: 2022-12-31T23:59:59-05:00
 ---
 

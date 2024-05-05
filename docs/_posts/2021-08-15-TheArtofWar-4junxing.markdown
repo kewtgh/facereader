@@ -9,6 +9,7 @@ tags:
   - 中国传统文化
 share: true [2021-08-15-TheArtofWar-4junxing.markdown](2021-08-15-TheArtofWar-4junxing.markdown) 
 toc: true
+toc_sticky: true
 header:
   teaser: /assets/img/sunzi-teaser.jpg
   image: /assets/img/sunzi.jpg # Add image post (optional)
