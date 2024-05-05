@@ -17,9 +17,19 @@ tags:
   - 读书境界
   - 面相
 canonical_url: https://facereader.witbacon.com/docs/%E5%A4%A7%E5%B8%88%E7%99%BE%E7%9B%B8/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/Master-chenyin-chenyinke/
+gallery:
+  - url: https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/陈垣-all.jpg
+    image_path: https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/陈垣-all.jpg
+    alt: "placeholder image 1"
+    title: "Image 1 title caption"
+  - url: https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/陈垣-all.jpg
+    image_path: https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/陈垣-all.jpg
+    alt: "placeholder image 2"
+    title: "Image 2 title caption"
 share: true
 classes: wide
 toc: true
+popup: true
 sidebar:
   title: "经典系列"
   nav: sidebar-series-masters
@@ -40,6 +50,23 @@ last_modified_at: 2021-12-03T19:25:52-05:00
 ## 一、陈垣先生
 
 <img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/陈垣-all.jpg" title="" alt="陈垣-all" data-align="center">
+
+[testing](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/陈垣-all.jpg)
+
+<a href="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/陈垣-all.jpg" class="image-popup" >
+  这是个图雅
+</a>
+
+{% raw %}{% include gallery caption="This is a sample gallery with **Markdown support**." %}{% endraw %}
+
+<a href="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/陈垣-all.jpg"> 这是个图雅
+</a>
+
+```
+<a href="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/陈垣-all.jpg">
+  这是个图雅
+</a>
+```
 
 > “避讳为中国特有之风俗，其俗起于周，成于秦，盛于唐宋，其历史垂二千年。其流弊足以淆乱古文书，然反而利用之，则可以解释古文书之疑滞，辨别古文书之真伪及时代，识者便焉。盖讳字各朝不同，不啻为时代之标志。”
 > 
