@@ -170,6 +170,7 @@ include:
   - .htaccess
   - _pages
   - /docs
+  - _most_popular
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -232,6 +233,10 @@ sass:
 permalink: /:categories/:title/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
+# Pagination with jekyll-paginate
+# paginate: 5 # amount of posts to show
+# paginate_path: /page:num/
+
 # Pagination with jekyll-paginate-v2
 # See https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
 #   for configuration details
@@ -256,6 +261,7 @@ pagination:
 # Plugins (previously gems:)
 plugins:
   - jekyll-paginate
+  - jekyll-paginate-v2
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
@@ -266,6 +272,7 @@ plugins:
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
+  - jekyll-paginate-v2
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
@@ -336,12 +343,12 @@ defaults:
       related: true
       show_date: true
   # _pages
-  - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: true
+  #   - scope:
+  #       path: "_pages"
+  #       type: pages
+  #     values:
+  #       layout: single
+  #       author_profile: true
   # _documents
   - scope:
       path: "_documents"
