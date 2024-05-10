@@ -246,7 +246,7 @@ pagination:
   debug: false
   collection: 'posts'
   per_page: 10
-  permalink: '/page/:num'
+  permalink: '/page/:num/'
   title: ':title - page :num'
   limit: 0
   sort_field: 'date'
@@ -370,7 +370,7 @@ defaults:
       comments: true
 #  _most_popular
   - scope:
-      path: "docs/_most_popular"
+      path: "_most_popular"
       type: most_popular
     values:
       layout: single
