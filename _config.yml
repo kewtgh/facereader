@@ -370,7 +370,7 @@ defaults:
       comments: true
 #  _most_popular
   - scope:
-      path: "_most_popular"
+      path: "./docs/_most_popular"
       type: most_popular
     values:
       layout: single
