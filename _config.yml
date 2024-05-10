@@ -246,7 +246,7 @@ pagination:
   debug: false
   collection: 'posts'
   per_page: 10
-  permalink: '/page/:num/'
+  permalink: '/page/:num'
   title: ':title - page :num'
   limit: 0
   sort_field: 'date'
