@@ -196,7 +196,7 @@ $(function () {
 
   if (window.enable_copy_code_button) {
     document
-      .querySelectorAll(".page__content pre > code")
+      .querySelectorAll(".page__content pre.highlight > code")
       .forEach(function (element, index, parentList) {
         // Locate the <pre> element
         var container = element.parentElement;
