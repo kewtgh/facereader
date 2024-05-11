@@ -9,6 +9,9 @@ layout: single
 classes: wide
 sidebar:
   - title: "FaceReader介绍"
+    image: /assets/img/mstile-310x310.png
+    image_alt: "Witbacon Logo"
+    text: "解读人性，分析企业，洞悉社会，掌握趋势。"
     nav: sidebar-about
 author_profile: false
 show_date: false
