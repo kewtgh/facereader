@@ -173,8 +173,8 @@ sidebar-series-wayofrunningbusiness:
 sidebar-about:
   - title: "关于我们："
     image: ./assets/img/mstile-310x310.png
-    image_alt: Witbacon Logo
-    text: 解读人性，分析企业，洞悉社会，掌握趋势。
+    image_alt: "Witbacon Logo"
+    text: "解读人性，分析企业，洞悉社会，掌握趋势。"
     children:
        - title: "一、概述"
          url: /about/
@@ -182,15 +182,15 @@ sidebar-about:
     children:
        - title: "一、企业剖析"
          image: https://facereader.witbacon.com/assets/img/page-header-image-wit-500x300.jpg
-         image_alt: wit
+         image_alt: "wit"
          url: /categories/#企业剖析
        - title: "二、经典解读"
          image: ./assets/img/sunzi-teaser.jpg
-         image_alt: sunzi
+         image_alt: "sunzi"
          url: /categories/#经典解读
        - title: "三、人格成长"
          image: ./assets/img/sidebar-image-eye4-350x210.jpg
-         image_alt: eye
+         image_alt: "eye"
          url: /categories/#人格成长
   - title: "建议和问题："
     children:
