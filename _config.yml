@@ -234,7 +234,6 @@ permalink: /:categories/:title/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # Pagination with jekyll-paginate
-permalink: /:categories/:title/
 paginate: 10 # amount of posts to show
 paginate_path: /page:num/
 
@@ -373,7 +372,7 @@ defaults:
       comments: true
 #  _most_popular
   - scope:
-      path: "docs/_most_popular"
+      path: "_most_popular"
       type: most_popular
     values:
       layout: single
