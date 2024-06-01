@@ -27,7 +27,7 @@ last_modified_at: 2023-09-15T19:25:52-05:00
 
 ## 中国惨不忍睹的体育成绩
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/中国男足.jpg" alt="中国男足" /><br>
+<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/中国男足.jpg" alt="中国男足" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
@@ -36,7 +36,7 @@ last_modified_at: 2023-09-15T19:25:52-05:00
 
 &emsp;&emsp;“集中力量办大事”一直是中国政府引以为傲的事情，尤其在体育成绩方面。中国在夏季奥运会的奖牌总数一直名列前三。但近些年中国的团体运动项目却日渐衰败，2020年的东京奥运会，中国的男篮、男足和男排国家队均未能获得奥运资格，这是中国国家队男子大球项目的历史首次全面落选。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/中国女排.jpg" alt="中国女排-战败" /><br>
+<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/中国女排.jpg" alt="中国女排-战败" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
@@ -61,7 +61,7 @@ last_modified_at: 2023-09-15T19:25:52-05:00
 
 &emsp;&emsp;“举国体制”创造的成绩本身并不能促进相应项目真正的提升，就比如虽然中国在跳水、乒乓球等项目上成绩优异，但并未促进整个国民在相关领域的体育进步，跳水和乒乓球产业也并未有蓬勃的发展，其俱乐部和联赛仍然主要是政府主导的活动。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/乒乓球-跳水.jpg" alt="乒乓球-跳水" /><br>
+<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/乒乓球-跳水.jpg" alt="乒乓球-跳水" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;

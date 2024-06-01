@@ -119,7 +119,7 @@ last_modified_at: 2023-04-07T19:25:52-05:00
 
 &emsp;&emsp;比如，关羽的性格“刚而自矜，飞暴而无恩”，因此，当关羽独领荆州时，就因功高自傲而犯错，最终“大意失荆州”，“奔走麦城”。这正是因为他自视甚高的性格所致。这种情况，在任用关羽之时，就应该设置制度或者利用性格互补的辅臣来规避其性格弱点。
 
-<div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/关羽.jpg" alt="关羽" /></div>
+<div align=center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/关羽.jpg" alt="关羽" /></div>
 
 &emsp;&emsp;[《孙子兵法·始计篇》](https://facereader.witbacon.com/docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/)中，就介绍了根据将领性格施以相应计谋的策略：“利而诱之，乱而取之，实而备之，强而避之，怒而挠之，卑而骄之，佚而劳之，亲而离之”。所有的可利用的弱点，都源自将领的性格，而这些也是各类人才会拥有的。
 
@@ -218,7 +218,7 @@ last_modified_at: 2023-04-07T19:25:52-05:00
 
 &emsp;&emsp;这个世界上最卓越的企业负责人都是“深邃的思考者”，比如Google创始人拉里·佩奇和谢尔盖·布林，SEMCO的CEO里卡多·塞姆勒，Netflex的创始人里德·哈斯廷斯等。
 
-<div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/Google-Semco-Netflex-CEOs.jpg" alt="Google-Semco-Netflex-CEOs" /></div>
+<div align=center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/Google-Semco-Netflex-CEOs.jpg" alt="Google-Semco-Netflex-CEOs" /></div>
 
 &emsp;&emsp;因为只有对问题看得透彻，对问题思考得全面，才能做出更准确的判断。而管理大型企业，决策的关联因素很多，要做出正确的决策，更需要深刻的思考和判断。
 

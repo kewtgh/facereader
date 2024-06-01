@@ -26,7 +26,7 @@ last_modified_at: 2021-12-14T19:25:52-05:00
 
 &emsp;&emsp;我们先来看一项数据：
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/14-14-54-34-%E5%8E%86%E5%B9%B4%E6%9D%A5%E5%8D%8E%E7%95%99%E5%AD%A6%E4%BA%BA%E6%95%B0.png" alt="历年来华留学人数.png"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/14-14-54-34-%E5%8E%86%E5%B9%B4%E6%9D%A5%E5%8D%8E%E7%95%99%E5%AD%A6%E4%BA%BA%E6%95%B0.png" alt="历年来华留学人数.png"  />
 
 &emsp;&emsp;上图是来自统计局发布的历年来华留学人数。从2018年开始，增长趋势就极度放缓；2020年和2021年受疫情影响，数据应该会降低很多。但令人疑问的是，为什么2019年的数据也不发布？也许是因为2019年人数开始减少，而这极有可能涉及国家机密！
 
@@ -50,7 +50,7 @@ last_modified_at: 2021-12-14T19:25:52-05:00
 
 &emsp;&emsp;在于AI助力的教育系统领域，以服务公校为主的AI系统。
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/14-15-33-56-%E5%85%AC%E6%A0%A1AI%E5%9F%BA%E7%A1%80%E6%80%A7%20%E6%95%99%E8%82%B2%E6%9C%8D%E5%8A%A1%E5%B9%B3%E5%8F%B0.jpg" alt="公校AI基础性 教育服务平台.jpg"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/14-15-33-56-%E5%85%AC%E6%A0%A1AI%E5%9F%BA%E7%A1%80%E6%80%A7%20%E6%95%99%E8%82%B2%E6%9C%8D%E5%8A%A1%E5%B9%B3%E5%8F%B0.jpg" alt="公校AI基础性 教育服务平台.jpg"  />
 
 1. **对于学校而言**，最核心的需求是**管理的便利性，教育环境中的安全性，标杆特色与知名度**。这三者需求中，最后一种是需要长期经营积累的，非一日之功；而另外两者则可迅速通过AI体系解决。**尤其是安全性，很多学校在教学楼装上防盗网，不留死角的安装摄像头，以为这样就可以保证学校不发生安全事故**，但根本问题却在于**对孩子的关注，教育方法以及心理疏导上**，而这些是上述简单粗暴的管控法无法解决的，但这正好是人工智能的优势。
 

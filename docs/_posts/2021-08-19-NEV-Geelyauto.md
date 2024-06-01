@@ -38,7 +38,7 @@ last_modified_at: 2021-08-19T22:25:52-05:00
 
 &emsp;&emsp;吉利汽车的核心团队包括七人：吉利集团董事长李书福，吉利集团CEO李东辉，吉利集团副董事长杨健，吉利集团副董事长孙宏，吉利集团总裁、吉利汽车集团董事长、极氪公司CEO安聪慧，吉利集团董事会成员，吉利新能源商用车集团CEO周建群，吉利集团董事会成员、铭泰投资发展集团董事长、吉利人才发展集团副董事长王兴贵等。
 
-## 一、先来看吉利汽车的创始人兼吉利控股董事长 李书福 [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Chairman-李书福2.jpg)
+## 一、先来看吉利汽车的创始人兼吉利控股董事长 李书福 [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Chairman-李书福2.jpg)
 
 &emsp;&emsp;李书福1963年出生于浙江台州的小山村，学习不佳。他高考时失利，便拿着父亲给的120元做起了照相生意。因随后的经商过程中获知冰箱生意好，便于1984年与人合伙成立了“黄岩县石曲冰箱配件厂”，其后又组建了“黄岩县北极花电冰箱厂”。生意一度不错，但随后因国家政策不得不关闭工厂。其后，李书福又做过装潢材料生产，去海南炒过地产，巨亏后又回到浙江创立了浙江吉利控股集团，核心业务生产摩托车。因为一直无法获得轿车生产许可证，只能在政策边缘经营汽车业务，直至2001年取得轿车生产许可证后，吉利汽车品牌才正式进入市场。
 
@@ -52,7 +52,7 @@ last_modified_at: 2021-08-19T22:25:52-05:00
 
 &emsp;&emsp;李书福的出身卑微，他刚入社会时营商环境还比较恶劣，所以在他所处的环境中若想成就一番事业，也只能是他这样的性格才可以。换个角度理解，就是每个时代都有不同类型的人，历史只会选择那些最适应的人成为英雄。
 
-## 二、吉利集团CEO 李东辉 [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/李东辉6.jpg)
+## 二、吉利集团CEO 李东辉 [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/李东辉6.jpg)
 
 &emsp;&emsp;李东辉于2011年加入吉利集团，之前曾是吉利集团的CFO，在吉利集团与伦敦出租车、宝腾汽车、路特斯汽车、丹麦盛宝银行、沃尔沃集团等并购项目中担任重要角色，也是吉利集团的功勋重臣，于2020年升任为吉利集团CEO。
 
@@ -62,7 +62,7 @@ last_modified_at: 2021-08-19T22:25:52-05:00
 
 &emsp;&emsp;而李东辉在这点的短板，极有可能对其领导吉利集团方面产生严重影响。
 
-## 三、吉利集团副董事长 杨健 [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/杨建.jpg)
+## 三、吉利集团副董事长 杨健 [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/杨建.jpg)
 
 &emsp;&emsp;杨健于1996年加入吉利集团，先后担任吉利汽车研究院院长、浙江吉利控股集团常务副总裁、浙江吉利控股集团总裁等职务，目前担任吉利集团副董事长。杨建是吉利汽车的技术领导人，在吉利汽车担任了多年技术部门负责人。
 
@@ -70,7 +70,7 @@ last_modified_at: 2021-08-19T22:25:52-05:00
 
 &emsp;&emsp;杨健是既适合从事技术，又善于担任领导者角色的人选。无疑这个职位的任命是吉利集团的正确决策，但他这样能力较强的人身居高位长久以后容易居功自傲，这是可能的不利方面。
 
-## 四、吉利集团副董事长 孙宏 [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/孙宏.jpg)
+## 四、吉利集团副董事长 孙宏 [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/孙宏.jpg)
 
 &emsp;&emsp;孙宏于2014年加入吉利集团，担任首席合规官，法律事务中心总经理，同时兼任吉利汽车集团副总裁，法律事务中心总经理，分管集团合规、信息安全、法务、保卫、招投标、安全环保等工作。
 
@@ -78,11 +78,11 @@ last_modified_at: 2021-08-19T22:25:52-05:00
 
 &emsp;&emsp;任命孙宏担任这个职位，既有很棒的一面——合规方面会做的非常好，因为不追求精致所以成本可以控制；但也有不利的一面——他负责的所有领域都不会有类似“丰田精益生产”这方面的创新和卓越表现。
 
-## 五、吉利集团总裁、吉利汽车集团董事长兼极氪公司CEO 安聪慧 [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/安聪慧2.jpg)
+## 五、吉利集团总裁、吉利汽车集团董事长兼极氪公司CEO 安聪慧 [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/安聪慧2.jpg)
 
 &emsp;&emsp;安聪慧于1996年加入吉利集团，先后担任工程总指挥、总经理、副总裁、总裁等职务。他从吉利汽车初创阶段就开始参与并主导了多个生产基地的建设、以及多款热销车型的研发生产。从2011年开始担任吉利汽车集团CEO，曾领导吉利汽车连续四年蝉联自主品牌乘用车销量冠军。
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Snipaste_2021-08-18_20-06-18.png" alt="吉利汽车销量"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Snipaste_2021-08-18_20-06-18.png" alt="吉利汽车销量"  />
 
 &emsp;&emsp;安聪慧是吉利集团非常重要的人物，一方面因其负责吉利最重要的部门——汽车集团，另一方面也因其担任汽车集团CEO时创造的成就！目前吉利集团能成为国产汽车中的领头羊，主要是在安聪慧的领导之下成就的。上图中橙色线就是从2012年7月至2021年6月吉利汽车的总销量，从2017年开始，吉利汽车就将长安汽车和比亚迪远远甩在身后，直追上汽大众。
 
@@ -92,7 +92,7 @@ last_modified_at: 2021-08-19T22:25:52-05:00
 
 &emsp;&emsp;但安聪慧最不善于的就是领导新兴变革的项目和企业，他非常厌恶冒险。因为冒险中绝不可能追求每一个细节都有精致的表现，往往需要做出重大取舍，且创新者很多都需要不拘一格的勇气，这些都是他所欠缺的。所以领导极氪公司并不是一个好的决定，而我也预计极氪在不久之后或者会变更其领导者，或者会迎来惨淡的失败。
 
-## 六、铭泰投资发展集团董事长、吉利人才发展集团副董事长 王兴贵 [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/王兴贵.jpg)
+## 六、铭泰投资发展集团董事长、吉利人才发展集团副董事长 王兴贵 [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/王兴贵.jpg)
 
 &emsp;&emsp;王兴贵于2006年4月至2017年6月任铭泰投资发展集团总裁，2017年6月后任董事长、铭泰投资发展集团教育管理委员会主任等职务，2020年4月组建吉利人才发展集团并任副董事长，并且曾于2009年10月至2014年6月和2019年7月至2020年10月两度兼任北京吉利学院校长。
 
@@ -110,6 +110,6 @@ last_modified_at: 2021-08-19T22:25:52-05:00
 
 &emsp;&emsp;吉利集团的核心人员任用情况评分：
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/geely.png" alt="geely"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/geely.png" alt="geely"  />
 
 &emsp;&emsp;吉利集团的高层大都属于尚可且略有所长的情况，没有哪些岗位的任用是非常耀眼的，这样的团队在运营一家普通企业时尚可，但想创造一家卓越企业则很难。目前随着汽车市场的整体下滑，并且乘用车市场新能源汽车在逐渐取代燃油汽车的变革时期，是否有优秀的团队是能否在市场中赢得先机的关键。随着国内汽车市场的消费升级变革，李书福的草莽打拼方式已经不再适合市场的需求，而专业和精英化是国产汽车必须转型的方向，但是目前并未看到吉利集团能有这样的领导者，吉利集团很有可能会在未来五年之内面临衰落的困境，现在的阶段可能是其未来命运中，最关键但最不起眼的阶段。

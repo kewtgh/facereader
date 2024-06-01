@@ -53,7 +53,7 @@ last_modified_at: 2023-08-12T22:25:52-05:00
 
 &emsp;&emsp;第一次看到这句话时，我就被震撼了！就像我看到威廉·华莱士在《勇敢的心》中，喊出那句“Freedom！”一样。
 
-<img src="https://kewtgh.github.io/PicSunflowers/img/2023/brave-heart-william-wallace-shouted-freedom.jpg" alt="brave-heart-william-wallace-shouted-freedom" />
+<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/brave-heart-william-wallace-shouted-freedom.jpg" alt="brave-heart-william-wallace-shouted-freedom" />
 
 &emsp;&emsp;这是怎样的一个人呀？他的早年生活是什么样的？他生来就是英雄吗？
 
@@ -67,7 +67,7 @@ last_modified_at: 2023-08-12T22:25:52-05:00
 
 &emsp;&emsp;泽连斯基1978年生于乌克兰中部城市克里维里赫（**Kryvyi Rih**，又称克里沃罗格，**Krivoy Rog**），父母都是犹太人，泽连斯基也信奉犹太教。他父亲亚历山大·塞梅诺维奇·泽连斯基是一位采矿学教授，担任克里维里赫州立大学控制论和计算硬件系主任，泽连斯基的母亲是一名工程师。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/克里维里赫.jpg" alt="克里维里赫" /><br>
+<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/克里维里赫.jpg" alt="克里维里赫" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
@@ -81,7 +81,7 @@ last_modified_at: 2023-08-12T22:25:52-05:00
 
 &emsp;&emsp;之后，泽连斯基随父亲返回乌克兰。而这时苏阿战争还在继续，苏联在这场持续了九年的战争中，每年投入40亿美金以上。在持续九年的战争期间，苏联的民生和经济已经严重下滑，到1985年时，苏联人每天要花2小时排队买面包。克里维里赫这时也帮派盛行，街头经常出现帮派的暴力争斗。不过，泽连斯基年纪尚小，小学二年级，面对这种事情，往往带着憧憬，只能象征性的在过家家的游戏中扮演古惑仔，偶尔跟在几个大年纪的兄长后面蹭蹭热闹而已。不过随着他年纪渐长，耳濡目染这种帮派行为就难免。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/zelensky-Child.jpg" alt="zelensky-Child" /><br>
+<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/zelensky-Child.jpg" alt="zelensky-Child" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
@@ -98,7 +98,7 @@ last_modified_at: 2023-08-12T22:25:52-05:00
 
 &emsp;&emsp;三年后，九年级的泽连斯基通过了托福考试，并获得了以色列一所大学的录取通知，打算去以色列留学。但父亲没有同意，最后他留在了乌克兰，进入基辅国立经济大学克里维里赫经济学院，并最后获得法学学士学位。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/zelensky-teenage.jpg" alt="zelensky-teenage" /><br>
+<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/zelensky-teenage.jpg" alt="zelensky-teenage" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
@@ -108,7 +108,7 @@ last_modified_at: 2023-08-12T22:25:52-05:00
 
 ### 3、青年
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/zelensky-youth.jpg" alt="zelensky-youth" /><br>
+<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/zelensky-youth.jpg" alt="zelensky-youth" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
@@ -117,7 +117,7 @@ last_modified_at: 2023-08-12T22:25:52-05:00
 
 &emsp;&emsp;这个阶段对泽连斯基影响很大，他已经展现出成功者的一些特质，你能从他脸上看出不甘居人后的决心，和果决的行动力。因此在新组建的“95街区”团队中，他不但担任队长，还是大多数作品的主要创作者。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/the-95th-block-kvn-team.jpg" alt="the-95th-block-kvn-team" /><br>
+<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/the-95th-block-kvn-team.jpg" alt="the-95th-block-kvn-team" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
@@ -127,7 +127,7 @@ last_modified_at: 2023-08-12T22:25:52-05:00
 
 &emsp;&emsp;同年，泽连斯基与奥琳娜·基亚什科步入婚姻殿堂，二人曾是中学和大学同学。二人的婚姻幸福美满，一直持续到现在，并且共同育有一个女儿和一个儿子。虽然奥琳娜读的是建筑学，但更多投入在泽连斯基的艺术事业中，并且也是“95街区”的创始成员之一。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/泽伦斯基与奥琳娜结婚.jpg" alt="泽伦斯基与奥琳娜结婚" /><br>
+<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/泽伦斯基与奥琳娜结婚.jpg" alt="泽伦斯基与奥琳娜结婚" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
@@ -156,7 +156,7 @@ last_modified_at: 2023-08-12T22:25:52-05:00
 
 &emsp;&emsp;在2019年4月2日的初选中，泽连斯基将与波罗申科分别得票30.24%和15.95%共同进入第二轮，在随后的第二轮选举中，泽连斯基以73.22%的得票率完败得票率仅为24.45%的波罗申科，成功获选成为乌克兰总统。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/zelensky-2019.jpg" alt="zelensky-2019" /><br>
+<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/zelensky-2019.jpg" alt="zelensky-2019" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
@@ -178,7 +178,7 @@ last_modified_at: 2023-08-12T22:25:52-05:00
 
 &emsp;&emsp;但这些困难，完全没有办法和战争相比。在面对战争的这一年多时间中，能明显看出他脸上的沧桑，这是长期经历苦难所获得的，也帮助他获得了更多的成长。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/zelensky-2023-4.webp" alt="zelensky-2023" /><br>
+<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/zelensky-2023-4.webp" alt="zelensky-2023" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
@@ -201,7 +201,7 @@ last_modified_at: 2023-08-12T22:25:52-05:00
 
 &emsp;&emsp;最后，让我们看看泽连斯基在战争前后的领导力的变化：
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/Leadership-of-zelensky.png" alt="zelensky-leadership" /><br>
+<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/Leadership-of-zelensky.png" alt="zelensky-leadership" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;

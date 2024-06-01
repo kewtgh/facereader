@@ -8,9 +8,7 @@ header:
 layout: single
 classes: wide
 sidebar:
-  - title: "FaceReader介绍"
-    image: /assets/img/logo-facereader-350x250.png
-    image_alt: "Witbacon Logo"
+  - title: "关于我们"
     text: "解读人性，分析企业，洞悉社会，掌握趋势。"
     nav: sidebar-about
 author_profile: false

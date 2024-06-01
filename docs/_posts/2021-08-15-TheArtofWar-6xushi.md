@@ -30,7 +30,7 @@ last_modified_at: 2021-08-15T20:25:52-05:00
 
 &emsp;&emsp;先来看看汉尼拔的进军路线：
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/汉尼拔进军路线.png" alt="汉尼拔进军路线"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/汉尼拔进军路线.png" alt="汉尼拔进军路线"  />
 
 &emsp;&emsp;汉尼拔首先翻过阿尔卑斯山，接连打了三仗：提基努斯河会战、特雷比亚河战役和特拉西美诺湖战役。
 

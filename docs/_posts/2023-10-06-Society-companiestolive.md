@@ -50,7 +50,7 @@ last_modified_at: 2023-10-06T19:25:52-05:00
 
 &emsp;&emsp;福布斯2009年的全球税负痛苦指数排行榜中，中国高居第二名，略低于排名第一的法国。这项指数后来停止发布了，估计全球反对的政府过多，颇为可惜。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/2009福布斯税负痛苦指数.jpg" alt="2009福布斯税负痛苦指数" /><br>
+<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/2009福布斯税负痛苦指数.jpg" alt="2009福布斯税负痛苦指数" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;

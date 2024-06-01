@@ -37,7 +37,7 @@ last_modified_at: 2021-09-10T19:25:52-05:00
 
 &emsp;而伊梅尔特在成为GE掌门人后做了什么呢？
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Jeff-Immelt3.jpg" alt="Jeff-Immelt3"  /></div>
+<div align=center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Jeff-Immelt3.jpg" alt="Jeff-Immelt3"  /></div>
 
 - 2002年至2007年间大力进行GE金融的国际化扩张，从而使GE金融部门的负债推高至无法承受的风险程度，而经历“次贷危机”后，便开始大规模出售金融资产。
 - 出售了NBC电视台、泰国大城银行、GE地产、私募股权贷款业务等大量金融和资本相关的业务，16年间以4000亿美元的总价卖出了370笔资产，其所出售的业务虽然因“911”和“次贷危机”而受到影响，但大多数都是可靠的营收和利润来源。

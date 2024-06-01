@@ -14,6 +14,7 @@ tags:
   - 第五项修炼
 canonical_url: https://faceread.witbacon.com/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/ending-recommendationthought/
 toc: true
+toc_sticky: true
 last_modified_at: 2021-12-31T19:25:52-05:00
 ---
 

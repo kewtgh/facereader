@@ -20,6 +20,7 @@ canonical_url: https://facereader.witbacon.com/docs/%E5%A4%A7%E5%B8%88%E7%99%BE%
 share: true
 classes: wide
 toc: true
+toc_sticky: true
 sidebar:
   title: "经典系列"
   nav: sidebar-series-masters

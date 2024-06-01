@@ -29,11 +29,11 @@ last_modified_at: 2021-08-17T20:25:52-05:00
 
 &emsp;&emsp;首先是大规模的情报工作，盟军不但通过间谍网络、破译的电报系统、航空侦察，甚至通过BBC从民众处收集登录地点信息。另外还通过规模性的欺骗行动误导德军：比较知名的就有“坚忍行动“、”齐柏林行动“和”铜头蛇行动“等等。
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/诺曼底-保镖行动.png" alt="诺曼底-保镖行动"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/诺曼底-保镖行动.png" alt="诺曼底-保镖行动"  />
 
 &emsp;&emsp;”坚忍行动“包括南、北两部分，南部以巴顿将军为指挥官，布置了大量虚假的汽车、坦克和大炮，成立了一个虚拟的美国第1集团军群。这个军群人数多达一百万，只有指挥部，但没有任何士兵，以英吉利海峡中最狭窄段，距离英国最近的加来为进攻目标；北部则成立了虚假的英国第4军，以挪威为进攻目标。“齐柏林行动”是在北非实行的“坚忍行动”，让德军以为盟军驻扎在埃及的三个集团军将从克里特岛、希腊和南斯拉夫等地登陆。”铜头蛇行动“则是为了隐藏盟军地面登陆部队总指挥官蒙哥马利的位置。为此特意找了一位酷似蒙哥马利的演员克利夫顿·詹姆斯，化装成蒙哥马利，于登录日前在北非公开现身，以迷惑德军。
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/克利夫顿和蒙哥马利.psd.png" alt="克利夫顿和蒙哥马利.psd"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/克利夫顿和蒙哥马利.psd.png" alt="克利夫顿和蒙哥马利.psd"  />
 
 &emsp;&emsp;其次是大规模的实战演练，为此盟军还在苏格兰西南部等比例复制了登陆海滩以作演练之用。
 
@@ -131,7 +131,7 @@ last_modified_at: 2021-08-17T20:25:52-05:00
 
 ---
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/空降地点.png" alt="空降地点"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/空降地点.png" alt="空降地点"  />
 
 &emsp;&emsp;我们再回头看诺曼底战役的案例。孙子说，**战争之中，军争最难。**大家看看盟军在登陆之前做的准备工作，盟军共准备了两年，我列举出的几点连十分之一都不到，更何况仅仅列举出的几点究其细节就繁杂无比。
 

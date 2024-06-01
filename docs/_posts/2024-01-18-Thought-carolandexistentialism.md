@@ -38,7 +38,7 @@ last_modified_at: 2024-01-18T19:25:52-05:00
 
 &emsp;&emsp;刚刚看了一部Netflix的动画短剧，《Carol & The End Of The World》，中文名叫做《凯洛的末日日常》。讲的是，地球将在7个月后被一颗地外行星撞击，整个世界即将毁灭，一位年过四十的，平平无奇的名叫Carol单身女性，在面临世界末日前的几个月内如何生活的故事。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/Carol-and-the-end-of-the-world.jpg" alt="Carol and the end of the world" /><br>
+<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/Carol-and-the-end-of-the-world.jpg" alt="Carol and the end of the world" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
@@ -151,7 +151,7 @@ last_modified_at: 2024-01-18T19:25:52-05:00
 
 &emsp;&emsp;《Carol & The End Of The World》的第五集，介绍了Carol的一位同事David，在办公室猝死的故事。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/Carol-The-End-of-the-World-david.jpg" alt="Carol and the end of the world, the dead David" /><br>
+<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/Carol-The-End-of-the-World-david.jpg" alt="Carol and the end of the world, the dead David" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
@@ -160,7 +160,7 @@ last_modified_at: 2024-01-18T19:25:52-05:00
 
 &emsp;&emsp;David几乎是住在办公室里，当所有的人都下班回家后，David依然在办公室。最后，孤独地死在他的工位上，却没有其他人发现，甚至他的家人也没有任何问询。最后Carol发现了他，与另外两个同事Luis和Donna一起决定，将David的遗体送回家。
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/Carol-The-End-of-the-World-carol-donna-luis.webp" alt="Carol and the end of the world, Carol,Donna,and Luis" /><br>
+<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/Carol-The-End-of-the-World-carol-donna-luis.webp" alt="Carol and the end of the world, Carol,Donna,and Luis" /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
@@ -191,7 +191,7 @@ last_modified_at: 2024-01-18T19:25:52-05:00
 
 &emsp;&emsp;Eric的形象是个妻子跟别人跑了的Loser，他因为害怕孤独，和Carol发生了一夜情，最终在Carol离开后痛苦不堪，更加自暴自弃。儿子Steven看不下去了，骗他说自己联系了妈妈，要跟妈妈去一起生活。Eric在送儿子离开时，写下了这封信：
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/Carol-The-End-of-the-World-eric-steven.jpg" alt="Carol and the end of the world, " /><br>
+<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/Carol-The-End-of-the-World-eric-steven.jpg" alt="Carol and the end of the world, " /><br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;

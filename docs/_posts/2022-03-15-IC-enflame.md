@@ -88,7 +88,7 @@ last_modified_at: 2022-03-15T22:25:52-05:00
 
 &emsp;目前燧原科技的核心团队包括两位：创始人、董事长兼CEO赵立东先生，以及创始人兼COO张亚林先生。下面我们就来分析其核心团队成员。
 
-### 1、创始人、董事长兼CEO  [赵立东](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/赵立东.jpg)
+### 1、创始人、董事长兼CEO  [赵立东](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/赵立东.jpg)
 
 &emsp;&emsp;赵立东先生，1990年毕业于清华大学电子工程系，获学士学位；1994年毕业于美国犹他州立大学电子与计算机工程系，获硕士学位；毕业后曾服务于Juniper Networks，以及S3 Inc.，分别从事网络安全芯片研发，以及GPU图形处理器芯片的研发；2007年到2014年任职AMD公司，先后担任计算事业部高级总监、产品工程部高级总监等；2014年12月加入紫光通信科技集团有限公司担任副总裁，主管半导体投资相关工作；2015年3月兼任紫光集团旗下锐迪科微电子公司总裁、董事，负责公司战略，市场，销售，运营部门以及投资并购，公共事务等管理；2017年3月任紫光集团有限公司副总裁，负责重大专项的谈判和筹建。         
 
@@ -102,7 +102,7 @@ last_modified_at: 2022-03-15T22:25:52-05:00
 
 ---
 
-### 2、创始人兼COO  [张亚林](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/张亚林-2.jpg)
+### 2、创始人兼COO  [张亚林](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/张亚林-2.jpg)
 
 &emsp;&emsp;&emsp;张亚林先生，2000年毕业于复旦大学，获得电子工程学士学位；毕业后加入上海奇码数字信息有限公司，担任设计部主管，主要负责机顶盒内部架构和嵌入式处理器设计；2008年加入AMD，历任资深芯片经理、技术总监，负责XBOX-ONE系列主芯片及小霸王Z+游戏电脑的融合芯片APU的设计。
 
@@ -130,7 +130,7 @@ last_modified_at: 2022-03-15T22:25:52-05:00
 
 &emsp;&emsp;整体评价，燧原科技的团队评分为：
 
-![燧原科技-团队评分](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/燧原科技-团队评分.png)
+![燧原科技-团队评分](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/燧原科技-团队评分.png)
 
 ---
 

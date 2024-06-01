@@ -56,9 +56,9 @@ last_modified_at: 2021-11-28T22:25:52-05:00
 6. 智慧金融：金融服务中的刷脸项目。
 7. 智慧物流：仓储物流的智能化。
 
-具体服务和产品如下图（大图请[点击](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/旷视科技-产品和服务.jpg)）：
+具体服务和产品如下图（大图请[点击](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/旷视科技-产品和服务.jpg)）：
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/旷视科技-产品和服务.jpg" alt="旷视科技-产品和服务"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/旷视科技-产品和服务.jpg" alt="旷视科技-产品和服务"  />
 
 &emsp;&emsp;上图内容为根据其官网内容整理。
 
@@ -66,7 +66,7 @@ last_modified_at: 2021-11-28T22:25:52-05:00
 
 &emsp;&emsp;根据旷视科技招股书披露，目前其核心管理层包括六人：创始人兼CEO**印奇**，联合创始人兼CTO**唐文斌**，资深副总裁**杨沐**，CFO**王海桐**，总裁**付英波**，首席科学家**孙剑**，资深副总裁**曹志敏**，资深副总裁兼董事会秘书**黄婉**。
 
-### 二、创始人兼CEO    印奇    [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/印奇-10.jpg)
+### 二、创始人兼CEO    印奇    [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/印奇-10.jpg)
 
 &emsp;&emsp;印奇，1988年1月出生，毕业于哥伦比亚大学，获得计算机科学硕士学位；曾就读于清华大学计算机科学实验班（“姚班”），获得计算机科学学士学位。
 
@@ -76,11 +76,11 @@ last_modified_at: 2021-11-28T22:25:52-05:00
 
   就其领导角色而言，**潜力足够，但是阅历略浅**。他具有**严谨的思维和较深的认知能力**，因其自身的性格，**对人性也有不错的体察**。
 
-&emsp;&emsp;但是，其目前的阶段可能会对影响企业的发展。初创业时，**年轻的印奇先生非常努力**[Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/12e07be44879497907f2639626962d700faa4c04.jpg)，不过**名利会让人迷失自我**，他的近照就略显如此[Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/11/28-21-11-51-%E5%8D%B0%E5%A5%87-9.jpg)，他显然很享受名利带来的愉悦感。希望他不会迷醉其中太久。
+&emsp;&emsp;但是，其目前的阶段可能会对影响企业的发展。初创业时，**年轻的印奇先生非常努力**[Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/12e07be44879497907f2639626962d700faa4c04.jpg)，不过**名利会让人迷失自我**，他的近照就略显如此[Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/11/28-21-11-51-%E5%8D%B0%E5%A5%87-9.jpg)，他显然很享受名利带来的愉悦感。希望他不会迷醉其中太久。
 
 ---
 
-### 三、联合创始人兼CTO    唐文斌    [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/唐文斌-4.jpg)
+### 三、联合创始人兼CTO    唐文斌    [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/唐文斌-4.jpg)
 
 &emsp;&emsp;唐文斌，1987年4月出生，毕业于清华大学，获得计算机科学硕士学位；曾就读于清华大学计算机科学实验班（“姚班”），获得计算机科学学士学位。2008年7月至2009年9月，唐文斌先生担任谷歌中国实习工程师；2010年3月至2010年11月，担任微软亚洲研究院实习研究员。
 
@@ -90,7 +90,7 @@ last_modified_at: 2021-11-28T22:25:52-05:00
 
 ---
 
-### 四、资深副总裁    杨沐    [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/杨沐-1.jpg)
+### 四、资深副总裁    杨沐    [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/杨沐-1.jpg)
 
 &emsp;&emsp;杨沐，1988年7月出生，毕业于清华大学，获得工程学硕士学位；曾就读于清华大学计算机科学实验班（“姚班”），获得计算机科学学士学位。
 
@@ -102,19 +102,19 @@ last_modified_at: 2021-11-28T22:25:52-05:00
 
 ---
 
-### 五、CFO    王海桐    [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/王海桐-2.jpg)
+### 五、CFO    王海桐    [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/王海桐-2.jpg)
 
 &emsp;&emsp;王海桐，1983年9月出生，毕业于北京大学，获得金融学及统计学双学士学位。2005年8月至2007年8月，王海桐女士担任摩根士丹利亚洲有限公司投资银行部分析师；2007年9月至2017年12月，担任高盛（亚洲）有限责任公司直接投资部执行董事等职务。2014年1月至2017年4月，担任浩泽净水国际控股有限公司非执行董事；2014年7月至2017年12月，担任上海拉夏贝尔服饰股份有限公司非执行董事。
 
 &emsp;&emsp;王海桐女士于2018年1月加入旷视科技；2018年1月至今，担任首席财务官。
 
-&emsp;&emsp;恰好有张王海桐女士[年轻时的照片](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/11/28-21-50-39-%E7%8E%8B%E6%B5%B7%E6%A1%90-4.jpg)，她和杨沐先生年轻时的经历略有相似，**二人都拥有一个相对快乐的童年**。所不同的是，在获得周围人的认可时，杨沐先生选择“孤傲”来彰示自己，而**王海桐女士选择“听话懂事学习好”彰示自己**。因此，**王海桐女士如今的性格也格外讨人喜欢**。
+&emsp;&emsp;恰好有张王海桐女士[年轻时的照片](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/11/28-21-50-39-%E7%8E%8B%E6%B5%B7%E6%A1%90-4.jpg)，她和杨沐先生年轻时的经历略有相似，**二人都拥有一个相对快乐的童年**。所不同的是，在获得周围人的认可时，杨沐先生选择“孤傲”来彰示自己，而**王海桐女士选择“听话懂事学习好”彰示自己**。因此，**王海桐女士如今的性格也格外讨人喜欢**。
 
-&emsp;&emsp;相对于杨沐先生而言，王海桐女士**更加善解人意**。只是她数张照片的失真度都比较严重，所以在**认知深度方面会有几种不同情况**：一种是像上图Photo中展示的一样，是全无心计，知事而不知人；第二种则是知人而不知事[Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/11/28-23-16-28-%E7%8E%8B%E6%B5%B7%E6%A1%90-5.jpg)；第三种则是既知人也知事，但深度中等，尚不足以通达[Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/11/28-23-16-09-%E7%8E%8B%E6%B5%B7%E6%A1%90-1.jpg)。但这三种皆非合格CFO所需的认知深度。
+&emsp;&emsp;相对于杨沐先生而言，王海桐女士**更加善解人意**。只是她数张照片的失真度都比较严重，所以在**认知深度方面会有几种不同情况**：一种是像上图Photo中展示的一样，是全无心计，知事而不知人；第二种则是知人而不知事[Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/11/28-23-16-28-%E7%8E%8B%E6%B5%B7%E6%A1%90-5.jpg)；第三种则是既知人也知事，但深度中等，尚不足以通达[Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/11/28-23-16-09-%E7%8E%8B%E6%B5%B7%E6%A1%90-1.jpg)。但这三种皆非合格CFO所需的认知深度。
 
 ---
 
-### 六、总裁    付英波    [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/付英波-9.jpg)
+### 六、总裁    付英波    [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/付英波-9.jpg)
 
 &emsp;&emsp;付英波，1983年11月出生，毕业于山东大学，获得通信科学技术学士学位。2010年8月至2013年5月，付英波先生任职于Electronic Arts，担任数字平台负责人等职务；2013年9月至2016年9月，担任微软中国高级战略业务顾问等职务。
 
@@ -126,7 +126,7 @@ last_modified_at: 2021-11-28T22:25:52-05:00
 
 ---
 
-### 七、首席科学家    孙剑    [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/孙剑-1.jpg)
+### 七、首席科学家    孙剑    [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/孙剑-1.jpg)
 
 &emsp;&emsp;孙剑，1976年10月出生，毕业于西安交通大学，获得电子工程（模式识别与智能控制）博士学位。孙剑先生于2003年7月至2016年7月，担任微软亚洲研究院首席研究员等多个职务。孙剑先生曾担任2012年、2015年、2016年、2017年及2019年IEEE国际计算机视觉与模式识别会议领域主席，于2010年入选《MIT Technology Review》公布的“35岁以下科技创新35人”榜单，于2016年获得中华人民共和国国家自然科学二等奖；于2019年获得何梁何利基金“青年创新奖”。孙剑先生自2017年7月至今担任西安交通大学兼职教授；2019年1月至今，担任西安交通大学人工智能学院院长；2019年6月至今，担任北京智源研究院智源学者。
 
@@ -138,7 +138,7 @@ last_modified_at: 2021-11-28T22:25:52-05:00
 
 ---
 
-### 八、资深副总裁    曹志敏    [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/曹志敏.jpg)
+### 八、资深副总裁    曹志敏    [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/曹志敏.jpg)
 
 &emsp;&emsp;曹志敏，1985年12月出生，毕业于香港中文大学，获得信息工程学硕士学位。2010年7月至2012年8月，曹志敏先生担任高盛（亚洲）有限责任公司分析师。
 
@@ -200,7 +200,7 @@ last_modified_at: 2021-11-28T22:25:52-05:00
 
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;二）从财务表现方面来看
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/旷视科技财务数据表.png" alt="旷视科技财务数据表"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/旷视科技财务数据表.png" alt="旷视科技财务数据表"  />
 
 &emsp;&emsp;从财务数据来看，旷视科技四年的总营收约为38亿元，亏损额却高达近138亿，并且其毛利率是“四小龙”中唯一逐年降低的，**2020年的毛利率低到只有33%左右，远低于行业平均水平**。
 
@@ -220,7 +220,7 @@ last_modified_at: 2021-11-28T22:25:52-05:00
 
 &emsp;&emsp;整体评价，商汤科技的团队评分为：
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/megvii.png" alt="yitu"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/megvii.png" alt="yitu"  />
 
 ---
 

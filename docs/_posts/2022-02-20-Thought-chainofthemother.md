@@ -17,7 +17,7 @@ tags:
 last_modified_at: 2022-02-20T19:25:52-05:00
 ---
 
-![shackle](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/shackle.jpg)
+![shackle](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/shackle.jpg)
 
 &emsp;&emsp;**当一个人被像狗一样拴住时，旁观者却习以为常，这就已经是毫无人性的表现了；但却有人向被铁链拴住者施以虚伪的同情，再将此表演拍做视频炫耀，以示自己的仁慈与高尚。这就不只是丧尽天良，同时也是十足的愚昧无知。**
 

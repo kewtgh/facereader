@@ -35,11 +35,11 @@ last_modified_at: 2021-07-20T20:25:52-05:00
 
 分析引用材料为几人的正面照和官方介绍。
 
-## 一、创始人兼CEO 戴文渊：[Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/20210305112249_67545.jpg)
+## 一、创始人兼CEO 戴文渊：[Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/20210305112249_67545.jpg)
 
   无可非议的**技术大牛**，**极度聪明**，以至于他身上已经**缺乏了烟火气**，因此他对所有事物的关注面就会窄，因而洞察力就会弱，这种洞察力恰恰是一位企业CEO最重要的能力。由此导致，戴文渊解决单一问题或者单一方向的问题能力很强，尤其是目标很明确的问题。卓越的企业CEO的核心在于提出问题，这是他所欠缺的。此外，他可能**过于自负**，导致他不容他人质疑，也不容失败的消息。
 
-## 二、总裁裴沵思 [Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/20210302195131_35805.png)
+## 二、总裁裴沵思 [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/20210302195131_35805.png)
 
 &emsp;&emsp;由面相看，裴沵思小时候的家庭环境应该还是不错的，所以裴的驱动点就是**光鲜亮丽的展示完美形象**，所以**没有真正的渴望，也没有足够的情怀**。
 
@@ -47,11 +47,11 @@ last_modified_at: 2021-07-20T20:25:52-05:00
 
 &emsp;&emsp;裴沵思的团队充满了看着各方面都不错的人，但大多都是看着光鲜亮丽，但是缺乏沉默的实干者和怪异的天才（比如他们CEO就是这类人）。我所见过的在某些领域特别擅长的人，都在其他领域有些你琢磨不透的缺陷。
 
-## 三、联合创始人  杨强：[Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/team2-1.jpg)
+## 三、联合创始人  杨强：[Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/team2-1.jpg)
 
 &emsp;&emsp;杨教授是被拉来撑场面的，杨教授目前阶段最大的人生驱动点就是**荣誉**。所以技术上能给予的支持未必有多少，管理上也只能是皮毛的点拨，颇有点拉大旗做虎皮的意思。
 
-## 四、联合创始人兼首席科学家  陈雨强：[Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/20210302195103_87956.png)
+## 四、联合创始人兼首席科学家  陈雨强：[Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/20210302195103_87956.png)
 
 &emsp;&emsp;仅从面相来判断，**吃苦能力方面，还是略差了些**。就我了解，任何领域的技术活就是苦差事。所以技术上应该还远达不到大牛的程度，但应该是有些不错的经验，属于资深专家的级别。
 
@@ -59,17 +59,17 @@ last_modified_at: 2021-07-20T20:25:52-05:00
 
 &emsp;&emsp;简单查了资料，他是杨教授的学生，怪不得给到这样的位置。很显然，他是一个**乖乖的，听话的好学生**。
 
-## 五、联合创始人兼首席架构师  胡时伟：[Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/team2-3.jpg)
+## 五、联合创始人兼首席架构师  胡时伟：[Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/team2-3.jpg)
 
 &emsp;&emsp;**有从事管理之心的技术男**。胡时伟的家境应该比较一般，属于既不是太差，但也超不过中等的范畴。他的人生驱动力的最终目标可能就是老婆孩子热炕头，追求一份衣食无忧的生活。目前他也的确做到了，所以现在也没有太大的驱动力了，吃苦能力就变弱了。
 
 &emsp;&emsp;胡时伟的**管理能力有一些**，喜欢用性格比较单纯的技术下属，但是团队中缺乏真正的牛人。他的幼年生活帮助他在洞察人性方面有一些增进，但成为庞大团队的领导者还略欠缺一些。
 
-## 六、副总裁兼主任科学家  涂威威：[Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/team3-1.jpg)
+## 六、副总裁兼主任科学家  涂威威：[Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/team3-1.jpg)
 
 &emsp;&emsp;这是**真正做事的人**，是能把事情落实到点，执行到位的人。但是**权力欲太重，擅长政治斗争**。这样的角色不太适合放在部门一把手，会影响整个公司的文化，极易导致公司政治斗争氛围浓厚，导致分裂。
 
-## 七、郑瞾——副总裁：[Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/20210302195049_48062.png)
+## 七、郑瞾——副总裁：[Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/20210302195049_48062.png)
 
 &emsp;&emsp;和涂威威比较类似，同样也是**执行者**，**能把事情落实到位**，也同样**有较重的政治斗争欲望**。他和涂威威的不同之处在于，他的斗争欲来源于领地意识——这块是我的，你们谁都别动！动了就记仇，小动作就来了。
 

@@ -47,7 +47,7 @@ last_modified_at: 2021-12-19T19:25:52-05:00
 
 &emsp;&emsp;下面来看领创集团剩下六位核心管理层成员。
 
-## 一、Ginee CEO [康乐旸](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/18-21-32-00-%E5%BA%B7%E4%B9%90%E6%97%B8-Leon.jpg)
+## 一、Ginee CEO [康乐旸](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/18-21-32-00-%E5%BA%B7%E4%B9%90%E6%97%B8-Leon.jpg)
 
 &emsp;&emsp;康乐旸（yáng）先生曾于2003年至2007年就读于华中科技大学，并获得通信工程学士学位；之后加入索尼手机通信部门担任产品部门负责人；2013年加入微店，担任国际事业部总经理；之后于2017年加入趣店集团，担任产品负责人；之后，他还创办了越来科技并担任首席执行官。
 
@@ -57,7 +57,7 @@ last_modified_at: 2021-12-19T19:25:52-05:00
 
 &emsp;&emsp;这张照片则显得康乐旸先生**智谋有余，权略尚中，但无大智**。用通俗的语言描述，就是能将“事情做正确”，而未必能知晓何为“正确的事”。**他的执行力很不错，做事时清晰明利，非常清楚需要注意的细节和重点，但是大局性略显薄弱**。因而，在担任CEO时，如果产品的方向明确，则很容易成功；但如果产品方向需探索，方向不明时，则较难取得成功。
 
-## 二、CMO  [李蜜](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/18-21-37-19-%E6%9D%8E%E8%9C%9C.png)
+## 二、CMO  [李蜜](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/18-21-37-19-%E6%9D%8E%E8%9C%9C.png)
 
 &emsp;&emsp; 李蜜女士拥有密苏里大学哥伦比亚分校策略传讯硕士学位和中国传媒大学新闻学士学位。2008年，她加入美国都市商业新闻周刊出版商American City Business Journals，担任市场推广经理；后于2011年，加入《财政时报》担任读者拓展总监；2015年加入英国《金融时报》(FT)，任全球业务伙伴和内容营销主管；之后于2017年加入《南华早报》，担任市场高级副总裁。
 
@@ -67,17 +67,17 @@ last_modified_at: 2021-12-19T19:25:52-05:00
 
 &emsp;&emsp;李蜜女士**非常聪明，且极善于阅读并迎合他人的情绪**，这对于市场人员来说相当关键，因为他们非常需要读懂用户的心思。但在《金融时报》和《南华早报》这两个阶段，其性格发生很大的变化，**《南华早报》之后，其性格中就略带着些对生活的怨戾，因而触怒她则会迎来猛烈的报复**。其**能力和品性在《金融时报》时是相当出色的**，但是她身上的怨戾对其有负面影响，消减了他的优势。
 
-## 三、Atome Financial中国区CEO  [陈裕](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/19-15-58-13-%E9%99%88%E8%A3%95-Richard.jpg)
+## 三、Atome Financial中国区CEO  [陈裕](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/19-15-58-13-%E9%99%88%E8%A3%95-Richard.jpg)
 
 &emsp;&emsp;陈裕先生拥有麦吉尔大学计算机科学硕士学位和上海交通大学计算机科学学士学位，曾经在加拿大Capital One银行工作了11年，负责该行的数据解决方案部门；之后回国加入浅橙科技，并担任CRO；之后于2018年加入及贷，担任其首席运营官。2018年11月，陈裕先生加入领创集团，担任Atome Financial中国区的CEO。
 
-&emsp;&emsp;关于陈裕先生，其数张照片的差异颇大，这里为大家展示另外一张[**Photo**](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/18-21-37-37-%E9%99%88%E8%A3%95-4.jpg)。不知道领创集团的官网照片，是用其年轻时照片P出来的，还是其本来相貌就如此，因为这两张照片的年龄差别似乎也很大，前一张更像是学生时期的照片。
+&emsp;&emsp;关于陈裕先生，其数张照片的差异颇大，这里为大家展示另外一张[**Photo**](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/18-21-37-37-%E9%99%88%E8%A3%95-4.jpg)。不知道领创集团的官网照片，是用其年轻时照片P出来的，还是其本来相貌就如此，因为这两张照片的年龄差别似乎也很大，前一张更像是学生时期的照片。
 
 &emsp;&emsp;从后一张照片来看，陈裕先生回国后工作中的政治环境应该相当复杂，因为其照片中显现的谋思深度，以肉眼可见的程度增长。这张照片中，陈裕先生显得**性格深厚，智谋深远。他对做成事情的决心很大，因而也杀伐果决**。但可能是因为回国后的几份工作都不太理想，所以也**急于求成**，因而可能会在经营上有战略误判。
 
 &emsp;&emsp;倘若其性格如**前一张照片**则显得**太过稚嫩**，**有做事的决心和积极性，但却毫无深远思虑。**
 
-## 四、CTO  [王晓光](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/18-21-37-48-%E7%8E%8B%E6%99%93%E5%85%89.jpg)
+## 四、CTO  [王晓光](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/18-21-37-48-%E7%8E%8B%E6%99%93%E5%85%89.jpg)
 
 &emsp;&emsp; 王晓光先生曾于2004年至2010年间就读于清华大学，并获得计算机硕士和学士学位；期间曾创立Anchor Tech；2010年加入聚美优品担任技术总监；之后于2012年成为一起作业网CTO。
 
@@ -87,9 +87,9 @@ last_modified_at: 2021-12-19T19:25:52-05:00
 
 &emsp;&emsp;对于企业的一把手而言，极度聪明，以及极度聪明产生的高冷，都不利于其成功。大多数有所成就的企业家，都非常谦逊，没有丝毫高人一等的感觉，比如下面几位：
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/19-17-37-47-%E4%BF%9E%E6%95%8F%E6%B4%AA-%E7%8E%8B%E5%85%B4-%E5%BC%A0%E9%82%A6%E9%91%AB-%E9%9B%B7%E5%86%9B.jpg" alt="俞敏洪-王兴-张邦鑫-雷军.jpg"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/19-17-37-47-%E4%BF%9E%E6%95%8F%E6%B4%AA-%E7%8E%8B%E5%85%B4-%E5%BC%A0%E9%82%A6%E9%91%AB-%E9%9B%B7%E5%86%9B.jpg" alt="俞敏洪-王兴-张邦鑫-雷军.jpg"  />
 
-## 五、CSO  [Bernard Chan](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/18-21-38-06-Bernard%20Chan.jpg)
+## 五、CSO  [Bernard Chan](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/18-21-38-06-Bernard%20Chan.jpg)
 
 &emsp;&emsp; Bernard先生曾于1999年至2003年就读于斯坦福大学，并获得电气工程硕士学位，管理科学和金融工程学士学位；毕业后就职于摩根士丹利伦敦结构性信贷交易部门及大宗商品交易部门，担任交易员；2012年加入Gunvor，担任资深交易员；之后于2014年加入狮城应用科学公司担任业务拓展部门负责人。
 
@@ -99,7 +99,7 @@ last_modified_at: 2021-12-19T19:25:52-05:00
 
 &emsp;&emsp;另外其面露红润，则表明家庭美满，生活中忧虑的事情不多。**因为只有一张照片，所以较难判断其到底是哪一类型。我更倾向认为，他通过现象看透本质的能力较弱，但是通过数据看透问题的能力较强**。
 
-## 六、CDO  [Lukas Civin](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/18-21-38-15-Lukas%20Civin.jpg)
+## 六、CDO  [Lukas Civin](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/18-21-38-15-Lukas%20Civin.jpg)
 
 &emsp;&emsp; Lukas先生曾于2001年至2006年就读于布拉格查尔斯大学，并获得计算机科学硕士学位；毕业后加入捷信集团（Home Credit ），先后担任集团风险系统软件开发主管，捷克斯洛伐克共和国和美国分公司首席风险官；后于2019年加入EmbedIT，担任软件开发部门负责人。
 
@@ -169,7 +169,7 @@ last_modified_at: 2021-12-19T19:25:52-05:00
 
 &emsp;&emsp;整体评价，领创集团的团队评分为：
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/19-14-36-13-advancegroup-team-assess.png" alt="advancegroup-team-assess.png"  />
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/19-14-36-13-advancegroup-team-assess.png" alt="advancegroup-team-assess.png"  />
 
 ---
 

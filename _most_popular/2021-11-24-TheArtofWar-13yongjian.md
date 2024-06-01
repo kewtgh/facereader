@@ -10,6 +10,7 @@ tags:
   - 读书方法
 share: true
 toc: true
+toc_sticky: true
 header:
   teaser: /assets/img/sunzi-teaser.jpg
   image: /assets/img/sunzi.jpg # Add image post (optional)

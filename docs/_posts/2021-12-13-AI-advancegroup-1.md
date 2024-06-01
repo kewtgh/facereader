@@ -55,9 +55,9 @@ last_modified_at: 2021-12-13T22:25:52-05:00
 
 ## 一、领创集团产品与服务
 
-<img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/09-20-33-46-%E9%A2%86%E5%88%9B%E9%9B%86%E5%9B%A2%20%E4%BA%A7%E5%93%81%E5%8F%8A%E6%9C%8D%E5%8A%A1-Mark.jpg" title="" alt="领创集团 产品及服务-Mark.jpg" data-align="center">
+<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/09-20-33-46-%E9%A2%86%E5%88%9B%E9%9B%86%E5%9B%A2%20%E4%BA%A7%E5%93%81%E5%8F%8A%E6%9C%8D%E5%8A%A1-Mark.jpg" title="" alt="领创集团 产品及服务-Mark.jpg" data-align="center">
 
-&emsp;&emsp;上图为领创集团的产品及服务【[大图](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/09-20-33-46-%E9%A2%86%E5%88%9B%E9%9B%86%E5%9B%A2%20%E4%BA%A7%E5%93%81%E5%8F%8A%E6%9C%8D%E5%8A%A1-Mark.jpg)】。
+&emsp;&emsp;上图为领创集团的产品及服务【[大图](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/09-20-33-46-%E9%A2%86%E5%88%9B%E9%9B%86%E5%9B%A2%20%E4%BA%A7%E5%93%81%E5%8F%8A%E6%9C%8D%E5%8A%A1-Mark.jpg)】。
 
 ### &emsp;领创集团产品与服务主要有三大类别：
 
@@ -81,17 +81,17 @@ last_modified_at: 2021-12-13T22:25:52-05:00
 
 
 
-## 二、创始人、董事长、CEO兼Atome Financial CEO  [陈斓杰](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/10-18-30-35-Jefferson-Chen.jpg)
+## 二、创始人、董事长、CEO兼Atome Financial CEO  [陈斓杰](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/10-18-30-35-Jefferson-Chen.jpg)
 
 &emsp;&emsp;陈斓杰先生1982年生于福建，并在清华大学获得计算机领域的学士学位，之后进入新加坡高盛公司投资银行部。2008年赴斯坦福大学攻读MBA，之后于2010年加入Farallon Capital Management担任基金经理。陈斓杰先生于2016年成为金沙江创投(GSR Ventures)的合伙人，一直任职至今。
 
 &emsp;&emsp;2016年，陈斓杰先生创立领创集团，即Advance Group，目前担任领创集团董事长、CEO兼Atome Financial CEO。
 
-&emsp;&emsp;陈斓杰先生的性格有非常明显的两面性，可能是照片偏差，也可能其本人就如此。其部分自然照中，体现出**狡黠的特点**，看待其他人和事物时，以一种自嘲之态面对一切，有逐利之心【[Photo](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/13-00-39-50-Jefferson-Chen-5.jpg)】；但大多数的照片都体现了其**中正厚重的特点**，这部分照片中，陈斓杰先生显得**非常真诚，为人也很实在，重视事物的根本价值而非只追求表面，更喜欢对事物的深度探索**。如果其性格偏重后者，则非常适合企业的掌门人，有决策能力，又有领导魅力。
+&emsp;&emsp;陈斓杰先生的性格有非常明显的两面性，可能是照片偏差，也可能其本人就如此。其部分自然照中，体现出**狡黠的特点**，看待其他人和事物时，以一种自嘲之态面对一切，有逐利之心【[Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/13-00-39-50-Jefferson-Chen-5.jpg)】；但大多数的照片都体现了其**中正厚重的特点**，这部分照片中，陈斓杰先生显得**非常真诚，为人也很实在，重视事物的根本价值而非只追求表面，更喜欢对事物的深度探索**。如果其性格偏重后者，则非常适合企业的掌门人，有决策能力，又有领导魅力。
 
 
 
-## 三、联合创始人兼ADVANCE.AI CEO  [寿栋](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/10-18-30-45-%E5%AF%BF%E6%A0%8B.jpg)
+## 三、联合创始人兼ADVANCE.AI CEO  [寿栋](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/10-18-30-45-%E5%AF%BF%E6%A0%8B.jpg)
 
 &emsp;&emsp;寿栋先生在2006年至2009年期间就读于清华大学，获得计算机硕士学位；后又于2009年至2011年就读于宾州州立大学，获得计算机硕士学位；毕业后曾先后在亚马逊美国和IBM担任高级软件工程师；之后于2015年加入Wecash闪银，担任技术合伙人。
 
@@ -101,7 +101,7 @@ last_modified_at: 2021-12-13T22:25:52-05:00
 
 
 
-## 四、联合创始人兼Atome Financial Vice CEO  [邹缙东](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/10-18-31-00-Chun%20Dong%20Chau.jpg)
+## 四、联合创始人兼Atome Financial Vice CEO  [邹缙东](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/10-18-31-00-Chun%20Dong%20Chau.jpg)
 
 &emsp;&emsp;邹缙东先生于1999年至2004年就读于埃因霍温理工大学，获得应用数学与计算机科学双硕士学位；后于2006年至2009年就读于莱顿大学，并获得数学与自然科学博士学位。2004年，邹缙东先生创立Depeach，后于2011年加入Crystal Horse Investments担任合伙人，并于2015年加入Capital Match担任总监。
 
@@ -111,17 +111,17 @@ last_modified_at: 2021-12-13T22:25:52-05:00
 
 
 
-## 五、联合创始人兼Atome CEO  [陈宁](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/10-18-33-47-%E9%99%88%E5%AE%81.jpg)
+## 五、联合创始人兼Atome CEO  [陈宁](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/10-18-33-47-%E9%99%88%E5%AE%81.jpg)
 
 &emsp;&emsp;陈宁先生1997年至2004年就读于复旦大学，先后获得数学学士学位和计算机科学硕士学位；之后于2008年获得华盛顿大学计算机科学博士学位。毕业后，曾担任上海交通大学讲座教授，后于2008年起就职于南洋理工大学，之后升任为终身教授。2014年，陈宁先生创立Nestia，担任CEO。
 
 &emsp;&emsp;2017年，陈宁先生加入领创集团，成为联合创始人之一；目前担任领创集团Atome CEO。
 
-&emsp;&emsp;陈宁先生**性格相当温和，从心而发地对人友善**，他对世界也充满了美好的期待，拥有纯良之性。他也**非常有创造力，拥有活力**，所以做老师期间应该也深受学生的喜欢。但是他身上有两点可能对其担任企业经营管理职位有影响，**一是过于纯良，二是不谙经营之道。掌握企业经营之道的第一条件就是要掌握人心**，这样才能知道团队成员们想获得什么，能从哪些地方激励他们，如何提前预防其可能的失误，包括如何帮助其成长等等。也有可能是其并未有近期照片发布出来，所以对其目前的状态有错判。但就其上图中的照片，以及另外[**这张照片**](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/13-18-56-07-David-Chen-%E9%99%88%E5%AE%81-4.jpg)而言，确实如我所言。
+&emsp;&emsp;陈宁先生**性格相当温和，从心而发地对人友善**，他对世界也充满了美好的期待，拥有纯良之性。他也**非常有创造力，拥有活力**，所以做老师期间应该也深受学生的喜欢。但是他身上有两点可能对其担任企业经营管理职位有影响，**一是过于纯良，二是不谙经营之道。掌握企业经营之道的第一条件就是要掌握人心**，这样才能知道团队成员们想获得什么，能从哪些地方激励他们，如何提前预防其可能的失误，包括如何帮助其成长等等。也有可能是其并未有近期照片发布出来，所以对其目前的状态有错判。但就其上图中的照片，以及另外[**这张照片**](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/13-18-56-07-David-Chen-%E9%99%88%E5%AE%81-4.jpg)而言，确实如我所言。
 
 
 
-## 六、联合创始人兼CHO  [李彤彤](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/10-18-33-57-%E6%9D%8E%E5%BD%A4%E5%BD%A4.jpg)
+## 六、联合创始人兼CHO  [李彤彤](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/10-18-33-57-%E6%9D%8E%E5%BD%A4%E5%BD%A4.jpg)
 
 &emsp;&emsp;关于李彤彤女士，查询到的资料很少，我们就以其官方介绍为主吧。
 
@@ -141,7 +141,7 @@ last_modified_at: 2021-12-13T22:25:52-05:00
 
 
 
-## 七、CFO [陈雷](https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/10-18-34-04-%E9%99%88%E9%9B%B7.jpg)
+## 七、CFO [陈雷](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/10-18-34-04-%E9%99%88%E9%9B%B7.jpg)
 
 &emsp;&emsp;陈雷先生2000年至2005年就读于新南威尔士大学，并获得商业学士学位；在校期间就曾创立Calais Lifestyle；毕业后加入高盛担任分析师，后于2010年加入瑞士信贷直至2020年，离开时曾任亚太区金融部门董事。
 
