@@ -30,6 +30,7 @@ tags:
   - 眼前的苟且
   - 中国社会
 toc: false
+classes: wide
 last_modified_at: 2024-06-01T19:25:52-05:00 
 ---
 
