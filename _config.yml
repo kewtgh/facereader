@@ -84,30 +84,6 @@ algolia:
   index_name             : Face Reader Search in Site# YOUR_INDEX_NAME
   search_only_api_key    : 51384fc8e05a85a035065d162dca8d76 # YOUR_SEARCH_ONLY_API_KEY
   powered_by             : true# true (default), false
-  settings:
-    searchableAttributes:
-      - title
-      - headings
-      - unordered(content)
-      - unordered(comments)
-      - unordered(categories)
-      - unordered(tags)
-    attributeForDistinct: title
-    attributesForFaceting:
-      - searchable(categories)
-      - classes
-      - searchable(comments)
-      - searchable(content)
-      - custom_ranking.position
-      - searchable(excerpt_html)
-      - header.overlay_filter
-      - filterOnly(last_modified_at)
-      - slug
-      - searchable(tags)
-      - searchable(title)
-      - searchable(toc)
-      - type
-      - url
 
 # SEO Related
 google_site_verification : "" # Replace this with your ID, or delete
