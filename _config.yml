@@ -85,7 +85,7 @@ algolia:
   search_only_api_key    : 51384fc8e05a85a035065d162dca8d76 # YOUR_SEARCH_ONLY_API_KEY
   powered_by             : true# true (default), false
   settings:
-      searchableAttributes:
+    searchableAttributes:
       - title
       - headings
       - unordered(content)
