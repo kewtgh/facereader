@@ -1,7 +1,6 @@
 on:
   push:
     branches:
-      - master
       - main
 
 name: algolia-search
@@ -11,8 +10,8 @@ jobs:
     env:
       JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Algolia Jekyll Action
-        uses: dieghernan/algolia-jekyll-action@main
+        uses: GabrielPeace/algolia-jekyll-action@main
         with:
           APIKEY: '${{ secrets.ALGOLIA_API_KEY }}'

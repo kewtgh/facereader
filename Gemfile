@@ -1,6 +1,8 @@
 source "https://rubygems.org"
 gemspec
 
+gem 'jekyll', '~> 3.6'
+
 gem "github-pages", group: :jekyll_plugins
 
 gem "tzinfo-data"
