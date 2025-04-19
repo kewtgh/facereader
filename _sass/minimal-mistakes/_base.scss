@@ -107,20 +107,18 @@ abbr[data-original-title] {
 /* blockquotes */
 
 blockquote {
-  margin: 2em 1em 2em 0;
-  padding-left: 0em;
-  padding-right: 0em;
-  padding: 1.5em 2em;
-  font-style: normal;
-  border-left: 0.5em solid $accent-color;
-  background-color: mix($background-color, $accent-color, 90%);
+  margin-block: 2em;
+  margin-inline-end: 1em;
+  padding-inline: 1em;
+  font-style: italic;
+  border-inline-start: 0.25em solid $primary-color;
 
   cite {
-    font-style: normal;
+    font-style: italic;
 
-    &:before {
+    &::before {
       content: "\2014";
-      padding-right: 5px;
+      padding-inline-end: 5px;
     }
   }
 }
@@ -160,24 +158,6 @@ pre {
 
 pre {
   overflow-x: auto; /* add scrollbars to wide code blocks*/
-}
-
-p > code,
-a > code,
-li > code,
-figcaption > code,
-td > code {
-  padding-top: 0.1rem;
-  padding-bottom: 0.1rem;
-  font-size: 0.8em;
-  background: $code-background-color;
-  border-radius: $border-radius;
-
-  &:before,
-  &:after {
-    letter-spacing: -0.2em;
-    content: "\00a0"; /* non-breaking space*/
-  }
 }
 
 /* horizontal rule */
