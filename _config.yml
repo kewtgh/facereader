@@ -320,7 +320,7 @@ compress_html:
 # Collections
 collections:
     documents:
-      output: true
+      output: false
       permalink: /:collection/:path/
     recipes:
       output: true
