@@ -169,7 +169,7 @@ footer:
 include:
   - .htaccess
   - _pages
-  - /docs
+  - _posts
   - _most_popular
 exclude:
   - "*.sublime-project"
@@ -333,7 +333,7 @@ collections:
 defaults:
   # _posts
   - scope:
-      path: ""
+      path: "_posts"
       type: posts
     values:
       layout: single
@@ -364,7 +364,7 @@ defaults:
         nav: "documents"
   # _recipes
   - scope:
-      path: ""
+      path: "_recipes"
       type: recipes
     values:
       layout: single
