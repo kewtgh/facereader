@@ -25,7 +25,6 @@ tags:
   - 首席技术官
   - 董事长
 share: true
-classes: wide
 toc: true
 toc_sticky: true
 last_modified_at: 2021-07-29T20:25:52-05:00

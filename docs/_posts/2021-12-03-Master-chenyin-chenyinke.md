@@ -17,7 +17,6 @@ tags:
   - 读书境界
   - 面相
 share: true
-classes: wide
 toc: true
 toc_sticky: true
 sidebar:
