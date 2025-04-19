@@ -130,8 +130,8 @@ author:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://facereader.witbacon.com"
-    - label: "X"
-      icon: "fab fa-fw fa-x-square"
+    - label: "square-x-twitter"
+      icon: "fab fa-fw fa-square-x-twitter"
       # url: "https://x.com/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
@@ -146,8 +146,8 @@ author:
 # Site Footer
 footer:
   links:
-    - label: "X"
-      icon: "fab fa-fw fa-x-square"
+    - label: "square-x-twitter"
+      icon: "fab fa-fw fa-square-x-twitter"
       url: "https://x.com/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
