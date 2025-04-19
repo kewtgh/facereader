@@ -30,7 +30,7 @@ logo                     : "/assets/img/logo-facereader.png"# path of logo image
 masthead_title           : "FaceReader-企业观察"# overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 350
-chinese_words_per_minute         : 350
+chinese_words_per_minute : 300
 enable_copy_code_button  : # true, false (default)
 github                   : [metadata]
 comments:
@@ -120,7 +120,7 @@ analytics:
 author:
   name             : "Face Reader"
   avatar           : "/assets/img/hor-photo.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "爱看点书，略知人性，稍通管理，心存正义。希冀有生之年，能救扶中华大地上深处水火的生命！我不入地狱，谁入地狱？"
+  bio              : "爱看点书，略知人性，稍通管理，心存正义。"
 #  location         : ""
   email            : "facereader@witbacon.com"
   links:
@@ -130,9 +130,9 @@ author:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://facereader.witbacon.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
+    - label: "X"
+      icon: "fab fa-fw fa-x-square"
+      # url: "https://x.com/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       url: "https://www.facebook.com/profile.php?id=100088693703792"
@@ -146,9 +146,9 @@ author:
 # Site Footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+    - label: "X"
+      icon: "fab fa-fw fa-x-square"
+      url: "https://x.com/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       url: "https://facebook.com/"
