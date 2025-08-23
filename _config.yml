@@ -269,6 +269,7 @@ plugins:
   - jemoji
   - jekyll-include-cache
   - jekyll-archives
+  - jekyll-seo-tag
 #  - jekyll-paginate-v2
 
 # mimic GitHub Pages with --safe
