@@ -185,5 +185,5 @@ sidebar-about:
          url: /categories/#人格成长
   - title: "建议和问题："
     children:
-       - title: "点此发送邮件<i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i>"
+       - title: "点此发送邮件"
          url: mailto:facereader@witbacon.com
