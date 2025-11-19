@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require "json"
 
 package_json = JSON.parse(File.read("package.json"))
@@ -12,8 +14,11 @@ Gem::Specification.new do |spec|
   spec.license                 = "MIT"
 
   spec.metadata["plugin_type"] = "theme"
+  
+  files = `git ls-files -z`
+  files.force_encoding("UTF-8")
 
-  spec.files                   = `git ls-files -z`.split("\x0").select do |f|
+  spec.files                   = files.split("\x0").select do |f|
     f.match(%r{^(assets|_(data|includes|layouts|sass)/|(LICENSE|README|CHANGELOG)((\.(txt|md|markdown)|$)))}i)
   end
 
