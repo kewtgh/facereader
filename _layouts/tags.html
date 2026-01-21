@@ -45,7 +45,8 @@ layout: archive
   {% else %}
     Current Tag:
   {% endif %}
-  <strong id="current-tag">All</strong>
+  <strong>{{ site.data.ui-text[site.locale].tag_current }}:</strong>
+  <span id="current-tag">All</span>
   <button onclick="resetFilter()" class="btn btn--small btn--light-outline">
     {% if site.locale == "zh" %}
       {{ site.data.ui-text[site.locale].tag_current }}：
