@@ -42,7 +42,6 @@ tags:
   - 《火星救援》
   - Leadership
   - 领导力图表
-primary_tags:
   - 国际政治
   - 社会评论
   - 热点事件

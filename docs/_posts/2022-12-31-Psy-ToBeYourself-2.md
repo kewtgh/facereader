@@ -24,8 +24,6 @@ tags:
   - 待物如初
   - 稻盛和夫
   - 感悟
-primary_tags:
-  - 人生
   - 成长
   - 心理学
 toc: true

@@ -23,10 +23,8 @@ tags:
   - 回音室效应
   - 应激反应
   - 独断专行
-primary_tags:
   - 中国
   - 社会评论
-  - 热点事件
 toc: true
 toc_sticky: true
 last_modified_at: 2024-06-15T19:25:52-05:00 

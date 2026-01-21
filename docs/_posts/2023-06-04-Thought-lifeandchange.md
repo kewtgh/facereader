@@ -18,8 +18,6 @@ tags:
   - 未选择的路
   - 未走过的路
   - The Road Not Taken
-primary_tags:
-  - 人生
   - 成长
   - 心理
 toc: true

@@ -24,8 +24,6 @@ tags:
   - 寒武纪
   - 陈天石
   - 陈云霁
-primary_tags:
-  - 芯片行业
   - 企业分析
   - 面相
 sidebar:

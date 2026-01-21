@@ -14,7 +14,6 @@ tags:
   - 社会
   - Integrity
   - 正义
-primary_tags:
   - 中国
   - 社会评论
   - 热点事件

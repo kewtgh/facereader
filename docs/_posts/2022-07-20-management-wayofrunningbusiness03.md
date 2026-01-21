@@ -16,7 +16,6 @@ tags:
   - 逻辑架构
   - 制度与体系
   - 物种竞争
-primary_tags:
   - 企业管理
 sidebar:
   title: "经典系列"

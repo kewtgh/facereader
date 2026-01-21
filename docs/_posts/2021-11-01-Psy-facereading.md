@@ -10,9 +10,6 @@ categories:
   - 人格成长
 tags: 
   - 性格分析
-  - 面相靠谱
-  - 心理
-primary_tags:
   - 心理学
   - 面相
 classes: wide

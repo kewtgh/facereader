@@ -24,7 +24,6 @@ tags:
   - 吕蒙
   - 马谡
   - 王平
-primary_tags:
   - 企业管理
 sidebar:
   title: "经典系列"

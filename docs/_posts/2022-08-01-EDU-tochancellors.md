@@ -21,10 +21,8 @@ tags:
   - 教育本质
   - 发展趋势
   - 民办学校
-primary_tags:
   - 中国
   - 社会评论
-  - 教育行业
 sidebar:
   title: "经典系列"
   nav: sidebar-series-edu

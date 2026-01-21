@@ -22,10 +22,6 @@ tags:
   - 首席执行官
   - 首席运营官
   - 首席技术官
-primary_tags:
-  - 人工智能
-  - 企业分析
-  - 面相
 share: true
 toc: true
 toc_sticky: true

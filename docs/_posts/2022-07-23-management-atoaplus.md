@@ -15,7 +15,6 @@ tags:
   - 从优秀到卓越
   - 基业长青
   - 第五级经理人
-primary_tags:
   - 企业管理
   - 经典解读
 toc: true

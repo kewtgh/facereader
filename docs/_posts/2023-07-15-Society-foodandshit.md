@@ -9,13 +9,10 @@ header:
 categories:
   - 社会杂论
 tags: 
-  - 吃屎
-  - 吃饭
   - 自媒体
   - 社会讨论
   - 人格
   - 自尊
-primary_tags:
   - 中国
   - 社会评论
   - 热点事件

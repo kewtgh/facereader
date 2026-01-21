@@ -17,9 +17,7 @@ tags:
   - 人力资源
   - 面试方法
   - SMART
-primary_tags:
   - 企业管理
-  - 人力资源
 share: true
 toc: true
 toc_sticky: true

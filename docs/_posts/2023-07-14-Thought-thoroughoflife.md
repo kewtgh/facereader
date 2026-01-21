@@ -16,8 +16,6 @@ tags:
   - 生活
   - 生命的爱
   - 哲学绝望
-primary_tags:
-  - 人生
   - 成长
   - 心理学
 classes: wide

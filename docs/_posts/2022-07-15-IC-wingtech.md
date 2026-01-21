@@ -29,8 +29,6 @@ tags:
   - 张学政
   - 光学影像
   - 得尔塔科技
-primary_tags:
-  - 芯片行业
   - 企业分析
   - 面相
 sidebar:

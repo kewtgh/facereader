@@ -15,7 +15,6 @@ tags:
   - 上进
   - 行动力
   - 渴望
-primary_tags:
   - 企业管理
 toc: true
 toc_sticky: true

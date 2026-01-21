@@ -19,9 +19,7 @@ tags:
   - 大师百相
   - 自卑
   - 自尊
-primary_tags:
   - 中国
-  - 面相
   - 大师
 sidebar:
   title: "经典系列"

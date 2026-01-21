@@ -2,7 +2,7 @@
 {%- assign related_medium = "" | split: "" -%}
 {%- assign related_posts = "" | split: "" -%}
 
-{%- assign page_terms = page.primary_tags | default: page.tags | default: "" -%}
+{%- assign page_terms = page.tags | default: "" -%}
 {%- assign page_cats  = page.categories | default: "" -%}
 
 {% for post in site.posts %}
@@ -10,7 +10,7 @@
     {% continue %}
   {% endif %}
 
-  {%- assign post_terms = post.primary_tags | default: post.tags | default: "" -%}
+  {%- assign post_terms = post.tags | default: "" -%}
   {%- assign post_cats  = post.categories | default: "" -%}
 
   {%- assign cat_match = false -%}
@@ -45,11 +45,9 @@
     {% if post.id == page.id %}
       {% continue %}
     {% endif %}
-
     {% unless related_posts contains post %}
       {%- assign related_posts = related_posts | push: post -%}
     {% endunless %}
-
     {% if related_posts.size >= 4 %}
       {% break %}
     {% endif %}
