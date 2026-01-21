@@ -1,27 +1,46 @@
-{% assign related_posts = "" | split: "" %}
+{%- assign related_strong = "" | split: "" -%}
+{%- assign related_weak   = "" | split: "" -%}
+{%- assign related_posts  = "" | split: "" -%}
+
+{%- assign page_terms = page.primary_tags | default: page.tags | default: "" -%}
+{%- if page_terms == "" -%}
+  {%- assign page_terms = "" | split: "" -%}
+{%- endif -%}
 
 {% for post in site.posts %}
   {% if post.id == page.id %}{% continue %}{% endif %}
 
-  {% assign tag_matches = post.primary_tags | intersection: page.primary_tags | size %}
-  {% if tag_matches > 0 %}
-    {% assign related_posts = related_posts | push: post %}
+  {%- assign post_terms = post.primary_tags | default: post.tags | default: "" -%}
+  {%- if post_terms == "" -%}
+    {%- assign post_terms = "" | split: "" -%}
+  {%- endif -%}
+
+  {% assign match_count = post_terms | intersection: page_terms | size %}
+
+  {% if match_count >= 2 %}
+    {% assign related_strong = related_strong | push: post %}
+  {% elsif match_count == 1 %}
+    {% assign related_weak = related_weak | push: post %}
   {% endif %}
 {% endfor %}
 
+{%- assign related_posts = related_strong | concat: related_weak -%}
+
 {% if related_posts.size < 4 %}
   {% for post in site.posts %}
-    {% if post.id == page.id %}
-      {% continue %}
-    {% endif %}
+    {% if post.id == page.id %}{% continue %}{% endif %}
     {% unless related_posts contains post %}
       {% assign related_posts = related_posts | push: post %}
     {% endunless %}
+    {% if related_posts.size >= 4 %}{% break %}{% endif %}
   {% endfor %}
 {% endif %}
 
 <div class="page__related">
-  <h2 class="page__related-title">{{ site.data.ui-text[site.locale].related_label }}</h2>
+  <h2 class="page__related-title">
+    {{ site.data.ui-text[site.locale].related_label }}
+  </h2>
+
   <div class="grid__wrapper">
     {% for post in related_posts limit:4 %}
       {% include archive-single.html type="grid" %}
