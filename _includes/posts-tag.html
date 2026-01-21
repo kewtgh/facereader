@@ -1,3 +1,7 @@
+<p style="color:red;">
+  taxonomy = {{ include.taxonomy }}
+</p>
+
 {% assign posts = site.tags[include.taxonomy] | where_exp: "post", "post.hidden != true" %}
 
 {% assign tag_name = include.taxonomy %}
