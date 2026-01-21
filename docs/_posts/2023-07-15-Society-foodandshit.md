@@ -15,6 +15,10 @@ tags:
   - 社会讨论
   - 人格
   - 自尊
+primary_tags:
+  - 中国
+  - 社会评论
+  - 热点事件
 toc: true
 toc_sticky: true
 last_modified_at: 2023-07-15T19:25:52-05:00 

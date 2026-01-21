@@ -19,6 +19,10 @@ tags:
   - 领导者
   - 民生
   - 塔利班
+primary_tags:
+  - 美国
+  - 社会评论
+  - 热点事件
 toc: true
 toc_sticky: true
 last_modified_at: 2022-08-15T22:25:52-05:00

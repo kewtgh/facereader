@@ -29,6 +29,10 @@ tags:
   - 老板
   - 中小企业
   - 政府
+primary_tags:
+  - 中国
+  - 社会评论
+  - 企业管理
 toc: true
 toc_sticky: true
 last_modified_at: 2023-10-06T19:25:52-05:00

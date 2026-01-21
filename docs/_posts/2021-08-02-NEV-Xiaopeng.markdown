@@ -27,6 +27,10 @@ tags:
   - 首席执行官
   - 首席运营官
   - 首席技术官
+primary_tags:
+  - 新能源汽车
+  - 企业分析
+  - 面相
 sidebar:
   title: "经典系列"
   nav: sidebar-series-manufacture

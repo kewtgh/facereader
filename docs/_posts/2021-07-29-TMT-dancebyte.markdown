@@ -24,6 +24,10 @@ tags:
   - 首席运营官
   - 首席技术官
   - 董事长
+primary_tags:
+  - 互联网企业
+  - 企业分析
+  - 面相
 share: true
 toc: true
 toc_sticky: true

@@ -24,6 +24,7 @@ tags:
   - 燧原科技
   - 加速卡
   - 处理器
+
 sidebar:
   title: "企业剖析"
   nav: sidebar-series-IC

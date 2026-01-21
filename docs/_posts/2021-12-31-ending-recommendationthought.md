@@ -12,6 +12,10 @@ tags:
   - 年终感想
   - 相约星期二
   - 第五项修炼
+primary_tags:
+  - 成长
+  - 阅读
+  - 年终
 toc: true
 toc_sticky: true
 last_modified_at: 2021-12-31T19:25:52-05:00

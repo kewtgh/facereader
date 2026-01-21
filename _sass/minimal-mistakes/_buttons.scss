@@ -111,15 +111,19 @@
   }
 }
 
-.btn--small {
-  padding: 4px 10px;
+.tag-clear-btn {
+  padding: 4px 12px;
   font-size: 0.85rem;
-  border-radius: 6px;
-  background: #f2f2f2;
-  border: 1px solid #ccc;
-  cursor: pointer;
+  border-radius: 999px;   // 胶囊形状
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  color: #555;
+  transition: all 0.2s ease;
 }
 
-.btn--small:hover {
-  background: #e6e6e6;
+.tag-clear-btn:hover {
+  background-color: #eaeaea;
+  border-color: #ccc;
+  color: #333;
 }
+

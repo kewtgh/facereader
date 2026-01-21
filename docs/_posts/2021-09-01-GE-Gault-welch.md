@@ -18,6 +18,10 @@ tags:
   - CEO
   - 首席执行官
   - 董事长
+primary_tags:
+  - 制造业
+  - 企业分析
+  - 面相
 share: true
 sidebar:
   title: "经典系列"

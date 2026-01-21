@@ -16,6 +16,11 @@ tags:
   - 卡农
   - 生活
   - 生命的爱
+primary_tags:
+  - 人生
+  - 成长
+  - 诗
+  - 视频
 classes: wide
 toc: false
 last_modified_at: 2023-07-11T19:25:52-05:00

@@ -16,6 +16,10 @@ tags:
   - 陈寅恪
   - 读书境界
   - 面相
+primary_tags:
+  - 中国
+  - 面相
+  - 大师
 share: true
 toc: true
 toc_sticky: true

@@ -32,6 +32,10 @@ tags:
   - 物联网
   - 消费电子
   - 汽车电子
+primary_tags:
+  - 芯片行业
+  - 企业分析
+  - 面相
 sidebar:
   title: "企业剖析"
   nav: sidebar-series-IC

@@ -42,27 +42,24 @@ layout: archive
 <div class="tag-filter-status" id="current-tag-anchor">
   <strong>{{ site.data.ui-text[site.locale].tag_current }}:</strong>
   <span id="current-tag">All</span>
-  
-  <button onclick="resetFilter()" class="btn btn--small">
+
+  <button onclick="resetFilter()" class="btn btn--small btn--light-outline tag-clear-btn">
     {{ site.data.ui-text[site.locale].tag_clear }}
   </button>
 </div>
 
-<!-- 文章列表 -->
-<div id="tag-posts">
+<!-- 文章列表（使用主题原生样式） -->
+<div class="entries-list" id="tag-posts">
   {% for post in site.posts %}
-    <article class="tag-post-item"
-             data-tags="{{ post.tags | join: ',' }}">
-      <h3>
-        <a href="{{ post.url | relative_url }}">
-          {{ post.title }}
-        </a>
-      </h3>
-      <p class="page__meta">{{ post.date | date: "%Y-%m-%d" }}</p>
-      <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
-    </article>
+    <div class="tag-post-item"
+         data-tags="{{ post.tags | join: ',' }}">
+      {% include archive-single.html %}
+    </div>
   {% endfor %}
 </div>
 
 <script src="{{ '/assets/js/tag-filter.js' | relative_url }}"></script>
-<a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+
+<a href="#page-title" class="back-to-top">
+  {{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;
+</a>

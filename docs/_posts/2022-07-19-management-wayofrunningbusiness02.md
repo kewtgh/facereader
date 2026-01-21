@@ -24,6 +24,8 @@ tags:
   - 用人标准
   - 顶尖人才
   - 圆饼人才
+primary_tags:
+  - 企业管理
 sidebar:
   title: "经典系列"
   nav: sidebar-series-wayofrunningbusiness

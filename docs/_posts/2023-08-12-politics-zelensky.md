@@ -42,6 +42,11 @@ tags:
   - 《火星救援》
   - Leadership
   - 领导力图表
+primary_tags:
+  - 国际政治
+  - 社会评论
+  - 热点事件
+  - 面相
 toc: true
 toc_sticky: true
 last_modified_at: 2023-08-12T22:25:52-05:00

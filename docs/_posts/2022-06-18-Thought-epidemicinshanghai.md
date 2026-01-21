@@ -14,6 +14,10 @@ tags:
   - 社会
   - 个人思绪
   - 随笔
+primary_tags:
+  - 中国
+  - 社会评论
+  - 热点事件
 toc: true
 toc_sticky: true
 last_modified_at: 2022-06-18T19:25:52-05:00

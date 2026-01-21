@@ -14,6 +14,10 @@ tags:
   - 社会
   - Integrity
   - 正义
+primary_tags:
+  - 中国
+  - 社会评论
+  - 热点事件
 last_modified_at: 2022-02-20T19:25:52-05:00
 ---
 

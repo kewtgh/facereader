@@ -18,6 +18,10 @@ tags:
   - 未选择的路
   - 未走过的路
   - The Road Not Taken
+primary_tags:
+  - 人生
+  - 成长
+  - 心理
 toc: true
 toc_sticky: true
 last_modified_at: 2023-06-04T19:25:52-05:00

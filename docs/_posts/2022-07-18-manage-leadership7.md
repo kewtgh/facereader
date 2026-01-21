@@ -25,6 +25,8 @@ tags:
   - 制度
   - 逻辑
   - 风格
+primary_tags:
+  - 企业管理
 sidebar:
   title: "经典系列"
   nav: sidebar-series-leadership

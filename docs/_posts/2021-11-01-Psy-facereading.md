@@ -12,6 +12,9 @@ tags:
   - 性格分析
   - 面相靠谱
   - 心理
+primary_tags:
+  - 心理学
+  - 面相
 classes: wide
 last_modified_at: 2020-08-02T20:25:52-05:00
 ---

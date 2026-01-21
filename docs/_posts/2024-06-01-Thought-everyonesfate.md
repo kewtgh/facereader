@@ -29,6 +29,10 @@ tags:
   - 诗和远方
   - 眼前的苟且
   - 中国社会
+primary_tags:
+  - 人生
+  - 成长
+  - 心理学
 toc: false
 classes: wide
 last_modified_at: 2024-06-01T19:25:52-05:00 

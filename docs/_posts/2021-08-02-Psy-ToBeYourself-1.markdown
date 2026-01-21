@@ -15,6 +15,10 @@ tags:
   - 做自己
   - 自我探索
   - 心理
+primary_tags:
+  - 人生
+  - 成长
+  - 心理学
 classes: wide
 last_modified_at: 2021-08-02T20:25:52-05:00
 ---

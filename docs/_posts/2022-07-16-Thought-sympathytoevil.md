@@ -18,6 +18,10 @@ tags:
   - 大快人心
   - 哀其不幸
   - 怒其不争
+primary_tags:
+  - 中国
+  - 社会评论
+  - 热点事件
 toc: true
 toc_sticky: true
 last_modified_at: 2022-07-16T19:25:52-05:00

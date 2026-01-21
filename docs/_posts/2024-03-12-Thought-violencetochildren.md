@@ -23,6 +23,10 @@ tags:
   - 功利主义
   - 极权社会
   - 报复社会
+primary_tags:
+  - 中国
+  - 社会评论
+  - 热点事件
 toc: true
 toc_sticky: true
 last_modified_at: 2024-03-12T19:25:52-05:00
