@@ -54,6 +54,9 @@ en: &DEFAULT_EN
   related_more: "More Articles"
   tags_expand: "Show All Tags"
   tags_collapse: "Hide Tags"
+  tag_current: "Current Tag"
+  tag_clear: "Clear Filter"
+
 en-US:
   <<: *DEFAULT_EN
 en-CA:
@@ -117,6 +120,8 @@ es: &DEFAULT_ES
   related_more: "Más artículos"
   tags_expand: "Mostrar todas las etiquetas"
   tags_collapse: "Ocultar etiquetas"
+  tag_current: "Etiqueta actual"
+  tag_clear: "Borrar filtro"
 es-ES:
   <<: *DEFAULT_ES
 es-CO:
@@ -176,6 +181,8 @@ fr: &DEFAULT_FR
   related_more: "Plus d’articles"
   tags_expand: "Afficher toutes les étiquettes"
   tags_collapse: "Masquer les étiquettes"
+  tag_current: "Étiquette actuelle"
+  tag_clear: "Effacer le filtre"
 fr-FR:
   <<: *DEFAULT_FR
 fr-BE:
@@ -439,6 +446,9 @@ zh: &DEFAULT_ZH_HANS
   related_more: "更多内容"
   tags_expand: "展开全部标签"
   tags_collapse: "收起标签"
+  tag_current: "当前标签"
+  tag_clear: "清除筛选"
+
 zh-CN:
   <<: *DEFAULT_ZH_HANS
 zh-SG:
@@ -496,6 +506,9 @@ zh-TW: &DEFAULT_ZH_HANT
   related_more: "更多內容"
   tags_expand: "展開全部標籤"
   tags_collapse: "收起標籤"
+  tag_current: "目前標籤"
+  tag_clear: "清除篩選"
+
 zh-HK:
   <<: *DEFAULT_ZH_HANT
 
@@ -612,6 +625,9 @@ ne: &DEFAULT_NE
   related_more: "थप सामग्री"
   tags_expand: "सबै ट्याग देखाउनुहोस्"
   tags_collapse: "ट्याग लुकाउनुहोस्"
+  tag_current: "हालको ट्याग"
+  tag_clear: "फिल्टर हटाउनुहोस्"
+
 ne-NP:
   <<: *DEFAULT_NE
 
@@ -669,6 +685,8 @@ ko: &DEFAULT_KO
   related_more: "더 많은 글"
   tags_expand: "태그 모두 보기"
   tags_collapse: "태그 접기"
+  tag_current: "현재 태그"
+  tag_clear: "필터 지우기"
 ko-KR:
   <<: *DEFAULT_KO
 
@@ -725,6 +743,8 @@ ru: &DEFAULT_RU
   related_more: "Другие материалы"
   tags_expand: "Показать все теги"
   tags_collapse: "Скрыть теги"
+  tag_current: "Текущий тег"
+  tag_clear: "Сбросить фильтр"
 ru-RU:
   <<: *DEFAULT_RU
 
@@ -831,6 +851,8 @@ gr: &DEFAULT_GR
   related_more: "Περισσότερα άρθρα"
   tags_expand: "Εμφάνιση όλων των ετικετών"
   tags_collapse: "Απόκρυψη ετικετών"
+  tag_current: "Τρέχουσα ετικέτα"
+  tag_clear: "Καθαρισμός φίλτρου"
 gr-GR:
   <<: *DEFAULT_GR
 
@@ -1206,6 +1228,8 @@ ja: &DEFAULT_JA
   related_more: "さらに読む"
   tags_expand: "すべてのタグを表示"
   tags_collapse: "タグを折りたたむ"
+  tag_current: "現在のタグ"
+  tag_clear: "フィルターをクリア"
 ja-JP:
   <<: *DEFAULT_JA
 
@@ -1474,6 +1498,8 @@ fa: &DEFAULT_FA
   related_more: "مطالب بیشتر"
   tags_expand: "نمایش همه برچسب‌ها"
   tags_collapse: "جمع کردن برچسب‌ها"
+  tag_current: "برچسب فعلی"
+  tag_clear: "پاک کردن فیلتر"
 fa-IR:
   <<: *DEFAULT_FA
 

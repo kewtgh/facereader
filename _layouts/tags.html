@@ -7,7 +7,6 @@ layout: archive
 <div class="tag-groups">
 
   {% for group in site.data.tag-groups %}
-
     {% assign g = group[1] %}
 
     <section class="tag-group">
@@ -22,7 +21,9 @@ layout: archive
       <div class="tag-group-list">
         {% for tag in g.tags %}
           {% if site.tags[tag] %}
-            <a class="tag-item" href="{{ '/tags/' | append: tag | append: '/' | relative_url }}">
+            <a href="javascript:void(0);"
+               class="tag-item tag-filter-btn"
+               data-tag="{{ tag }}">
               {{ tag }}
               <span class="tag-count">({{ site.tags[tag].size }})</span>
             </a>
@@ -34,3 +35,40 @@ layout: archive
   {% endfor %}
 
 </div>
+
+<hr>
+
+<!-- 当前筛选状态 -->
+<div class="tag-filter-status">
+  {% if site.locale == "zh" %}
+    {{ site.data.ui-text[site.locale].tag_current }}：
+  {% else %}
+    Current Tag:
+  {% endif %}
+  <strong id="current-tag">All</strong>
+  <button onclick="resetFilter()" class="btn btn--small">
+    {% if site.locale == "zh" %}
+      {{ site.data.ui-text[site.locale].tag_current }}：
+    {% else %}
+      Clear
+    {% endif %}
+  </button>
+</div>
+
+<!-- 文章列表 -->
+<div id="tag-posts">
+  {% for post in site.posts %}
+    <article class="tag-post-item"
+             data-tags="{{ post.tags | join: ',' }}">
+      <h3>
+        <a href="{{ post.url | relative_url }}">
+          {{ post.title }}
+        </a>
+      </h3>
+      <p class="page__meta">{{ post.date | date: "%Y-%m-%d" }}</p>
+      <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+    </article>
+  {% endfor %}
+</div>
+
+<script src="{{ '/assets/js/tag-filter.js' | relative_url }}"></script>
