@@ -1,4 +1,22 @@
 {% assign posts = site.tags[include.taxonomy] | where_exp: "post", "post.hidden != true" %}
-{%- for post in posts -%}
-  {% include archive-single.html %}
-{%- endfor -%}
+
+{% assign tag_name = include.taxonomy %}
+{% if site.data.tag_descriptions[tag_name] %}
+  <div class="archive__intro">
+    <p>{{ site.data.tag_descriptions[tag_name] }}</p>
+  </div>
+{% endif %}
+
+<h2>精选文章</h2>
+<div class="grid__wrapper">
+  {% for post in posts limit:6 %}
+    {% include archive-single.html type="grid" %}
+  {% endfor %}
+</div>
+
+<h3>更多内容</h3>
+<ul>
+  {% for post in posts offset:6 %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>

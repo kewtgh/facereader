@@ -28,6 +28,10 @@ tags:
   - 首席运营官
   - 首席技术官
   - 董事长
+primary_tags:
+  - 人工智能
+  - 企业分析
+  - 面相
 toc: true
 toc_sticky: true
 sidebar:

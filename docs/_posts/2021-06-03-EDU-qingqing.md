@@ -13,6 +13,9 @@ tags:
   - 轻轻家教
   - 刘常科
   - 义务教育新规
+primary_tags:
+  - 教育
+  - 企业分析
 sidebar:
   title: "经典系列"
   nav: sidebar-series-edu

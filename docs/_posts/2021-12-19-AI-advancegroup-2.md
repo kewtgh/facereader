@@ -35,6 +35,12 @@ tags:
   - 人脸识别
   - 金融服务
   - 电商服务
+primary_tags:
+  - 人工智能
+  - 企业分析
+  - 面相
+  - 电商
+  - 亚太区
 sidebar:
   title: "经典系列"
   nav: sidebar-series-AI

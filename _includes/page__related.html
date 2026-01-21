@@ -1,15 +1,10 @@
 {% assign related_posts = "" | split: "" %}
 
 {% for post in site.posts %}
-  {% if post.id == page.id %}
-    {% continue %}
-  {% endif %}
+  {% if post.id == page.id %}{% continue %}{% endif %}
 
-  {% assign tag_matches = post.tags | intersection: page.tags | size %}
-  {% assign cat_matches = post.categories | intersection: page.categories | size %}
-  {% assign score = tag_matches | plus: cat_matches %}
-
-  {% if score > 0 %}
+  {% assign tag_matches = post.primary_tags | intersection: page.primary_tags | size %}
+  {% if tag_matches > 0 %}
     {% assign related_posts = related_posts | push: post %}
   {% endif %}
 {% endfor %}
