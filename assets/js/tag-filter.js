@@ -35,3 +35,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const tag = params.get("tag");
   if (tag) filterByTag(tag);
 });
+
+const urlParams = new URLSearchParams(window.location.search);
+const currentTag = urlParams.get("tag");
+
+if (currentTag) {
+  const anchor = document.getElementById("current-tag-anchor");
+  if (anchor) {
+    setTimeout(() => {
+      anchor.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 300);
+  }
+}

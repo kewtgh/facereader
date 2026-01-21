@@ -39,14 +39,14 @@ layout: archive
 <hr>
 
 <!-- 当前筛选状态 -->
-<div class="tag-filter-status">
+<div class="tag-filter-status" id="current-tag-anchor">
   {% if site.locale == "zh" %}
     {{ site.data.ui-text[site.locale].tag_current }}：
   {% else %}
     Current Tag:
   {% endif %}
   <strong id="current-tag">All</strong>
-  <button onclick="resetFilter()" class="btn btn--small">
+  <button onclick="resetFilter()" class="btn btn--small btn--light-outline">
     {% if site.locale == "zh" %}
       {{ site.data.ui-text[site.locale].tag_current }}：
     {% else %}
@@ -72,3 +72,4 @@ layout: archive
 </div>
 
 <script src="{{ '/assets/js/tag-filter.js' | relative_url }}"></script>
+<a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
