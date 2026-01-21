@@ -1,3 +1,10 @@
+function scrollToCurrentTag() {
+  const anchor = document.getElementById("current-tag-anchor");
+  if (anchor) {
+    anchor.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
 function filterByTag(tag) {
   const posts = document.querySelectorAll(".tag-post-item");
   let visible = 0;
@@ -12,16 +19,31 @@ function filterByTag(tag) {
     }
   });
 
-  document.getElementById("current-tag").innerText = tag;
+  const currentTagEl = document.getElementById("current-tag");
+  if (currentTagEl) {
+    currentTagEl.innerText = tag;
+  }
+
   history.replaceState(null, "", "?tag=" + encodeURIComponent(tag));
+
+  // ✅ 立即滚动
+  scrollToCurrentTag();
 }
 
 function resetFilter() {
   document.querySelectorAll(".tag-post-item").forEach(p => {
     p.style.display = "block";
   });
-  document.getElementById("current-tag").innerText = "All";
+
+  const currentTagEl = document.getElementById("current-tag");
+  if (currentTagEl) {
+    currentTagEl.innerText = "All";
+  }
+
   history.replaceState(null, "", location.pathname);
+
+  // ✅ 清除后也回到状态区
+  scrollToCurrentTag();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -33,17 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const params = new URLSearchParams(window.location.search);
   const tag = params.get("tag");
-  if (tag) filterByTag(tag);
-});
-
-const urlParams = new URLSearchParams(window.location.search);
-const currentTag = urlParams.get("tag");
-
-if (currentTag) {
-  const anchor = document.getElementById("current-tag-anchor");
-  if (anchor) {
-    setTimeout(() => {
-      anchor.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 300);
+  if (tag) {
+    filterByTag(tag);
   }
-}
+});
