@@ -232,3 +232,18 @@ $(document).ready(function () {
       });
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("toggle-tags");
+  const wrapper = document.getElementById("tags-wrapper");
+
+  if (!btn || !wrapper) return;
+
+  btn.addEventListener("click", function () {
+    wrapper.classList.toggle("tags-collapsed");
+
+    btn.textContent = wrapper.classList.contains("tags-collapsed")
+      ? "{{ site.data.ui-text[site.locale].tags_expand }}"
+      : "{{ site.data.ui-text[site.locale].tags_collapse }}";
+  });
+});

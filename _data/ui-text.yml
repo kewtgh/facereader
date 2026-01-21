@@ -50,6 +50,10 @@ en: &DEFAULT_EN
   search_algolia_no_results  : "No results"
   results_found              : "Result(s) found"
   back_to_top                : "Back to top"
+  related_featured: "Featured Articles"
+  related_more: "More Articles"
+  tags_expand: "Show All Tags"
+  tags_collapse: "Hide Tags"
 en-US:
   <<: *DEFAULT_EN
 en-CA:
@@ -109,6 +113,10 @@ es: &DEFAULT_ES
   search_algolia_no_results  :
   results_found              : "resultado(s) encontrado(s)"
   back_to_top                : "Volver arriba"
+  related_featured: "Artículos destacados"
+  related_more: "Más artículos"
+  tags_expand: "Mostrar todas las etiquetas"
+  tags_collapse: "Ocultar etiquetas"
 es-ES:
   <<: *DEFAULT_ES
 es-CO:
@@ -164,6 +172,10 @@ fr: &DEFAULT_FR
   search_algolia_no_results  :
   results_found              : "Résultat(s) trouvé(s)"
   back_to_top                : "Retour en haut"
+  related_featured: "Articles en vedette"
+  related_more: "Plus d’articles"
+  tags_expand: "Afficher toutes les étiquettes"
+  tags_collapse: "Masquer les étiquettes"
 fr-FR:
   <<: *DEFAULT_FR
 fr-BE:
@@ -423,6 +435,10 @@ zh: &DEFAULT_ZH_HANS
   search_algolia_no_results  : "无结果"
   results_found              : "条记录匹配"
   back_to_top                : "返回顶部"
+  related_featured: "精选文章"
+  related_more: "更多内容"
+  tags_expand: "展开全部标签"
+  tags_collapse: "收起标签"
 zh-CN:
   <<: *DEFAULT_ZH_HANS
 zh-SG:
@@ -476,6 +492,10 @@ zh-TW: &DEFAULT_ZH_HANT
   search_algolia_no_results  : "找不到結果"
   results_found              : "找到結果"
   back_to_top                : "回到頁首"
+  related_featured: "精選文章"
+  related_more: "更多內容"
+  tags_expand: "展開全部標籤"
+  tags_collapse: "收起標籤"
 zh-HK:
   <<: *DEFAULT_ZH_HANT
 
@@ -588,6 +608,10 @@ ne: &DEFAULT_NE
   loading_label              : "लोड हुँदैछ ..."
   search_label_text          :
   search_algolia_no_results  :
+  related_featured: "छनोट गरिएका लेखहरू"
+  related_more: "थप सामग्री"
+  tags_expand: "सबै ट्याग देखाउनुहोस्"
+  tags_collapse: "ट्याग लुकाउनुहोस्"
 ne-NP:
   <<: *DEFAULT_NE
 
@@ -641,6 +665,10 @@ ko: &DEFAULT_KO
   search_algolia_no_results  :
   results_found              : "개 결과 발견"
   back_to_top                : "맨 위로 이동"
+  related_featured: "추천 글"
+  related_more: "더 많은 글"
+  tags_expand: "태그 모두 보기"
+  tags_collapse: "태그 접기"
 ko-KR:
   <<: *DEFAULT_KO
 
@@ -693,6 +721,10 @@ ru: &DEFAULT_RU
   search_placeholder_text    : "Введите поисковый запрос..."
   search_algolia_no_results  :
   results_found              : "Найдено"
+  related_featured: "Рекомендуемые статьи"
+  related_more: "Другие материалы"
+  tags_expand: "Показать все теги"
+  tags_collapse: "Скрыть теги"
 ru-RU:
   <<: *DEFAULT_RU
 
@@ -795,6 +827,10 @@ gr: &DEFAULT_GR
   search_placeholder_text    : "Εισάγετε όρο αναζήτησης..."
   search_algolia_no_results  :
   results_found              : "Αποτελέσματα"
+  related_featured: "Προτεινόμενα άρθρα"
+  related_more: "Περισσότερα άρθρα"
+  tags_expand: "Εμφάνιση όλων των ετικετών"
+  tags_collapse: "Απόκρυψη ετικετών"
 gr-GR:
   <<: *DEFAULT_GR
 
@@ -1166,6 +1202,10 @@ ja: &DEFAULT_JA
   search_placeholder_text    : "検索キーワードを入力してください..."
   search_algolia_no_results  :
   results_found              : "件"
+  related_featured: "注目の記事"
+  related_more: "さらに読む"
+  tags_expand: "すべてのタグを表示"
+  tags_collapse: "タグを折りたたむ"
 ja-JP:
   <<: *DEFAULT_JA
 
@@ -1430,6 +1470,10 @@ fa: &DEFAULT_FA
   search_algolia_no_results  :
   results_found              : "نتایج"
   back_to_top                : "بازگشت به بالا"
+  related_featured: "مطالب منتخب"
+  related_more: "مطالب بیشتر"
+  tags_expand: "نمایش همه برچسب‌ها"
+  tags_collapse: "جمع کردن برچسب‌ها"
 fa-IR:
   <<: *DEFAULT_FA
 

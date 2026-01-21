@@ -4,4 +4,10 @@ layout: archive
 
 {{ content }}
 
-{% include posts-taxonomy.html taxonomies=site.tags %}
+<div id="tags-wrapper" class="btn btn--primary tags-toggle-btn">
+  {% include posts-taxonomy.html taxonomies=site.tags %}
+</div>
+
+<button id="toggle-tags" class="btn btn--primary tags-toggle-btn">
+  {{ site.data.ui-text[site.locale].tags_expand }}
+</button>
