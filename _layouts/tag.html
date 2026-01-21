@@ -2,9 +2,8 @@
 layout: archive
 ---
 
-{{ content }}
+<h1>{{ page.tag }}</h1>
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% include posts-tag.html taxonomy=page.taxonomy type=entries_layout %}
-</div>
+{% for post in site.tags[page.tag] %}
+  {% include archive-single.html %}
+{% endfor %}
