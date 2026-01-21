@@ -1,6 +1,7 @@
 {% assign posts = site.tags[include.taxonomy] | where_exp: "post", "post.hidden != true" %}
 
 {% assign tag_name = include.taxonomy %}
+
 {% if site.data.tag_descriptions[tag_name] %}
   <div class="archive__intro">
     <p>{{ site.data.tag_descriptions[tag_name] }}</p>
@@ -14,9 +15,11 @@
   {% endfor %}
 </div>
 
-<h3>更多内容</h3>
-<ul>
-  {% for post in posts offset:6 %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+{% if posts.size > 6 %}
+  <h3>更多内容</h3>
+  <ul>
+    {% for post in posts offset:6 %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %}
