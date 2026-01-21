@@ -40,19 +40,11 @@ layout: archive
 
 <!-- 当前筛选状态 -->
 <div class="tag-filter-status" id="current-tag-anchor">
-  {% if site.locale == "zh" %}
-    {{ site.data.ui-text[site.locale].tag_current }}：
-  {% else %}
-    Current Tag:
-  {% endif %}
   <strong>{{ site.data.ui-text[site.locale].tag_current }}:</strong>
   <span id="current-tag">All</span>
+  
   <button onclick="resetFilter()" class="btn btn--small btn--primary">
-    {% if site.locale == "zh" %}
-      {{ site.data.ui-text[site.locale].tag_current }}：
-    {% else %}
-      Clear
-    {% endif %}
+    {{ site.data.ui-text[site.locale].tag_clear }}
   </button>
 </div>
 
