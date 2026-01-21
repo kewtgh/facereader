@@ -247,3 +247,9 @@ document.addEventListener("DOMContentLoaded", function () {
       : "{{ site.data.ui-text[site.locale].tags_collapse }}";
   });
 });
+
+document.querySelectorAll(".tag-group-title").forEach(title => {
+  title.addEventListener("click", () => {
+    title.nextElementSibling.classList.toggle("hidden");
+  });
+});

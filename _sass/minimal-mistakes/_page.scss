@@ -559,3 +559,39 @@ body {
     }
   }
 }
+
+.tag-groups {
+  display: grid;
+  gap: 2rem;
+}
+
+.tag-group-title {
+  font-size: 1.2rem;
+  border-left: 4px solid $primary-color;
+  padding-left: 0.6rem;
+}
+
+.tag-group-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-item {
+  padding: 0.3rem 0.7rem;
+  background: $background-color;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  text-decoration: none;
+
+  &:hover {
+    background: $primary-color;
+    color: #fff;
+  }
+}
+
+.tag-count {
+  opacity: 0.6;
+  margin-left: 4px;
+}

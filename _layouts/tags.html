@@ -4,10 +4,33 @@ layout: archive
 
 {{ content }}
 
-<div id="tags-wrapper" class="btn btn--primary tags-toggle-btn">
-  {% include posts-taxonomy.html taxonomies=site.tags %}
-</div>
+<div class="tag-groups">
 
-<button id="toggle-tags" class="btn btn--primary tags-toggle-btn">
-  {{ site.data.ui-text[site.locale].tags_expand }}
-</button>
+  {% for group in site.data.tag-groups %}
+
+    {% assign g = group[1] %}
+
+    <section class="tag-group">
+      <h2 class="tag-group-title">
+        {% if site.locale == "zh" %}
+          {{ g.title_zh }}
+        {% else %}
+          {{ g.title_en }}
+        {% endif %}
+      </h2>
+
+      <div class="tag-group-list">
+        {% for tag in g.tags %}
+          {% if site.tags[tag] %}
+            <a class="tag-item" href="{{ '/tags/' | append: tag | append: '/' | relative_url }}">
+              {{ tag }}
+              <span class="tag-count">({{ site.tags[tag].size }})</span>
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+
+  {% endfor %}
+
+</div>
