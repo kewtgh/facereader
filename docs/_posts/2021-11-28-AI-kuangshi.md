@@ -218,7 +218,7 @@ last_modified_at: 2021-11-28T22:25:52-05:00
 
 &emsp;&emsp;旷视科技的三位创始人的商业运营能力都偏弱，三位之间互相补位的能力不足，所以整个核心团队也略显臃肿。但是其也有一个亮点，就是招募了执行能力较强的付英波先生做其总裁。
 
-&emsp;&emsp;整体评价，商汤科技的团队评分为：
+&emsp;&emsp;整体评价，旷视科技的团队评分为：
 
 <img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/megvii.png" alt="yitu"  />
 
