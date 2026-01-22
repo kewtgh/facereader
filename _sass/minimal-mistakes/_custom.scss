@@ -381,7 +381,7 @@ body {
   }
 
   /* 按钮一列排，间距均匀一点 */
-  .page__hero--overlay .page__hero-actions {
+  .page__hero--overlay .page__meta {
     margin-top: 0.9rem;
     flex-direction: column;
     align-items: flex-start;
@@ -399,7 +399,78 @@ body {
   /* About CTA：改为上下排，图片在上、文字在下 */
   .home-cta--about .home-cta__inner {
     flex-direction: column;
-    align-
+    align-items: stretch;
+  }
+
+  .home-cta--about .home-cta__media {
+    flex: 0 0 auto;
+  }
+
+  .home-cta--about .home-cta__media img {
+    max-height: 220px;
+    border-radius: 0.75rem;
+  }
+
+  /* 手机端 About 区块整体间距和内边距略收紧 */
+  .home-section--about-cta {
+    margin: 2.4rem 0 2.8rem;
+  }
+
+  .home-cta.home-cta--about {
+    padding: 1.4rem 1.3rem 1.5rem;
+  }
+
+  .home-cta--about .home-cta__text h2 {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
+  }
+
+  .home-cta--about .home-cta__text p,
+  .home-cta--about .home-cta__text ul {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .home-cta--about .btn--primary {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 260px;
+    margin-top: 0.9rem;
+    font-size: 0.95rem;
+    border-radius: 999px;
+  }
+
+  .home-cta__note {
+    margin-top: 0.4rem;
+  }
+}
+
+/* ========== 响应式：中等及以上屏幕（$medium） ========== */
+
+/* 让首页 feature_row 三张卡片等高，按钮对齐 */
+@include breakpoint($medium) {
+  /* wrapper 用 flex 布局代替 float */
+  .feature__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;          /* 卡片之间间距 */
+  }
+
+  .feature__item {
+    float: none;          /* 覆盖主题里可能的 float */
+    margin-right: 0;
+    flex: 1 1 0;          /* 三列平均分宽度 */
+  }
+
+  .feature__item .archive__item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
 
 /* =========================
  * 文章页侧栏整体
