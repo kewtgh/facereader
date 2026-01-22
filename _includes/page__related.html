@@ -1,47 +1,37 @@
-{%- assign tier1 = "" | split: "" -%}
-{%- assign tier2 = "" | split: "" -%}
-{%- assign tier3 = "" | split: "" -%}
+{%- assign same_cat = "" | split: "" -%}
+{%- assign social = "" | split: "" -%}
 {%- assign related = "" | split: "" -%}
 
-{%- assign page_categories = page.categories | default: "" -%}
-{%- assign page_tags = page.tags | default: "" -%}
+{%- assign main_cat = page.categories | first -%}
 
 {% for post in site.posts %}
   {% if post.id == page.id %}{% continue %}{% endif %}
 
-  {% assign cat_match = post.categories | intersection: page_categories | size %}
-  {% assign tag_match = post.tags | intersection: page_tags | size %}
+  {% if post.categories contains main_cat %}
+    {% assign same_cat = same_cat | push: post %}
+  {% endif %}
 
-  {% if cat_match >= 2 %}
-    {% assign tier1 = tier1 | push: post %}
-  {% elsif cat_match == 1 and tag_match >= 2 %}
-    {% assign tier2 = tier2 | push: post %}
+  {% if post.categories contains "社会杂论" %}
+    {% assign social = social | push: post %}
   {% endif %}
 {% endfor %}
 
-{%- comment -%} 按层级填充 related {%- endcomment -%}
+{%- comment -%} 
+  模拟随机：取不同位置的文章 
+{%- endcomment -%}
 
-{% for post in tier1 %}
-  {% if related.size < 4 %}
-    {% assign related = related | push: post %}
-  {% endif %}
-{% endfor %}
+{% if same_cat.size > 0 %}
+  {% assign related = related | push: same_cat[0] %}
+{% endif %}
 
-{% for post in tier2 %}
-  {% if related.size < 4 and related contains post == false %}
-    {% assign related = related | push: post %}
-  {% endif %}
-{% endfor %}
+{% if same_cat.size > 2 %}
+  {% assign related = related | push: same_cat[2] %}
+{% elsif same_cat.size > 1 %}
+  {% assign related = related | push: same_cat[1] %}
+{% endif %}
 
-{% if related.size < 4 %}
-  {% for post in site.posts %}
-    {% if post.id == page.id %}{% continue %}{% endif %}
-    {% if post.categories contains "社会杂论" %}
-      {% if related contains post == false and related.size < 4 %}
-        {% assign related = related | push: post %}
-      {% endif %}
-    {% endif %}
-  {% endfor %}
+{% if social.size > 0 %}
+  {% assign related = related | push: social[1] | default: social[0] %}
 {% endif %}
 
 <div class="page__related">
