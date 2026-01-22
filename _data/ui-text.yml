@@ -532,55 +532,44 @@ zh: &DEFAULT_ZH_HANS
   tag_clear: "清除筛选"
   home_recent_updates        : "最近更新"
   home_view_all_posts        : "查看全部文章"
-home_hero_excerpt: >
-  这几年，我陆续和许多创业者、职业经理人和一线员工聊他们所在的企业。
-  比起给公司贴标签，我更关心做决定的人：他们在想什么、害怕什么，又坚持什么。
-  FaceReader 想做的，是从「人」出发，看清一家公司真正的优势、风险和可能的走向，帮你做更稳妥的选择。
-
-home_hero_primary_action: "从一篇文章开始"
-home_hero_secondary_action: "先看我的判断方式"
-
-home_section_company_analysis: "企业剖析"
-home_section_classic_reviews: "经典解读"
-home_section_personal_growth: "人格成长"
-
-home_section_company_intro: >
-  一家公司，往往藏在几张具体的脸里。
-  在这些文章里，我们一起拆解创始人和核心团队：谁在扛事，谁在拍板，矛盾怎么起来，又是怎样被解决。
-  你会看到他们习惯如何做决定、真正相信什么，以及明显的短板在哪。
-  如果你正犹豫「要不要相信这家公司」，不妨先从这些故事里，把人和格局看清楚。
-
-home_section_classic_intro: >
-  许多管理和商业经典，你可能早就听过书名，甚至能背出几句名言。
-  我更关心的是：这些道理，放到今天的企业和职场里，还能怎样实际落地？
-  文章会选取具体章节，配合真实案例，把「听起来很大的道理」转译成你在招聘、合作、投资和职业选择时可以直接用上的判断工具。
-
-home_section_growth_intro: >
-  这一栏写给也在思考「我到底是个怎样的人」的你。
-  内容包括性格、边界感、合作方式，以及那些事后回头看才懂的转折点。
-  它既是我对自己和身边人的长期观察，也希望在你迷茫或犹豫的时候，
-  能像一位不急着下结论的同事，陪你把话慢慢说清楚。
-
-home_btn_view_company_analysis: "看看企业怎么走到今天"
-home_btn_view_classic_reviews: "用今天的故事重读经典"
-home_btn_view_personal_growth: "从别人的故事想想自己"
-
-home_about_card_title: "在聊企业之前，先认识一下我"
-home_about_card_intro: >
-  有人把这里当成「看企业的另一个窗口」，也有人说它像一位安静但诚实的聊天对象。
-  在正式做咨询之前，我希望你先搞清楚两件事：
-
-home_about_card_point1: >
-  我怎么看「人」在企业里的位置——创始人、合伙人和关键岗位分别扮演什么角色；
-
-home_about_card_point2: >
-  哪些问题适合由我来分析，哪些问题，我可能帮不上太多忙。
-
-home_about_card_note: >
-  如果你还在犹豫要不要写那封邮件，或者只是好奇这背后是一种怎样的工作方式，
-  不妨先从「关于 FaceReader」开始慢慢看，不急着做决定。
-
-home_about_card_button: "去「关于 FaceReader」看看"
+  home_hero_excerpt: >
+   这几年，我陆续和许多创业者、职业经理人和一线员工聊他们所在的企业。
+   比起给公司贴标签，我更关心做决定的人：他们在想什么、害怕什么，又坚持什么。
+   FaceReader 想做的，是从「人」出发，看清一家公司真正的优势、风险和可能的走向，帮你做更稳妥的选择。
+  home_hero_primary_action: "从一篇文章开始"
+  home_hero_secondary_action: "先看我的判断方式"
+  home_section_company_analysis: "企业剖析"
+  home_section_classic_reviews: "经典解读"
+  home_section_personal_growth: "人格成长"
+  home_section_company_intro: >
+   一家公司，往往藏在几张具体的脸里。
+   在这些文章里，我们一起拆解创始人和核心团队：谁在扛事，谁在拍板，矛盾怎么起来，又是怎样被解决。
+   你会看到他们习惯如何做决定、真正相信什么，以及明显的短板在哪。
+   如果你正犹豫「要不要相信这家公司」，不妨先从这些故事里，把人和格局看清楚。
+  home_section_classic_intro: >
+   许多管理和商业经典，你可能早就听过书名，甚至能背出几句名言。
+   我更关心的是：这些道理，放到今天的企业和职场里，还能怎样实际落地？
+   文章会选取具体章节，配合真实案例，把「听起来很大的道理」转译成你在招聘、合作、投资和职业选择时可以直接用上的判断工具。
+  home_section_growth_intro: >
+   这一栏写给也在思考「我到底是个怎样的人」的你。
+   内容包括性格、边界感、合作方式，以及那些事后回头看才懂的转折点。
+   它既是我对自己和身边人的长期观察，也希望在你迷茫或犹豫的时候，
+   能像一位不急着下结论的同事，陪你把话慢慢说清楚。
+  home_btn_view_company_analysis: "看看企业怎么走到今天"
+  home_btn_view_classic_reviews: "用今天的故事重读经典"
+  home_btn_view_personal_growth: "从别人的故事想想自己"
+  home_about_card_title: "在聊企业之前，先认识一下我"
+  home_about_card_intro: >
+   有人把这里当成「看企业的另一个窗口」，也有人说它像一位安静但诚实的聊天对象。
+   在正式做咨询之前，我希望你先搞清楚两件事：
+  home_about_card_point1: >
+   我怎么看「人」在企业里的位置——创始人、合伙人和关键岗位分别扮演什么角色；
+  home_about_card_point2: >
+   哪些问题适合由我来分析，哪些问题，我可能帮不上太多忙。
+  home_about_card_note: >
+   如果你还在犹豫要不要写那封邮件，或者只是好奇这背后是一种怎样的工作方式，
+   不妨先从「关于 FaceReader」开始慢慢看，不急着做决定。
+  home_about_card_button: "去「关于 FaceReader」看看"
 
 zh-CN:
   <<: *DEFAULT_ZH_HANS
