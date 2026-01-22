@@ -1,3 +1,5 @@
+{% assign t = site.data.ui-text[site.locale] %}
+
 {% capture overlay_img_path %}{{ page.header.overlay_image | relative_url }}{% endcapture %}
 
 {% if page.header.overlay_filter contains "gradient" %}
@@ -18,6 +20,9 @@
 
 {% assign image_description = image_description | markdownify | strip_html | strip_newlines | escape_once %}
 
+{%- comment -%}
+  这里开始是带背景图的 hero 容器
+{%- endcomment -%}
 <div class="page__hero{% if page.header.overlay_color or page.header.overlay_image %}--overlay{% endif %}"
   style="{% if page.header.overlay_color %}background-color: {{ page.header.overlay_color | default: 'transparent' }};{% endif %} {% if overlay_img_path %}background-image: {% if overlay_filter %}{{ overlay_filter }}, {% endif %}url('{{ overlay_img_path }}');{% endif %}"
 >
@@ -25,21 +30,59 @@
     <div class="wrapper">
       <h1 id="page-title" class="page__title" itemprop="headline">
         {% if paginator and site.paginate_show_page_num %}
-          {{ site.title }}{% unless paginator.page == 1 %} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}
+          {{ site.title }}{% unless paginator.page == 1 %} {{ t.page | default: "Page" }} {{ paginator.page }}{% endunless %}
         {% else %}
           {{ page.title | default: site.title | markdownify | remove: "<p>" | remove: "</p>" }}
         {% endif %}
       </h1>
-      {% if page.tagline %}
-        <p class="page__lead">{{ page.tagline | markdownify | remove: "<p>" | remove: "</p>" }}</p>
-      {% elsif page.header.show_overlay_excerpt != false and page.excerpt %}
-        <p class="page__lead">{{ page.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+
+      {%- comment -%}
+        1. 如果有 tagline，优先用 tagline（通常是每页单独写的）
+        2. 否则：
+           - 如果有 page.excerpt_key，就从 ui-text.yml 里取本地化文案
+           - 没有 excerpt_key 时，退回用 page.excerpt
+      {%- endcomment -%}
+      {% assign excerpt_text = page.excerpt %}
+      {% if page.excerpt_key %}
+        {% assign excerpt_text = t[page.excerpt_key] %}
       {% endif %}
+
+      {% if page.tagline %}
+        <p class="page__lead">
+          {{ page.tagline | markdownify | remove: "<p>" | remove: "</p>" }}
+        </p>
+      {% elsif page.header.show_overlay_excerpt != false and excerpt_text %}
+        <p class="page__lead">
+          {{ excerpt_text | markdownify | remove: "<p>" | remove: "</p>" }}
+        </p>
+      {% endif %}
+
       {% include page__meta.html %}
-      {% if page.header.actions %}
-        <p>
+
+      {%- if page.header.actions %}
+        <p class="page__meta">
         {% for action in page.header.actions %}
-          <a href="{{ action.url | relative_url }}" class="btn btn--light-outline btn--large">{{ action.label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a>
+          {%- comment -%}
+            每个按钮：
+            - 如果有 label_key，则从 ui-text.yml 里取；
+            - 否则用原来的 action.label；
+            - class 支持从 front matter 传入（比如 btn--primary / btn--secondary），
+              默认仍然是原来的浅色描边大按钮。
+          {%- endcomment -%}
+          {% assign label = action.label | default: t.more_label | default: "Learn More" %}
+          {% if action.label_key %}
+            {% assign translated = t[action.label_key] %}
+            {% if translated %}
+              {% assign label = translated %}
+            {% endif %}
+          {% endif %}
+
+          {% assign btn_classes = action.class | default: "btn--light-outline btn--large" %}
+
+          <a href="{{ action.url | relative_url }}"
+             class="btn {{ btn_classes }}">
+            {{ label }}
+          </a>
         {% endfor %}
         </p>
       {% endif %}

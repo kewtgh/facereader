@@ -8,45 +8,41 @@ header:
   overlay_image: /assets/img/page-header-image-vision10.jpg
   overlay_filter: rgba(51, 117, 255, 0.5)
   actions:
-    - label: "{{ site.data.ui-text[site.locale].home_hero_primary_action }}"
+    - label_key: "home_hero_primary_action"
       url: "/posts/"
       class: "btn--primary"
-    - label: "{{ site.data.ui-text[site.locale].home_hero_secondary_action }}"
+    - label_key: "home_hero_secondary_action"
       url: "/about/"
       class: "btn--secondary"
 
-excerpt: >
-  {{ site.data.ui-text[site.locale].home_hero_excerpt }}
+# 这里只存“文案 key 名”，真正的内容去 ui-text.yml 里读
+excerpt_key: "home_hero_excerpt"
 
 feature_row:
   - image_path: /assets/img/page-header-image-wit-500x300.jpg
     alt: "创始人和团队的剪影"
-    title: "{{ site.data.ui-text[site.locale].home_section_company_analysis }}"
-    excerpt: >
-      {{ site.data.ui-text[site.locale].home_section_company_intro }}
+    title_key: "home_section_company_analysis"
+    excerpt_key: "home_section_company_intro"
     url: "/categories/#阅相识人"
     btn_class: "btn--primary"
-    btn_label: "{{ site.data.ui-text[site.locale].home_btn_view_company_analysis }}"
+    btn_label_key: "home_btn_view_company_analysis"
 
   - image_path: /assets/img/page-header-image-tech4-500x300.jpg
     alt: "管理与商业经典书的封面"
-    title: "{{ site.data.ui-text[site.locale].home_section_classic_reviews }}"
-    excerpt: >
-      {{ site.data.ui-text[site.locale].home_section_classic_intro }}
+    title_key: "home_section_classic_reviews"
+    excerpt_key: "home_section_classic_intro"
     url: "/categories/#经典解读"
     btn_class: "btn--primary"
-    btn_label: "{{ site.data.ui-text[site.locale].home_btn_view_classic_reviews }}"
+    btn_label_key: "home_btn_view_classic_reviews"
 
   - image_path: /assets/img/page-header-image-eye4-500x300.jpg
     alt: "人物侧影与城市轮廓"
-    title: "{{ site.data.ui-text[site.locale].home_section_personal_growth }}"
-    excerpt: >
-      {{ site.data.ui-text[site.locale].home_section_growth_intro }}
+    title_key: "home_section_personal_growth"
+    excerpt_key: "home_section_growth_intro"
     url: "/categories/#人格成长"
     btn_class: "btn--primary"
-    btn_label: "{{ site.data.ui-text[site.locale].home_btn_view_personal_growth }}"
+    btn_label_key: "home_btn_view_personal_growth"
 ---
-
 
 {%- comment -%} 顶部三张栏目卡片 {%- endcomment -%}
 {% include feature_row %}
