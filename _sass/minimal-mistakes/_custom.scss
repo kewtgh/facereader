@@ -136,18 +136,6 @@ body {
 
 /* ========== 首页 Hero（顶部大图） ========== */
 
-/* 让首页大图里的文字更紧凑一些 */
-.page__hero--overlay .page__title { ... }
-.page__hero--overlay .page__lead { ... }
-/* 按钮之间空隙稍微小一点，看起来成一组 */
-.page__hero--overlay .page__lead + .page__meta { ... }
-
-/* ===== 手机端首页 Hero 优化 ===== */
-@include breakpoint($small) {
-  ...
-}
-把这些 全部删掉，换成下面这一整段（用的是我们之前改过的 .page__hero-actions 类）：
-
 /* =========================
  * 首页 Hero 区整体排版
  * ========================= */
