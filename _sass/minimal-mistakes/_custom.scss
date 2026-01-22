@@ -1,19 +1,8 @@
----
-# Only the main Sass file needs front matter
----
+/* FaceReader 自定义样式
+   这里的变量和 mixin（如 $link-color、$border-color、breakpoint 等）
+   都在 minimal-mistakes.scss 中提前 import 了，可以直接使用。  */
 
-@charset "utf-8";
-
-// 先载入皮肤（这里使用 _config.yml 里的 minimal_mistakes_skin，默认 sunrise）
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'sunrise' }}"; // skin
-// 再载入主题本体
-@import "minimal-mistakes"; // main partials
-
-// ======================================================
-// FaceReader 定制样式（在 sunrise 配色基础上的一层美化）
-// ======================================================
-
-/* 全站字体和行距（配合下面第 2 节的变量覆盖效果最佳） */
+/* 全站行距稍微放大一点 */
 body {
   line-height: 1.7;
 }
@@ -106,7 +95,7 @@ body {
   color: $muted-text-color;
 }
 
-/* 主按钮更偏 sunrise 橙色系 */
+/* 主按钮使用链接色，配合 sunrise 配色 */
 .btn--primary {
   background-color: $link-color;
   border-color: $link-color;
