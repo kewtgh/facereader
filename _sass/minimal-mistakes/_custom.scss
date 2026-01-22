@@ -304,17 +304,17 @@ body {
   line-height: 1.25;
 }
 
-/* ===== 首页 About 卡片 CTA（独立版） ===== */
+/* ===== 首页 About 卡片 CTA · 图文版 ===== */
 
-/* 整块区域的上下空白，并清除上面文章卡片的 float */
+/* 整块区域与上面文章列表拉开距离，并清理 float */
 .home-section--about-cta {
   margin: 3rem 0 3.5rem;
   clear: both;
 }
 
-/* 通用 CTA 卡片外观（如果之前已经有 .home-cta，可以保持这块为“最新版本”） */
+/* 卡片本身的通用外观（如果上面已有 .home-cta，可保留当前版本） */
 .home-cta {
-  padding: 2rem 1.5rem;
+  padding: 2rem 1.75rem;
   border-radius: 1.25rem;
   background: linear-gradient(
     135deg,
@@ -325,14 +325,39 @@ body {
   box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
 }
 
-/* 控制宽度和居中 */
+/* 控制整体宽度和居中 */
 .home-cta--about {
-  max-width: 960px;
+  max-width: 980px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* 标题、正文间距 */
+/* 图文左右排版 */
+.home-cta--about .home-cta__inner {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+/* 左侧图片区域 */
+.home-cta--about .home-cta__media {
+  flex: 0 0 36%;
+}
+
+.home-cta--about .home-cta__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* 右侧文字区域 */
+.home-cta--about .home-cta__text {
+  flex: 1 1 auto;
+}
+
 .home-cta--about .home-cta__text h2 {
   margin-top: 0;
   margin-bottom: 0.75rem;
@@ -342,10 +367,27 @@ body {
   margin-bottom: 1.1rem;
 }
 
-/* 按钮略微往下错一点 */
+/* 按钮稍微离文字远一点 */
 .home-cta--about .btn--primary {
   margin-top: 0.25rem;
 }
+
+/* 小屏幕：改为上下排，图片在上、文字在下 */
+@include breakpoint($small) {
+  .home-cta--about .home-cta__inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .home-cta--about .home-cta__media {
+    flex: 0 0 auto;
+  }
+
+  .home-cta--about .home-cta__media img {
+    max-height: 220px;
+  }
+}
+
 
 
 
