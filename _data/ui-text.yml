@@ -59,55 +59,44 @@ en: &DEFAULT_EN
   home_recent_updates        : "Recent updates"
   home_view_all_posts        : "View all posts"
   home_hero_excerpt: >
-    In the past few years I've met quite a few founders, professional managers and
-    "ordinary" employees. Rather than judging companies from a distance, I'm more
-    interested in the people making the decisions: what they are thinking, what
-    they are afraid of, and what has carried them this far. The pieces here open
-    up companies, books and growth stories gently from a human point of view.
-    I hope that when you look at companies, choose partners, lead a team or decide
-    on your own next step, you can walk away with a bit more clarity and calm.
-  home_hero_primary_action    : "Start with a piece that speaks to you"
-  home_hero_secondary_action  : "First see how I look at people and companies"
-  home_section_company_analysis   : "Company analysis"
-  home_section_classic_reviews    : "Classic insights"
-  home_section_personal_growth    : "Personal growth"
+   In recent years, I’ve been talking with many founders, professional managers, and frontline employees about the companies they work in.
+   Rather than putting labels on a company, I’m more interested in the people who make decisions: what they’re thinking, what they fear, and what they insist on.
+   What FaceReader aims to do is to start from “people”, see clearly a company’s real strengths, risks, and possible directions, and help you make more grounded choices.
+  home_hero_primary_action: "Start with an article"
+  home_hero_secondary_action: "First see how I make judgments"
+  home_section_company_analysis: "Company Analysis"
+  home_section_classic_reviews: "Classic Reviews"
+  home_section_personal_growth: "Personal Growth"
   home_section_company_intro: >
-    A company is often hidden in a few very concrete faces. In these pieces we look
-    at how founders and core teams divide work, argue, and make peace again –
-    how they prefer to decide, what they believe in, and what they are not so good at.
-    Read this section when you want to quietly look at the people and the frame
-    before you decide whether to trust a company.
+    A company is often reflected in a few very specific faces.
+    In these articles, we’ll take apart the founder and core team together: who takes responsibility, who leads the decisions, how conflicts arise, and how they are resolved.
+    You’ll see their habitual decision paths, the principles they truly believe in, and the structural blind spots they carry.
+    When you evaluate “whether it’s worth staking your resources on this company”, you can use these cases first to see its people and its structure more clearly.
   home_section_classic_intro: >
-    You may already know the titles of many management and business classics, and
-    even be able to quote the punchlines. Here I'm more interested in how those
-    ideas can still be used in today's organisations. Each article picks specific
-    passages and pairs them with real cases, turning "big truths" into everyday
-    decision-making reminders.
+    Many management and business classics are books you may already know by title, or even by their famous quotes.
+    What I care about more is how these theories still have practical impact within today’s corporate and workplace environments.
+    Each article selects key chapters, combines them with real cases, and breaks those big abstract arguments into a series of actionable questions.
+    So that when you’re hiring, partnering, investing, or choosing your own career path, you can use them directly as decision frameworks and reference standards.
   home_section_growth_intro: >
-    This section is for you if you also wonder, "What kind of person am I really?"
-    It includes pieces on character, boundaries, ways of working with others,
-    and those turning points that only make sense in hindsight. It is my long-term
-    notebook about myself and people around me, and I hope it can be a calm,
-    non-judgmental colleague for you when you feel stuck.
-  home_btn_view_company_analysis  : "See how these companies became what they are"
-  home_btn_view_classic_reviews   : "Revisit old ideas through today’s stories"
-  home_btn_view_personal_growth   : "Read someone’s story and think about your own"
-  home_about_card_title: "Before we talk about companies, you may want to meet me first"
+    This section is for you who are also wondering, “What kind of person am I, really?”
+    It covers the ups and downs of life, dilemmas of growing up, psychological mechanisms, and those critical turning points that only become clear in hindsight.
+    It comes from my long-term observations of myself and the people around me, and I try to distill those experiences into language that invites reflection and discussion.
+    I hope that when you’re in a period of confusion or choice, these words can act like a careful colleague, helping you sort through your thoughts and clarify your stance.
+  home_btn_view_company_analysis: "See how companies became what they are"
+  home_btn_view_classic_reviews: "Reread the classics through today’s stories"
+  home_btn_view_personal_growth: "See yourself in other people’s stories"
+  home_about_card_title: "Before we talk about companies, get to know me first"
   home_about_card_intro: >
-    Some people use this site as another window into companies; others see it as
-    a quiet but honest conversation partner. Before any consulting, I'd rather you
-    first get clear on two things:
+   Some people treat this place as “another window for looking at companies”, others say it feels like a quiet but honest conversation partner.
+   Before we formally work together, I’d like you to be clear about two things:
   home_about_card_point1: >
-    How I see the role of “people” inside a company – what founders, partners and
-    key roles are each really doing there.
+   How I see the place of “people” inside a company — what roles founders, partners, and key positions each play;
   home_about_card_point2: >
-    What kinds of questions are a good fit to bring to me, and what kinds I am
-    probably not the right person for.
+   Which kinds of questions are suitable for me to analyze, and which ones I may not be very helpful with.
   home_about_card_note: >
-    If you’re still hesitating about sending that email, or simply curious about
-    the way I work, you can start with the “About FaceReader” page. Take your
-    time – there is no need to decide anything quickly.
-  home_about_card_button: "Visit “About FaceReader” first"
+   If you’re still hesitating about whether to write that email, or simply curious about what kind of work sits behind all this,
+   you might as well start by reading “About FaceReader” at your own pace, without rushing into any decisions.
+  home_about_card_button: "Go to “About FaceReader”"
 en-US:
   <<: *DEFAULT_EN
 en-CA:
@@ -175,34 +164,45 @@ es: &DEFAULT_ES
   tag_clear: "Borrar filtro"
   home_recent_updates        : "Actualizaciones recientes"
   home_view_all_posts        : "Ver todas las entradas"
-  home_section_company_analysis   : "Análisis de empresas"
-  home_section_classic_reviews    : "Lecturas de clásicos"
-  home_section_personal_growth    : "Crecimiento personal"
+  home_hero_excerpt: >
+   En los últimos años he conversado con muchos fundadores, directivos y personas de primera línea sobre las empresas en las que trabajan.
+   Más que poner etiquetas a una compañía, me interesa quienes toman las decisiones: en qué piensan, qué temen y qué están dispuestos a defender hasta el final.
+   Lo que intenta hacer FaceReader es partir de las “personas” para ver con claridad las fortalezas reales, los riesgos y las posibles trayectorias de una empresa, y ayudarte así a tomar decisiones más seguras.
+  home_hero_primary_action: "Empezar con un artículo"
+  home_hero_secondary_action: "Ver primero cómo llego a mis juicios"
+  home_section_company_analysis: "Análisis de empresas"
+  home_section_classic_reviews: "Lecturas clásicas"
+  home_section_personal_growth: "Vida y crecimiento personal"
   home_section_company_intro: >
-    Muchas veces una empresa cabe en unas pocas caras muy concretas.
-    En estos textos miramos juntos cómo el fundador y el equipo núcleo se reparten el trabajo,
-    cómo discuten y cómo vuelven a ponerse de acuerdo:
-    qué forma tienen de decidir, en qué creen y en qué no son tan buenos.
-    Es una sección útil para, antes de decidir si confiar o no en una empresa,
-    poder mirar con calma a las personas y al marco en el que se mueven.
+    El perfil de una empresa suele reflejarse en unos pocos rostros muy concretos.
+    En estos textos analizamos juntos al fundador y al equipo clave: quién asume la responsabilidad, quién lidera las decisiones, cómo surgen los conflictos y cómo se resuelven.
+    Podrás ver sus patrones habituales de decisión, los principios en los que realmente creen y las carencias estructurales que arrastran.
+    Cuando te preguntes si «vale la pena apostar tus recursos por esta empresa», puedes empezar por estos casos para ver con más nitidez tanto a las personas como al marco en el que se mueven.
   home_section_classic_intro: >
-    Probablemente ya conoces el título de muchos clásicos de gestión y negocios,
-    e incluso recuerdas algunas frases célebres.
-    Aquí me importa más otra cosa: cómo se pueden seguir usando esas ideas
-    en las empresas y en el trabajo de hoy.
-    Cada artículo toma pasajes concretos, los acompaña con casos reales
-    y convierte esas “grandes verdades” en recordatorios pequeños para las decisiones del día a día.
+    Muchos clásicos de gestión y negocios probablemente ya te suenan por el título o por sus frases célebres.
+    A mí me interesa más cómo esas teorías pueden seguir teniendo un efecto práctico en el contexto actual de las organizaciones y las carreras profesionales.
+    En cada artículo selecciono capítulos clave, los conecto con casos reales y convierto los grandes discursos abstractos en una serie de preguntas accionables.
+    Así, en momentos de contratación, colaboración, inversión o elección de carrera, puedes usarlos directamente como marcos de decisión y criterios de referencia.
   home_section_growth_intro: >
-    Esta sección es para ti si también te preguntas "¿qué tipo de persona soy en realidad?".
-    Hablo de carácter, límites, maneras de colaborar y de esos puntos de giro
-    que solo se entienden bien cuando miramos hacia atrás.
-    Es mi cuaderno de observación a largo plazo sobre mí y sobre la gente que me rodea,
-    y ojalá pueda ser como un colega tranquilo, que no se apresura a juzgar,
-    cuando tú te sientas perdido o atascado.
-  home_btn_view_company_analysis  : "Ver cómo estas empresas llegaron a ser lo que son"
-  home_btn_view_classic_reviews   : "Releer los clásicos a través de historias actuales"
-  home_btn_view_personal_growth   : "Leer la historia de alguien y pensar en la tuya"
-
+    Esta sección es para ti, que también te preguntas: «¿Qué tipo de persona soy en realidad?»
+    Trata sobre los altibajos de la vida, las dudas del crecimiento, los mecanismos psicológicos y esos puntos de inflexión que solo se ven claramente cuando miramos hacia atrás.
+    Nace de mis observaciones de largo plazo sobre mí mismo y las personas que me rodean, y del intento de destilar esas experiencias en un lenguaje que invite a conversar y pensar.
+    Ojalá que, cuando estés en un momento de confusión o de decisión, estos textos puedan acompañarte como un colega prudente, ayudándote a ordenar tus ideas y aclarar tu posición.
+  home_btn_view_company_analysis: "Ver cómo las empresas han llegado hasta aquí"
+  home_btn_view_classic_reviews: "Releer los clásicos con historias de hoy"
+  home_btn_view_personal_growth: "Pensar en ti a partir de las historias de otros"
+  home_about_card_title: "Antes de hablar de empresas, hablemos un poco de mí"
+  home_about_card_intro: >
+   Algunas personas ven este espacio como «otra ventana para mirar a las empresas»; otras dicen que se parece a un interlocutor tranquilo pero sincero.
+   Antes de empezar a trabajar juntos de forma más formal, me gustaría que tuvieras claras dos cosas:
+  home_about_card_point1: >
+   Cómo veo yo el lugar de las “personas” dentro de una empresa — qué papel juegan el fundador, los socios y los puestos clave;
+  home_about_card_point2: >
+   Qué tipo de preguntas tiene sentido que yo analice y en cuáles probablemente podré ayudarte mucho menos.
+  home_about_card_note: >
+   Si todavía dudas sobre escribir ese correo, o simplemente te da curiosidad qué tipo de forma de trabajo hay detrás de todo esto,
+   puedes empezar leyendo con calma la sección «About FaceReader», sin prisa por tomar una decisión.
+  home_about_card_button: "Ir a «About FaceReader»"
 
 es-ES:
   <<: *DEFAULT_ES
@@ -265,6 +265,47 @@ fr: &DEFAULT_FR
   tags_collapse: "Masquer les étiquettes"
   tag_current: "Étiquette actuelle"
   tag_clear: "Effacer le filtre"
+  home_recent_updates: "Dernières mises à jour"
+  home_view_all_posts: "Voir tous les articles"
+  home_hero_excerpt: >
+   Ces dernières années, j’ai beaucoup échangé avec des fondateurs, des dirigeants et des salariés de terrain à propos des entreprises où ils travaillent.
+   Plutôt que d’apposer des étiquettes sur une société, je m’intéresse d’abord aux personnes qui prennent les décisions : ce qu’elles pensent, ce qu’elles craignent et ce qu’elles refusent de lâcher.
+   Avec FaceReader, l’idée est de partir des « personnes » pour voir plus clairement les atouts réels, les risques et les trajectoires possibles d’une entreprise, et vous aider ainsi à faire des choix plus solides.
+  home_hero_primary_action: "Commencer par un article"
+  home_hero_secondary_action: "Voir d’abord comment je raisonne"
+  home_section_company_analysis: "Analyse d’entreprise"
+  home_section_classic_reviews: "Lectures classiques"
+  home_section_personal_growth: "Vie et développement personnel"
+  home_section_company_intro: >
+    L’image d’une entreprise se reflète souvent dans quelques visages bien concrets.
+    Dans ces articles, nous décortiquons ensemble le fondateur et l’équipe clé : qui assume les responsabilités, qui mène les décisions, comment naissent les conflits et comment ils se résolvent.
+    Vous verrez leurs chemins habituels de décision, les principes auxquels ils croient vraiment, ainsi que leurs angles morts structurels.
+    Quand vous vous demandez « est-ce que ça vaut la peine d’investir mes ressources dans cette entreprise ? », vous pouvez d’abord vous appuyer sur ces cas pour mieux voir à la fois les personnes et l’architecture.
+  home_section_classic_intro: >
+    Beaucoup de classiques du management et du business vous sont sans doute déjà familiers par leurs titres ou leurs citations.
+    Ce qui m’intéresse, c’est de savoir comment ces théories peuvent encore produire des effets concrets dans les organisations et les carrières d’aujourd’hui.
+    Chaque article sélectionne des chapitres clés, les met en regard de situations réelles et transforme les grands discours abstraits en une série de questions actionnables.
+    Ainsi, lors d’un recrutement, d’une collaboration, d’un investissement ou d’un choix de carrière, vous pouvez vous en servir directement comme cadre de décision et référentiel.
+  home_section_growth_intro: >
+    Cette rubrique s’adresse à vous qui vous demandez aussi : « Qui suis-je vraiment, au fond ? »
+    Elle aborde les hauts et les bas de la vie, les zones d’ombre de la croissance, les mécanismes psychologiques et ces tournants décisifs que l’on ne reconnaît qu’après coup.
+    Elle s’appuie sur mes observations de long terme sur moi-même et mon entourage, que j’essaie de condenser dans une langue qui invite à la réflexion et à la discussion.
+    J’aimerais que, dans les périodes de doute ou de choix, ces textes jouent le rôle d’un collègue prudent qui vous aide à démêler vos idées et clarifier votre position.
+  home_btn_view_company_analysis: "Voir comment les entreprises en sont arrivées là"
+  home_btn_view_classic_reviews: "Relire les classiques à la lumière d’histoires d’aujourd’hui"
+  home_btn_view_personal_growth: "Penser à vous à travers l’histoire des autres"
+  home_about_card_title: "Avant de parler des entreprises, faisons connaissance"
+  home_about_card_intro: >
+   Certains voient ici « une autre fenêtre pour regarder les entreprises », d’autres disent que c’est comme un interlocuteur calme mais honnête.
+   Avant d’entrer dans une collaboration de conseil, j’aimerais que deux points soient clairs :
+  home_about_card_point1: >
+   Ma manière de voir la place des « personnes » dans une entreprise — le rôle respectif du fondateur, des associés et des postes clés ;
+  home_about_card_point2: >
+   Quels types de questions se prêtent à mon analyse, et lesquels sont des domaines où je risque de peu pouvoir vous aider.
+  home_about_card_note: >
+   Si vous hésitez encore à envoyer ce mail, ou si vous êtes simplement curieux de la manière dont je travaille en coulisses,
+   prenez le temps de parcourir d’abord la page « About FaceReader », sans pression pour décider tout de suite.
+  home_about_card_button: "Aller à « About FaceReader »"
 fr-FR:
   <<: *DEFAULT_FR
 fr-BE:
@@ -543,7 +584,7 @@ zh: &DEFAULT_ZH_HANS
   home_section_personal_growth: "人格成长"
   home_section_company_intro: >
     一家公司，往往折射在几张具体的面孔上。
-    在这些文章里，我们系统拆解创始人和核心团队：谁承担责任，谁主导决策，矛盾如何产生，又如何被化解。
+    在这些文章里，我们一起拆解创始人和核心团队：谁承担责任，谁主导决策，矛盾如何产生，又如何被化解。
     你会看到他们在决策上的惯常路径、真正坚信的原则，以及结构性短板所在。
     当你评估「是否值得把资源押在这家公司」时，可以先借助这些案例，把人与格局看得更清楚。
   home_section_classic_intro: >
@@ -552,9 +593,9 @@ zh: &DEFAULT_ZH_HANS
     文章会选取关键章节，结合真实案例，将那些宏观的抽象表述拆解为若干可操作的问题。
     以便你在招聘、合作、投资和职业选择时，将其直接作为决策框架与对照标准。
   home_section_growth_intro: >
-    这一栏面向同样在追问「我究竟是一个怎样的人」的读者。
-    内容涵盖性格特征、边界感、协作方式，以及那些事后回望才看清的关键转折。
-    它既源于我对自己与身边人的长期观察，也力图将这些经验提炼成更可讨论的语言。
+    这一栏写给也在思考「我到底是个怎样的人」的你。
+    内容涵盖人生起伏、成长困惑、心理机制，以及那些事后回望才看清的关键转折。
+    它源于我对自己与身边人的长期观察，我力图将这些经验提炼成更可讨论的语言。
     希望当你处于迷茫或抉择阶段时，这些文字能像一位审慎的同事，协助你梳理思路、澄清立场。
   home_btn_view_company_analysis: "看看企业怎么走到今天"
   home_btn_view_classic_reviews: "用今天的故事重读经典"
@@ -633,36 +674,45 @@ zh-TW: &DEFAULT_ZH_HANT
   tag_clear: "清除篩選"
   home_recent_updates        : "最近更新"
   home_view_all_posts        : "查看全部文章"
-    # --- 首頁：FaceReader 頂部三欄 ---
-
-  home_section_company_analysis   : "企業剖析"
-  home_section_classic_reviews    : "經典解讀"
-  home_section_personal_growth    : "人格成長"
-
+  home_hero_excerpt: >
+   這幾年，我陸續和許多創業者、職業經理人和第一線員工聊他們所在的企業。
+   比起替公司貼標籤，我更在意那些做決定的人：他們在想什麼、害怕什麼，又堅持什麼。
+   FaceReader 想做的，是從「人」出發，看清一家公司的真正優勢、風險和可能走向，幫你做出更穩當的選擇。
+  home_hero_primary_action: "從一篇文章開始"
+  home_hero_secondary_action: "先看看我的判斷方式"
+  home_section_company_analysis: "企業剖析"
+  home_section_classic_reviews: "經典解讀"
+  home_section_personal_growth: "人格與成長"
   home_section_company_intro: >
-    一家公司，往往藏在幾張具體的臉裡。
-    在這些文章裡，我們一起看創始人和核心團隊是怎樣分工、怎樣吵架、又怎樣和好——
-    他們習慣怎麼做決定、相信什麼、不太擅長什麼。
-    適合你在「要不要相信這家公司」之前，先安靜地把人和格局看一遍。
-
+    一家公司，往往折射在幾張具體的臉孔上。
+    在這些文章裡，我們一起拆解創辦人和核心團隊：誰扛責任，誰主導決策，矛盾如何產生，又如何被化解。
+    你會看到他們在決策上的慣性路徑、真正相信的原則，以及結構性的短板在哪裡。
+    當你評估「是否值得把資源押在這家公司」時，可以先藉由這些案例，把人與格局看得更清楚。
   home_section_classic_intro: >
-    許多管理和商業經典，你可能早就聽過書名，甚至背得出金句。
-    在這裡，我更在意的是：這些道理，放到今天的職場和企業裡，還能怎麼用？
-    文章會選取具體章節，配上真實案例，把「聽起來很大的道理」翻譯成
-    可以落在日常決策裡的提醒。
-
+    許多管理與商業經典，你也許早已聽過書名，甚至熟悉其中的金句。
+    我更在意的是：這些理論放在當下的企業與職場環境中，仍然如何發揮實際功效。
+    文章會選取關鍵章節，結合真實案例，將那些宏觀的抽象說法拆解成若干可操作的問題。
+    方便你在招募、合作、投資與職涯選擇時，直接把它們當成決策架構與對照標準。
   home_section_growth_intro: >
-    這一欄寫給也在琢磨「我到底是個什麼樣的人」的你。
-    內容包括性格、邊界感、合作方式，還有那些讓人回頭看才懂的轉折點。
-    它既是我對自己和身邊人的長期觀察日記，也希望在你迷惘或卡住的時候，
-    能像一位不著急下結論的同事，陪你把話慢慢說清楚。
-
-  home_btn_view_company_analysis  : "看看這些企業是怎麼「長成現在這樣」的"
-  home_btn_view_classic_reviews   : "用今天的故事重讀那些「老道理」"
-  home_btn_view_personal_growth   : "從一個人的故事，想到你自己"
-
-
-
+    這一欄是寫給也在思考「我究竟是個怎樣的人」的你。
+    內容涵蓋人生起伏、成長困惑、心理機制，以及那些事後回望才看清的關鍵轉折。
+    它源自我對自己與身邊人的長期觀察，也試著把這些經驗提煉成更可討論的語言。
+    希望當你處在迷惘或抉擇的階段時，這些文字能像一位審慎的同事，協助你梳理思路、釐清立場。
+  home_btn_view_company_analysis: "看看企業如何走到今天"
+  home_btn_view_classic_reviews: "用今天的故事重讀經典"
+  home_btn_view_personal_growth: "從別人的故事想想自己"
+  home_about_card_title: "談企業之前，先認識一下我"
+  home_about_card_intro: >
+   有人把這裡當成「看企業的另一扇窗口」，也有人說它像一位安靜但誠實的聊天對象。
+   在正式開始顧問合作之前，我希望你先弄清楚兩件事：
+  home_about_card_point1: >
+   我怎麼看「人」在企業裡的位置——創辦人、合夥人和關鍵職位分別扮演什麼角色；
+  home_about_card_point2: >
+   哪些問題適合由我來分析，哪些問題，我可能幫不上太多忙。
+  home_about_card_note: >
+   如果你還在猶豫要不要寫那封信，或者只是好奇這背後是一種怎樣的工作方式，
+   不妨先從「關於 FaceReader」開始慢慢看，不急著做決定。
+  home_about_card_button: "去看看「關於 FaceReader」"
 zh-HK:
   <<: *DEFAULT_ZH_HANT
 
@@ -843,39 +893,45 @@ ko: &DEFAULT_KO
   tag_clear: "필터 지우기"
   home_recent_updates        : "최근 업데이트"
   home_view_all_posts        : "모든 글 보기"
-    # --- 홈: 상단 3개 섹션 ---
-
-  home_section_company_analysis   : "기업 분석"
-  home_section_classic_reviews    : "고전 해석"
-  home_section_personal_growth    : "인격 성장"
-
+  home_hero_excerpt: >
+   최근 몇 년 동안 저는 많은 창업가, 전문 경영인, 그리고 일선 직원들과 그들이 속한 회사를 두고 이야기를 나누어 왔습니다.
+   회사에 꼬리표를 붙이기보다, 저는 의사결정을 내리는 사람들, 곧 그들이 무엇을 생각하고, 무엇을 두려워하며, 무엇을 끝까지 고수하는지에 더 관심이 있습니다.
+   FaceReader가 하려는 일은 “사람”에서 출발해 한 회사의 진짜 강점과 위험, 그리고 향후 방향을 더 선명하게 보고, 당신이 더 안정적인 선택을 할 수 있도록 돕는 것입니다.
+  home_hero_primary_action: "한 편의 글부터 읽어보기"
+  home_hero_secondary_action: "먼저 나의 판단 방식을 살펴보기"
+  home_section_company_analysis: "기업 분석"
+  home_section_classic_reviews: "고전 해석"
+  home_section_personal_growth: "성장과 심리"
   home_section_company_intro: >
-    한 회사의 모습은 몇몇 구체적인 얼굴들 속에 숨어 있습니다.
-    이 글들에서는 창업자와 핵심 멤버들이 어떻게 역할을 나누고, 어떻게 부딪치고,
-    또 어떻게 다시 함께 가고 있는지를 함께 살펴봅니다.
-    그들이 어떤 방식으로 의사결정을 하고, 무엇을 믿고, 무엇을 그다지 잘하지 못하는지.
-    "이 회사를 믿어도 될까"를 고민하기 전에, 사람과 그릇을 조용히 한 번 훑어보고 싶을 때
-    읽기 좋은 코너입니다.
-
+    한 회사의 모습은 몇몇 구체적인 얼굴에 비치는 경우가 많습니다.
+    이 글들에서는 창업자와 핵심 팀을 함께 해부해 봅니다. 누가 책임을 지는지, 누가 의사결정을 주도하는지, 갈등은 어떻게 생기고 어떻게 수습되는지 살펴봅니다.
+    그들의 익숙한 의사결정 패턴, 진심으로 믿고 있는 원칙, 그리고 구조적인 약점이 어디에 있는지 볼 수 있을 것입니다.
+    “이 회사에 내 자원과 시간을 걸 만한가”를 평가할 때, 먼저 이 사례들을 통해 사람과 판을 더 분명히 보는 데 도움을 받을 수 있습니다.
   home_section_classic_intro: >
-    많은 경영·비즈니스 고전을 이미 들어봤거나, 명문장을 외우고 있을지도 모릅니다.
-    여기서 제가 더 궁금한 것은, 그런 이야기들이 오늘날의 직장과 조직 안에서
-    어떻게 다시 쓰일 수 있는가입니다.
-    각 글은 특정 부분을 골라 실제 사례와 함께 풀어보며,
-    "커다란 진리"처럼 들리는 말들을 일상의 의사결정에 쓸 수 있는 작은 힌트로 바꿔 봅니다.
-
+    많은 경영·비즈니스 고전은 이미 책 제목이나 명언으로 익숙할지도 모릅니다.
+    제가 더 궁금한 것은, 이런 이론들이 오늘날의 기업과 직장 환경 속에서 여전히 어떻게 실제 효용을 내는가 하는 점입니다.
+    글에서는 핵심 장을 골라 실제 사례와 함께 다루면서, 거대한 추상 이론을 실행 가능한 여러 개의 질문으로 쪼개어 봅니다.
+    채용, 협업, 투자, 커리어 선택의 순간마다 이것들을 의사결정의 틀과 비교 기준으로 바로 가져다 쓸 수 있도록 하기 위해서입니다.
   home_section_growth_intro: >
-    이 코너는 "나는 도대체 어떤 사람일까"를 함께 고민하고 있는 당신을 위한 글들입니다.
-    성격, 경계감, 함께 일하는 방식, 그리고 시간이 지나서야 의미가 보이는 전환점들에 대해 씁니다.
-    제 자신과 주변 사람들에 대한 오래된 관찰 노트이기도 하고,
-    당신이 막막하거나 걸려 있을 때, 성급히 결론을 내리지 않는 동료처럼
-    곁에서 천천히 말을 정리해 줄 수 있기를 바랍니다.
-
-  home_btn_view_company_analysis  : "이 기업들이 어떻게 지금의 모습이 되었는지 살펴보기"
-  home_btn_view_classic_reviews   : "오늘의 이야기로 고전을 다시 읽어보기"
-  home_btn_view_personal_growth   : "누군가의 이야기를 읽으며 나를 생각해 보기"
-
-
+    이 코너는 “나는 도대체 어떤 사람인가?”를 함께 고민하는 당신을 위해 준비한 공간입니다.
+    삶의 굴곡, 성장 과정의 고민, 심리적 메커니즘, 그리고 시간이 지나서야 보이는 결정적 전환점들을 다룹니다.
+    제 자신과 주변 사람들을 오랫동안 관찰해 온 경험을 바탕으로, 그런 경험들을 함께 이야기할 수 있는 언어로 정리해 보려고 합니다.
+    막막함이나 선택의 기로에 서 있을 때, 이 글들이 성급히 단정 짓지 않는 동료처럼 당신의 생각을 정리하고 입장을 분명히 하는 데 도움이 되기를 바랍니다.
+  home_btn_view_company_analysis: "기업이 지금 모습이 되기까지의 여정 보기"
+  home_btn_view_classic_reviews: "오늘의 이야기로 고전을 다시 읽기"
+  home_btn_view_personal_growth: "남의 이야기를 통해 나를 돌아보기"
+  home_about_card_title: "기업 이야기 전에, 먼저 저를 소개합니다"
+  home_about_card_intro: >
+   어떤 분은 여기를 “기업을 보는 또 하나의 창”이라고 하고, 어떤 분은 조용하지만 솔직한 대화 상대 같다고 말합니다.
+   본격적으로 자문을 시작하기 전에, 먼저 두 가지는 분명히 알고 계셨으면 합니다.
+  home_about_card_point1: >
+   제가 기업 안에서 “사람”의 위치를 어떻게 보는지 — 창업자, 파트너, 핵심 포지션이 각각 어떤 역할을 맡는지;
+  home_about_card_point2: >
+   어떤 질문은 제가 분석하기에 적합하고, 어떤 질문은 제가 도움을 드리기 어려운지.
+  home_about_card_note: >
+   아직 메일을 쓸지 말지 망설이고 계시거나, 이 뒤에 어떤 일하는 방식이 있는지 단지 궁금하시다면,
+   서두르지 말고 “About FaceReader”부터 천천히 읽어 보셔도 좋습니다.
+  home_about_card_button: "“About FaceReader” 보러 가기"
 ko-KR:
   <<: *DEFAULT_KO
 
@@ -936,15 +992,45 @@ ru: &DEFAULT_RU
   tag_clear: "Сбросить фильтр"
   home_recent_updates        : "Последние обновления"
   home_view_all_posts        : "Смотреть все статьи"
-  home_section_company_analysis   : "Анализ компаний"
-  home_section_classic_reviews    : "Разбор классики"
-  home_section_personal_growth    : "Личностный рост"
-  home_btn_view_company_analysis  : "Смотреть статьи об анализе компаний"
-  home_btn_view_classic_reviews   : "Смотреть статьи с разбором классики"
-  home_btn_view_personal_growth   : "Смотреть статьи о личностном росте"
-  home_hero_primary_action    : "Начать с ключевых статей"
-  home_hero_secondary_action  : "Узнать, как FaceReader анализирует компании"
-
+  home_hero_excerpt: >
+   В последние годы я много разговаривал с основателями компаний, топ-менеджерами и рядовыми сотрудниками об их организациях.
+   Вместо того чтобы вешать ярлыки на бизнес, меня больше интересуют люди, принимающие решения: о чём они думают, чего боятся и что для них непоколебимо важно.
+   Задача FaceReader — исходя из «человеческого» измерения, яснее увидеть реальные сильные стороны, риски и возможные траектории компании и помочь вам принимать более взвешенные решения.
+  home_hero_primary_action: "Начать с одной статьи"
+  home_hero_secondary_action: "Сначала посмотреть, как я делаю выводы"
+  home_section_company_analysis: "Разбор компаний"
+  home_section_classic_reviews: "Анализ классики"
+  home_section_personal_growth: "Личность и рост"
+  home_section_company_intro: >
+    Лицо компании часто отражается в нескольких очень конкретных лицах людей.
+    В этих текстах мы вместе разбираем основателя и ключевую команду: кто берёт на себя ответственность, кто ведёт за собой решения, как возникают конфликты и как они разрешаются.
+    Вы увидите их привычные траектории принятия решений, принципы, в которые они действительно верят, и структурные слабые места.
+    Когда вы оцениваете, «стоит ли ставить на эту компанию свои ресурсы», сначала можно опереться на эти кейсы, чтобы лучше разглядеть людей и саму конструкцию бизнеса.
+  home_section_classic_intro: >
+    Многие управленческие и бизнес-классики вам, возможно, уже знакомы по названиям и цитатам.
+    Меня больше интересует, как эти теории продолжают работать на практике в сегодняшнем корпоративном и профессиональном контексте.
+    В статьях я выбираю ключевые главы, соединяю их с реальными примерами и раскладываю большие абстрактные формулировки на ряд конкретных вопросов.
+    Так, чтобы при найме, партнёрстве, инвестициях или выборе карьерного пути вы могли использовать их как готовые рамки и критерии для принятия решений.
+  home_section_growth_intro: >
+    Этот раздел — для тех, кто тоже задаётся вопросом: «Кем я на самом деле являюсь?»
+    Здесь речь идёт о взлётах и спадах жизни, трудностях взросления, психологических механизмах и тех поворотных моментах, которые становятся заметны только задним числом.
+    Он вырос из моих долгих наблюдений за собой и близкими людьми; я пытаюсь перевести эти наблюдения на язык, с которым можно спорить и размышлять.
+    Хочется, чтобы в периоды растерянности или выбора эти тексты были похожи на вдумчивого коллегу, который помогает разложить мысли по полочкам и прояснить свою позицию.
+  home_btn_view_company_analysis: "Посмотреть, как компании пришли к сегодняшнему виду"
+  home_btn_view_classic_reviews: "Перечитать классику через истории сегодняшнего дня"
+  home_btn_view_personal_growth: "Посмотреть на себя через чужие истории"
+  home_about_card_title: "Прежде чем говорить о компаниях, давайте познакомимся"
+  home_about_card_intro: >
+   Кто-то воспринимает это место как «ещё одно окно, через которое можно смотреть на бизнес», другие говорят, что оно похоже на спокойного, но честного собеседника.
+   Прежде чем мы перейдём к консультированию, мне важно, чтобы вы ясно понимали две вещи:
+  home_about_card_point1: >
+   Как я вижу роль «человека» в компании — какие функции выполняют основатель, партнёры и ключевые позиции;
+  home_about_card_point2: >
+   С какими вопросами ко мне имеет смысл приходить, а в каких ситуациях я, скорее всего, мало чем смогу помочь.
+  home_about_card_note: >
+   Если вы пока колеблетесь, писать ли то самое письмо, или просто хотите понять, как именно устроена моя работа,
+   начните с раздела «About FaceReader» и читайте в удобном темпе — без спешки и обязательств.
+  home_about_card_button: "Перейти к «About FaceReader»"
 ru-RU:
   <<: *DEFAULT_RU
 
@@ -1432,38 +1518,45 @@ ja: &DEFAULT_JA
   tag_clear: "フィルターをクリア"
   home_recent_updates        : "最近の更新"
   home_view_all_posts        : "すべての記事を見る"
-    # --- ホーム：トップの3つのセクション ---
-
-  home_section_company_analysis   : "企業分析"
-  home_section_classic_reviews    : "古典解読"
-  home_section_personal_growth    : "人格の成長"
-
+  home_hero_excerpt: >
+   ここ数年、私は多くの起業家やプロ経営者、現場で働く人たちと、その会社について話してきました。
+   会社そのものにラベルを貼るよりも、私は意思決定をする人たち――何を考え、何を恐れ、何を手放さないのか――に関心があります。
+   FaceReader がやろうとしているのは、「人」から出発して、その会社の本当の強みとリスク、そして進みうる方向性を見極め、あなたのより堅実な選択を助けることです。
+  home_hero_primary_action: "まずは一篇の文章から"
+  home_hero_secondary_action: "私の判断プロセスを見る"
+  home_section_company_analysis: "企業リーディング"
+  home_section_classic_reviews: "古典の読み直し"
+  home_section_personal_growth: "人生と心の成長"
   home_section_company_intro: >
-    一つの会社の姿は、何人かの具体的な顔の中に隠れています。
-    ここでは、創業者とコアメンバーがどのように役割分担し、どうぶつかり合い、
-    どうやって折り合いをつけてきたのかを一緒に見ていきます。
-    彼らがどんなふうに意思決定し、何を信じ、何があまり得意ではないのか。
-    「この会社を信じていいか」を決める前に、まず人と器を静かに眺めたいときに向いています。
-
+    企業の姿は、しばしばいくつかの具体的な「顔」に映し出されます。
+    ここでは創業者とコアメンバーを一緒に解きほぐしていきます。誰が責任を負い、誰が意思決定を主導し、対立がどう生まれ、どう収束していくのか。
+    そこで見えてくるのは、彼らの意思決定パターン、心から信じている原則、そして構造的な弱点がどこにあるのかです。
+    「この会社に自分のリソースを賭ける価値があるか」を判断するとき、その前にこうしたケースを通じて、人と器の両方をクリアに見ておくことができます。
   home_section_classic_intro: >
-    多くの経営書やビジネスの古典は、すでにタイトルも名言も知っているかもしれません。
-    ここで私が知りたいのは、それらの考えが、いまの職場や組織の中で
-    どう生きてくるのかということです。
-    各記事では特定の章やフレーズを取り上げ、実際のケースと組み合わせて、
-    「大きな真理」に聞こえる言葉を、日々の判断に落とせるヒントに訳していきます。
-
+    多くの経営・ビジネスの古典は、タイトルや名言だけならすでに知っているかもしれません。
+    私が気になるのは、そうした理論が、今の企業や職場の環境の中でなおどのように実際の効き目を持ちうるのか、という点です。
+    記事では重要な章を取り上げ、実際のケースと組み合わせて、「大きな抽象理論」をいくつかの実践的な問いへと分解していきます。
+    採用やパートナーシップ、投資、キャリア選択の場面で、意思決定のフレームワークや比較基準としてそのまま使えるようにするためです。
   home_section_growth_intro: >
-    このセクションは、「自分は本当はどんな人間なんだろう」と考えているあなたに向けたものです。
-    性格、境界線の引き方、人との付き合い方、そして振り返ってはじめて意味がわかる転機たち。
-    これは、私自身と身近な人たちへの長期的な観察ノートでもあり、
-    あなたが迷ったり行き詰まったりしたとき、急いで結論を出さない同僚のように、
-    一緒にゆっくり言葉を整理していけたらと思っています。
-
-  home_btn_view_company_analysis  : "企業が「いまの姿」になるまでを読んでみる"
-  home_btn_view_classic_reviews   : "いまの物語から古典を読み直す"
-  home_btn_view_personal_growth   : "誰かの物語から自分を考えてみる"
-
-
+    このセクションは、「自分はどんな人間なのか」を考え続けているあなたに向けたものです。
+    人生のアップダウン、成長の過程での戸惑いや葛藤、心のメカニズム、そして振り返ってはじめて見えてくる分岐点を扱います。
+    自分自身と身近な人たちを長く観察してきた記録から、それらの経験を対話しやすい言葉へと抽出しようとしています。
+    迷いや選択の只中にいるとき、この文章が、結論を急がない同僚のように、考えを整理し、立ち位置を確かめる助けになればと思います。
+  home_btn_view_company_analysis: "企業が今の姿になるまでの物語を見る"
+  home_btn_view_classic_reviews: "いまの物語で古典を読み直す"
+  home_btn_view_personal_growth: "誰かの物語から自分を考える"
+  home_about_card_title: "企業の話の前に、まず私のことを少し"
+  home_about_card_intro: >
+   ここを「企業を見るためのもう一つの窓」と言う人もいれば、「静かだけれど正直な話し相手のようだ」と言う人もいます。
+   本格的にご相談を始める前に、まず二つの点だけは共有しておきたいと思っています。
+  home_about_card_point1: >
+   私が企業の中での「人」の位置づけをどう見ているか――創業者、パートナー、キーポジションがそれぞれどんな役割を担うのか。
+  home_about_card_point2: >
+   どのような問いなら私が分析するのに向いていて、どのような問いにはあまりお力になれないか。
+  home_about_card_note: >
+   まだメールを書くか迷っている方も、単にこの裏側の働き方に興味がある方も、
+   まずは「About FaceReader」から少しずつ読んでみてください。急いで決める必要はありません。
+  home_about_card_button: "「About FaceReader」を読む"
 ja-JP:
   <<: *DEFAULT_JA
 
@@ -1736,15 +1829,45 @@ fa: &DEFAULT_FA
   tag_clear: "پاک کردن فیلتر"
   home_recent_updates        : "به‌روزرسانی‌های اخیر"
   home_view_all_posts        : "مشاهده همهٔ نوشته‌ها"
-  home_section_company_analysis   : "تحلیل شرکت‌ها"
-  home_section_classic_reviews    : "خوانش کلاسیک‌ها"
-  home_section_personal_growth    : "رشد فردی"
-  home_btn_view_company_analysis  : "مشاهدهٔ مقالات تحلیل شرکت‌ها"
-  home_btn_view_classic_reviews   : "مشاهدهٔ مقالات خوانش کلاسیک‌ها"
-  home_btn_view_personal_growth   : "مشاهدهٔ مقالات رشد فردی"
-  home_hero_primary_action    : "خواندن را از مقالات منتخب شروع کنید"
-  home_hero_secondary_action  : "با روش تحلیل FaceReader آشنا شوید"
-
+  home_hero_excerpt: >
+   در سال‌های اخیر با کارآفرینان، مدیران حرفه‌ای و کارکنان خط مقدم زیادی درباره شرکت‌هایی که در آن کار می‌کنند صحبت کرده‌ام.
+   به جای چسباندن برچسب به شرکت‌ها، بیشتر به خودِ تصمیم‌گیرندگان نگاه می‌کنم: این‌که به چه فکر می‌کنند، از چه می‌ترسند و بر چه چیزهایی پافشاری دارند.
+   کاری که FaceReader می‌خواهد انجام دهد این است که از زاویه «انسان» به یک شرکت نگاه کند، نقاط قوت واقعی، ریسک‌ها و مسیرهای احتمالی آن را روشن‌تر ببیند و کمک کند انتخاب‌های مطمئن‌تری داشته باشید.
+  home_hero_primary_action: "با یک نوشته شروع کنیم"
+  home_hero_secondary_action: "اول ببینم چطور به جمع‌بندی می‌رسم"
+  home_section_company_analysis: "تحلیل شرکت‌ها"
+  home_section_classic_reviews: "خوانش دوباره کلاسیک‌ها"
+  home_section_personal_growth: "زندگی و رشد فردی"
+  home_section_company_intro: >
+    تصویر هر شرکت اغلب در چند چهره مشخصِ آدم‌ها منعکس می‌شود.
+    در این نوشته‌ها همراه هم بنیان‌گذار و تیم هسته‌ای را باز می‌کنیم: چه کسی مسئولیت را به عهده می‌گیرد، چه کسی تصمیم‌ها را پیش می‌برد، تعارض‌ها چطور شکل می‌گیرند و چگونه حل می‌شوند.
+    می‌توانید الگوهای تکراری تصمیم‌گیری آن‌ها، اصولی که واقعاً به آن‌ها باور دارند و همچنین نقاط ضعف ساختاری‌شان را ببینید.
+    وقتی می‌خواهید بسنجید «آیا ارزش دارد منابع خود را روی این شرکت بگذارم یا نه»، می‌توانید ابتدا از این مثال‌ها کمک بگیرید تا هم آدم‌ها و هم زمین بازی را شفاف‌تر ببینید.
+  home_section_classic_intro: >
+    بسیاری از کتاب‌های کلاسیک مدیریت و کسب‌وکار را احتمالاً از روی نام یا نقل‌قول‌های معروفشان می‌شناسید.
+    چیزی که برای من مهم‌تر است این است که این نظریه‌ها در فضای امروزِ شرکت‌ها و محیط‌های کاری، هنوز چطور می‌توانند به کارِ عملی بیایند.
+    در هر مطلب، فصل‌های کلیدی را برمی‌دارم، آن‌ها را با مثال‌های واقعی ترکیب می‌کنم و گزاره‌های بزرگ و抽象 را به چند سؤال قابل عمل تبدیل می‌کنم.
+    تا در استخدام، همکاری، سرمایه‌گذاری یا انتخاب مسیر شغلی، بتوانید آن‌ها را مستقیماً به عنوان چارچوب و معیار تصمیم‌گیری به کار ببرید.
+  home_section_growth_intro: >
+    این بخش برای شماست که شما هم مدام می‌پرسید «من واقعاً چه جور آدمی هستم؟»
+    محتوا به فراز و فرودهای زندگی، سردرگمی‌های رشد، سازوکارهای روانی و آن نقاط عطفی می‌پردازد که فقط در بازنگری گذشته دیده می‌شوند.
+    این نوشته‌ها از مشاهدات بلندمدت من درباره خودم و آدم‌های اطرافم می‌آید و تلاشی است برای تبدیل آن تجربه‌ها به زبانی که بشود درباره‌اش فکر و گفت‌وگو کرد.
+    امیدوارم وقتی در دوره‌ای از تردید یا انتخاب هستید، این کلمات مثل همکار محتاطی باشند که کمک می‌کند افکارتان را مرتب و موضع‌تان را روشن کنید.
+  home_btn_view_company_analysis: "مسیرِ امروزِ شرکت‌ها را دنبال کن"
+  home_btn_view_classic_reviews: "کلاسیک‌ها را با داستان‌های امروز بخوان"
+  home_btn_view_personal_growth: "در داستان دیگران خودت را ببین"
+  home_about_card_title: "قبل از حرف زدن درباره شرکت‌ها، کمی با من آشنا شوید"
+  home_about_card_intro: >
+   بعضی‌ها این‌جا را «پنجره‌ای دیگر برای دیدن شرکت‌ها» می‌دانند، بعضی‌ها هم می‌گویند شبیه هم‌صحبتی آرام ولی صادق است.
+   قبل از این‌که به صورت جدی وارد کار مشاوره شویم، دوست دارم دو نکته برای شما روشن باشد:
+  home_about_card_point1: >
+   نگاه من به جایگاه «انسان» در شرکت چیست — این‌که بنیان‌گذار، شریک و موقعیت‌های کلیدی هرکدام چه نقشی بازی می‌کنند؛
+  home_about_card_point2: >
+   چه نوع سؤال‌هایی مناسبِ تحلیل من است و در چه نوع مسئله‌هایی احتمالاً نمی‌توانم کمک بزرگی باشم.
+  home_about_card_note: >
+   اگر هنوز مردد هستید که آن ایمیل را بفرستید یا نه، یا فقط کنجکاو هستید که پشت این همه کار چه شیوه‌ای از کار قرار دارد،
+   می‌توانید بدون عجله از بخش «About FaceReader» شروع کنید و کم‌کم بخوانید.
+  home_about_card_button: "رفتن به «About FaceReader»"
 fa-IR:
   <<: *DEFAULT_FA
 
