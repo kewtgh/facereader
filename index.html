@@ -2,15 +2,18 @@
 layout: splash
 permalink: /
 hidden: true
+title: "FaceReader-企业观察"
 header:
   overlay_image: /assets/img/page-header-image-vision10.jpg
   overlay_filter: rgba(51, 117, 255, 0.5)
   actions:
-    - label: "<i class='fa fa-lemon-o' aria-hidden='true'></i>About"
+    - label: "从最新文章开始"
+      url: "/posts/"
+    - label: "关于 FaceReader"
       url: "/about/"
 excerpt: >
   解读人性，分析企业，洞悉社会，掌握趋势。<br /><br /> 写给思考者们！<br />
-  <small><a href="https://facereader.witbacon.com/categories/">查看文章</a></small>
+  <small><a href="/categories/">按主题浏览文章</a></small>
 feature_row:
   - image_path: /assets/img/page-header-image-wit-500x300.jpg
     alt: "face reader"
@@ -32,7 +35,46 @@ feature_row:
     excerpt: "成长随笔，读书笔记，管理心得等，帮助个人成长。"
     url: "/categories/#人格成长"
     btn_class: "btn--primary"
-    btn_label: "Learn more"      
+    btn_label: "Learn more"
 ---
 
+{%- comment -%}
+  顶部大图由 splash 布局 + header/excerpt 渲染
+{%- endcomment -%}
+
 {% include feature_row %}
+
+<section class="home-section home-section--posts">
+  <header class="home-section__header">
+    <h2 class="home-section__title">最新文章</h2>
+    <a class="home-section__more" href="{{ '/posts/' | relative_url }}">查看全部文章 →</a>
+  </header>
+
+  {% assign entries_layout = 'grid' %}
+  <div class="entries-{{ entries_layout }}">
+    {% for post in site.posts limit: 6 %}
+      {% include archive-single.html type=entries_layout %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="home-section home-section--cta">
+  <div class="home-cta">
+    <div class="home-cta__text">
+      <h2>需要帮你看一看团队或企业吗？</h2>
+      <p>
+        如果你正在为团队用人、合伙人选择、接班人安排或企业治理困惑，
+        可以基于面相＋履历＋组织结构做一份<strong>定制分析</strong>。
+      </p>
+      <ul>
+        <li>创始人 / 关键高管性格与决策风格分析</li>
+        <li>团队合作中的风险点与潜在冲突提示</li>
+        <li>针对性的用人、分工与机制建议</li>
+      </ul>
+      <p class="home-cta__note">
+        咨询为付费服务，流程与样例说明请见下方页面。
+      </p>
+      <a class="btn btn--primary" href="{{ '/consulting/' | relative_url }}">查看咨询服务说明</a>
+    </div>
+  </div>
+</section>

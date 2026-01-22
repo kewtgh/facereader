@@ -1,43 +1,91 @@
-{%- assign related = "" | split: "" -%}
+{%- comment -%}
+  智能相关文章推荐（兼容 GitHub Pages + Jekyll 3.9）
+  优先级：
+  1. strong_tag_matches：与当前文章有 ≥2 个相同 tag 的文章（按时间倒序）
+  2. weak_tag_matches：与当前文章有 1 个相同 tag 的文章
+  3. same_cat：与当前文章同主分类（page.categories 的第一个）
+  4. fallback：全站最新文章补齐
+{%- endcomment -%}
 
-{%- assign current_tags = page.tags -%}
+{%- assign related        = "" | split: "" -%}
+{%- assign strong_tags    = "" | split: "" -%}
+{%- assign weak_tags      = "" | split: "" -%}
+{%- assign same_cat       = "" | split: "" -%}
 
-{% for post in site.posts %}
-  {% if post.id == page.id %}{% continue %}{% endif %}
+{%- assign main_cat = page.categories | first -%}
 
-  {%- assign score = 0 -%}
+{%- for post in site.posts -%}
+  {%- if post.id == page.id -%}{% continue %}{%- endif -%}
 
-  {% for tag in post.tags %}
-    {% if current_tags contains tag %}
-      {%- assign score = score | plus: 1 -%}
-    {% endif %}
-  {% endfor %}
-
-  {%- if score > 0 -%}
-    {%- assign post_with_score = post | merge: { "score": score } -%}
-    {%- assign related = related | push: post_with_score -%}
+  {%- assign shared_tags = 0 -%}
+  {%- if page.tags and post.tags -%}
+    {%- for tag in page.tags -%}
+      {%- if post.tags contains tag -%}
+        {%- assign shared_tags = shared_tags | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
   {%- endif -%}
-{% endfor %}
 
-{%- assign sorted_related = related | sort: "score" | reverse -%}
-{%- assign top_related = sorted_related | slice: 0, 4 -%}
+  {%- if shared_tags >= 2 -%}
+    {%- assign strong_tags = strong_tags | push: post -%}
+  {%- elsif shared_tags == 1 -%}
+    {%- assign weak_tags = weak_tags | push: post -%}
+  {%- endif -%}
 
-{%- if top_related.size < 4 -%}
-  {%- for post in site.posts %}
-    {% if post.id == page.id or top_related contains post %}{% continue %}{% endif %}
-    {%- assign top_related = top_related | push: post -%}
-    {% if top_related.size >= 4 %}{% break %}{% endif %}
-  {%- endfor %}
+  {%- if main_cat and post.categories contains main_cat -%}
+    {%- assign same_cat = same_cat | push: post -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- comment -%} 1. 高度相关（≥2 相同标签） {%- endcomment -%}
+{%- for post in strong_tags -%}
+  {%- unless related contains post -%}
+    {%- assign related = related | push: post -%}
+  {%- endunless -%}
+  {%- if related.size >= 4 -%}{% break %}{%- endif -%}
+{%- endfor -%}
+
+{%- comment -%} 2. 一般相关（1 个相同标签） {%- endcomment -%}
+{%- if related.size < 4 -%}
+  {%- for post in weak_tags -%}
+    {%- unless related contains post -%}
+      {%- assign related = related | push: post -%}
+    {%- endunless -%}
+    {%- if related.size >= 4 -%}{% break %}{%- endif -%}
+  {%- endfor -%}
 {%- endif -%}
 
+{%- comment -%} 3. 同主分类补齐 {%- endcomment -%}
+{%- if related.size < 4 and same_cat.size > 0 -%}
+  {%- for post in same_cat -%}
+    {%- unless related contains post -%}
+      {%- assign related = related | push: post -%}
+    {%- endunless -%}
+    {%- if related.size >= 4 -%}{% break %}{%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- comment -%} 4. 全站最新文章兜底补齐 {%- endcomment -%}
+{%- if related.size < 4 -%}
+  {%- for post in site.posts -%}
+    {%- if post.id == page.id -%}{% continue %}{%- endif -%}
+    {%- unless related contains post -%}
+      {%- assign related = related | push: post -%}
+    {%- endunless -%}
+    {%- if related.size >= 4 -%}{% break %}{%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- if related.size > 0 -%}
 <div class="page__related">
   <h2 class="page__related-title">
     {{ site.data.ui-text[site.locale].related_label }}
   </h2>
 
   <div class="grid__wrapper">
-    {% for post in top_related %}
-      {% include archive-single.html type="grid" %}
-    {% endfor %}
+    {%- for post in related limit: 4 -%}
+      {%- include archive-single.html type="grid" -%}
+    {%- endfor -%}
   </div>
 </div>
+{%- endif -%}

@@ -1,35 +1,44 @@
 /* ==========================================================================
-   Sunrise skin
+   FaceReader Sunrise skin - 优化版
+   保持暖色调，但整体更克制、专业，适合企业 & 思考类内容
    ========================================================================== */
 
-/* Colors */
-$dark-gray: #0e2431 !default;
-$background-color: #f3f9f1 !default;
-$text-color: #292C2D !default;
-$accent-color: #8B4513 !default;
-$muted-text-color: $dark-gray !default;
-$primary-color: #282a2e !default;
-$border-color: mix(#000, $background-color, 20%) !default;
-$code-background-color: mix(#fff, $background-color, 20%) !default;
-$code-background-color-dark: mix(#000, $background-color, 10%) !default;
-$form-background-color: mix(#fff, $background-color, 15%) !default;
-$footer-background-color: #F0E68C !default;
-$link-color: mix(#8B4513, $primary-color, 15%) !default;
-$link-color-hover: mix(#8B4513, $link-color, 45%) !default;
-$link-color-visited: mix(#8B4513, $link-color, 55%) !default;
-$masthead-link-color: $text-color !default;
-$masthead-backgroud-color: #f1f3f9 !default;
-$masthead-link-color-hover: mix(#8B4513, $text-color, 30%) !default;
-$navicon-link-color-hover: mix(#8B4513, $background-color, 40%) !default;
+/* 基础色彩 */
+$dark-gray: #1e2329 !default;               // 更稳一点的深灰
+$background-color: #f6f3ec !default;        // 淡米色背景，比浅绿更“纸感”
+$text-color: #262626 !default;              // 主文字：略偏暖的深灰
+$accent-color: #b86b1b !default;            // 强调色：偏橙的棕色，比 #8B4513 更亮一点
+$primary-color: #243447 !default;           // 主色：深蓝灰，显得更理性一些
 
-$nav-color: #FAFAD2 !default;
-$nav-background-color: #000 !default;
+/* 文本与边界 */
+$muted-text-color: mix($text-color, $background-color, 55%) !default;
+$border-color: mix(#000, $background-color, 18%) !default;
+$code-background-color: mix(#fff, $background-color, 18%) !default;
+$code-background-color-dark: mix(#000, $background-color, 10%) !default;
+$form-background-color: mix(#fff, $background-color, 12%) !default;
+$footer-background-color: #f0e0a3 !default; // 脚注带一点点“日出”的金色调
+
+/* 链接颜色（以 accent + primary 调和出来） */
+$link-color: mix($accent-color, $primary-color, 25%) !default;
+$link-color-hover: mix($accent-color, $link-color, 40%) !default;
+$link-color-visited: mix($accent-color, $link-color, 55%) !default;
+
+/* 顶部导航（masthead） */
+$masthead-link-color: $text-color !default;
+$masthead-backgroud-color: #faf4dd !default;   // 比原来的灰白更有点“晨光”感觉
+$masthead-link-color-hover: mix($accent-color, $text-color, 35%) !default;
+$navicon-link-color-hover: mix($accent-color, $background-color, 40%) !default;
+
+/* 主导航条（站点导航条背景/文字） */
+$nav-color: #fef7e0 !default;                 // 菜单文字：浅米黄，不再是偏绿
+$nav-background-color: #1b1d21 !default;      // 导航背景：深灰蓝替代纯黑，看起来没那么“硬”
 
 /* notices */
 $notice-background-mix: 75% !default;
 
-/* sunrise syntax highlighting (base16) */
-$base00: #B8860B !default;
+/* sunrise syntax highlighting (base16)
+   这里保持原来的黄/棕系，只略微偏暖，避免太刺眼 */
+$base00: #b8860b !default;
 $base01: #282a2e !default;
 $base02: #373b41 !default;
 $base03: #969896 !default;
@@ -46,6 +55,7 @@ $base0d: #81a2be !default;
 $base0e: #b294bb !default;
 $base0f: #a3685a !default;
 
+/* 社交图标颜色保持继承文字色，避免太花 */
 .author__urls.social-icons i,
 .author__urls.social-icons .svg-inline--fa,
 .page__footer-follow .social-icons i,

@@ -1,10 +1,42 @@
-{% assign posts = include.posts | where_exp: "post", "post.hidden != true" %}
+{%- assign related = "" | split: "" -%}
+
+{%- assign current_tags = page.tags -%}
+
+{% for post in site.posts %}
+  {% if post.id == page.id %}{% continue %}{% endif %}
+
+  {%- assign score = 0 -%}
+
+  {% for tag in post.tags %}
+    {% if current_tags contains tag %}
+      {%- assign score = score | plus: 1 -%}
+    {% endif %}
+  {% endfor %}
+
+  {%- if score > 0 -%}
+    {%- assign post_with_score = post | merge: { "score": score } -%}
+    {%- assign related = related | push: post_with_score -%}
+  {%- endif -%}
+{% endfor %}
+
+{%- assign sorted_related = related | sort: "score" | reverse -%}
+{%- assign top_related = sorted_related | slice: 0, 4 -%}
+
+{%- if top_related.size < 4 -%}
+  {%- for post in site.posts %}
+    {% if post.id == page.id or top_related contains post %}{% continue %}{% endif %}
+    {%- assign top_related = top_related | push: post -%}
+    {% if top_related.size >= 4 %}{% break %}{% endif %}
+  {%- endfor %}
+{%- endif -%}
+
 <div class="page__related">
-  {% include before-related.html %}
-  <h2 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h2>
+  <h2 class="page__related-title">
+    {{ site.data.ui-text[site.locale].related_label }}
+  </h2>
+
   <div class="grid__wrapper">
-    {% for post in posts limit:4 %}
-      {% if post.id == page.id %}{% continue %}{% endif %}
+    {% for post in top_related %}
       {% include archive-single.html type="grid" %}
     {% endfor %}
   </div>
