@@ -574,3 +574,136 @@
     color: $link-color;
   }
 }
+
+/* ============================================================
+ * FINAL HOTFIX：文章空白 / 推荐栏 / 首页卡片 / About 等
+ * 追加在 _custom.scss 最底部
+ * ========================================================== */
+
+/* 1. 单篇文章：正文前的大块空白 —— 去掉内容区的额外 margin */
+.layout--single .page__content {
+  margin-top: 0 !important;   /* 关键：让正文和侧栏顶部对齐 */
+}
+
+/* 2. 推荐栏卡片（猜你喜欢）—— 字体稍微缩小，背景柔和一点 */
+.page__related .grid__wrapper .archive__item {
+  font-size: 0.95rem;
+  border-radius: 0.85rem;
+  padding: 0.8rem 0.9rem 0.75rem;
+  background-color: mix($background-color, #ffffff, 94%); /* 不再纯白 */
+  border: 1px solid mix(#000000, $border-color, 6%);
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+}
+
+/* 推荐卡片内标题/摘要字号再微调一下 */
+.page__related .grid__wrapper .archive__item-title {
+  font-size: 0.98rem;
+  margin-bottom: 0.25rem;
+}
+
+.page__related .grid__wrapper .archive__item-excerpt {
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* 3. 首页三块功能卡片（企业剖析 / 经典解读 / 人格成长）—— 背景柔和 + 字号恢复正常 */
+.home .feature__item .archive__item {
+  font-size: 0.98rem;  /* 不要比正文大太多 */
+  background-color: mix($background-color, #ffffff, 94%);
+  border: 1px solid mix(#000000, $border-color, 5%);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+/* 4. 首页“最近更新”区：恢复卡片效果 */
+.home .entries-grid .archive__item,
+.home .entries-grid .archive__item--grid {
+  border-radius: 0.85rem;
+  border: 1px solid mix(#000000, $border-color, 5%);
+  padding: 0.8rem 0.85rem 0.75rem;
+  background-color: mix($background-color, #ffffff, 94%);
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+}
+
+/* 卡片内文字不要太大 */
+.home .entries-grid .archive__item-title {
+  font-size: 1rem;
+}
+
+.home .entries-grid .archive__item-excerpt {
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* 5. 图片说明文字：再贴近图片一点 */
+.page__content figure {
+  margin-bottom: 0.7rem;
+}
+
+.page__content figure > img {
+  display: block;
+  margin-bottom: 0.1rem;      /* 几乎贴着图 */
+}
+
+.page__content figure > figcaption {
+  margin-top: 0;
+  margin-bottom: 0.5rem;      /* 和后文的间距再缩短一点 */
+}
+
+/* 同时兼容 .image-caption 写法 */
+.page__content .image-caption,
+.page__content em.image-caption,
+.page__content p.image-caption {
+  display: block;
+  margin-top: 0.1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* 6. 左侧作者卡片 & 专题卡片：背景和正文更接近，别那么“亮” */
+
+/* 作者卡片 */
+.layout--single .sidebar .h-card {
+  background: mix($background-color, #ffffff, 97%);  /* 更接近整体底色 */
+  border: 1px solid mix(#000000, $border-color, 3%);
+  box-shadow: 0 2px 7px rgba(15, 23, 42, 0.03);
+}
+
+/* 专题卡片外框 */
+.layout--single .sidebar .nav__list {
+  background: mix($background-color, #ffffff, 97%);
+  border: 1px solid mix(#000000, $border-color, 3%);
+  box-shadow: 0 2px 7px rgba(15, 23, 42, 0.03);
+}
+
+/* 专题卡片中的标题/条目字体再放大一档 */
+.layout--single .sidebar .nav__title {
+  font-size: 1.18rem;
+}
+
+.layout--single .sidebar .nav__sub-title {
+  font-size: 1.1rem;
+}
+
+.layout--single .sidebar .nav__items {
+  font-size: 1.05rem;
+  line-height: 1.95;
+}
+
+/* 7. 首页 About 卡片：去掉“变窄靠右”的效果，恢复为整列宽度 */
+
+.home-section--about-cta .home-cta {
+  max-width: 100% !important;   /* 不再限制为 980px */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* 如果存在 .home-cta--about，就让它回到默认的纵向布局，避免窄列 */
+.home-cta--about {
+  display: block !important;
+}
+
+.home-cta--about img {
+  max-width: 100% !important;
+  flex: none !important;
+}
