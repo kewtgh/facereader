@@ -175,12 +175,9 @@ es: &DEFAULT_ES
   tag_clear: "Borrar filtro"
   home_recent_updates        : "Actualizaciones recientes"
   home_view_all_posts        : "Ver todas las entradas"
-    # --- Página de inicio: tres secciones principales ---
-
   home_section_company_analysis   : "Análisis de empresas"
   home_section_classic_reviews    : "Lecturas de clásicos"
   home_section_personal_growth    : "Crecimiento personal"
-
   home_section_company_intro: >
     Muchas veces una empresa cabe en unas pocas caras muy concretas.
     En estos textos miramos juntos cómo el fundador y el equipo núcleo se reparten el trabajo,
@@ -188,7 +185,6 @@ es: &DEFAULT_ES
     qué forma tienen de decidir, en qué creen y en qué no son tan buenos.
     Es una sección útil para, antes de decidir si confiar o no en una empresa,
     poder mirar con calma a las personas y al marco en el que se mueven.
-
   home_section_classic_intro: >
     Probablemente ya conoces el título de muchos clásicos de gestión y negocios,
     e incluso recuerdas algunas frases célebres.
@@ -196,7 +192,6 @@ es: &DEFAULT_ES
     en las empresas y en el trabajo de hoy.
     Cada artículo toma pasajes concretos, los acompaña con casos reales
     y convierte esas “grandes verdades” en recordatorios pequeños para las decisiones del día a día.
-
   home_section_growth_intro: >
     Esta sección es para ti si también te preguntas "¿qué tipo de persona soy en realidad?".
     Hablo de carácter, límites, maneras de colaborar y de esos puntos de giro
@@ -204,7 +199,6 @@ es: &DEFAULT_ES
     Es mi cuaderno de observación a largo plazo sobre mí y sobre la gente que me rodea,
     y ojalá pueda ser como un colega tranquilo, que no se apresura a juzgar,
     cuando tú te sientas perdido o atascado.
-
   home_btn_view_company_analysis  : "Ver cómo estas empresas llegaron a ser lo que son"
   home_btn_view_classic_reviews   : "Releer los clásicos a través de historias actuales"
   home_btn_view_personal_growth   : "Leer la historia de alguien y pensar en la tuya"
@@ -539,9 +533,9 @@ zh: &DEFAULT_ZH_HANS
   home_recent_updates        : "最近更新"
   home_view_all_posts        : "查看全部文章"
   home_hero_excerpt: >
-  这几年，我陆续和不少创业者、职业经理人和普通打工人聊过企业。
-  在给企业下结论之前，我更关心做决定的人：他们在想什么，在害怕什么，又在坚持什么。
-  FaceReader 想做的是，用「看人」的方式，帮你判断一家公司的优势、风险和可能的走向。
+    这几年，我陆续和不少创业者、职业经理人和普通打工人聊过企业。
+    在给企业下结论之前，我更关心做决定的人：他们在想什么，在害怕什么，又在坚持什么。
+    FaceReader 想做的是，用「看人」的方式，帮你判断一家公司的优势、风险和可能的走向。
   home_hero_primary_action    : "从一篇有感觉的文章读起"
   home_hero_secondary_action  : "先了解我怎么看人和企业"
   home_section_company_analysis   : "企业剖析"
