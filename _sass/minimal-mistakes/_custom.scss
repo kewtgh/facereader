@@ -316,24 +316,56 @@ body {
   flex: 0 0 100%;
   max-width: 100%;
 }
-/* ===== 首页 About 引导 CTA ===== */
+
+/* ===== 首页 About 引导 CTA · 精简版 ===== */
 
 .home-section--about-cta {
-  margin: 2.5rem 0 3rem;
+  margin: 3rem 0 2rem;
   text-align: center;
+  position: relative;
 }
 
+/* 上下内容之间加一条淡淡的分割线 */
+.home-section--about-cta::before {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  height: 1px;
+  margin: 0 auto 1.5rem;
+  background: mix($border-color, $background-color, 40%);
+}
+
+/* 中间这句提示话，做成很轻的胶囊条 */
 .home-about-cta {
-  display: inline-block;
-  padding: 1rem 1.5rem;
-  border-radius: 0.75rem;
-  border: 1px solid $border-color;
-  background: mix(#ffffff, $background-color, 60%);
-  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.03);
+  border: 1px solid mix($border-color, $background-color, 60%);
+  font-size: 0.9rem;
   color: $muted-text-color;
 }
 
+/* 链接做成小按钮样式，突出但不刺眼 */
 .home-about-cta a {
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid $link-color;
   color: $link-color;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
 }
+
+.home-about-cta a:hover,
+.home-about-cta a:focus {
+  background-color: $link-color;
+  color: #fff;
+}
+
