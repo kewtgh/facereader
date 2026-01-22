@@ -58,9 +58,6 @@ en: &DEFAULT_EN
   tag_clear: "Clear Filter"
   home_recent_updates        : "Recent updates"
   home_view_all_posts        : "View all posts"
-  # --- Home: FaceReader hero & sections ---
-
-  # Hero area
   home_hero_excerpt: >
     In the past few years I've met quite a few founders, professional managers and
     "ordinary" employees. Rather than judging companies from a distance, I'm more
@@ -69,61 +66,47 @@ en: &DEFAULT_EN
     up companies, books and growth stories gently from a human point of view.
     I hope that when you look at companies, choose partners, lead a team or decide
     on your own next step, you can walk away with a bit more clarity and calm.
-
   home_hero_primary_action    : "Start with a piece that speaks to you"
   home_hero_secondary_action  : "First see how I look at people and companies"
-
-  # Three feature sections
   home_section_company_analysis   : "Company analysis"
   home_section_classic_reviews    : "Classic insights"
   home_section_personal_growth    : "Personal growth"
-
   home_section_company_intro: >
     A company is often hidden in a few very concrete faces. In these pieces we look
     at how founders and core teams divide work, argue, and make peace again –
     how they prefer to decide, what they believe in, and what they are not so good at.
     Read this section when you want to quietly look at the people and the frame
     before you decide whether to trust a company.
-
   home_section_classic_intro: >
     You may already know the titles of many management and business classics, and
     even be able to quote the punchlines. Here I'm more interested in how those
     ideas can still be used in today's organisations. Each article picks specific
     passages and pairs them with real cases, turning "big truths" into everyday
     decision-making reminders.
-
   home_section_growth_intro: >
     This section is for you if you also wonder, "What kind of person am I really?"
     It includes pieces on character, boundaries, ways of working with others,
     and those turning points that only make sense in hindsight. It is my long-term
     notebook about myself and people around me, and I hope it can be a calm,
     non-judgmental colleague for you when you feel stuck.
-
   home_btn_view_company_analysis  : "See how these companies became what they are"
   home_btn_view_classic_reviews   : "Revisit old ideas through today’s stories"
   home_btn_view_personal_growth   : "Read someone’s story and think about your own"
-
-  # Home about-card CTA
   home_about_card_title: "Before we talk about companies, you may want to meet me first"
-
   home_about_card_intro: >
     Some people use this site as another window into companies; others see it as
     a quiet but honest conversation partner. Before any consulting, I'd rather you
     first get clear on two things:
-
   home_about_card_point1: >
     How I see the role of “people” inside a company – what founders, partners and
     key roles are each really doing there.
-
   home_about_card_point2: >
     What kinds of questions are a good fit to bring to me, and what kinds I am
     probably not the right person for.
-
   home_about_card_note: >
     If you’re still hesitating about sending that email, or simply curious about
     the way I work, you can start with the “About FaceReader” page. Take your
     time – there is no need to decide anything quickly.
-
   home_about_card_button: "Visit “About FaceReader” first"
 
 en-US:
