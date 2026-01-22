@@ -2,6 +2,9 @@
 permalink: /about/
 title: "从“人”出发看团队与企业"
 excerpt: ""
+header:
+  overlay_image: /assets/img/page-header-image-vision10.jpg
+  overlay_filter: rgba(51, 117, 255, 0.5)
 layout: single
 toc: true
 sidebar:

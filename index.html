@@ -9,43 +9,39 @@ header:
   actions:
     - label: "从最新文章开始"
       url: "/posts/"
-    - label: "按主题浏览文章"
-      url: "/categories/"
     - label: "关于 FaceReader"
       url: "/about/"
 excerpt: >
-  解读人性，分析企业，洞悉社会，掌握趋势。
+  从“人”出发，看懂企业与时代。
 feature_row:
   - image_path: /assets/img/page-header-image-wit-500x300.jpg
     alt: "face reader"
     title: "企业剖析"
-    excerpt: "分析企业组织架构及核心人才，判断企业管理问题，评价企业发展潜力。"
+    excerpt: "透过创始人和关键岗位的性格与分工，看清企业真正的优势、短板与风险。"
     url: "/categories/#阅相识人"
     btn_class: "btn--primary"
     btn_label: "进入企业剖析"
   - image_path: /assets/img/page-header-image-tech4-500x300.jpg
     alt: "books of management"
     title: "经典解读"
-    excerpt: "解读和评析经典书籍，汲取大师智慧。"
+    excerpt: "把经典书里的道理拉回现实场景，用今天的案例重读那些“已经被说烂”的观点。"
     url: "/categories/#经典解读"
     btn_class: "btn--primary"
     btn_label: "进入经典解读"
   - image_path: /assets/img/page-header-image-eye4-500x300.jpg
     alt: "characteristics"
     title: "人格成长"
-    excerpt: "成长随笔，读书笔记，管理心得等，帮助个人成长。"
+    excerpt: "记录个人观察、读书心得与管理体会，帮你更好地认识自己，也看懂身边的人。"
     url: "/categories/#人格成长"
     btn_class: "btn--primary"
     btn_label: "进入人格成长"
 ---
 
-{%- comment -%} 顶部三张栏目卡片 {%- endcomment -%}
 {% include feature_row %}
 
-{%- comment -%} 最新文章区域 {%- endcomment -%}
 <section class="home-section home-section--posts">
   <header class="home-section__header">
-    <h2 class="home-section__title">最新文章</h2>
+    <h2 class="home-section__title">最近更新</h2>
     <a class="home-section__more" href="{{ '/posts/' | relative_url }}">查看全部文章 →</a>
   </header>
 
@@ -57,22 +53,21 @@ feature_row:
   </div>
 </section>
 
-{%- comment -%} 咨询 CTA：注意这是一个新的 section，不在上面的 entries-grid 里 {%- endcomment -%}
 <section class="home-section home-section--cta">
   <div class="home-cta">
     <div class="home-cta__text">
-      <h2>需要帮你看一看团队或企业吗？</h2>
+      <h2>需要有人一起看看你的团队和企业吗？</h2>
       <p>
-        如果你正在为团队用人、合伙人选择、接班人安排或企业治理困惑，
-        可以基于面相＋履历＋组织结构做一份<strong>定制分析</strong>。
+        当你对合伙人、高管团队或接班安排有疑问，却又缺少可以说真话的人时，
+        可以基于<strong>面相＋履历＋组织结构</strong>做一份定制分析。
       </p>
       <ul>
-        <li>创始人 / 关键高管性格与决策风格分析</li>
-        <li>团队合作中的风险点与潜在冲突提示</li>
-        <li>针对性的用人、分工与机制建议</li>
+        <li>创始人 / 关键高管的性格特征与决策风格分析</li>
+        <li>团队协作中的高风险点与可能爆发冲突的场景</li>
+        <li>在用人、分工和治理结构上的调整思路与建议</li>
       </ul>
       <p class="home-cta__note">
-        咨询为付费服务，流程与样例说明请见「咨询服务」页面。
+        咨询为付费服务，具体流程、形式与价格区间请见「咨询服务」页面。
       </p>
       <a class="btn btn--primary" href="{{ '/about/' | relative_url }}">查看咨询服务说明</a>
     </div>

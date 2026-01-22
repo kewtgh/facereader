@@ -303,3 +303,16 @@ body {
 .page__title {
   line-height: 1.25;
 }
+/* ===== 首页 CTA 兜底：无论如何都占满一行 ===== */
+
+.home-section--cta {
+  margin-top: 2.5rem;
+  clear: both;
+}
+
+/* 如果误放进 entries-grid，也强制它单独一排 */
+.entries-grid > .home-section--cta,
+.entries-grid > section.home-section--cta {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
