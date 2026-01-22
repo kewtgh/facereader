@@ -1,56 +1,34 @@
-{%- assign same_cat = "" | split: "" -%}
-{%- assign social = "" | split: "" -%}
 {%- assign related = "" | split: "" -%}
 
-{%- assign main_cat = page.categories | first -%}
+{%- assign current_tags = page.tags -%}
 
 {% for post in site.posts %}
   {% if post.id == page.id %}{% continue %}{% endif %}
 
-  {% if post.categories contains main_cat %}
-    {% assign same_cat = same_cat | push: post %}
-  {% endif %}
+  {%- assign score = 0 -%}
 
-  {% if post.categories contains "社会杂论" %}
-    {% assign social = social | push: post %}
-  {% endif %}
+  {% for tag in post.tags %}
+    {% if current_tags contains tag %}
+      {%- assign score = score | plus: 1 -%}
+    {% endif %}
+  {% endfor %}
+
+  {%- if score > 0 -%}
+    {%- assign post_with_score = post | merge: { "score": score } -%}
+    {%- assign related = related | push: post_with_score -%}
+  {%- endif -%}
 {% endfor %}
 
-{%- comment -%} 
-  1. 取两篇同 Category（分散索引）
-{%- endcomment -%}
+{%- assign sorted_related = related | sort: "score" | reverse -%}
+{%- assign top_related = sorted_related | slice: 0, 4 -%}
 
-{% if same_cat.size > 1 %}
-  {% assign related = related | push: same_cat[1] %}
-{% endif %}
-
-{% if same_cat.size > 4 %}
-  {% assign related = related | push: same_cat[4] %}
-{% elsif same_cat.size > 2 %}
-  {% assign related = related | push: same_cat[2] %}
-{% endif %}
-
-{%- comment -%}
-  2. 取一篇社会杂论
-{%- endcomment -%}
-
-{% if social.size > 3 %}
-  {% assign related = related | push: social[3] %}
-{% elsif social.size > 0 %}
-  {% assign related = related | push: social[0] %}
-{% endif %}
-
-{%- comment -%}
-  3. 如果不足 4 篇，用同 Category 或全站补齐
-{%- endcomment -%}
-
-{% for post in site.posts %}
-  {% if post.id == page.id %}{% continue %}{% endif %}
-  {% unless related contains post %}
-    {% assign related = related | push: post %}
-  {% endunless %}
-  {% if related.size >= 4 %}{% break %}{% endif %}
-{% endfor %}
+{%- if top_related.size < 4 -%}
+  {%- for post in site.posts %}
+    {% if post.id == page.id or top_related contains post %}{% continue %}{% endif %}
+    {%- assign top_related = top_related | push: post -%}
+    {% if top_related.size >= 4 %}{% break %}{% endif %}
+  {%- endfor %}
+{%- endif -%}
 
 <div class="page__related">
   <h2 class="page__related-title">
@@ -58,7 +36,7 @@
   </h2>
 
   <div class="grid__wrapper">
-    {% for post in related limit:4 %}
+    {% for post in top_related %}
       {% include archive-single.html type="grid" %}
     {% endfor %}
   </div>
