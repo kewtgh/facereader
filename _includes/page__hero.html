@@ -20,9 +20,6 @@
 
 {% assign image_description = image_description | markdownify | strip_html | strip_newlines | escape_once %}
 
-{%- comment -%}
-  这里开始是带背景图的 hero 容器
-{%- endcomment -%}
 <div class="page__hero{% if page.header.overlay_color or page.header.overlay_image %}--overlay{% endif %}"
   style="{% if page.header.overlay_color %}background-color: {{ page.header.overlay_color | default: 'transparent' }};{% endif %} {% if overlay_img_path %}background-image: {% if overlay_filter %}{{ overlay_filter }}, {% endif %}url('{{ overlay_img_path }}');{% endif %}"
 >
@@ -37,14 +34,17 @@
       </h1>
 
       {%- comment -%}
-        1. 如果有 tagline，优先用 tagline（通常是每页单独写的）
-        2. 否则：
-           - 如果有 page.excerpt_key，就从 ui-text.yml 里取本地化文案
-           - 没有 excerpt_key 时，退回用 page.excerpt
+        摘要策略：
+        1. 如果有 page.tagline，优先用 tagline
+        2. 否则如果有 page.excerpt_key，则从 ui-text 取本地化文案
+        3. 否则回退到 page.excerpt
       {%- endcomment -%}
       {% assign excerpt_text = page.excerpt %}
       {% if page.excerpt_key %}
-        {% assign excerpt_text = t[page.excerpt_key] %}
+        {% assign candidate = t[page.excerpt_key] %}
+        {% if candidate %}
+          {% assign excerpt_text = candidate %}
+        {% endif %}
       {% endif %}
 
       {% if page.tagline %}
@@ -57,17 +57,21 @@
         </p>
       {% endif %}
 
+      {%- comment -%}
+        这里输出日期 / 阅读时间等 meta，继续用默认的 page__meta，
+        不要动它的 class，这样布局就走主题自带样式（横排）。
+      {%- endcomment -%}
       {% include page__meta.html %}
 
       {%- if page.header.actions %}
-        <p class="page__meta">
+        <p class="page__hero-actions">
         {% for action in page.header.actions %}
+
           {%- comment -%}
-            每个按钮：
-            - 如果有 label_key，则从 ui-text.yml 里取；
-            - 否则用原来的 action.label；
-            - class 支持从 front matter 传入（比如 btn--primary / btn--secondary），
-              默认仍然是原来的浅色描边大按钮。
+            按钮文字策略：
+            - 如果有 action.label_key，则从 ui-text 取；
+            - 否则用 action.label；
+            - 如果两者都没有，就退回到 t.more_label / "Learn More"。
           {%- endcomment -%}
           {% assign label = action.label | default: t.more_label | default: "Learn More" %}
           {% if action.label_key %}

@@ -1,41 +1,81 @@
-{% if include.id %}
-  {% assign feature_row = page[include.id] %}
-{% else %}
-  {% assign feature_row = page.feature_row %}
-{% endif %}
+{%- comment -%}
+  本地化版 feature_row：
+  - 支持 title_key / excerpt_key / btn_label_key
+  - 如果没提供 *_key，则回退到原有字段（title / excerpt / btn_label）
+  这样旧页面不需要改 front matter 也能正常工作。
+{%- endcomment -%}
 
-<div class="feature__wrapper">
+{%- assign t = site.data.ui-text[site.locale] -%}
 
-  {% for f in feature_row %}
-    <div class="feature__item{% if include.type %}--{{ include.type }}{% endif %}">
-      <div class="archive__item">
-        {% if f.image_path %}
-          <div class="archive__item-teaser">
-            <img src="{{ f.image_path | relative_url }}"
-                 alt="{% if f.alt %}{{ f.alt }}{% endif %}">
-            {% if f.image_caption %}
-              <span class="archive__item-caption">{{ f.image_caption | markdownify | remove: "<p>" | remove: "</p>" }}</span>
-            {% endif %}
-          </div>
-        {% endif %}
+{%- if include.id -%}
+  {%- assign feature_row = page[include.id] -%}
+{%- else -%}
+  {%- assign feature_row = page.feature_row -%}
+{%- endif -%}
 
-        <div class="archive__item-body">
-          {% if f.title %}
-            <h2 class="archive__item-title">{{ f.title }}</h2>
-          {% endif %}
+{%- if feature_row -%}
+  <div class="feature__wrapper">
+    {%- for f in feature_row -%}
+      <div class="feature__item">
+        <article class="archive__item">
 
-          {% if f.excerpt %}
-            <div class="archive__item-excerpt">
-              {{ f.excerpt | markdownify }}
+          {%- if f.image_path -%}
+            <div class="archive__item-teaser">
+              <img src="{{ f.image_path | relative_url }}" alt="{{ f.alt | default: '' }}">
             </div>
-          {% endif %}
+          {%- endif -%}
 
-          {% if f.url %}
-            <p><a href="{{ f.url | relative_url }}" class="btn {{ f.btn_class }}">{{ f.btn_label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a></p>
-          {% endif %}
-        </div>
+          <div class="archive__item-body">
+
+            {%- comment -%} 标题：优先用 title_key {%- endcomment -%}
+            {%- if f.title_key -%}
+              {%- assign title = t[f.title_key] | default: f.title_key -%}
+            {%- else -%}
+              {%- assign title = f.title -%}
+            {%- endif -%}
+
+            {%- if title -%}
+              <h2 class="archive__item-title">
+                {%- if f.url -%}
+                  <a href="{{ f.url | relative_url }}">{{ title }}</a>
+                {%- else -%}
+                  {{ title }}
+                {%- endif -%}
+              </h2>
+            {%- endif -%}
+
+            {%- comment -%} 摘要：优先用 excerpt_key {%- endcomment -%}
+            {%- if f.excerpt_key -%}
+              {%- assign excerpt_text = t[f.excerpt_key] | default: "" -%}
+            {%- else -%}
+              {%- assign excerpt_text = f.excerpt -%}
+            {%- endif -%}
+
+            {%- if excerpt_text -%}
+              <p class="archive__item-excerpt">
+                {{ excerpt_text | markdownify | strip }}
+              </p>
+            {%- endif -%}
+
+            {%- comment -%} 按钮：优先用 btn_label_key {%- endcomment -%}
+            {%- if f.url -%}
+              {%- if f.btn_label_key -%}
+                {%- assign btn_label = t[f.btn_label_key] | default: f.btn_label_key -%}
+              {%- else -%}
+                {%- assign btn_label = f.btn_label | default: t.more_label | default: "Learn more" -%}
+              {%- endif -%}
+
+              <p>
+                <a href="{{ f.url | relative_url }}"
+                   class="btn {{ f.btn_class | default: 'btn--primary' }}">
+                  {{ btn_label }}
+                </a>
+              </p>
+            {%- endif -%}
+
+          </div>
+        </article>
       </div>
-    </div>
-  {% endfor %}
-
-</div>
+    {%- endfor -%}
+  </div>
+{%- endif -%}

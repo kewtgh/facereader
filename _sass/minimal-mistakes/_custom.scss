@@ -2,6 +2,8 @@
    这里的变量和 mixin（如 $link-color、$border-color、breakpoint 等）
    都在 minimal-mistakes.scss 中提前 import 了，可以直接使用。  */
 
+/* ========== 全局排版 ========== */
+
 /* 全站行距稍微放大一点 */
 body {
   line-height: 1.7;
@@ -19,9 +21,20 @@ body {
   font-weight: 500;
 }
 
-/* ========== 首页：最新文章 + 咨询 CTA 对应样式 ========== */
+/* 文章页标题行距舒展一点 */
+.page__title {
+  line-height: 1.25;
+}
 
-/* 首页 section 通用样式 */
+/* 文章正文里的图片默认居中一点，看起来更整齐 */
+.page__content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========== 首页：section & 最近更新 ========== */
+
 .home-section {
   margin: 2.5rem 0 3rem;
 }
@@ -31,7 +44,7 @@ body {
   margin-bottom: 1rem;
 }
 
-/* “最新文章”区头部：标题 + 查看全部 */
+/* “最近更新”区头部：标题 + 查看全部 */
 .home-section--posts .home-section__header {
   display: flex;
   align-items: baseline;
@@ -49,6 +62,11 @@ body {
   color: $link-color;
 }
 
+/* feature_row 和 “最近更新” 之间的间距微调 */
+.home-section--posts {
+  margin-top: 2.75rem;
+}
+
 /* 让首页文章卡片更像卡片 */
 .entries-grid .archive__item {
   border-radius: 0.75rem;
@@ -63,37 +81,18 @@ body {
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
-/* 咨询 CTA 区块，沿用 sunrise 的暖色调 */
-.home-cta {
-  padding: 2rem 1.5rem;
-  border-radius: 1.25rem;
-  background: linear-gradient(
-    135deg,
-    mix(#fffbe6, $background-color, 40%),
-    mix(#fff, $background-color, 5%)
-  );
-  border: 1px solid mix(#000, $border-color, 5%);
+/* 相关文章区域稍微美化 */
+.page__related-title {
+  font-size: 1.2rem;
 }
 
-.home-cta__text h2 {
-  margin-top: 0;
-  margin-bottom: 0.75rem;
+.page__related .grid__wrapper .archive__item {
+  border-radius: 0.75rem;
+  border: 1px solid $border-color;
+  padding: 0.8rem 0.9rem 0.75rem;
 }
 
-.home-cta__text p,
-.home-cta__text ul {
-  margin-bottom: 0.75rem;
-}
-
-.home-cta__text ul {
-  padding-left: 1.1rem;
-  font-size: 0.95rem;
-}
-
-.home-cta__note {
-  font-size: 0.9rem;
-  color: $muted-text-color;
-}
+/* ========== 全局按钮样式扩展 ========== */
 
 /* 主按钮：统一使用和顶部蓝色接近的颜色 */
 .btn--primary,
@@ -108,6 +107,56 @@ body {
   background-color: darken(#3375ff, 7%);
   border-color: darken(#3375ff, 7%);
   color: #fff !important;
+}
+
+/* 卡片里的 secondary（如果以后用到），保持简洁深色边框 */
+.btn--secondary {
+  background-color: transparent;
+  border-color: #333;
+  color: #333;
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus {
+  background-color: rgba(0, 0, 0, 0.03);
+  border-color: #111;
+}
+
+/* ========== 首页 Hero（顶部大图） ========== */
+
+/* 让首页大图里的文字更紧凑一些 */
+.page__hero--overlay .page__title {
+  margin-bottom: 0.4rem;
+}
+
+/* 副标题宽度和字号 */
+.page__hero--overlay .page__lead {
+  max-width: 34rem;
+  font-size: 1rem;
+}
+
+/* 按钮之间空隙稍微小一点，看起来成一组 */
+.page__hero--overlay .page__lead + .page__hero-actions {
+  margin-top: 0.75rem;
+}
+
+/* Hero 区按钮在桌面端的布局和样式 */
+.page__hero--overlay .page__hero-actions {
+  margin-top: 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Hero 区统一按钮基础样式（桌面端） */
+.page__hero--overlay .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.8rem;
+  border-radius: 999px;
+  font-size: 0.98rem;
+  font-weight: 500;
 }
 
 /* 顶部大图里的 primary 按钮：白底蓝字，作为主行动 */
@@ -137,26 +186,15 @@ body {
   border-color: #fff;
 }
 
-/* 卡片里的 secondary（如果以后用到），保持简洁深色边框 */
-.btn--secondary {
-  background-color: transparent;
-  border-color: #333;
-  color: #333;
-}
+/* ========== 首页 feature_row 三张卡片 ========== */
 
-.btn--secondary:hover,
-.btn--secondary:focus {
-  background-color: rgba(0, 0, 0, 0.03);
-  border-color: #111;
-}
-
-
-
-/* 首页 feature_row 三张卡片稍微抬起一点（不用动现有 HTML） */
+/* 卡片外观 + 轻微抬起效果 */
 .feature__item {
   border-radius: 1rem;
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .feature__item:hover {
@@ -164,66 +202,7 @@ body {
   box-shadow: 0 12px 28px rgba(15, 23, 42, 0.09);
 }
 
-/* 相关文章区域稍微美化 */
-.page__related-title {
-  font-size: 1.2rem;
-}
-
-.page__related .grid__wrapper .archive__item {
-  border-radius: 0.75rem;
-  border: 1px solid $border-color;
-  padding: 0.8rem 0.9rem 0.75rem;
-}
-
-/* 文章正文里的图片默认居中一点，看起来更整齐 */
-.page__content img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* 小屏幕优化：顶部空间稍微压缩一点 */
-@include breakpoint($small) {
-  .home-section {
-    margin-top: 2rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .home-cta {
-    padding: 1.75rem 1.25rem;
-  }
-
-  .page {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-/* 让首页大图里的文字更紧凑一些 */
-.page__hero--overlay .page__title {
-  margin-bottom: 0.4rem;
-}
-
-.page__hero--overlay .page__lead {
-  max-width: 34rem;
-  font-size: 1rem;
-}
-
-/* 按钮之间空隙稍微小一点，看起来成一组 */
-.page__hero--overlay .page__lead + .page__meta {
-  margin-top: 0.75rem;
-}
-
-/* feature_row 卡片：按钮不要太贴底部，整体更匀称 */
-.feature__item .btn {
-  margin-top: 0.75rem;
-}
-
-/* 三张卡片高度统一，文字区和按钮区自动拉开 */
-.feature__item {
-  display: flex;
-  flex-direction: column;
-}
-
+/* 让正文区域与按钮自动分开，按钮贴底部 */
 .feature__item .archive__item-body {
   flex: 1 1 auto;
   display: flex;
@@ -234,48 +213,12 @@ body {
   margin-top: auto;
 }
 
-/* 让首页 CTA 区宽度更适中，居中显示 */
-.home-section--cta .home-cta {
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+/* feature_row 卡片：按钮不要太贴底部，整体更匀称 */
+.feature__item .btn {
+  margin-top: 0.75rem;
 }
-/* ===== 让首页 feature_row 三张卡片等高，按钮对齐 ===== */
 
-/* 只在中等及以上屏幕做等高处理，手机端保持默认一列 */
-@include breakpoint($medium) {
-  /* 让 wrapper 用 flex 布局代替原来的 float */
-  .feature__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;          /* 卡片之间间距 */
-  }
-
-  .feature__item {
-    float: none;          /* 覆盖主题里可能的 float */
-    margin-right: 0;
-    flex: 1 1 0;          /* 三列平均分宽度 */
-    display: flex;        /* 让卡片本身也变成 flex 容器 */
-  }
-
-  .feature__item .archive__item {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .feature__item .archive__item-body {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* 让正文区域的“最后一个元素”（一般就是按钮那块）顶到底部 */
-  .feature__item .archive__item-body > *:last-child {
-    margin-top: auto;
-  }
-}
-/* ===== 引用样式优化：字体、背景、边框 ===== */
+/* ========== 引用 blockquote 优化 ========== */
 
 .page__content blockquote {
   margin: 1.5rem 0;
@@ -301,7 +244,7 @@ body {
   margin-bottom: 0;
 }
 
-/* 可选：给引用加一点引号装饰（如果不喜欢可以删掉这一段） */
+/* 加一点引号装饰 */
 .page__content blockquote::before {
   content: "“";
   position: absolute;
@@ -314,13 +257,7 @@ body {
   pointer-events: none;
 }
 
-
-/* 文章页标题行距舒展一点 */
-.page__title {
-  line-height: 1.25;
-}
-
-/* ===== 首页 About 卡片 CTA · 图文版 ===== */
+/* ========== 首页 About 卡片 CTA · 图文版 ========== */
 
 /* 整块区域与上面文章列表拉开距离，并清理 float */
 .home-section--about-cta {
@@ -328,7 +265,7 @@ body {
   clear: both;
 }
 
-/* 卡片本身的通用外观（如果上面已有 .home-cta，可保留当前版本） */
+/* 卡片本身的通用外观 */
 .home-cta {
   padding: 1.75rem 1.5rem;
   border-radius: 1.25rem;
@@ -337,8 +274,14 @@ body {
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);    // 阴影比之前浅一点
 }
 
+/* 让首页 CTA 区宽度更适中，居中显示 */
+.home-section--cta .home-cta {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-/* 控制整体宽度和居中 */
+/* 控制整体宽度和居中（About 卡片） */
 .home-cta--about {
   max-width: 980px;
   margin-left: auto;
@@ -390,35 +333,41 @@ body {
   min-width: 170px;
 }
 
-/* 只针对 About 这张卡片的 padding 做微调，避免影响首页其他 CTA */
+/* 只针对 About 这张卡片的 padding 做微调 */
 .home-cta.home-cta--about {
   padding: 1.5rem 1.5rem;
 }
 
-/* 小屏幕：改为上下排，图片在上、文字在下 */
-@include breakpoint($small) {
-  .home-cta--about .home-cta__inner {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .home-cta--about .home-cta__media {
-    flex: 0 0 auto;
-  }
-
-  .home-cta--about .home-cta__media img {
-    max-height: 220px;
-  }
+/* About 卡片里的小号说明文字 */
+.home-cta__note {
+  font-size: 0.9rem;
+  color: $muted-text-color;
 }
 
-/* ===== 手机端首页 Hero 优化 ===== */
+/* ========== 响应式：手机端（$small） ========== */
+
 @include breakpoint($small) {
-  /* 整个 Hero 区稍微收紧一点垂直空间 */
+  /* 首页 section 间距稍微压缩 */
+  .home-section {
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .home-cta {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .page {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Hero 区整体垂直空间稍微收紧 */
   .page__hero--overlay {
     padding-block: 2.4rem 2.6rem;
   }
 
-  /* 标题不要太大，避免挤压 */
+  /* 手机端标题字号稍微缩小一点 */
   .page__hero--overlay .page__title {
     font-size: 1.7rem;
     line-height: 1.25;
@@ -432,85 +381,152 @@ body {
   }
 
   /* 按钮一列排，间距均匀一点 */
-  .page__hero--overlay .page__meta {
+  .page__hero--overlay .page__hero-actions {
     margin-top: 0.9rem;
-    display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 0.55rem;
   }
 
   .page__hero--overlay .btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
     min-height: 2.4rem;
     padding-inline: 1.3rem;
     font-size: 0.95rem;
-    border-radius: 999px; /* 手机上更像“胶囊”按钮，观感更精致 */
-  }
-
-  /* 让两个按钮宽度接近，整体更整齐 */
-  .page__hero--overlay .btn--primary,
-  .page__hero--overlay .btn--secondary {
-    min-width: 70%;
+    width: 100%;
     max-width: 280px;
   }
-}
-/* ===== 手机端 About 卡片优化 ===== */
-@include breakpoint($small) {
-  /* 区块上下间距稍微收紧 */
-  .home-section--about-cta {
-    margin: 2.4rem 0 2.8rem;
-  }
 
-  /* 卡片本身的内边距略小一点，减少“空白过多”的感觉 */
-  .home-cta.home-cta--about {
-    padding: 1.4rem 1.3rem 1.5rem;
-  }
+  /* About CTA：改为上下排，图片在上、文字在下 */
+  .home-cta--about .home-cta__inner {
+    flex-direction: column;
+    align-
 
-  /* 标题字号适配手机，行距稍微舒展 */
-  .home-cta--about .home-cta__text h2 {
-    font-size: 1.1rem;
-    line-height: 1.4;
-    margin-bottom: 0.6rem;
-  }
+/* =========================
+ * 文章页侧栏整体
+ * ========================= */
 
-  /* 正文和列表都统一为稍小字号 */
-  .home-cta--about .home-cta__text p,
-  .home-cta--about .home-cta__text ul {
-    font-size: 0.9rem;
-    line-height: 1.7;
-  }
-
-  /* 图片在手机端略微放大一些，看起来更像一张“配图”而不是小缩略图 */
-  .home-cta--about .home-cta__media img {
-    max-height: 220px;
-    border-radius: 0.75rem;
-  }
-
-  /* 按钮占据更明显的宽度，突出“这是主操作” */
-  .home-cta--about .btn--primary {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 260px;
-    margin-top: 0.9rem;
-    font-size: 0.95rem;
-    border-radius: 999px;
-  }
-
-  .home-cta__note {
-    margin-top: 0.4rem;
-  }
+/* 只在单篇文章布局里生效，避免影响首页 */
+.layout--single .sidebar.sticky {
+  /* 有需要可以在这里限制宽度，但你右侧 TOC 已经 OK，就不动宽度了 */
 }
 
+/* =========================
+ * 作者卡片（author-profile.html）
+ * ========================= */
 
-/* feature_row 和 “最近更新” 之间的间距微调 */
-.home-section--posts {
-  margin-top: 2.75rem;
+/* 把作者卡片做成一张独立的小卡片，居中排版，更紧凑 */
+.layout--single .sidebar .h-card {
+  padding: 1.4rem 1.1rem 1.25rem;
+  border-radius: 1.1rem;
+  background: mix(#ffffff, $background-color, 85%);
+  border: 1px solid mix(#000000, $border-color, 5%);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+  text-align: center;
 }
 
+/* 头像略小一点，避免过于“头重脚轻” */
+.layout--single .sidebar .author__avatar {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 0.75rem;
+}
 
+.layout--single .sidebar .author__avatar img {
+  border-radius: 50%;
+}
 
+/* 名字和简介：更紧凑一点，字体略小 */
+.layout--single .sidebar .author__name {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
 
+.layout--single .sidebar .author__bio {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: $muted-text-color;
+}
+
+/* 社交链接列表：压缩行距，看起来更“精致”一点 */
+.layout--single .sidebar .author__urls-wrapper {
+  margin-top: 0.9rem;
+}
+
+/* 如果不想要“Follow”按钮，可以直接隐藏 */
+.layout--single .sidebar .author__urls-wrapper > .btn {
+  display: none;
+}
+
+.layout--single .sidebar .author__urls {
+  font-size: 0.9rem;
+}
+
+.layout--single .sidebar .author__urls li {
+  margin-bottom: 0.18rem;
+}
+
+/* =========================
+ * 左侧专题目录模块（nav_list）
+ * ========================= */
+
+/* 专题模块标题（例如“企业剖析 / 经典系列”） */
+.layout--single .sidebar .nav__title {
+  margin: 1.4rem 0 0.3rem;
+  padding: 0;
+  font-family: $sans-serif;
+  font-size: 0.96rem;
+  font-weight: 600;
+}
+
+/* 把作者卡片与第一个专题块之间加一条细线，视觉上分区 */
+.layout--single .sidebar .h-card + .nav__title {
+  border-top: 1px solid mix(#000000, $border-color, 6%);
+  padding-top: 1rem;
+}
+
+/* 专题小标题（比如“芯片半导体企业解析”、“新能源汽车”等） */
+.layout--single .sidebar .nav__sub-title {
+  margin: 0.55rem 0 0.25rem;
+  padding: 0;
+  font-family: $sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: none;        /* 关闭默认的全大写，更适合中文 */
+  border-bottom: none;
+}
+
+/* 专题条目列表 */
+.layout--single .sidebar .nav__items {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0 0 0.6rem;
+}
+
+/* 让侧栏里的链接颜色稍微淡一点，避免抢正文注意力 */
+.layout--single .sidebar .nav__items a {
+  color: $muted-text-color;
+
+  &:hover {
+    color: $link-color;
+  }
+}
+
+/* =========================
+ * 右侧 TOC 小优化（不改变宽度）
+ * ========================= */
+
+/* 目录整体字号稍微小一点，减轻“压迫感” */
+.layout--single .sidebar .toc__menu {
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* 中文长标题允许中间断行，避免溢出或挤成一条 */
+.layout--single .sidebar .toc__menu a {
+  word-break: break-word;
+}
+
+/* 子级条目略微缩进，层级感更清晰 */
+.layout--single .sidebar .toc__menu li ul > li a {
+  padding-inline-start: 1.2rem;
+}
