@@ -37,8 +37,10 @@ feature_row:
     btn_label: "进入人格成长"
 ---
 
+{%- comment -%} 顶部三张栏目卡片 {%- endcomment -%}
 {% include feature_row %}
 
+{%- comment -%} 最近更新文章 {%- endcomment -%}
 <section class="home-section home-section--posts">
   <header class="home-section__header">
     <h2 class="home-section__title">最近更新</h2>
@@ -53,23 +55,10 @@ feature_row:
   </div>
 </section>
 
-<section class="home-section home-section--cta">
-  <div class="home-cta">
-    <div class="home-cta__text">
-      <h2>需要有人一起看看你的团队和企业吗？</h2>
-      <p>
-        当你对合伙人、高管团队或接班安排有疑问，却又缺少可以说真话的人时，
-        可以基于<strong>面相＋履历＋组织结构</strong>做一份定制分析。
-      </p>
-      <ul>
-        <li>创始人 / 关键高管的性格特征与决策风格分析</li>
-        <li>团队协作中的高风险点与可能爆发冲突的场景</li>
-        <li>在用人、分工和治理结构上的调整思路与建议</li>
-      </ul>
-      <p class="home-cta__note">
-        咨询为付费服务，具体流程、形式与价格区间请见「咨询服务」页面。
-      </p>
-      <a class="btn btn--primary" href="{{ '/about/' | relative_url }}">查看咨询服务说明</a>
-    </div>
-  </div>
+{%- comment -%} 简单的 About 引导，不再使用大块咨询卡片 {%- endcomment -%}
+<section class="home-section home-section--about-cta">
+  <p class="home-about-cta">
+    如果你想了解我如何看待团队和企业，以及可以怎样合作，<br>
+    推荐先阅读 <a href="{{ '/about/' | relative_url }}">「关于我们 / About」</a>。
+  </p>
 </section>

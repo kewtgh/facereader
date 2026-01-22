@@ -316,3 +316,24 @@ body {
   flex: 0 0 100%;
   max-width: 100%;
 }
+/* ===== 首页 About 引导 CTA ===== */
+
+.home-section--about-cta {
+  margin: 2.5rem 0 3rem;
+  text-align: center;
+}
+
+.home-about-cta {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid $border-color;
+  background: mix(#ffffff, $background-color, 60%);
+  font-size: 0.95rem;
+  color: $muted-text-color;
+}
+
+.home-about-cta a {
+  font-weight: 600;
+  color: $link-color;
+}
