@@ -39,8 +39,10 @@ feature_row:
     btn_label: "进入人格成长"
 ---
 
+{%- comment -%} 顶部三张栏目卡片 {%- endcomment -%}
 {% include feature_row %}
 
+{%- comment -%} 最新文章区域 {%- endcomment -%}
 <section class="home-section home-section--posts">
   <header class="home-section__header">
     <h2 class="home-section__title">最新文章</h2>
@@ -55,6 +57,7 @@ feature_row:
   </div>
 </section>
 
+{%- comment -%} 咨询 CTA：注意这是一个新的 section，不在上面的 entries-grid 里 {%- endcomment -%}
 <section class="home-section home-section--cta">
   <div class="home-cta">
     <div class="home-cta__text">

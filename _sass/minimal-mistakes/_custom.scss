@@ -217,3 +217,10 @@ body {
 .feature__item .archive__item-body > *:last-child {
   margin-top: auto;
 }
+
+/* 让首页 CTA 区宽度更适中，居中显示 */
+.home-section--cta .home-cta {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
