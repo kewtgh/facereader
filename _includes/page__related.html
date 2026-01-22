@@ -1,44 +1,50 @@
-{%- assign related_strong = "" | split: "" -%}
-{%- assign related_medium = "" | split: "" -%}
+{%- assign related_cat2 = "" | split: "" -%}
+{%- assign related_cat1_tag2 = "" | split: "" -%}
+{%- assign related_cat1_tag1 = "" | split: "" -%}
 {%- assign related_posts = "" | split: "" -%}
 
-{%- assign page_terms = page.tags | default: "" -%}
-{%- assign page_cats  = page.categories | default: "" -%}
+{%- assign page_tags = page.tags | default: "" -%}
+{%- assign page_cats = page.categories | default: "" -%}
 
 {% for post in site.posts %}
   {% if post.id == page.id %}
     {% continue %}
   {% endif %}
 
-  {%- assign post_terms = post.tags | default: "" -%}
-  {%- assign post_cats  = post.categories | default: "" -%}
+  {%- assign post_tags = post.tags | default: "" -%}
+  {%- assign post_cats = post.categories | default: "" -%}
 
-  {%- assign cat_match = false -%}
+  {%- assign cat_match = 0 -%}
   {% for c in page_cats %}
     {% if post_cats contains c %}
-      {%- assign cat_match = true -%}
+      {%- assign cat_match = cat_match | plus: 1 -%}
     {% endif %}
   {% endfor %}
 
-  {% unless cat_match %}
+  {% if cat_match == 0 %}
     {% continue %}
-  {% endunless %}
+  {% endif %}
 
-  {%- assign match = 0 -%}
-  {% for t in page_terms %}
-    {% if post_terms contains t %}
-      {%- assign match = match | plus: 1 -%}
+  {%- assign tag_match = 0 -%}
+  {% for t in page_tags %}
+    {% if post_tags contains t %}
+      {%- assign tag_match = tag_match | plus: 1 -%}
     {% endif %}
   {% endfor %}
 
-  {% if match >= 3 %}
-    {%- assign related_strong = related_strong | push: post -%}
-  {% elsif match == 2 %}
-    {%- assign related_medium = related_medium | push: post -%}
+  {% if cat_match >= 2 %}
+    {%- assign related_cat2 = related_cat2 | push: post -%}
+  {% elsif cat_match == 1 and tag_match >= 2 %}
+    {%- assign related_cat1_tag2 = related_cat1_tag2 | push: post -%}
+  {% elsif cat_match == 1 and tag_match == 1 %}
+    {%- assign related_cat1_tag1 = related_cat1_tag1 | push: post -%}
   {% endif %}
 {% endfor %}
 
-{%- assign related_posts = related_strong | concat: related_medium -%}
+{%- assign related_posts = related_cat2
+  | concat: related_cat1_tag2
+  | concat: related_cat1_tag1
+-%}
 
 {% if related_posts.size < 4 %}
   {% for post in site.posts %}

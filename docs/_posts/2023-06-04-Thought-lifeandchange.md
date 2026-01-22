@@ -20,8 +20,7 @@ tags:
   - The Road Not Taken
   - 成长
   - 心理
-toc: true
-toc_sticky: true
+toc: false
 last_modified_at: 2023-06-04T19:25:52-05:00
 ---
 
