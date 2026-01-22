@@ -125,31 +125,52 @@ body {
 /* ========== 首页 Hero（顶部大图） ========== */
 
 /* 让首页大图里的文字更紧凑一些 */
-.page__hero--overlay .page__title {
-  margin-bottom: 0.4rem;
-}
-
-/* 副标题宽度和字号 */
-.page__hero--overlay .page__lead {
-  max-width: 34rem;
-  font-size: 1rem;
-}
-
+.page__hero--overlay .page__title { ... }
+.page__hero--overlay .page__lead { ... }
 /* 按钮之间空隙稍微小一点，看起来成一组 */
-.page__hero--overlay .page__lead + .page__hero-actions {
-  margin-top: 0.75rem;
+.page__hero--overlay .page__lead + .page__meta { ... }
+
+/* ===== 手机端首页 Hero 优化 ===== */
+@include breakpoint($small) {
+  ...
+}
+把这些 全部删掉，换成下面这一整段（用的是我们之前改过的 .page__hero-actions 类）：
+
+/* =========================
+ * 首页 Hero 区整体排版
+ * ========================= */
+
+/* 让大图里的内容在竖直方向居中一些 */
+.page__hero--overlay .wrapper {
+  min-height: 360px;               /* 高度可以按喜好再调 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Hero 区按钮在桌面端的布局和样式 */
+/* 标题：稍微收窄行宽 */
+.page__hero--overlay .page__title {
+  max-width: 32rem;
+  margin-bottom: 0.6rem;
+}
+
+/* 副标题：行宽 + 行距调一下，读起来不那么“成块” */
+.page__hero--overlay .page__lead {
+  max-width: 32rem;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+/* 按钮整体容器：单独用 page__hero-actions，避免影响日期那一行 */
 .page__hero--overlay .page__hero-actions {
-  margin-top: 1.1rem;
+  margin-top: 1.3rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.8rem;
 }
 
-/* Hero 区统一按钮基础样式（桌面端） */
-.page__hero--overlay .btn {
+/* Hero 区按钮基础样式（桌面端） */
+.page__hero--overlay .page__hero-actions .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -159,31 +180,36 @@ body {
   font-weight: 500;
 }
 
-/* 顶部大图里的 primary 按钮：白底蓝字，作为主行动 */
-.page__hero--overlay .btn--primary {
+/* 主按钮：白底蓝字，作为主行动 */
+.page__hero--overlay .page__hero-actions .btn--primary {
   background-color: #ffffff;
   border-color: #ffffff;
   color: #3375ff !important;
 }
 
-.page__hero--overlay .btn--primary:hover,
-.page__hero--overlay .btn--primary:focus {
+.page__hero--overlay .page__hero-actions .btn--primary:hover,
+.page__hero--overlay .page__hero-actions .btn--primary:focus {
   background-color: rgba(255, 255, 255, 0.92);
   border-color: rgba(255, 255, 255, 0.92);
   color: #2758c8 !important;
 }
 
-/* 顶部大图里的 secondary 按钮：透明底 + 白边白字 */
-.page__hero--overlay .btn--secondary {
+/* 次按钮：透明底 + 白描边，存在感弱一点 */
+.page__hero--overlay .page__hero-actions .btn--secondary {
   background-color: transparent;
   border-color: rgba(255, 255, 255, 0.9);
-  color: #fff !important;
+  color: #ffffff !important;
 }
 
-.page__hero--overlay .btn--secondary:hover,
-.page__hero--overlay .btn--secondary:focus {
+.page__hero--overlay .page__hero-actions .btn--secondary:hover,
+.page__hero--overlay .page__hero-actions .btn--secondary:focus {
   background-color: rgba(255, 255, 255, 0.12);
-  border-color: #fff;
+  border-color: #ffffff;
+}
+
+/* 桌面端：让按钮紧跟在文字下面 */
+.page__hero--overlay .page__lead + .page__hero-actions {
+  margin-top: 1.1rem;
 }
 
 /* ========== 首页 feature_row 三张卡片 ========== */
@@ -346,70 +372,43 @@ body {
 
 /* ========== 响应式：手机端（$small） ========== */
 
-@include breakpoint($small) {
-  /* 首页 section 间距稍微压缩 */
-  .home-section {
-    margin-top: 2rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .home-cta {
-    padding: 1.75rem 1.25rem;
-  }
-
-  .page {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  /* Hero 区整体垂直空间稍微收紧 */
+@include breakpoint(max-width $small - 1px) {
+  /* 整个 Hero 区稍微收紧一点垂直空间 */
   .page__hero--overlay {
     padding-block: 2.4rem 2.6rem;
   }
 
-  /* 手机端标题字号稍微缩小一点 */
+  /* 标题不要太大，避免挤压 */
   .page__hero--overlay .page__title {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     line-height: 1.25;
-    margin-bottom: 0.55rem;
+    margin-bottom: 0.45rem;
+    max-width: 100%;
   }
 
   /* 副标题稍微小一点、行宽收窄一点 */
   .page__hero--overlay .page__lead {
     font-size: 0.95rem;
     max-width: 22rem;
+    line-height: 1.8;
   }
 
-  /* 按钮一列排，间距均匀一点 */
-  .page__hero--overlay .page__meta {
+  /* 手机端：按钮一列排，间距均匀一点 */
+  .page__hero--overlay .page__hero-actions {
     margin-top: 0.9rem;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.55rem;
   }
 
-  .page__hero--overlay .btn {
+  .page__hero--overlay .page__hero-actions .btn {
+    width: 100%;
+    max-width: 280px;
     min-height: 2.4rem;
     padding-inline: 1.3rem;
     font-size: 0.95rem;
-    width: 100%;
-    max-width: 280px;
   }
-
-  /* About CTA：改为上下排，图片在上、文字在下 */
-  .home-cta--about .home-cta__inner {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .home-cta--about .home-cta__media {
-    flex: 0 0 auto;
-  }
-
-  .home-cta--about .home-cta__media img {
-    max-height: 220px;
-    border-radius: 0.75rem;
-  }
+}
 
   /* 手机端 About 区块整体间距和内边距略收紧 */
   .home-section--about-cta {
