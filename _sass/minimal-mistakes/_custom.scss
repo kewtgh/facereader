@@ -304,23 +304,35 @@ body {
   line-height: 1.25;
 }
 
-/* ===== 首页 About 卡片 CTA ===== */
+/* ===== 首页 About 卡片 CTA（独立版） ===== */
 
-/* 整块区域的上下留点空白，让它和上面的文章列表拉开一点距离，
-   并且清除上面文章卡片的 float，否则会被“夹”到网格中间 */
+/* 整块区域的上下空白，并清除上面文章卡片的 float */
 .home-section--about-cta {
   margin: 3rem 0 3.5rem;
   clear: both;
 }
 
-/* 让这块 CTA 居中，宽度不要太撑满 */
+/* 通用 CTA 卡片外观（如果之前已经有 .home-cta，可以保持这块为“最新版本”） */
+.home-cta {
+  padding: 2rem 1.5rem;
+  border-radius: 1.25rem;
+  background: linear-gradient(
+    135deg,
+    mix(#fffbe6, $background-color, 45%),
+    mix(#ffffff, $background-color, 10%)
+  );
+  border: 1px solid mix(#000000, $border-color, 6%);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+}
+
+/* 控制宽度和居中 */
 .home-cta--about {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* 标题和正文的间距微调一下 */
+/* 标题、正文间距 */
 .home-cta--about .home-cta__text h2 {
   margin-top: 0;
   margin-bottom: 0.75rem;
@@ -330,9 +342,10 @@ body {
   margin-bottom: 1.1rem;
 }
 
-/* 按钮稍微离文字远一点 */
+/* 按钮略微往下错一点 */
 .home-cta--about .btn--primary {
   margin-top: 0.25rem;
 }
+
 
 
