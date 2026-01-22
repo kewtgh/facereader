@@ -1,19 +1,43 @@
 /* ======================================================================
- *  0. 全局设计 Tokens（只在本文件使用）
+ * FaceReader – Production _custom.scss (Rebuild v2)
+ * 目标：
+ * - 作者卡片/专题栏/TOC/推荐卡：真正卡片化 + 有 padding + 更美观
+ * - 推荐卡字体变小
+ * - blockquote 不要斜体（同时更现代的字体与引号装饰）
+ * - 首页三栏下面细横线去掉
+ * - 最近更新、About 都变成“好看的模块”，About 必须是卡片
+ * - 去重：同一个块只写一套规则，避免互相覆盖
  * ==================================================================== */
-
-$max-page-width: 1240px;
-$content-gap: 3rem;
-
-$card-radius: 0.9rem;
-$card-bg: mix($background-color, #ffffff, 96%);
-$card-border: mix(#000000, $border-color, 5%);
-$card-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
-$card-shadow-hover: 0 10px 24px rgba(15, 23, 42, 0.08);
 
 
 /* ======================================================================
- *  1. 正文基础（行距 / 引用）
+ * 0) Design Tokens（统一风格，后面都引用）
+ * ==================================================================== */
+
+$fr-max-page: 1240px;
+
+$fr-card-radius: 1rem;
+$fr-card-bg: mix($background-color, #ffffff, 94%);
+$fr-card-bg-soft: mix($background-color, #ffffff, 97%);
+$fr-card-border: 1px solid mix(#000000, $border-color, 6%);
+$fr-card-border-soft: 1px solid mix(#000000, $border-color, 4%);
+
+$fr-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+$fr-shadow-hover: 0 12px 28px rgba(15, 23, 42, 0.10);
+
+$fr-pad-md: 1rem;
+$fr-pad-lg: 1.25rem;
+
+$fr-text-sm: 0.92rem;
+$fr-text-md: 0.98rem;
+
+$fr-title: 1.15rem;
+
+$fr-link: $link-color;
+
+
+/* ======================================================================
+ * 1) Typography：正文更舒服
  * ==================================================================== */
 
 .page__title {
@@ -21,26 +45,49 @@ $card-shadow-hover: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
 .page__content {
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
-/* blockquote：保留你原有风格，去掉冗余 */
+/* ======================================================================
+ * 2) 引用 blockquote：不要斜体 + 更干净的风格
+ * ==================================================================== */
+
 .page__content blockquote {
-  margin: 1.4rem 0;
-  padding: 0.9rem 1.1rem;
+  margin: 1.5rem 0;
+  padding: 0.95rem 1.05rem 0.95rem 1.15rem;
   border-inline-start: 4px solid $primary-color;
   background: mix($background-color, #ffffff, 72%);
-  border-radius: 0.5rem;
-  font-family: $serif;
+  border-radius: 0.75rem;
+
+  /* ✅ 关键：不要斜体 */
+  font-style: normal !important;
+
+  /* 更现代的字体选择：优先系统无衬线，与你站点整体更一致 */
+  font-family: $sans-serif;
+  font-size: 0.98rem;
+  color: darken($text-color, 4%);
+  position: relative;
 }
 
 .page__content blockquote p {
-  margin: 0.3rem 0;
+  margin: 0.35rem 0;
+  font-style: normal !important;
+}
+
+.page__content blockquote::before {
+  content: "“";
+  position: absolute;
+  inset-inline-start: 0.5rem;
+  inset-block-start: 0.1rem;
+  font-size: 2.4rem;
+  line-height: 1;
+  color: rgba($primary-color, 0.18);
+  pointer-events: none;
 }
 
 
 /* ======================================================================
- *  2. Hero（首页 & 文章页）
+ * 3) Hero → 正文间距（收紧但不挤）
  * ==================================================================== */
 
 .page__hero--overlay .wrapper {
@@ -50,172 +97,414 @@ $card-shadow-hover: 0 10px 24px rgba(15, 23, 42, 0.08);
   justify-content: center;
 }
 
-/* Hero → 正文唯一控制点 */
 .page__hero--overlay + .page,
 .page__hero + .page {
   margin-top: 0.9rem;
 }
 
-
-/* ======================================================================
- *  3. 首页整体结构（防止区块混在一起）
- * ==================================================================== */
-
-.home .page__content {
-  display: block;
-}
-
-.home-section {
-  margin-top: 3rem;
-}
-
-.home-section--posts {
-  margin-top: 2.5rem;
+/* 文章页：再紧凑一点 */
+.layout--single .page__hero--overlay + .page,
+.layout--single .page__hero + .page {
+  margin-top: 0.7rem;
 }
 
 
 /* ======================================================================
- *  4. 首页 feature_row & 最近更新（统一卡片体系）
- * ==================================================================== */
-
-.feature__item .archive__item,
-.home .entries-grid .archive__item {
-  border-radius: $card-radius;
-  background: $card-bg;
-  border: 1px solid $card-border;
-  box-shadow: $card-shadow;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.feature__item .archive__item:hover,
-.home .entries-grid .archive__item:hover {
-  transform: translateY(-2px);
-  box-shadow: $card-shadow-hover;
-}
-
-/* 首页卡片文字体系 */
-.feature__item .archive__item,
-.home .entries-grid .archive__item {
-  font-size: 0.96rem;
-}
-
-.home .entries-grid .archive__item-title {
-  font-size: 1rem;
-}
-
-.home .entries-grid .archive__item-excerpt {
-  font-size: 0.9rem;
-  line-height: 1.7;
-}
-
-
-/* ======================================================================
- *  5. 首页 About CTA —— 恢复为“整行模块”
- * ==================================================================== */
-
-.home-section--about-cta .home-cta {
-  max-width: 100%;
-  margin: 0;
-  padding: 2.2rem 0;
-  background: transparent;
-}
-
-/* 禁止被压成窄卡片 */
-.home-cta--about {
-  display: block;
-}
-
-/* 内容宽度由内部控制 */
-.home-cta__inner {
-  max-width: $max-page-width;
-  margin: 0 auto;
-  padding: 0 1.25rem;
-}
-
-
-/* ======================================================================
- *  6. 单篇文章页：宽度 & 空白修复
+ * 4) 文章页整体宽度 & “正文大空白”终结
  * ==================================================================== */
 
 @include breakpoint($x-large) {
   .layout--single .page {
-    max-width: $max-page-width;
+    max-width: $fr-max-page;
   }
 }
 
 .layout--single .page {
-  column-gap: $content-gap;
+  column-gap: 3rem;
+  grid-column-gap: 3rem;
 }
 
-/* 关键修复：正文不再被整体下推 */
+/* ✅ 关键修复：正文不要被往下推 */
 .layout--single .page__content {
   margin-top: 0 !important;
 }
 
 
 /* ======================================================================
- *  7. Sidebar（作者卡 / 专栏目录）
+ * 5) 通用卡片体系（作者卡 / 专题栏 / TOC / 推荐卡 / 首页卡片 都用它）
  * ==================================================================== */
 
-.layout--single .sidebar .h-card,
-.layout--single .sidebar .nav__list {
-  background: $card-bg;
-  border-radius: 1rem;
-  border: 1px solid mix(#000000, $border-color, 3%);
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+@mixin fr-card($bg: $fr-card-bg, $border: $fr-card-border) {
+  background: $bg;
+  border: $border;
+  border-radius: $fr-card-radius;
+  box-shadow: $fr-shadow;
 }
 
-/* Sidebar 字号（来自你原方案，统一后保留） */
-.layout--single .sidebar .author__name {
-  font-size: 1rem;
-}
-
-.layout--single .sidebar .nav__title {
-  font-size: 1.16rem;
-}
-
-.layout--single .sidebar .nav__sub-title {
-  font-size: 1.08rem;
-}
-
-.layout--single .sidebar .nav__items {
-  font-size: 1.03rem;
-  line-height: 1.9;
+@mixin fr-card-hover {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $fr-shadow-hover;
+  }
 }
 
 
 /* ======================================================================
- *  8. 推荐栏（猜你喜欢 / 相关文章）
+ * 6) Sidebar：作者卡片
  * ==================================================================== */
 
-.page__related-title {
-  font-size: 1.2rem;
+.layout--single .sidebar .h-card {
+  @include fr-card($fr-card-bg-soft, $fr-card-border-soft);
+  padding: 1.25rem 1.1rem 1.15rem; /* ✅ 有空间 */
+  text-align: center;
 }
 
-.page__related .archive__item {
-  font-size: 0.95rem;
-  background: $card-bg;
-  border-radius: $card-radius;
-  border: 1px solid $card-border;
-  box-shadow: $card-shadow;
+.layout--single .sidebar .author__avatar {
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 0.75rem;
 }
 
-.page__related .archive__item-title {
-  font-size: 0.98rem;
+.layout--single .sidebar .author__avatar img {
+  border-radius: 50%;
 }
 
-.page__related .archive__item-excerpt {
+.layout--single .sidebar .author__name {
+  font-size: 1.02rem;
+  margin: 0 0 0.35rem;
+}
+
+.layout--single .sidebar .author__bio {
   font-size: 0.9rem;
+  line-height: 1.65;
+  color: $muted-text-color;
+  margin-top: 0.35rem;
+}
+
+/* 链接列表：增加间距与可读性 */
+.layout--single .sidebar .author__urls-wrapper {
+  margin-top: 0.9rem;
+}
+
+.layout--single .sidebar .author__urls-wrapper > .btn {
+  display: none; /* 保持你原来的清爽做法 */
+}
+
+.layout--single .sidebar .author__urls {
+  font-size: 0.92rem;
   line-height: 1.7;
 }
 
+.layout--single .sidebar .author__urls li {
+  margin: 0.25rem 0; /* ✅ 每行有呼吸 */
+}
+
+.layout--single .sidebar .author__urls a {
+  text-decoration: none;
+}
+
 
 /* ======================================================================
- *  9. 图片 & 图注（收紧间距，避免视觉拖沓）
+ * 7) Sidebar：专题栏（nav__list）
+ * ==================================================================== */
+
+.layout--single .sidebar .nav__list {
+  @include fr-card($fr-card-bg-soft, $fr-card-border-soft);
+  padding: 1.1rem 1.1rem 1rem;
+  margin-top: 1rem;
+}
+
+.layout--single .sidebar .nav__title {
+  margin: 0 0 0.65rem;
+  padding: 0;
+  font-family: $sans-serif;
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: 0.2px;
+}
+
+.layout--single .sidebar .nav__sub-title {
+  display: block;
+  margin: 0.85rem 0 0.5rem;
+  padding: 0.35rem 0 0;
+  font-family: $sans-serif;
+  font-size: 1.05rem;
+  font-weight: 650;
+  text-transform: none;
+  border-bottom: 1px solid mix(#000, $border-color, 8%);
+}
+
+.layout--single .sidebar .nav__items {
+  margin: 0.5rem 0 0.6rem;
+  font-size: 0.98rem;
+  line-height: 1.9;
+}
+
+.layout--single .sidebar .nav__items a {
+  color: $text-color;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  padding: 0.12rem 0.15rem;
+
+  &:hover {
+    color: $fr-link;
+    background: mix($background-color, #ffffff, 85%);
+  }
+}
+
+
+/* ======================================================================
+ * 8) 右侧 TOC：真正卡片化 + 更精致
+ * ==================================================================== */
+
+.layout--single .sidebar .toc {
+  @include fr-card($fr-card-bg-soft, $fr-card-border-soft);
+  padding: 0; /* 内部自己控制 */
+  overflow: hidden; /* 顶部条更干净 */
+  margin-top: 1rem;
+}
+
+/* TOC 顶部标题条（深色条） */
+.layout--single .sidebar .toc .nav__title,
+.layout--single .sidebar .toc .toc__title {
+  margin: 0;
+  padding: 0.75rem 0.9rem;
+  background: #1f344b;
+  color: #fff;
+  font-size: 0.98rem;
+  font-weight: 650;
+}
+
+/* 目录正文 */
+.layout--single .sidebar .toc__menu {
+  font-size: 0.92rem;        /* ✅ 小一些更像辅助信息 */
+  line-height: 1.6;
+  padding: 0.75rem 0.85rem 0.85rem;
+}
+
+.layout--single .sidebar .toc__menu a {
+  display: block;
+  color: $text-color;
+  text-decoration: none;
+  padding: 0.22rem 0.35rem;
+  border-radius: 0.45rem;
+  word-break: break-word;
+
+  &:hover {
+    background: mix($background-color, #ffffff, 86%);
+    color: $fr-link;
+  }
+}
+
+.layout--single .sidebar .toc__menu li ul > li a {
+  padding-inline-start: 1.15rem;
+  opacity: 0.95;
+}
+
+
+/* ======================================================================
+ * 9) 推荐栏：卡片必须有 padding + 字号必须降
+ * ==================================================================== */
+
+.page__related-title {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+/* 推荐区 grid 间距更舒服 */
+.page__related .grid__wrapper {
+  gap: 1.25rem;
+}
+
+.page__related .grid__wrapper .archive__item {
+  @include fr-card($fr-card-bg, $fr-card-border);
+  @include fr-card-hover;
+
+  /* ✅ 关键：有 padding，不贴边 */
+  padding: 0.95rem 1rem 0.9rem;
+
+  /* ✅ 关键：推荐卡整体字更小 */
+  font-size: $fr-text-sm;
+}
+
+/* 标题/摘要再次压小一点，保证不抢正文 */
+.page__related .grid__wrapper .archive__item-title {
+  font-size: 0.98rem;
+  margin-bottom: 0.35rem;
+  line-height: 1.35;
+}
+
+.page__related .grid__wrapper .archive__item-excerpt {
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+
+/* ======================================================================
+ * 10) 首页三栏 feature_row：卡片化 + 去掉下面细横线
+ * ==================================================================== */
+
+.home .feature__item .archive__item {
+  @include fr-card($fr-card-bg, $fr-card-border);
+  @include fr-card-hover;
+  padding: 1rem 1rem 0.95rem;
+  font-size: $fr-text-md;
+}
+
+/* feature_row 下方那根细横线：去掉 */
+.home .page__content > hr {
+  display: none !important;
+}
+
+/* 三栏按钮更像“站点动作按钮”，不那么松散 */
+.feature__item .btn {
+  margin-top: 0.85rem;
+}
+
+
+/* ======================================================================
+ * 11) 首页“最近更新”：卡片化 + 标题区更像模块
+ * ==================================================================== */
+
+.home-section--posts .home-section__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.home-section--posts .home-section__title {
+  font-size: 1.25rem;
+  font-weight: 650;
+  margin: 0;
+}
+
+.home-section--posts .home-section__more {
+  font-size: 0.95rem;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* 最近更新卡片（entries-grid） */
+.home .entries-grid .archive__item,
+.home .entries-grid .archive__item--grid {
+  @include fr-card($fr-card-bg, $fr-card-border);
+  @include fr-card-hover;
+  padding: 0.95rem 1rem 0.9rem; /* ✅ 有 padding */
+}
+
+.home .entries-grid .archive__item-title {
+  font-size: 1rem;
+  line-height: 1.35;
+  margin-bottom: 0.35rem;
+}
+
+.home .entries-grid .archive__item-excerpt {
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+
+/* ======================================================================
+ * 12) 首页 About
+ * ==================================================================== */
+
+.home-section--about-cta {
+  margin-top: 2.5rem;
+}
+
+/* 外层卡片容器：整块变成漂亮卡片 */
+.home-section--about-cta .home-cta {
+  @include fr-card(mix(#ffffff, $background-color, 82%), $fr-card-border);
+  padding: 1.6rem 1.5rem;
+}
+
+/* About 内部布局：桌面端左右布局，移动端上下 */
+.home-cta--about .home-cta__inner {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* 图片区 */
+.home-cta--about .home-cta__media {
+  flex: 0 0 38%;
+}
+
+.home-cta--about .home-cta__media img {
+  width: 100%;
+  height: auto;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 0.95rem;
+  display: block;
+}
+
+/* 文本区 */
+.home-cta--about .home-cta__text {
+  flex: 1 1 0;
+}
+
+.home-cta--about .home-cta__text h2 {
+  font-size: 1.35rem;
+  line-height: 1.35;
+  margin: 0 0 0.7rem;
+  font-weight: 700;
+}
+
+.home-cta--about .home-cta__text p {
+  margin: 0.6rem 0;
+  line-height: 1.75;
+}
+
+.home-cta--about .home-cta__text ul {
+  margin: 0.75rem 0 0.9rem;
+  padding-left: 1.2rem;
+}
+
+.home-cta--about .home-cta__note {
+  color: $muted-text-color;
+  font-size: 0.95rem;
+}
+
+/* CTA 按钮 */
+.home-cta--about .btn--primary {
+  margin-top: 0.9rem;
+  min-width: 180px;
+}
+
+/* 手机端：上下排 */
+@include breakpoint(max-width $small) {
+  .home-cta--about .home-cta__inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .home-cta--about .home-cta__media {
+    flex: none;
+  }
+
+  .home-cta--about .home-cta__media img {
+    max-height: 220px;
+  }
+
+  .home-cta--about .home-cta__text h2 {
+    font-size: 1.15rem;
+  }
+}
+
+
+/* ======================================================================
+ * 13) 图片 & 图注：
  * ==================================================================== */
 
 .page__content figure {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.8rem;
 }
 
 .page__content figure > img {
@@ -223,16 +512,32 @@ $card-shadow-hover: 0 10px 24px rgba(15, 23, 42, 0.08);
   margin-bottom: 0.12rem;
 }
 
-.page__content figure > figcaption,
+.page__content figure > figcaption {
+  margin-top: 0;
+  margin-bottom: 0.55rem;
+}
+
 .page__content .image-caption,
 .page__content em.image-caption,
 .page__content p.image-caption {
-  margin: 0 0 0.5rem;
-  font-size: 0.9rem;
+  display: block;
+  margin-top: 0.12rem;
+  margin-bottom: 0.55rem;
   text-align: center;
+  font-size: 0.9rem;
+  font-style: normal; /* ✅ 防止斜体 */
 }
 
 
 /* ======================================================================
- *  END – Clean, Stable, Maintainable
+ * 14) 小修：让卡片里的文字不会贴边（兜底）
  * ==================================================================== */
+
+/* 某些 archive__item 主题可能内部没有 padding，这里兜底 */
+.archive__item {
+  overflow: hidden;
+}
+
+.archive__item-body {
+  padding-top: 0.2rem;
+}
