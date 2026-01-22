@@ -448,3 +448,129 @@
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
+
+
+/* ============================================================
+ * 微调
+ * ========================================================== */
+
+/* 1. 首页最后那条细线：和卡片拉开一点距离，线更轻一点 */
+.home .page__content > hr {
+  margin-top: 2.4rem;   /* 不再紧贴上面的卡片 */
+  margin-bottom: 1.2rem;
+  border: 0;
+  border-top: 1px solid mix(#000000, $border-color, 4%);
+}
+
+/* 如果不想要这条线，可以把上面整块注释掉，改成： */
+/*
+.home .page__content > hr {
+  display: none;
+}
+*/
+
+/* 2. 文章页：头图与正文之间的空白再收紧一些 */
+.layout--single .page__hero--overlay + .page,
+.layout--single .page__hero + .page {
+  margin-top: 0.75rem;  /* 之前是 1.6rem，现在明显紧凑一些 */
+}
+
+/* 3. 推荐栏卡片美化 */
+.page__related .grid__wrapper {
+  gap: 1.3rem;
+}
+
+.page__related .grid__wrapper .archive__item {
+  border-radius: 0.9rem;
+  border: 1px solid $border-color;
+  padding: 0.95rem 1rem 0.85rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.page__related .grid__wrapper .archive__item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+/* 让推荐卡片里的标题和摘要稍微紧凑一点 */
+.page__related .grid__wrapper .archive__item-title {
+  font-size: 1.02rem;
+  margin-bottom: 0.3rem;
+}
+
+.page__related .grid__wrapper .archive__item-excerpt {
+  font-size: 0.93rem;
+  line-height: 1.7;
+}
+
+/* 4. 图片 + 文字说明：间距再缩短一点 */
+.page__content figure {
+  margin-bottom: 0.8rem;           /* 整个 block 和正文的间距 */
+}
+
+.page__content figure > img {
+  display: block;
+  margin-bottom: 0.15rem;          /* 图片和说明之间的距离更小 */
+}
+
+.page__content figure > figcaption {
+  margin-top: 0;                   /* 紧贴图片 */
+  margin-bottom: 0.55rem;          /* 和后续正文的间距 */
+}
+
+/* 兼容 .image-caption 写法 */
+.page__content .image-caption,
+.page__content em.image-caption,
+.page__content p.image-caption {
+  display: block;
+  margin-top: 0.15rem;
+  margin-bottom: 0.55rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* 5. 左侧作者卡片 & 专栏卡片：背景更温和，阴影更轻 */
+
+/* 作者卡片 */
+.layout--single .sidebar .h-card {
+  background: mix($background-color, #ffffff, 96%); /* 更接近整页背景 */
+  border: 1px solid mix(#000000, $border-color, 3%);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+/* 专题卡片 */
+.layout--single .sidebar .nav__list {
+  background: mix($background-color, #ffffff, 96%);
+  border: 1px solid mix(#000000, $border-color, 3%);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+/* 6. 左侧专题目录字号再放大一档 */
+
+/* 大标题（经典系列 / 企业剖析等） */
+.layout--single .sidebar .nav__title {
+  font-size: 1.16rem;   /* 原来 1.08 左右，再放大一点 */
+  font-weight: 600;
+}
+
+/* 小标题（新能源汽车 / 通用电气大盘点） */
+.layout--single .sidebar .nav__sub-title {
+  font-size: 1.08rem;
+}
+
+/* 单条目录（条目列表） */
+.layout--single .sidebar .nav__items {
+  font-size: 1.03rem;
+  line-height: 1.9;
+}
+
+/* 链接默认用正文色，悬停再变蓝；这样整体对比不会太强 */
+.layout--single .sidebar .nav__items a {
+  color: $text-color;
+
+  &:hover {
+    color: $link-color;
+  }
+}
