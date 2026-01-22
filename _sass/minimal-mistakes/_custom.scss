@@ -303,69 +303,34 @@ body {
 .page__title {
   line-height: 1.25;
 }
-/* ===== 首页 CTA 兜底：无论如何都占满一行 ===== */
 
-.home-section--cta {
-  margin-top: 2.5rem;
-  clear: both;
-}
+/* ===== 首页 About 卡片 CTA ===== */
 
-/* 如果误放进 entries-grid，也强制它单独一排 */
-.entries-grid > .home-section--cta,
-.entries-grid > section.home-section--cta {
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-/* ===== 首页 About 引导 CTA · 精简版 ===== */
-
+/* 整块区域的上下留点空白，让它和上面的文章列表拉开一点距离 */
 .home-section--about-cta {
-  margin: 3rem 0 2rem;
-  text-align: center;
-  position: relative;
+  margin: 3rem 0 3.5rem;
 }
 
-/* 上下内容之间加一条淡淡的分割线 */
-.home-section--about-cta::before {
-  content: "";
-  display: block;
-  width: 100%;
-  max-width: 720px;
-  height: 1px;
-  margin: 0 auto 1.5rem;
-  background: mix($border-color, $background-color, 40%);
+/* 让这块 CTA 居中，宽度不要太撑满 */
+.home-cta--about {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* 中间这句提示话，做成很轻的胶囊条 */
-.home-about-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.03);
-  border: 1px solid mix($border-color, $background-color, 60%);
-  font-size: 0.9rem;
-  color: $muted-text-color;
+/* 标题和正文的间距微调一下 */
+.home-cta--about .home-cta__text h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
 }
 
-/* 链接做成小按钮样式，突出但不刺眼 */
-.home-about-cta a {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.25rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid $link-color;
-  color: $link-color;
-  font-weight: 600;
-  text-decoration: none;
-  white-space: nowrap;
+.home-cta--about .home-cta__text p {
+  margin-bottom: 1.1rem;
 }
 
-.home-about-cta a:hover,
-.home-about-cta a:focus {
-  background-color: $link-color;
-  color: #fff;
+/* 按钮稍微离文字远一点 */
+.home-cta--about .btn--primary {
+  margin-top: 0.25rem;
 }
+
 
