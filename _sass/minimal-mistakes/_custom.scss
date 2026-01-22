@@ -44,7 +44,6 @@ body {
   }
 }
 
-
 /* ========== 首页：section & 最近更新 ========== */
 
 .home-section {
@@ -136,9 +135,7 @@ body {
 
 /* ========== 首页 Hero（顶部大图） ========== */
 
-/* =========================
- * 首页 Hero 区整体排版
- * ========================= */
+/* 首页 Hero 区整体排版 */
 
 /* 让大图里的内容在竖直方向居中一些 */
 .page__hero--overlay .wrapper {
@@ -408,7 +405,6 @@ body {
     padding-inline: 1.3rem;
     font-size: 0.95rem;
   }
-}
 
   /* 手机端 About 区块整体间距和内边距略收紧 */
   .home-section--about-cta {
@@ -554,7 +550,7 @@ body {
   padding-top: 1rem;
 }
 
-/* 专题小标题：比如“新能源汽車”“通用电气大盘点” */
+/* 专题小标题：比如“新能源汽车”“通用电气大盘点” */
 .layout--single .sidebar .nav__sub-title {
   margin: 0.55rem 0 0.3rem;
   padding: 0;
