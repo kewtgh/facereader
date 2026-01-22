@@ -55,9 +55,10 @@ $fr-link: $link-color;
 .page__content blockquote {
   margin: 1.5rem 0;
   padding: 0.95rem 1.05rem 0.95rem 1.15rem;
-  border-inline-start: 4px solid $primary-color;
-  background: mix($background-color, #ffffff, 72%);
+  border-inline-start: 5px solid $primary-color !important;
+  background: mix($primary-color, #ffffff, 92%) !important;
   border-radius: 0.75rem;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
 
   /* ✅ 关键：不要斜体 */
   font-style: normal !important;
@@ -72,6 +73,7 @@ $fr-link: $link-color;
 .page__content blockquote p {
   margin: 0.35rem 0;
   font-style: normal !important;
+  font-size: 1.02rem;
 }
 
 .page__content blockquote::before {
@@ -79,9 +81,9 @@ $fr-link: $link-color;
   position: absolute;
   inset-inline-start: 0.5rem;
   inset-block-start: 0.1rem;
-  font-size: 2.4rem;
+  font-size: 3rem;
   line-height: 1;
-  color: rgba($primary-color, 0.18);
+  color: rgba($primary-color, 0.25);
   pointer-events: none;
 }
 
@@ -219,7 +221,7 @@ $fr-link: $link-color;
   margin: 0 0 0.65rem;
   padding: 0;
   font-family: $sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 650;
   letter-spacing: 0.2px;
 }
@@ -229,7 +231,7 @@ $fr-link: $link-color;
   margin: 0.85rem 0 0.5rem;
   padding: 0.35rem 0 0;
   font-family: $sans-serif;
-  font-size: 1.05rem;
+  font-size: 1.12rem;
   font-weight: 650;
   text-transform: none;
   border-bottom: 1px solid mix(#000, $border-color, 8%);
@@ -237,8 +239,8 @@ $fr-link: $link-color;
 
 .layout--single .sidebar .nav__items {
   margin: 0.5rem 0 0.6rem;
-  font-size: 0.98rem;
-  line-height: 1.9;
+  font-size: 1.05rem;
+  line-height: 2;
 }
 
 .layout--single .sidebar .nav__items a {
@@ -330,16 +332,21 @@ $fr-link: $link-color;
 
 /* 标题/摘要再次压小一点，保证不抢正文 */
 .page__related .grid__wrapper .archive__item-title {
-  font-size: 0.98rem;
+  font-size: 0.93rem;
   margin-bottom: 0.35rem;
   line-height: 1.35;
 }
 
 .page__related .grid__wrapper .archive__item-excerpt {
-  font-size: 0.9rem;
-  line-height: 1.65;
+  font-size: 0.83rem;
+  line-height: 1.35;
 }
 
+/* 限制推荐卡摘要高度，防止无限拉长 */
+.page__related .archive__item-excerpt {
+  max-height: 5.8em;              /* ≈ 5 行 */
+  overflow: hidden;
+}
 
 /* ======================================================================
  * 10) 首页三栏 feature_row：卡片化 + 去掉下面细横线
@@ -348,7 +355,11 @@ $fr-link: $link-color;
 .home .feature__item .archive__item {
   @include fr-card($fr-card-bg, $fr-card-border);
   @include fr-card-hover;
-  padding: 1rem 1rem 0.95rem;
+  background: mix($background-color, #ffffff, 94%) !important;
+  border-radius: 1rem !important;
+  border: 1px solid mix(#000, $border-color, 6%) !important;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06) !important;
+  padding: 1.1rem 1.1rem 1rem;
   font-size: $fr-text-md;
 }
 
@@ -362,10 +373,21 @@ $fr-link: $link-color;
   margin-top: 0.85rem;
 }
 
+/* 防止被其他规则“拍扁” */
+.home .feature__item {
+  margin-bottom: 1.5rem;
+}
 
 /* ======================================================================
  * 11) 首页“最近更新”：卡片化 + 标题区更像模块
  * ==================================================================== */
+
+/* 最近更新：明确一个模块边界 */
+.home-section--posts {
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid mix(#000, $border-color, 6%);
+  margin-bottom: 2.5rem;
+}
 
 .home-section--posts .home-section__header {
   display: flex;
@@ -409,76 +431,97 @@ $fr-link: $link-color;
   line-height: 1.65;
 }
 
+/* 最近更新卡片必须是独立卡片 */
+.home .entries-grid .archive__item {
+  background: mix($background-color, #ffffff, 94%) !important;
+  border-radius: 1rem !important;
+  border: 1px solid mix(#000, $border-color, 6%) !important;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06) !important;
+  padding: 1rem 1rem 0.95rem !important;
+}
 
 /* ======================================================================
  * 12) 首页 About
  * ==================================================================== */
 
+/* 1️⃣ About 外层 section：明确这是一个独立模块 */
 .home-section--about-cta {
-  margin-top: 2.5rem;
+  margin-top: 3.5rem;
 }
 
-/* 外层卡片容器：整块变成漂亮卡片 */
+/* 2️⃣ About 主卡片：恢复你原来的“柔和卡片” */
 .home-section--about-cta .home-cta {
-  @include fr-card(mix(#ffffff, $background-color, 82%), $fr-card-border);
-  padding: 1.6rem 1.5rem;
+  background: mix(#ffffff, $background-color, 80%) !important;
+  border: 1px solid mix(#000000, $border-color, 6%) !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06) !important;
+
+  padding: 1.6rem 1.5rem !important;
 }
 
-/* About 内部布局：桌面端左右布局，移动端上下 */
+/* 3️⃣ 内部布局：左图右文（与你最早的 CSS 一致） */
 .home-cta--about .home-cta__inner {
-  display: flex;
-  gap: 1.5rem;
+  display: flex !important;
   align-items: center;
+  gap: 1.75rem;
 }
 
-/* 图片区 */
+/* 左侧图片 */
 .home-cta--about .home-cta__media {
   flex: 0 0 38%;
 }
 
 .home-cta--about .home-cta__media img {
   width: 100%;
-  height: auto;
   max-height: 260px;
   object-fit: cover;
-  border-radius: 0.95rem;
+  border-radius: 1rem;
   display: block;
 }
 
-/* 文本区 */
+/* 4️⃣ 右侧文本区：恢复你原来的字号与行距 */
 .home-cta--about .home-cta__text {
   flex: 1 1 0;
 }
 
 .home-cta--about .home-cta__text h2 {
-  font-size: 1.35rem;
-  line-height: 1.35;
-  margin: 0 0 0.7rem;
-  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
 }
 
 .home-cta--about .home-cta__text p {
-  margin: 0.6rem 0;
-  line-height: 1.75;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 0.85rem;
 }
 
 .home-cta--about .home-cta__text ul {
-  margin: 0.75rem 0 0.9rem;
+  margin: 0.75rem 0 1rem;
   padding-left: 1.2rem;
 }
 
+.home-cta--about .home-cta__text li {
+  margin-bottom: 0.4rem;
+}
+
+/* 说明性文字（你原 CSS 里有这个层级） */
 .home-cta--about .home-cta__note {
+  font-size: 0.92rem;
+  line-height: 1.65;
   color: $muted-text-color;
-  font-size: 0.95rem;
+  margin-top: 0.75rem;
 }
 
-/* CTA 按钮 */
+/* CTA 按钮：与你原设计一致，不夸张 */
 .home-cta--about .btn--primary {
-  margin-top: 0.9rem;
-  min-width: 180px;
+  margin-top: 0.85rem;
+  min-width: 170px;
 }
 
-/* 手机端：上下排 */
+
+/* 5️⃣ 移动端：回到你原来的上下排逻辑 */
 @include breakpoint(max-width $small) {
   .home-cta--about .home-cta__inner {
     flex-direction: column;
@@ -528,9 +571,154 @@ $fr-link: $link-color;
   font-style: normal; /* ✅ 防止斜体 */
 }
 
+/* ======================================================================
+ * 14) About 页面侧边栏（不是首页 About 卡片）
+ * ==================================================================== */
+
+/* About 页 sidebar 整体卡片化 */
+.layout--page .sidebar .nav__list {
+  background: mix($background-color, #ffffff, 96%);
+  border-radius: 1rem;
+  padding: 1.1rem 1.1rem 1rem;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+/* About 页 sidebar 字号 */
+.layout--page .sidebar .nav__items {
+  font-size: 1.02rem;
+  line-height: 1.9;
+}
 
 /* ======================================================================
- * 14) 小修：让卡片里的文字不会贴边（兜底）
+ * 15) 按钮美化
+ * ==================================================================== */
+
+.btn {
+  font-family: $sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+
+  border-radius: 999px;          /* 你原来就是偏胶囊形 */
+  padding: 0.55rem 1.5rem;       /* 不要太高，避免 SaaS 感 */
+
+  line-height: 1.4;
+  letter-spacing: 0.1px;
+
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.12s ease;
+
+  text-decoration: none;
+}
+
+
+/* ======================================================================
+ * 2️⃣ 主按钮 btn--primary（你站点最重要的按钮）
+ * ==================================================================== */
+
+.btn--primary {
+  background-color: #ffffff;                 /* 你原来的“白底主按钮” */
+  color: $primary-color !important;
+
+  border: 1px solid mix($primary-color, #000000, 10%);
+
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+}
+
+/* hover / focus：非常克制，只给“被注意到”的反馈 */
+.btn--primary:hover,
+.btn--primary:focus {
+  background-color: mix(#ffffff, $primary-color, 96%);
+  color: darken($primary-color, 8%) !important;
+
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.18);
+  transform: translateY(-1px);
+}
+
+/* active：压回去一点点 */
+.btn--primary:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.14);
+}
+
+
+/* ======================================================================
+ * 3️⃣ 次按钮 btn--secondary（Hero、About 等用）
+ * ==================================================================== */
+
+.btn--secondary {
+  background-color: rgba(255, 255, 255, 0.14);
+  color: #ffffff !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.14);
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus {
+  background-color: rgba(255, 255, 255, 0.22);
+  border-color: #ffffff;
+  box-shadow: 0 5px 16px rgba(15, 23, 42, 0.18);
+}
+
+
+/* ======================================================================
+ * 4️⃣ 内容区里的“行动按钮”（首页三栏 / About 卡片）
+ * ==================================================================== */
+
+/* 让按钮更像“阅读动作”，而不是 CTA */
+.home .btn--primary,
+.home-section--about-cta .btn--primary {
+  font-size: 0.94rem;
+  padding: 0.5rem 1.4rem;
+  min-width: 160px;
+}
+
+/* 三栏 feature 的按钮：稍微稳一点 */
+.feature__item .btn--primary {
+  margin-top: 0.85rem;
+}
+
+
+/* ======================================================================
+ * 5️⃣ 推荐 / 最近更新里的按钮（如果有）
+ * ==================================================================== */
+
+.page__related .btn,
+.home .entries-grid .btn {
+  font-size: 0.88rem;
+  padding: 0.45rem 1.2rem;
+}
+
+
+/* ======================================================================
+ * 6️⃣ 禁用态 / 不可点击态（防止难看）
+ * ==================================================================== */
+
+.btn:disabled,
+.btn.is-disabled {
+  opacity: 0.55;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+
+/* ======================================================================
+ * 7️⃣ 移动端：按钮不要太宽、太高
+ * ==================================================================== */
+
+@include breakpoint(max-width $small) {
+  .btn {
+    font-size: 0.92rem;
+    padding: 0.5rem 1.3rem;
+  }
+}
+
+/* ======================================================================
+ * 16) 小修：让卡片里的文字不会贴边（兜底）
  * ==================================================================== */
 
 /* 某些 archive__item 主题可能内部没有 padding，这里兜底 */
