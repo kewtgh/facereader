@@ -30,7 +30,7 @@ body { line-height: 1.7; }
 
 /* =====================================================
  * 0) 先“止血”：撤销任何会把正文 clear 到侧栏下方的行为
- *    —— 这是你“头图与内容之间巨大空白”的最常见根因
+ *    —— 这是 “头图与内容之间巨大空白”的最常见根因
  * ===================================================== */
 .layout--single .page__content,
 .layout--single .page__inner-wrap,
@@ -50,7 +50,7 @@ body { line-height: 1.7; }
   padding-top: 0 !important;
 }
 
-/* 单篇文章页：版心更协调（避免你截图那种右侧巨空白） */
+/* 单篇文章页：版心更协调（避免 截图那种右侧巨空白） */
 @include breakpoint($large) {
   .layout--single .page {
     max-width: 1280px;
@@ -62,7 +62,7 @@ body { line-height: 1.7; }
 }
 
 /* =====================================================
- * 1) ✅ 图片 caption：贴近图片（你反馈没生效 => 这里做强覆盖）
+ * 1) ✅ 图片 caption：贴近图片
  * 覆盖三种结构：
  * - figure > img + figcaption
  * - figure > a > img + figcaption
@@ -110,7 +110,7 @@ body { line-height: 1.7; }
   text-align: center !important;
 }
 
-/* 兼容你原来的 image-caption */
+/* 兼容原来的 image-caption */
 .page__content .image-caption,
 .page__content p.image-caption,
 .page__content em.image-caption {
@@ -121,6 +121,37 @@ body { line-height: 1.7; }
   line-height: 1.55 !important;
   color: $muted-text-color !important;
   text-align: center !important;
+}
+
+
+/* 图所在段落下边距缩小（避免图和说明被段落 margin 拉开） */
+.page__content p:has(> img) {
+  margin-bottom: 0.25rem !important;
+}
+
+/* ✅ 最关键：图片段落后的“仅含 em 的段落”当作 caption */
+.page__content p:has(> img) + p > em:only-child {
+  display: block;
+  font-style: normal;
+  text-align: center;
+  color: $muted-text-color;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+/* 这个 caption 段落本身的 margin 彻底收紧 */
+.page__content p:has(> img) + p:has(> em:only-child) {
+  margin-top: 0 !important;
+  margin-bottom: 1rem !important;
+}
+
+/* figure 模式继续保留贴图 */
+.page__content figure { margin: 1.05rem auto 1.25rem !important; }
+.page__content figure > img,
+.page__content figure > a { margin-bottom: 0.12rem !important; }
+.page__content figure figcaption {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 /* =====================================================
@@ -218,21 +249,21 @@ body { line-height: 1.7; }
  * ===================================================== */
 .sidebar__right .toc,
 .sidebar .toc {
-  background: $fr-card-bg !important;
-  border: 1px solid $fr-card-border !important;
-  border-radius: $fr-card-radius !important;
-  box-shadow: $fr-card-shadow;
+  background: mix(#ffffff, $background-color, 94%) !important;
+  border: 1px solid mix(#000, $border-color, 9%) !important;
+  border-radius: 0.95rem !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04) !important;
   overflow: hidden;
 }
 
 /* TOC 标题条：别太黑 */
 .sidebar__right .toc__title,
 .sidebar .toc__title {
-  background: mix(#223042, #ffffff, 15%) !important;
-  color: mix(#223042, #ffffff, 10%) !important; /* 如果主题强制白字，这行也会被覆盖 */
-  font-weight: 700;
-  padding: 0.75rem 0.95rem !important;
-  border-bottom: 1px solid mix(#000, $border-color, 10%) !important;
+  background: #eef3fb !important;
+  color: #223042 !important;
+  font-weight: 800 !important;
+  padding: 0.6rem 0.85rem !important;
+  border-bottom: 1px solid rgba(34, 48, 66, 0.10) !important;
 }
 
 /* 有些主题 toc__title 是深色条且白字，这里强制更协调 */
@@ -244,42 +275,39 @@ body { line-height: 1.7; }
 /* 菜单 */
 .sidebar__right .toc__menu,
 .sidebar .toc__menu {
-  font-size: 0.95rem !important;
-  line-height: 1.65 !important;
-  padding: 0.35rem 0 !important;
+  font-size: 0.88rem !important;   /* ✅变小 */
+  line-height: 1.45 !important;    /* ✅变紧 */
+  padding: 0.25rem 0 !important;
 }
 
 .sidebar__right .toc__menu a,
 .sidebar .toc__menu a {
-  word-break: break-word;
-  display: block;
-  padding: 0.55rem 0.95rem !important;
-  border-top: 1px solid mix(#000, $border-color, 8%) !important;
+  border-top: none !important;          /* ✅去横线 */
+  padding: 0.42rem 0.85rem !important;  /* ✅更紧凑 */
   color: mix($text-color, #000, 78%) !important;
 }
 
+/* hover/active 更柔和 */
 .sidebar__right .toc__menu a:hover,
 .sidebar .toc__menu a:hover {
-  background: mix($primary-color, #ffffff, 96%) !important;
-  color: $text-color !important;
+  background: rgba(51, 117, 255, 0.06) !important;
 }
 
 .sidebar__right .toc__menu a.active,
 .sidebar .toc__menu a.active,
 .sidebar__right .toc__menu a[aria-current="true"],
 .sidebar .toc__menu a[aria-current="true"] {
-  background: mix($primary-color, #ffffff, 93%) !important;
-  color: $text-color !important;
-  font-weight: 700;
+  background: rgba(51, 117, 255, 0.10) !important;
+  font-weight: 800 !important;
 }
 
 .sidebar__right .toc__menu li ul > li a,
 .sidebar .toc__menu li ul > li a {
-  padding-left: 1.35rem !important;
+  padding-left: 1.15rem !important;
 }
 
 /* =====================================================
- * 5) ✅ 表格：调整为浅色高级感（强制覆盖你现在的深蓝主题表头）
+ * 5) ✅ 表格：调整为浅色高级感（强制覆盖 现在的深蓝主题表头）
  *    只作用正文表格，排除代码高亮用表格
  * ===================================================== */
 .page__content table:not(.rouge-table) {
@@ -289,18 +317,18 @@ body { line-height: 1.7; }
   margin: 1.6rem 0 2rem !important;
   background: mix(#ffffff, $background-color, 97%) !important;
   border: 1px solid mix(#000, $border-color, 9%) !important;
-  border-radius: 0.85rem !important;
+  border-radius: 0.9rem !important;
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
 }
 
 .page__content table:not(.rouge-table) thead th {
-  background: mix($primary-color, #ffffff, 95%) !important;
-  color: mix($text-color, #000, 82%) !important;
+  background: #eef3fb !important;  /* 浅灰蓝 */
+  color: #223042 !important;
   font-weight: 700 !important;
   font-size: 0.9rem !important;
   padding: 0.6rem 0.65rem !important;
-  border-bottom: 1px solid mix(#000, $border-color, 12%) !important;
+  border-bottom: 1px solid rgba(34, 48, 66, 0.14) !important;
   text-align: center !important;
 }
 
@@ -314,11 +342,11 @@ body { line-height: 1.7; }
 
 /* 极淡斑马纹 */
 .page__content table:not(.rouge-table) tbody tr:nth-child(even) td {
-  background: mix(#ffffff, $background-color, 98%) !important;
+  background: rgba(34, 48, 66, 0.03) !important;
 }
 
 .page__content table:not(.rouge-table) tbody tr:hover td {
-  background: mix($primary-color, #ffffff, 97%) !important;
+  background: rgba(51, 117, 255, 0.06) !important;
 }
 
 .page__content table:not(.rouge-table) tbody tr:last-child td {
@@ -328,7 +356,7 @@ body { line-height: 1.7; }
 /* 最后一列轻度强调 */
 .page__content table:not(.rouge-table) td:last-child {
   font-weight: 800 !important;
-  color: mix($primary-color, #000, 68%) !important;
+  color: #2758c8 !important;
 }
 
 /* =====================================================
@@ -369,7 +397,7 @@ body { line-height: 1.7; }
 }
 
 /* =====================================================
- * 7) blockquote（保留你原风格）
+ * 7) blockquote（保留 原风格）
  * ===================================================== */
 .page__content blockquote {
   margin: 1.5rem 0;
@@ -398,7 +426,7 @@ body { line-height: 1.7; }
 }
 
 /* =====================================================
- * 8) 首页 Hero / cards / buttons（保留你原本逻辑，去重不再重复贴两套）
+ * 8) 首页 Hero / cards / buttons（保留 原本逻辑，去重不再重复贴两套）
  * ===================================================== */
 .page__hero--overlay .wrapper {
   min-height: 360px;
@@ -467,7 +495,7 @@ body { line-height: 1.7; }
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
-/* 按钮基础（保留你的主色） */
+/* 按钮基础（保留 的主色） */
 .btn--primary,
 .btn--primary:visited {
   background-color: #3375ff;
@@ -492,7 +520,7 @@ body { line-height: 1.7; }
 }
 
 /* =====================================================
- * 9) 手机端收敛（保持你原策略）
+ * 9) 手机端收敛（保持 原策略）
  * ===================================================== */
 @include breakpoint(max-width $small - 1px) {
   .page__hero--overlay { padding-block: 2.4rem 2.6rem; }
@@ -525,5 +553,59 @@ body { line-height: 1.7; }
   .layout--single .sidebar .h-card,
   .sidebar .nav__list {
     max-width: 100%;
+  }
+}
+
+/* =========================
+ * 首页 About CTA：修复混乱（稳定两列 + 小屏变一列）
+ * ========================= */
+.home-section--about-cta { clear: both; }
+
+.home-cta--about {
+  background: mix(#ffffff, $background-color, 92%);
+  border: 1px solid mix(#000, $border-color, 8%);
+  border-radius: 1.1rem;
+}
+
+/* 桌面：两列稳定 */
+.home-cta--about .home-cta__inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap; /* ✅避免挤爆 */
+}
+
+.home-cta--about .home-cta__media {
+  flex: 0 0 340px;   /* ✅稳定媒体宽度 */
+  max-width: 340px;
+}
+
+.home-cta--about .home-cta__media img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* 文字区自适应 */
+.home-cta--about .home-cta__text {
+  flex: 1 1 320px;
+  min-width: 0;
+}
+
+/* 小屏：变一列 */
+@include breakpoint(max-width $medium - 1px) {
+  .home-cta--about .home-cta__inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .home-cta--about .home-cta__media {
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
+
+  .home-cta--about .home-cta__media img {
+    height: 200px;
   }
 }
