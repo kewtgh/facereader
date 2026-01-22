@@ -332,5 +332,21 @@ body {
 .home-cta--about .btn--primary {
   margin-top: 0.25rem;
 }
+/* ===== 兜底：如果首页 About CTA 被放进 entries-grid，就让它独占一行，并排在最后 ===== */
+
+.entries-grid > .home-section--about-cta,
+.entries-grid > section.home-section--about-cta {
+  flex: 0 0 100%;     /* 占满一整行 */
+  max-width: 100%;
+  order: 99;          /* 排在所有文章卡片之后 */
+}
+
+/* 保证卡片本身在行内居中显示（复用你已有的 home-cta--about 样式） */
+.entries-grid > .home-section--about-cta .home-cta--about,
+.entries-grid > section.home-section--about-cta .home-cta--about {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
