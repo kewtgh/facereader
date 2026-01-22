@@ -314,16 +314,13 @@ body {
 
 /* 卡片本身的通用外观（如果上面已有 .home-cta，可保留当前版本） */
 .home-cta {
-  padding: 2rem 1.75rem;
+  padding: 1.75rem 1.5rem;
   border-radius: 1.25rem;
-  background: linear-gradient(
-    135deg,
-    mix(#fffbe6, $background-color, 45%),
-    mix(#ffffff, $background-color, 10%)
-  );
+  background: mix(#ffffff, $background-color, 80%); // 更靠近整体背景
   border: 1px solid mix(#000000, $border-color, 6%);
-  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);    // 阴影比之前浅一点
 }
+
 
 /* 控制整体宽度和居中 */
 .home-cta--about {
@@ -359,8 +356,9 @@ body {
 }
 
 .home-cta--about .home-cta__text h2 {
-  margin-top: 0;
-  margin-bottom: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.9rem;
 }
 
 .home-cta--about .home-cta__text p {
@@ -386,6 +384,11 @@ body {
   .home-cta--about .home-cta__media img {
     max-height: 220px;
   }
+}
+
+/* feature_row 和 “最近更新” 之间的间距微调 */
+.home-section--posts {
+  margin-top: 2.75rem;
 }
 
 

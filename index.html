@@ -49,7 +49,7 @@ feature_row:
 
   {% assign entries_layout = 'grid' %}
   <div class="entries-{{ entries_layout }}">
-    {% for post in site.posts limit: 6 %}
+    {% for post in site.posts limit: 4 %}
       {% include archive-single.html type=entries_layout %}
     {% endfor %}
   </div>
