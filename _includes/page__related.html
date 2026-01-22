@@ -1,61 +1,47 @@
-{%- assign related_cat2 = "" | split: "" -%}
-{%- assign related_cat1_tag2 = "" | split: "" -%}
-{%- assign related_cat1_tag1 = "" | split: "" -%}
-{%- assign related_posts = "" | split: "" -%}
+{%- assign strong = "" | split: "" -%}
+{%- assign medium = "" | split: "" -%}
+{%- assign fallback = "" | split: "" -%}
+{%- assign related = "" | split: "" -%}
 
+{%- assign page_categories = page.categories | default: "" -%}
 {%- assign page_tags = page.tags | default: "" -%}
-{%- assign page_cats = page.categories | default: "" -%}
 
 {% for post in site.posts %}
-  {% if post.id == page.id %}
-    {% continue %}
-  {% endif %}
+  {% if post.id == page.id %}{% continue %}{% endif %}
 
+  {%- assign post_categories = post.categories | default: "" -%}
   {%- assign post_tags = post.tags | default: "" -%}
-  {%- assign post_cats = post.categories | default: "" -%}
 
-  {%- assign cat_match = 0 -%}
-  {% for c in page_cats %}
-    {% if post_cats contains c %}
-      {%- assign cat_match = cat_match | plus: 1 -%}
-    {% endif %}
-  {% endfor %}
-
-  {% if cat_match == 0 %}
-    {% continue %}
-  {% endif %}
-
-  {%- assign tag_match = 0 -%}
-  {% for t in page_tags %}
-    {% if post_tags contains t %}
-      {%- assign tag_match = tag_match | plus: 1 -%}
-    {% endif %}
-  {% endfor %}
+  {% assign cat_match = post_categories | intersection: page_categories | size %}
+  {% assign tag_match = post_tags | intersection: page_tags | size %}
 
   {% if cat_match >= 2 %}
-    {%- assign related_cat2 = related_cat2 | push: post -%}
+    {% assign strong = strong | push: post %}
   {% elsif cat_match == 1 and tag_match >= 2 %}
-    {%- assign related_cat1_tag2 = related_cat1_tag2 | push: post -%}
-  {% elsif cat_match == 1 and tag_match == 1 %}
-    {%- assign related_cat1_tag1 = related_cat1_tag1 | push: post -%}
+    {% assign medium = medium | push: post %}
   {% endif %}
 {% endfor %}
 
-{%- assign related_posts = related_cat2
-  | concat: related_cat1_tag2
-  | concat: related_cat1_tag1
--%}
+{%- assign related = strong | concat: medium -%}
 
-{% if related_posts.size < 4 %}
+{%- comment -%}
+  第三层兜底：从“社会杂论”分类补齐
+{%- endcomment -%}
+
+{% if related.size < 4 %}
   {% for post in site.posts %}
-    {% if post.id == page.id %}
-      {% continue %}
+    {% if post.id == page.id %}{% continue %}{% endif %}
+
+    {% if post.categories contains "社会杂论" %}
+      {% unless related contains post %}
+        {% assign fallback = fallback | push: post %}
+      {% endunless %}
     {% endif %}
-    {% unless related_posts contains post %}
-      {%- assign related_posts = related_posts | push: post -%}
-    {% endunless %}
-    {% if related_posts.size >= 4 %}
-      {% break %}
+  {% endfor %}
+
+  {% for post in fallback %}
+    {% if related.size < 4 %}
+      {% assign related = related | push: post %}
     {% endif %}
   {% endfor %}
 {% endif %}
@@ -66,7 +52,7 @@
   </h2>
 
   <div class="grid__wrapper">
-    {% for post in related_posts limit:4 %}
+    {% for post in related limit:4 %}
       {% include archive-single.html type="grid" %}
     {% endfor %}
   </div>
