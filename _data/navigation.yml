@@ -173,8 +173,8 @@ sidebar-series-wayofrunningbusiness:
 sidebar-about:
   - title: "关于我们："
     children:
-       - title: "一、概述"
-         url: /about/
+       - title: "一、首页"
+         url: /
   - title: "文章类别："
     children:
        - title: "一、企业剖析"
