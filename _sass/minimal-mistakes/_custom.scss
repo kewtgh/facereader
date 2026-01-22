@@ -96,7 +96,8 @@ body {
 }
 
 /* 主按钮：统一使用和顶部蓝色接近的颜色 */
-.btn--primary {
+.btn--primary,
+.btn--primary:visited {
   background-color: #3375ff;  /* 和 header overlay 的蓝色一致 */
   border-color: #3375ff;
   color: #fff !important;
@@ -106,6 +107,21 @@ body {
 .btn--primary:focus {
   background-color: darken(#3375ff, 7%);
   border-color: darken(#3375ff, 7%);
+  color: #fff !important;
+}
+
+/* 顶部大图里的 primary 按钮：白底蓝字，作为主行动 */
+.page__hero--overlay .btn--primary {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #3375ff !important;
+}
+
+.page__hero--overlay .btn--primary:hover,
+.page__hero--overlay .btn--primary:focus {
+  background-color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.92);
+  color: #2758c8 !important;
 }
 
 /* 顶部大图里的 secondary 按钮：透明底 + 白边白字 */
@@ -308,7 +324,7 @@ body {
 
 /* 整块区域与上面文章列表拉开距离，并清理 float */
 .home-section--about-cta {
-  margin: 3rem 0 3.5rem;
+  margin: 2.5rem 0 3rem;
   clear: both;
 }
 
@@ -357,17 +373,26 @@ body {
 
 .home-cta--about .home-cta__text h2 {
   font-weight: 600;
+  font-size: 1.4rem;
   line-height: 1.4;
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.6rem;
 }
 
 .home-cta--about .home-cta__text p {
+  font-size: 0.95rem;
   margin-bottom: 1.1rem;
+  line-height: 1.7;
 }
 
 /* 按钮稍微离文字远一点 */
 .home-cta--about .btn--primary {
-  margin-top: 0.25rem;
+  margin-top: 0.75rem;
+  min-width: 170px;
+}
+
+/* 只针对 About 这张卡片的 padding 做微调，避免影响首页其他 CTA */
+.home-cta.home-cta--about {
+  padding: 1.5rem 1.5rem;
 }
 
 /* 小屏幕：改为上下排，图片在上、文字在下 */
@@ -385,6 +410,101 @@ body {
     max-height: 220px;
   }
 }
+
+/* ===== 手机端首页 Hero 优化 ===== */
+@include breakpoint($small) {
+  /* 整个 Hero 区稍微收紧一点垂直空间 */
+  .page__hero--overlay {
+    padding-block: 2.4rem 2.6rem;
+  }
+
+  /* 标题不要太大，避免挤压 */
+  .page__hero--overlay .page__title {
+    font-size: 1.7rem;
+    line-height: 1.25;
+    margin-bottom: 0.55rem;
+  }
+
+  /* 副标题稍微小一点、行宽收窄一点 */
+  .page__hero--overlay .page__lead {
+    font-size: 0.95rem;
+    max-width: 22rem;
+  }
+
+  /* 按钮一列排，间距均匀一点 */
+  .page__hero--overlay .page__meta {
+    margin-top: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .page__hero--overlay .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 2.4rem;
+    padding-inline: 1.3rem;
+    font-size: 0.95rem;
+    border-radius: 999px; /* 手机上更像“胶囊”按钮，观感更精致 */
+  }
+
+  /* 让两个按钮宽度接近，整体更整齐 */
+  .page__hero--overlay .btn--primary,
+  .page__hero--overlay .btn--secondary {
+    min-width: 70%;
+    max-width: 280px;
+  }
+}
+/* ===== 手机端 About 卡片优化 ===== */
+@include breakpoint($small) {
+  /* 区块上下间距稍微收紧 */
+  .home-section--about-cta {
+    margin: 2.4rem 0 2.8rem;
+  }
+
+  /* 卡片本身的内边距略小一点，减少“空白过多”的感觉 */
+  .home-cta.home-cta--about {
+    padding: 1.4rem 1.3rem 1.5rem;
+  }
+
+  /* 标题字号适配手机，行距稍微舒展 */
+  .home-cta--about .home-cta__text h2 {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
+  }
+
+  /* 正文和列表都统一为稍小字号 */
+  .home-cta--about .home-cta__text p,
+  .home-cta--about .home-cta__text ul {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  /* 图片在手机端略微放大一些，看起来更像一张“配图”而不是小缩略图 */
+  .home-cta--about .home-cta__media img {
+    max-height: 220px;
+    border-radius: 0.75rem;
+  }
+
+  /* 按钮占据更明显的宽度，突出“这是主操作” */
+  .home-cta--about .btn--primary {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 260px;
+    margin-top: 0.9rem;
+    font-size: 0.95rem;
+    border-radius: 999px;
+  }
+
+  .home-cta__note {
+    margin-top: 0.4rem;
+  }
+}
+
 
 /* feature_row 和 “最近更新” 之间的间距微调 */
 .home-section--posts {

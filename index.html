@@ -3,39 +3,50 @@ layout: splash
 permalink: /
 hidden: true
 title: "FaceReader-企业观察"
+
 header:
   overlay_image: /assets/img/page-header-image-vision10.jpg
   overlay_filter: rgba(51, 117, 255, 0.5)
   actions:
-    - label: "从最新文章开始"
+    - label: "{{ site.data.ui-text[site.locale].home_hero_primary_action }}"
       url: "/posts/"
-    - label: "关于 FaceReader"
+      class: "btn--primary"
+    - label: "{{ site.data.ui-text[site.locale].home_hero_secondary_action }}"
       url: "/about/"
+      class: "btn--secondary"
+
 excerpt: >
-  从“人”出发，看懂企业与时代。
+  {{ site.data.ui-text[site.locale].home_hero_excerpt }}
+
 feature_row:
   - image_path: /assets/img/page-header-image-wit-500x300.jpg
-    alt: "face reader"
-    title: "企业剖析"
-    excerpt: "透过创始人和关键岗位的性格与分工，看清企业真正的优势、短板与风险。"
+    alt: "创始人和团队的剪影"
+    title: "{{ site.data.ui-text[site.locale].home_section_company_analysis }}"
+    excerpt: >
+      {{ site.data.ui-text[site.locale].home_section_company_intro }}
     url: "/categories/#阅相识人"
     btn_class: "btn--primary"
-    btn_label: "进入企业剖析"
+    btn_label: "{{ site.data.ui-text[site.locale].home_btn_view_company_analysis }}"
+
   - image_path: /assets/img/page-header-image-tech4-500x300.jpg
-    alt: "books of management"
-    title: "经典解读"
-    excerpt: "把经典书里的道理拉回现实场景，用今天的案例重读那些“已经被说烂”的观点。"
+    alt: "管理与商业经典书的封面"
+    title: "{{ site.data.ui-text[site.locale].home_section_classic_reviews }}"
+    excerpt: >
+      {{ site.data.ui-text[site.locale].home_section_classic_intro }}
     url: "/categories/#经典解读"
     btn_class: "btn--primary"
-    btn_label: "进入经典解读"
+    btn_label: "{{ site.data.ui-text[site.locale].home_btn_view_classic_reviews }}"
+
   - image_path: /assets/img/page-header-image-eye4-500x300.jpg
-    alt: "characteristics"
-    title: "人格成长"
-    excerpt: "记录个人观察、读书心得与管理体会，帮你更好地认识自己，也看懂身边的人。"
+    alt: "人物侧影与城市轮廓"
+    title: "{{ site.data.ui-text[site.locale].home_section_personal_growth }}"
+    excerpt: >
+      {{ site.data.ui-text[site.locale].home_section_growth_intro }}
     url: "/categories/#人格成长"
     btn_class: "btn--primary"
-    btn_label: "进入人格成长"
+    btn_label: "{{ site.data.ui-text[site.locale].home_btn_view_personal_growth }}"
 ---
+
 
 {%- comment -%} 顶部三张栏目卡片 {%- endcomment -%}
 {% include feature_row %}
@@ -43,8 +54,10 @@ feature_row:
 {%- comment -%} 最近更新文章 {%- endcomment -%}
 <section class="home-section home-section--posts">
   <header class="home-section__header">
-    <h2 class="home-section__title">最近更新</h2>
-    <a class="home-section__more" href="{{ '/posts/' | relative_url }}">查看全部文章 →</a>
+    <h2 class="home-section__title">{{ site.data.ui-text[site.locale].home_recent_updates }}</h2>
+    <a class="home-section__more" href="{{ '/posts/' | relative_url }}">
+      {{ site.data.ui-text[site.locale].home_view_all_posts }} →
+    </a>
   </header>
 
   {% assign entries_layout = 'grid' %}
@@ -56,4 +69,3 @@ feature_row:
 </section>
 
 {% include home-cta.html %}
-
