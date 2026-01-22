@@ -7,6 +7,7 @@ header:
   overlay_filter: rgba(51, 117, 255, 0.5)
 layout: single
 toc: true
+toc_sticky: true
 sidebar:
   - title: "FaceReader企业观察"
     text: "解读人性，分析企业，洞悉社会，掌握趋势。"
