@@ -108,7 +108,6 @@ en: &DEFAULT_EN
     the way I work, you can start with the “About FaceReader” page. Take your
     time – there is no need to decide anything quickly.
   home_about_card_button: "Visit “About FaceReader” first"
-
 en-US:
   <<: *DEFAULT_EN
 en-CA:
@@ -539,64 +538,45 @@ zh: &DEFAULT_ZH_HANS
   tag_clear: "清除筛选"
   home_recent_updates        : "最近更新"
   home_view_all_posts        : "查看全部文章"
-    # --- 首页：FaceReader 头图与栏目说明 ---
-
-  # 顶部 Hero 区
   home_hero_excerpt: >
     这几年，我见过不少创业者、职业经理人和普通打工人。
     比起给企业下结论，我更在意那些做决定的人：他们在想什么，害怕什么，又靠什么一路走到今天。
     这里的文章，都是从「人」的角度，慢慢拆开一家公司、一本书，或一个人的成长故事。
     希望当你在看企业、选伙伴、带团队或选择自己下一步时，能从中多拿走一点笃定。
-
   home_hero_primary_action    : "从一篇有感觉的文章读起"
   home_hero_secondary_action  : "先了解我怎么看人和企业"
-
-  # 顶部三大栏目
   home_section_company_analysis   : "企业剖析"
   home_section_classic_reviews    : "经典解读"
   home_section_personal_growth    : "人格成长"
-
   home_section_company_intro: >
     一家公司，往往藏在几张具体的脸里。
     在这些文章里，我们一起看创始人和核心团队是怎样分工、怎样吵架、又怎样和好——
     他们习惯怎么做决定、相信什么、不太擅长什么。
     适合你在「要不要相信这家公司」之前，先安静地把人和格局看一遍。
-
   home_section_classic_intro: >
     许多管理和商业经典，你可能早就听过书名，甚至背得出金句。
     在这里，我更关心的是：这些道理，放到今天的职场和企业里，还能怎么用？
     文章会选取具体章节，配上真实案例，把「听起来很大的道理」翻译成可以落在日常决策里的提醒。
-
   home_section_growth_intro: >
     这一栏写给也在琢磨「我到底是个什么样的人」的你。
     内容包括性格、边界感、合作方式，还有那些让人回头看才懂的转折点。
     它既是我对自己和身边人的长期观察日记，也希望在你迷茫或卡住的时候，
     能像一位不着急下结论的同事，陪你把话慢慢说清楚。
-
   home_btn_view_company_analysis  : "看看这些企业是怎么「长成现在这样」的"
   home_btn_view_classic_reviews   : "用今天的故事重读那些「老道理」"
   home_btn_view_personal_growth   : "从一个人的故事，想到你自己"
-
-  # 首页底部 About 卡片 CTA
   home_about_card_title: "在正式聊企业之前，也许你会想先认识一下我"
-
   home_about_card_intro: >
     有人把这里当作「看企业的另一个窗口」，也有人把它当作一位安静但诚实的聊天对象。
     在做咨询之前，我更希望你先搞清楚两件事：
-
   home_about_card_point1: >
     我怎么看待「人」在企业里的位置——创始人、合伙人、关键岗位各自扮演什么角色；
-
   home_about_card_point2: >
     什么样的问题适合找我聊，什么样的问题，我可能帮不上太多忙。
-
   home_about_card_note: >
     如果你还在犹豫要不要写那封邮件，或者只是好奇这背后是一种怎样的工作方式，
     可以先从「关于 FaceReader」开始慢慢看，不着急做任何决定。
-
   home_about_card_button: "先去「关于 FaceReader」坐一坐"
-
-
 zh-CN:
   <<: *DEFAULT_ZH_HANS
 zh-SG:
