@@ -33,6 +33,18 @@ body {
   margin-right: auto;
 }
 
+/* ===== 单篇文章页：整体版心略向左移动，空间更均衡 ===== */
+
+@include breakpoint($large) {
+  .layout--single .page {
+    /* 比全站 820px 更宽一点，不挤，并稍微向左偏 */
+    max-width: 1120px;
+    margin-left: 6%;
+    margin-right: auto;
+  }
+}
+
+
 /* ========== 首页：section & 最近更新 ========== */
 
 .home-section {
@@ -539,42 +551,42 @@ body {
  * 左侧专题目录模块（nav_list）
  * ========================= */
 
-/* 专题模块标题（例如“企业剖析 / 经典系列”） */
+/* 专题大标题：比如“经典系列”“企业剖析” */
 .layout--single .sidebar .nav__title {
-  margin: 1.4rem 0 0.3rem;
+  margin: 1.4rem 0 0.4rem;
   padding: 0;
   font-family: $sans-serif;
-  font-size: 0.96rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
-/* 把作者卡片与第一个专题块之间加一条细线，视觉上分区 */
+/* 第一块专题前加一条细线，跟作者卡片分区 */
 .layout--single .sidebar .h-card + .nav__title {
   border-top: 1px solid mix(#000000, $border-color, 6%);
   padding-top: 1rem;
 }
 
-/* 专题小标题（比如“芯片半导体企业解析”、“新能源汽车”等） */
+/* 专题小标题：比如“新能源汽車”“通用电气大盘点” */
 .layout--single .sidebar .nav__sub-title {
-  margin: 0.55rem 0 0.25rem;
+  margin: 0.55rem 0 0.3rem;
   padding: 0;
   font-family: $sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.96rem;
   font-weight: 600;
-  text-transform: none;        /* 关闭默认的全大写，更适合中文 */
+  text-transform: none;         /* 取消原主题的全大写，更适合中文 */
   border-bottom: none;
 }
 
-/* 专题条目列表 */
+/* 专题条目列表：字号和正文接近，看起来不那么“缩水” */
 .layout--single .sidebar .nav__items {
-  font-size: 0.9rem;
-  line-height: 1.7;
-  margin: 0 0 0.6rem;
+  margin: 0 0 0.7rem;
+  font-size: 0.95rem;
+  line-height: 1.8;
 }
 
-/* 让侧栏里的链接颜色稍微淡一点，避免抢正文注意力 */
+/* 链接颜色：比之前更接近正文色，协调一些 */
 .layout--single .sidebar .nav__items a {
-  color: $muted-text-color;
+  color: $text-color;
 
   &:hover {
     color: $link-color;
@@ -599,4 +611,102 @@ body {
 /* 子级条目略微缩进，层级感更清晰 */
 .layout--single .sidebar .toc__menu li ul > li a {
   padding-inline-start: 1.2rem;
+}
+
+/* =========================
+ * 文章正文中：图片说明与图片的间距优化
+ * ========================= */
+
+/* 统一控制 figure 块的底部间距，避免一整块显得太松散 */
+.page__content figure {
+  margin-bottom: 1.25rem;  /* 原主题通常是 1.5em 左右，略收紧一点 */
+}
+
+/* 图片本身下方的空隙缩小一点 */
+.page__content figure > img {
+  display: block;
+  margin-bottom: 0.4rem;    /* 控制“图 → 文本”的距离 */
+}
+
+/* figcaption 说明文字更贴近图片 */
+.page__content figure > figcaption {
+  margin-top: 0.1rem;       /* 覆盖主题里较大的 margin-top */
+}
+
+/* 如果你是用 .image-caption 这种写法，也一并收紧 */
+.page__content .image-caption,
+.page__content em.image-caption,
+.page__content p.image-caption {
+  display: block;
+  margin-top: 0.4rem;       /* 图下到说明的距离 */
+  margin-bottom: 0.9rem;    /* 说明到底下正文的距离 */
+  text-align: center;
+}
+
+/* =========================
+ * 首页 Hero 两个按钮统一样式
+ * ========================= */
+
+.page__hero--overlay .page__hero-actions {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+/* 基础形态：两颗按钮形状/宽度一致 */
+.page__hero--overlay .page__hero-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.97rem;
+  font-weight: 500;
+  min-width: 230px;     /* 统一宽度，避免一大一小 */
+  text-align: center;
+}
+
+/* 主按钮：实心白色 pill */
+.page__hero--overlay .page__hero-actions .btn--primary {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #3375ff !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.page__hero--overlay .page__hero-actions .btn--primary:hover,
+.page__hero--overlay .page__hero-actions .btn--primary:focus {
+  background-color: rgba(255, 255, 255, 0.94);
+  border-color: rgba(255, 255, 255, 0.94);
+  color: #2758c8 !important;
+}
+
+/* 次按钮：半透明白色 pill，风格一致但存在感略弱 */
+.page__hero--overlay .page__hero-actions .btn--secondary {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.9);
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+}
+
+.page__hero--overlay .page__hero-actions .btn--secondary:hover,
+.page__hero--overlay .page__hero-actions .btn--secondary:focus {
+  background-color: rgba(255, 255, 255, 0.26);
+  border-color: #ffffff;
+}
+
+/* 手机端：两颗按钮占满一行，依次排布 */
+@include breakpoint(max-width $small - 1px) {
+  .page__hero--overlay .page__hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .page__hero--overlay .page__hero-actions .btn {
+    width: 100%;
+    max-width: 280px;
+    min-height: 2.4rem;
+  }
 }
