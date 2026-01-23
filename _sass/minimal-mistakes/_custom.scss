@@ -13,6 +13,11 @@ $fr-card-border: mix(#000000, $border-color, 7%);
 $fr-card-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
 $fr-card-radius: 1.05rem;
 
+$fr-panel-bg: rgba(255, 255, 255, 0.45);
+$fr-panel-border: rgba(34, 48, 66, 0.08);
+$fr-panel-text: rgba(34, 48, 66, 0.86);
+$fr-panel-muted: rgba(34, 48, 66, 0.60);
+
 /* =========================
  * 全局排版
  * ========================= */
@@ -29,8 +34,7 @@ body { line-height: 1.7; }
 }
 
 /* =====================================================
- * 0) 先“止血”：撤销任何会把正文 clear 到侧栏下方的行为
- *    —— 这是 “头图与内容之间巨大空白”的最常见根因
+ * 0) 撤销任何会把正文 clear 到侧栏下方的行为	
  * ===================================================== */
 .layout--single .page__content,
 .layout--single .page__inner-wrap,
@@ -184,8 +188,8 @@ body { line-height: 1.7; }
  * 2) ✅ 作者栏：淡化 + 略微缩窄 + 与专题栏统一卡片语言
  * ===================================================== */
 .layout--single .sidebar .h-card {
-  background: $fr-card-bg !important;
-  border: 1px solid $fr-card-border !important;
+  background: $fr-panel-bg !important;
+  border: 1px solid $fr-panel-border !important;
   border-radius: $fr-card-radius !important;
   box-shadow: none !important;
   padding: 1.1rem 0.95rem 1.05rem !important;
@@ -224,8 +228,8 @@ body { line-height: 1.7; }
  * 3) ✅ 专题栏（About 也要生效）—— 不依赖 layout--about
  * ===================================================== */
 .sidebar .nav__list {
-  background: $fr-card-bg !important;
-  border: 1px solid $fr-card-border !important;
+  background: $fr-panel-bg !important;
+  border: 1px solid $fr-panel-border !important;
   box-shadow: $fr-card-shadow;
   border-radius: $fr-card-radius !important;
   padding: 1.05rem 1rem 1.15rem !important;
