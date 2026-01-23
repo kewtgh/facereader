@@ -70,7 +70,7 @@ last_modified_at: 2021-11-04T22:25:52-05:00
 
       详情如下图（大图请[点击](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/商汤科技-产品服务.jpg)）：
 
-      <img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/商汤科技-产品服务.jpg" alt="商汤科技-产品服务"  />
+      <figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/商汤科技-产品服务.jpg" alt="商汤科技-产品服务" /></figure>
       
       
       
@@ -220,7 +220,7 @@ last_modified_at: 2021-11-04T22:25:52-05:00
 
 &emsp;&emsp;根据其招股书中公布的财务数据整理如下，
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/sensetime-finance.png" alt="sensetime-finance"  />
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/sensetime-finance.png" alt="sensetime-finance" /></figure>
 
 &emsp;&emsp;其三年半的总营收为99.8亿元，而亏损额却高达243亿元，尽管其2021年上半年营收同比增长接近92%，但是考虑到新冠疫情的影响，实际增长则并不乐观。因其未能公开2019年上半年营收数据，所以无法比较，但若简单按照2019年营收的一半来比较，则2021年上半年相较2019年上半年的增长只有9%不到。而就其业务潜力来看，增长点也乏善可陈。
 
@@ -234,7 +234,7 @@ last_modified_at: 2021-11-04T22:25:52-05:00
 
 &emsp;&emsp;整体评价，商汤科技的团队评分为：
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/sensetime.png" alt="sensetime"  />
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/sensetime.png" alt="sensetime" /></figure>
 
 ---
 

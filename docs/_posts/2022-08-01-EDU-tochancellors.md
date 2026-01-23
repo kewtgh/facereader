@@ -211,7 +211,7 @@ last_modified_at: 2022-08-01T19:25:52-05:00
 
 ### （一）陈寅恪的父亲陈三立
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/陈三立-徐悲鸿1928年绘.jpg" alt="陈三立-徐悲鸿1928年绘"  /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/陈三立-徐悲鸿1928年绘.jpg" alt="陈三立-徐悲鸿1928年绘" /></figure>
 
 &emsp;&emsp;陈寅恪可能很多人比较熟悉，清华国学院“四大导师”之一，也是“现代四大史学家”之一，“独立之精神，自由之思想”便出自于陈寅恪先生。不过陈寅恪的父亲陈三立也颇负盛名。
 
@@ -229,7 +229,7 @@ last_modified_at: 2022-08-01T19:25:52-05:00
 
 ### （二）北大教授、西南联大总务长郑天挺
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/郑天挺.jpg" alt="郑天挺"  /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/郑天挺.jpg" alt="郑天挺" /></figure>
 
 &emsp;&emsp;郑天挺生于光绪二十五年（1899年），自幼品学兼优，民国六年（1917年）考入北京大学本科国文门。毕业后任教于厦门大学，并兼任图书部主任，之后又考入北京大学国学门研究生。此后，又曾从政，历任浙江省民政厅秘书、广东省建设委员会秘书，以及教育部秘书等职。后随蒋梦麟回到北大，先后担任校长室秘书、北大秘书长等职，并兼任中文系副教授。
 

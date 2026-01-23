@@ -77,11 +77,11 @@ last_modified_at: 2021-10-19T22:25:52-05:00
 
 &emsp;&emsp;我军士卒没有多余的财物，并不是厌恶财物（那是因为行军打仗途中无法携带）；我军士卒置生死于度外，并不是不想活得久（是因为处于极其险地，军令即下、生死难料，他们根本“无余命可保”）。当作战命令下达的时候，士卒们坐着的泪水沾湿了衣襟，躺着的眼泪从脸颊流到脖子，但将他们置于走投无路的绝境时，个个都像专诸、曹刿一样勇敢。
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2663433.jpg" alt="2663433" style="zoom: 50%;" />
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2663433.jpg" alt="2663433" style="zoom: 50%;" /></figure>
 
 &emsp;&emsp;专诸是春秋时吴国的刺客，在公子光宴请吴王僚的酒席上，不顾生死，以一人之力刺死吴王僚，最后他自己也被吴王僚的侍卫当场杀死；曹刿是春秋时鲁国人，周文王的后人，在齐国攻打鲁国的战争中，帮助鲁国战胜齐国，著名的“一鼓作气”典故就出自于此。随后，齐桓公与鲁庄公相会时，他又持匕首胁迫齐桓公订立盟约，并收回鲁国失地。
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/1-150.jpg" alt="曹刿论战"  />
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/1-150.jpg" alt="曹刿论战" /></figure>
 
 ## **第四段原文**
 

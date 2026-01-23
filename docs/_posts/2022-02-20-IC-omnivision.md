@@ -145,7 +145,7 @@ last_modified_at: 2022-02-20T22:25:52-05:00
    
    这一点与另一位企业家曹德旺就非常不同。
    
-   <div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/2022/曹德旺-1.jpg" alt="曹德旺-1" style="zoom:80%;" /></div>
+   <figure class="fr-figure"><img src="https://kewtgh.github.io/PicSunflowers/img/2022/曹德旺-1.jpg" alt="曹德旺-1" style="zoom:80%;" /></figure>
    
    **曹德旺是厚重而有力，他的厚重有力几乎是完全靠实干积累起来的，不仅是知行合一，而且行超乎于知。**因此，曹德旺的厚重有力是**厉行**的结果，在外的表现也给人感觉非常严厉。要打动曹德旺，只有一种语言——行动！
 

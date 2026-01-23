@@ -59,7 +59,7 @@ last_modified_at: 2021-12-13T22:25:52-05:00
 
 ## 一、领创集团产品与服务
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/09-20-33-46-%E9%A2%86%E5%88%9B%E9%9B%86%E5%9B%A2%20%E4%BA%A7%E5%93%81%E5%8F%8A%E6%9C%8D%E5%8A%A1-Mark.jpg" title="" alt="领创集团 产品及服务-Mark.jpg" data-align="center">
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/09-20-33-46-%E9%A2%86%E5%88%9B%E9%9B%86%E5%9B%A2%20%E4%BA%A7%E5%93%81%E5%8F%8A%E6%9C%8D%E5%8A%A1-Mark.jpg" title="" alt="领创集团 产品及服务-Mark.jpg" data-align="center"></figure>
 
 &emsp;&emsp;上图为领创集团的产品及服务【[大图](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/09-20-33-46-%E9%A2%86%E5%88%9B%E9%9B%86%E5%9B%A2%20%E4%BA%A7%E5%93%81%E5%8F%8A%E6%9C%8D%E5%8A%A1-Mark.jpg)】。
 
@@ -69,7 +69,7 @@ last_modified_at: 2021-12-13T22:25:52-05:00
    
     - 东南亚市场：Atome和KreditPintar
     
-    - 中国大陆市场：微花和崇天小贷
+    - <figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/14-15-33-56-%E5%85%AC%E6%A0%A1AI%E5%9F%BA%E7%A1%80%E6%80%A7%20%E6%95%99%E8%82%B2%E6%9C%8D%E5%8A%A1%E5%B9%B3%E5%8F%B0.jpg" alt="公校AI基础性 教育服务平台.jpg" /></figure>
 
 2. AI视觉：人脸识别，扫描AI，文件处理，零售货架识别
 

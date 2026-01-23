@@ -60,7 +60,7 @@ last_modified_at: 2021-11-28T22:25:52-05:00
 
 具体服务和产品如下图（大图请[点击](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/旷视科技-产品和服务.jpg)）：
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/旷视科技-产品和服务.jpg" alt="旷视科技-产品和服务"  />
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/旷视科技-产品和服务.jpg" alt="旷视科技-产品和服务" /></figure>
 
 &emsp;&emsp;上图内容为根据其官网内容整理。
 
@@ -74,7 +74,7 @@ last_modified_at: 2021-11-28T22:25:52-05:00
 
 &emsp;&emsp;2011年10月，印奇先生创立北京旷视科技有限公司；2013年1月，成立Megvii Technology Limited（即旷视科技，注册于开曼群岛），并于2013年至今担任公司执行董事、董事会主席和首席执行官。
 
-&emsp;&emsp;从其照片可以看出，其**年轻时非常在意自己给他人展现的形象，也略有些虚荣**，很希望通过事业的成功来克服其内心的自卑。旷视科技的成功也的确为他带来了需要的东西，**如今的印奇先生有了更多的从容和自信**。
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/陈寅恪-all.jpg" title="" alt="陈寅恪-all" data-align="center"></figure>
 
   就其领导角色而言，**潜力足够，但是阅历略浅**。他具有**严谨的思维和较深的认知能力**，因其自身的性格，**对人性也有不错的体察**。
 
@@ -202,7 +202,7 @@ last_modified_at: 2021-11-28T22:25:52-05:00
 
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;二）从财务表现方面来看
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/旷视科技财务数据表.png" alt="旷视科技财务数据表"  />
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/旷视科技财务数据表.png" alt="旷视科技财务数据表" /></figure>
 
 &emsp;&emsp;从财务数据来看，旷视科技四年的总营收约为38亿元，亏损额却高达近138亿，并且其毛利率是“四小龙”中唯一逐年降低的，**2020年的毛利率低到只有33%左右，远低于行业平均水平**。
 
@@ -222,7 +222,7 @@ last_modified_at: 2021-11-28T22:25:52-05:00
 
 &emsp;&emsp;整体评价，旷视科技的团队评分为：
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/megvii.png" alt="yitu"  />
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/megvii.png" alt="yitu" /></figure>
 
 ---
 

@@ -62,97 +62,115 @@ body { line-height: 1.7; }
 }
 
 /* =====================================================
- * 1) ✅ 图片 caption：贴近图片
- * 覆盖三种结构：
- * - figure > img + figcaption
- * - figure > a > img + figcaption
- * - img + em（markdown 常见）
+ * 图片Caption (fr-figure + Markdown img+em fallback)
  * ===================================================== */
-.page__content figure {
-  margin: 1.05rem auto 1.25rem !important;
+
+/* ---- A) figure.fr-figure 标准写法 ---- */
+.page__content figure.fr-figure {
+  margin: 1.2rem auto 1.5rem !important;
+  text-align: center !important;
 }
 
-.page__content figure > img {
-  display: block;
-  margin: 0 auto 0.12rem !important;
-}
-
-.page__content figure > a {
-  display: block;
-  margin: 0 auto 0.12rem !important;
-}
-
-.page__content figure > a > img {
-  display: block;
+.page__content figure.fr-figure > img {
+  display: block !important;
   margin: 0 auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 0.6rem;
 }
 
-.page__content figure figcaption,
-.page__content figure > figcaption {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  font-size: 0.88rem !important;
-  line-height: 1.55 !important;
-  color: $muted-text-color !important;
+.page__content figure.fr-figure > figcaption {
+  display: block !important;
+  margin: 0.22rem auto 0 !important; /* ✅紧贴图片 */
+  padding: 0 !important;
+
+  max-width: min(92%, 42rem) !important;
   text-align: center !important;
+
+  font-size: 0.9rem !important;
+  line-height: 1.45 !important;
+  color: rgba(60, 55, 45, 0.62) !important;
+
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
-/* markdown: 图片下方一行斜体 */
-.page__content img + em,
-.page__content img + em.image-caption {
+.page__content figure.fr-figure > figcaption:empty {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 可选分隔线（不想要就删掉这一段） */
+.page__content figure.fr-figure > figcaption::after {
+  content: "";
   display: block;
-  margin-top: 0.15rem !important;
-  margin-bottom: 1rem !important;
-  font-style: normal;
-  font-size: 0.88rem !important;
-  line-height: 1.55 !important;
-  color: $muted-text-color !important;
-  text-align: center !important;
+  width: min(360px, 78%);
+  height: 1px;
+  margin: 0.35rem auto 0;
+  background: rgba(34, 48, 66, 0.10);
 }
 
-/* 兼容原来的 image-caption */
-.page__content .image-caption,
-.page__content p.image-caption,
-.page__content em.image-caption {
+/* ---- B) Markdown 常见兜底：img + em / img + br + em ---- */
+
+/* 图片本体是 block，避免基线空隙造成“看起来隔很远” */
+.page__content img {
   display: block;
-  margin-top: 0.15rem !important;
-  margin-bottom: 1rem !important;
-  font-size: 0.88rem !important;
-  line-height: 1.55 !important;
-  color: $muted-text-color !important;
-  text-align: center !important;
 }
 
+/* 结构1：<img> 紧跟 <em> */
+.page__content img + em {
+  display: block !important;
+  margin: 0.22rem auto 1rem !important; /* ✅贴图 */
+  max-width: min(92%, 42rem) !important;
+  text-align: center !important;
 
-/* 图所在段落下边距缩小（避免图和说明被段落 margin 拉开） */
+  font-style: normal !important;
+  font-size: 0.9rem !important;
+  line-height: 1.45 !important;
+  color: rgba(60, 55, 45, 0.62) !important;
+}
+
+/* 结构2：<img><br><em> */
+.page__content img + br {
+  display: none !important;
+}
+.page__content img + br + em {
+  display: block !important;
+  margin: 0.22rem auto 1rem !important;
+  max-width: min(92%, 42rem) !important;
+  text-align: center !important;
+
+  font-style: normal !important;
+  font-size: 0.9rem !important;
+  line-height: 1.45 !important;
+  color: rgba(60, 55, 45, 0.62) !important;
+}
+
+/* 结构3：常见 Markdown：<p><img></p><p><em>caption</em></p>
+   只命中紧跟图片段落后的“仅包含 em”的段落，避免误伤正文斜体 */
+.page__content p > img {
+  margin-bottom: 0 !important;
+}
 .page__content p:has(> img) {
   margin-bottom: 0.25rem !important;
 }
-
-/* ✅ 最关键：图片段落后的“仅含 em 的段落”当作 caption */
 .page__content p:has(> img) + p > em:only-child {
-  display: block;
-  font-style: normal;
-  text-align: center;
-  color: $muted-text-color;
-  font-size: 0.88rem;
-  line-height: 1.55;
-}
+  display: block !important;
+  margin: 0.22rem auto 1rem !important;
+  max-width: min(92%, 42rem) !important;
+  text-align: center !important;
 
-/* 这个 caption 段落本身的 margin 彻底收紧 */
+  font-style: normal !important;
+  font-size: 0.9rem !important;
+  line-height: 1.45 !important;
+  color: rgba(60, 55, 45, 0.62) !important;
+}
 .page__content p:has(> img) + p:has(> em:only-child) {
   margin-top: 0 !important;
-  margin-bottom: 1rem !important;
 }
 
-/* figure 模式继续保留贴图 */
-.page__content figure { margin: 1.05rem auto 1.25rem !important; }
-.page__content figure > img,
-.page__content figure > a { margin-bottom: 0.12rem !important; }
-.page__content figure figcaption {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
 
 /* =====================================================
  * 2) ✅ 作者栏：淡化 + 略微缩窄 + 与专题栏统一卡片语言
@@ -249,21 +267,22 @@ body { line-height: 1.7; }
  * ===================================================== */
 .sidebar__right .toc,
 .sidebar .toc {
-  background: mix(#ffffff, $background-color, 94%) !important;
-  border: 1px solid mix(#000, $border-color, 9%) !important;
+  background: rgba(255, 255, 255, 0.55) !important;  /* ✅更淡 */
+  border: 1px solid rgba(34, 48, 66, 0.10) !important;
   border-radius: 0.95rem !important;
-  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04) !important;
+  box-shadow: none !important;
   overflow: hidden;
 }
 
 /* TOC 标题条：别太黑 */
 .sidebar__right .toc__title,
 .sidebar .toc__title {
-  background: #eef3fb !important;
-  color: #223042 !important;
+  background: rgba(34, 48, 66, 0.06) !important;
+  color: rgba(34, 48, 66, 0.70) !important;
   font-weight: 800 !important;
-  padding: 0.55rem 0.8rem !important;
+  padding: 0.45rem 0.65rem !important;
   border-bottom: 1px solid rgba(34, 48, 66, 0.10) !important;
+  margin: 0 !important;
 }
 
 /* 有些主题 toc__title 是深色条且白字，这里强制更协调 */
@@ -275,42 +294,44 @@ body { line-height: 1.7; }
 /* 菜单 */
 .sidebar__right .toc__menu,
 .sidebar .toc__menu {
-  font-size: 0.8rem !important;   /* ✅变小 */
-  line-height: 1.3 !important;    /* ✅变紧 */
-  padding: 0.2rem 0 !important;
+  margin: 0 !important;
+  padding: 0.15rem 0 !important;
+  font-size: 0.78rem !important;                      /* ✅继续缩小 */
+  line-height: 1.22 !important;
 }
 
 .sidebar__right .toc__menu a,
 .sidebar .toc__menu a {
   border-top: none !important;          /* ✅去横线 */
-  padding: 0.34rem 0.8rem !important;  /* ✅更紧凑 */
+  padding: 0.28rem 0.65rem !important;  /* ✅更紧凑 */
   margin: 0 !important;
-  color: #6f4e37 !important; /* ✅微棕色（更有“纸张感”） */
+  color: rgba(111, 78, 55, 0.78) !important; /* ✅微棕色（更有“纸张感”） */
 }
 
-/* 仅用非常淡的分隔线（可选，不想要线可把这段删掉） */
-.sidebar__right .toc__menu li + li a,
-.sidebar .toc__menu li + li a {
-  box-shadow: inset 0 1px 0 rgba(34, 48, 66, 0.06);
+/* ul 默认 margin/padding 会拉开行距，强制清零 */
+.sidebar__right .toc__menu ul,
+.sidebar .toc__menu ul {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* hover/active 更柔和 */
 .sidebar__right .toc__menu a:hover,
 .sidebar .toc__menu a:hover {
-  background: rgba(176, 127, 74, 0.08) !important;
+  background: rgba(176, 127, 74, 0.07) !important;
 }
 
 .sidebar__right .toc__menu a.active,
 .sidebar .toc__menu a.active,
 .sidebar__right .toc__menu a[aria-current="true"],
 .sidebar .toc__menu a[aria-current="true"] {
-  background: rgba(176, 127, 74, 0.12) !important;
-  font-weight: 800 !important;
+  background: rgba(176, 127, 74, 0.10) !important;
+  font-weight: 700 !important;
 }
 
 .sidebar__right .toc__menu li ul > li a,
 .sidebar .toc__menu li ul > li a {
-  padding-left: 1.05rem !important;
+  padding-left: 0.95rem !important;
 }
 
 /* =====================================================

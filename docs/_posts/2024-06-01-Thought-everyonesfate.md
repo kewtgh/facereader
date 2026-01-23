@@ -61,34 +61,22 @@ last_modified_at: 2024-06-01T19:25:52-05:00
 >
 >良多："你觉得成为理想中的大人很简单，那就大错特错了。"
 
-<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/比海更深-理想大人.jpg" alt="《比海更深》片段" /><br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">《比海更深》片段</div>
-</center>
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/比海更深-理想大人.jpg" alt="《比海更深》片段" /><figcaption>《比海更深》片段</figcaption>
+</figure>
 
 &emsp;&emsp;**人生就是这样，在偶尔的时候受控，但在大部分的时间里失控。每段失控的时间里，我们都像是单脚站在平衡木上，尽力不让自己从上面掉下来。**
 
 &emsp;&emsp;良多就是那个一不小心掉下来的人！一部分是其性格使然，抱怨人生，沉迷赌博；另一部分也可能是运气使然，他年轻时也曾一度成名，凭借一部小说获得文学奖，但并没有机会接续人生的辉煌。
 
-<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/比海更深-良多.jpg" alt="《比海更深》-良多" /><br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">《比海更深》-良多</div>
-</center>
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/比海更深-良多.jpg" alt="《比海更深》-良多" /><figcaption>《比海更深》-良多</figcaption>
+</figure>
 
 &emsp;&emsp;良多的前半段人生，颇有些像李安。
 
 &emsp;&emsp;李安从纽约大学毕业时，凭借毕业作品《分界线》，获得纽约大学影展的最佳导演奖及最佳影片奖，名震一时。但却并未能帮他踏上高光人生的阶梯，而是待业在家，失业6年。期间他也曾写过好几个剧本，但却并未受到亲睐。直到1991年，因前一年获奖的剧本《推手》才获得拍片邀约。自此，他才有机会一展才华。
 
-<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/李安-早年拍片.gif" alt="李安-拍片" /><br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">李安-拍片</div>
-</center>
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/李安-早年拍片.gif" alt="李安-拍片" /><figcaption>李安-拍片</figcaption>
+</figure>
 
 &emsp;&emsp;6年的时间，有几个还能站在平衡木上，又有多少人会从上面掉下来呢？
 
@@ -110,12 +98,8 @@ last_modified_at: 2024-06-01T19:25:52-05:00
 
 &emsp;&emsp;而普通人，有时候即使用尽心力，也只能在糊口和做自己之间勉强挣扎，就像电影《美错》（*Biutiful*）中的乌西巴尔。
 
-<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/《美错》乌西巴尔.jpg" alt="《美错》乌西巴尔" /><br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">《美错》乌西巴尔</div>
-</center>
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/《美错》乌西巴尔.jpg" alt="《美错》乌西巴尔" /><figcaption>《美错》乌西巴尔</figcaption>
+</figure>
 
 &emsp;&emsp;作为一个通灵师，他用自己最大的善良，一面告慰死亡的人，一面宽解活着的人。他不收那些太穷的人的钱，也尽力善待那些偷渡来的黑工，还用自己的钱贴补他们的生活。他用全部的能力，努力做一个善良的人。但即使如此，他依然要挣扎面对精神失常的前妻，独自抚养两个孩子，并且在他为生活苦苦挣扎之时，却获知自己身患绝症的消息。
 

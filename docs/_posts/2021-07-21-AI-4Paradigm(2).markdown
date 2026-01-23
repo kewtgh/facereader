@@ -53,4 +53,4 @@ last_modified_at: 2021-07-21T20:25:52-05:00
 
 &emsp;&emsp;第四范式的核心团队情况评分：
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/23-21-54-55-4paradigm.png" alt="4paradigm"  />
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/23-21-54-55-4paradigm.png" alt="4paradigm"  /></figure>

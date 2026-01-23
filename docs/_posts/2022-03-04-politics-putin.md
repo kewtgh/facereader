@@ -45,13 +45,13 @@ last_modified_at: 2022-03-04T22:25:52-05:00
 
 &emsp;&emsp;此时，正值赫鲁晓夫统治时期，尽管不再有斯大林的警察恐怖统治，但是因为社会结构的问题，经济增长却进一步放缓。对于老百姓来说，这种变化很缓慢，人民的生活不会有太明显的变化。
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-tony.jpg" title="" alt="putin-tony" data-align="center">
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-tony.jpg" title="" alt="putin-tony" data-align="center"></figure>
 
 &emsp;&emsp;从照片中可以看出，**普京的性格略有些顽劣成性。他的叛逆心很强，也有极高的自主心理。他只会按照自己的想法做事，并不会在意其他人的看法。**这种情况很大程度是因为环境与教育的关系，**他的父亲笃信男人就该坚强、可靠的信条，且对自己的信念与想法自信满满；他的母亲则宽厚朴实，知道不能对孩子太过溺爱，但对普京却忍不住地纵容。**但幼年时，普京的家庭还是非常和睦的。这让我想到一部纪录片中的人物，《7UP》中的Tony。但二人的不同之处在于，普京非常清楚自己要什么，而Tony只是觉得捣乱很有趣！
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/奥古斯都-屋大维.jpg" alt="奥古斯都-屋大维" style="zoom:80%;" /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/奥古斯都-屋大维.jpg" alt="奥古斯都-屋大维" style="zoom:80%;" /></figure>
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-1966.jpg" alt="putin-1966" style="zoom:80%;" /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-1966.jpg" alt="putin-1966" style="zoom:80%;" /></figure>
 
 &emsp;&emsp;此时赫鲁晓夫已经在政变后下台，勃烈日涅夫成为苏联的第一书记。勃烈日涅夫上台初期进行了一定的改革，提高了民众的福利，但却同时鼓吹斯大林的功绩，虽然在军事上苏联的发展很快，但经济上却趋于停滞，整个勃烈日涅夫统治的十八年被称为“停滞时代”。
 
@@ -61,7 +61,7 @@ last_modified_at: 2022-03-04T22:25:52-05:00
 
 &emsp;&emsp;1975年，普京毕业于列宁格勒大学国际法学系，获得学士学位。毕业后，普京便加入克格勃，并在培训结束后进入列宁格勒的情报机关机要部门，一直工作到1983年。
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-1980.jpg" alt="putin-1980" style="zoom: 33%;" /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-1980.jpg" alt="putin-1980" style="zoom: 33%;" /></figure>
 
 &emsp;&emsp;当时，勃烈日涅夫已经去世，苏联陷入高层领导权争夺的动荡期，直至1985年，改革派领导人戈尔巴乔夫胜出，当选为苏联总书记。
 
@@ -87,11 +87,11 @@ last_modified_at: 2022-03-04T22:25:52-05:00
 
 &emsp;&emsp;普京在2000年的俄罗斯大选中，被选为总统。2004年，普京又成功连任。
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-2000.jpg" alt="putin-2000" style="zoom:50%;" /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-2000.jpg" alt="putin-2000" style="zoom:50%;" /></figure>
 
 &emsp;&emsp;第二任期中，普京开始他的野心筹划，打击竞争对手，打压媒体言论。在2007年成功将梅德韦杰夫送上总统之位后，卸任总统的普京又被梅德韦杰夫任命为俄罗斯总理。随后，在总统梅德韦杰夫的推动下，俄罗斯国家杜马修改宪法，将总统任期由四年延长为六年。随后，普京又于2012年被选为总统，并于2018年成功连任。
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-2012.jpg" alt="putin-2012." style="zoom:50%;" /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/putin-2012.jpg" alt="putin-2012." style="zoom:50%;" /></figure>
 
 &emsp;&emsp;普京的这一系列操作，可谓司马昭之心——路人皆知。为了实现自己独裁统治的愿望，巧立名目，不择手段，普京统治期间多次利用刺杀手段打击竞争对手。而此次发动的侵略乌克兰的战争，更是令其与萨达姆、卡扎菲一样，臭名昭著！
 

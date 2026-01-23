@@ -104,7 +104,7 @@ last_modified_at: 2021-12-29T22:25:52-05:00
 
 具体内容如下图（大图请[点击](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/27-21-09-08-%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93%E6%B5%81%E7%A8%8B%E5%88%86%E7%B1%BB.jpg)）：
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/27-21-09-08-%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93%E6%B5%81%E7%A8%8B%E5%88%86%E7%B1%BB.jpg" title="" alt="芯片半导体流程分类.jpg" data-align="center">
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/27-21-09-08-%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93%E6%B5%81%E7%A8%8B%E5%88%86%E7%B1%BB.jpg" title="" alt="芯片半导体流程分类.jpg" data-align="center"></figure>
 
 &emsp;&emsp;上面即是芯片半导体行业的简单介绍，下面我们来分析企业，先来看被称为全球第一家量产商业人工智能芯片的企业——寒武纪。
 
@@ -227,7 +227,7 @@ last_modified_at: 2021-12-29T22:25:52-05:00
 
 ### 6、副总经理  [刘道福](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/29-00-34-19-%E5%88%98%E9%81%93%E7%A6%8F-6.jpg)
 
-&emsp;&emsp;刘道福先生出生于1988年，拥有中科院计算所计算机系统结构博士学位。刘道福先生曾于2015年至2019年就职于中科院计算所，历任助理研究员、高级工程师。
+<figure class="fr-figure"> src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2022/01/24-17-42-29-%E6%B1%87%E9%A1%B6%E7%A7%91%E6%8A%80%E8%B4%A2%E5%8A%A1%E5%88%86%E6%9E%90.png" title="" alt="汇顶科技财务分析.png" data-align="center"></figure>
 
 &emsp;&emsp;2016年，刘道福先生作为寒武纪创始团队成员加入公司，现任公司副总经理。
 
@@ -281,7 +281,7 @@ last_modified_at: 2021-12-29T22:25:52-05:00
 
 ### 二）财务情况
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/28-20-19-52-%E5%AF%92%E6%AD%A6%E7%BA%AA%E8%B4%A2%E5%8A%A1%E6%95%B0%E6%8D%AE.png" title="" alt="寒武纪财务数据.png" data-align="center">
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/28-20-19-52-%E5%AF%92%E6%AD%A6%E7%BA%AA%E8%B4%A2%E5%8A%A1%E6%95%B0%E6%8D%AE.png" title="" alt="寒武纪财务数据.png" data-align="center"></figure>
 
 &emsp;&emsp;**因为2020年的上半年正是疫情高发期，所以2021年和2020年的上半年度报告不具有可比性，我们只比较2021年的第三季度和2020年的第三季度。** 相较而言，2021年第三季度的营收同比2020年第三季度增长20.2%，属于尚可；但是同期的亏损额却增加了一倍还多，而且毛利率也在下降，因而未必是良好的表现，极有可能是竞争的激烈以及IP业务的缩水导致。
 
@@ -291,7 +291,7 @@ last_modified_at: 2021-12-29T22:25:52-05:00
 
 &emsp;&emsp;再从几项核心业务的收入占比来看：
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/28-23-29-01-%E5%AF%92%E6%AD%A6%E7%BA%AA2021-1-6-%E4%BA%A7%E5%93%81%E6%94%B6%E5%85%A5%E5%8D%A0%E6%AF%94.png" title="" alt="寒武纪2021-1-6-产品收入占比.png" data-align="center">
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/28-23-29-01-%E5%AF%92%E6%AD%A6%E7%BA%AA2021-1-6-%E4%BA%A7%E5%93%81%E6%94%B6%E5%85%A5%E5%8D%A0%E6%AF%94.png" title="" alt="寒武纪2021-1-6-产品收入占比.png" data-align="center"></figure>
 
 &emsp;&emsp;**边缘智能芯片和加速卡**是其最为核心的业务，这类主要是智能终端的应用，这方面因为目前的产品并不完善，寒武纪的市场空间很大，但是竞争对手也只需要半年至一年就可以赶上其相应的技术，所以时间窗口并不大。而训练整机的需求不知是具体哪个大客户在采用，因为这方面的需求并不稳定；依照其对前五大客户的依赖程度来看，甚至几乎都难以分析其产品的潜力，因为一家客户的大量需求并不能代表市场的普遍需求。
 
@@ -301,7 +301,7 @@ last_modified_at: 2021-12-29T22:25:52-05:00
 
 &emsp;&emsp;仅从其上市之后的股价走势，就证明最初的估值明显偏高；目前寒武纪的股价已经从高点的超过250元人民币跌到现在不足100元；而且以其面临的挑战，现在的股价我认为仍然偏高。
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/28-20-36-14-%E5%AF%92%E6%AD%A6%E7%BA%AA%E8%82%A1%E4%BB%B7.png" title="" alt="寒武纪股价.png" data-align="center">
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/28-20-36-14-%E5%AF%92%E6%AD%A6%E7%BA%AA%E8%82%A1%E4%BB%B7.png" title="" alt="寒武纪股价.png" data-align="center"></figure>
 
 &emsp;&emsp;**最后稍稍吐槽一下，寒武纪的财报，是我看过最累的！** 需要的数据不列举，还都得翻好几个财报才能算出来！怕不是认为财报不好看，股东们时间又很紧，要是看起来费精力，就去看其他家了吧？！希望其对产品的底气也能放在财报上！
 

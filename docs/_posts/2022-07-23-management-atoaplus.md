@@ -74,7 +74,7 @@ last_modified_at: 2022-07-23T19:25:52-05:00
    - 但是刺猬知道一件大事：遇到危险，就蜷缩成一个带刺的圆球。狐狸对此毫无办法。刺猬把复杂的世界简化成单个有组织性的观点，一条基本原则或一个基本理念，发挥统帅和指导作用。
    - 刺猬理念三环图：结合点则是最重要的目标。
    
-   <div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/刺猬理念三环图.jpg" alt="刺猬理念三环图" style="zoom: 67%;" /></div>
+   <figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/刺猬理念三环图.jpg" alt="刺猬理念三环图" style="zoom: 67%;" /></figure>
 
 6. 训练有素的文化
    
@@ -166,7 +166,7 @@ last_modified_at: 2022-07-23T19:25:52-05:00
 
 &emsp;&emsp;吉姆·柯林斯先生生于1958年，1980年获得斯坦福大学数学科学学士学位，毕业后加入麦肯锡工作了一年半，随后回到斯坦福大学攻读商学院，并获得MBA学位。之后，他在惠普担任产品经理，一年半后又离职。从1988年开始，他开启了自己斯坦福大学商学院的任教生涯。本文中论及的《基业长青》和《从优秀到卓越》分别写成于1994年和2001年。
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/吉姆-柯林斯.jpg" alt="吉姆-柯林斯"  /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/吉姆-柯林斯.jpg" alt="吉姆-柯林斯" /></figure>
 
 &emsp;&emsp;从照片来看，吉姆·柯林斯是一位依赖型自尊的人，他的幼年很有可能遭遇了家庭不幸或者霸凌，所以非常渴望他人的认可。他在本书中的一些观点也体现了这个性格特点。他因为一些新奇的观点而兴奋，而这些新奇能带来关注度与认可，以至于在求证上缺乏谨慎。
 

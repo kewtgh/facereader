@@ -48,7 +48,7 @@ last_modified_at: 2022-02-24T19:25:52-05:00
 
 ## 二、“牺牲”的必要之处
 
-&emsp;&emsp;**因为这种行为是一种领导者的声明，表明领导者认为团队利益很重要，他也愿意为集体负责，表明领导者所在的组织是一个值得个人为之奉献的集体。**
+<figure class="fr-figure"><img src="https://kewtgh.github.io/PicSunflowers/img/2022/U型理论.jpg" alt="U型理论"  /></figure>
 
 &emsp;&emsp;而相较而言，如果所在团队的领导者一毛不拔，不愿意为团队做出任何牺牲，甚至有些领导者中饱私囊，那么这些行为是一种什么样的领导者声明呢？
 
@@ -102,7 +102,7 @@ last_modified_at: 2022-02-24T19:25:52-05:00
 
 3. **“牺牲”行为在平常应仅仅用做象征性的意义，表明领导者对团队的看重；而在重要时刻，则要凸显关键性的意义。**比如李世民在攻打王世充时，就身先士卒，亲自诱敌，差点被活捉，在这样重要时刻的牺牲，也是李世民最终能消灭王世充的关键原因之一。
 
-   <img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/李世民.jpg" alt="李世民" style="zoom:50%;" />
+   <figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/李世民.jpg" alt="李世民" style="zoom:50%;" /></figure>
 
 ---
 

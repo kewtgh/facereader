@@ -57,7 +57,7 @@ last_modified_at: 2021-11-21T22:25:52-05:00
 
 具体服务和产品如下图（大图请[点击](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/云从科技-产品及服务.png)）：
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/云从科技-产品及服务.png" alt="云从科技-产品及服务"  />
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/云从科技-产品及服务.png" alt="云从科技-产品及服务" /></figure>
 
 &emsp;&emsp;上图内容为根据其官网内容整理，云从科技的服务和产品主要在于两类：
 
@@ -80,7 +80,7 @@ last_modified_at: 2021-11-21T22:25:52-05:00
 
 &emsp;&emsp;那周曦先生为什么选择创业呢？继续做自己的研究中心主任不好吗？更何况他做主任时性格已经修得足够和善，上下都应该比较喜欢他。当你看完他年轻时的照片，就能知道背后的原因了：
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/周曦-xx-李继伟-温浩.png" alt="周曦-xx-李继伟-温浩"  /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/周曦-xx-李继伟-温浩.png" alt="周曦-xx-李继伟-温浩" /></figure>
 
 &emsp;&emsp;左边第一位就是他本人，此时的他，在学习之外应该有**很强烈的自卑**的，很可能在体育上不擅长，且并不是最受大家欢迎的一位，**性格上还可能略有些冲**，家庭条件也可能一般。而从右数第二位，李继伟先生，也是云从科技的合伙人之一，反而性格更加具有包容性，也是较有领导力的一位。
 
@@ -154,7 +154,7 @@ last_modified_at: 2021-11-21T22:25:52-05:00
 
 #### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;二）从财务表现方面来看
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/云从科技-财务数据.png" alt="云从科技-财务数据"  />
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/云从科技-财务数据.png" alt="云从科技-财务数据" /></figure>
 
 &emsp;&emsp;从财务数据来看，云从科技四年的总营收为21亿元，亏损额为28亿。虽然营收并不高，但却高于依图科技的14.7亿，而亏损额相对商汤科技的282亿和依图科技的73亿则低很多，其财务的整体表现远远好于商汤和依图。
 
@@ -178,7 +178,7 @@ last_modified_at: 2021-11-21T22:25:52-05:00
 
 &emsp;&emsp;整体评价，云从科技的团队评分为：
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/yuncong.png" alt="yuncong"  />
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/yuncong.png" alt="yuncong" /></figure>
 
 ---
 

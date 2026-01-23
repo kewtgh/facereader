@@ -53,12 +53,8 @@ last_modified_at: 2023-10-06T19:25:52-05:00
 
 &emsp;&emsp;福布斯2009年的全球税负痛苦指数排行榜中，中国高居第二名，略低于排名第一的法国。这项指数后来停止发布了，估计全球反对的政府过多，颇为可惜。
 
-<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/2009福布斯税负痛苦指数.jpg" alt="2009福布斯税负痛苦指数" /><br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">2009福布斯税负痛苦指数</div>
-</center>
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/2009福布斯税负痛苦指数.jpg" alt="2009福布斯税负痛苦指数" /><figcaption>2009福布斯税负痛苦指数</figcaption>
+</figure>
 
 &emsp;&emsp;不过，这么多年以来，中国的税负只有可能增加，不可能减少，因为从2009至2021年中国的GDP年平均增长率为10.5%，财政总收入的年平均增长率为11.9%。财政总收入增速每年比GDP高接近1.5%。十几年下来，不知道中国人的税负痛苦指数是不是已经超过法国了？
 
@@ -266,12 +262,8 @@ last_modified_at: 2023-10-06T19:25:52-05:00
 
 &emsp;&emsp;**而净利润前十的企业，全是金融和垄断国企。**
 
-<center><img src="https://kewtgh.github.io/PicSunflowers/img/2023/2021年A股净利润前十企业.png" alt="2021年A股净利润前十企业" /><br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">2021年A股净利润前十企业</div>
-</center>
+<figure class="fr-figure"><img src="https://kewtgh.github.io/PicSunflowers/img/2023/2021年A股净利润前十企业.png" alt="2021年A股净利润前十企业" /><figcaption>2021年A股净利润前十企业</figcaption>
+</figure>
 
 &emsp;&emsp;可想而知，如果除去这些垄断国企和金融企业，中国上市公司中的民营企业的利润情况如何？
 

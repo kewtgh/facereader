@@ -34,11 +34,11 @@ last_modified_at: 2021-12-09T19:25:52-05:00
 
 ## 三、吕思勉先生
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/吕思勉-all.jpg" title="" alt="吕思勉-all" data-align="center">
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/吕思勉-all.jpg" title="" alt="吕思勉-all" data-align="center"></figure>
 
 > “秦桧一定要跑回来，正是他爱国之处，始终坚持和议，是他有识力、肯负责任之处。”
 > 
-> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;——摘自吕思勉先生之《白话本国史》
+> <figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/09-20-33-46-%E9%A2%86%E5%88%9B%E9%9B%86%E5%9B%A2%20%E4%BA%A7%E5%93%81%E5%8F%8A%E6%9C%8D%E5%8A%A1-Mark.jpg" title="" alt="领创集团 产品及服务-Mark.jpg" data-align="center"></figure>
 
 ### 1、经历简介
 
@@ -60,7 +60,7 @@ last_modified_at: 2021-12-09T19:25:52-05:00
 
 ## 四、钱穆先生
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/钱穆-all.jpg" title="" alt="钱穆-all" data-align="center">
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/钱穆-all.jpg" title="" alt="钱穆-all" data-align="center"></figure>
 
 > - “一、当信任何一国之国民，尤其是自称知识在水平线以上之国民，对其本国已往历史，应该略有所知。(否则只算一有知识的人，不能算一有知识的国民。)
 > - 二、所谓对其本国已往历史略有所知者，尤必附随一种对其本国已往历史之温情与敬意。(否则只算知道了一些外国史，不得云对本国史有知识。)

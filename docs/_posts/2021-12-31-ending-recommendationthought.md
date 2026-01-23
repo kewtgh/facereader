@@ -29,13 +29,13 @@ last_modified_at: 2021-12-31T19:25:52-05:00
 
 ### 1、《第五项修炼》  作者：彼得·圣吉
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/第五项修炼.jpg" alt="第五项修炼" style="zoom:80%;" /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/第五项修炼.jpg" alt="第五项修炼" style="zoom:80%;" /></figure>
 
 &emsp;&emsp;这本书既是格局性的书，也是管理学的经典之作！虽然本书的核心是介绍的系统性思考的方法，但是书中的每一章都是经典，包括对个人成长、企业愿景的阐述，远超其他管理书籍关于这方面的介绍，可谓是经典中的经典！
 
 ### 2、《相约星期二》 作者：米奇·阿尔博姆
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/相约星期二.jpg" alt="相约星期二" style="zoom:80%;" /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/相约星期二.jpg" alt="相约星期二" style="zoom:80%;" /></figure>
 
 &emsp;&emsp;这本书我读了不下五遍！第一次接触是在初中时期，闲来无事从学校图书馆翻出此书，当时只因该书很薄，看起来读完毫无压力。但真正读起来却感触颇深，书中介绍了一位德高望重的老者莫里，在行将就木时留下的人生体悟，包括对家庭、衰老、死亡、金钱、婚姻、爱情、文化等所有重大人生问题的思考，由他的学生米奇·阿尔博姆记录下一切。
 
@@ -43,7 +43,7 @@ last_modified_at: 2021-12-31T19:25:52-05:00
 
 ### 3、《西方通史 上·下》 作者：海因里希·奥古斯特·温克勒
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/西方通史.jpg" alt="西方通史" style="zoom:80%;" /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/西方通史.jpg" alt="西方通史" style="zoom:80%;" /></figure>
 
 &emsp;&emsp;西方史非常纷杂，一般人简单阅读一两本很难梳理清楚，读得多了，可能到某个时间越读越糊涂，而本书将西方纷杂的历史逻辑线归纳清晰。
 
@@ -53,7 +53,7 @@ last_modified_at: 2021-12-31T19:25:52-05:00
 
 ### 4、《中国通史 上·下》 作者：傅乐成
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/中国通史-傅乐成.jpg" alt="中国通史-傅乐成" style="zoom:80%;" /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/中国通史-傅乐成.jpg" alt="中国通史-傅乐成" style="zoom:80%;" /></figure>
 
 &emsp;&emsp;吕思勉先生的《中国通史》和钱穆先生的《国史纲要》都是经典，只是我自己读半文半白的文字过程很不愉快，既没有文言文的韵律，也没有白话文的舒适，所以就不予推荐了。不过二者都非常经典，有兴趣的读者可以读一下。
 
@@ -61,7 +61,7 @@ last_modified_at: 2021-12-31T19:25:52-05:00
 
 ### 5、《通往奴役之路》 作者：弗里德里希·哈耶克
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/通往奴役之路.jpg" alt="通往奴役之路" style="zoom:80%;" /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/通往奴役之路.jpg" alt="通往奴役之路" style="zoom:80%;" /></figure>
 
 &emsp;&emsp;哈耶克的地位无需多述，在当代社会与经济学领域中，无出其右者。推荐本书最核心的原因是：**其对现代社会政治体系的深刻剖析**。
 
@@ -75,31 +75,31 @@ last_modified_at: 2021-12-31T19:25:52-05:00
 
 ### 1、《卓有成效的管理者》  作者：彼得·德鲁克
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/卓有成效的管理者.jpg" alt="卓有成效的管理者" style="zoom:80%;" /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/卓有成效的管理者.jpg" alt="卓有成效的管理者" style="zoom:80%;" /></figure>
 
 &emsp;&emsp;如果只看一本管理书，那必定是这本！彼得·德鲁克不愧为“现代管理学之父”，这本书几乎将管理的精髓全部道出！我认为这也是彼得·德鲁克最顶尖的著作。后期他的很多著作虽然也非常经典，但是大多数观点都能从这本书中找出影子。
 
 ### 2、《追求卓越》  作者：汤姆·彼得斯
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/追求卓越.jpg" alt="追求卓越" style="zoom:80%;" /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/追求卓越.jpg" alt="追求卓越" style="zoom:80%;" /></figure>
 
 &emsp;&emsp;汤姆·彼得斯是斯坦福大学工商管理的博士，曾供职于麦肯锡。他的这本书被称为“美国工商管理圣经”，道出了企业管理所有的核心！虽然同类书有很多，包括两本读来甚是爽快的《基业长青》和《从优秀到卓越》，但后两者对企业管理核心的总结与本书相比全面性不足，只是片面的强调个别特质！因而我推荐此书作为管理者必读书目！
 
 ### 3、《追求卓越的激情》  作者：汤姆·彼得斯 / 南希·奥斯汀
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/追求卓越的激情.jpg" alt="追求卓越的激情" style="zoom:80%;" /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/追求卓越的激情.jpg" alt="追求卓越的激情" style="zoom:80%;" /></figure>
 
 &emsp;&emsp;这本书虽然同为汤姆·彼得斯之作，但是其名气却远小于《追求卓越》，但其实真正的管理精髓都在这本书中！《追求卓越》是介绍管理追求的最终目标，而本书则是介绍管理者该如何行动！
 
 ### 4、《格鲁夫给经理人的第一堂课》  作者：安迪·格鲁夫
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/格鲁夫给经理人的第一课.jpg" alt="格鲁夫给经理人的第一课" style="zoom:80%;" /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/格鲁夫给经理人的第一课.jpg" alt="格鲁夫给经理人的第一课" style="zoom:80%;" /></figure>
 
 &emsp;&emsp;安迪·格鲁夫是Intel的创始人之一，也是管理践行的大师！如果你不懂管理到底是什么，这本书就用非常浅显而形象的做菜为例，将管理明晰地道出！这是所有对管理仍旧懵懂者的必读书目！
 
 ### 5、《In The Plex》  作者：Steven Levy
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/InthePlex.jpg" alt="InthePlex" style="zoom:80%;" /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/InthePlex.jpg" alt="InthePlex" style="zoom:80%;" /></figure>
 
 &emsp;&emsp;现代管理的历程中，有很多企业是具有革命性的，比如T型车时代的福特、个人电脑时代的Dell、分散创新的3M、完全自主的塞姆勒、精益文化的丰田等等，但是如果要论当今企业的管理风潮源于何处，那必然是Google。
 

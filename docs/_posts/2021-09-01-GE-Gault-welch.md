@@ -40,7 +40,7 @@ last_modified_at: 2021-09-01T19:25:52-05:00
 
 &emsp;由此，《财富》杂志评选其为“二十世纪最佳经理人”，《产业周刊》称其为“最令人尊敬的CEO”,并且被“现代管理学之父”彼得·德鲁克称为“本世纪最优秀的公司领导”。
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Jack-Welch7.jpg" alt="Jack-Welch7" style="zoom:67%;" />
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Jack-Welch7.jpg" alt="Jack-Welch7" style="zoom:67%;" /></figure>
 
 &emsp;杰克·韦尔奇取得如此成就，也有人怀疑是因为韦尔奇在GE的岁月正是全球经济最旺盛的时代。但是很多其他公司却没能像GE一样创造如此的辉煌，并且韦尔奇也在GE施行了许多极为成功的管理实践，包括“二七一”人才结构、克罗顿维尔培训模式、“数一数二”策略等等。那么这些是否就能证明只有韦尔奇能带领GE创造如此成就呢？我们从1980年GE掌门人的候选人中寻找答案。
 
@@ -48,7 +48,7 @@ last_modified_at: 2021-09-01T19:25:52-05:00
 
 &emsp;随后又进行了第二轮“机舱面试”，这一轮的面试问题稍有改变：飞机坠毁了，但只有“我”这个董事长在这架飞机上，你觉得谁最适合继任GE的董事长？哪两位适合当副手？韦尔奇毫不犹豫地选择了自己。最后的高层投票中，韦尔奇的处境也比第一次好多了，斯坦·格尔特获得了7票，埃德·胡德和韦尔奇分别得了6票。
 
-&emsp;到1979年底时，候选人已经减少到三位，分别为约翰·柏林盖德、埃德·胡德和杰克·韦尔奇，三人都进入了GE的董事会，成为副董事长。随后的结果大家也知道了，1981年杰克·韦尔奇成为GE掌门人，同时担任了GE的董事长和CEO，成为雷吉·琼斯的继任者。
+<figure class="fr-figure"><img src="https://kewtgh.github.io/PicSunflowers/img/2022/坎尼会战战况图.png" alt="坎尼会战战况图"  /></figure>
 
 &emsp;那么当时的几位候选人又分别是什么情况呢？如果他们成为雷吉·琼斯的继任者，能创造同样甚至更好的成就吗？我们就来一一分析。
 
@@ -56,7 +56,7 @@ last_modified_at: 2021-09-01T19:25:52-05:00
 
 ### 斯坦利·格尔特（Stanley Gault）
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Stanley-Gault3.jpeg" alt="Stanley-Gault3" style="zoom: 67%;" /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Stanley-Gault3.jpeg" alt="Stanley-Gault3" style="zoom: 67%;" /></figure>
 
 &emsp;在第一次“机舱面试”中，斯坦利·格尔特获得了9票中的7票，是最受青睐的候选人之一。格尔特生于1926年，他父亲是伍斯特橡胶公司的创始人之一。在格尔特出生后，他父亲就出售了伍斯特橡胶公司的股份，不再参与经营，所以格尔特的童年也并不富裕。
 
@@ -78,7 +78,7 @@ last_modified_at: 2021-09-01T19:25:52-05:00
 
 &emsp;杰克·韦尔奇因为在GE施行了“数一数二”和“二七一”管理策略，而获得“中子杰克”的称号。前者是只保留那些在市场中能成为第一或第二占有率的业务部门；后者是将全部员工按照20%优秀、70%普通和10%淘汰来划分，每年有10%的人会被裁掉。由此致使GE的岗位从40万削减为30万，裁员规模超过10万人。即使如此，韦尔奇和格尔特比起来也相形见绌。
 
-​	<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Welch&Gault.jpg" alt="Welch&Gault"  />
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Welch&Gault.jpg" alt="Welch&Gault"  /></figure>
 
 &emsp;格尔特因为坚定地认可自己，所以他对自己的想法和决定几乎不会动摇，所以一旦董事会与其发生分歧，必然会以不可调和的方式收场。而韦尔奇则不同，虽然他在GE的裁员规模远远超过格尔特，但他却并不那么笃信自己。韦尔奇希望获得的更像是他其中一本书的名字描述的一样——《赢》，他渴望的是获胜，所以是在探索中寻求事物的解决方法。在其自传中也多次可以看到他流露出的自我怀疑的想法，这同样也像是《至暗时刻》时刻中的丘吉尔一样，他们都渴望成为那个创造历史的人，但却时刻经受着自我怀疑、压力、身体的痛苦的折磨和考验。也因此，格尔特没能成为最终的候选三人。另外，传言格尔特1980年果决地离开GE，主要是因为他得知了韦尔奇将获选，而他和韦尔奇曾因为空调的外部结构材料方面有过冲突。这也凸显了其固执的性格特点。
 

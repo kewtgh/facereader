@@ -30,21 +30,13 @@ last_modified_at: 2023-09-15T19:25:52-05:00
 
 ## 中国惨不忍睹的体育成绩
 
-<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/中国男足.jpg" alt="中国男足" /><br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">中国男足</div>
-</center>
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/中国男足.jpg" alt="中国男足" /><figcaption>中国男足</figcaption>
+</figure>
 
 &emsp;&emsp;“集中力量办大事”一直是中国政府引以为傲的事情，尤其在体育成绩方面。中国在夏季奥运会的奖牌总数一直名列前三。但近些年中国的团体运动项目却日渐衰败，2020年的东京奥运会，中国的男篮、男足和男排国家队均未能获得奥运资格，这是中国国家队男子大球项目的历史首次全面落选。
 
-<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/中国女排.jpg" alt="中国女排-战败" /><br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">中国女排</div>
-</center>
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/中国女排.jpg" alt="中国女排-战败" /><figcaption>中国女排</figcaption>
+</figure>
 
 &emsp;&emsp;当然，表现差的不止有国家男队，中国国家女队的战绩也屡创“纪录”。比如，曾经傲然世界的中国女排，2016年还曾夺得奥运会冠军，但是2020年奥运会却未能小组出线，创造奥运参赛以来的最差战绩；中国女足，2007年以前都处于世界八强水平，且在1999年曾获得过世界杯亚军，但自2015年以后，世界杯和奥运会成绩就每况愈下，在2020年的东京奥运会和2023年的女足世界杯上都止步小组赛。
 
@@ -64,12 +56,8 @@ last_modified_at: 2023-09-15T19:25:52-05:00
 
 &emsp;&emsp;“举国体制”创造的成绩本身并不能促进相应项目真正的提升，就比如虽然中国在跳水、乒乓球等项目上成绩优异，但并未促进整个国民在相关领域的体育进步，跳水和乒乓球产业也并未有蓬勃的发展，其俱乐部和联赛仍然主要是政府主导的活动。
 
-<center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/乒乓球-跳水.jpg" alt="乒乓球-跳水" /><br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">乒乓球-跳水</div>
-</center>
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/乒乓球-跳水.jpg" alt="乒乓球-跳水" /><figcaption>乒乓球-跳水</figcaption>
+</figure>
 
 
 &emsp;&emsp;跳水是最明显的，既没有联赛，也没有俱乐部，民间看不到任何相关领域的发展。乒乓球略好一些的原因是，成本低廉，这对于一个贫穷的国家而言，是除了跑步之外，成本最低的运动项目，所以参与人数众多，但专业的技术教练却很少在民间普及，也极少有人愿意付费去参加乒乓球培训。

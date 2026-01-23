@@ -53,7 +53,7 @@ last_modified_at: 2022-12-31T23:59:59-05:00
 
 &emsp;&emsp;“U型理论”总共包含七个阶段：
 
-<div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/2022/U型理论.jpg" alt="U型理论"  /></div>
+<figure class="fr-figure"><img src="https://kewtgh.github.io/PicSunflowers/img/2022/U型理论.jpg" alt="U型理论"  /></figure>
 
 > - 下载：重复过去的模式——按个人的习惯思维方式看待世界；
 >

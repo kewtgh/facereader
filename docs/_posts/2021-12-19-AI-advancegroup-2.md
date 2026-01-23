@@ -91,7 +91,7 @@ last_modified_at: 2021-12-19T19:25:52-05:00
 
 &emsp;&emsp;对于企业的一把手而言，极度聪明，以及极度聪明产生的高冷，都不利于其成功。大多数有所成就的企业家，都非常谦逊，没有丝毫高人一等的感觉，比如下面几位：
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/19-17-37-47-%E4%BF%9E%E6%95%8F%E6%B4%AA-%E7%8E%8B%E5%85%B4-%E5%BC%A0%E9%82%A6%E9%91%AB-%E9%9B%B7%E5%86%9B.jpg" alt="俞敏洪-王兴-张邦鑫-雷军.jpg"  />
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/19-17-37-47-%E4%BF%9E%E6%95%8F%E6%B4%AA-%E7%8E%8B%E5%85%B4-%E5%BC%A0%E9%82%A6%E9%91%AB-%E9%9B%B7%E5%86%9B.jpg" alt="俞敏洪-王兴-张邦鑫-雷军.jpg" /></figure>
 
 ## 五、CSO  [Bernard Chan](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/18-21-38-06-Bernard%20Chan.jpg)
 
@@ -173,7 +173,7 @@ last_modified_at: 2021-12-19T19:25:52-05:00
 
 &emsp;&emsp;整体评价，领创集团的团队评分为：
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/19-14-36-13-advancegroup-team-assess.png" alt="advancegroup-team-assess.png"  />
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/19-14-36-13-advancegroup-team-assess.png" alt="advancegroup-team-assess.png" /></figure>
 
 ---
 

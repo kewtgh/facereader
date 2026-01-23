@@ -45,7 +45,7 @@ last_modified_at: 2021-09-05T19:25:52-05:00
 
 ### 埃德·胡德（Ed hood）
 
-<div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/Edward E. Hood.jpg" alt="Edward E. Hood" style="vertical-align:middle;" /></div>
+<figure class="fr-figure"><img src="https://kewtgh.github.io/PicSunflowers/img/Edward E. Hood.jpg" alt="Edward E. Hood" style="vertical-align:middle;" /></figure>
 
 &emsp;两次“机舱面试”中，埃德·胡德都获得了高层的投票，所获得的高层票数也仅次于斯坦利·格尔特，可见其是非常被认可的。但最后或许是因为斯坦利·格尔特的性格过于倔强，或许是雷吉·琼斯有意推举杰克·韦尔奇做接班人，所以特意淘汰了和韦尔奇有矛盾的斯坦利·格尔特。但这也使得埃德·胡德看起来更有胜算，那他又有什么样的履历呢？
 
@@ -53,7 +53,7 @@ last_modified_at: 2021-09-05T19:25:52-05:00
 
 &emsp;胡德的性格和斯坦利·格尔特完全不同，胡德**平和、稳健，颇有长者之风**，是副手的不二人选。也因此胡德接班人的竞争中落败后，依然能和杰克·韦尔奇共事十三年。也因此我们能有另一张胡德的照片：
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Welch-with-Lawrence-Bossidy-and-Ed-Hood-scaled.jpg" alt="Welch-with-Lawrence-Bossidy-and-Ed-Hood-scaled"  />
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Welch-with-Lawrence-Bossidy-and-Ed-Hood-scaled.jpg" alt="Welch-with-Lawrence-Bossidy-and-Ed-Hood-scaled"  /></figure>
 
 &emsp;照片中最左边就是胡德，最后边则是韦尔奇。
 
@@ -67,4 +67,4 @@ last_modified_at: 2021-09-05T19:25:52-05:00
 
 &emsp;能选出杰克·韦尔奇，足见雷吉·琼斯在用人方面的过人之处！杰克·韦尔奇当初是被排除在96人的接班人候选名单之外的，因为雷吉·琼斯的破格选用，才将杰克·韦尔奇纳入候选人名单之中，并最终成为GE的董事长，创造了令人惊艳的成绩。可见，接班人的选用是需要魄力和勇气的。
 
-&emsp;杰克·韦尔奇不缺魄力和勇气，却在自己的接班人遴选中，出现了严重失误。他选任的杰夫·伊梅尔特在任的16年期间，GE的股价从45.73美元跌至17.04美元，营收从全年1400亿美金降低到1200亿美金，盈利从全年127亿美金降低到巨亏58亿美金。就连杰克·韦尔奇自己都不得不承认其在选择接班人上的失误。那么如此之大的失误是因为什么呢？其他的候选人是否会比伊梅尔特更胜任呢？下一期跟大家分享。
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Baffet&Munger.jpg" alt="Baffet&Munger" /></figure>

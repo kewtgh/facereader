@@ -82,7 +82,7 @@ last_modified_at: 2021-08-19T22:25:52-05:00
 
 &emsp;&emsp;安聪慧于1996年加入吉利集团，先后担任工程总指挥、总经理、副总裁、总裁等职务。他从吉利汽车初创阶段就开始参与并主导了多个生产基地的建设、以及多款热销车型的研发生产。从2011年开始担任吉利汽车集团CEO，曾领导吉利汽车连续四年蝉联自主品牌乘用车销量冠军。
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Snipaste_2021-08-18_20-06-18.png" alt="吉利汽车销量"  />
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Snipaste_2021-08-18_20-06-18.png" alt="吉利汽车销量"  /></figure>
 
 &emsp;&emsp;安聪慧是吉利集团非常重要的人物，一方面因其负责吉利最重要的部门——汽车集团，另一方面也因其担任汽车集团CEO时创造的成就！目前吉利集团能成为国产汽车中的领头羊，主要是在安聪慧的领导之下成就的。上图中橙色线就是从2012年7月至2021年6月吉利汽车的总销量，从2017年开始，吉利汽车就将长安汽车和比亚迪远远甩在身后，直追上汽大众。
 
@@ -110,6 +110,6 @@ last_modified_at: 2021-08-19T22:25:52-05:00
 
 &emsp;&emsp;吉利集团的核心人员任用情况评分：
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/geely.png" alt="geely"  />
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/geely.png" alt="geely"  /></figure>
 
 &emsp;&emsp;吉利集团的高层大都属于尚可且略有所长的情况，没有哪些岗位的任用是非常耀眼的，这样的团队在运营一家普通企业时尚可，但想创造一家卓越企业则很难。目前随着汽车市场的整体下滑，并且乘用车市场新能源汽车在逐渐取代燃油汽车的变革时期，是否有优秀的团队是能否在市场中赢得先机的关键。随着国内汽车市场的消费升级变革，李书福的草莽打拼方式已经不再适合市场的需求，而专业和精英化是国产汽车必须转型的方向，但是目前并未看到吉利集团能有这样的领导者，吉利集团很有可能会在未来五年之内面临衰落的困境，现在的阶段可能是其未来命运中，最关键但最不起眼的阶段。

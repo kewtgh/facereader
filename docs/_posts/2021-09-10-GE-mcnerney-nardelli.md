@@ -39,7 +39,7 @@ last_modified_at: 2021-09-10T19:25:52-05:00
 
 &emsp;而伊梅尔特在成为GE掌门人后做了什么呢？
 
-<div align=center><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Jeff-Immelt3.jpg" alt="Jeff-Immelt3"  /></div>
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Jeff-Immelt3.jpg" alt="Jeff-Immelt3" /></figure>
 
 - 2002年至2007年间大力进行GE金融的国际化扩张，从而使GE金融部门的负债推高至无法承受的风险程度，而经历“次贷危机”后，便开始大规模出售金融资产。
 - 出售了NBC电视台、泰国大城银行、GE地产、私募股权贷款业务等大量金融和资本相关的业务，16年间以4000亿美元的总价卖出了370笔资产，其所出售的业务虽然因“911”和“次贷危机”而受到影响，但大多数都是可靠的营收和利润来源。
@@ -61,7 +61,7 @@ last_modified_at: 2021-09-10T19:25:52-05:00
 
 ### 詹姆斯·麦克纳尼（James McNerney）
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/詹姆斯·麦克纳尼2.jpg" alt="詹姆斯·麦克纳尼2" style="zoom: 67%;" /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/詹姆斯·麦克纳尼2.jpg" alt="詹姆斯·麦克纳尼2" style="zoom: 67%;" /></figure>
 
 &emsp;麦克纳尼1949年生于美国罗德岛州的普罗维登斯，大学就读于耶鲁大学并于1971年获得文学学士学位，毕业后在British United Provident和G.D. Searle, LLC工作了一年，之后进入哈佛商学院并于1975年获得MBA学位。
 
@@ -77,17 +77,17 @@ last_modified_at: 2021-09-10T19:25:52-05:00
 
 &emsp;但是他20多年前的照片中并非如此：
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/James-McNerney.jpg" alt="James-McNerney"  /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/James-McNerney.jpg" alt="James-McNerney" /></figure>
 
 &emsp;那个阶段的麦克纳尼略带锋芒，从容度也较如今略弱一些，所以这可能是其在GE接班人竞争中落选的重要原因。他很可能会提出很多和韦尔奇经营理念不同的见解。
 
 &emsp;那个时期的麦克纳尼略有些像乔老爷子年轻时的性格：
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/steve-jobs.jpg" alt="steve-jobs" style="zoom: 67%;" /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/steve-jobs.jpg" alt="steve-jobs" style="zoom: 67%;" /></figure>
 
 &emsp;而如今，他的从容和谦逊则和另一位CEO颇为相似：
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/MS-Execs-2017-02-Nadella-Satya-Portraits-11-rt-1024x780.jpg" alt="MS-Execs-2017-02-Nadella-Satya-Portraits-11-rt-1024x780" style="zoom: 50%;" /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/MS-Execs-2017-02-Nadella-Satya-Portraits-11-rt-1024x780.jpg" alt="MS-Execs-2017-02-Nadella-Satya-Portraits-11-rt-1024x780" style="zoom: 50%;" /></figure>
 
 &emsp;后面这位是Microsoft的现任CEO萨提亚·纳德拉。
 
@@ -97,7 +97,7 @@ last_modified_at: 2021-09-10T19:25:52-05:00
 
 ### 罗伯特·纳代利（Robert Nardelli)
 
-<div align=center><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Robert-Nardelli.jpg" alt="Robert-Nardelli"  /></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/Robert-Nardelli.jpg" alt="Robert-Nardelli" /></figure>
 
 &emsp;罗伯特·纳代利生于1948年的宾州，之后于1971年在西伊利诺伊大学获得商业学士学位，毕业后纳代利便加入GE，担任初级制造工程师。在GE工作期间，纳代利又于1975年在路易斯维尔大学获得MBA学位。
 

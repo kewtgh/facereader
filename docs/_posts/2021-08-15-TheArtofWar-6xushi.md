@@ -30,7 +30,7 @@ last_modified_at: 2021-08-15T20:25:52-05:00
 
 &emsp;&emsp;先来看看汉尼拔的进军路线：
 
-<img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/汉尼拔进军路线.png" alt="汉尼拔进军路线"  />
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/汉尼拔进军路线.png" alt="汉尼拔进军路线"  /></figure>
 
 &emsp;&emsp;汉尼拔首先翻过阿尔卑斯山，接连打了三仗：提基努斯河会战、特雷比亚河战役和特拉西美诺湖战役。
 
@@ -46,11 +46,11 @@ last_modified_at: 2021-08-15T20:25:52-05:00
 
 &emsp;&emsp;汉尼拔的布阵，最中间是5千战力最差的高卢新兵，配以8千西班牙重装步兵，最能打的1万2千名非洲重装步兵列于两边，两翼也是骑兵。
 
-<img src="https://kewtgh.github.io/PicSunflowers/img/2022/坎尼会战布阵图.png" alt="坎尼会战布阵图"  />
+<figure class="fr-figure"><img src="https://kewtgh.github.io/PicSunflowers/img/2022/坎尼会战布阵图.png" alt="坎尼会战布阵图"  /></figure>
 
 &emsp;&emsp;战争初始，最中间的罗马步兵占有优势，于是不断推进，而两侧的步兵却被非洲重装步兵压制。而汉尼拔的骑兵也占有优势，不久便把罗马骑兵打散了。此时，骑兵返回包抄，罗马人彻底被包了饺子。之后在骑兵的冲击之下罗马人被分割包围，陷入了死地。
 
-<img src="https://kewtgh.github.io/PicSunflowers/img/2022/坎尼会战战况图.png" alt="坎尼会战战况图"  />
+<figure class="fr-figure"><img src="https://kewtgh.github.io/PicSunflowers/img/2022/坎尼会战战况图.png" alt="坎尼会战战况图"  /></figure>
 
 &emsp;&emsp;此一役，罗马人损失了约8万军队，现任执政官保卢斯和两位前任执政官、二十九位军团将校、八十位罗马元老阵亡。罗马在任的执政官总共就两位，在任军团将校总共四十八位，元老院成员总共不到三百人。
 
@@ -140,7 +140,7 @@ last_modified_at: 2021-08-15T20:25:52-05:00
 
 &emsp;&emsp;四是，“形”与“无形”的兵法思想；
 
-&emsp;&emsp;五是，“兵形象水”，“兵无常势，水无常形”。
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/空降地点.png" alt="空降地点"  /></figure>
 
 ---
 

@@ -38,7 +38,7 @@ last_modified_at: 2022-01-16T19:25:52-05:00
 
 &emsp;&emsp;当年嘉庆皇帝正是因此由意气风发变得意志消沉。
 
-<div align=center><img src="https://kewtgh.github.io/PicSunflowers/img/2022/嘉庆帝.jpg" alt="嘉庆帝" style="zoom:80%;" /></div>
+<figure class="fr-figure"><img src="https://kewtgh.github.io/PicSunflowers/img/2022/嘉庆帝.jpg" alt="嘉庆帝" style="zoom:80%;" /></figure>
 
 &emsp;&emsp;在登基之前，嘉庆皇帝就看厌了他爹乾隆统治的腐败，因此满怀抱负，励精图治。在乾隆皇帝驾崩后五天，嘉庆皇帝就查办了权倾朝野的和绅，并且没收了其全部家产；不久又处死了以权谋私的漕运总督富纲。之后为了平定了白莲教之乱，嘉庆帝还任用松筠、长龄、额勒登保等一众贤臣能将。他想让大清面貌一新。
 
