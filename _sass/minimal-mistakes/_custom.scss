@@ -266,10 +266,11 @@ body { line-height: 1.7; }
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-/* hover：浅色底，不遮字 */
+/* hover */
 .sidebar .nav__items a:hover,
 .sidebar .nav__items a:focus {
-  color: rgba(255, 255, 255, 0.95) !important; /* ✅白色系 */
+  background: rgba(34, 48, 66, 0.62) !important;    /* ✅深底 */
+  color: rgba(255, 255, 255, 0.96) !important;      /* ✅白字 */
 }
 
 /* active/current：也别太深 */
@@ -277,7 +278,7 @@ body { line-height: 1.7; }
 .sidebar .nav__items a.active,
 .sidebar .nav__items a[aria-current="true"],
 .sidebar .nav__items a[aria-current="page"] {
-  background: rgba(176, 127, 74, 0.16) !important; /* ✅比 hover 稍深但不遮字 */
+  background: rgba(34, 48, 66, 0.72) !important; /* ✅比 hover 稍深但不遮字 */
   color: rgba(255, 255, 255, 0.96) !important;
   font-weight: 700 !important;
 }

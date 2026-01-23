@@ -330,8 +330,6 @@ collections:
     most_popular:
       output: true
       permalink: /:collection/:path/
-    tag_archive:
-      output: true
 
 # Defaults
 defaults:
