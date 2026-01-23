@@ -262,8 +262,10 @@ last_modified_at: 2023-10-06T19:25:52-05:00
 
 &emsp;&emsp;**而净利润前十的企业，全是金融和垄断国企。**
 
-<figure class="fr-figure"><img src="https://kewtgh.github.io/PicSunflowers/img/2023/2021年A股净利润前十企业.png" alt="2021年A股净利润前十企业" /><figcaption>2021年A股净利润前十企业</figcaption>
+<figure class="fr-figure"><img src="https://kewtgh.github.io/PicSunflowers/img/2023/2021年A股净利润前十企业.png" alt="2021年A股净利润前十企业" />
+    <figcaption>2021年A股净利润前十企业</figcaption>
 </figure>
+
 
 &emsp;&emsp;可想而知，如果除去这些垄断国企和金融企业，中国上市公司中的民营企业的利润情况如何？
 

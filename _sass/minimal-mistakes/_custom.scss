@@ -80,6 +80,12 @@ body { line-height: 1.7; }
 .page__content figure.fr-figure {
   margin: 1.2rem auto 1.5rem !important;
   text-align: center !important;
+  
+  /* 覆盖 _base.scss 的 figure:flex + space-between */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
 }
 
 .page__content figure.fr-figure > img {
