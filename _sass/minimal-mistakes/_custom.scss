@@ -62,8 +62,15 @@ body { line-height: 1.7; }
 }
 
 /* =====================================================
- * 图片Caption (fr-figure + Markdown img+em fallback)
+ * 图片和Caption (fr-figure + Markdown img+em fallback)
  * ===================================================== */
+
+/* 通用兜底：正文里的图片不要强制 100% 宽 */
+.page__content img {
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
 
 /* ---- A) figure.fr-figure 标准写法 ---- */
 .page__content figure.fr-figure {
@@ -75,6 +82,7 @@ body { line-height: 1.7; }
   display: block !important;
   margin: 0 auto !important;
   max-width: 100% !important;
+  width: auto !important;
   height: auto !important;
   border-radius: 0.6rem;
 }
@@ -267,8 +275,8 @@ body { line-height: 1.7; }
  * ===================================================== */
 .sidebar__right .toc,
 .sidebar .toc {
-  background: rgba(255, 255, 255, 0.55) !important;  /* ✅更淡 */
-  border: 1px solid rgba(34, 48, 66, 0.10) !important;
+  background: rgba(255, 255, 255, 0.45) !important;  /* ✅更淡 */
+  border: 1px solid rgba(34, 48, 66, 0.08) !important;
   border-radius: 0.95rem !important;
   box-shadow: none !important;
   overflow: hidden;
@@ -277,10 +285,10 @@ body { line-height: 1.7; }
 /* TOC 标题条：别太黑 */
 .sidebar__right .toc__title,
 .sidebar .toc__title {
-  background: rgba(34, 48, 66, 0.06) !important;
-  color: rgba(34, 48, 66, 0.70) !important;
+  background: rgba(34, 48, 66, 0.05) !important;
+  color: rgba(34, 48, 66, 0.62) !important;
   font-weight: 800 !important;
-  padding: 0.45rem 0.65rem !important;
+  padding: 0.38rem 0.6rem !important;
   border-bottom: 1px solid rgba(34, 48, 66, 0.10) !important;
   margin: 0 !important;
 }
@@ -295,24 +303,27 @@ body { line-height: 1.7; }
 .sidebar__right .toc__menu,
 .sidebar .toc__menu {
   margin: 0 !important;
-  padding: 0.15rem 0 !important;
-  font-size: 0.78rem !important;                      /* ✅继续缩小 */
-  line-height: 1.22 !important;
+  padding: 0.12rem 0 !important;
+  font-size: 0.76rem !important;                      /* ✅继续缩小 */
+  line-height: 1.18 !important;
 }
 
 .sidebar__right .toc__menu a,
 .sidebar .toc__menu a {
   border-top: none !important;          /* ✅去横线 */
-  padding: 0.28rem 0.65rem !important;  /* ✅更紧凑 */
+  padding: 0.22rem 0.6rem !important;  /* ✅更紧凑 */
   margin: 0 !important;
-  color: rgba(111, 78, 55, 0.78) !important; /* ✅微棕色（更有“纸张感”） */
+  color: rgba(111, 78, 55, 0.70) !important; /* ✅微棕色（更有“纸张感”） */
 }
 
 /* ul 默认 margin/padding 会拉开行距，强制清零 */
 .sidebar__right .toc__menu ul,
-.sidebar .toc__menu ul {
+.sidebar .toc__menu ul,
+.sidebar__right .toc__menu li,
+.sidebar .toc__menu li {
   margin: 0 !important;
   padding: 0 !important;
+  border: none !important;
 }
 
 /* hover/active 更柔和 */
@@ -325,13 +336,13 @@ body { line-height: 1.7; }
 .sidebar .toc__menu a.active,
 .sidebar__right .toc__menu a[aria-current="true"],
 .sidebar .toc__menu a[aria-current="true"] {
-  background: rgba(176, 127, 74, 0.10) !important;
+  background: rgba(176, 127, 74, 0.09) !important;
   font-weight: 700 !important;
 }
 
 .sidebar__right .toc__menu li ul > li a,
 .sidebar .toc__menu li ul > li a {
-  padding-left: 0.95rem !important;
+  padding-left: 0.9rem !important;
 }
 
 /* =====================================================
@@ -430,13 +441,13 @@ body { line-height: 1.7; }
 .page__content blockquote {
   margin: 1.5rem 0;
   padding: 0.9rem 1.1rem 0.9rem 1.2rem;
-  border-inline-start: 4px solid $primary-color;
-  background: mix($background-color, #ffffff, 70%);
+  border-inline-start: 4px solid rgba(34, 48, 66, 0.55) !important;
+  background: mix($background-color, #ffffff, 80%);
   border-radius: 0.6rem;
   font-family: $serif;
   font-style: normal;
   font-size: 1.02em;
-  color: darken($text-color, 5%);
+  color: rgba(34, 48, 66, 0.92) !important;
   position: relative;
 }
 .page__content blockquote p { margin: 0.3rem 0; }
@@ -449,7 +460,7 @@ body { line-height: 1.7; }
   font-family: $serif;
   font-size: 2.6rem;
   line-height: 1;
-  color: rgba($primary-color, 0.2);
+  color: rgba(34, 48, 66, 0.18) !important; /* 引号装饰更清晰 */
   pointer-events: none;
 }
 
@@ -638,6 +649,27 @@ body { line-height: 1.7; }
 .home-cta--about .home-cta__text {
   flex: 1 1 320px;
   min-width: 0;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important; /* ✅正文保持左对齐 */
+}
+
+.home-cta--about .home-cta__text .btn,
+.home-cta--about .home-cta__text .btn--primary,
+.home-cta--about .home-cta__text a.btn {
+  align-self: center !important;     /* ✅按钮自身居中 */
+  margin-top: 1.1rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: inline-flex !important;
+}
+
+/* 有的主题按钮被包在 p 里，p 会占满宽导致看起来“不居中” */
+.home-cta--about .home-cta__text p:has(> .btn),
+.home-cta--about .home-cta__text p:has(> a.btn) {
+  width: 100%;
+  text-align: center !important;
+  margin-top: 1rem !important;
 }
 
 /* 小屏：变一列 */
