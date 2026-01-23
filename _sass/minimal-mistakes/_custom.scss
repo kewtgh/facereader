@@ -613,94 +613,109 @@ body { line-height: 1.7; }
 }
 
 /* =========================
- * 首页 About CTA：修复混乱（稳定两列 + 小屏变一列）
+ * Home About CTA (KEY - replace whole section)
  * ========================= */
+
 .home-section--about-cta { clear: both; }
 
-.home-cta--about {
-  background: mix(#ffffff, $background-color, 92%);
-  border: 1px solid mix(#000, $border-color, 8%);
-  border-radius: 1.1rem;
-  padding-left: 2rem !important;
-  padding-right: 2rem !important;
-  padding-bottom: 1.35rem !important;
+/* 卡片本体 */
+.home-section--about-cta .home-cta--about {
+  background: mix(#ffffff, $background-color, 92%) !important;
+  border: 1px solid mix(#000, $border-color, 8%) !important;
+  border-radius: 1.1rem !important;
+
+  padding: 1.35rem 2rem 1.55rem !important; /* ✅底部留白更明显 */
+  overflow: hidden;
 }
 
 /* 桌面：两列稳定 */
-.home-cta--about .home-cta__inner {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap; /* ✅避免挤爆 */
+.home-section--about-cta .home-cta--about .home-cta__inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1.75rem !important;
+  flex-wrap: wrap !important; /* ✅避免挤爆 */
 }
 
-.home-cta--about .home-cta__media {
-  flex: 0 0 340px;   /* ✅稳定媒体宽度 */
-  max-width: 340px;
+/* 左侧图片区 */
+.home-section--about-cta .home-cta--about .home-cta__media {
+  flex: 0 0 340px !important;
+  max-width: 340px !important;
 }
 
-.home-cta--about .home-cta__media img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 1rem;
-}
-
-/* 文字区自适应 */
-.home-cta--about .home-cta__text {
-  flex: 1 1 320px;
-  display: grid !important;
-  grid-template-rows: auto 1fr auto; /* 标题段落 / 正文撑开 / 按钮固定在下方 */
-  align-items: start !important;
-  min-width: 0;
-}
-
-/* 正文仍保持左对齐 */
-.home-cta--about .home-cta__text > *:not(.btn):not(a.btn) {
-  text-align: left;
-}
-
-.home-cta--about .home-cta__text .btn,
-.home-cta--about .home-cta__text .btn--primary,
-.home-cta--about .home-cta__text a.btn {
-  justify-self: center !important;  /* ✅ grid 居中 */
-  align-self: center !important;
-  margin-top: 1.25rem !important;
-  margin-bottom: 1.05rem !important; /* ✅按钮下方留间距 */
-  display: inline-flex !important;
-}
-
-/* 有的主题按钮被包在 p 里，p 会占满宽导致看起来“不居中” */
-.home-cta--about .home-cta__text p:has(> .btn),
-.home-cta--about .home-cta__text p:has(> a.btn) {
+.home-section--about-cta .home-cta--about .home-cta__media img {
+  display: block !important;
   width: 100% !important;
-  text-align: center !important;
-  margin-top: 1.25rem !important;
-  margin-bottom: 1.05rem !important; /* ✅按钮下方留间距 */
+  height: 240px !important;
+  object-fit: cover !important;
+  border-radius: 1rem !important;
 }
 
-/* 小屏：变一列 */
+/* 右侧文本区：用 column，把按钮区域独立出来 */
+.home-section--about-cta .home-cta--about .home-cta__text {
+  flex: 1 1 360px !important;
+  min-width: 0 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+}
+
+/* 正文段落左对齐（不影响按钮） */
+.home-section--about-cta .home-cta--about .home-cta__text,
+.home-section--about-cta .home-cta--about .home-cta__text p,
+.home-section--about-cta .home-cta--about .home-cta__text ul,
+.home-section--about-cta .home-cta--about .home-cta__text ol {
+  text-align: left !important;
+}
+
+/* ✅按钮：强制卡片中间（水平居中） */
+.home-section--about-cta .home-cta--about .home-cta__text .btn,
+.home-section--about-cta .home-cta--about .home-cta__text a.btn,
+.home-section--about-cta .home-cta--about .home-cta__text .btn--primary,
+.home-section--about-cta .home-cta--about .home-cta__text a.btn--primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  align-self: center !important;     /* ✅核心：按钮自身居中 */
+  margin: 1.15rem auto 0.95rem !important; /* ✅下方留白 */
+}
+
+/* 兼容：按钮被包在 p/div/span 里（不使用 :has 的写法） */
+.home-section--about-cta .home-cta--about .home-cta__text p:last-child,
+.home-section--about-cta .home-cta--about .home-cta__text div:last-child,
+.home-section--about-cta .home-cta--about .home-cta__text span:last-child {
+  width: 100% !important;
+  text-align: center !important; /* ✅让内部按钮可居中 */
+  margin-top: 1.15rem !important;
+  margin-bottom: 0.95rem !important; /* ✅按钮下方留白 */
+}
+
+/* 如果按钮在最后一个 p 里，避免 p 自带 margin 影响高度 */
+.home-section--about-cta .home-cta--about .home-cta__text p:last-child {
+  padding: 0 !important;
+}
+
+/* 小屏：一列 */
 @include breakpoint(max-width $medium - 1px) {
-  .home-cta--about .home-cta__inner {
-    flex-direction: column;
-    align-items: stretch;
+  .home-section--about-cta .home-cta--about {
+    padding: 1.15rem 1.25rem 1.35rem !important;
   }
 
-  .home-cta--about .home-cta__media {
-    flex: 1 1 auto;
-    max-width: 100%;
+  .home-section--about-cta .home-cta--about .home-cta__inner {
+    flex-direction: column !important;
+    align-items: stretch !important;
   }
 
-  .home-cta--about .home-cta__media img {
-    height: 200px;
+  .home-section--about-cta .home-cta--about .home-cta__media {
+    flex: 1 1 auto !important;
+    max-width: 100% !important;
   }
-  
-  .home-cta--about {
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
-	padding-bottom: 1.15rem !important;
-  }  
-  
+
+  .home-section--about-cta .home-cta--about .home-cta__media img {
+    height: 200px !important;
+  }
 }
 
 /* =========================
