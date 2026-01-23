@@ -670,16 +670,39 @@ body { line-height: 1.7; }
 }
 
 /* ✅按钮：强制卡片中间（水平居中） */
-.home-section--about-cta .home-cta--about .home-cta__text .btn,
-.home-section--about-cta .home-cta--about .home-cta__text a.btn,
-.home-section--about-cta .home-cta--about .home-cta__text .btn--primary,
-.home-section--about-cta .home-cta--about .home-cta__text a.btn--primary {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+/*.home-section--about-cta .home-cta--about .home-cta__text .btn,
+ *.home-section--about-cta .home-cta--about .home-cta__text a.btn,
+ *.home-section--about-cta .home-cta--about .home-cta__text .btn--primary,
+ *.home-section--about-cta .home-cta--about .home-cta__text a.btn--primary {
+ *  display: inline-flex !important;
+ *  align-items: center !important;
+ *  justify-content: center !important;
+ *
+ *  align-self: center !important;
+ *  margin: 1.15rem auto 0.95rem !important;
+ *} */
 
-  align-self: center !important;     /* ✅核心：按钮自身居中 */
-  margin: 1.15rem auto 0.95rem !important; /* ✅下方留白 */
+/* About CTA 按钮：终极强制居中（无视外层结构） */
+.home-section--about-cta .home-cta--about a.btn,
+.home-section--about-cta .home-cta--about .btn,
+.home-section--about-cta .home-cta--about a.btn--primary,
+.home-section--about-cta .home-cta--about .btn--primary {
+  /* ✅关键：用 table/block + margin auto 让按钮永远在“卡片内容宽度”正中 */
+  display: table !important;
+  width: fit-content !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  /* ✅清掉可能导致偏移的东西 */
+  float: none !important;
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+
+  /* 间距：上、下留白 */
+  margin-top: 1.15rem !important;
+  margin-bottom: 1.1rem !important;
 }
 
 /* 兼容：按钮被包在 p/div/span 里（不使用 :has 的写法） */
