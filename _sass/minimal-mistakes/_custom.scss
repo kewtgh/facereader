@@ -262,7 +262,7 @@ body { line-height: 1.7; }
   background: #eef3fb !important;
   color: #223042 !important;
   font-weight: 800 !important;
-  padding: 0.6rem 0.85rem !important;
+  padding: 0.55rem 0.8rem !important;
   border-bottom: 1px solid rgba(34, 48, 66, 0.10) !important;
 }
 
@@ -275,35 +275,42 @@ body { line-height: 1.7; }
 /* 菜单 */
 .sidebar__right .toc__menu,
 .sidebar .toc__menu {
-  font-size: 0.88rem !important;   /* ✅变小 */
-  line-height: 1.45 !important;    /* ✅变紧 */
-  padding: 0.25rem 0 !important;
+  font-size: 0.8rem !important;   /* ✅变小 */
+  line-height: 1.3 !important;    /* ✅变紧 */
+  padding: 0.2rem 0 !important;
 }
 
 .sidebar__right .toc__menu a,
 .sidebar .toc__menu a {
   border-top: none !important;          /* ✅去横线 */
-  padding: 0.42rem 0.85rem !important;  /* ✅更紧凑 */
-  color: mix($text-color, #000, 78%) !important;
+  padding: 0.34rem 0.8rem !important;  /* ✅更紧凑 */
+  margin: 0 !important;
+  color: #6f4e37 !important; /* ✅微棕色（更有“纸张感”） */
+}
+
+/* 仅用非常淡的分隔线（可选，不想要线可把这段删掉） */
+.sidebar__right .toc__menu li + li a,
+.sidebar .toc__menu li + li a {
+  box-shadow: inset 0 1px 0 rgba(34, 48, 66, 0.06);
 }
 
 /* hover/active 更柔和 */
 .sidebar__right .toc__menu a:hover,
 .sidebar .toc__menu a:hover {
-  background: rgba(51, 117, 255, 0.06) !important;
+  background: rgba(176, 127, 74, 0.08) !important;
 }
 
 .sidebar__right .toc__menu a.active,
 .sidebar .toc__menu a.active,
 .sidebar__right .toc__menu a[aria-current="true"],
 .sidebar .toc__menu a[aria-current="true"] {
-  background: rgba(51, 117, 255, 0.10) !important;
+  background: rgba(176, 127, 74, 0.12) !important;
   font-weight: 800 !important;
 }
 
 .sidebar__right .toc__menu li ul > li a,
 .sidebar .toc__menu li ul > li a {
-  padding-left: 1.15rem !important;
+  padding-left: 1.05rem !important;
 }
 
 /* =====================================================
@@ -323,12 +330,12 @@ body { line-height: 1.7; }
 }
 
 .page__content table:not(.rouge-table) thead th {
-  background: #eef3fb !important;  /* 浅灰蓝 */
+  background: #fff3c4 !important; /* ✅浅黄表头 */
   color: #223042 !important;
   font-weight: 700 !important;
   font-size: 0.9rem !important;
   padding: 0.6rem 0.65rem !important;
-  border-bottom: 1px solid rgba(34, 48, 66, 0.14) !important;
+  border-bottom: 1px solid rgba(138, 104, 60, 0.20) !important;
   text-align: center !important;
 }
 
@@ -346,7 +353,7 @@ body { line-height: 1.7; }
 }
 
 .page__content table:not(.rouge-table) tbody tr:hover td {
-  background: rgba(51, 117, 255, 0.06) !important;
+  background: rgba(255, 210, 90, 0.22) !important;
 }
 
 .page__content table:not(.rouge-table) tbody tr:last-child td {
@@ -519,6 +526,23 @@ body { line-height: 1.7; }
   border-color: #111;
 }
 
+/* 首页：查看全部文章 → 靠右 */
+.home-section--posts .home-section__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between; /* ✅右对齐 */
+  gap: 1rem;
+}
+
+.home-section--posts .home-section__more,
+.home-section__more {
+  margin-left: auto;       /* ✅推到右侧 */
+  text-align: right;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 /* =====================================================
  * 9) 手机端收敛（保持 原策略）
  * ===================================================== */
@@ -565,6 +589,8 @@ body { line-height: 1.7; }
   background: mix(#ffffff, $background-color, 92%);
   border: 1px solid mix(#000, $border-color, 8%);
   border-radius: 1.1rem;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
 }
 
 /* 桌面：两列稳定 */
@@ -608,4 +634,43 @@ body { line-height: 1.7; }
   .home-cta--about .home-cta__media img {
     height: 200px;
   }
+  
+  .home-cta--about {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }  
+  
+}
+
+/* =========================
+ * 正文标题：更突出（h2/h3/h4）
+ * ========================= */
+
+/* h2：章节标题 */
+.page__content h2 {
+  font-size: 1.55rem;
+  font-weight: 850;
+  letter-spacing: 0.01em;
+  margin-top: 2.2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid rgba(34, 48, 66, 0.15);
+}
+
+/* h3：小节标题 */
+.page__content h3 {
+  font-size: 1.22rem;
+  font-weight: 820;
+  margin-top: 1.7rem;
+  margin-bottom: 0.85rem;
+  color: #223042;
+}
+
+/* h4：更细标题 */
+.page__content h4 {
+  font-size: 1.06rem;
+  font-weight: 780;
+  margin-top: 1.3rem;
+  margin-bottom: 0.7rem;
+  color: mix(#223042, #6f4e37, 70%); /* 微棕调，跟 TOC 呼应 */
 }
