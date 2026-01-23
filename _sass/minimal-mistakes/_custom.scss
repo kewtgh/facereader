@@ -265,16 +265,11 @@ body { line-height: 1.7; }
   border-radius: 0.35rem;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
-.sidebar .nav__items a:hover {
-  color: $link-color;
-  background-color: mix($primary-color, #ffffff, 93%);
-}
 
 /* hover：浅色底，不遮字 */
 .sidebar .nav__items a:hover,
 .sidebar .nav__items a:focus {
-  background: rgba(176, 127, 74, 0.10) !important; /* ✅更浅的棕系 */
-  color: rgba(34, 48, 66, 0.92) !important;        /* ✅深色字保证可读 */
+  color: rgba(255, 255, 255, 0.95) !important; /* ✅白色系 */
 }
 
 /* active/current：也别太深 */
@@ -283,7 +278,7 @@ body { line-height: 1.7; }
 .sidebar .nav__items a[aria-current="true"],
 .sidebar .nav__items a[aria-current="page"] {
   background: rgba(176, 127, 74, 0.16) !important; /* ✅比 hover 稍深但不遮字 */
-  color: rgba(34, 48, 66, 0.95) !important;
+  color: rgba(255, 255, 255, 0.96) !important;
   font-weight: 700 !important;
 }
 
