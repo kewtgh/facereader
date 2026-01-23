@@ -270,6 +270,23 @@ body { line-height: 1.7; }
   background-color: mix($primary-color, #ffffff, 93%);
 }
 
+/* hover：浅色底，不遮字 */
+.sidebar .nav__items a:hover,
+.sidebar .nav__items a:focus {
+  background: rgba(176, 127, 74, 0.10) !important; /* ✅更浅的棕系 */
+  color: rgba(34, 48, 66, 0.92) !important;        /* ✅深色字保证可读 */
+}
+
+/* active/current：也别太深 */
+.sidebar .nav__items .active > a,
+.sidebar .nav__items a.active,
+.sidebar .nav__items a[aria-current="true"],
+.sidebar .nav__items a[aria-current="page"] {
+  background: rgba(176, 127, 74, 0.16) !important; /* ✅比 hover 稍深但不遮字 */
+  color: rgba(34, 48, 66, 0.95) !important;
+  font-weight: 700 !important;
+}
+
 /* =====================================================
  * 4) ✅ TOC（右侧目录）美化 —— 与作者/专题统一风格
  * ===================================================== */
