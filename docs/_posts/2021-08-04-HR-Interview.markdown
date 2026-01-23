@@ -72,7 +72,7 @@ last_modified_at: 2021-08-04T20:25:52-05:00
 
 &emsp;&emsp;&emsp;&emsp;&emsp;四大关键问题，“什么”、“如何”、“告诉我更多”了解信息。
 
-- <figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/战争耗费3.jpg" alt="战争耗费3"  /></figure>
+- &emsp;&emsp;你的职业目标是什么？
 
 - &emsp;&emsp;你有哪些职业专长？
 - &emsp;&emsp;你在职业上不擅长什么，或对什么不感兴趣？

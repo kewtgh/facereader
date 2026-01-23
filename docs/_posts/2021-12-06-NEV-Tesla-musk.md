@@ -61,7 +61,7 @@ last_modified_at: 2021-12-06T22:25:52-05:00
 
 &emsp;&emsp;伊隆·马斯克1971年生于南非的行政首都，比勒陀利亞。父亲是英荷混血南非人，是一名飞行员、水手和工程师；母亲生于加拿大，长于南非，是一名模特和营养师。
 
-<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/钱穆-all.jpg" title="" alt="钱穆-all" data-align="center"></figure>
+<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/05-16-38-49-Maye-Errol-Musk-father-mother.jpg" alt="Maye-Errol-Musk-father-mother.jpg"  /></figure>
 
 马斯克有一名小一岁的弟弟和一名小三岁的妹妹，    在他九岁时父母离婚，跟随父亲生活。
 

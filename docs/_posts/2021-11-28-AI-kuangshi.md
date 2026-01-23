@@ -74,7 +74,7 @@ last_modified_at: 2021-11-28T22:25:52-05:00
 
 &emsp;&emsp;2011年10月，印奇先生创立北京旷视科技有限公司；2013年1月，成立Megvii Technology Limited（即旷视科技，注册于开曼群岛），并于2013年至今担任公司执行董事、董事会主席和首席执行官。
 
-<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/陈寅恪-all.jpg" title="" alt="陈寅恪-all" data-align="center"></figure>
+&emsp;&emsp;从其照片可以看出，其**年轻时非常在意自己给他人展现的形象，也略有些虚荣**，很希望通过事业的成功来克服其内心的自卑。旷视科技的成功也的确为他带来了需要的东西，**如今的印奇先生有了更多的从容和自信**。
 
   就其领导角色而言，**潜力足够，但是阅历略浅**。他具有**严谨的思维和较深的认知能力**，因其自身的性格，**对人性也有不错的体察**。
 

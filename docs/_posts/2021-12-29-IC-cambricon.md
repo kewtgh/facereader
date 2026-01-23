@@ -227,7 +227,7 @@ last_modified_at: 2021-12-29T22:25:52-05:00
 
 ### 6、副总经理  [刘道福](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/29-00-34-19-%E5%88%98%E9%81%93%E7%A6%8F-6.jpg)
 
-<figure class="fr-figure"> src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2022/01/24-17-42-29-%E6%B1%87%E9%A1%B6%E7%A7%91%E6%8A%80%E8%B4%A2%E5%8A%A1%E5%88%86%E6%9E%90.png" title="" alt="汇顶科技财务分析.png" data-align="center"></figure>
+&emsp;&emsp;刘道福先生出生于1988年，拥有中科院计算所计算机系统结构博士学位。刘道福先生曾于2015年至2019年就职于中科院计算所，历任助理研究员、高级工程师。
 
 &emsp;&emsp;2016年，刘道福先生作为寒武纪创始团队成员加入公司，现任公司副总经理。
 

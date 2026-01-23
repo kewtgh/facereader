@@ -140,7 +140,7 @@ last_modified_at: 2021-08-15T20:25:52-05:00
 
 &emsp;&emsp;四是，“形”与“无形”的兵法思想；
 
-<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/空降地点.png" alt="空降地点"  /></figure>
+&emsp;&emsp;五是，“兵形象水”，“兵无常势，水无常形”。
 
 ---
 

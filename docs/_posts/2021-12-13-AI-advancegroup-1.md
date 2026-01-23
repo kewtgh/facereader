@@ -69,7 +69,7 @@ last_modified_at: 2021-12-13T22:25:52-05:00
    
     - 东南亚市场：Atome和KreditPintar
     
-    - <figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/14-15-33-56-%E5%85%AC%E6%A0%A1AI%E5%9F%BA%E7%A1%80%E6%80%A7%20%E6%95%99%E8%82%B2%E6%9C%8D%E5%8A%A1%E5%B9%B3%E5%8F%B0.jpg" alt="公校AI基础性 教育服务平台.jpg" /></figure>
+    - 中国大陆市场：微花和崇天小贷
 
 2. AI视觉：人脸识别，扫描AI，文件处理，零售货架识别
 

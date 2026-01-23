@@ -93,7 +93,7 @@ last_modified_at: 2021-08-17T20:25:52-05:00
 
 &emsp;&emsp;“辎重”一般指军队的运输系统、后勤车辆、器械装备、补给运载工具，其中也包括将士个人装备、医疗、帐幕、各种工具等。
 
-<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/geely.png" alt="geely"  /></figure>
+&emsp;&emsp;“委积”一般指长期储备的物资，包括后方粮仓、备用物资、前线补给点、战略储备等。
 
 ## **第三段原文**
 

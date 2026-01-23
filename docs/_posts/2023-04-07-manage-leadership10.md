@@ -44,7 +44,7 @@ last_modified_at: 2023-04-07T19:25:52-05:00
 
 &emsp;&emsp;这是因为，对于小型或者微型企业而言，对人的管理要求并不高，领导者在绝大多数情况下只要管理好自己就可以解决绝大多数问题。
 
-<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2023/brave-heart-william-wallace-shouted-freedom.jpg" alt="brave-heart-william-wallace-shouted-freedom" /></figure>
+&emsp;&emsp;但当企业发展到一定程度的时候，工作的流程和分工变得复杂，对协作的要求也越来越高，更重要的是，如果企业想维持其竞争力，必须任用具有不同优势的人才。而如果领导者不能知人善任，则所用的人才或者不够优秀，或者优势不能匹配，或者优秀人才间的协作出现问题，这都将导致企业面临发展困境。
 
 &emsp;&emsp;那么如何才能做好知人善任呢？
 

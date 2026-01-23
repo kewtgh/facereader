@@ -63,7 +63,7 @@ last_modified_at: 2021-07-29T20:25:52-05:00
 
 ## 三、联合创始人兼CEO 梁汝波 [Photo](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/梁汝波1.png)
 
-<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/xiaopeng.png" alt="xiaopeng"  /></figure>
+&emsp;&emsp;梁汝波 2009年与张一鸣共同创办垂直房产搜索引擎“九九房”。2012年与张一鸣共同创办字节跳动。2012年到2016年担任字节跳动产品研发负责人，负责字节跳动、头条号、广告系统和用户增长系统等产品和业务。2016年起负责飞书和效率工程。2020年起负责集团人力资源和管理等工作。2021年5月20日任字节跳动CEO。 
 
 &emsp;&emsp;梁汝波在成为字节跳动CEO之前一直不为人所熟知，直到接棒字节跳动CEO才一鸣惊人。其能接棒字节跳动CEO最核心的特质源于两点：**可靠和毫无野心**。
 
