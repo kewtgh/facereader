@@ -15,7 +15,9 @@
     "PBL": "society",
     "项目式学习": "society",
     "问题式学习": "society",
-
+    "教育行业": "society",
+    "教育政策": "society",
+    
     "面相": "life",
     "思考": "life",
     "人生": "life",
@@ -31,7 +33,10 @@
     "president": "society",
     "war": "society",
     "Volodymyr Zelensky": "society",
-
+    "Ukraine": "society",
+    "russia": "society",
+    "Russia": "society",
+    
     "唐太宗": "chinese",
     "清朝统治": "chinese",
     "嘉庆帝": "chinese",
@@ -39,7 +44,16 @@
     "陈寅恪": "chinese",
     "李白": "chinese",
     "杜甫": "chinese",
-
+    "中国传统文化": "chinese",
+    "秦始皇": "chinese",
+    "钱穆": "chinese",
+    "苏轼": "chinese",
+    "张居正": "chinese",
+    "唐朝": "chinese",
+    "儒家": "chinese",
+    "中庸": "chinese",
+    "余华": "chinese",
+    
     "半导体": "technology",
     "芯片": "technology",
     "处理器": "technology",
@@ -47,12 +61,26 @@
     "新能源汽车": "technology",
     "电商": "technology",
     "金融服务": "technology",
-
+    "特斯拉": "technology",
+    "蔚来汽车": "technology",
+    "韦尔股份": "technology",
+    "涂鸦智能": "technology",
+    "安世半导体": "technology"
+    "通用电气": "technology",
+    
     "Leadership": "leadership",
     "Integrity": "leadership",
-    "第四范式": "leadership",
-    "4 Paradigm": "leadership",
-    "第五项修炼": "leadership"
+    "第五项修炼": "leadership",
+    "杰克·韦尔奇": "leadership",
+    "企业管理": "leadership",
+    "企业战略": "leadership",
+    "企业文化": "leadership",
+    "领导权威": "leadership",
+    "管理思想": "leadership",
+    
+    "Carol & The End Of The World": "others",
+    "Music": "life",
+    "Self-sacrifice": "life"
   },
 
   "normalize": {
@@ -76,7 +104,11 @@
           "CHIEF OF STAFF", "COS", "CMO", "CSO", "CISO", "CDO", "CIO", "CPO", "CCO", "CLO", "CRO", 
           "Headcount", "HC", "P&L", "OKR", "KPI", "KSF", "SOP", "SLA", "SLI", "SLO", "RCA", "MBTI", "DISC", "NPS", 
           "OKR复盘", "KPI考核", "绩效", "绩效面谈", "复盘", "战略", "组织", "团队", "文化", "激励", "授权", "赋能", "BSC", "平衡计分卡", 
-          "目标管理", "预算管理", "现金流管理", "PM", "产品经理", "项目经理", "Scrum Master", "PO", "交付", "里程碑"
+          "目标管理", "预算管理", "现金流管理", "PM", "产品经理", "项目经理", "Scrum Master", "PO", "交付", "里程碑",
+          "首席执行官", "董事长", "企业管理", "企业领导者", "领导权威", "管理者", "管理思想", "决策", "正确的决策",
+          "经营", "经营能力", "经营数据", "精益创业", "面试方法", "培训体系",
+          "团队管理", "顶尖人才", "圆饼人才", "招募优秀人才", "专业化", "专业化管理", "专业化治理",
+          "价值观", "从优秀到卓越", "战略与运营", "第五级经理人", "魅力权威", "领导力图表"
         ],
         "regex": [
           "董事会|董事长|独立董事|公司治理|企业治理|Corporate\\s+Governance",
@@ -100,7 +132,8 @@
           "精益管理|Lean|六西格玛|Six\\s*Sigma|TQM|质量管理",
           "流程管理|流程优化|流程再造|BPR|BPM",
           "内控|合规|风控|治理|ESG|CSR|审计",
-          "企业文化|文化建设|价值观|文化落地"
+          "企业文化|文化建设|价值观|文化落地",
+          "逻辑架构", "世界架构"
         ],
         "exclude": {
           "regex": [
@@ -126,12 +159,14 @@
           "抖音","今日头条",
           "GE","Tesla","TMT",
           "Atome","Advance Group","OmniVision Group",
-          "闻泰科技","闻泰通讯","汇顶科技","豪威科技","商汤科技","旷视科技","依图科技","云从科技","科大讯飞","燧原科技",
+          "安世半导体", "电源IC", "音频芯片", "消费电子",
+          "韦尔股份", "涂鸦智能", "蔚来汽车", "特斯拉", "通用电气",
+          "闻泰科技","闻泰通讯","汇顶科技","豪威科技","商汤科技","旷视科技","依图科技","云从科技","科大讯飞","燧原科技","第四范式","4 Paradigm",
           "RISC-V", "ARM", "x86", "ISA", "ISA extension", "PCIe", "USB", "DDR", "LPDDR", "GDDR", "HBM", "NVMe", 
           "SerDes", "PHY", "PLL", "PMIC", "ADC", "DAC", "RTOS", "Yocto", "OpenWrt", "ROS", "CUDA", 
           "ROCm", "OpenCL", "Vulkan", "ONNX", "TensorRT", "Triton", "PostgreSQL", "MySQL", "Redis", "Kafka", "RabbitMQ", "gRPC", "REST", 
           "GraphQL", "CDN", "WAF", "IAM", "SSO", "OAuth", "OIDC", "ETL", "ELT", "OLAP", "OLTP", 
-          "CRM", "ERP", "MES", "PLM", "SCM", "A/B test", "AB测试"
+          "CRM", "ERP", "MES", "PLM", "SCM", "A/B test", "AB测试","封装与测试", "制造业", "加速卡", "智能终端", "芯片行业"
         ],
         "regex": [
           "人工智能|AI|AIGC|大模型|LLM|多模态|生成式AI|机器学习|深度学习|神经网络|推荐系统|智能体|Agent|Embedding|向量数据库",
@@ -182,12 +217,22 @@
         "exact": [
           "热点事件","暴力事件","恶性事件","时政评论",
           "war","president","putin","Peace","Volodymyr Zelensky",
-          "俄罗斯","乌克兰","苏联","亚太地区","亚太区",
+          "俄罗斯","乌克兰","苏联","亚太地区","亚太区","中国",
           "教育","学生","老师","校长","公立学校","国际学校",
           "义务教育新规","教育新规","民办教育促进法","新东方","习近平",
           "GDP", "CPI", "PPI", "PMI", "M2", "FDI", "WTO", "IMF", "World Bank", 
           "UN", "NATO", "EU", "G7", "G20", "APEC", "ASEAN", "rule of law", 
-          "democracy", "sanctions", "tariff"
+          "democracy", "sanctions", "tariff",
+          "社会评论", "社会不公", "社会底层", "社会讨论", "社会制度",
+          "权力", "总统", "总理", "总统竞选", "政府", "战争", "二战",
+          "法律", "法治", "国际政治", "财政收入", "宏观税负",
+          "制度", "制度与体系", "企业制度",
+          "政治斗争", "政治讽刺", "政治改革",
+          "举国体制", "开放社会", "极权社会", "体制腐败", "体制内",
+          "中国企业", "中国前景", "中国社会", "中国体制", "中国税负",
+          "中国体育", "中国足球", "中国男篮", "中国女排",
+          "自媒体", "自由", "自由开放", "自由体制",
+          "美国", "日本"
         ],
         "regex": [
           "社会|社会学|公共事务|公共政策|政策|法规|法律|监管|Regulation|Compliance",
@@ -232,7 +277,9 @@
           "史记", "汉书", "后汉书", "三国志", "资治通鉴", "道德经", "庄子", "孙子兵法", "韩非子", "红楼梦", 
           "三国演义", "水浒传", "西游记", "孔子", "孟子", "荀子", "老子", "庄子", "韩非", "墨子", "孙武", 
           "司马迁", "司马光", "班固", "陈寿", "王阳明", "朱熹", "程颢", "程颐", "陆九渊", "唐太宗", "汉武帝",
-          "宋太祖", "明太祖", "康熙", "雍正", "乾隆", "嘉庆", "秦", "汉", "唐", "宋", "元", "明", "清"
+          "宋太祖", "明太祖", "康熙", "雍正", "乾隆", "嘉庆", "秦", "汉", "唐", "宋", "元", "明", "清",
+          "钱穆", "苏轼", "张居正", "秦始皇", "唐朝", "儒家", "中庸", "余华",
+          "面相学", "面相识人"
         ],
         "regex": [
           "国学|中华文化|中国文化|传统文化|华夏|中华文明",
