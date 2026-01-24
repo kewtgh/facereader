@@ -7,7 +7,7 @@ import path from "node:path";
  */
 
 const POSTS_DIRS = ["_posts"];
-const RULES_FILE = path.join("scripts", "tag-groups.rules.json");
+const RULES_FILE = path.join("assets", "scripts", "tag-groups.rules.json");
 const OUT_FILE = path.join("_data", "tag-groups.yml");
 
 // ---------- helpers ----------
