@@ -6,7 +6,7 @@ import path from "node:path";
  * 兼容 GitHub Pages（不依赖 Jekyll 插件）
  */
 
-const POSTS_DIRS = ["_posts"];
+const POSTS_DIRS = ["docs/_posts"];
 const RULES_FILE = path.join("assets", "scripts", "tag-groups.rules.json");
 const OUT_FILE = path.join("_data", "tag-groups.yml");
 
