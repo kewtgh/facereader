@@ -280,17 +280,28 @@ for (const display of counts.keys()) {
     }
   }
 
-  const key = pickGroup(display, norm, rules);
-  assigned.set(display, key);
+function pickGroup(tagDisplay, tagNorm, rules) {
+  // 允许的分组（仅五大类）
+  const allowed = new Set((rules.groups || []).map(g => g.key));
 
-  if (anyInclude) matchedAnyRule.add(display);
-  else if (key === (rules.defaultGroup || "others")) unmatchedFallback.push(display);
-
-  if (!groupMap.has(key)) {
-    // if rule returns a key not declared in groups, create it (safety)
-    groupMap.set(key, { title_zh: key, title_en: key, tags: [] });
+  // 1) force（如果 force 指向不存在的组，也视为无效）
+  const force = rules.force || {};
+  if (Object.prototype.hasOwnProperty.call(force, tagDisplay)) {
+    const k = force[tagDisplay];
+    return allowed.has(k) ? k : null;
   }
-  groupMap.get(key).tags.push(display);
+
+  // 2) groups match + exclude
+  for (const g of rules.groups || []) {
+    const include = g.match || {};
+    const exclude = include.exclude || null;
+
+    if (isExcluded(tagDisplay, tagNorm, exclude, rules.normalize)) continue;
+    if (isIncluded(tagDisplay, tagNorm, include, rules.normalize)) return g.key;
+  }
+
+  // 3) 不再 fallback 到 defaultGroup（直接不显示）
+  return null;
 }
 
 // sort tags inside each group
