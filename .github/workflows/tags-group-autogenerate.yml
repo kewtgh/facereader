@@ -19,7 +19,7 @@ jobs:
           node-version: "20"
 
       - name: Generate _data/tag-groups.yml
-        run: node scripts/gen-tag-groups.mjs
+        run: node assets/scripts/gen-tag-groups.mjs
 
       - name: Commit changes (if any)
         run: |
