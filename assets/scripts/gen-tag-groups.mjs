@@ -1,16 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
 
-/**
- * 扫描 _posts 里的 Front Matter tags，并按规则生成 _data/tag-groups.yml
- * 兼容 GitHub Pages（不依赖 Jekyll 插件）
- */
+const POSTS_DIRS = ["_posts", "docs/_posts"].filter(d => fs.existsSync(d));
 
-const POSTS_DIRS = ["docs/_posts"];
 const RULES_FILE = path.join("assets", "scripts", "tag-groups.rules.json");
-const OUT_FILE = path.join("_data", "tag-groups.yml");
+const OUT_GROUPS_FILE = path.join("_data", "tag-groups.yml");
+const OUT_UNMATCHED_FILE = path.join("_data", "tag-unmatched.yml");
+const OUT_NORMALIZE_REPORT_FILE = path.join("_data", "tag-normalization-report.yml");
 
-// ---------- helpers ----------
+// ---------- utils ----------
 function walk(dir) {
   if (!fs.existsSync(dir)) return [];
   const out = [];
@@ -28,7 +26,6 @@ function stripBom(s) {
 }
 
 function parseFrontMatter(content) {
-  // 支持 BOM、CRLF/LF，按行找 --- 分隔更稳
   content = stripBom(content);
   const lines = content.split(/\r?\n/);
   if (lines[0]?.trim() !== "---") return null;
@@ -47,13 +44,12 @@ function parseFrontMatter(content) {
 function extractTags(fm) {
   if (!fm) return [];
 
-  // 允许 tags/tag/Tags/TAG 等（大小写不敏感）
   const lines = fm.split("\n");
   let idx = -1;
   let firstVal = "";
 
   for (let i = 0; i < lines.length; i++) {
-    const m = lines[i].match(/^\s*(tags?)\s*:\s*(.*)\s*$/i);
+    const m = lines[i].match(/^\s*(tags?)\s*:\s*(.*)\s*$/i); // tags / tag
     if (m) {
       idx = i;
       firstVal = (m[2] || "").trim();
@@ -62,7 +58,7 @@ function extractTags(fm) {
   }
   if (idx === -1) return [];
 
-  // 1) tags: [a, b]
+  // tags: [a, b]
   if (firstVal.startsWith("[") && firstVal.endsWith("]")) {
     const inside = firstVal.slice(1, -1);
     return inside
@@ -72,7 +68,7 @@ function extractTags(fm) {
       .map(s => s.replace(/^['"]|['"]$/g, ""));
   }
 
-  // 2) tags: a, b（支持中文逗号）
+  // tags: a, b (also Chinese comma)
   if (firstVal && !firstVal.startsWith("-")) {
     return firstVal
       .split(/[,，]/)
@@ -81,17 +77,15 @@ function extractTags(fm) {
       .map(s => s.replace(/^['"]|['"]$/g, ""));
   }
 
-  // 3) tags:
-  //    - a
-  //    - b
+  // tags:
+  //  - a
+  //  - b
   const out = [];
   for (let j = idx + 1; j < lines.length; j++) {
     const line = lines[j];
 
-    // 遇到下一个 front matter key 就停止（例如 categories:、sidebar: 等）
-    if (/^\s*[A-Za-z0-9_-]+\s*:\s*.*$/.test(line) && !/^\s*-\s+/.test(line)) {
-      break;
-    }
+    // next front matter key
+    if (/^\s*[A-Za-z0-9_-]+\s*:\s*.*$/.test(line) && !/^\s*-\s+/.test(line)) break;
 
     const m = line.match(/^\s*-\s*(.+?)\s*$/);
     if (m) {
@@ -102,14 +96,86 @@ function extractTags(fm) {
   return out;
 }
 
-
 function escapeYmlStr(s) {
-  // 统一用双引号，避免冒号、#、中文等导致 YAML 歧义
   return `"${String(s).replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`;
 }
 
-function sortNatural(a, b) {
+function sortByCountThenLocale(a, b, counts) {
+  const ca = counts.get(a) || 0;
+  const cb = counts.get(b) || 0;
+  if (cb !== ca) return cb - ca;
   return a.localeCompare(b, "zh-Hans-CN-u-co-pinyin", { numeric: true, sensitivity: "base" });
+}
+
+// ---------- normalization (for matching / dedupe reporting) ----------
+function fullwidthToHalfwidth(str) {
+  // Convert fullwidth ASCII range to halfwidth
+  let out = "";
+  for (const ch of str) {
+    const code = ch.charCodeAt(0);
+    // fullwidth space
+    if (code === 0x3000) out += String.fromCharCode(0x20);
+    // fullwidth ASCII
+    else if (code >= 0xff01 && code <= 0xff5e) out += String.fromCharCode(code - 0xfee0);
+    else out += ch;
+  }
+  return out;
+}
+
+function collapseSpaces(str) {
+  return str.replace(/\s+/g, " ").trim();
+}
+
+function isMostlyAscii(str) {
+  // if every char is ASCII
+  return /^[\x00-\x7F]+$/.test(str);
+}
+
+function normalizeForKey(raw, normalizeCfg) {
+  let s = String(raw ?? "").trim();
+  if (!s) return "";
+
+  if (normalizeCfg?.fullwidthToHalfwidth) s = fullwidthToHalfwidth(s);
+  if (normalizeCfg?.collapseSpaces) s = collapseSpaces(s);
+
+  // only lower-case for ASCII-only tags to avoid breaking Chinese
+  if (normalizeCfg?.asciiLowercase && isMostlyAscii(s)) s = s.toLowerCase();
+
+  return s;
+}
+
+// ---------- matching helpers ----------
+function matchAnyExact(tagNorm, exactList, normalizeCfg) {
+  if (!Array.isArray(exactList) || exactList.length === 0) return false;
+  for (const x of exactList) {
+    if (tagNorm === normalizeForKey(x, normalizeCfg)) return true;
+  }
+  return false;
+}
+
+function matchAnyRegex(tagDisplay, tagNorm, regexList) {
+  if (!Array.isArray(regexList) || regexList.length === 0) return false;
+  for (const r of regexList) {
+    const re = new RegExp(r, "i");
+    if (re.test(tagDisplay) || re.test(tagNorm)) return true;
+  }
+  return false;
+}
+
+function isExcluded(tagDisplay, tagNorm, exclude, normalizeCfg) {
+  if (!exclude) return false;
+  if (matchAnyExact(tagNorm, exclude.exact, normalizeCfg)) return true;
+  if (matchAnyRegex(tagDisplay, tagNorm, exclude.regex)) return true;
+  return false;
+}
+
+function isIncluded(tagDisplay, tagNorm, include, normalizeCfg) {
+  if (!include) return false;
+
+  // exact has higher priority (whitelist)
+  if (matchAnyExact(tagNorm, include.exact, normalizeCfg)) return true;
+  if (matchAnyRegex(tagDisplay, tagNorm, include.regex)) return true;
+  return false;
 }
 
 function loadRules() {
@@ -119,61 +185,68 @@ function loadRules() {
   return JSON.parse(fs.readFileSync(RULES_FILE, "utf8"));
 }
 
-function pickGroup(tag, rules) {
-  for (const g of rules.groups) {
-    const exact = g.match?.exact || [];
-    if (exact.includes(tag)) return g.key;
+function pickGroup(tagDisplay, tagNorm, rules) {
+  // 1) force mapping (whitelist highest priority)
+  const force = rules.force || {};
+  if (Object.prototype.hasOwnProperty.call(force, tagDisplay)) return force[tagDisplay];
 
-    const regexList = g.match?.regex || [];
-    for (const r of regexList) {
-      const re = new RegExp(r, "i");
-      if (re.test(tag)) return g.key;
-    }
+  // 2) group matching with exclude
+  for (const g of rules.groups || []) {
+    const include = g.match || {};
+    const exclude = include.exclude || null;
+
+    if (isExcluded(tagDisplay, tagNorm, exclude, rules.normalize)) continue;
+    if (isIncluded(tagDisplay, tagNorm, include, rules.normalize)) return g.key;
   }
-  return rules.defaultGroup;
+
+  // 3) fallback
+  return rules.defaultGroup || "others";
 }
 
 // ---------- main ----------
 const rules = loadRules();
 
-// 1) collect tag counts
-const counts = new Map();
-for (const dir of POSTS_DIRS) {
-  for (const file of walk(dir)) {
-    const content = fs.readFileSync(file, "utf8");
-    const fm = parseFrontMatter(content);
-    const tags = extractTags(fm);
-    for (const t of tags) {
-      counts.set(t, (counts.get(t) || 0) + 1);
-    }
-  }
-}
-
-// debug
+// collect tag counts
+const counts = new Map(); // display tag -> count (keep original display)
+const seenVariants = new Map(); // normKey -> Set(display variants)
+const normKeyOfDisplay = new Map(); // display -> normKey
 
 const scannedFiles = POSTS_DIRS.flatMap(d => walk(d));
 console.log("POSTS_DIRS =", POSTS_DIRS);
 console.log("posts scanned =", scannedFiles.length);
+
+for (const file of scannedFiles) {
+  const content = fs.readFileSync(file, "utf8");
+  const fm = parseFrontMatter(content);
+  const tags = extractTags(fm);
+  for (const t of tags) {
+    const display = String(t).trim();
+    if (!display) continue;
+
+    counts.set(display, (counts.get(display) || 0) + 1);
+
+    const k = normalizeForKey(display, rules.normalize);
+    normKeyOfDisplay.set(display, k);
+    if (!seenVariants.has(k)) seenVariants.set(k, new Set());
+    seenVariants.get(k).add(display);
+  }
+}
+
 console.log("unique tags =", counts.size);
-if (scannedFiles.length > 0) console.log("sample post =", scannedFiles[0]);
 
 if (counts.size === 0) {
   throw new Error(
-    `No tags found. Refuse to overwrite ${OUT_FILE}. ` +
-    `Check POSTS_DIRS and front matter tags format.`
+    "No tags found. Refuse to overwrite outputs. " +
+    "Check POSTS_DIRS and front matter tags format."
   );
 }
 
-// 2) init groups
+// init output structure
 const groupMap = new Map();
-for (const g of rules.groups) {
-  groupMap.set(g.key, {
-    title_zh: g.title_zh,
-    title_en: g.title_en,
-    tags: []
-  });
+for (const g of rules.groups || []) {
+  groupMap.set(g.key, { title_zh: g.title_zh, title_en: g.title_en, tags: [] });
 }
-// default group must exist
+// ensure default group exists
 if (!groupMap.has(rules.defaultGroup)) {
   groupMap.set(rules.defaultGroup, {
     title_zh: rules.defaultGroup,
@@ -182,28 +255,53 @@ if (!groupMap.has(rules.defaultGroup)) {
   });
 }
 
-// 3) assign tags
-for (const tag of counts.keys()) {
-  const key = pickGroup(tag, rules);
-  groupMap.get(key).tags.push(tag);
+// assign tags
+const assigned = new Map(); // display tag -> groupKey
+const matchedAnyRule = new Set(); // display tag that matched some group include or force (not fallback)
+const unmatchedFallback = []; // display tags that fell to defaultGroup due to no match
+
+for (const display of counts.keys()) {
+  const norm = normKeyOfDisplay.get(display) || normalizeForKey(display, rules.normalize);
+
+  // determine if matched any rule (force or include)
+  let isForce = rules.force && Object.prototype.hasOwnProperty.call(rules.force, display);
+  let anyInclude = false;
+  if (isForce) {
+    anyInclude = true;
+  } else {
+    for (const g of rules.groups || []) {
+      const include = g.match || {};
+      const exclude = include.exclude || null;
+      if (isExcluded(display, norm, exclude, rules.normalize)) continue;
+      if (isIncluded(display, norm, include, rules.normalize)) {
+        anyInclude = true;
+        break;
+      }
+    }
+  }
+
+  const key = pickGroup(display, norm, rules);
+  assigned.set(display, key);
+
+  if (anyInclude) matchedAnyRule.add(display);
+  else if (key === (rules.defaultGroup || "others")) unmatchedFallback.push(display);
+
+  if (!groupMap.has(key)) {
+    // if rule returns a key not declared in groups, create it (safety)
+    groupMap.set(key, { title_zh: key, title_en: key, tags: [] });
+  }
+  groupMap.get(key).tags.push(display);
 }
 
-// 4) sort tags in each group (by count desc, then natural)
+// sort tags inside each group
 for (const [key, g] of groupMap.entries()) {
-  g.tags.sort((a, b) => {
-    const ca = counts.get(a) || 0;
-    const cb = counts.get(b) || 0;
-    if (cb !== ca) return cb - ca;
-    return sortNatural(a, b);
-  });
+  g.tags.sort((a, b) => sortByCountThenLocale(a, b, counts));
 }
 
-// 5) output YAML in the exact structure your tags page expects:
-//    leadership: {title_zh,title_en,tags: [...] } etc. :contentReference[oaicite:3]{index=3}
+// ---------- write tag-groups.yml (your site consumption) ----------
 let yml = "";
-for (const g of rules.groups) {
-  const data = groupMap.get(g.key);
-  if (!data) continue;
+for (const g of rules.groups || []) {
+  const data = groupMap.get(g.key) || { title_zh: g.title_zh, title_en: g.title_en, tags: [] };
   yml += `${g.key}:\n`;
   yml += `  title_zh: ${escapeYmlStr(data.title_zh)}\n`;
   yml += `  title_en: ${escapeYmlStr(data.title_en)}\n`;
@@ -212,9 +310,44 @@ for (const g of rules.groups) {
     yml += `    - ${escapeYmlStr(t)}\n`;
   }
 }
+fs.mkdirSync(path.dirname(OUT_GROUPS_FILE), { recursive: true });
+fs.writeFileSync(OUT_GROUPS_FILE, yml, "utf8");
+console.log(`✅ Wrote ${OUT_GROUPS_FILE}`);
 
-// ensure output dir
-fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
-fs.writeFileSync(OUT_FILE, yml, "utf8");
+// ---------- write unmatched list (fell back to defaultGroup with no rule match) ----------
+unmatchedFallback.sort((a, b) => sortByCountThenLocale(a, b, counts));
 
-console.log(`✅ Generated ${OUT_FILE} (${counts.size} tags)`);
+let unmatchedYml = `# Tags that fell back to defaultGroup="${rules.defaultGroup}" because no rule matched\n`;
+unmatchedYml += `# format: - tag: "xxx"  count: N\nunmatched:\n`;
+for (const t of unmatchedFallback) {
+  unmatchedYml += `  - tag: ${escapeYmlStr(t)}\n`;
+  unmatchedYml += `    count: ${(counts.get(t) || 0)}\n`;
+}
+fs.writeFileSync(OUT_UNMATCHED_FILE, unmatchedYml, "utf8");
+console.log(`✅ Wrote ${OUT_UNMATCHED_FILE} (${unmatchedFallback.length} tags)`);
+
+// ---------- write normalization report (variants that normalize to same key) ----------
+const collisions = [];
+for (const [k, set] of seenVariants.entries()) {
+  if (set.size >= 2) {
+    // sort variants by count desc
+    const vars = [...set].sort((a, b) => (counts.get(b) || 0) - (counts.get(a) || 0));
+    collisions.push({ key: k, variants: vars });
+  }
+}
+
+let normYml = `# Tags with multiple variants that normalize to the same key (case/space/fullwidth differences)\n`;
+normYml += `# You may want to unify these tags in posts to avoid duplicates in the UI.\n`;
+normYml += `normalized_collisions:\n`;
+for (const c of collisions) {
+  normYml += `  - normalized_key: ${escapeYmlStr(c.key)}\n`;
+  normYml += `    variants:\n`;
+  for (const v of c.variants) {
+    normYml += `      - tag: ${escapeYmlStr(v)}\n`;
+    normYml += `        count: ${(counts.get(v) || 0)}\n`;
+  }
+}
+fs.writeFileSync(OUT_NORMALIZE_REPORT_FILE, normYml, "utf8");
+console.log(`✅ Wrote ${OUT_NORMALIZE_REPORT_FILE} (${collisions.length} collision groups)`);
+
+console.log("Done.");
