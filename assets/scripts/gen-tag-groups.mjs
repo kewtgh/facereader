@@ -149,6 +149,21 @@ for (const dir of POSTS_DIRS) {
   }
 }
 
+// debug
+
+const scannedFiles = POSTS_DIRS.flatMap(d => walk(d));
+console.log("POSTS_DIRS =", POSTS_DIRS);
+console.log("posts scanned =", scannedFiles.length);
+console.log("unique tags =", counts.size);
+if (scannedFiles.length > 0) console.log("sample post =", scannedFiles[0]);
+
+if (counts.size === 0) {
+  throw new Error(
+    `No tags found. Refuse to overwrite ${OUT_FILE}. ` +
+    `Check POSTS_DIRS and front matter tags format.`
+  );
+}
+
 // 2) init groups
 const groupMap = new Map();
 for (const g of rules.groups) {
