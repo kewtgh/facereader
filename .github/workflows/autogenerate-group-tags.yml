@@ -21,10 +21,13 @@ jobs:
       - name: Generate _data/tag-groups.yml
         run: node assets/scripts/gen-tag-groups.mjs
 
-      - name: Commit changes (if any)
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add _data/tag-groups.yml
-          git commit -m "chore: auto-generate tag-groups.yml" || echo "No changes"
-          git push
+      - name: Create PR for tag-groups.yml updates
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore: auto-generate tag-groups.yml"
+          title: "chore: auto-generate tag-groups.yml"
+          body: "Auto-generated _data/tag-groups.yml from tags in posts."
+          branch: "tags-generate"
+          delete-branch: true
+          add-paths: |
+            _data/tag-groups.yml
