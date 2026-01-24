@@ -796,3 +796,15 @@ body { line-height: 1.7; }
   margin-bottom: 0.7rem;
   color: mix(#223042, #6f4e37, 70%); /* 微棕调，跟 TOC 呼应 */
 }
+
+/* =========================
+ * Tags页面
+ * ========================= */
+
+/* 选中tag突出效果 */
+.tag-item.is-active {
+  border-color: #a8642a;
+  color: #a8642a;
+  background: rgba(168, 100, 42, 0.08);
+  font-weight: 600;
+}
