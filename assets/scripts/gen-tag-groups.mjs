@@ -23,46 +23,85 @@ function walk(dir) {
   return out;
 }
 
+function stripBom(s) {
+  return s && s.charCodeAt(0) === 0xfeff ? s.slice(1) : s;
+}
+
 function parseFrontMatter(content) {
-  const m = content.match(/^---\s*\n([\s\S]*?)\n---\s*\n/);
-  return m ? m[1] : null;
+  // 支持 BOM、CRLF/LF，按行找 --- 分隔更稳
+  content = stripBom(content);
+  const lines = content.split(/\r?\n/);
+  if (lines[0]?.trim() !== "---") return null;
+
+  let end = -1;
+  for (let i = 1; i < lines.length; i++) {
+    if (lines[i].trim() === "---") {
+      end = i;
+      break;
+    }
+  }
+  if (end === -1) return null;
+  return lines.slice(1, end).join("\n");
 }
 
 function extractTags(fm) {
   if (!fm) return [];
 
-  // tags: [a, b]
-  let m = fm.match(/^\s*tags\s*:\s*\[(.*?)\]\s*$/m);
-  if (m) {
-    return m[1]
+  // 允许 tags/tag/Tags/TAG 等（大小写不敏感）
+  const lines = fm.split("\n");
+  let idx = -1;
+  let firstVal = "";
+
+  for (let i = 0; i < lines.length; i++) {
+    const m = lines[i].match(/^\s*(tags?)\s*:\s*(.*)\s*$/i);
+    if (m) {
+      idx = i;
+      firstVal = (m[2] || "").trim();
+      break;
+    }
+  }
+  if (idx === -1) return [];
+
+  // 1) tags: [a, b]
+  if (firstVal.startsWith("[") && firstVal.endsWith("]")) {
+    const inside = firstVal.slice(1, -1);
+    return inside
       .split(",")
       .map(s => s.trim())
       .filter(Boolean)
       .map(s => s.replace(/^['"]|['"]$/g, ""));
   }
 
-  // tags:\n - a\n - b
-  m = fm.match(/^\s*tags\s*:\s*\n([\s\S]*?)(\n\S|\s*$)/m);
-  if (m) {
-    return m[1]
-      .split("\n")
-      .map(line => line.trim())
-      .filter(line => line.startsWith("-"))
-      .map(line => line.replace(/^-+\s*/, "").trim())
+  // 2) tags: a, b（支持中文逗号）
+  if (firstVal && !firstVal.startsWith("-")) {
+    return firstVal
+      .split(/[,，]/)
+      .map(s => s.trim())
       .filter(Boolean)
       .map(s => s.replace(/^['"]|['"]$/g, ""));
   }
 
-  // tags: a
-  m = fm.match(/^\s*tags\s*:\s*(.+)\s*$/m);
-  if (m) {
-    const v = m[1].trim();
-    if (!v) return [];
-    return [v.replace(/^['"]|['"]$/g, "")];
-  }
+  // 3) tags:
+  //    - a
+  //    - b
+  const out = [];
+  for (let j = idx + 1; j < lines.length; j++) {
+    const line = lines[j];
 
-  return [];
+    // 遇到下一个 front matter key 就停止（例如 categories:、sidebar: 等）
+    if (/^\s*[A-Za-z0-9_-]+\s*:\s*.*$/.test(line) && !/^\s*-\s+/.test(line)) {
+      break;
+    }
+
+    const m = line.match(/^\s*-\s*(.+?)\s*$/);
+    if (m) {
+      const v = m[1].trim().replace(/^['"]|['"]$/g, "");
+      if (v) out.push(v);
+    }
+  }
+  return out;
 }
+
 
 function escapeYmlStr(s) {
   // 统一用双引号，避免冒号、#、中文等导致 YAML 歧义
