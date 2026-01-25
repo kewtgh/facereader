@@ -29,9 +29,9 @@ jobs:
           BRANCH="bot/tag-groups"
 
           # 生成后如果没有变化，直接标记为 skip
-          if git diff --quiet -- _data/tag-groups.yml; then
+          if git diff --quiet -- _data/tag-groups.yml _data/tag-unmatched.yml _data/tag-normalization-report.yml; then
             echo "changed=false" >> $GITHUB_OUTPUT
-            echo "No changes in _data/tag-groups.yml"
+            echo "No changes in _data outputs"
             exit 0
           fi
 
@@ -41,7 +41,7 @@ jobs:
           # 创建/切换分支
           git checkout -B "$BRANCH"
 
-          git add _data/tag-groups.yml
+          git add _data/tag-groups.yml _data/tag-unmatched.yml _data/tag-normalization-report.yml
           git commit -m "chore: auto-generate tag-groups.yml"
 
           git push -f origin "$BRANCH"

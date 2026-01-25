@@ -27,7 +27,7 @@ const OUT_UNMATCHED_FILE = path.join("_data", "tag-unmatched.yml");
 const OUT_NORMALIZE_REPORT_FILE = path.join("_data", "tag-normalization-report.yml");
 
 // Auto-detect common post dirs (GitHub Actions safe)
-const POSTS_DIRS = ["_posts", "docs/_posts", "content/_posts", "blog/_posts"].filter((d) =>
+const POSTS_DIRS = ["_posts", "docs/_posts"].filter((d) =>
   fs.existsSync(d)
 );
 
