@@ -2,28 +2,14 @@
   "defaultGroup": "",
 
   "force": {
-    "PBL": "society",
     "项目式学习": "society",
     "问题式学习": "society",
-    "教育行业": "society",
     "教育政策": "society",
-    
-    "面相": "life",
-    "思考": "life",
-    "人生": "life",
-    "成长": "life",
-    "生活": "life",
-    "心理学": "life",
-    "存在主义": "life",
-    "Music": "life",
-    
+    "Music": "life", 
     "苏联": "society",
-    
     "儒家": "chinese",
-
     "半导体": "technology",
-    
-    "企业战略": "leadership",    
+    "企业战略": "leadership"
   },
 
   "normalize": {
