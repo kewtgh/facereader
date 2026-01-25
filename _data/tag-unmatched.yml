@@ -13,7 +13,11 @@ unmatched:
     count: 2
   - tag: "大师"
     count: 2
+  - tag: "道德"
+    count: 2
   - tag: "活着"
+    count: 2
+  - tag: "决策"
     count: 2
   - tag: "命运"
     count: 2
@@ -145,6 +149,8 @@ unmatched:
     count: 1
   - tag: "九地篇"
     count: 1
+  - tag: "决策能力"
+    count: 1
   - tag: "军形篇"
     count: 1
   - tag: "军争篇"
@@ -168,6 +174,8 @@ unmatched:
   - tag: "老师"
     count: 1
   - tag: "雷吉·琼斯"
+    count: 1
+  - tag: "冷漠"
     count: 1
   - tag: "李安"
     count: 1
@@ -194,6 +202,8 @@ unmatched:
   - tag: "罗伯特·弗罗斯特"
     count: 1
   - tag: "罗伯特·纳代利"
+    count: 1
+  - tag: "逻辑"
     count: 1
   - tag: "美军"
     count: 1
@@ -318,6 +328,8 @@ unmatched:
   - tag: "长处与短处"
     count: 1
   - tag: "知识"
+    count: 1
+  - tag: "制度"
     count: 1
   - tag: "治大国若烹小鲜"
     count: 1
