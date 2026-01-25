@@ -1,0 +1,15 @@
+# Tags with multiple variants that normalize to the same key
+# (case/space/fullwidth differences). Consider unifying tags in posts.
+normalized_collisions:
+  - normalized_key: "russia"
+    variants:
+      - tag: "russia"
+        count: 1
+      - tag: "Russia"
+        count: 1
+  - normalized_key: "cronyism"
+    variants:
+      - tag: "Cronyism"
+        count: 1
+      - tag: "cronyism"
+        count: 1

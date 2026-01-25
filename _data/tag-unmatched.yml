@@ -1,0 +1,351 @@
+# Tags NOT shown on /tags/ because they do not match any declared group rules
+# You can fix by adding to rules.force / match.exact / match.regex
+unmatched:
+  - tag: "杰克·韦尔奇"
+    count: 4
+  - tag: "四小龙"
+    count: 4
+  - tag: "奥古斯都"
+    count: 2
+  - tag: "陈垣"
+    count: 2
+  - tag: "成功创业"
+    count: 2
+  - tag: "大师"
+    count: 2
+  - tag: "活着"
+    count: 2
+  - tag: "命运"
+    count: 2
+  - tag: "企业"
+    count: 2
+  - tag: "萧何"
+    count: 2
+  - tag: "学生"
+    count: 2
+  - tag: "正直"
+    count: 2
+  - tag: "组织"
+    count: 2
+  - tag: "NBA"
+    count: 2
+  - tag: "Peace"
+    count: 2
+  - tag: "Specialization"
+    count: 2
+  - tag: "《阿房宫赋》"
+    count: 1
+  - tag: "《比海更深》"
+    count: 1
+  - tag: "《火星救援》"
+    count: 1
+  - tag: "《将进酒》"
+    count: 1
+  - tag: "《美错》"
+    count: 1
+  - tag: "《求自试表》"
+    count: 1
+  - tag: "《人民公仆》"
+    count: 1
+  - tag: "《少有人走的路》"
+    count: 1
+  - tag: "《我与地坛》"
+    count: 1
+  - tag: "《赠刘景文》"
+    count: 1
+  - tag: "《自京赴奉先县咏怀五百字》"
+    count: 1
+  - tag: "95街区"
+    count: 1
+  - tag: "2001年"
+    count: 1
+  - tag: "2009年"
+    count: 1
+  - tag: "阿富汗"
+    count: 1
+  - tag: "哀其不幸"
+    count: 1
+  - tag: "埃德·胡德"
+    count: 1
+  - tag: "奥托·夏莫"
+    count: 1
+  - tag: "板桥溃坝"
+    count: 1
+  - tag: "鲍里斯·约翰逊"
+    count: 1
+  - tag: "鲍叔牙"
+    count: 1
+  - tag: "必要性"
+    count: 1
+  - tag: "变故"
+    count: 1
+  - tag: "兵势篇"
+    count: 1
+  - tag: "波罗申科"
+    count: 1
+  - tag: "曹德旺"
+    count: 1
+  - tag: "陈燎罕"
+    count: 1
+  - tag: "陈宁"
+    count: 1
+  - tag: "陈云霁"
+    count: 1
+  - tag: "打破规则"
+    count: 1
+  - tag: "大快人心"
+    count: 1
+  - tag: "待物如初"
+    count: 1
+  - tag: "地形篇"
+    count: 1
+  - tag: "独断专行"
+    count: 1
+  - tag: "读万卷书"
+    count: 1
+  - tag: "发展趋势"
+    count: 1
+  - tag: "法理权威"
+    count: 1
+  - tag: "风格"
+    count: 1
+  - tag: "风险"
+    count: 1
+  - tag: "蜂群"
+    count: 1
+  - tag: "个人思绪"
+    count: 1
+  - tag: "功利主义"
+    count: 1
+  - tag: "管理"
+    count: 1
+  - tag: "规章"
+    count: 1
+  - tag: "韩信"
+    count: 1
+  - tag: "河南储户"
+    count: 1
+  - tag: "赫茨伯格"
+    count: 1
+  - tag: "火攻篇"
+    count: 1
+  - tag: "简单问题"
+    count: 1
+  - tag: "简单系统"
+    count: 1
+  - tag: "晋惠帝"
+    count: 1
+  - tag: "九变篇"
+    count: 1
+  - tag: "九地篇"
+    count: 1
+  - tag: "军形篇"
+    count: 1
+  - tag: "军争篇"
+    count: 1
+  - tag: "卡农"
+    count: 1
+  - tag: "渴望"
+    count: 1
+  - tag: "克格勃"
+    count: 1
+  - tag: "克里维里赫"
+    count: 1
+  - tag: "克里沃罗格"
+    count: 1
+  - tag: "恐惧"
+    count: 1
+  - tag: "拉里·卡尔普"
+    count: 1
+  - tag: "篮球"
+    count: 1
+  - tag: "老师"
+    count: 1
+  - tag: "雷吉·琼斯"
+    count: 1
+  - tag: "李安"
+    count: 1
+  - tag: "李克强"
+    count: 1
+  - tag: "李书福"
+    count: 1
+  - tag: "李彤彤"
+    count: 1
+  - tag: "李煜"
+    count: 1
+  - tag: "里巴巴"
+    count: 1
+  - tag: "利润"
+    count: 1
+  - tag: "良多"
+    count: 1
+  - tag: "刘常科"
+    count: 1
+  - tag: "刘鋹"
+    count: 1
+  - tag: "流星"
+    count: 1
+  - tag: "罗伯特·弗罗斯特"
+    count: 1
+  - tag: "罗伯特·纳代利"
+    count: 1
+  - tag: "美军"
+    count: 1
+  - tag: "莫里斯·古斯塔夫·甘末林"
+    count: 1
+  - tag: "谋攻篇"
+    count: 1
+  - tag: "谋略与运筹"
+    count: 1
+  - tag: "目光短浅"
+    count: 1
+  - tag: "拿破仑三世"
+    count: 1
+  - tag: "怒其不争"
+    count: 1
+  - tag: "平头哥"
+    count: 1
+  - tag: "普通人"
+    count: 1
+  - tag: "切尔诺贝利事件"
+    count: 1
+  - tag: "任人唯亲"
+    count: 1
+  - tag: "任正非"
+    count: 1
+  - tag: "上进"
+    count: 1
+  - tag: "生存第一"
+    count: 1
+  - tag: "生命"
+    count: 1
+  - tag: "失败者标签"
+    count: 1
+  - tag: "诗"
+    count: 1
+  - tag: "史铁生"
+    count: 1
+  - tag: "始计篇"
+    count: 1
+  - tag: "视频"
+    count: 1
+  - tag: "寿栋"
+    count: 1
+  - tag: "斯科特·派克"
+    count: 1
+  - tag: "斯坦利·格尔特"
+    count: 1
+  - tag: "死亡"
+    count: 1
+  - tag: "锁链"
+    count: 1
+  - tag: "汤晓鸥"
+    count: 1
+  - tag: "唐文斌"
+    count: 1
+  - tag: "同情"
+    count: 1
+  - tag: "团队"
+    count: 1
+  - tag: "王平"
+    count: 1
+  - tag: "王晓光"
+    count: 1
+  - tag: "危机"
+    count: 1
+  - tag: "未选择的路"
+    count: 1
+  - tag: "未走过的路"
+    count: 1
+  - tag: "乌西巴尔"
+    count: 1
+  - tag: "物种竞争"
+    count: 1
+  - tag: "喜剧"
+    count: 1
+  - tag: "项羽"
+    count: 1
+  - tag: "校长"
+    count: 1
+  - tag: "胁迫力量"
+    count: 1
+  - tag: "心如止水"
+    count: 1
+  - tag: "信"
+    count: 1
+  - tag: "信息茧房"
+    count: 1
+  - tag: "行军篇"
+    count: 1
+  - tag: "兴趣"
+    count: 1
+  - tag: "虚实篇"
+    count: 1
+  - tag: "眼前的苟且"
+    count: 1
+  - tag: "业务能力"
+    count: 1
+  - tag: "伊隆·马斯克"
+    count: 1
+  - tag: "以德报怨"
+    count: 1
+  - tag: "印奇"
+    count: 1
+  - tag: "应激反应"
+    count: 1
+  - tag: "勇敢的心"
+    count: 1
+  - tag: "勇气"
+    count: 1
+  - tag: "用间篇"
+    count: 1
+  - tag: "犹太人"
+    count: 1
+  - tag: "袁世凯"
+    count: 1
+  - tag: "约翰·弗兰纳里"
+    count: 1
+  - tag: "詹姆斯·麦克纳尼"
+    count: 1
+  - tag: "长处与短处"
+    count: 1
+  - tag: "知识"
+    count: 1
+  - tag: "治大国若烹小鲜"
+    count: 1
+  - tag: "朱珑"
+    count: 1
+  - tag: "资源保存理论"
+    count: 1
+  - tag: "字节跳动"
+    count: 1
+  - tag: "邹缙东"
+    count: 1
+  - tag: "作战篇"
+    count: 1
+  - tag: "Beautiful"
+    count: 1
+  - tag: "Canon"
+    count: 1
+  - tag: "Carol"
+    count: 1
+  - tag: "Carol & The End Of The World"
+    count: 1
+  - tag: "Elon Musk"
+    count: 1
+  - tag: "face"
+    count: 1
+  - tag: "face reading"
+    count: 1
+  - tag: "IDH"
+    count: 1
+  - tag: "KVN"
+    count: 1
+  - tag: "NFL"
+    count: 1
+  - tag: "president"
+    count: 1
+  - tag: "TVS"
+    count: 1
+  - tag: "war"
+    count: 1
