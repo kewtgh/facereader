@@ -28,22 +28,23 @@ jobs:
           set -e
           BRANCH="bot/tag-groups"
 
-          # 生成后如果没有变化，直接标记为 skip
-          if git diff --quiet -- _data/tag-groups.yml _data/tag-unmatched.yml _data/tag-normalization-report.yml; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-            echo "No changes in _data outputs"
-            exit 0
-          fi
-
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # 创建/切换分支
           git checkout -B "$BRANCH"
 
-          git add _data/tag-groups.yml _data/tag-unmatched.yml _data/tag-normalization-report.yml
-          git commit -m "chore: auto-generate tag-groups.yml"
+          # 先把 _data 下所有变更（包括新增文件）加入暂存区
+          git add -A _data
 
+          # 如果暂存区没有任何变更，就跳过
+          if git diff --cached --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes in _data outputs"
+            exit 0
+          fi
+
+          git commit -m "chore: auto-generate tag groups + reports"
           git push -f origin "$BRANCH"
 
           echo "changed=true" >> $GITHUB_OUTPUT
