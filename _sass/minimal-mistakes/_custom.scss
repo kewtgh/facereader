@@ -1007,3 +1007,8 @@ body { line-height: 1.7; }
 .home-section--start-here {
   margin-bottom: 2.2rem;
 }
+
+/* 更“稳”，避免 margin 折叠，可选加 padding */
+.home-section--about-cta {
+  padding-top: 0.2rem;
+}
