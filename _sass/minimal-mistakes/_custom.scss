@@ -802,7 +802,7 @@ body { line-height: 1.7; }
 /* Actions: buttons closer, aligned */
 .home-section--about-cta .home-cta--about .home-cta__actions {
   display: flex;
-  gap: 1.06rem;           /* ✅ 按钮间距更小 */
+  gap: 2.26rem;           /* ✅ 按钮间距 */
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-top: 0.85rem;
@@ -1001,4 +1001,9 @@ body { line-height: 1.7; }
   .home-section--start-here .entries-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+/* Space between Start-here and About CTA */
+.home-section--start-here {
+  margin-bottom: 2.2rem;
 }
