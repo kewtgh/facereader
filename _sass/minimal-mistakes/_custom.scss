@@ -802,7 +802,7 @@ body { line-height: 1.7; }
 /* Actions: buttons closer, aligned */
 .home-section--about-cta .home-cta--about .home-cta__actions {
   display: flex;
-  gap: 0.6rem;           /* ✅ 按钮间距更小 */
+  gap: 0.5rem;           /* ✅ 按钮间距更小 */
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-top: 0.85rem;
@@ -893,32 +893,34 @@ body { line-height: 1.7; }
 }
 
 /* =====================================================
- * Home: Start-here & Picks
- * (scoped ONLY — will NOT affect "Recent updates")
+ * Home: Start-here & Picks (scoped ONLY)
+ * - force grid (avoid being flattened by theme flex/width rules)
+ * - keep Recent Updates untouched
  * ===================================================== */
 
-/* 关键：隔离上方 float/布局残留，避免模块交叉叠加 */
+/* isolate layout flow (avoid overlap/float leftovers) */
 .home-section--start-here,
 .home-section--picks {
   display: flow-root;
 }
 
-/* 两块的网格布局（仅作用于 start-here / picks） */
+/* force grid only inside these two sections */
 .home-section--start-here .entries-grid,
 .home-section--picks .entries-grid {
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.25rem;
   align-items: stretch;
 }
 
-/* 大屏更稳：Start-here 3 列、Picks 4 列（可按你喜好改） */
-@include breakpoint($large) {
-  .home-section--start-here .entries-grid { grid-template-columns: repeat(3, 1fr); }
-  .home-section--picks .entries-grid { grid-template-columns: repeat(4, 1fr); }
+/* make sure children don't stretch to full row due to width rules elsewhere */
+.home-section--start-here .entries-grid > .archive__item,
+.home-section--picks .entries-grid > .archive__item {
+  width: auto !important;
+  max-width: none !important;
 }
 
-/* Start-here / Picks 卡片外观（只影响这两块，不碰最近更新） */
+/* card look (only start-here & picks) */
 .home-section--start-here .entries-grid > .archive__item,
 .home-section--picks .entries-grid > .archive__item {
   border-radius: 18px;
@@ -937,7 +939,7 @@ body { line-height: 1.7; }
   border-color: rgba(34, 48, 66, 0.24);
 }
 
-/* （可选）装饰性 teaser：只对 start-here / picks 生效 */
+/* teaser image: make it behave like "Recent updates" */
 .home-section--start-here .archive__item-teaser--home,
 .home-section--picks .archive__item-teaser--home {
   border-radius: 14px;
@@ -947,13 +949,13 @@ body { line-height: 1.7; }
 
 .home-section--start-here .archive__item-teaser--home img,
 .home-section--picks .archive__item-teaser--home img {
-  width: 100%;
-  height: 142px;
+  width: 100% !important;
+  height: 160px;
   object-fit: cover;
   display: block;
 }
 
-/* chips（只对 start-here / picks 生效） */
+/* chips */
 .home-section--start-here .home-chips,
 .home-section--picks .home-chips {
   display: flex;
