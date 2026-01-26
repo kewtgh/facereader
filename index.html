@@ -239,6 +239,15 @@ feature_row:
         </h3>
 
         <p class="archive__item-excerpt">{{ pick_excerpt }}</p>
+        {%- if pick_doc -%}
+          <small style="opacity:.6; display:block; margin-top:.5rem;">
+            matched: {{ pick_doc.url }} | teaser: {{ teaser }}
+          </small>
+        {%- else -%}
+          <small style="opacity:.6; display:block; margin-top:.5rem;">
+            NOT matched. raw={{ pick_norm_raw }} | enc={{ pick_norm_enc }}
+          </small>
+        {%- endif -%}
       </article>
     {% endfor %}
   </div>
