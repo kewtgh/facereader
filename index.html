@@ -161,8 +161,17 @@ feature_row:
       {%- assign pick_excerpt = t[excerpt_key] | default: '' -%}
 
       {%- comment -%}
-        Encode URL per path segment (keep "/" unescaped)
+        Build 2 URL forms:
+        - with baseurl (what you put in ui-text, e.g. /docs/...)
+        - without baseurl (what item.url usually is, e.g. /阅相识人/...)
       {%- endcomment -%}
+      {%- assign base = site.baseurl | default: '' -%}
+      {%- assign pick_url_nobase = pick_url_raw -%}
+      {%- if base != '' and pick_url_raw contains base -%}
+        {%- assign pick_url_nobase = pick_url_raw | remove_first: base -%}
+      {%- endif -%}
+
+      {%- comment -%} encode per path segment (keep "/") for BOTH forms {%- endcomment -%}
       {%- assign _parts = pick_url_raw | split: '/' -%}
       {%- assign pick_url_encoded = '' -%}
       {%- for _p in _parts -%}
@@ -170,56 +179,79 @@ feature_row:
         {%- assign pick_url_encoded = pick_url_encoded | append: '/' | append: (_p | uri_escape) -%}
       {%- endfor -%}
 
-      {%- comment -%}
-        Normalize trailing slash versions (slice-based)
-      {%- endcomment -%}
-      {%- assign pick_url_slash = pick_url_raw -%}
-      {%- unless pick_url_slash | slice: -1, 1 == '/' -%}
-        {%- assign pick_url_slash = pick_url_slash | append: '/' -%}
+      {%- assign _parts2 = pick_url_nobase | split: '/' -%}
+      {%- assign pick_url_nobase_encoded = '' -%}
+      {%- for _p2 in _parts2 -%}
+        {%- if _p2 == '' -%}{%- continue -%}{%- endif -%}
+        {%- assign pick_url_nobase_encoded = pick_url_nobase_encoded | append: '/' | append: (_p2 | uri_escape) -%}
+      {%- endfor -%}
+
+      {%- comment -%} trailing slash variants (slice-based) {%- endcomment -%}
+      {%- assign pick_raw_slash = pick_url_raw -%}
+      {%- unless pick_raw_slash | slice: -1, 1 == '/' -%}
+        {%- assign pick_raw_slash = pick_raw_slash | append: '/' -%}
       {%- endunless -%}
 
-      {%- assign pick_url_encoded_slash = pick_url_encoded -%}
-      {%- unless pick_url_encoded_slash | slice: -1, 1 == '/' -%}
-        {%- assign pick_url_encoded_slash = pick_url_encoded_slash | append: '/' -%}
+      {%- assign pick_enc_slash = pick_url_encoded -%}
+      {%- unless pick_enc_slash | slice: -1, 1 == '/' -%}
+        {%- assign pick_enc_slash = pick_enc_slash | append: '/' -%}
+      {%- endunless -%}
+
+      {%- assign pick_nb_slash = pick_url_nobase -%}
+      {%- unless pick_nb_slash | slice: -1, 1 == '/' -%}
+        {%- assign pick_nb_slash = pick_nb_slash | append: '/' -%}
+      {%- endunless -%}
+
+      {%- assign pick_nb_enc_slash = pick_url_nobase_encoded -%}
+      {%- unless pick_nb_enc_slash | slice: -1, 1 == '/' -%}
+        {%- assign pick_nb_enc_slash = pick_nb_enc_slash | append: '/' -%}
       {%- endunless -%}
 
       {%- assign pick_doc = nil -%}
 
-      {%- comment -%} 1) POSTS first (your docs/_posts/* are posts) {%- endcomment -%}
+      {%- comment -%}
+        Match helper:
+        compare against both item.url (no baseurl) and item.url|relative_url (with baseurl)
+      {%- endcomment -%}
+
+      {%- comment -%} 1) POSTS first {%- endcomment -%}
       {%- for post in site.posts -%}
-        {%- assign pu = post.url -%}
-        {%- if pu == pick_url_raw or pu == pick_url_slash or pu == pick_url_encoded or pu == pick_url_encoded_slash -%}
+        {%- assign u1 = post.url -%}
+        {%- assign u2 = post.url | relative_url -%}
+        {%- if u1 == pick_url_nobase or u1 == pick_nb_slash or u1 == pick_url_nobase_encoded or u1 == pick_nb_enc_slash
+           or u2 == pick_url_raw or u2 == pick_raw_slash or u2 == pick_url_encoded or u2 == pick_enc_slash -%}
           {%- assign pick_doc = post -%}
           {%- break -%}
         {%- endif -%}
       {%- endfor -%}
 
-      {%- comment -%} 2) then documents (collections) {%- endcomment -%}
+      {%- comment -%} 2) documents {%- endcomment -%}
       {%- if pick_doc == nil -%}
         {%- for d in site.documents -%}
-          {%- assign du = d.url -%}
-          {%- if du == pick_url_raw or du == pick_url_slash or du == pick_url_encoded or du == pick_url_encoded_slash -%}
+          {%- assign u1 = d.url -%}
+          {%- assign u2 = d.url | relative_url -%}
+          {%- if u1 == pick_url_nobase or u1 == pick_nb_slash or u1 == pick_url_nobase_encoded or u1 == pick_nb_enc_slash
+             or u2 == pick_url_raw or u2 == pick_raw_slash or u2 == pick_url_encoded or u2 == pick_enc_slash -%}
             {%- assign pick_doc = d -%}
             {%- break -%}
           {%- endif -%}
         {%- endfor -%}
       {%- endif -%}
 
-      {%- comment -%} 3) then pages {%- endcomment -%}
+      {%- comment -%} 3) pages {%- endcomment -%}
       {%- if pick_doc == nil -%}
         {%- for p in site.pages -%}
-          {%- assign pg = p.url -%}
-          {%- if pg == pick_url_raw or pg == pick_url_slash or pg == pick_url_encoded or pg == pick_url_encoded_slash -%}
+          {%- assign u1 = p.url -%}
+          {%- assign u2 = p.url | relative_url -%}
+          {%- if u1 == pick_url_nobase or u1 == pick_nb_slash or u1 == pick_url_nobase_encoded or u1 == pick_nb_enc_slash
+             or u2 == pick_url_raw or u2 == pick_raw_slash or u2 == pick_url_encoded or u2 == pick_enc_slash -%}
             {%- assign pick_doc = p -%}
             {%- break -%}
           {%- endif -%}
         {%- endfor -%}
       {%- endif -%}
 
-      {%- comment -%}
-        Teaser priority:
-        header.teaser -> teaser -> header.overlay_image -> image
-      {%- endcomment -%}
+      {%- comment -%} teaser priority {%- endcomment -%}
       {%- assign teaser = nil -%}
       {%- if pick_doc -%}
         {%- assign teaser = pick_doc.header.teaser
@@ -239,20 +271,10 @@ feature_row:
         </h3>
 
         <p class="archive__item-excerpt">{{ pick_excerpt }}</p>
-        {%- if pick_doc -%}
-          <small style="opacity:.6; display:block; margin-top:.5rem;">
-            matched: {{ pick_doc.url }} | teaser: {{ teaser }}
-          </small>
-        {%- else -%}
-          <small style="opacity:.6; display:block; margin-top:.5rem;">
-            NOT matched. raw={{ pick_norm_raw }} | enc={{ pick_norm_enc }}
-          </small>
-        {%- endif -%}
       </article>
     {% endfor %}
   </div>
 </section>
-
 
 {%- comment -%} 最近更新 {%- endcomment -%}
 <section class="home-section home-section--posts">
