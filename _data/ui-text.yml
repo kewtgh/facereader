@@ -757,7 +757,8 @@ zh: &DEFAULT_ZH_HANS
   home_section_company_analysis: "阅相识人"
   home_section_company_intro: >
     看一家公司，先看那几张脸。
-    他靠什么驱动？如何做决定？偏好与盲区在哪里？
+    公司核心管理者的性格往往体现在面相上，
+    他们靠什么驱动？如何做决定？偏好与盲区在哪里？
     再看组织如何放大这些倾向，企业的走向便不难理解。
   home_btn_view_company_analysis: "进入栏目"
 
@@ -867,10 +868,10 @@ zh: &DEFAULT_ZH_HANS
   home_about_card_image_alt: "安静的工作台与笔记本"
   home_about_card_title: "认识一下 FaceReader"
   home_about_card_desc: "这是一份个人写作。我习惯从「人」出发看企业与时代：看面相所呈之气，性格所循之势；看驱动与决策偏好如何在组织里被放大，最后落到公司的气质与走向。"
-  home_about_card_bullet_1: "想快速了解我在写什么：先读「关于」，再从几篇代表作进入。"
+  home_about_card_bullet_1: "想快速了解我在写什么：先读「关于我们」，再从几篇代表作进入。"
   home_about_card_bullet_2: "想按线索连续阅读：从分类/标签进入，读起来更顺。"
   home_about_card_note: "我不追热点，也不批发结论。这里更像一间慢慢整理的资料室：把依据写在明处，把分寸留住；需要的时候来读一篇，帮你把判断的来路与边界再看清。"
-  home_about_card_button: "阅读关于"
+  home_about_card_button: "关于我们"
   home_about_card_rss_button: "RSS 订阅"
 zh-CN:
   <<: *DEFAULT_ZH_HANS
