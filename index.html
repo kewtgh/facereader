@@ -161,13 +161,8 @@ feature_row:
       {%- assign pick_excerpt = t[excerpt_key] | default: '' -%}
 
       {%- comment -%}
-        Robust URL matching:
-        - raw url may contain Chinese characters
-        - doc.url is often url-encoded
-        - trailing slash may differ
+        Build an encoded URL that keeps "/" (encode each segment only)
       {%- endcomment -%}
-      {%- assign pick_url = pick_url_raw -%}
-      {%- comment -%} encode per path segment (keep "/") {%- endcomment -%}
       {%- assign _parts = pick_url_raw | split: '/' -%}
       {%- assign pick_url_encoded = '' -%}
       {%- for _p in _parts -%}
@@ -175,35 +170,31 @@ feature_row:
         {%- assign pick_url_encoded = pick_url_encoded | append: '/' | append: (_p | uri_escape) -%}
       {%- endfor -%}
 
-      {%- comment -%} normalize trailing slash versions (slice-based) {%- endcomment -%}
-      {%- assign pick_url_slash = pick_url_raw -%}
-      {%- unless pick_url_slash | slice: -1, 1 == '/' -%}
-        {%- assign pick_url_slash = pick_url_slash | append: '/' -%}
+      {%- comment -%}
+        Normalize helper:
+        - remove ".html"
+        - replace "/index.html" to "/"
+        - ensure trailing "/"
+      {%- endcomment -%}
+      {%- assign pick_norm_raw = pick_url_raw | replace: '/index.html', '/' | replace: '.html', '' -%}
+      {%- unless pick_norm_raw | slice: -1, 1 == '/' -%}
+        {%- assign pick_norm_raw = pick_norm_raw | append: '/' -%}
       {%- endunless -%}
 
-      {%- assign pick_url_encoded_slash = pick_url_encoded -%}
-      {%- unless pick_url_encoded_slash | slice: -1, 1 == '/' -%}
-        {%- assign pick_url_encoded_slash = pick_url_encoded_slash | append: '/' -%}
-      {%- endunless -%}
-      {%- assign pick_url_noslash = pick_url_raw | remove: '/' | prepend: '/' -%}
-      {%- assign pick_url_encoded_noslash = pick_url_encoded | remove: '/' | prepend: '/' -%}
-
-      {%- assign pick_url_slash = pick_url_raw -%}
-      {%- assign pick_url_slash = pick_url_raw -%}
-      {%- unless pick_url_slash | slice: -1, 1 == '/' -%}
-        {%- assign pick_url_slash = pick_url_slash | append: '/' -%}
-      {%- endunless -%}
-
-      {%- assign pick_url_encoded_slash = pick_url_encoded -%}
-      {%- unless pick_url_encoded_slash | slice: -1, 1 == '/' -%}
-        {%- assign pick_url_encoded_slash = pick_url_encoded_slash | append: '/' -%}
+      {%- assign pick_norm_enc = pick_url_encoded | replace: '/index.html', '/' | replace: '.html', '' -%}
+      {%- unless pick_norm_enc | slice: -1, 1 == '/' -%}
+        {%- assign pick_norm_enc = pick_norm_enc | append: '/' -%}
       {%- endunless -%}
 
       {%- assign pick_doc = nil -%}
 
       {%- for d in site.documents -%}
-        {%- assign du = d.url -%}
-        {%- if du == pick_url_raw or du == pick_url_encoded or du == pick_url_slash or du == pick_url_encoded_slash -%}
+        {%- assign du = d.url | replace: '/index.html', '/' | replace: '.html', '' -%}
+        {%- unless du | slice: -1, 1 == '/' -%}
+          {%- assign du = du | append: '/' -%}
+        {%- endunless -%}
+
+        {%- if du == pick_norm_raw or du == pick_norm_enc -%}
           {%- assign pick_doc = d -%}
           {%- break -%}
         {%- endif -%}
@@ -211,8 +202,12 @@ feature_row:
 
       {%- if pick_doc == nil -%}
         {%- for p in site.pages -%}
-          {%- assign pu = p.url -%}
-          {%- if pu == pick_url_raw or pu == pick_url_encoded or pu == pick_url_slash or pu == pick_url_encoded_slash -%}
+          {%- assign pu = p.url | replace: '/index.html', '/' | replace: '.html', '' -%}
+          {%- unless pu | slice: -1, 1 == '/' -%}
+            {%- assign pu = pu | append: '/' -%}
+          {%- endunless -%}
+
+          {%- if pu == pick_norm_raw or pu == pick_norm_enc -%}
             {%- assign pick_doc = p -%}
             {%- break -%}
           {%- endif -%}
