@@ -167,7 +167,24 @@ feature_row:
         - trailing slash may differ
       {%- endcomment -%}
       {%- assign pick_url = pick_url_raw -%}
-      {%- assign pick_url_encoded = pick_url_raw | uri_escape -%}
+      {%- comment -%} encode per path segment (keep "/") {%- endcomment -%}
+      {%- assign _parts = pick_url_raw | split: '/' -%}
+      {%- assign pick_url_encoded = '' -%}
+      {%- for _p in _parts -%}
+        {%- if _p == '' -%}{%- continue -%}{%- endif -%}
+        {%- assign pick_url_encoded = pick_url_encoded | append: '/' | append: (_p | uri_escape) -%}
+      {%- endfor -%}
+
+      {%- comment -%} normalize trailing slash versions (slice-based) {%- endcomment -%}
+      {%- assign pick_url_slash = pick_url_raw -%}
+      {%- unless pick_url_slash | slice: -1, 1 == '/' -%}
+        {%- assign pick_url_slash = pick_url_slash | append: '/' -%}
+      {%- endunless -%}
+
+      {%- assign pick_url_encoded_slash = pick_url_encoded -%}
+      {%- unless pick_url_encoded_slash | slice: -1, 1 == '/' -%}
+        {%- assign pick_url_encoded_slash = pick_url_encoded_slash | append: '/' -%}
+      {%- endunless -%}
       {%- assign pick_url_noslash = pick_url_raw | remove: '/' | prepend: '/' -%}
       {%- assign pick_url_encoded_noslash = pick_url_encoded | remove: '/' | prepend: '/' -%}
 
