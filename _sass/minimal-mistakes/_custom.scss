@@ -802,7 +802,7 @@ body { line-height: 1.7; }
 /* Actions: buttons closer, aligned */
 .home-section--about-cta .home-cta--about .home-cta__actions {
   display: flex;
-  gap: 0.55rem;           /* ✅ 按钮间距更小 */
+  gap: 1.06rem;           /* ✅ 按钮间距更小 */
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-top: 0.85rem;
@@ -987,4 +987,18 @@ body { line-height: 1.7; }
 .home-section--picks .home-chip:hover {
   background: rgba(255, 255, 255, 0.85);
   border-color: rgba(34, 48, 66, 0.30);
+}
+
+/* Start-here: force 3 columns on desktop */
+@include breakpoint($large) {
+  .home-section--start-here .entries-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* optional: 2 columns on medium screens */
+@include breakpoint($medium) {
+  .home-section--start-here .entries-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

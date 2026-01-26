@@ -48,8 +48,6 @@ feature_row:
 {%- comment -%} 顶部三张栏目卡片 {%- endcomment -%}
 {% include feature_row %}
 
-{% include home-cta.html %}
-
 {%- comment -%} 从这里开始（阅读路径） {%- endcomment -%}
 <section class="home-section home-section--start-here">
   <header class="home-section__header">
@@ -142,6 +140,8 @@ feature_row:
     </article>
   </div>
 </section>
+
+{% include home-cta.html %}
 
 {%- comment -%} 代表作精选（4 篇） {%- endcomment -%}
 <section class="home-section home-section--picks">
