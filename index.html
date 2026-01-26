@@ -172,13 +172,14 @@ feature_row:
       {%- assign pick_url_encoded_noslash = pick_url_encoded | remove: '/' | prepend: '/' -%}
 
       {%- assign pick_url_slash = pick_url_raw -%}
-      {%- unless pick_url_slash endswith '/' -%}
-        {%- assign pick_url_slash = pick_url_raw | append: '/' -%}
+      {%- assign pick_url_slash = pick_url_raw -%}
+      {%- unless pick_url_slash | slice: -1, 1 == '/' -%}
+        {%- assign pick_url_slash = pick_url_slash | append: '/' -%}
       {%- endunless -%}
 
       {%- assign pick_url_encoded_slash = pick_url_encoded -%}
-      {%- unless pick_url_encoded_slash endswith '/' -%}
-        {%- assign pick_url_encoded_slash = pick_url_encoded | append: '/' -%}
+      {%- unless pick_url_encoded_slash | slice: -1, 1 == '/' -%}
+        {%- assign pick_url_encoded_slash = pick_url_encoded_slash | append: '/' -%}
       {%- endunless -%}
 
       {%- assign pick_doc = nil -%}
