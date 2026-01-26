@@ -56,47 +56,135 @@ en: &DEFAULT_EN
   tags_collapse: "Hide Tags"
   tag_current: "Current Tag"
   tag_clear: "Clear Filter"
-  home_recent_updates        : "Recent updates"
-  home_view_all_posts        : "View all posts"
+
+  # Three cards
   home_hero_excerpt: >
-   In recent years, I’ve been talking with many founders, professional managers, and frontline employees about the companies they work in.
-   Rather than putting labels on a company, I’m more interested in the people who make decisions: what they’re thinking, what they fear, and what they insist on.
-   What FaceReader aims to do is to start from “people”, see clearly a company’s real strengths, risks, and possible directions, and help you make more grounded choices.
-  home_hero_primary_action: "Start with an article"
-  home_hero_secondary_action: "First see how I make judgments"
-  home_section_company_analysis: "Company Analysis"
-  home_section_classic_reviews: "Classic Reviews"
-  home_section_personal_growth: "Personal Growth"
+    I write about companies. I write about the times.
+    But the entry is always people.
+    The air a face gives off, the grain a character follows, the desire that pushes a decision—
+    once inside an organization, these become a company’s way of moving. Often, its fate.
+
+  home_hero_primary_action: "Read posts"
+  home_hero_secondary_action: "Browse by tags"
+
+  home_section_company_analysis: "Reading Faces, Reading Firms"
   home_section_company_intro: >
-    A company is often reflected in a few very specific faces.
-    In these articles, we’ll take apart the founder and core team together: who takes responsibility, who leads the decisions, how conflicts arise, and how they are resolved.
-    You’ll see their habitual decision paths, the principles they truly believe in, and the structural blind spots they carry.
-    When you evaluate “whether it’s worth staking your resources on this company”, you can use these cases first to see its people and its structure more clearly.
+    To read a company, start with a few faces.
+    What drives this person? How do they decide? Where are their preferences and blind spots?
+    Then watch how the organization amplifies them—the trajectory shows itself there.
+  home_btn_view_company_analysis: "Enter"
+
+  home_section_classic_reviews: "Classics, Re-read"
   home_section_classic_intro: >
-    Many management and business classics are books you may already know by title, or even by their famous quotes.
-    What I care about more is how these theories still have practical impact within today’s corporate and workplace environments.
-    Each article selects key chapters, combines them with real cases, and breaks those big abstract arguments into a series of actionable questions.
-    So that when you’re hiring, partnering, investing, or choosing your own career path, you can use them directly as decision frameworks and reference standards.
+    I prefer to return classics to their original circumstances.
+    Less cutting with modern utility.
+    More asking: why did they write this, think this, and act this way—then and there?
+  home_btn_view_classic_reviews: "Start reading"
+
+  home_section_personal_growth: "Thoughts & Life"
   home_section_growth_intro: >
-    This section is for you who are also wondering, “What kind of person am I, really?”
-    It covers the ups and downs of life, dilemmas of growing up, psychological mechanisms, and those critical turning points that only become clear in hindsight.
-    It comes from my long-term observations of myself and the people around me, and I try to distill those experiences into language that invites reflection and discussion.
-    I hope that when you’re in a period of confusion or choice, these words can act like a careful colleague, helping you sort through your thoughts and clarify your stance.
-  home_btn_view_company_analysis: "See how companies became what they are"
-  home_btn_view_classic_reviews: "Reread the classics through today’s stories"
-  home_btn_view_personal_growth: "See yourself in other people’s stories"
-  home_about_card_title: "Before we talk about companies, get to know me first"
-  home_about_card_intro: >
-   Some people treat this place as “another window for looking at companies”, others say it feels like a quiet but honest conversation partner.
-   Before we formally work together, I’d like you to be clear about two things:
-  home_about_card_point1: >
-   How I see the place of “people” inside a company — what roles founders, partners, and key positions each play;
-  home_about_card_point2: >
-   Which kinds of questions are suitable for me to analyze, and which ones I may not be very helpful with.
-  home_about_card_note: >
-   If you’re still hesitating about whether to write that email, or simply curious about what kind of work sits behind all this,
-   you might as well start by reading “About FaceReader” at your own pace, without rushing into any decisions.
-  home_about_card_button: "Go to “About FaceReader”"
+    Some pages are written for confusion. Some for lucidity.
+    I write about reading and life—about existential doubt and self-rescue.
+    Not a list of methods, but a sustained gaze at life, fate, and being.
+  home_btn_view_personal_growth: "Continue"
+
+  # Recent updates
+  home_recent_updates: "Recent updates"
+  home_view_all_posts: "View all posts"
+
+  # Start here
+  home_start_here_title: "Start here"
+  home_start_here_desc: "Start with people: observe the face, discern the character, follow the drive. Then see how institutions and organizations turn individual tendencies into collective outcomes."
+
+  home_recommended_entry: "Recommended"
+  home_link_company_category: "Reading Faces, Reading Firms"
+  home_link_tag_ceo: "CEO"
+  home_link_tag_cg: "Corporate governance"
+  home_link_category_mgmt: "Management thought"
+  home_link_tag_leadership: "Leadership"
+  home_link_tag_prof_mgmt: "Professional management"
+  home_link_category_ai: "AI"
+  home_link_tag_ai: "Artificial intelligence"
+  home_link_category_chip: "Semiconductors"
+  home_link_category_society: "Social notes"
+  home_link_tag_hot: "Hot topics"
+  home_link_tag_commentary: "Social commentary"
+  home_link_category_classics: "Classics, Re-read"
+  home_link_category_sunzi: "The Art of War"
+  home_link_category_growth: "Personal growth"
+  home_link_tag_growth: "Growth"
+  home_link_tag_psy: "Psychology"
+
+  home_path_company_title: "Companies / Read the person"
+  home_path_company_desc_1: "Don’t rush to define a company. Start with the key figure’s face and character structure: what drives them, how they decide, and where they will lead the organization."
+
+  home_path_org_title: "Management & organization"
+  home_path_org_desc_1: "Organizational problems are often not cognitive problems, but structural ones. Power, incentives, and information—their flow decides what people become."
+
+  home_path_industry_title: "Technology & industry"
+  home_path_industry_desc_1: "Put technology back into the value chain: position, cost, substitution, constraints. Less narrative, more structure."
+
+  home_path_society_title: "Society & mechanisms"
+  home_path_society_desc_1: "Lean less on personal will as an explanation. Return to mechanisms and constraints: how power works, how information distorts, how groups are driven."
+
+  home_path_classics_title: "Classics, close reading"
+  home_path_classics_desc_1: "Return to the author and the time. Strip away modern convenience and projection. First clarify the circumstances—then speak of the text."
+
+  home_path_life_title: "Thoughts & life"
+  home_path_life_desc_1: "Writing about lows and lucidity, meaninglessness and self-rescue. Not answering life for you—only showing what I feel and think when facing its difficulties."
+
+  # Picks
+  home_picks_title: "Selected essays"
+  home_picks_desc: "A few entry points. Grounds, causality, measure."
+
+  home_pick_1_url: "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/"
+  home_pick_1_title: "Starting from a face: the source of a company’s temperament"
+  home_pick_1_excerpt: "Begin with face and character structure, then land on decisions and organizational outcomes."
+
+  home_pick_2_url: "/docs/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/"
+  home_pick_2_title: "Why do organizations distort?"
+  home_pick_2_excerpt: "How power, incentives, and information step by step push people into systematic bias."
+
+  home_pick_3_url: "/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/"
+  home_pick_3_title: "Could “being yourself” hurt you?"
+  home_pick_3_excerpt: "Personal growth: from self-comfort back to self-knowledge."
+
+  home_pick_4_url: "/docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/"
+  home_pick_4_title: "The Art of War: reading without the myth"
+  home_pick_4_excerpt: "Put the ancients back into their time—and our projections back into ourselves."
+
+  # Topics
+  home_topics_title: "Topics"
+  home_topics_desc: "Grouped by question domains. Use it as an index, or as a path."
+
+  home_topic_ceo_title: "CEO / Chair observation"
+  home_topic_ceo_excerpt: "Face, character, drive, decision habits: how power shapes organizations."
+
+  home_topic_cg_title: "Corporate governance"
+  home_topic_cg_excerpt: "Incentives and constraints, corruption and professionalization: how institutions domesticate human nature."
+
+  home_topic_ai_title: "Artificial intelligence"
+  home_topic_chip_title: "Semiconductors"
+  home_topic_ai_excerpt: "Beyond tech narratives: value-chain position and structural shifts."
+
+  home_topic_hot_title: "Hot topics"
+  home_topic_hot_excerpt: "Pull events back from stance to mechanism: information, power, interests."
+
+  home_topic_sunzi_title: "The Art of War"
+  home_topic_sunzi_excerpt: "Read strategy through circumstance, with history as corroboration."
+
+  home_topic_growth_title: "Growth / Psychology"
+  home_topic_growth_excerpt: "Understand the circumstance. Look at the self. More honest, more concrete."
+
+  # About Card
+  home_about_card_image_alt: "A quiet desk and a notebook"
+  home_about_card_title: "About FaceReader"
+  home_about_card_desc: "This is a personal writing project. I read companies and the times by starting with people: the air a face suggests, the grain a character follows; how drives and decision habits get amplified inside an organization, and finally become a company’s temperament and trajectory."
+  home_about_card_bullet_1: "To get the gist: start with “About”, then enter through a few selected essays."
+  home_about_card_bullet_2: "To read along a thread: use Categories/Tags—the smoothest way in."
+  home_about_card_note: "I don’t chase headlines, and I don’t mass-produce conclusions. This place is closer to a slowly curated reading room. Grounds stay visible. Proportions stay intact. When you need it, read one piece—and re-check the origin and boundary of your judgment."
+  home_about_card_button: "Read About"
+  home_about_card_rss_button: "RSS"
 en-US:
   <<: *DEFAULT_EN
 en-CA:
@@ -162,48 +250,134 @@ es: &DEFAULT_ES
   tags_collapse: "Ocultar etiquetas"
   tag_current: "Etiqueta actual"
   tag_clear: "Borrar filtro"
-  home_recent_updates        : "Actualizaciones recientes"
-  home_view_all_posts        : "Ver todas las entradas"
-  home_hero_excerpt: >
-   En los últimos años he conversado con muchos fundadores, directivos y personas de primera línea sobre las empresas en las que trabajan.
-   Más que poner etiquetas a una compañía, me interesa quienes toman las decisiones: en qué piensan, qué temen y qué están dispuestos a defender hasta el final.
-   Lo que intenta hacer FaceReader es partir de las “personas” para ver con claridad las fortalezas reales, los riesgos y las posibles trayectorias de una empresa, y ayudarte así a tomar decisiones más seguras.
-  home_hero_primary_action: "Empezar con un artículo"
-  home_hero_secondary_action: "Ver primero cómo llego a mis juicios"
-  home_section_company_analysis: "Análisis de empresas"
-  home_section_classic_reviews: "Lecturas clásicas"
-  home_section_personal_growth: "Vida y crecimiento personal"
-  home_section_company_intro: >
-    El perfil de una empresa suele reflejarse en unos pocos rostros muy concretos.
-    En estos textos analizamos juntos al fundador y al equipo clave: quién asume la responsabilidad, quién lidera las decisiones, cómo surgen los conflictos y cómo se resuelven.
-    Podrás ver sus patrones habituales de decisión, los principios en los que realmente creen y las carencias estructurales que arrastran.
-    Cuando te preguntes si «vale la pena apostar tus recursos por esta empresa», puedes empezar por estos casos para ver con más nitidez tanto a las personas como al marco en el que se mueven.
-  home_section_classic_intro: >
-    Muchos clásicos de gestión y negocios probablemente ya te suenan por el título o por sus frases célebres.
-    A mí me interesa más cómo esas teorías pueden seguir teniendo un efecto práctico en el contexto actual de las organizaciones y las carreras profesionales.
-    En cada artículo selecciono capítulos clave, los conecto con casos reales y convierto los grandes discursos abstractos en una serie de preguntas accionables.
-    Así, en momentos de contratación, colaboración, inversión o elección de carrera, puedes usarlos directamente como marcos de decisión y criterios de referencia.
-  home_section_growth_intro: >
-    Esta sección es para ti, que también te preguntas: «¿Qué tipo de persona soy en realidad?»
-    Trata sobre los altibajos de la vida, las dudas del crecimiento, los mecanismos psicológicos y esos puntos de inflexión que solo se ven claramente cuando miramos hacia atrás.
-    Nace de mis observaciones de largo plazo sobre mí mismo y las personas que me rodean, y del intento de destilar esas experiencias en un lenguaje que invite a conversar y pensar.
-    Ojalá que, cuando estés en un momento de confusión o de decisión, estos textos puedan acompañarte como un colega prudente, ayudándote a ordenar tus ideas y aclarar tu posición.
-  home_btn_view_company_analysis: "Ver cómo las empresas han llegado hasta aquí"
-  home_btn_view_classic_reviews: "Releer los clásicos con historias de hoy"
-  home_btn_view_personal_growth: "Pensar en ti a partir de las historias de otros"
-  home_about_card_title: "Antes de hablar de empresas, hablemos un poco de mí"
-  home_about_card_intro: >
-   Algunas personas ven este espacio como «otra ventana para mirar a las empresas»; otras dicen que se parece a un interlocutor tranquilo pero sincero.
-   Antes de empezar a trabajar juntos de forma más formal, me gustaría que tuvieras claras dos cosas:
-  home_about_card_point1: >
-   Cómo veo yo el lugar de las “personas” dentro de una empresa — qué papel juegan el fundador, los socios y los puestos clave;
-  home_about_card_point2: >
-   Qué tipo de preguntas tiene sentido que yo analice y en cuáles probablemente podré ayudarte mucho menos.
-  home_about_card_note: >
-   Si todavía dudas sobre escribir ese correo, o simplemente te da curiosidad qué tipo de forma de trabajo hay detrás de todo esto,
-   puedes empezar leyendo con calma la sección «About FaceReader», sin prisa por tomar una decisión.
-  home_about_card_button: "Ir a «About FaceReader»"
 
+  # Tres tarjetas
+  home_hero_excerpt: >
+    Escribo sobre empresas y sobre la época, pero siempre empiezo por las personas.
+    El aire que revela un rostro, la inclinación del carácter, y cómo el deseo empuja las decisiones—
+    cuando eso entra en una organización, se vuelve su manera de avanzar. Y, a menudo, su destino.
+
+  home_hero_primary_action: "Entrar a artículos"
+  home_hero_secondary_action: "Leer por etiquetas"
+
+  home_section_company_analysis: "Rostros y empresas"
+  home_section_company_intro: >
+    Para entender una empresa, empieza por unos cuantos rostros.
+    ¿Qué lo impulsa? ¿Cómo decide? ¿Dónde están sus preferencias y sus puntos ciegos?
+    Luego mira cómo la organización amplifica esas inclinaciones: ahí se dibuja el rumbo.
+  home_btn_view_company_analysis: "Entrar"
+
+  home_section_classic_reviews: "Lectura de clásicos"
+  home_section_classic_intro: >
+    Prefiero leer los clásicos dentro de sus circunstancias originales.
+    No recortar palabras antiguas con la conveniencia moderna.
+    Preguntar primero: ¿por qué entonces escribían así, pensaban así y actuaban así?
+  home_btn_view_classic_reviews: "Empezar"
+
+  home_section_personal_growth: "Pensamiento y vida"
+  home_section_growth_intro: >
+    Hay textos para la confusión. Y textos para la lucidez.
+    Escribo sobre lectura y vida, sobre dudas existenciales y auto-rescate.
+    No es una lista de métodos: es una mirada insistente a la vida, el destino y el ser.
+  home_btn_view_personal_growth: "Continuar"
+
+  # Recientes
+  home_recent_updates: "Actualizaciones recientes"
+  home_view_all_posts: "Ver todos los artículos"
+
+  # Start here
+  home_start_here_title: "Empieza aquí"
+  home_start_here_desc: "Empieza por la persona: observa el rostro, distingue el carácter, sigue el impulso. Luego mira cómo instituciones y organización convierten tendencias individuales en resultados colectivos."
+
+  home_recommended_entry: "Entrada recomendada"
+  home_link_company_category: "Rostros y empresas"
+  home_link_tag_ceo: "CEO"
+  home_link_tag_cg: "Gobierno corporativo"
+  home_link_category_mgmt: "Pensamiento de gestión"
+  home_link_tag_leadership: "Liderazgo"
+  home_link_tag_prof_mgmt: "Gestión profesional"
+  home_link_category_ai: "AI"
+  home_link_tag_ai: "Inteligencia artificial"
+  home_link_category_chip: "Semiconductores"
+  home_link_category_society: "Notas sociales"
+  home_link_tag_hot: "Temas calientes"
+  home_link_tag_commentary: "Comentario social"
+  home_link_category_classics: "Lectura de clásicos"
+  home_link_category_sunzi: "El arte de la guerra"
+  home_link_category_growth: "Crecimiento personal"
+  home_link_tag_growth: "Crecimiento"
+  home_link_tag_psy: "Psicología"
+
+  home_path_company_title: "Empresa / Leer a la persona"
+  home_path_company_desc_1: "No te apresures a definir una empresa. Empieza por el rostro y la estructura del carácter de la figura clave: qué lo impulsa, cómo decide y hacia dónde llevará a la organización."
+
+  home_path_org_title: "Gestión y organización"
+  home_path_org_desc_1: "Los problemas organizacionales rara vez son de comprensión; suelen ser de estructura. Poder, incentivos e información: su flujo decide en qué se convierten las personas."
+
+  home_path_industry_title: "Tecnología e industria"
+  home_path_industry_desc_1: "Devuelve la tecnología a la cadena: posición, costos, sustitución y restricciones. Menos relato, más estructura."
+
+  home_path_society_title: "Sociedad y mecanismos"
+  home_path_society_desc_1: "No apoyes la explicación solo en la voluntad personal. Vuelve a mecanismos y restricciones: cómo opera el poder, cómo se distorsiona la información y cómo se movilizan los grupos."
+
+  home_path_classics_title: "Clásicos: lectura contrastada"
+  home_path_classics_desc_1: "Regresa al autor y a su época, retirando proyecciones modernas convenientes. Primero aclara las circunstancias; luego habla del texto."
+
+  home_path_life_title: "Pensamiento y vida"
+  home_path_life_desc_1: "Escribo sobre bajíos y claridad, sobre falta de sentido y auto-rescate. No respondo la vida por ti. Presento mis sensaciones y pensamientos cuando la vida se vuelve difícil."
+
+  # Picks
+  home_picks_title: "Selección"
+  home_picks_desc: "Unas piezas como entrada: fundamentos, causalidad y medida."
+
+  home_pick_1_url: "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/"
+  home_pick_1_title: "Desde un rostro: el origen del temperamento de una empresa"
+  home_pick_1_excerpt: "Del rostro y la estructura del carácter, a las decisiones y sus consecuencias organizacionales."
+
+  home_pick_2_url: "/docs/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/"
+  home_pick_2_title: "¿Por qué se deforma una organización?"
+  home_pick_2_excerpt: "Cómo poder, incentivos e información empujan paso a paso hacia sesgos sistemáticos."
+
+  home_pick_3_url: "/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/"
+  home_pick_3_title: "¿Ser tú mismo puede hacerte daño?"
+  home_pick_3_excerpt: "Crecimiento personal: del auto-consuelo al auto-conocimiento."
+
+  home_pick_4_url: "/docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/"
+  home_pick_4_title: "El arte de la guerra: una lectura sin mito"
+  home_pick_4_excerpt: "Devolver a los antiguos a su época, y nuestras proyecciones a nosotros mismos."
+
+  # Topics
+  home_topics_title: "Temas"
+  home_topics_desc: "Artículos agrupados por dominios de preguntas: como índice o como ruta de lectura."
+
+  home_topic_ceo_title: "CEO / Observación del presidente"
+  home_topic_ceo_excerpt: "Rostro, carácter, impulso y hábitos de decisión: cómo el poder moldea organizaciones."
+
+  home_topic_cg_title: "Gobierno corporativo"
+  home_topic_cg_excerpt: "Incentivos y restricciones, corrupción y profesionalización: cómo las instituciones domestican la naturaleza humana."
+
+  home_topic_ai_title: "Inteligencia artificial"
+  home_topic_chip_title: "Semiconductores"
+  home_topic_ai_excerpt: "Más allá del relato tecnológico: posición en la cadena y cambios estructurales."
+
+  home_topic_hot_title: "Temas calientes"
+  home_topic_hot_excerpt: "Llevar el evento de la postura al mecanismo: información, poder e intereses."
+
+  home_topic_sunzi_title: "El arte de la guerra"
+  home_topic_sunzi_excerpt: "Leer la estrategia desde la circunstancia, con la historia como contraste."
+
+  home_topic_growth_title: "Crecimiento / Psicología"
+  home_topic_growth_excerpt: "Entender la circunstancia y mirarse de frente: más honesto, más concreto."
+
+  # About Card
+  home_about_card_image_alt: "Un escritorio tranquilo y un cuaderno"
+  home_about_card_title: "Sobre FaceReader"
+  home_about_card_desc: "Este es un proyecto personal. Leo empresas y época empezando por las personas: el aire que revela un rostro y la inclinación del carácter; cómo el impulso y los hábitos de decisión se amplifican dentro de la organización, y terminan dando forma a su temperamento y trayectoria."
+  home_about_card_bullet_1: "Para entrar rápido: empieza por “Sobre”, y luego por unas piezas seleccionadas."
+  home_about_card_bullet_2: "Para leer siguiendo un hilo: entra por Categorías/Etiquetas; es el camino más fluido."
+  home_about_card_note: "No persigo titulares ni fabrico conclusiones en serie. Este lugar se parece más a una sala de lectura que se ordena despacio. Los fundamentos, a la vista. Las proporciones, intactas. Cuando lo necesites, lee una pieza y vuelve a revisar el origen y los límites de tu juicio."
+  home_about_card_button: "Leer “Sobre”"
+  home_about_card_rss_button: "RSS"
 es-ES:
   <<: *DEFAULT_ES
 es-CO:
@@ -571,48 +745,133 @@ zh: &DEFAULT_ZH_HANS
   tags_collapse: "收起标签"
   tag_current: "当前标签"
   tag_clear: "清除筛选"
-  home_recent_updates        : "最近更新"
-  home_view_all_posts        : "查看全部文章"
+  # 三张卡片
   home_hero_excerpt: >
-   这几年，我陆续和许多创业者、职业经理人和一线员工聊他们所在的企业。
-   比起给公司贴标签，我更关心做决定的人：他们在想什么、害怕什么，又坚持什么。
-   FaceReader 想做的，是从「人」出发，看清一家公司真正的优势、风险和可能的走向，帮你做更稳妥的选择。
-  home_hero_primary_action: "从一篇文章开始"
-  home_hero_secondary_action: "先看我的判断方式"
-  home_section_company_analysis: "企业剖析"
-  home_section_classic_reviews: "经典解读"
-  home_section_personal_growth: "人格成长"
-  home_section_company_intro: >
-    一家公司，往往折射在几张具体的面孔上。
-    在这些文章里，我们一起拆解创始人和核心团队：谁承担责任，谁主导决策，矛盾如何产生，又如何被化解。
-    你会看到他们在决策上的惯常路径、真正坚信的原则，以及结构性短板所在。
-    当你评估「是否值得把资源押在这家公司」时，可以先借助这些案例，把人与格局看得更清楚。
-  home_section_classic_intro: >
-    许多管理与商业经典，你或许早已读过书名，甚至熟悉其中的金句。
-    我更关心的是：这些理论置于当下的企业与职场环境中，仍然怎样发挥实际效用。
-    文章会选取关键章节，结合真实案例，将那些宏观的抽象表述拆解为若干可操作的问题。
-    以便你在招聘、合作、投资和职业选择时，将其直接作为决策框架与对照标准。
-  home_section_growth_intro: >
-    这一栏写给也在思考「我到底是个怎样的人」的你。
-    内容涵盖人生起伏、成长困惑、心理机制，以及那些事后回望才看清的关键转折。
-    它源于我对自己与身边人的长期观察，我力图将这些经验提炼成更可讨论的语言。
-    希望当你处于迷茫或抉择阶段时，这些文字能像一位审慎的同事，协助你梳理思路、澄清立场。
-  home_btn_view_company_analysis: "看看企业怎么走到今天"
-  home_btn_view_classic_reviews: "用今天的故事重读经典"
-  home_btn_view_personal_growth: "从别人的故事想想自己"
-  home_about_card_title: "在聊企业之前，先认识一下我"
-  home_about_card_intro: >
-   有人把这里当成「看企业的另一个窗口」，也有人说它像一位安静但诚实的聊天对象。
-   在正式做咨询之前，我希望你先搞清楚两件事：
-  home_about_card_point1: >
-   我怎么看「人」在企业里的位置——创始人、合伙人和关键岗位分别扮演什么角色；
-  home_about_card_point2: >
-   哪些问题适合由我来分析，哪些问题，我可能帮不上太多忙。
-  home_about_card_note: >
-   如果你还在犹豫要不要写那封邮件，或者只是好奇这背后是一种怎样的工作方式，
-   不妨先从「关于 FaceReader」开始慢慢看，不急着做决定。
-  home_about_card_button: "去「关于 FaceReader」看看"
+    我写企业，也写时代，但总先看人。
+    面相所呈之气，性格所循之势，欲望如何驱动决策——
+    这些落到组织里，往往就成了公司的路数与命运。
 
+  home_hero_primary_action: "进入文章"
+  home_hero_secondary_action: "按标签阅读"
+
+  home_section_company_analysis: "阅相识人"
+  home_section_company_intro: >
+    看一家公司，先看那几张脸。
+    他靠什么驱动？如何做决定？偏好与盲区在哪里？
+    再看组织如何放大这些倾向，企业的走向便不难理解。
+  home_btn_view_company_analysis: "进入栏目"
+
+  home_section_classic_reviews: "经典解读"
+  home_section_classic_intro: >
+    我更愿意把经典放回它原本的处境里读。
+    少用现代的功利心去裁剪古人的话，
+    多问一句：当时的人为何这样写、为何这样想、为何这样做。
+  home_btn_view_classic_reviews: "开始阅读"
+
+  home_section_personal_growth: "思想与生活"
+  home_section_growth_intro: >
+    有些文字写给困惑，也写给通透。
+    我写读书、写人生，也写存在主义式的困惑与自救
+    不是方法论清单，而是对人生、命运与存在的反复凝视。
+  home_btn_view_personal_growth: "继续阅读"
+
+  # 首页最近更新
+  home_recent_updates: "最近更新"
+  home_view_all_posts: "查看全部文章"
+
+  # Start here
+  home_start_here_title: "从这里开始"
+  home_start_here_desc: "从“人”入手：观其相，辨其性，循其动；再看制度与组织如何把个人倾向变成集体结果。"
+
+  home_recommended_entry: "推荐入口"
+  home_link_company_category: "阅相识人"
+  home_link_tag_ceo: "CEO"
+  home_link_tag_cg: "公司治理"
+  home_link_category_mgmt: "管理思想"
+  home_link_tag_leadership: "领导力"
+  home_link_tag_prof_mgmt: "专业化管理"
+  home_link_category_ai: "AI"
+  home_link_tag_ai: "人工智能"
+  home_link_category_chip: "芯片半导体"
+  home_link_category_society: "社会杂论"
+  home_link_tag_hot: "热点事件"
+  home_link_tag_commentary: "社会评论"
+  home_link_category_classics: "经典解读"
+  home_link_category_sunzi: "孙子兵法"
+  home_link_category_growth: "人格成长"
+  home_link_tag_growth: "成长"
+  home_link_tag_psy: "心理学"
+
+  home_path_company_title: "看公司 / 识其人"
+  home_path_company_desc_1: "不急着给公司下定义，先看关键人物的面相与性格结构：他靠什么驱动，如何做决定，会把组织带向何处。"
+
+  home_path_org_title: "管理与组织"
+  home_path_org_desc_1: "组织问题常常不是认知问题，而是结构问题：权责、激励与信息如何流动，决定了人会变成什么样。"
+
+  home_path_industry_title: "科技与产业"
+  home_path_industry_desc_1: "把技术放回产业链：位置、成本、替代与约束。少讲叙事，多讲结构。"
+
+  home_path_society_title: "社会与机制"
+  home_path_society_desc_1: "少把解释寄托在个人意志上，更多回到机制与约束本身：权力如何作用，信息如何失真，群体如何被驱动。"
+
+  home_path_classics_title: "经典校读"
+  home_path_classics_desc_1: "回到作者与时代，剥离现代人的便利投射。先弄清处境，再谈文字。"
+
+  home_path_life_title: "存在与自处"
+  home_path_life_desc_1: "写低谷与通透，写无意义与自救。不替你回答人生，只呈现我面对人生困境时的感受与思考。"
+
+  # Picks (你后续把 URL 换成真实文章链接即可)
+  home_picks_title: "代表作精选"
+  home_picks_desc: "此处选录数篇作为阅读入口，以示写作取径：依据、因果与尺度。"
+
+  home_pick_1_url: "/docs/阅相识人/企业剖析/新能源汽车/NEV-nio/"
+  home_pick_1_title: "从一张脸开始：公司气质的源头"
+  home_pick_1_excerpt: "从面相与性格结构谈起，最终落到决策与组织结果。"
+
+  home_pick_2_url: "/docs/社会杂论/管理思想/Society-OrganizationalDomestication/"
+  home_pick_2_title: "组织为什么会失真？"
+  home_pick_2_excerpt: "权责、激励与信息如何一步步把人推向系统性的偏差。"
+
+  home_pick_3_url: "/docs/人格成长/Psy-ToBeYourself-1/"
+  home_pick_3_title: "做自己，会害了你吗？"
+  home_pick_3_excerpt: "人格成长：从自我安慰回到自我认识。"
+
+  home_pick_4_url: "/docs/经典解读/孙子兵法/TheArtofWar-1shiji/"
+  home_pick_4_title: "孙子兵法：去神话化的读法"
+  home_pick_4_excerpt: "把古人放回古代，把我们的投射放回我们自己。"
+
+  # Topics
+  home_topics_title: "专题入口"
+  home_topics_desc: "按问题域聚合文章。你可以把它当索引，也可以当路径。"
+
+  home_topic_ceo_title: "CEO / 董事长观察"
+  home_topic_ceo_excerpt: "面相、性格、驱动与决策偏好：权力如何塑形组织。"
+
+  home_topic_cg_title: "公司治理"
+  home_topic_cg_excerpt: "激励与约束，腐败与专业化，制度如何驯化人性。"
+
+  home_topic_ai_title: "人工智能"
+  home_topic_chip_title: "半导体"
+  home_topic_ai_excerpt: "技术叙事之外，产业链位置与结构变化。"
+
+  home_topic_hot_title: "热点事件"
+  home_topic_hot_excerpt: "把事件从立场拉回机制：信息、权力与利益。"
+
+  home_topic_sunzi_title: "孙子兵法"
+  home_topic_sunzi_excerpt: "以处境读兵法，以史事作旁证。"
+
+  home_topic_growth_title: "成长 / 心理学"
+  home_topic_growth_excerpt: "对处境的理解，对自我的凝视：更诚实，也更具体。"
+  
+  # About Card
+  home_about_card_image_alt: "安静的工作台与笔记本"
+  home_about_card_title: "认识一下 FaceReader"
+  home_about_card_desc: "这是一份个人写作。我习惯从「人」出发看企业与时代：看面相所呈之气，性格所循之势；看驱动与决策偏好如何在组织里被放大，最后落到公司的气质与走向。"
+  home_about_card_bullet_1: "想快速了解我在写什么：先读「关于」，再从几篇代表作进入。"
+  home_about_card_bullet_2: "想按线索连续阅读：从分类/标签进入，读起来更顺。"
+  home_about_card_note: "我不追热点，也不批发结论。这里更像一间慢慢整理的资料室：把依据写在明处，把分寸留住；需要的时候来读一篇，帮你把判断的来路与边界再看清。"
+  home_about_card_button: "阅读关于"
+  home_about_card_rss_button: "RSS 订阅"
 zh-CN:
   <<: *DEFAULT_ZH_HANS
 zh-SG:
@@ -672,47 +931,135 @@ zh-TW: &DEFAULT_ZH_HANT
   tags_collapse: "收起標籤"
   tag_current: "目前標籤"
   tag_clear: "清除篩選"
-  home_recent_updates        : "最近更新"
-  home_view_all_posts        : "查看全部文章"
+
+  # 三張卡片
   home_hero_excerpt: >
-   這幾年，我陸續和許多創業者、職業經理人和第一線員工聊他們所在的企業。
-   比起替公司貼標籤，我更在意那些做決定的人：他們在想什麼、害怕什麼，又堅持什麼。
-   FaceReader 想做的，是從「人」出發，看清一家公司的真正優勢、風險和可能走向，幫你做出更穩當的選擇。
-  home_hero_primary_action: "從一篇文章開始"
-  home_hero_secondary_action: "先看看我的判斷方式"
-  home_section_company_analysis: "企業剖析"
-  home_section_classic_reviews: "經典解讀"
-  home_section_personal_growth: "人格與成長"
+    我寫企業，也寫時代。
+    但入口始終是人。
+    面相所呈之氣，性格所循之勢，欲望如何驅動決策——
+    落到組織裡，往往就成了公司的路數，甚至命運。
+
+  home_hero_primary_action: "進入文章"
+  home_hero_secondary_action: "按標籤閱讀"
+
+  home_section_company_analysis: "閱相識人"
   home_section_company_intro: >
-    一家公司，往往折射在幾張具體的臉孔上。
-    在這些文章裡，我們一起拆解創辦人和核心團隊：誰扛責任，誰主導決策，矛盾如何產生，又如何被化解。
-    你會看到他們在決策上的慣性路徑、真正相信的原則，以及結構性的短板在哪裡。
-    當你評估「是否值得把資源押在這家公司」時，可以先藉由這些案例，把人與格局看得更清楚。
+    看一家公司，先看那幾張臉。
+    他靠什麼驅動？如何做決定？偏好與盲區在哪裡？
+    再看組織如何放大這些傾向——走向便在其中顯影。
+  home_btn_view_company_analysis: "進入欄目"
+
+  home_section_classic_reviews: "經典解讀"
   home_section_classic_intro: >
-    許多管理與商業經典，你也許早已聽過書名，甚至熟悉其中的金句。
-    我更在意的是：這些理論放在當下的企業與職場環境中，仍然如何發揮實際功效。
-    文章會選取關鍵章節，結合真實案例，將那些宏觀的抽象說法拆解成若干可操作的問題。
-    方便你在招募、合作、投資與職涯選擇時，直接把它們當成決策架構與對照標準。
+    我更願意把經典放回它原本的處境裡讀。
+    少用現代的功利心去裁剪古人的話。
+    多問一句：當時的人為何這樣寫、為何這樣想、為何這樣做。
+  home_btn_view_classic_reviews: "開始閱讀"
+
+  home_section_personal_growth: "思想與生活"
   home_section_growth_intro: >
-    這一欄是寫給也在思考「我究竟是個怎樣的人」的你。
-    內容涵蓋人生起伏、成長困惑、心理機制，以及那些事後回望才看清的關鍵轉折。
-    它源自我對自己與身邊人的長期觀察，也試著把這些經驗提煉成更可討論的語言。
-    希望當你處在迷惘或抉擇的階段時，這些文字能像一位審慎的同事，協助你梳理思路、釐清立場。
-  home_btn_view_company_analysis: "看看企業如何走到今天"
-  home_btn_view_classic_reviews: "用今天的故事重讀經典"
-  home_btn_view_personal_growth: "從別人的故事想想自己"
-  home_about_card_title: "談企業之前，先認識一下我"
-  home_about_card_intro: >
-   有人把這裡當成「看企業的另一扇窗口」，也有人說它像一位安靜但誠實的聊天對象。
-   在正式開始顧問合作之前，我希望你先弄清楚兩件事：
-  home_about_card_point1: >
-   我怎麼看「人」在企業裡的位置——創辦人、合夥人和關鍵職位分別扮演什麼角色；
-  home_about_card_point2: >
-   哪些問題適合由我來分析，哪些問題，我可能幫不上太多忙。
-  home_about_card_note: >
-   如果你還在猶豫要不要寫那封信，或者只是好奇這背後是一種怎樣的工作方式，
-   不妨先從「關於 FaceReader」開始慢慢看，不急著做決定。
-  home_about_card_button: "去看看「關於 FaceReader」"
+    有些文字寫給困惑，也寫給通透。
+    我寫讀書、寫人生，也寫存在主義式的困惑與自救。
+    不是方法論清單，而是對人生、命運與存在的反覆凝視。
+  home_btn_view_personal_growth: "繼續閱讀"
+
+  # 最近更新
+  home_recent_updates: "最近更新"
+  home_view_all_posts: "查看全部文章"
+
+  # Start here
+  home_start_here_title: "從這裡開始"
+  home_start_here_desc: "從「人」入手：觀其相，辨其性，循其動。再看制度與組織如何把個人傾向，變成集體結果。"
+
+  home_recommended_entry: "推薦入口"
+  home_link_company_category: "閱相識人"
+  home_link_tag_ceo: "CEO"
+  home_link_tag_cg: "公司治理"
+  home_link_category_mgmt: "管理思想"
+  home_link_tag_leadership: "領導力"
+  home_link_tag_prof_mgmt: "專業化管理"
+  home_link_category_ai: "AI"
+  home_link_tag_ai: "人工智慧"
+  home_link_category_chip: "晶片半導體"
+  home_link_category_society: "社會雜論"
+  home_link_tag_hot: "熱點事件"
+  home_link_tag_commentary: "社會評論"
+  home_link_category_classics: "經典解讀"
+  home_link_category_sunzi: "孫子兵法"
+  home_link_category_growth: "人格成長"
+  home_link_tag_growth: "成長"
+  home_link_tag_psy: "心理學"
+
+  home_path_company_title: "看公司 / 識其人"
+  home_path_company_desc_1: "不急著給公司下定義，先看關鍵人物的面相與性格結構：他靠什麼驅動，如何做決定，會把組織帶向何處。"
+
+  home_path_org_title: "管理與組織"
+  home_path_org_desc_1: "組織問題常常不是認知問題，而是結構問題。權責、激勵與資訊的流動，決定了人會變成什麼樣。"
+
+  home_path_industry_title: "科技與產業"
+  home_path_industry_desc_1: "把技術放回產業鏈：位置、成本、替代與約束。少講敘事，多講結構。"
+
+  home_path_society_title: "社會與機制"
+  home_path_society_desc_1: "少把解釋寄託在個人意志上。回到機制與約束本身：權力如何作用，資訊如何失真，群體如何被驅動。"
+
+  home_path_classics_title: "經典校讀"
+  home_path_classics_desc_1: "回到作者與時代，剝離現代人的便利投射。先弄清處境，再談文字。"
+
+  home_path_life_title: "思想與生活"
+  home_path_life_desc_1: "寫低谷與通透，寫無意義與自救。不替你回答人生，只呈現我面對人生困境時的感受與思考。"
+
+  # Picks
+  home_picks_title: "代表作精選"
+  home_picks_desc: "此處選錄數篇作為入口：依據、因果與尺度。"
+
+  home_pick_1_url: "/docs/阅相识人/企业剖析/新能源汽车/NEV-nio/"
+  home_pick_1_title: "從一張臉開始：公司氣質的源頭"
+  home_pick_1_excerpt: "從面相與性格結構談起，最終落到決策與組織結果。"
+
+  home_pick_2_url: "/docs/社会杂论/管理思想/Society-OrganizationalDomestication/"
+  home_pick_2_title: "組織為什麼會失真？"
+  home_pick_2_excerpt: "權責、激勵與資訊如何一步步把人推向系統性的偏差。"
+
+  home_pick_3_url: "/docs/人格成长/Psy-ToBeYourself-1/"
+  home_pick_3_title: "做自己，會害了你嗎？"
+  home_pick_3_excerpt: "人格成長：從自我安慰回到自我認識。"
+
+  home_pick_4_url: "/docs/经典解读/孙子兵法/TheArtofWar-1shiji/"
+  home_pick_4_title: "孫子兵法：去神話化的讀法"
+  home_pick_4_excerpt: "把古人放回古代，把我們的投射放回我們自己。"
+
+  # Topics
+  home_topics_title: "專題入口"
+  home_topics_desc: "按問題域聚合文章。你可以把它當索引，也可以當路徑。"
+
+  home_topic_ceo_title: "CEO / 董事長觀察"
+  home_topic_ceo_excerpt: "面相、性格、驅動與決策偏好：權力如何塑形組織。"
+
+  home_topic_cg_title: "公司治理"
+  home_topic_cg_excerpt: "激勵與約束，腐敗與專業化，制度如何馴化人性。"
+
+  home_topic_ai_title: "人工智慧"
+  home_topic_chip_title: "半導體"
+  home_topic_ai_excerpt: "技術敘事之外，產業鏈位置與結構變化。"
+
+  home_topic_hot_title: "熱點事件"
+  home_topic_hot_excerpt: "把事件從立場拉回機制：資訊、權力與利益。"
+
+  home_topic_sunzi_title: "孫子兵法"
+  home_topic_sunzi_excerpt: "以處境讀兵法，以史事作旁證。"
+
+  home_topic_growth_title: "成長 / 心理學"
+  home_topic_growth_excerpt: "對處境的理解，對自我的凝視：更誠實，也更具體。"
+
+  # About Card
+  home_about_card_image_alt: "安靜的工作台與筆記本"
+  home_about_card_title: "認識一下 FaceReader"
+  home_about_card_desc: "這是一份個人寫作。我習慣從「人」出發看企業與時代：看面相所呈之氣，性格所循之勢；看驅動與決策偏好如何在組織裡被放大，最後落到公司的氣質與走向。"
+  home_about_card_bullet_1: "想快速了解我在寫什麼：先讀「關於」，再從幾篇代表作進入。"
+  home_about_card_bullet_2: "想按線索連續閱讀：從分類／標籤進入，讀起來更順。"
+  home_about_card_note: "我不追熱點，也不批發結論。這裡更像一間慢慢整理的資料室。把依據寫在明處，把分寸留住。需要的時候來讀一篇，幫你把判斷的來路與邊界再看清。"
+  home_about_card_button: "閱讀關於"
+  home_about_card_rss_button: "RSS 訂閱"
 zh-HK:
   <<: *DEFAULT_ZH_HANT
 
@@ -891,47 +1238,134 @@ ko: &DEFAULT_KO
   tags_collapse: "태그 접기"
   tag_current: "현재 태그"
   tag_clear: "필터 지우기"
-  home_recent_updates        : "최근 업데이트"
-  home_view_all_posts        : "모든 글 보기"
+
+  # 세 장의 카드
   home_hero_excerpt: >
-   최근 몇 년 동안 저는 많은 창업가, 전문 경영인, 그리고 일선 직원들과 그들이 속한 회사를 두고 이야기를 나누어 왔습니다.
-   회사에 꼬리표를 붙이기보다, 저는 의사결정을 내리는 사람들, 곧 그들이 무엇을 생각하고, 무엇을 두려워하며, 무엇을 끝까지 고수하는지에 더 관심이 있습니다.
-   FaceReader가 하려는 일은 “사람”에서 출발해 한 회사의 진짜 강점과 위험, 그리고 향후 방향을 더 선명하게 보고, 당신이 더 안정적인 선택을 할 수 있도록 돕는 것입니다.
-  home_hero_primary_action: "한 편의 글부터 읽어보기"
-  home_hero_secondary_action: "먼저 나의 판단 방식을 살펴보기"
-  home_section_company_analysis: "기업 분석"
-  home_section_classic_reviews: "고전 해석"
-  home_section_personal_growth: "성장과 심리"
+    나는 기업도 쓰고 시대도 쓰지만, 늘 사람부터 본다.
+    얼굴이 드러내는 기운, 성격이 따르는 결, 욕망이 결정을 어떻게 밀어붙이는지—
+    그것이 조직 안으로 들어가면, 기업의 방식이 되고 운명이 된다.
+
+  home_hero_primary_action: "글 읽기"
+  home_hero_secondary_action: "태그로 읽기"
+
+  home_section_company_analysis: "인상으로 읽는 기업"
   home_section_company_intro: >
-    한 회사의 모습은 몇몇 구체적인 얼굴에 비치는 경우가 많습니다.
-    이 글들에서는 창업자와 핵심 팀을 함께 해부해 봅니다. 누가 책임을 지는지, 누가 의사결정을 주도하는지, 갈등은 어떻게 생기고 어떻게 수습되는지 살펴봅니다.
-    그들의 익숙한 의사결정 패턴, 진심으로 믿고 있는 원칙, 그리고 구조적인 약점이 어디에 있는지 볼 수 있을 것입니다.
-    “이 회사에 내 자원과 시간을 걸 만한가”를 평가할 때, 먼저 이 사례들을 통해 사람과 판을 더 분명히 보는 데 도움을 받을 수 있습니다.
+    회사를 보려면 먼저 몇 장의 얼굴부터.
+    무엇이 그를 움직이는가? 그는 어떻게 결정하는가? 선호와 맹점은 어디인가?
+    그리고 조직이 그 성향을 어떻게 증폭하는지 보면, 방향은 그때 드러난다.
+  home_btn_view_company_analysis: "들어가기"
+
+  home_section_classic_reviews: "고전 해독"
   home_section_classic_intro: >
-    많은 경영·비즈니스 고전은 이미 책 제목이나 명언으로 익숙할지도 모릅니다.
-    제가 더 궁금한 것은, 이런 이론들이 오늘날의 기업과 직장 환경 속에서 여전히 어떻게 실제 효용을 내는가 하는 점입니다.
-    글에서는 핵심 장을 골라 실제 사례와 함께 다루면서, 거대한 추상 이론을 실행 가능한 여러 개의 질문으로 쪼개어 봅니다.
-    채용, 협업, 투자, 커리어 선택의 순간마다 이것들을 의사결정의 틀과 비교 기준으로 바로 가져다 쓸 수 있도록 하기 위해서입니다.
+    나는 고전을 가능한 한 원래의 처지로 돌려 읽고 싶다.
+    현대의 실용적 욕심으로 옛말을 재단하지 않는다.
+    먼저 묻는 것은 하나다: 그들은 왜 그렇게 쓰고, 생각하고, 움직였는가.
+  home_btn_view_classic_reviews: "읽기 시작"
+
+  home_section_personal_growth: "사유와 생활"
   home_section_growth_intro: >
-    이 코너는 “나는 도대체 어떤 사람인가?”를 함께 고민하는 당신을 위해 준비한 공간입니다.
-    삶의 굴곡, 성장 과정의 고민, 심리적 메커니즘, 그리고 시간이 지나서야 보이는 결정적 전환점들을 다룹니다.
-    제 자신과 주변 사람들을 오랫동안 관찰해 온 경험을 바탕으로, 그런 경험들을 함께 이야기할 수 있는 언어로 정리해 보려고 합니다.
-    막막함이나 선택의 기로에 서 있을 때, 이 글들이 성급히 단정 짓지 않는 동료처럼 당신의 생각을 정리하고 입장을 분명히 하는 데 도움이 되기를 바랍니다.
-  home_btn_view_company_analysis: "기업이 지금 모습이 되기까지의 여정 보기"
-  home_btn_view_classic_reviews: "오늘의 이야기로 고전을 다시 읽기"
-  home_btn_view_personal_growth: "남의 이야기를 통해 나를 돌아보기"
-  home_about_card_title: "기업 이야기 전에, 먼저 저를 소개합니다"
-  home_about_card_intro: >
-   어떤 분은 여기를 “기업을 보는 또 하나의 창”이라고 하고, 어떤 분은 조용하지만 솔직한 대화 상대 같다고 말합니다.
-   본격적으로 자문을 시작하기 전에, 먼저 두 가지는 분명히 알고 계셨으면 합니다.
-  home_about_card_point1: >
-   제가 기업 안에서 “사람”의 위치를 어떻게 보는지 — 창업자, 파트너, 핵심 포지션이 각각 어떤 역할을 맡는지;
-  home_about_card_point2: >
-   어떤 질문은 제가 분석하기에 적합하고, 어떤 질문은 제가 도움을 드리기 어려운지.
-  home_about_card_note: >
-   아직 메일을 쓸지 말지 망설이고 계시거나, 이 뒤에 어떤 일하는 방식이 있는지 단지 궁금하시다면,
-   서두르지 말고 “About FaceReader”부터 천천히 읽어 보셔도 좋습니다.
-  home_about_card_button: "“About FaceReader” 보러 가기"
+    어떤 문장은 혼란을 위해 쓰이고, 어떤 문장은 투명함을 위해 쓰인다.
+    나는 독서와 삶, 그리고 실존적 혼란과 자기 구원을 쓴다.
+    방법 목록이 아니라, 삶·운명·존재를 향한 반복된 응시다.
+  home_btn_view_personal_growth: "계속 읽기"
+
+  # 최근 업데이트
+  home_recent_updates: "최근 업데이트"
+  home_view_all_posts: "전체 글 보기"
+
+  # Start here
+  home_start_here_title: "여기서 시작"
+  home_start_here_desc: "‘사람’에서 시작한다. 상을 보고, 성을 가리고, 동을 따른다. 이어 제도와 조직이 개인의 성향을 집단의 결과로 바꾸는 방식을 본다."
+
+  home_recommended_entry: "추천"
+  home_link_company_category: "인상으로 읽는 기업"
+  home_link_tag_ceo: "CEO"
+  home_link_tag_cg: "기업 지배구조"
+  home_link_category_mgmt: "관리 사상"
+  home_link_tag_leadership: "리더십"
+  home_link_tag_prof_mgmt: "전문 경영"
+  home_link_category_ai: "AI"
+  home_link_tag_ai: "인공지능"
+  home_link_category_chip: "반도체"
+  home_link_category_society: "사회 잡론"
+  home_link_tag_hot: "핫이슈"
+  home_link_tag_commentary: "사회 평론"
+  home_link_category_classics: "고전 해독"
+  home_link_category_sunzi: "손자병법"
+  home_link_category_growth: "인격 성장"
+  home_link_tag_growth: "성장"
+  home_link_tag_psy: "심리학"
+
+  home_path_company_title: "기업 / 사람을 읽기"
+  home_path_company_desc_1: "회사를 급히 규정하지 않는다. 먼저 핵심 인물의 인상과 성격 구조를 본다. 무엇이 그를 움직이고, 어떻게 결정하며, 조직을 어디로 이끄는가."
+
+  home_path_org_title: "관리와 조직"
+  home_path_org_desc_1: "조직의 문제는 종종 인지 문제가 아니라 구조 문제다. 권한과 책임, 인센티브, 정보의 흐름이 사람이 무엇이 되는지를 결정한다."
+
+  home_path_industry_title: "기술과 산업"
+  home_path_industry_desc_1: "기술을 산업 사슬로 되돌린다. 위치, 비용, 대체, 제약. 서사를 줄이고 구조를 말한다."
+
+  home_path_society_title: "사회와 메커니즘"
+  home_path_society_desc_1: "설명을 개인 의지에만 맡기지 않는다. 메커니즘과 제약으로 돌아간다. 권력은 어떻게 작동하는가. 정보는 어떻게 왜곡되는가. 집단은 어떻게 구동되는가."
+
+  home_path_classics_title: "고전 교독"
+  home_path_classics_desc_1: "저자와 시대에 되돌아가, 현대적 투영을 걷어낸다. 먼저 처지를 밝히고, 그다음 텍스트를 말한다."
+
+  home_path_life_title: "사유와 생활"
+  home_path_life_desc_1: "저점과 투명함, 무의미와 자기 구원을 쓴다. 당신의 삶을 대신 답하지 않는다. 다만, 곤경 앞에서 내가 느끼고 생각한 것을 내놓는다."
+
+  # Picks
+  home_picks_title: "대표 글"
+  home_picks_desc: "몇 편을 읽기入口로 고른다: 근거, 인과, 척도."
+
+  home_pick_1_url: "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/"
+  home_pick_1_title: "한 장의 얼굴에서: 기업 기질의 근원"
+  home_pick_1_excerpt: "인상과 성격 구조에서 시작해, 결정과 조직의 결과로 내려간다."
+
+  home_pick_2_url: "/docs/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/"
+  home_pick_2_title: "조직은 왜 왜곡되는가?"
+  home_pick_2_excerpt: "권한·인센티브·정보가 사람을 체계적 편향으로 밀어가는 과정."
+
+  home_pick_3_url: "/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/"
+  home_pick_3_title: "‘있는 그대로’가 해가 될 때"
+  home_pick_3_excerpt: "인격 성장: 자기위안에서 자기인식으로."
+
+  home_pick_4_url: "/docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/"
+  home_pick_4_title: "손자병법: 신화를 벗기는 읽기"
+  home_pick_4_excerpt: "옛사람을 옛시대로, 우리의 투영을 우리 자신으로 되돌린다."
+
+  # Topics
+  home_topics_title: "주제入口"
+  home_topics_desc: "문제 영역별로 글을 모았다. 색인으로도, 읽기 경로로도 쓸 수 있다."
+
+  home_topic_ceo_title: "CEO / 회장 관찰"
+  home_topic_ceo_excerpt: "인상, 성격, 구동, 결정 습관: 권력이 조직을 어떻게 빚는가."
+
+  home_topic_cg_title: "기업 지배구조"
+  home_topic_cg_excerpt: "인센티브와 제약, 부패와 전문화: 제도가 인간성을 어떻게 길들이는가."
+
+  home_topic_ai_title: "인공지능"
+  home_topic_chip_title: "반도체"
+  home_topic_ai_excerpt: "기술 서사 밖에서: 산업 사슬의 위치와 구조 변화."
+
+  home_topic_hot_title: "핫이슈"
+  home_topic_hot_excerpt: "사건을 입장 싸움에서 메커니즘으로 되돌린다: 정보, 권력, 이해관계."
+
+  home_topic_sunzi_title: "손자병법"
+  home_topic_sunzi_excerpt: "처지로 병법을 읽고, 역사로 곁증한다."
+
+  home_topic_growth_title: "성장 / 심리학"
+  home_topic_growth_excerpt: "처지를 이해하고, 자신을 응시한다: 더 정직하게, 더 구체적으로."
+
+  # About Card
+  home_about_card_image_alt: "조용한 책상과 노트"
+  home_about_card_title: "FaceReader 소개"
+  home_about_card_desc: "이곳은 개인 글쓰기이다. 나는 ‘사람’에서 시작해 기업과 시대를 읽는다: 얼굴이 드러내는 기운과 성격의 결, 그리고 구동과 결정 습관이 조직 안에서 어떻게 증폭되어 기업의 기질과 행로가 되는지 추적한다."
+  home_about_card_bullet_1: "빠르게 들어가기: ‘About’를 먼저 읽고, 대표 글 몇 편으로 시작하면 된다."
+  home_about_card_bullet_2: "실마리대로 읽기: 분류/태그에서 들어가면 흐름이 가장 자연스럽다."
+  home_about_card_note: "나는 핫이슈를 좇지 않고, 결론을 대량 생산하지도 않는다. 이곳은 천천히 정리되는 자료실에 가깝다. 근거는 드러내고, 분량과 비례는 지킨다. 필요할 때 한 편을 읽으며 판단의 출처와 경계를 다시 확인하면 된다."
+  home_about_card_button: "About 읽기"
+  home_about_card_rss_button: "RSS 구독"
 ko-KR:
   <<: *DEFAULT_KO
 
@@ -990,47 +1424,134 @@ ru: &DEFAULT_RU
   tags_collapse: "Скрыть теги"
   tag_current: "Текущий тег"
   tag_clear: "Сбросить фильтр"
-  home_recent_updates        : "Последние обновления"
-  home_view_all_posts        : "Смотреть все статьи"
+
+  # Три карточки
   home_hero_excerpt: >
-   В последние годы я много разговаривал с основателями компаний, топ-менеджерами и рядовыми сотрудниками об их организациях.
-   Вместо того чтобы вешать ярлыки на бизнес, меня больше интересуют люди, принимающие решения: о чём они думают, чего боятся и что для них непоколебимо важно.
-   Задача FaceReader — исходя из «человеческого» измерения, яснее увидеть реальные сильные стороны, риски и возможные траектории компании и помочь вам принимать более взвешенные решения.
-  home_hero_primary_action: "Начать с одной статьи"
-  home_hero_secondary_action: "Сначала посмотреть, как я делаю выводы"
-  home_section_company_analysis: "Разбор компаний"
-  home_section_classic_reviews: "Анализ классики"
-  home_section_personal_growth: "Личность и рост"
+    Я пишу о компаниях и о времени — но всегда начинаю с человека.
+    Какой «воздух» выдает лицо, куда тянет характер, как желание толкает решение —
+    попадая в организацию, это становится стилем компании. И часто — ее судьбой.
+
+  home_hero_primary_action: "К статьям"
+  home_hero_secondary_action: "Читать по тегам"
+
+  home_section_company_analysis: "Лица и компании"
   home_section_company_intro: >
-    Лицо компании часто отражается в нескольких очень конкретных лицах людей.
-    В этих текстах мы вместе разбираем основателя и ключевую команду: кто берёт на себя ответственность, кто ведёт за собой решения, как возникают конфликты и как они разрешаются.
-    Вы увидите их привычные траектории принятия решений, принципы, в которые они действительно верят, и структурные слабые места.
-    Когда вы оцениваете, «стоит ли ставить на эту компанию свои ресурсы», сначала можно опереться на эти кейсы, чтобы лучше разглядеть людей и саму конструкцию бизнеса.
+    Читая компанию, сначала смотри на несколько лиц.
+    Что его движет? Как он решает? Где предпочтения и слепые зоны?
+    Затем — как организация усиливает эти наклонности. Там и проявляется траектория.
+  home_btn_view_company_analysis: "Войти"
+
+  home_section_classic_reviews: "Чтение классики"
   home_section_classic_intro: >
-    Многие управленческие и бизнес-классики вам, возможно, уже знакомы по названиям и цитатам.
-    Меня больше интересует, как эти теории продолжают работать на практике в сегодняшнем корпоративном и профессиональном контексте.
-    В статьях я выбираю ключевые главы, соединяю их с реальными примерами и раскладываю большие абстрактные формулировки на ряд конкретных вопросов.
-    Так, чтобы при найме, партнёрстве, инвестициях или выборе карьерного пути вы могли использовать их как готовые рамки и критерии для принятия решений.
+    Классику я предпочитаю возвращать в ее исходные обстоятельства.
+    Меньше резать древние слова современной выгодой.
+    Больше спрашивать: почему тогда писали так, думали так и поступали так?
+  home_btn_view_classic_reviews: "Начать"
+
+  home_section_personal_growth: "Мысли и жизнь"
   home_section_growth_intro: >
-    Этот раздел — для тех, кто тоже задаётся вопросом: «Кем я на самом деле являюсь?»
-    Здесь речь идёт о взлётах и спадах жизни, трудностях взросления, психологических механизмах и тех поворотных моментах, которые становятся заметны только задним числом.
-    Он вырос из моих долгих наблюдений за собой и близкими людьми; я пытаюсь перевести эти наблюдения на язык, с которым можно спорить и размышлять.
-    Хочется, чтобы в периоды растерянности или выбора эти тексты были похожи на вдумчивого коллегу, который помогает разложить мысли по полочкам и прояснить свою позицию.
-  home_btn_view_company_analysis: "Посмотреть, как компании пришли к сегодняшнему виду"
-  home_btn_view_classic_reviews: "Перечитать классику через истории сегодняшнего дня"
-  home_btn_view_personal_growth: "Посмотреть на себя через чужие истории"
-  home_about_card_title: "Прежде чем говорить о компаниях, давайте познакомимся"
-  home_about_card_intro: >
-   Кто-то воспринимает это место как «ещё одно окно, через которое можно смотреть на бизнес», другие говорят, что оно похоже на спокойного, но честного собеседника.
-   Прежде чем мы перейдём к консультированию, мне важно, чтобы вы ясно понимали две вещи:
-  home_about_card_point1: >
-   Как я вижу роль «человека» в компании — какие функции выполняют основатель, партнёры и ключевые позиции;
-  home_about_card_point2: >
-   С какими вопросами ко мне имеет смысл приходить, а в каких ситуациях я, скорее всего, мало чем смогу помочь.
-  home_about_card_note: >
-   Если вы пока колеблетесь, писать ли то самое письмо, или просто хотите понять, как именно устроена моя работа,
-   начните с раздела «About FaceReader» и читайте в удобном темпе — без спешки и обязательств.
-  home_about_card_button: "Перейти к «About FaceReader»"
+    Одни тексты — для растерянности. Другие — для ясности.
+    Я пишу о чтении и жизни, об экзистенциальной смуте и самоспасении.
+    Это не список методик. Это повторяющийся взгляд на жизнь, судьбу и бытие.
+  home_btn_view_personal_growth: "Продолжить"
+
+  # Последние обновления
+  home_recent_updates: "Недавние обновления"
+  home_view_all_posts: "Все статьи"
+
+  # Start here
+  home_start_here_title: "Начать отсюда"
+  home_start_here_desc: "Начать с человека: увидеть «лик», распознать характер, проследить движущую силу. Затем — как институты и организация превращают личные наклонности в коллективный результат."
+
+  home_recommended_entry: "Рекомендуем"
+  home_link_company_category: "Лица и компании"
+  home_link_tag_ceo: "CEO"
+  home_link_tag_cg: "Корпоративное управление"
+  home_link_category_mgmt: "Мысль о менеджменте"
+  home_link_tag_leadership: "Лидерство"
+  home_link_tag_prof_mgmt: "Профессиональный менеджмент"
+  home_link_category_ai: "AI"
+  home_link_tag_ai: "Искусственный интеллект"
+  home_link_category_chip: "Полупроводники"
+  home_link_category_society: "Социальные заметки"
+  home_link_tag_hot: "Актуальные темы"
+  home_link_tag_commentary: "Социальная критика"
+  home_link_category_classics: "Чтение классики"
+  home_link_category_sunzi: "Сунь-цзы"
+  home_link_category_growth: "Личностный рост"
+  home_link_tag_growth: "Рост"
+  home_link_tag_psy: "Психология"
+
+  home_path_company_title: "Компания / Человек"
+  home_path_company_desc_1: "Не спеши давать компании ярлык. Сначала — «лик» и структура характера ключевой фигуры: что ею движет, как она решает, куда поведет организацию."
+
+  home_path_org_title: "Менеджмент и организация"
+  home_path_org_desc_1: "Проблемы организации часто не про понимание, а про структуру. Власть и ответственность, стимулы и потоки информации — все это определяет, какими становятся люди."
+
+  home_path_industry_title: "Технологии и индустрия"
+  home_path_industry_desc_1: "Вернуть технологию в цепочку: позиция, стоимость, замены и ограничения. Меньше нарратива — больше структуры."
+
+  home_path_society_title: "Общество и механизмы"
+  home_path_society_desc_1: "Не опираться на «личную волю» как главное объяснение. Вернуться к механизмам и ограничениям: как действует власть, как искажается информация, как приводятся в движение группы."
+
+  home_path_classics_title: "Классика: сверка чтения"
+  home_path_classics_desc_1: "Вернуться к автору и эпохе, снять удобные современные проекции. Сначала понять обстоятельства — потом говорить о тексте."
+
+  home_path_life_title: "Мысли и жизнь"
+  home_path_life_desc_1: "Писать о провалах и ясности, о бессмысленности и самоспасении. Я не отвечаю за жизнь вместо тебя. Я показываю, что чувствую и думаю, когда жизнь становится трудной."
+
+  # Picks
+  home_picks_title: "Подборка"
+  home_picks_desc: "Несколько текстов как вход: основания, причинность, мера."
+
+  home_pick_1_url: "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/"
+  home_pick_1_title: "С лица: источник темперамента компании"
+  home_pick_1_excerpt: "От «лика» и структуры характера — к решениям и организационным последствиям."
+
+  home_pick_2_url: "/docs/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/"
+  home_pick_2_title: "Почему организация искажает реальность?"
+  home_pick_2_excerpt: "Как власть, стимулы и информация шаг за шагом ведут к систематическому смещению."
+
+  home_pick_3_url: "/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/"
+  home_pick_3_title: "«Быть собой» может навредить?"
+  home_pick_3_excerpt: "Личностный рост: от самоутешения к самопониманию."
+
+  home_pick_4_url: "/docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/"
+  home_pick_4_title: "Сунь-цзы: чтение без мифа"
+  home_pick_4_excerpt: "Вернуть древних в их время, а наши проекции — нам самим."
+
+  # Topics
+  home_topics_title: "Темы"
+  home_topics_desc: "Тексты сгруппированы по областям вопросов: как указатель или как маршрут чтения."
+
+  home_topic_ceo_title: "CEO / Наблюдение за председателем"
+  home_topic_ceo_excerpt: "Лик, характер, движущая сила, привычки решений: как власть лепит организацию."
+
+  home_topic_cg_title: "Корпоративное управление"
+  home_topic_cg_excerpt: "Стимулы и ограничения, коррупция и профессионализация: как институты приручают человеческую природу."
+
+  home_topic_ai_title: "Искусственный интеллект"
+  home_topic_chip_title: "Полупроводники"
+  home_topic_ai_excerpt: "Вне техно-нарративов: позиция в цепочке и структурные сдвиги."
+
+  home_topic_hot_title: "Актуальные события"
+  home_topic_hot_excerpt: "Вернуть событие от позиции к механизму: информация, власть, интересы."
+
+  home_topic_sunzi_title: "Сунь-цзы"
+  home_topic_sunzi_excerpt: "Читать стратегию через обстоятельства, сверяя с историей."
+
+  home_topic_growth_title: "Рост / Психология"
+  home_topic_growth_excerpt: "Понимание обстоятельств и взгляд на себя: честнее и конкретнее."
+
+  # About Card
+  home_about_card_image_alt: "Тихий рабочий стол и блокнот"
+  home_about_card_title: "О FaceReader"
+  home_about_card_desc: "Это личный проект. Я читаю компании и время, начиная с человека: какой «воздух» выдает лицо и куда тянет характер; как движущие силы и привычки решений усиливаются организацией и в итоге формируют темперамент и траекторию компании."
+  home_about_card_bullet_1: "Быстро войти: начни со страницы «О проекте», затем — с нескольких выбранных текстов."
+  home_about_card_bullet_2: "Читать по линии: вход через Категории/Теги — самый ровный."
+  home_about_card_note: "Я не гонюсь за горячим и не штампую выводы. Это скорее медленно пополняемая читальная комната. Основания — на виду. Пропорции — сохранены. Когда нужно, прочти один текст и сверяй происхождение и границы собственного суждения."
+  home_about_card_button: "Читать «О проекте»"
+  home_about_card_rss_button: "RSS"
 ru-RU:
   <<: *DEFAULT_RU
 
@@ -1516,47 +2037,134 @@ ja: &DEFAULT_JA
   tags_collapse: "タグを折りたたむ"
   tag_current: "現在のタグ"
   tag_clear: "フィルターをクリア"
-  home_recent_updates        : "最近の更新"
-  home_view_all_posts        : "すべての記事を見る"
+
+  # 三枚のカード
   home_hero_excerpt: >
-   ここ数年、私は多くの起業家やプロ経営者、現場で働く人たちと、その会社について話してきました。
-   会社そのものにラベルを貼るよりも、私は意思決定をする人たち――何を考え、何を恐れ、何を手放さないのか――に関心があります。
-   FaceReader がやろうとしているのは、「人」から出発して、その会社の本当の強みとリスク、そして進みうる方向性を見極め、あなたのより堅実な選択を助けることです。
-  home_hero_primary_action: "まずは一篇の文章から"
-  home_hero_secondary_action: "私の判断プロセスを見る"
-  home_section_company_analysis: "企業リーディング"
-  home_section_classic_reviews: "古典の読み直し"
-  home_section_personal_growth: "人生と心の成長"
+    企業も時代も書く。だが、入口はいつも「人」だ。
+    顔ににじむ気配、性格が向かう癖、欲望が決断をどう押すか——
+    それが組織に入ると、会社の流儀になり、運命になる。
+
+  home_hero_primary_action: "記事へ"
+  home_hero_secondary_action: "タグで読む"
+
+  home_section_company_analysis: "相で読む企業"
   home_section_company_intro: >
-    企業の姿は、しばしばいくつかの具体的な「顔」に映し出されます。
-    ここでは創業者とコアメンバーを一緒に解きほぐしていきます。誰が責任を負い、誰が意思決定を主導し、対立がどう生まれ、どう収束していくのか。
-    そこで見えてくるのは、彼らの意思決定パターン、心から信じている原則、そして構造的な弱点がどこにあるのかです。
-    「この会社に自分のリソースを賭ける価値があるか」を判断するとき、その前にこうしたケースを通じて、人と器の両方をクリアに見ておくことができます。
+    会社を読むなら、まず数枚の「顔」から。
+    何に駆動され、どう決めるのか。好みと盲点はどこか。
+    そして、組織がそれをどう増幅するか——行方はそこで見えてくる。
+  home_btn_view_company_analysis: "入る"
+
+  home_section_classic_reviews: "古典解読"
   home_section_classic_intro: >
-    多くの経営・ビジネスの古典は、タイトルや名言だけならすでに知っているかもしれません。
-    私が気になるのは、そうした理論が、今の企業や職場の環境の中でなおどのように実際の効き目を持ちうるのか、という点です。
-    記事では重要な章を取り上げ、実際のケースと組み合わせて、「大きな抽象理論」をいくつかの実践的な問いへと分解していきます。
-    採用やパートナーシップ、投資、キャリア選択の場面で、意思決定のフレームワークや比較基準としてそのまま使えるようにするためです。
+    古典は、できるだけ当時の状況に戻して読む。
+    現代の功利心で切り分けない。
+    まず問うのは、なぜ彼らはそう書き、そう考え、そう動いたのか。
+  home_btn_view_classic_reviews: "読み始める"
+
+  home_section_personal_growth: "思想と生活"
   home_section_growth_intro: >
-    このセクションは、「自分はどんな人間なのか」を考え続けているあなたに向けたものです。
-    人生のアップダウン、成長の過程での戸惑いや葛藤、心のメカニズム、そして振り返ってはじめて見えてくる分岐点を扱います。
-    自分自身と身近な人たちを長く観察してきた記録から、それらの経験を対話しやすい言葉へと抽出しようとしています。
-    迷いや選択の只中にいるとき、この文章が、結論を急がない同僚のように、考えを整理し、立ち位置を確かめる助けになればと思います。
-  home_btn_view_company_analysis: "企業が今の姿になるまでの物語を見る"
-  home_btn_view_classic_reviews: "いまの物語で古典を読み直す"
-  home_btn_view_personal_growth: "誰かの物語から自分を考える"
-  home_about_card_title: "企業の話の前に、まず私のことを少し"
-  home_about_card_intro: >
-   ここを「企業を見るためのもう一つの窓」と言う人もいれば、「静かだけれど正直な話し相手のようだ」と言う人もいます。
-   本格的にご相談を始める前に、まず二つの点だけは共有しておきたいと思っています。
-  home_about_card_point1: >
-   私が企業の中での「人」の位置づけをどう見ているか――創業者、パートナー、キーポジションがそれぞれどんな役割を担うのか。
-  home_about_card_point2: >
-   どのような問いなら私が分析するのに向いていて、どのような問いにはあまりお力になれないか。
-  home_about_card_note: >
-   まだメールを書くか迷っている方も、単にこの裏側の働き方に興味がある方も、
-   まずは「About FaceReader」から少しずつ読んでみてください。急いで決める必要はありません。
-  home_about_card_button: "「About FaceReader」を読む"
+    迷いのために書くこともある。透徹のために書くこともある。
+    読書と人生、実存的な迷いと自救。
+    方法の一覧ではなく、人生・運命・存在への反復する凝視。
+  home_btn_view_personal_growth: "続けて読む"
+
+  # 最近
+  home_recent_updates: "最近の更新"
+  home_view_all_posts: "すべての記事"
+
+  # Start here
+  home_start_here_title: "ここから"
+  home_start_here_desc: "「人」から入る。相を観て、性を辨じ、動きを辿る。次に、制度と組織が個の傾向を集団の結果へ変える仕組みを見る。"
+
+  home_recommended_entry: "入口"
+  home_link_company_category: "相で読む企業"
+  home_link_tag_ceo: "CEO"
+  home_link_tag_cg: "企業統治"
+  home_link_category_mgmt: "管理思想"
+  home_link_tag_leadership: "リーダーシップ"
+  home_link_tag_prof_mgmt: "専門的管理"
+  home_link_category_ai: "AI"
+  home_link_tag_ai: "人工知能"
+  home_link_category_chip: "半導体"
+  home_link_category_society: "社会雑論"
+  home_link_tag_hot: "時事"
+  home_link_tag_commentary: "社会評論"
+  home_link_category_classics: "古典解読"
+  home_link_category_sunzi: "孫子兵法"
+  home_link_category_growth: "人格成長"
+  home_link_tag_growth: "成長"
+  home_link_tag_psy: "心理学"
+
+  home_path_company_title: "会社 / 人を読む"
+  home_path_company_desc_1: "会社を急いで定義しない。まずキーパーソンの相と性格構造を見る。何に駆動され、どう決め、組織をどこへ連れていくのか。"
+
+  home_path_org_title: "管理と組織"
+  home_path_org_desc_1: "組織の問題は、しばしば認知ではなく構造だ。権限と責任、インセンティブ、情報の流れが、人がどうなるかを決める。"
+
+  home_path_industry_title: "技術と産業"
+  home_path_industry_desc_1: "技術を産業チェーンへ戻す。位置、コスト、代替、制約。物語を抑え、構造を語る。"
+
+  home_path_society_title: "社会とメカニズム"
+  home_path_society_desc_1: "説明を個人意志に預けすぎない。メカニズムと制約へ戻る。権力はどう働くか。情報はどう歪むか。集団はどう駆動されるか。"
+
+  home_path_classics_title: "古典の校読"
+  home_path_classics_desc_1: "作者と時代へ戻り、便利な現代的投射を剥がす。まず状況を明らかにし、その上で文字を読む。"
+
+  home_path_life_title: "思想と生活"
+  home_path_life_desc_1: "低谷と透徹、無意味と自救を書く。人生の答えを代わりに出さない。ただ、困難の前に立つ私自身の感触と思考を差し出す。"
+
+  # Picks
+  home_picks_title: "代表作精選"
+  home_picks_desc: "入口となる数篇を選録。根拠・因果・尺度——書きぶりの取径を示す。"
+
+  home_pick_1_url: "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/"
+  home_pick_1_title: "一枚の顔から：会社の気質の源"
+  home_pick_1_excerpt: "相と性格構造から入り、意思決定と組織の帰結へ落とす。"
+
+  home_pick_2_url: "/docs/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/"
+  home_pick_2_title: "組織はなぜ歪むのか"
+  home_pick_2_excerpt: "権限・インセンティブ・情報が、体系的な偏りへ人を押しやる過程。"
+
+  home_pick_3_url: "/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/"
+  home_pick_3_title: "「自分らしく」で傷つくことがある"
+  home_pick_3_excerpt: "人格成長：自己慰撫から自己認識へ。"
+
+  home_pick_4_url: "/docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/"
+  home_pick_4_title: "孫子兵法：神話を剥ぐ読み方"
+  home_pick_4_excerpt: "古人を古代へ、私たちの投射を私たち自身へ戻す。"
+
+  # Topics
+  home_topics_title: "专题入口"
+  home_topics_desc: "問題領域ごとに文章を聚合。索引としても、読書の道筋としても。"
+
+  home_topic_ceo_title: "CEO / 会長の観察"
+  home_topic_ceo_excerpt: "相・性格・駆動・意思決定の癖：権力が組織をどう塑形するか。"
+
+  home_topic_cg_title: "企業統治"
+  home_topic_cg_excerpt: "インセンティブと制約、腐敗と専門化——制度が人性をどう馴化するか。"
+
+  home_topic_ai_title: "人工知能"
+  home_topic_chip_title: "半導体"
+  home_topic_ai_excerpt: "技術の物語の外側で：産業チェーンの位置と構造変化。"
+
+  home_topic_hot_title: "時事"
+  home_topic_hot_excerpt: "事件を立場からメカニズムへ戻す：情報、権力、利害。"
+
+  home_topic_sunzi_title: "孫子兵法"
+  home_topic_sunzi_excerpt: "状況から兵法を読み、史事を旁証にする。"
+
+  home_topic_growth_title: "成長 / 心理学"
+  home_topic_growth_excerpt: "状況の理解と自己への凝視——より誠実に、より具体的に。"
+
+  # About Card
+  home_about_card_image_alt: "静かな作業机とノート"
+  home_about_card_title: "FaceReaderについて"
+  home_about_card_desc: "これは個人の書き物です。企業や時代を読むとき、私はまず「人」から入ります。顔ににじむ気配、性格が向かう癖。駆動と意思決定の傾向が組織の中で増幅され、最後に企業の気質と行方になる——その連鎖を追います。"
+  home_about_card_bullet_1: "手早く把握する：まず「About」を読み、代表作から入ってください。"
+  home_about_card_bullet_2: "線で読む：カテゴリ／タグから入ると流れがつかみやすいです。"
+  home_about_card_note: "話題を追いかけず、結論も量産しません。ここは少しずつ整えられていく書庫のような場所です。根拠は見えるところに。分寸は崩さずに。必要なときに一篇読んで、判断の来歴と境界を確かめてください。"
+  home_about_card_button: "Aboutを読む"
+  home_about_card_rss_button: "RSS"
 ja-JP:
   <<: *DEFAULT_JA
 

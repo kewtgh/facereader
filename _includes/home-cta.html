@@ -1,34 +1,35 @@
 <section class="home-section home-section--about-cta home-section--cta">
+  {%- assign t = site.data.ui-text[site.locale] -%}
+
   <div class="home-cta home-cta--about">
     <div class="home-cta__inner">
       <div class="home-cta__media">
         <img
           src="/assets/img/page-content-image-wide-people-teaser.jpg"
-          alt="安静的工作台与笔记本"
+          alt="{{ t.home_about_card_image_alt }}"
         >
       </div>
 
       <div class="home-cta__text">
-        <h2>在正式聊企业之前，也许你会想先认识一下我</h2>
+        <h2>{{ t.home_about_card_title }}</h2>
 
-        <p>
-          有人把这里当作「看企业的另一个窗口」，也有人把它当作一位
-          安静但诚实的聊天对象。在做咨询之前，我更希望你先搞清楚两件事：
-        </p>
+        <p>{{ t.home_about_card_desc }}</p>
 
         <ul>
-          <li>我怎么看待「人」在企业里的位置——创始人、合伙人、关键岗位各自扮演什么角色；</li>
-          <li>什么样的问题适合找我聊，什么样的问题，我可能帮不上太多忙。</li>
+          <li>{{ t.home_about_card_bullet_1 }}</li>
+          <li>{{ t.home_about_card_bullet_2 }}</li>
         </ul>
 
-        <p class="home-cta__note">
-          如果你还在犹豫要不要写那封邮件，或者只是好奇这背后是一种怎样的工作方式，
-          可以先从「关于 FaceReader」开始慢慢看，不着急做任何决定。
-        </p>
+        <p class="home-cta__note">{{ t.home_about_card_note }}</p>
 
-        <a class="btn btn--primary" href="{{ '/about/' | relative_url }}">
-          {{ site.data.ui-text[site.locale].home_about_card_button }}
-        </a>
+        <div class="home-cta__actions">
+          <a class="btn btn--primary" href="{{ '/about/' | relative_url }}">
+            {{ t.home_about_card_button }}
+          </a>
+          <a class="btn btn--secondary" href="{{ '/feed.xml' | relative_url }}">
+            {{ t.home_about_card_rss_button }}
+          </a>
+        </div>
       </div>
     </div>
   </div>
