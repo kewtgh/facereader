@@ -824,19 +824,19 @@ zh: &DEFAULT_ZH_HANS
   home_picks_title: "代表作精选"
   home_picks_desc: "此处选录数篇作为阅读入口，以示写作取径：依据、因果与尺度。"
 
-  home_pick_1_url: "/doc/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/"
+  home_pick_1_url: "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/"
   home_pick_1_title: "从一张脸开始：公司气质的源头"
   home_pick_1_excerpt: "从面相与性格结构谈起，最终落到决策与组织结果。"
 
-  home_pick_2_url: "/doc/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/"
+  home_pick_2_url: "/docs/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/"
   home_pick_2_title: "组织为什么会失真？"
   home_pick_2_excerpt: "权责、激励与信息如何一步步把人推向系统性的偏差。"
 
-  home_pick_3_url: "/doc/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/"
+  home_pick_3_url: "/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/"
   home_pick_3_title: "做自己，会害了你吗？"
   home_pick_3_excerpt: "人格成长：从自我安慰回到自我认识。"
 
-  home_pick_4_url: "/doc/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/"
+  home_pick_4_url: "/docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/"
   home_pick_4_title: "孙子兵法：去神话化的读法"
   home_pick_4_excerpt: "把古人放回古代，把我们的投射放回我们自己。"
 
