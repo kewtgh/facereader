@@ -48,7 +48,7 @@ feature_row:
 {%- comment -%} 顶部三张栏目卡片 {%- endcomment -%}
 {% include feature_row %}
 
-{%- comment -%} 从这里开始读（阅读路径） {%- endcomment -%}
+{%- comment -%} 从这里开始（阅读路径） {%- endcomment -%}
 <section class="home-section home-section--start-here">
   <header class="home-section__header">
     <h2 class="home-section__title">{{ t.home_start_here_title }}</h2>
@@ -56,122 +56,92 @@ feature_row:
   </header>
 
   <div class="entries-grid">
-    <!-- 1 -->
-    <div class="grid__item">
-      <article class="archive__item archive__item--home-card">
-        <div class="archive__item-teaser archive__item-teaser--home">
-          <img src="/assets/img/page-header-image-wit-500x300.jpg" alt="{{ t.home_link_company_category }}">
-        </div>
+    <article class="archive__item archive__item--home-card">
+      <div class="archive__item-teaser--home">
+        <img src="/assets/img/page-header-image-wit-500x300.jpg" alt="{{ t.home_path_company_title }}">
+      </div>
+      <h3 class="archive__item-title">{{ t.home_path_company_title }}</h3>
+      <p class="archive__item-excerpt">{{ t.home_path_company_desc_1 }}</p>
+      <div class="home-chips">
+        <span class="home-chips__label">{{ t.home_recommended_entry }}：</span>
+        <a class="home-chip" href="{{ '/categories/' | relative_url }}#阅相识人">{{ t.home_link_company_category }}</a>
+        <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ 'CEO' | uri_escape }}#current-tag-anchor">{{ t.home_link_tag_ceo }}</a>
+        <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ '公司治理' | uri_escape }}#current-tag-anchor">{{ t.home_link_tag_cg }}</a>
+      </div>
+    </article>
 
-        <h3 class="archive__item-title">{{ t.home_path_company_title }}</h3>
-        <p class="archive__item-excerpt">{{ t.home_path_company_desc_1 }}</p>
+    <article class="archive__item archive__item--home-card">
+      <div class="archive__item-teaser--home">
+        <img src="/assets/img/page-header-image-tech4-500x300.jpg" alt="{{ t.home_path_org_title }}">
+      </div>
+      <h3 class="archive__item-title">{{ t.home_path_org_title }}</h3>
+      <p class="archive__item-excerpt">{{ t.home_path_org_desc_1 }}</p>
+      <div class="home-chips">
+        <span class="home-chips__label">{{ t.home_recommended_entry }}：</span>
+        <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ '管理思想' | uri_escape }}#current-tag-anchor">{{ t.home_link_category_mgmt }}</a>
+        <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ '领导力' | uri_escape }}#current-tag-anchor">{{ t.home_link_tag_leadership }}</a>
+        <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ '专业化管理' | uri_escape }}#current-tag-anchor">{{ t.home_link_tag_prof_mgmt }}</a>
+      </div>
+    </article>
 
-        <div class="home-chips">
-          <span class="home-chips__label">{{ t.home_recommended_entry }}：</span>
-          <a class="home-chip" href="{{ '/categories/' | relative_url }}#阅相识人">{{ t.home_link_company_category }}</a>
-          <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ 'CEO' | uri_escape }}#current-tag-anchor">{{ t.home_link_tag_ceo }}</a>
-          <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ '公司治理' | uri_escape }}#current-tag-anchor">{{ t.home_link_tag_cg }}</a>
-        </div>
-      </article>
-    </div>
+    <article class="archive__item archive__item--home-card">
+      <div class="archive__item-teaser--home">
+        <img src="/assets/img/page-header-image-eye4-500x300.jpg" alt="{{ t.home_path_industry_title }}">
+      </div>
+      <h3 class="archive__item-title">{{ t.home_path_industry_title }}</h3>
+      <p class="archive__item-excerpt">{{ t.home_path_industry_desc_1 }}</p>
+      <div class="home-chips">
+        <span class="home-chips__label">{{ t.home_recommended_entry }}：</span>
+        <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ 'AI' | uri_escape }}#current-tag-anchor">{{ t.home_link_category_ai }}</a>
+        <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ '人工智能' | uri_escape }}#current-tag-anchor">{{ t.home_link_tag_ai }}</a>
+        <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ '芯片半导体' | uri_escape }}#current-tag-anchor">{{ t.home_link_category_chip }}</a>
+      </div>
+    </article>
 
-    <!-- 2 -->
-    <div class="grid__item">
-      <article class="archive__item archive__item--home-card">
-        <div class="archive__item-teaser archive__item-teaser--home">
-          <img src="/assets/img/page-header-image-tech4-500x300.jpg" alt="{{ t.home_path_org_title }}">
-        </div>
+    <article class="archive__item archive__item--home-card">
+      <div class="archive__item-teaser--home">
+        <img src="/assets/img/page-header-image-vision10.jpg" alt="{{ t.home_path_society_title }}">
+      </div>
+      <h3 class="archive__item-title">{{ t.home_path_society_title }}</h3>
+      <p class="archive__item-excerpt">{{ t.home_path_society_desc_1 }}</p>
+      <div class="home-chips">
+        <span class="home-chips__label">{{ t.home_recommended_entry }}：</span>
+        <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ '社会杂论' | uri_escape }}#current-tag-anchor">{{ t.home_link_category_society }}</a>
+        <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ '热点事件' | uri_escape }}#current-tag-anchor">{{ t.home_link_tag_hot }}</a>
+        <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ '社会评论' | uri_escape }}#current-tag-anchor">{{ t.home_link_tag_commentary }}</a>
+      </div>
+    </article>
 
-        <h3 class="archive__item-title">{{ t.home_path_org_title }}</h3>
-        <p class="archive__item-excerpt">{{ t.home_path_org_desc_1 }}</p>
+    <article class="archive__item archive__item--home-card">
+      <div class="archive__item-teaser--home">
+        <img src="/assets/img/page-header-image-tech4-500x300.jpg" alt="{{ t.home_path_classics_title }}">
+      </div>
+      <h3 class="archive__item-title">{{ t.home_path_classics_title }}</h3>
+      <p class="archive__item-excerpt">{{ t.home_path_classics_desc_1 }}</p>
+      <div class="home-chips">
+        <span class="home-chips__label">{{ t.home_recommended_entry }}：</span>
+        <a class="home-chip" href="{{ '/categories/' | relative_url }}#经典解读">{{ t.home_link_category_classics }}</a>
+        <a class="home-chip" href="{{ '/categories/' | relative_url }}#孙子兵法">{{ t.home_link_category_sunzi }}</a>
+      </div>
+    </article>
 
-        <div class="home-chips">
-          <span class="home-chips__label">{{ t.home_recommended_entry }}：</span>
-          <a class="home-chip" href="{{ '/categories/' | relative_url }}#管理思想">{{ t.home_link_category_mgmt }}</a>
-          <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ '领导力' | uri_escape }}#current-tag-anchor">{{ t.home_link_tag_leadership }}</a>
-          <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ '专业化管理' | uri_escape }}#current-tag-anchor">{{ t.home_link_tag_prof_mgmt }}</a>
-        </div>
-      </article>
-    </div>
-
-    <!-- 3 -->
-    <div class="grid__item">
-      <article class="archive__item archive__item--home-card">
-        <div class="archive__item-teaser archive__item-teaser--home">
-          <img src="/assets/img/page-header-image-eye4-500x300.jpg" alt="{{ t.home_path_industry_title }}">
-        </div>
-
-        <h3 class="archive__item-title">{{ t.home_path_industry_title }}</h3>
-        <p class="archive__item-excerpt">{{ t.home_path_industry_desc_1 }}</p>
-
-        <div class="home-chips">
-          <span class="home-chips__label">{{ t.home_recommended_entry }}：</span>
-          <a class="home-chip" href="{{ '/categories/' | relative_url }}#AI">{{ t.home_link_category_ai }}</a>
-          <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ '人工智能' | uri_escape }}#current-tag-anchor">{{ t.home_link_tag_ai }}</a>
-          <a class="home-chip" href="{{ '/categories/' | relative_url }}#芯片半导体">{{ t.home_link_category_chip }}</a>
-        </div>
-      </article>
-    </div>
-
-    <!-- 4 -->
-    <div class="grid__item">
-      <article class="archive__item archive__item--home-card">
-        <div class="archive__item-teaser archive__item-teaser--home">
-          <img src="/assets/img/page-header-image-vision10.jpg" alt="{{ t.home_path_society_title }}">
-        </div>
-
-        <h3 class="archive__item-title">{{ t.home_path_society_title }}</h3>
-        <p class="archive__item-excerpt">{{ t.home_path_society_desc_1 }}</p>
-
-        <div class="home-chips">
-          <span class="home-chips__label">{{ t.home_recommended_entry }}：</span>
-          <a class="home-chip" href="{{ '/categories/' | relative_url }}#社会杂论">{{ t.home_link_category_society }}</a>
-          <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ '热点事件' | uri_escape }}#current-tag-anchor">{{ t.home_link_tag_hot }}</a>
-          <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ '社会评论' | uri_escape }}#current-tag-anchor">{{ t.home_link_tag_commentary }}</a>
-        </div>
-      </article>
-    </div>
-
-    <!-- 5 -->
-    <div class="grid__item">
-      <article class="archive__item archive__item--home-card">
-        <div class="archive__item-teaser archive__item-teaser--home">
-          <img src="/assets/img/page-header-image-tech4-500x300.jpg" alt="{{ t.home_path_classics_title }}">
-        </div>
-
-        <h3 class="archive__item-title">{{ t.home_path_classics_title }}</h3>
-        <p class="archive__item-excerpt">{{ t.home_path_classics_desc_1 }}</p>
-
-        <div class="home-chips">
-          <span class="home-chips__label">{{ t.home_recommended_entry }}：</span>
-          <a class="home-chip" href="{{ '/categories/' | relative_url }}#经典解读">{{ t.home_link_category_classics }}</a>
-          <a class="home-chip" href="{{ '/categories/' | relative_url }}#孙子兵法">{{ t.home_link_category_sunzi }}</a>
-        </div>
-      </article>
-    </div>
-
-    <!-- 6 -->
-    <div class="grid__item">
-      <article class="archive__item archive__item--home-card">
-        <div class="archive__item-teaser archive__item-teaser--home">
-          <img src="/assets/img/page-content-image-wide-people-teaser.jpg" alt="{{ t.home_path_life_title }}">
-        </div>
-
-        <h3 class="archive__item-title">{{ t.home_path_life_title }}</h3>
-        <p class="archive__item-excerpt">{{ t.home_path_life_desc_1 }}</p>
-
-        <div class="home-chips">
-          <span class="home-chips__label">{{ t.home_recommended_entry }}：</span>
-          <a class="home-chip" href="{{ '/categories/' | relative_url }}#人格成长">{{ t.home_link_category_growth }}</a>
-          <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ '成长' | uri_escape }}#current-tag-anchor">{{ t.home_link_tag_growth }}</a>
-          <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ '心理学' | uri_escape }}#current-tag-anchor">{{ t.home_link_tag_psy }}</a>
-        </div>
-      </article>
-    </div>
+    <article class="archive__item archive__item--home-card">
+      <div class="archive__item-teaser--home">
+        <img src="/assets/img/page-content-image-wide-people-teaser.jpg" alt="{{ t.home_path_life_title }}">
+      </div>
+      <h3 class="archive__item-title">{{ t.home_path_life_title }}</h3>
+      <p class="archive__item-excerpt">{{ t.home_path_life_desc_1 }}</p>
+      <div class="home-chips">
+        <span class="home-chips__label">{{ t.home_recommended_entry }}：</span>
+        <a class="home-chip" href="{{ '/categories/' | relative_url }}#人格成长">{{ t.home_link_category_growth }}</a>
+        <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ '成长' | uri_escape }}#current-tag-anchor">{{ t.home_link_tag_growth }}</a>
+        <a class="home-chip" href="{{ '/tags/' | relative_url }}?tag={{ '心理学' | uri_escape }}#current-tag-anchor">{{ t.home_link_tag_psy }}</a>
+      </div>
+    </article>
   </div>
 </section>
 
-{%- comment -%} 代表作精选（手动维护 4 篇：标题/描述本地化，链接可本地化） {%- endcomment -%}
+{%- comment -%} 代表作精选（4 篇） {%- endcomment -%}
 <section class="home-section home-section--picks">
   <header class="home-section__header">
     <h2 class="home-section__title">{{ t.home_picks_title }}</h2>
@@ -180,29 +150,34 @@ feature_row:
 
   <div class="entries-grid">
     {% for i in (1..4) %}
-      {% assign url_key = 'home_pick_' | append: i | append: '_url' %}
-      {% assign title_key = 'home_pick_' | append: i | append: '_title' %}
-      {% assign excerpt_key = 'home_pick_' | append: i | append: '_excerpt' %}
+      {% assign pick_url = t['home_pick_' | append: i | append: '_url'] | default: '/posts/' %}
+      {% assign pick_title = t['home_pick_' | append: i | append: '_title'] | default: '' %}
+      {% assign pick_excerpt = t['home_pick_' | append: i | append: '_excerpt'] | default: '' %}
 
-      {% assign pick_url = t[url_key] | default: '/posts/' %}
-      {% assign pick_title = t[title_key] | default: '' %}
-      {% assign pick_excerpt = t[excerpt_key] | default: '' %}
+      {% case i %}
+        {% when 1 %}{% assign pick_img = '/assets/img/page-header-image-wit-500x300.jpg' %}
+        {% when 2 %}{% assign pick_img = '/assets/img/page-header-image-tech4-500x300.jpg' %}
+        {% when 3 %}{% assign pick_img = '/assets/img/page-header-image-eye4-500x300.jpg' %}
+        {% when 4 %}{% assign pick_img = '/assets/img/page-header-image-vision10.jpg' %}
+        {% else %}{% assign pick_img = '/assets/img/page-header-image-vision10.jpg' %}
+      {% endcase %}
 
-      <div class="grid__item">
-        <article class="archive__item archive__item--home-card">
-          <h3 class="archive__item-title">
-            <a href="{{ pick_url | relative_url }}">{{ pick_title }}</a>
-          </h3>
-          {% if pick_excerpt != '' %}
-            <p class="archive__item-excerpt">{{ pick_excerpt }}</p>
-          {% endif %}
-        </article>
-      </div>
+      <article class="archive__item archive__item--home-card">
+        <div class="archive__item-teaser--home">
+          <img src="{{ pick_img | relative_url }}" alt="{{ pick_title | escape }}">
+        </div>
+
+        <h3 class="archive__item-title">
+          <a href="{{ pick_url | relative_url }}">{{ pick_title }}</a>
+        </h3>
+
+        <p class="archive__item-excerpt">{{ pick_excerpt }}</p>
+      </article>
     {% endfor %}
   </div>
 </section>
 
-{%- comment -%} 最近更新文章（8 篇） {%- endcomment -%}
+{%- comment -%} 最近更新（保持原卡片效果，不在 CSS 上动它） {%- endcomment -%}
 <section class="home-section home-section--posts">
   <header class="home-section__header">
     <h2 class="home-section__title">{{ t.home_recent_updates }}</h2>
