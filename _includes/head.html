@@ -18,6 +18,10 @@
   <meta name="robots" content="noindex, follow">
 {% endif %}
 
+{% if page.robots == "noindex" %}
+  <meta name="robots" content="noindex, follow">
+{% endif %}
+
 <script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
   {% if site.enable_copy_code_button -%}
