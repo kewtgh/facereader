@@ -2,8 +2,8 @@
 title: 为什么社会主义的政府总是短时间溃灭，而中国封建王朝的解体却总是很漫长？
 excerpt: "苏联的解体，为什么“竟无一人是男儿”？但这个问题本身就问错了。苏联并不缺少勇敢的人，而是这个政权在其末期，已经不值得、也不应该被拯救。通过对社会主义政府与中国封建王朝解体路径的对比，我们发现，统治一旦彻底去价值化，仅剩利益结构，其崩溃必然是瞬间的；而以价值体系维系的统治，即便早已腐朽，也会被人心与惯性拖延。真正需要追问的，不是“为何无人为其而死”，而是：一个统治为何会沦落到，没有任何人需要为它而死？"
 header:
-  teaser: /assets/img/page-header-image-tech5-teaser.jpg
-  overlay_image: /assets/img/page-header-image-tech5.jpg # Add image post (optional)
+  teaser: /assets/img/page-header-image-empire01-teaser.jpg
+  overlay_image: /assets/img/page-header-image-empire01.jpg # Add image post (optional)
   overlay_filter: 0.5
 categories:
   - 社会杂论
