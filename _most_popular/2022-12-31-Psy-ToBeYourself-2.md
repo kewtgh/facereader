@@ -25,6 +25,7 @@ tags:
   - 稻盛和夫
   - 感悟
 canonical_url: https://facereader.witbacon.com/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-2/
+robots: noindex
 classes: wide
 toc: true
 toc_sticky: true
