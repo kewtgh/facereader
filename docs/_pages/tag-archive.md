@@ -4,4 +4,5 @@ permalink: /tags/
 layout: tags
 author_profile: true
 robots: noindex
+sitemap: false
 ---

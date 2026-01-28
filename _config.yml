@@ -200,6 +200,7 @@ exclude:
   - tmp
   - category-tag.zip.bak
   - _config.yml.b
+  - docs/_drafts
 keep_files:
   - .git
   - .svn
@@ -237,7 +238,7 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # Pagination with jekyll-paginate
 paginate: 10 # amount of posts to show
-paginate_path: /posts/page:num
+paginate_path: /posts/page:num/
 
 # Pagination with jekyll-paginate-v2
 # See https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
@@ -335,7 +336,7 @@ collections:
 defaults:
   # _posts
   - scope:
-      path: ""
+      path: "docs/_pages"
       type: posts
     values:
       layout: single
@@ -345,6 +346,8 @@ defaults:
       share: true
       related: true
       show_date: true
+      sitemap: true
+      robots: index
   # _pages
   #   - scope:
   #       path: "_pages"
@@ -362,6 +365,8 @@ defaults:
       author_profile: false
       share: false
       comments: false
+      robots: noindex
+      sitemap: false
       sidebar:
         nav: "documents"
   # _recipes
@@ -373,6 +378,8 @@ defaults:
       author_profile: true
       share: true
       comments: true
+      robots: noindex
+      sitemap: false
 #  _most_popular
   - scope:
       path: "_most_popular"
@@ -390,6 +397,8 @@ defaults:
       layout: list
       author_profile: false
       share: true
+      robots: noindex
+      sitemap: false
 #  foo-bar
   - scope:
       path: ""
@@ -398,3 +407,11 @@ defaults:
       layout: list
       author_profile: false
       share: true
+      robots: noindex
+      sitemap: false
+#  drafts
+  - scope:
+      path: "docs/_drafts"
+    values:
+      sitemap: false
+      robots: noindex
