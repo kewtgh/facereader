@@ -336,7 +336,7 @@ collections:
 defaults:
   # _posts
   - scope:
-      path: "docs/_pages"
+      path: ""
       type: posts
     values:
       layout: single
