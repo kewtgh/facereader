@@ -30,7 +30,8 @@ last_modified_at: 2021-12-16T19:25:52-05:00
 
   动物中有不少是以一到两只首领来领导整个族群的，比如象群、狮群、狼群、虎鲸群等。我们就以狮群来举例，假如你是东非一个狮群中的领袖雄狮，那么你应该如何做才能算是一位优秀的狮王呢？
 
-<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/16-23-17-54-Lion.jpg" title="" alt="Lion.jpg" data-align="center"></div>
+<figure class="fr-figure"><img src="https://cdn.jsdelivr.net/gh/kewtgh/PicSunflowers@main/2021/12/16-23-17-54-Lion.jpg" title="" alt="Lion.jpg" data-align="center"></figure>
+
 
 - 首先，你需要组建领导狮群的雄狮联盟，击退那些胆敢挑战你的流浪雄狮们；
 
