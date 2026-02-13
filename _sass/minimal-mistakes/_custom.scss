@@ -1012,3 +1012,18 @@ body { line-height: 1.7; }
 .home-section--about-cta {
   padding-top: 0.2rem;
 }
+
+/* 段落首行缩进 */
+
+/* 默认：正文段落首行缩进（只对“普通段落”生效） */
+.post-content > p {
+  text-indent: 2em;
+}
+
+/* 关闭缩进的文章：加上 no-indent 类 */
+.no-indent .post-content > p {
+  text-indent: 0;
+}
+
+/* 不缩进的段落 */
+.no-indent-block p { text-indent: 0 !important; }

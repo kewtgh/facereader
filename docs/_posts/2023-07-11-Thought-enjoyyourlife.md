@@ -21,6 +21,7 @@ tags:
   - 诗
   - 视频
 classes: wide
+no_indent: true
 toc: false
 last_modified_at: 2023-07-11T19:25:52-05:00
 
