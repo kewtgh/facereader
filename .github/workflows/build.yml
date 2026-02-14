@@ -3,7 +3,7 @@ name: build
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch: {}
   repository_dispatch: {}
 
@@ -43,4 +43,4 @@ jobs:
       run: bundle exec jekyll algolia push
       env:
         ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
-      continue-on-error: true
+      continue-on-error: false
