@@ -81,9 +81,9 @@ algolia:
     - _documents/*.md
     - _posts/2017-11-28-post-exclude-search.md
     - /assets/*.*
-  application_id         : 9C0NU6FBIH # YOUR_APPLICATION_ID
+  application_id         : 6OPPKGJAVV # YOUR_APPLICATION_ID
   index_name             : Face Reader Search # YOUR_INDEX_NAME
-  search_only_api_key    : 51384fc8e05a85a035065d162dca8d76 # YOUR_SEARCH_ONLY_API_KEY
+  search_only_api_key    : a6f5fefa42805d8cef72dba95e2ece04 # YOUR_SEARCH_ONLY_API_KEY
   powered_by             : true # true (default), false
 
 # SEO Related
