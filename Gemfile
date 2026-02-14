@@ -5,7 +5,13 @@ source "https://rubygems.org"
 
 group :jekyll_plugins do
   gem "github-pages"
+  gem "jekyll-algolia"
+  gem "jekyll-archives"
 end
+
+gem "csv"
+gem "bigdecimal"
+gem "ostruct"
 
 group :development do
   # Ruby 3 以后 webrick 不再默认附带；本地 serve 需要
@@ -17,8 +23,7 @@ gem "wdm", ">= 0.1.1", platforms: :windows
 
 # Ruby 里这两个一般是标准库/默认库，不建议写在 Gemfile（除非确实遇到缺失报错）
 # gem "fiddle"
-# gem "ostruct"
 
 # faraday-retry：只有确实遇到 Faraday 警告且来自某个插件时再加
 # 否则建议删掉，交给 github-pages 锁定的依赖来管理
-# gem "faraday-retry", "~> 2.2"
+gem "faraday-retry", "~> 2.2"

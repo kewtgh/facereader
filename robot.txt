@@ -9,3 +9,5 @@ Disallow: /docs/_pages/
 Disallow: /norobots/
 
 Sitemap: https://facereader.witbacon.com/sitemap.xml
+
+# Algolia-Crawler-Verif: 93228A2236EB8100
