@@ -19,8 +19,8 @@ jobs:
       with:
         ruby-version: '2.7'
         bundler-cache: true   # 自动 bundle install + 缓存
-        env:
-          BUNDLE_GEMFILE: Gemfile.algolia
+      env:
+        BUNDLE_GEMFILE: Gemfile.algolia
 
     - name: Update Algolia index
       env:
