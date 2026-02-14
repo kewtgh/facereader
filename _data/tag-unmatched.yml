@@ -23,6 +23,8 @@ unmatched:
     count: 2
   - tag: "企业"
     count: 2
+  - tag: "项羽"
+    count: 2
   - tag: "萧何"
     count: 2
   - tag: "学生"
@@ -71,7 +73,11 @@ unmatched:
     count: 1
   - tag: "埃德·胡德"
     count: 1
+  - tag: "安全与稳定"
+    count: 1
   - tag: "奥托·夏莫"
+    count: 1
+  - tag: "巴菲特"
     count: 1
   - tag: "板桥溃坝"
     count: 1
@@ -109,6 +115,8 @@ unmatched:
     count: 1
   - tag: "读万卷书"
     count: 1
+  - tag: "短期奖励"
+    count: 1
   - tag: "发展趋势"
     count: 1
   - tag: "法理权威"
@@ -145,6 +153,8 @@ unmatched:
     count: 1
   - tag: "经营"
     count: 1
+  - tag: "纠错机制"
+    count: 1
   - tag: "九变篇"
     count: 1
   - tag: "九地篇"
@@ -174,6 +184,8 @@ unmatched:
   - tag: "老师"
     count: 1
   - tag: "雷吉·琼斯"
+    count: 1
+  - tag: "雷曼兄弟"
     count: 1
   - tag: "冷漠"
     count: 1
@@ -215,6 +227,8 @@ unmatched:
     count: 1
   - tag: "目光短浅"
     count: 1
+  - tag: "拿破仑"
+    count: 1
   - tag: "拿破仑三世"
     count: 1
   - tag: "怒其不争"
@@ -223,11 +237,17 @@ unmatched:
     count: 1
   - tag: "普通人"
     count: 1
+  - tag: "乾隆帝"
+    count: 1
   - tag: "切尔诺贝利事件"
+    count: 1
+  - tag: "权力与合法性"
     count: 1
   - tag: "任人唯亲"
     count: 1
   - tag: "任正非"
+    count: 1
+  - tag: "山姆·沃顿"
     count: 1
   - tag: "上进"
     count: 1
@@ -259,6 +279,8 @@ unmatched:
     count: 1
   - tag: "唐文斌"
     count: 1
+  - tag: "唐玄宗"
+    count: 1
   - tag: "同情"
     count: 1
   - tag: "团队"
@@ -273,6 +295,8 @@ unmatched:
     count: 1
   - tag: "危机"
     count: 1
+  - tag: "委内瑞拉"
+    count: 1
   - tag: "未选择的路"
     count: 1
   - tag: "未走过的路"
@@ -283,7 +307,7 @@ unmatched:
     count: 1
   - tag: "喜剧"
     count: 1
-  - tag: "项羽"
+  - tag: "系统性风险"
     count: 1
   - tag: "校长"
     count: 1
@@ -292,6 +316,8 @@ unmatched:
   - tag: "心如止水"
     count: 1
   - tag: "信"
+    count: 1
+  - tag: "信息反馈"
     count: 1
   - tag: "信息茧房"
     count: 1
@@ -305,6 +331,8 @@ unmatched:
     count: 1
   - tag: "业务能力"
     count: 1
+  - tag: "伊朗"
+    count: 1
   - tag: "伊隆·马斯克"
     count: 1
   - tag: "以德报怨"
@@ -312,6 +340,8 @@ unmatched:
   - tag: "印奇"
     count: 1
   - tag: "应激反应"
+    count: 1
+  - tag: "雍正帝"
     count: 1
   - tag: "勇敢的心"
     count: 1
