@@ -1015,15 +1015,23 @@ body { line-height: 1.7; }
 
 /* 段落首行缩进 */
 
-/* 默认：正文段落首行缩进（只对“普通段落”生效） */
-.post-content > p {
+/* 默认：正文段落缩进 */
+.post-content p {
   text-indent: 2em;
 }
 
-/* 关闭缩进的文章：加上 no-indent 类 */
-.no-indent .post-content > p {
+/* 关闭缩进的文章：外层加 no-indent */
+.no-indent .post-content p {
   text-indent: 0;
 }
 
-/* 不缩进的段落 */
-.no-indent-block p { text-indent: 0 !important; }
+/* 局部不缩进块：只影响 post-content 内 */
+.no-indent-block .post-content p {
+  text-indent: 0 !important;
+}
+
+/* 可选：引用里不缩进 */
+.post-content blockquote p {
+  text-indent: 0;
+}
+
