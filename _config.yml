@@ -24,10 +24,10 @@ name                     : &name "FaceReader-企业观察"
 description              : &description "For Profound Thinkers."
 url                      : "https://facereader.witbacon.com" # the base hostname & protocol for your site e.g. "https://kewtgh.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "kewtgh/facereader"# GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : "/assets/img/bio-photo-500x300.png"# path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : "/assets/img/logo-facereader.png"# path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "FaceReader-企业观察"# overrides the website title displayed in the masthead, use " " for no title
+repository               : "kewtgh/facereader" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+teaser                   : "/assets/img/bio-photo-500x300.png" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+logo                     : "/assets/img/logo-facereader.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+masthead_title           : "FaceReader-企业观察" # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 350
 chinese_words_per_minute : 300
@@ -367,6 +367,7 @@ defaults:
       comments: false
       robots: noindex
       sitemap: false
+      search: false
       sidebar:
         nav: "documents"
   # _recipes
@@ -399,6 +400,7 @@ defaults:
       share: true
       robots: noindex
       sitemap: false
+      search: false
 #  foo-bar
   - scope:
       path: ""
@@ -409,9 +411,11 @@ defaults:
       share: true
       robots: noindex
       sitemap: false
+      search: false
 #  drafts
   - scope:
       path: "docs/_drafts"
     values:
       sitemap: false
       robots: noindex
+      search: false
