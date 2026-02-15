@@ -23,7 +23,7 @@ subtitle                 : "解读人性，分析企业，洞悉社会，掌握�
 name                     : &name "FaceReader-企业观察"
 description              : &description "For Profound Thinkers."
 url                      : "https://facereader.witbacon.com" # the base hostname & protocol for your site e.g. "https://kewtgh.github.io"
-baseurl                  : ""# the subpath of your site, e.g. "/blog"
+baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "kewtgh/facereader"# GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "/assets/img/bio-photo-500x300.png"# path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/img/logo-facereader.png"# path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
