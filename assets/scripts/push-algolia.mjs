@@ -1,8 +1,8 @@
-import fs from "fs/promises";
-import crypto from "crypto";
-import { algoliasearch } from "algoliasearch";  // Algolia v5+
+import fs from "node:fs/promises";
+import crypto from "node:crypto";
+import { algoliasearch } from "algoliasearch";
 import YAML from "yaml";
-import path from "path";
+import path from "node:path";
 
 // 环境变量设置
 const {
@@ -19,10 +19,12 @@ if (!ALGOLIA_APP_ID || !ALGOLIA_ADMIN_API_KEY || !ALGOLIA_INDEX_NAME) {
 const inputPath = process.argv[2] || "_site/algolia-records.json";
 
 // 配置常量
-const MAX_BYTES = 8000;  // 每个文本块的最大字节数
-const MAX_HITS_PER_PAGE = 20;  // 每页最大记录数
-const BATCH_SIZE = 1000;  // 每次批量推送的记录数
+const MAX_BYTES = Number(process.env.ALGOLIA_MAX_BYTES || 8000);
+const MIN_CHUNK_CHARS = Number(process.env.ALGOLIA_MIN_CHUNK_CHARS || 200);
+const MAX_HITS_PER_PAGE = Number(process.env.ALGOLIA_MAX_HITS_PER_PAGE || 20);
+const BATCH_SIZE = Number(process.env.ALGOLIA_BATCH_SIZE || 1000);
 
+// ---- utils ----
 function byteLen(s) {
   return Buffer.byteLength(s || "", "utf8");
 }
@@ -34,10 +36,15 @@ function normalizeText(text) {
     .trim();
 }
 
+/**
+ * Chunk text by sentence-ish boundaries first, then hard-slice if needed.
+ * Goal: each chunk <= MAX_BYTES (utf8).
+ */
 function chunkText(text) {
   const t = normalizeText(text);
   if (!t) return [];
 
+  // Try to split by punctuation + whitespace (works okay for Chinese & English)
   const parts = t.split(/(?<=[。！？.!?])\s+/);
   const chunks = [];
   let buf = "";
@@ -50,18 +57,21 @@ function chunkText(text) {
       continue;
     }
 
-    if (buf && buf.length >= 100) chunks.push(buf);
+    // flush current buffer
+    if (buf && buf.length >= MIN_CHUNK_CHARS) chunks.push(buf);
 
+    // if single part itself is too big, hard split
     if (byteLen(part) > MAX_BYTES) {
       let start = 0;
       while (start < part.length && chunks.length < MAX_HITS_PER_PAGE) {
         let slice = part.slice(start, start + 1200);
 
+        // shrink slice until within byte limit
         while (byteLen(slice) > MAX_BYTES && slice.length > 120) {
           slice = slice.slice(0, Math.floor(slice.length * 0.8));
         }
 
-        if (slice.length >= 100) chunks.push(slice);
+        if (slice.length >= MIN_CHUNK_CHARS) chunks.push(slice);
         start += 1200;
       }
       buf = "";
@@ -72,7 +82,7 @@ function chunkText(text) {
     if (chunks.length >= MAX_HITS_PER_PAGE) break;
   }
 
-  if (buf && buf.length >= 100 && chunks.length < MAX_HITS_PER_PAGE) {
+  if (buf && buf.length >= MIN_CHUNK_CHARS && chunks.length < MAX_HITS_PER_PAGE) {
     chunks.push(buf);
   }
 
@@ -132,11 +142,12 @@ function shouldExcludeRecord(rec, excludeRegexes) {
 
   if (excludeRegexes.some((re) => re.test(p) || re.test(urlPath))) return true;
 
+  // 额外排除常见的非内容页
   if (/^(tags|categories)(\/|$)/.test(urlPath)) return true;
   if (/^(assets|images|js|css)(\/|$)/.test(urlPath)) return true;
   if (/^(sitemap\.xml|feed\.xml|robots\.txt)$/.test(urlPath)) return true;
-  if (/\/page\d+\/?$/.test(urlPath)) return true;
-  if (/\/posts\/page\d+\/?$/.test(urlPath)) return true;
+  if (/\/page\d+\/?$/.test(urlPath)) return true;          // /page2/ /page10/
+  if (/\/posts\/page\d+\/?$/.test(urlPath)) return true;   // /posts/page4/
 
   return false;
 }
@@ -211,7 +222,6 @@ function shouldExcludeRecord(rec, excludeRegexes) {
 
   const client = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY);
 
-  // Algolia v5: replaceAllObjects at client-level, pass indexName.
   const res = await client.initIndex(ALGOLIA_INDEX_NAME).replaceAllObjects(filtered, {
     autoGenerateObjectIDIfNotExist: true,
   });
