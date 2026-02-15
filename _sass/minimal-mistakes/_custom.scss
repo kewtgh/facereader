@@ -1032,48 +1032,59 @@ body { line-height: 1.7; }
  * Search: algolia
  * ===================================================== */
 
-<style>
-  /* 搜索框样式 */
-  #search {
-    width: 320px;
-    height: 40px;
-    padding: 0 12px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
+// 搜索框样式
+#search {
+  width: 320px;
+  height: 40px;
+  padding: 0 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 
-  #search:focus {
+  // 聚焦时的样式
+  &:focus {
     border-color: #0055ff;
     outline: none;
   }
+}
 
-  /* 搜索结果框样式 */
-  .ais-SearchBox-input {
-    font-size: 14px;
-    padding: 10px;
-  }
+// 搜索输入框
+.ais-SearchBox-input {
+  font-size: 14px;
+  padding: 10px;
+}
 
-  /* 设置搜索结果弹窗 */
-  .ais-SearchResults {
-    max-height: 400px;
-    overflow-y: auto;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-  }
+// 搜索结果框样式
+.ais-SearchResults {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
 
-  .ais-SearchResult-item {
-    padding: 8px;
-    margin-bottom: 5px;
-    border-bottom: 1px solid #ccc;
-    border-radius: 4px;
-  }
+// 每个搜索结果项的样式
+.ais-SearchResult-item {
+  padding: 8px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+  border-radius: 4px;
 
-  .ais-SearchResult-item:hover {
+  &:hover {
     background-color: #f0f0f0;
   }
-</style>
+}
+
+// 搜索框及弹窗的响应式调整（如果有需要）
+@media (max-width: 768px) {
+  #search {
+    width: 100%;
+    font-size: 14px;
+  }
+  .ais-SearchResults {
+    max-height: 300px;
+  }
+}
