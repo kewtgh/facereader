@@ -97,7 +97,7 @@ function shouldExcludeRecord(rec, excludeRegexes) {
   const client = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY);
 
   // Correct method to initialize index for v5
-  const index = client.initIndex(ALGOLIA_INDEX_NAME); // Correct initialization
+  const index = client.initSearchClient().initIndex(ALGOLIA_INDEX_NAME); // Correct initialization
 
   // Upload the records
   await index.replaceAllObjects(filtered, {
