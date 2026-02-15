@@ -19,6 +19,8 @@
 import fs from "node:fs/promises";
 import crypto from "node:crypto";
 import { algoliasearch } from "algoliasearch";
+import YAML from "yaml";
+import path from "node:path";
 
 const {
   ALGOLIA_APP_ID,
@@ -186,9 +188,6 @@ function ensureArray(v) {
   console.log(
     `Chunking policy: MAX_BYTES=${MAX_BYTES}, MAX_HITS_PER_PAGE=${MAX_HITS_PER_PAGE}, BATCH_SIZE=${BATCH_SIZE}`
   );
-
-  import YAML from "yaml";
-  import path from "node:path";
 
   // 读取 _config.yml 中的排除规则
   async function loadExcludePatterns() {
