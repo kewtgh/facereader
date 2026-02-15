@@ -19,10 +19,14 @@ if (!ALGOLIA_APP_ID || !ALGOLIA_ADMIN_API_KEY || !ALGOLIA_INDEX_NAME) {
 
 const inputPath = process.argv[2] || "_site/algolia-records.json";
 
-// ---- 设置常量 ----
-const MAX_BYTES = 8000;  // 每个文本块的最大字节数
-const MAX_HITS_PER_PAGE = 20;  // 每页最大记录数
-const BATCH_SIZE = 1000;  // 每次批量推送的记录数
+/**
+ * Keep records comfortably below typical per-record size limits.
+ * You previously saw 9.765KB threshold errors in Crawler; we'll stay conservative.
+ */
+const MAX_BYTES = Number(process.env.ALGOLIA_MAX_BYTES || 8000);
+const MIN_CHUNK_CHARS = Number(process.env.ALGOLIA_MIN_CHUNK_CHARS || 200);
+const MAX_HITS_PER_PAGE = Number(process.env.ALGOLIA_MAX_HITS_PER_PAGE || 20);
+const BATCH_SIZE = Number(process.env.ALGOLIA_BATCH_SIZE || 1000);
 
 // ---- utils ----
 function byteLen(s) {
@@ -44,7 +48,6 @@ function chunkText(text) {
   const t = normalizeText(text);
   if (!t) return [];
 
-  // Try to split by punctuation + whitespace (works okay for Chinese & English)
   const parts = t.split(/(?<=[。！？.!?])\s+/);
   const chunks = [];
   let buf = "";
@@ -57,21 +60,18 @@ function chunkText(text) {
       continue;
     }
 
-    // flush current buffer
-    if (buf && buf.length >= 100) chunks.push(buf);
+    if (buf && buf.length >= MIN_CHUNK_CHARS) chunks.push(buf);
 
-    // if single part itself is too big, hard split
     if (byteLen(part) > MAX_BYTES) {
       let start = 0;
       while (start < part.length && chunks.length < MAX_HITS_PER_PAGE) {
         let slice = part.slice(start, start + 1200);
 
-        // shrink slice until within byte limit
         while (byteLen(slice) > MAX_BYTES && slice.length > 120) {
           slice = slice.slice(0, Math.floor(slice.length * 0.8));
         }
 
-        if (slice.length >= 100) chunks.push(slice);
+        if (slice.length >= MIN_CHUNK_CHARS) chunks.push(slice);
         start += 1200;
       }
       buf = "";
@@ -82,7 +82,7 @@ function chunkText(text) {
     if (chunks.length >= MAX_HITS_PER_PAGE) break;
   }
 
-  if (buf && buf.length >= 100 && chunks.length < MAX_HITS_PER_PAGE) {
+  if (buf && buf.length >= MIN_CHUNK_CHARS && chunks.length < MAX_HITS_PER_PAGE) {
     chunks.push(buf);
   }
 
@@ -118,10 +118,10 @@ async function loadExcludePatterns() {
 // glob -> RegExp（支持 *, **）
 function globToRegExp(glob) {
   let g = String(glob || "").trim();
-  g = g.replace(/^[./]+/, "").replace(/^\/+/, "");  // 去掉路径的前导斜杠
-  g = g.replace(/[.+^${}()|[\]\\]/g, "\\$&"); // 转义特殊字符
-  g = g.replace(/\\\*\\\*/g, ".*"); // ** 转为 .*
-  g = g.replace(/\\\*/g, "[^/]*"); // * 转为 [^/]* (不跨目录)
+  g = g.replace(/^[./]+/, "").replace(/^\/+/, "");
+  g = g.replace(/[.+^${}()|[\]\\]/g, "\\$&");
+  g = g.replace(/\\\*\\\*/g, ".*");
+  g = g.replace(/\\\*/g, "[^/]*");
   return new RegExp(`^${g}$`);
 }
 
@@ -141,15 +141,13 @@ function shouldExcludeRecord(rec, excludeRegexes) {
     }
   })();
 
-  // 1) 先用 _config.yml 里的 files_to_exclude 匹配 path / urlPath
   if (excludeRegexes.some((re) => re.test(p) || re.test(urlPath))) return true;
 
-  // 2) 额外排除常见“非内容页”（你不想手动 search:false 的那些）
   if (/^(tags|categories)(\/|$)/.test(urlPath)) return true;
   if (/^(assets|images|js|css)(\/|$)/.test(urlPath)) return true;
   if (/^(sitemap\.xml|feed\.xml|robots\.txt)$/.test(urlPath)) return true;
-  if (/\/page\d+\/?$/.test(urlPath)) return true;          // /page2/ /page10/
-  if (/\/posts\/page\d+\/?$/.test(urlPath)) return true;   // /posts/page4/
+  if (/\/page\d+\/?$/.test(urlPath)) return true;
+  if (/\/posts\/page\d+\/?$/.test(urlPath)) return true;
 
   return false;
 }
@@ -165,7 +163,6 @@ function shouldExcludeRecord(rec, excludeRegexes) {
     throw e;
   }
 
-  // Build chunked records
   const records = [];
   for (const p of pages) {
     const url = pickString(p.url, pickString(p.objectID, ""));
@@ -175,7 +172,6 @@ function shouldExcludeRecord(rec, excludeRegexes) {
     const chunks = chunkText(content);
 
     const base = {
-      // Keep original fields; your front-end can map headline/title etc.
       ...p,
       url: url,
       title: pickString(p.title, pickString(p.headline, url)),
@@ -202,7 +198,6 @@ function shouldExcludeRecord(rec, excludeRegexes) {
     }
   }
 
-  // Ensure objectID exists
   const missing = records.find((r) => !r.objectID);
   if (missing) {
     throw new Error(
@@ -215,11 +210,9 @@ function shouldExcludeRecord(rec, excludeRegexes) {
     `Chunking policy: MAX_BYTES=${MAX_BYTES}, MAX_HITS_PER_PAGE=${MAX_HITS_PER_PAGE}, BATCH_SIZE=${BATCH_SIZE}`
   );
 
-  // 加载排除规则
   const excludePatterns = await loadExcludePatterns();
   const excludeRegexes = excludePatterns.map(globToRegExp);
 
-  // 过滤前/后统计
   const before = records.length;
   const filtered = records.filter((r) => !shouldExcludeRecord(r, excludeRegexes));
   const after = filtered.length;
@@ -227,26 +220,12 @@ function shouldExcludeRecord(rec, excludeRegexes) {
   console.log(`Exclude patterns loaded: ${excludePatterns.length}`);
   console.log(`Records filtered: ${before} -> ${after} (excluded ${before - after})`);
 
-  // 后面上传用 filtered 而不是 records
   const client = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY);
-  
-  // 检查是否成功初始化
-  if (!client) {
-    throw new Error("Failed to initialize Algolia client.");
-  }
-
-  // 初始化索引
-  const index = client.initIndex(ALGOLIA_INDEX_NAME);
-
-  // 确认初始化
-  if (!index) {
-    throw new Error(`Failed to initialize index: ${ALGOLIA_INDEX_NAME}`);
-  };
 
   // Algolia v5: replaceAllObjects at client-level, pass indexName.
-  const res = await client
-    .initIndex(ALGOLIA_INDEX_NAME)
-    .replaceAllObjects(filtered, { autoGenerateObjectIDIfNotExist: true });
+  const res = await client.initIndex(ALGOLIA_INDEX_NAME).replaceAllObjects(filtered, {
+    autoGenerateObjectIDIfNotExist: true,
+  });
 
   console.log(
     `Algolia indexing done. Operations: ${Array.isArray(res) ? res.length : "ok"}`
