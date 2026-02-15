@@ -19,6 +19,11 @@ if (!ALGOLIA_APP_ID || !ALGOLIA_ADMIN_API_KEY || !ALGOLIA_INDEX_NAME) {
 
 const inputPath = process.argv[2] || "_site/algolia-records.json";
 
+// ---- 设置常量 ----
+const MAX_BYTES = 8000;  // 每个文本块的最大字节数
+const MAX_HITS_PER_PAGE = 20;  // 每页最大记录数
+const BATCH_SIZE = 1000;  // 每次批量推送的记录数
+
 // ---- utils ----
 function byteLen(s) {
   return Buffer.byteLength(s || "", "utf8");
@@ -53,7 +58,7 @@ function chunkText(text) {
     }
 
     // flush current buffer
-    if (buf && buf.length >= MIN_CHUNK_CHARS) chunks.push(buf);
+    if (buf && buf.length >= 100) chunks.push(buf);
 
     // if single part itself is too big, hard split
     if (byteLen(part) > MAX_BYTES) {
@@ -66,7 +71,7 @@ function chunkText(text) {
           slice = slice.slice(0, Math.floor(slice.length * 0.8));
         }
 
-        if (slice.length >= MIN_CHUNK_CHARS) chunks.push(slice);
+        if (slice.length >= 100) chunks.push(slice);
         start += 1200;
       }
       buf = "";
@@ -77,7 +82,7 @@ function chunkText(text) {
     if (chunks.length >= MAX_HITS_PER_PAGE) break;
   }
 
-  if (buf && buf.length >= MIN_CHUNK_CHARS && chunks.length < MAX_HITS_PER_PAGE) {
+  if (buf && buf.length >= 100 && chunks.length < MAX_HITS_PER_PAGE) {
     chunks.push(buf);
   }
 
@@ -113,7 +118,7 @@ async function loadExcludePatterns() {
 // glob -> RegExp（支持 *, **）
 function globToRegExp(glob) {
   let g = String(glob || "").trim();
-  g = g.replace(/^[./]+/, "").replace(/^\/+/, ""); // 去掉路径的前导斜杠
+  g = g.replace(/^[./]+/, "").replace(/^\/+/, "");  // 去掉路径的前导斜杠
   g = g.replace(/[.+^${}()|[\]\\]/g, "\\$&"); // 转义特殊字符
   g = g.replace(/\\\*\\\*/g, ".*"); // ** 转为 .*
   g = g.replace(/\\\*/g, "[^/]*"); // * 转为 [^/]* (不跨目录)
