@@ -247,23 +247,23 @@ paginate_path: /posts/page:num/
 # Pagination with jekyll-paginate-v2
 # See https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
 #   for configuration details
-pagination:
+# pagination:
   # Set enabled to true to use paginate v2
   #  enabled: true
-  debug: false
-  collection: 'posts'
-  per_page: 10
-  permalink: '/posts/page/:num/'
-  title: ':title - page :num'
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
-  # category: 'posts'
-  tag: ''
-  locale: ''
-  trail:
-    before: 2
-    after: 2
+#  debug: false
+#  collection: 'posts'
+#  per_page: 10
+#  permalink: '/posts/page/:num/'
+#  title: ':title - page :num'
+#  limit: 0
+#  sort_field: 'date'
+#  sort_reverse: true
+#  category: 'posts'
+#  tag: ''
+#  locale: ''
+#  trail:
+#    before: 2
+#    after: 2
 
 # Plugins (previously gems:)
 plugins:
@@ -427,7 +427,7 @@ defaults:
       robots: noindex
       search: false
 #  exclude sitemap
-  - scope:
-      path: "posts"
-    values:
-      sitemap: false
+#  - scope:
+#      path: "posts"
+#    values:
+#      sitemap: false

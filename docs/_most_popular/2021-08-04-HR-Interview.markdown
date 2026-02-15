@@ -5,9 +5,6 @@ header:
   overlay_image: /assets/img/page-header-image-tech7.jpg
   overlay_filter: linear-gradient(rgba(255, 215, 0, 0.5), rgba(0, 255, 255, 0.5))
   teaser: /assets/img/page-header-image-tech7-teaser.jpg
-sidebar:
-  title: "经典系列"
-  nav: sidebar-series
 categories:
   - 人格成长
   - 人力资源
@@ -18,7 +15,6 @@ tags:
   - 面试方法
   - SMART
 share: true
-classes: wide
 canonical_url: https://facereader.witbacon.com/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90/HR-Interview/
 robots: noindex
 toc: true
