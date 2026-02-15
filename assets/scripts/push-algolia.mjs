@@ -222,7 +222,10 @@ function shouldExcludeRecord(rec, excludeRegexes) {
 
   const client = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY);
 
-  const res = await client.initIndex(ALGOLIA_INDEX_NAME).replaceAllObjects(filtered, {
+  // 修改为 v5 兼容的初始化方式
+  const index = client.initIndex(ALGOLIA_INDEX_NAME);
+
+  const res = await index.replaceAllObjects(filtered, {
     autoGenerateObjectIDIfNotExist: true,
   });
 
