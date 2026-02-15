@@ -16,7 +16,7 @@ tags:
   - 陈寅恪
   - 读书境界
   - 面相
-canonical_url: https://facereader.witbacon.com/docs/%E5%A4%A7%E5%B8%88%E7%99%BE%E7%9B%B8/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/Master-chenyin-chenyinke/
+canonical_url: https://facereader.witbacon.com/%E5%A4%A7%E5%B8%88%E7%99%BE%E7%9B%B8/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/Master-chenyin-chenyinke/
 robots: noindex
 share: true
 classes: wide

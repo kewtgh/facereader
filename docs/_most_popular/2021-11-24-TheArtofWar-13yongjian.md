@@ -17,7 +17,7 @@ header:
 sidebar:
   title: "相关系列"
   nav: sidebar-sunzi
-canonical_url: https://facereader.witbacon.com/docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-13yongjian/
+canonical_url: https://facereader.witbacon.com/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-13yongjian/
 robots: noindex
 last_modified_at: 2021-11-24T22:25:52-05:00
 ---

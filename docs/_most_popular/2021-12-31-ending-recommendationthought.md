@@ -12,7 +12,7 @@ tags:
   - 年终感想
   - 相约星期二
   - 第五项修炼
-canonical_url: https://facereader.witbacon.com/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/ending-recommendationthought/
+canonical_url: https://facereader.witbacon.com/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/ending-recommendationthought/
 robots: noindex
 toc: true
 toc_sticky: true

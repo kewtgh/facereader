@@ -12,7 +12,7 @@ tags:
   - 领导力
   - 领导者
   - 优秀品质
-canonical_url: https://facereader.witbacon.com/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E4%B8%8D%E9%9D%A0%E8%B0%B1%E9%A2%86%E5%AF%BC%E5%8A%9B/manage-leadership/
+canonical_url: https://facereader.witbacon.com/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E4%B8%8D%E9%9D%A0%E8%B0%B1%E9%A2%86%E5%AF%BC%E5%8A%9B/manage-leadership/
 robots: noindex
 sidebar:
   title: "经典系列"

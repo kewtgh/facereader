@@ -253,12 +253,12 @@ pagination:
   debug: false
   collection: 'posts'
   per_page: 10
-  permalink: '/page/:num/'
+  permalink: '/posts/page/:num/'
   title: ':title - page :num'
   limit: 0
   sort_field: 'date'
   sort_reverse: true
-  category: 'posts'
+  # category: 'posts'
   tag: ''
   locale: ''
   trail:

@@ -19,7 +19,7 @@ tags:
   - SMART
 share: true
 classes: wide
-canonical_url: https://facereader.witbacon.com/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90/HR-Interview/
+canonical_url: https://facereader.witbacon.com/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90/HR-Interview/
 robots: noindex
 toc: true
 toc_sticky: true
