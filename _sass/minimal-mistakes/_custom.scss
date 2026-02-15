@@ -1197,14 +1197,15 @@ body { line-height: 1.7; }
 .algolia-searchbox .ais-SearchBox-reset {
   all: unset;                  // 把主题对 button 的样式全清掉
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: calc(14px + 26px) !important; /* 14px 是 .ais-SearchBox 的 padding；26px = 52/2 */
+  transform: translateY(-50%) !important;
   width: 34px;
   height: 34px;
   display: grid;
   place-items: center;
   cursor: pointer;
   z-index: 2;
+  line-height: 1 !important;
 }
 
 .algolia-searchbox .ais-SearchBox-submit svg,
@@ -1322,4 +1323,5 @@ body { line-height: 1.7; }
 /* form 不要固定高度（否则容易挤） */
 .algolia-searchbox .ais-SearchBox-form {
   height: auto !important;
+  position: relative;
 }
