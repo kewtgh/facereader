@@ -32,13 +32,9 @@ sitemap: false
     {% if url_path == "sitemap.xml" %}{% continue %}{% endif %}
     {% if url_path == "robots.txt" %}{% continue %}{% endif %}
 
-    {# 排除 docs/_pages/ 路径 #}
     {% if url_path contains "/docs/_pages/" %}{% continue %}{% endif %}
-
     {% if url_path contains "tags/" %}{% continue %}{% endif %}
     {% if url_path contains "categories/" %}{% continue %}{% endif %}
-    
-    {# 排除分页页面 #}
     {% if url_path contains "/page" %}{% continue %}{% endif %}
     {% if url_path contains "page" and url_path contains "posts/" %}{% continue %}{% endif %}
 
