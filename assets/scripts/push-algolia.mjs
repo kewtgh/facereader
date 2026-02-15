@@ -7,7 +7,7 @@ import YAML from "yaml";
 const { ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY, ALGOLIA_INDEX_NAME, JEKYLL_CONFIG } = process.env;
 
 if (!ALGOLIA_APP_ID || !ALGOLIA_ADMIN_API_KEY || !ALGOLIA_INDEX_NAME) {
-  console.error("❌ 错误: 缺少必要的环境变量 (APP_ID, ADMIN_KEY, INDEX_NAME)");
+  console.error("❌ 错误: 缺少必要的环境变量");
   process.exit(1);
 }
 
@@ -23,25 +23,34 @@ function stableObjectID(url, idx) {
 }
 
 /**
- * 路径清洗：强制匹配 permalink: /:categories/:title/
- * 移除物理路径标志，如 /_posts/ 或 /_pages/，确保搜索结果 URL 漂亮
+ * 路径清洗：针对 permalink: /:categories/:title/
+ * 无论输入是完整 URL 还是相对路径，都强行提取出漂亮链接
  */
-function fixPrettyUrl(rawUrl) {
-  try {
-    const uri = new URL(rawUrl);
-    let path = uri.pathname;
-    // 移除物理目录名
-    path = path.replace(/\/_(posts|pages|documents)\//g, "/"); 
-    // 移除日期前缀 (2022-07-17-)
-    path = path.replace(/\/\d{4}-\d{2}-\d{2}-/g, "/");
-    // 清理双斜杠并移除 index.html
-    path = path.replace(/\/+/g, "/").replace(/index\.html$/, "");
-    // 补全结尾斜杠
-    if (path && !path.endsWith("/")) path += "/";
-    return `${uri.origin}${path}`;
-  } catch (e) {
-    return rawUrl;
+function fixPrettyUrl(rawUrl, rawPath) {
+  // 如果 URL 为空，则尝试从物理路径构建
+  let path = String(rawUrl || rawPath || "");
+  
+  // 如果是完整 URL，只提取 path 部分
+  if (path.startsWith("http")) {
+    try {
+      path = new URL(path).pathname;
+    } catch (e) {
+      path = path.replace(/^https?:\/\/[^\/]+/, "");
+    }
   }
+
+  // 1. 移除物理目录名
+  path = path.replace(/\/_(posts|pages|documents)\//g, "/"); 
+  // 2. 移除日期前缀
+  path = path.replace(/\/\d{4}-\d{2}-\d{2}-/g, "/");
+  // 3. 移除扩展名
+  path = path.replace(/\.(html|md)$/, "/");
+  // 4. 清理双斜杠并补全结尾斜杠
+  path = path.replace(/\/+/g, "/");
+  if (path && !path.endsWith("/")) path += "/";
+  if (!path.startsWith("/")) path = "/" + path;
+
+  return path;
 }
 
 function safePath(p) { return String(p || "").replace(/\\/g, "/").replace(/^\/+|\/+$/g, ""); }
@@ -61,11 +70,8 @@ async function loadExcludePatterns() {
 
 function shouldExcludeRecord(rec, patterns) {
   const p = safePath(rec.path);
-  // 1. 显式排除 _pages 文件夹
   if (p.includes("docs/_pages/")) return true;
-  // 2. 匹配 _config.yml 配置
   if (patterns.some(re => re.test(p))) return true;
-  // 3. 基础排除逻辑
   if (/^(assets|images|js|css)(\/|$)/i.test(p)) return true;
   return false;
 }
@@ -78,36 +84,43 @@ function shouldExcludeRecord(rec, patterns) {
     const pages = JSON.parse(rawData);
     const patterns = await loadExcludePatterns();
 
-    // --- 这里是你要求的链式处理逻辑 ---
     const records = pages
-      .filter(p => !shouldExcludeRecord(p, patterns)) // 第一步：过滤排除项
+      .filter(p => !shouldExcludeRecord(p, patterns))
       .map(p => {
         const rawUrl = pickString(p.url, "");
-        const prettyUrl = fixPrettyUrl(rawUrl); // 第二步：清洗 URL
-        const rawContent = normalizeText(pickString(p.content, ""));
+        const rawPath = pickString(p.path, "");
+        
+        // 核心修复：基于 pathname 重新构建完整的、漂亮的 URL
+        const prettyPath = fixPrettyUrl(rawUrl, rawPath);
+        const domain = "https://facereader.witbacon.com"; // 你的主站域名
+        const finalUrl = `${domain}${prettyPath}`;
 
         return {
           ...p,
-          url: prettyUrl,
-          objectID: stableObjectID(prettyUrl, 0),
-          content: rawContent.slice(0, 2000), // 第三步：截断防错
+          url: finalUrl,
+          objectID: stableObjectID(finalUrl, 0),
+          content: normalizeText(pickString(p.content, "")).slice(0, 2000),
           categories: ensureArray(p.categories),
           tags: ensureArray(p.tags)
         };
       });
 
-    console.log(`📦 数据处理完成: 原始 ${pages.length} 条 -> 过滤后 ${records.length} 条`);
+    console.log(`📦 数据处理完成: 原始 ${pages.length} 条 -> 最终推送 ${records.length} 条`);
 
-    // 3. Algolia v5 推送
+    if (records.length === 0) {
+      console.warn("⚠️ 没有检测到有效记录，请检查过滤逻辑或 algolia-records.json 内容。");
+      return;
+    }
+
     const client = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY);
-    
     console.log(`🚀 正在同步至索引: [${ALGOLIA_INDEX_NAME}]...`);
+    
     await client.replaceAllObjects({
       indexName: ALGOLIA_INDEX_NAME,
       objects: records,
     });
 
-    console.log("✅ Algolia 推送成功！URL 已优化，正文已截断。");
+    console.log("✅ Algolia 推送成功！所有记录已强制纠正为漂亮 URL 格式。");
   } catch (error) {
     console.error("❌ 执行出错:", error.message);
     process.exit(1);
