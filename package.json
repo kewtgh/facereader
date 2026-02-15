@@ -21,7 +21,17 @@
   "engines": {
     "node": ">= 0.10.0"
   },
+
+  "type": "module",
+  "scripts": {
+    "algolia:push": "node scripts/push-algolia.mjs _site/algolia-records.json"
+  },
+  "dependencies": {
+    "algoliasearch": "^5.0.0"
+  },
+
   "devDependencies": {
     "uglify-js": "^3.17.4"
   }
 }
+

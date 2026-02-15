@@ -1,0 +1,49 @@
+name: Algolia Index (Jekyll)
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 关键：固定 Ruby 版本，避免你遇到 Ruby 4 / bigdecimal / csv 之类的坑
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install Node deps
+        run: npm ci || (npm install && npm pkg set scripts.build="echo skip")
+
+      - name: Build site
+        env:
+          JEKYLL_ENV: production
+        run: |
+          bundle exec jekyll build
+
+      # 安全：不要在 PR/fork 场景写入 Algolia（只在 main push 或手动触发时写）
+      - name: Push records to Algolia
+        if: github.event_name != 'pull_request'
+        env:
+          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
+          ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
+        run: |
+          node scripts/push-algolia.mjs _site/algolia-records.json

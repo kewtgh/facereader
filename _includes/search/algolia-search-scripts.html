@@ -1,82 +1,72 @@
 <script>
-// Including InstantSearch.js library and styling
-const loadSearch = function() {
-  const loadCSS = function(src) {
-    var link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = src;
-    link.media = 'all';
-    document.head.appendChild(link);
+  // Lazy-load Algolia SiteSearch only when the search toggle is clicked
+  const loadSearch = function () {
+    const loadCSS = function (href) {
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = href;
+      link.media = "all";
+      document.head.appendChild(link);
+    };
+
+    const loadScript = function (src, onload) {
+      var script = document.createElement("script");
+      script.setAttribute("type", "text/javascript");
+      script.setAttribute("src", src);
+      script.addEventListener("load", onload);
+      document.body.appendChild(script);
+    };
+
+    // 1) Load SiteSearch CSS
+    loadCSS("https://unpkg.com/@algolia/sitesearch@latest/dist/search.min.css");
+
+    // 2) Load SiteSearch JS, then init
+    loadScript("https://unpkg.com/@algolia/sitesearch@latest/dist/search.min.js", function () {
+      // Make sure container exists
+      var container = document.querySelector("#search");
+      if (!container) {
+        console.error("[Algolia] #search container not found. Did you update search_form.html?");
+        return;
+      }
+
+      // Optional: allow overriding attribute names from _config.yml
+      // If not set, fall back to your current field naming
+      var primaryText   = "{{ site.algolia.primary_text | default: 'headline' }}";
+      var secondaryText = "{{ site.algolia.secondary_text | default: 'description' }}";
+      var tertiaryText  = "{{ site.algolia.tertiary_text | default: 'content' }}";
+      var urlAttr       = "{{ site.algolia.url_attribute | default: 'url' }}";
+      var imageAttr     = "{{ site.algolia.image_attribute | default: 'image' }}";
+
+      // Init SiteSearch
+      SiteSearch.init({
+        container: "#search",
+        applicationId: "{{ site.algolia.application_id }}",
+        apiKey: "{{ site.algolia.search_only_api_key }}",
+        indexName: "{{ site.algolia.index_name }}",
+        attributes: {
+          primaryText: primaryText,
+          secondaryText: secondaryText,
+          tertiaryText: tertiaryText,
+
+          // IMPORTANT: don't leave this empty, otherwise results can't link out correctly
+          url: urlAttr,
+          image: imageAttr
+        },
+        darkMode: false
+      });
+    });
   };
 
-  var script = document.createElement('script');
-  script.setAttribute("type", "text/javascript");
-  script.setAttribute("src", "https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js");
-  script.addEventListener("load", function() {
-    // Instantiating InstantSearch.js with Algolia credentials
-    const search = instantsearch({
-      appId: '{{ site.algolia.application_id }}',
-      apiKey: '{{ site.algolia.search_only_api_key }}',
-      indexName: '{{ site.algolia.index_name }}',
-      searchParameters: {
-        restrictSearchableAttributes: ['title', 'content']
+  // Start only when toggle is clicked (same behavior as your current file) :contentReference[oaicite:4]{index=4}
+  $(document).ready(function () {
+    var scriptLoaded = false;
+
+    $(".search__toggle").on("click", function () {
+      if (!scriptLoaded) {
+        loadSearch();
+        scriptLoaded = true;
       }
     });
-
-    const hitTemplate = function(hit) {
-      const url = hit.url;
-      const hightlight = hit._highlightResult;
-      const title = hightlight.title && hightlight.title.value  || "";
-      const content = hightlight.html && hightlight.html.value  || "";
-
-      return `
-        <div class="list__item">
-          <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-            <h2 class="archive__item-title" itemprop="headline"><a href="{{ site.baseurl }}${url}">${title}</a></h2>
-            <div class="archive__item-excerpt" itemprop="description">${content}</div>
-          </article>
-        </div>
-      `;
-    }
-
-    // Adding searchbar and results widgets
-    search.addWidget(
-      instantsearch.widgets.searchBox({
-        container: '.search-searchbar',
-        {% unless site.algolia.powered_by == false %}poweredBy: true,{% endunless %}
-        placeholder: '{{ site.data.ui-text[site.locale].search_placeholder_text | default: "Enter your search term..." }}'
-      })
-    );
-    search.addWidget(
-      instantsearch.widgets.hits({
-        container: '.search-hits',
-        templates: {
-          item: hitTemplate,
-          empty: '{{ site.data.ui-text[site.locale].search_algolia_no_results | default: "No results" }}',
-        }
-      })
-    );
-
-    if (!search.started) {
-      search.start();
-    }
   });
-  document.body.appendChild(script);
-
-  loadCSS("https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css");
-  loadCSS("https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css");
-};
-
-// Starting the search only when toggle is clicked
-$(document).ready(function() {
-  var scriptLoaded = false;
-
-  $(".search__toggle").on("click", function() {
-    if (!scriptLoaded) {
-      loadSearch();
-      scriptLoaded = true;
-    }
-  });
-});
 </script>
