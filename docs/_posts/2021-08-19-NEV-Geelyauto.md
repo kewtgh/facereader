@@ -1,7 +1,7 @@
 ---
 
 title: 新能源汽车行业（5）—— 吉利汽车的新能源战略能成功吗？
-excerpt: "	吉利汽车一直以来几乎都是国产汽车企业中的No.1，其销量一直都远远领先比亚迪，一度逼近销售榜第一名的上汽大众。那么吉利汽车的成功之处在哪里？是否依然能在新能源汽车领域中创造奇迹呢？"
+excerpt: "吉利汽车一直以来几乎都是国产汽车企业中的No.1，其销量一直都远远领先比亚迪，一度逼近销售榜第一名的上汽大众。那么吉利汽车的成功之处在哪里？是否依然能在新能源汽车领域中创造奇迹呢？"
 header:
   teaser: /assets/img/page-header-image-manufacture-teaser.jpg
   overlay_image: /assets/img/page-header-image-manufacture.jpg
