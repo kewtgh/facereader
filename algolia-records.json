@@ -53,7 +53,7 @@ sitemap: false
       "date_ts": {{ p.date | default: site.time | date: "%s" | plus: 0 }},
       "categories": {{ p.categories | default: empty | jsonify }},
       "tags": {{ p.tags | default: empty | jsonify }},
-      "teaser": {{ p.header.teaser | jsonify }}  <!-- 添加 teaser 字段 -->
+      "teaser": {{ p.header.teaser | jsonify }}
     }
   {% endfor %}
 ]
