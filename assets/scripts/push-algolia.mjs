@@ -195,7 +195,7 @@ function ensureArray(v) {
     const yml = await fs.readFile(configPath, "utf8");
     const cfg = YAML.parse(yml) || {};
     const patterns = cfg?.algolia?.files_to_exclude || [];
-    return Array.isArray(patterns) ? patterns : [];
+    return Array.isArray(patterns) ? patterns.map(globToRegExp) : [];
   }
 
   // glob -> RegExp（支持 *, **）
@@ -244,6 +244,9 @@ function ensureArray(v) {
   // const records = ...;
 
   const excludePatterns = await loadExcludePatterns();
+  const filteredRecords = jsonData.filter(record => {
+    return !shouldExcludeRecord(record, excludePatterns);
+  });
   const excludeRegexes = excludePatterns.map(globToRegExp);
 
   // 过滤前/后统计
