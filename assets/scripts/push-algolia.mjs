@@ -3,7 +3,7 @@ import crypto from "node:crypto";
 import { algoliasearch } from "algoliasearch";
 import YAML from "yaml";
 
-// ENV
+// ENV setup
 const {
   ALGOLIA_APP_ID,
   ALGOLIA_ADMIN_API_KEY,
@@ -96,11 +96,10 @@ function shouldExcludeRecord(rec, excludeRegexes) {
 
   const client = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY);
 
-  // 通过searchClient获取索引实例
-  const searchClient = client.initSearchClient();
-  const index = searchClient.initIndex(ALGOLIA_INDEX_NAME); // 使用正确的初始化方法
+  // Correct method to initialize index for v5
+  const index = client.initIndex(ALGOLIA_INDEX_NAME); // Correct initialization
 
-  // 上传数据
+  // Upload the records
   await index.replaceAllObjects(filtered, {
     autoGenerateObjectIDIfNotExist: true
   });
