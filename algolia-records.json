@@ -1,10 +1,11 @@
 ---
 layout: null
 permalink: /algolia-records.json
+sitemap: false
 ---
 [
-  {% assign posts = site.posts | where_exp: "p", "p.search != false" %}
-  {% assign pages = site.pages | where_exp: "p", "p.search != false and p.layout != nil and p.url != '/algolia-records.json'" %}
+  {% assign posts = site.posts | where_exp: "p", 'p.search != false' %}
+  {% assign pages = site.pages | where_exp: "p", 'p.search != false and p.layout and p.url != "/algolia-records.json"' %}
   {% assign all = posts | concat: pages %}
 
   {% for p in all %}
