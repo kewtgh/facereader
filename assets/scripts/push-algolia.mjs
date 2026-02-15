@@ -96,10 +96,13 @@ function shouldExcludeRecord(rec, excludeRegexes) {
 
   const client = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY);
 
-  await client
-    .replaceAllObjects(ALGOLIA_INDEX_NAME, filtered, {
-      autoGenerateObjectIDIfNotExist: true
-    });
+  // 初始化索引
+  const index = client.initIndex(ALGOLIA_INDEX_NAME);
+
+  // 上传数据
+  await index.replaceAllObjects(filtered, {
+    autoGenerateObjectIDIfNotExist: true
+  });
 
   console.log("✅ Algolia upload complete");
 })();
