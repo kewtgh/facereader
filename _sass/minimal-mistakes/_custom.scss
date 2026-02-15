@@ -295,51 +295,42 @@ body { line-height: 1.7; }
 
 /* =====================================================
  * 4) ✅ TOC（右侧目录）美化 —— 与作者/专题统一风格
- * ===================================================== */
+ * TOC (Sidebar) — Clean, Book-like, Hierarchical Indents
+ * One-shot replacement for your previous TOC SCSS
+   ========================================================= */
+
 .sidebar__right .toc,
 .sidebar .toc {
-  background: rgba(255, 255, 255, 0.45) !important;  /* ✅更淡 */
-  border: 1px solid rgba(34, 48, 66, 0.08) !important;
+  background: rgba(255, 255, 255, 0.55) !important;
+  border: 1px solid rgba(34, 48, 66, 0.10) !important;
   border-radius: 0.95rem !important;
   box-shadow: none !important;
   overflow: hidden;
+  backdrop-filter: blur(6px); /* subtle glass, safe to keep */
 }
 
-/* TOC 标题条：别太黑 */
+/* Title bar */
 .sidebar__right .toc__title,
 .sidebar .toc__title {
-  background: rgba(34, 48, 66, 0.05) !important;
-  color: rgba(34, 48, 66, 0.62) !important;
+  background: rgba(34, 48, 66, 0.06) !important;
+  color: rgba(34, 48, 66, 0.78) !important;
   font-weight: 800 !important;
-  padding: 0.38rem 0.6rem !important;
+  letter-spacing: 0.02em;
+  padding: 0.42rem 0.70rem !important;
   border-bottom: 1px solid rgba(34, 48, 66, 0.10) !important;
   margin: 0 !important;
 }
 
-/* 有些主题 toc__title 是深色条且白字，这里强制更协调 */
-.sidebar__right .toc__title,
-.sidebar .toc__title {
-  color: #223042 !important;
-}
-
-/* 菜单 */
+/* Menu base */
 .sidebar__right .toc__menu,
 .sidebar .toc__menu {
   margin: 0 !important;
-  padding: 0.12rem 0 !important;
-  font-size: 0.76rem !important;                      /* ✅继续缩小 */
-  line-height: 1.18 !important;
+  padding: 0.25rem 0.15rem !important;
+  font-size: 0.78rem !important;
+  line-height: 1.22 !important;
 }
 
-.sidebar__right .toc__menu a,
-.sidebar .toc__menu a {
-  border-top: none !important;          /* ✅去横线 */
-  padding: 0.22rem 0.6rem !important;  /* ✅更紧凑 */
-  margin: 0 !important;
-  color: rgba(111, 78, 55, 0.70) !important; /* ✅微棕色（更有“纸张感”） */
-}
-
-/* ul 默认 margin/padding 会拉开行距，强制清零 */
+/* Reset ul/li default spacing completely */
 .sidebar__right .toc__menu ul,
 .sidebar .toc__menu ul,
 .sidebar__right .toc__menu li,
@@ -347,25 +338,130 @@ body { line-height: 1.7; }
   margin: 0 !important;
   padding: 0 !important;
   border: none !important;
+  list-style: none !important;
 }
 
-/* hover/active 更柔和 */
+/* Links: base style */
+.sidebar__right .toc__menu a,
+.sidebar .toc__menu a {
+  position: relative;
+  display: block;
+  border-top: none !important;
+  margin: 0 !important;
+
+  padding: 0.30rem 0.65rem !important;
+  border-radius: 0.55rem;
+
+  color: rgba(111, 78, 55, 0.76) !important; /* paper-ish brown */
+  text-decoration: none !important;
+
+  transition: background 120ms ease, color 120ms ease, transform 120ms ease;
+}
+
+/* Hover */
 .sidebar__right .toc__menu a:hover,
 .sidebar .toc__menu a:hover {
-  background: rgba(176, 127, 74, 0.07) !important;
+  background: rgba(176, 127, 74, 0.08) !important;
+  transform: translateX(1px);
 }
 
+/* Active/current */
 .sidebar__right .toc__menu a.active,
 .sidebar .toc__menu a.active,
 .sidebar__right .toc__menu a[aria-current="true"],
 .sidebar .toc__menu a[aria-current="true"] {
-  background: rgba(176, 127, 74, 0.09) !important;
-  font-weight: 700 !important;
+  background: rgba(176, 127, 74, 0.12) !important;
+  font-weight: 800 !important;
+  color: rgba(92, 60, 39, 0.92) !important;
 }
 
-.sidebar__right .toc__menu li ul > li a,
-.sidebar .toc__menu li ul > li a {
-  padding-left: 0.9rem !important;
+/* =========================================================
+   Hierarchical Indents (h2/h3/h4/h5…)
+   Minimal Mistakes TOC nesting:
+   h2:  ul > li > a
+   h3:  ul > li > ul > li > a
+   h4:  ul > li > ul > li > ul > li > a
+   ========================================================= */
+
+/* Level 1 (usually h2) */
+.sidebar__right .toc__menu > li > a,
+.sidebar .toc__menu > li > a {
+  padding-left: 0.70rem !important;
+}
+
+/* Level 2 (usually h3) */
+.sidebar__right .toc__menu > li > ul > li > a,
+.sidebar .toc__menu > li > ul > li > a {
+  padding-left: 1.25rem !important;
+  font-size: 0.76rem !important;
+  opacity: 0.94;
+}
+
+/* Level 3 (usually h4) — ✅ deeper indent than h3 */
+.sidebar__right .toc__menu > li > ul > li > ul > li > a,
+.sidebar .toc__menu > li > ul > li > ul > li > a {
+  padding-left: 1.85rem !important;
+  font-size: 0.74rem !important;
+  opacity: 0.90;
+}
+
+/* Level 4 (usually h5) */
+.sidebar__right .toc__menu > li > ul > li > ul > li > ul > li > a,
+.sidebar .toc__menu > li > ul > li > ul > li > ul > li > a {
+  padding-left: 2.35rem !important;
+  font-size: 0.72rem !important;
+  opacity: 0.86;
+}
+
+/* =========================================================
+   Book-like structure hint (sub-level marker + subtle spine)
+   ========================================================= */
+
+/* A subtle "spine" line for nested lists */
+.sidebar__right .toc__menu ul ul,
+.sidebar .toc__menu ul ul {
+  border-left: 1px solid rgba(111, 78, 55, 0.12);
+  margin-left: 0.85rem !important;
+  padding-left: 0.15rem !important;
+}
+
+/* Small dot marker for Level 3+ items (h4/h5…) */
+.sidebar__right .toc__menu > li > ul > li > ul > li > a::before,
+.sidebar .toc__menu > li > ul > li > ul > li > a::before,
+.sidebar__right .toc__menu > li > ul > li > ul > li > ul > li > a::before,
+.sidebar .toc__menu > li > ul > li > ul > li > ul > li > a::before {
+  content: "•";
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(111, 78, 55, 0.30);
+  font-size: 0.85em;
+}
+
+/* Reduce dot overlap for very deep levels by shifting a bit */
+.sidebar__right .toc__menu > li > ul > li > ul > li > ul > li > a::before,
+.sidebar .toc__menu > li > ul > li > ul > li > ul > li > a::before {
+  left: 1.35rem;
+}
+
+/* =========================================================
+   Optional: tighten long text wrapping (prettier multi-line)
+   ========================================================= */
+.sidebar__right .toc__menu a,
+.sidebar .toc__menu a {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* =========================================================
+   Mobile friendliness (optional)
+   ========================================================= */
+@media (max-width: 1024px) {
+  .sidebar__right .toc__menu,
+  .sidebar .toc__menu {
+    font-size: 0.80rem !important;
+  }
 }
 
 /* =====================================================
