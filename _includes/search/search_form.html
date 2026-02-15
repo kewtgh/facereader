@@ -20,12 +20,10 @@
     <gcse:searchresults-only></gcse:searchresults-only>
   </div>
   {%- when "algolia" -%}
-    <div class="search-searchbar"></div>
-    <div id="search"></div>
-    <div class="search-results">
-      <ul class="search-results-list">
-        <!-- 结果项容器 -->
-      </ul>
-    </div>
+  <div class="algolia-page">
+    <div id="algolia-searchbox" class="algolia-searchbox"></div>
+    <div id="algolia-hits" class="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
   {%- endcase -%}
 </div>

@@ -1032,40 +1032,135 @@ body { line-height: 1.7; }
  * Search: algolia
  * ===================================================== */
 
-.search-results-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.algolia-page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
 }
 
-.search-result-item {
-  display: flex;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 20px;
+.algolia-searchbox {
+  margin-bottom: 1rem;
+
+  .ais-SearchBox-form {
+    display: flex;
+    gap: .5rem;
+  }
+
+  .ais-SearchBox-input {
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,.12);
+    padding: 0 .9rem;
+    font-size: 16px;
+    box-shadow: 0 1px 0 rgba(0,0,0,.03);
+  }
+
+  .ais-SearchBox-submit,
+  .ais-SearchBox-reset {
+    border-radius: 10px;
+  }
 }
 
-.result-item-left {
-  width: 150px;
-  margin-right: 20px;
+.algolia-hits {
+  .ais-Hits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 14px;
+  }
 }
 
-.result-item-image {
+.algolia-hit {
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform .12s ease, box-shadow .12s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(0,0,0,.08);
+  }
+}
+
+.algolia-hit__link {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.algolia-hit__media {
+  background: #f3f3f3;
+}
+
+.algolia-hit__img {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16/10;
 }
 
-.result-item-right {
-  flex-grow: 1;
+.algolia-hit__body {
+  padding: 12px 14px 12px 0;
 }
 
-.result-item-right h3 {
-  font-size: 18px;
-  margin: 0 0 10px;
+.algolia-hit__title {
+  margin: 0 0 .35rem 0;
+  font-size: 1.05rem;
+  line-height: 1.3;
+
+  em {
+    font-style: normal;
+    background: rgba(255, 213, 79, .55);
+    border-radius: 4px;
+    padding: 0 .2em;
+  }
 }
 
-.result-item-right p {
-  font-size: 14px;
-  color: #555;
+.algolia-hit__desc {
+  margin: 0 0 .5rem 0;
+  color: rgba(0,0,0,.70);
+  line-height: 1.5;
+
+  em {
+    font-style: normal;
+    background: rgba(255, 213, 79, .35);
+    border-radius: 4px;
+    padding: 0 .2em;
+  }
 }
+
+.algolia-hit__meta {
+  font-size: .85rem;
+  color: rgba(0,0,0,.55);
+}
+
+.algolia-pagination {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+
+  .ais-Pagination-link {
+    border-radius: 10px;
+  }
+}
+
+.algolia-empty {
+  padding: 1rem;
+  border: 1px dashed rgba(0,0,0,.25);
+  border-radius: 12px;
+  color: rgba(0,0,0,.7);
+  background: rgba(255,255,255,.7);
+}
+
+/* 移动端优化 */
+@media (max-width: 640px) {
+  .algolia-hit__link {
+    grid-template-columns: 120px 1fr;
+  }
+}
+

@@ -16,72 +16,129 @@
     });
   }
 
-  async function initSiteSearchOnce() {
-    // 防重复初始化
-    if (window.__FACEREADER_SITESEARCH_INITED__) return;
-    window.__FACEREADER_SITESEARCH_INITED__ = true;
+  function escapeHTML(str) {
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
 
-    // 确保容器存在
-    var container = document.querySelector("#search");
-    if (!container) {
-      console.error("[SiteSearch] #search container not found. Check search_form.html.");
-      window.__FACEREADER_SITESEARCH_INITED__ = false;
+  async function initAlgoliaInstantSearchOnce() {
+    if (window.__FACEREADER_INSTANTSEARCH_INITED__) return;
+    window.__FACEREADER_INSTANTSEARCH_INITED__ = true;
+
+    var searchBoxEl = document.querySelector("#algolia-searchbox");
+    var hitsEl = document.querySelector("#algolia-hits");
+    if (!searchBoxEl || !hitsEl) {
+      // 不在搜索页面就不初始化
+      window.__FACEREADER_INSTANTSEARCH_INITED__ = false;
       return;
     }
 
-    // 加载资源
-    loadCSS("https://unpkg.com/@algolia/sitesearch@latest/dist/search.min.css");
-    await loadScript("https://unpkg.com/@algolia/sitesearch@latest/dist/search.min.js");
+    // InstantSearch 默认主题（你也可以自己全部重写）
+    loadCSS("https://cdn.jsdelivr.net/npm/instantsearch.css@8/themes/satellite-min.css");
 
-    // 初始化
-    SiteSearch.init({
-      container: "#search",
-      applicationId: "{{ site.algolia.application_id }}",
-      apiKey: "{{ site.algolia.search_only_api_key }}",
-      indexName: "{{ site.algolia.index_name }}",
-      attributes: {
-        primaryText: "{{ site.algolia.primary_text | default: 'title' }}",
-        secondaryText: "{{ site.algolia.secondary_text | default: 'description' }}",
-        tertiaryText: "{{ site.algolia.tertiary_text | default: 'content' }}",
-        url: "{{ site.algolia.url_attribute | default: 'url' }}",
-        image: "{{ site.algolia.image_attribute | default: 'image' }}" // 使用 default 来避免出错
-      },
-      darkMode: false,
-      render: function(hits) {
-        // 用默认图片或其他字段填充
-        const defaultImage = "path/to/default/image.jpg"; // 设定默认图片路径
+    // 加载依赖
+    await loadScript("https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js");
+    await loadScript("https://cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js");
 
-        const resultsList = document.querySelector(".search-results-list");
-        resultsList.innerHTML = ""; // 清空之前的内容
+    var appId = "{{ site.algolia.application_id }}";
+    var apiKey = "{{ site.algolia.search_only_api_key }}";
+    var indexName = "{{ site.algolia.index_name }}";
 
-        hits.forEach(hit => {
-          const imageUrl = hit.image || defaultImage; // 如果没有 image 字段，使用默认图片
-          const resultHTML = `
-            <li class="search-result-item">
-              <div class="result-item-left">
-                <img src="${imageUrl}" alt="Teaser Image" class="result-item-image">
-              </div>
-              <div class="result-item-right">
-                <h3><a href="${hit.url}">${hit._highlightResult.title.value}</a></h3>
-                <p>${hit._highlightResult.description.value}</p>
-              </div>
-            </li>
-          `;
-          resultsList.innerHTML += resultHTML; // 动态添加每一条结果
-        });
-      }
+    var searchClient = algoliasearch(appId, apiKey);
+
+    var search = instantsearch({
+      indexName: indexName,
+      searchClient: searchClient
     });
+
+    search.addWidgets([
+      instantsearch.widgets.searchBox({
+        container: "#algolia-searchbox",
+        placeholder: "搜索文章…",
+        showReset: true,
+        showSubmit: true,
+        showLoadingIndicator: false
+      }),
+
+      instantsearch.widgets.configure({
+        hitsPerPage: 10,
+        attributesToSnippet: ["description:28"],
+        snippetEllipsisText: "…"
+      }),
+
+      instantsearch.widgets.hits({
+        container: "#algolia-hits",
+        templates: {
+          empty: function (data) {
+            return `<div class="algolia-empty">没有找到「${escapeHTML(data.query)}」相关内容</div>`;
+          },
+          item: function (hit, { html, components }) {
+            // teaser: 你推送的绝对地址字段
+            var img = hit.teaser || "{{ '/assets/img/page-header-image-manufacture-teaser.jpg' | absolute_url }}";
+            var titleHTML = (hit._highlightResult && hit._highlightResult.title && hit._highlightResult.title.value)
+              ? hit._highlightResult.title.value
+              : escapeHTML(hit.title);
+
+            // 用 snippetResult.description（更干净），没有就 fallback 到 description
+            var descHTML = (hit._snippetResult && hit._snippetResult.description && hit._snippetResult.description.value)
+              ? hit._snippetResult.description.value
+              : escapeHTML(hit.description || "");
+
+            return `
+              <article class="algolia-hit">
+                <a class="algolia-hit__link" href="${escapeHTML(hit.url)}">
+                  <div class="algolia-hit__media">
+                    <img class="algolia-hit__img" src="${escapeHTML(img)}" alt="">
+                  </div>
+                  <div class="algolia-hit__body">
+                    <h3 class="algolia-hit__title">${titleHTML}</h3>
+                    <p class="algolia-hit__desc">${descHTML}</p>
+                    <div class="algolia-hit__meta">
+                      ${hit.date ? `<time datetime="${escapeHTML(hit.date)}">${escapeHTML(hit.date.slice(0,10))}</time>` : ""}
+                    </div>
+                  </div>
+                </a>
+              </article>
+            `;
+          }
+        }
+      }),
+
+      instantsearch.widgets.pagination({
+        container: "#algolia-pagination",
+        padding: 2,
+        showFirst: false,
+        showLast: false
+      })
+    ]);
+
+    search.start();
+
+    // 支持 /search/?q=xxx 直接带入查询
+    try {
+      var params = new URLSearchParams(location.search);
+      var q = params.get("q");
+      if (q) {
+        // InstantSearch 的 searchBox input 渲染后才能赋值，所以稍微延迟一下
+        setTimeout(function () {
+          var input = document.querySelector("#algolia-searchbox input[type='search']");
+          if (input) {
+            input.value = q;
+            input.dispatchEvent(new Event("input", { bubbles: true }));
+          }
+        }, 0);
+      }
+    } catch (e) {}
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    var btn = document.querySelector(".search__toggle");
-    if (!btn) return;
-
-    btn.addEventListener("click", function () {
-      initSiteSearchOnce().catch(function (e) {
-        console.error("[SiteSearch] init failed:", e);
-        window.__FACEREADER_SITESEARCH_INITED__ = false;
-      });
+    initAlgoliaInstantSearchOnce().catch(function (e) {
+      console.error("[InstantSearch] init failed:", e);
+      window.__FACEREADER_INSTANTSEARCH_INITED__ = false;
     });
   });
 </script>
