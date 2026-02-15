@@ -1,4 +1,5 @@
 ---
+
 title: GE的未来会走向哪里？
 excerpt: "GE的辉煌走到伊梅尔特即终止！伊梅尔特最终选任了约翰·弗兰纳里作为继任者，但是短短14个月后，弗兰纳里就被辞退，交由拉里·卡尔普接任。那么卡尔普是否能拯救濒临绝境的GE呢？"
 header:
@@ -28,8 +29,11 @@ sidebar:
 toc: true
 toc_sticky: true
 last_modified_at: 2021-09-20T10:25:52-05:00
+redirect_from:
+  - /docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/GE/GE-flannery-culp/
 
 ---
+
 
 &emsp;GE的辉煌走到伊梅尔特即终止！伊梅尔特最终选任了约翰·弗兰纳里（John Flannery）作为继任者，但是短短14个月后，弗兰纳里就被辞退，交由拉里·卡尔普（H. Lawrence Culp）接任。那么卡尔普是否能拯救濒临绝境的GE呢？
 

@@ -1,4 +1,5 @@
 ---
+
 title: 软银看好的亚太最热门AI企业为什么会有大隐患？（二）
 excerpt: "4亿美元D轮融资，投资机构包括软银、华平、北极星等一众知名创投企业，创始人拥有金沙江创投合伙人、南洋理工大学终身教授等豪华背景，这样一家企业会有什么大隐患？"
 header:
@@ -45,7 +46,11 @@ sidebar:
 toc: true
 toc_sticky: true
 last_modified_at: 2021-12-19T19:25:52-05:00
+redirect_from:
+  - /docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/AI/AI-advancegroup-2/
+
 ---
+
 
 上期中分析了领创集团核心管理层中的六位，包括其创始人陈斓杰、Advance.AI CEO寿栋、Atome Financial Vice CEO邹缙东、Atome CEO陈宁、CHO李彤彤、CFO陈雷，这一期我们将分析剩下的六位核心管理层成员，并分析其产品和服务，对其团队做出评析，因其并未发布任何财务数据，所以无法对其财务数据做出分析。
 

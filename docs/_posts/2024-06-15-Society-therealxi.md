@@ -1,4 +1,5 @@
 ---
+
 title:  现在的时评人对中国领导人的想象，幼稚得让人发笑！
 excerpt: "很多中国时评人对中国现任主席习近平的讨论，让人觉得有些可笑，甚至有些幼稚！他们对习近平的想象，不啻为一个想象成为皇帝的乞丐！"
 header:
@@ -27,8 +28,12 @@ tags:
   - 社会评论
 toc: true
 toc_sticky: true
-last_modified_at: 2024-06-15T19:25:52-05:00 
+last_modified_at: 2024-06-15T19:25:52-05:00
+redirect_from:
+  - /docs/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/Society-therealxi/
+
 ---
+
 
 很多中国时评人对中国现任主席习近平的讨论，让人觉得有些可笑，甚至有些幼稚！
 

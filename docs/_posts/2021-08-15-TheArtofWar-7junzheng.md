@@ -1,4 +1,5 @@
 ---
+
 title: 《孙子兵法》释读：七、《军争篇》
 categories:
   - 经典解读
@@ -18,8 +19,11 @@ sidebar:
   nav: sidebar-sunzi
 classes: wide
 last_modified_at: 2021-08-17T20:25:52-05:00
+redirect_from:
+  - /docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-7junzheng/
 
 ---
+
 
 >这期我们来介绍《军争篇》。“军争”的意思就是夺取战争先机，获得战争优势。孙子说“军争”是战争过程中最难的，为什么呢？
 

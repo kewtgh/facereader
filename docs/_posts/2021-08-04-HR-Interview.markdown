@@ -1,4 +1,5 @@
 ---
+
 title: 《Who：the a method for hiring》读书笔记及ICCME面试评估法
 excerpt: "筛选面试：四大关键问题，“什么”、“如何”、“告诉我更多”了解信息。"
 header:
@@ -23,7 +24,11 @@ no_indent: true
 toc: true
 toc_sticky: true
 last_modified_at: 2021-08-04T20:25:52-05:00
+redirect_from:
+  - /docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90/HR-Interview/
+
 ---
+
 
 >筛选面试：四大关键问题，“什么”、“如何”、“告诉我更多”了解信息。
 >

@@ -1,4 +1,5 @@
 ---
+
 title: 中小企业的经营之道（2)——招募优秀人才
 excerpt: "如果你问一位经营尚可的中小企业创始人，他最发愁的管理问题是什么，一定是优秀的人才太难找！如何能招募优秀人才呢？"
 header:
@@ -31,7 +32,11 @@ sidebar:
 toc: true
 toc_sticky: true
 last_modified_at: 2022-07-19T19:25:52-05:00
+redirect_from:
+  - /docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/management-wayofrunningbusiness02/
+
 ---
+
 
 ## 一、关于人才，最大的难题！
 

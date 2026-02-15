@@ -1,4 +1,5 @@
 ---
+
 title: 中小企业的经营之道（3)——制度与体系
 excerpt: "没有一家卓越的企业是靠Copy其他优秀企业而成长起来的！那么企业的制度与体系应该如何制定呢？"
 header:
@@ -23,7 +24,11 @@ sidebar:
 toc: true
 toc_sticky: true
 last_modified_at: 2022-07-20T19:25:52-05:00
+redirect_from:
+  - /docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/management-wayofrunningbusiness03/
+
 ---
+
 
 在讨论“制度与体系”之前，先问大家一个问题：
 

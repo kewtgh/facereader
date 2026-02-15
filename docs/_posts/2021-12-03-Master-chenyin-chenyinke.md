@@ -1,4 +1,5 @@
 ---
+
 title: 各领风骚的“近代史学四大家”面相如何，又有怎样的性格？（一）
 excerpt: "严耕望先生将陈垣、陈寅恪、吕思勉及钱穆四位先生成为“现代四大史学家”，四位先生在史学界各领风骚，声名远扬，那么他们又有怎样的经历？其面相又反映了什么样的性格呢？"
 header:
@@ -25,7 +26,11 @@ sidebar:
   title: "经典系列"
   nav: sidebar-series-masters
 last_modified_at: 2021-12-03T19:25:52-05:00
+redirect_from:
+  - /docs/%E5%A4%A7%E5%B8%88%E7%99%BE%E7%9B%B8/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/Master-chenyin-chenyinke/
+
 ---
+
 
 以我自己粗浅的读书经验来看，阅读是分四个层次的：
 

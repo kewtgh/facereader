@@ -1,4 +1,5 @@
 ---
+
 title: 《孙子兵法》释读：一、《始计篇》
 categories:
   - 经典解读
@@ -18,7 +19,11 @@ sidebar:
   nav: sidebar-sunzi
 classes: wide
 last_modified_at: 2021-08-15T20:25:52-05:00
+redirect_from:
+  - /docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/
+
 ---
+
 
 >《始计篇》的“计”大家也应该懂了，这个不是“计谋”的意思，而是“计算”的意思，是在战争开打之前要先算好自己胜负的几率。
 

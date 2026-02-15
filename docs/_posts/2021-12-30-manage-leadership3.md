@@ -1,4 +1,5 @@
 ---
+
 title: 不靠谱领导力（3)——如何树立及维持权威
 excerpt: "领导者有两项最重要的能力，一是经营能力，二是政治能力；而“权威”则是政治能力的关键，那么如何树立和维持权威呢？"
 header:
@@ -20,7 +21,11 @@ sidebar:
 toc: true
 toc_sticky: true
 last_modified_at: 2021-12-30T19:25:52-05:00
+redirect_from:
+  - /docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E4%B8%8D%E9%9D%A0%E8%B0%B1%E9%A2%86%E5%AF%BC%E5%8A%9B/manage-leadership3/
+
 ---
+
 
 上期介绍了“权威的必要性”，这期介绍“如何树立及维持权威”。
 

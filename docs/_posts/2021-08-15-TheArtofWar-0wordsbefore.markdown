@@ -1,4 +1,5 @@
 ---
+
 title: 《孙子兵法》：中国传统文化简思及《孙子兵法》概述
 
 categories:
@@ -18,7 +19,11 @@ sidebar:
   nav: sidebar-sunzi
 classes: wide
 last_modified_at: 2021-08-15T20:25:52-05:00
+redirect_from:
+  - /docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-0wordsbefore/
+
 ---
+
 
 >我相信对中国传统文化表示极端负面观点的网友大多数也都是这样的情况，极少有人认真思考过到底什么是中国传统文化，本身文化就包含很多内容，包括书法、绘画、歌曲、雕刻、文学、政治、宗教、习俗、工具等等。所以单纯从文化的定义上我们就很难完全否定一种文化。
 

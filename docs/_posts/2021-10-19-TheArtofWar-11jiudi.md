@@ -1,4 +1,5 @@
 ---
+
 title: 《孙子兵法》释读：十一、《九地篇》
 categories:
   - 经典解读
@@ -19,7 +20,11 @@ sidebar:
   nav: sidebar-sunzi
 classes: wide
 last_modified_at: 2021-10-19T22:25:52-05:00
+redirect_from:
+  - /docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-11jiudi/
+
 ---
+
 
 >&emsp;所谓**“形”**，只是一种客观状态，而只有转为**“势”**才能发挥其作用。《九地篇》中，孙子详细介绍了如何将**“形”**转为**“势”**，那到底如何做到呢？那下面我们就来看《九地篇》的正文：
 

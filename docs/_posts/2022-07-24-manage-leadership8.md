@@ -1,4 +1,5 @@
 ---
+
 title: 不靠谱领导力（8)——谋略与运筹能力
 excerpt: "谋略能力不足的项羽，虽然出身显贵，勇武超群，但最后却兵败垓下，自刎于乌江。谋略和运筹能力真的这么重要吗？"
 header:
@@ -31,7 +32,11 @@ sidebar:
 toc: true
 toc_sticky: true
 last_modified_at: 2022-07-24T19:25:52-05:00
+redirect_from:
+  - /docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E4%B8%8D%E9%9D%A0%E8%B0%B1%E9%A2%86%E5%AF%BC%E5%8A%9B/manage-leadership8/
+
 ---
+
 
 上期我们介绍了“尊重规则”对优秀领导者的必要性，这期介绍优秀领导者的第五项品质——“谋略与运筹能力”。
 

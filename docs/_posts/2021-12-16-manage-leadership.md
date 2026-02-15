@@ -1,4 +1,5 @@
 ---
+
 title: 不靠谱领导力（1)——优秀领导者的七项品质
 excerpt: "管理学领域有各种各样的领导力模型，但几乎没有一个能概括曹操这样复杂个性的领导者，那什么样的领导力模型可以概括曹操这样的领导者呢？"
 header:
@@ -18,7 +19,11 @@ sidebar:
 toc: true
 toc_sticky: true
 last_modified_at: 2021-12-16T19:25:52-05:00
+redirect_from:
+  - /docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E4%B8%8D%E9%9D%A0%E8%B0%B1%E9%A2%86%E5%AF%BC%E5%8A%9B/manage-leadership/
+
 ---
+
 
 有朋友看了之前文章后想多了解了解领导力和管理学方面的内容，更想了解不同管理问题症状背后的原因。
 

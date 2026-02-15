@@ -1,4 +1,5 @@
 ---
+
 title: 通透是一条单行道
 excerpt: "最近又拿起笔写东西了，也翻起了之前的文字和笔记，十几年间，写了十几大本，胡思乱想的东西记了不少。"
 header:
@@ -21,7 +22,11 @@ tags:
 classes: wide
 toc: false
 last_modified_at: 2023-07-14T19:25:52-05:00
+redirect_from:
+  - /docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Thought-thoroughoflife/
+
 ---
+
 
 最近又拿起笔写东西了，也翻起了之前的文字和笔记，十几年间，写了十几大本，胡思乱想的东西记了不少。
 

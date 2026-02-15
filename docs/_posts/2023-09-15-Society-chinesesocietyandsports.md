@@ -1,4 +1,5 @@
 ---
+
 title: 一个体制的烂，往往反映在体育上
 excerpt: "自2022年中国男足以1：3历史上首次输给越南后，近日中国男篮又史无前例地输给了南苏丹，一个人口仅1400万，人均GDP排名全球倒数第四的国家。中国体育败绩连创纪录的原因是什么呢？和体制有没有关系呢？"
 header:
@@ -26,7 +27,11 @@ tags:
 toc: true
 toc_sticky: true
 last_modified_at: 2023-09-15T19:25:52-05:00
+redirect_from:
+  - /docs/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/Society-chinesesocietyandsports/
+
 ---
+
 
 ## 中国惨不忍睹的体育成绩
 

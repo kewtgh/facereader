@@ -1,4 +1,5 @@
 ---
+
 title: 曹植《求自试表》，不亚于诸葛亮《出师表》
 header:
   teaser: /assets/img/wen-teaser.png
@@ -13,7 +14,11 @@ tags:
 share: true
 classes: wide
 last_modified_at: 2021-09-05T19:25:52-05:00
+redirect_from:
+  - /docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E6%96%87%E8%A8%80%E7%BB%8F%E5%85%B8/ClassicalChinese-caozhi-qiuzishibiao/
+
 ---
+
 
 曹丕死后曹睿即位，为明帝，改元太和。明帝在政治上依然对曹植采取严加防范、不予任用的态度，使曹植长久处在受压制的境地。曹植为此“常自愤怨，抱利器而无所施”。于太和二年(228)，曹植向明帝进呈此疏。
 

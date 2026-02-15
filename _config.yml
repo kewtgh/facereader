@@ -269,6 +269,7 @@ pagination:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-redirect-from
   - jekyll-gist
   - jekyll-feed
   - jemoji

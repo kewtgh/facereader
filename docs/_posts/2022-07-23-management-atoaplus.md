@@ -1,4 +1,5 @@
 ---
+
 title: 再看《从优秀到卓越》
 excerpt: "优秀是卓越的敌人！当时对这句话深信不疑，但是如今来看，却又太过偏颇。那么为何偏颇呢？"
 header:
@@ -20,7 +21,11 @@ tags:
 toc: true
 toc_sticky: true
 last_modified_at: 2022-07-23T19:25:52-05:00
+redirect_from:
+  - /docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/management-atoaplus/
+
 ---
+
 
 “优秀是卓越的敌人！”记得很多年前，当我第一次读到这句话时的震撼心理！
 

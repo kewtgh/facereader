@@ -1,4 +1,5 @@
 ---
+
 title: 《孙子兵法》释读：十三、《用间篇》
 categories:
   - 经典解读
@@ -19,7 +20,11 @@ sidebar:
   nav: sidebar-sunzi
 classes: wide
 last_modified_at: 2021-11-24T22:25:52-05:00
+redirect_from:
+  - /docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-13yongjian/
+
 ---
+
 
 孙子在前十二篇中基本介绍了自己全部的军事思想，却把”用间“作为战争统领最高超的能力，放在最终篇，且认为这是”兵之要“。那么具体是因为什么呢？
 

@@ -1,4 +1,5 @@
 ---
+
 title: Enjoy Your Life
 excerpt: "This is the best Canon I've heard. Sitting at your balcony. Enjoy it!"
 header:
@@ -24,8 +25,11 @@ classes: wide
 no_indent: true
 toc: false
 last_modified_at: 2023-07-11T19:25:52-05:00
+redirect_from:
+  - /docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Thought-enjoyyourlife/
 
 ---
+
 
 When I was a kid,
 

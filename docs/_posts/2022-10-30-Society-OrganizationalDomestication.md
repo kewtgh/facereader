@@ -1,4 +1,5 @@
 ---
+
 title: 组织中的反对声音是如何消失的？
 excerpt: "因为众人对中国的未来抱有极大的期望，所以期待能出现反对的声音。但是最终的结局还是很令人失望，“竟无一人是男儿”的情况依然发生了。那么真正的原因是什么呢？"
 header:
@@ -23,7 +24,11 @@ tags:
 toc: true
 toc_sticky: true
 last_modified_at: 2022-10-30T19:25:52-05:00
+redirect_from:
+  - /docs/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/
+
 ---
+
 
 因为众人对中国的未来抱有极大的期望，所以期待能出现反对的声音。但是最终的结局还是很令人失望，“竟无一人是男儿”的情况依然发生了。那么真正的原因是什么呢？
 

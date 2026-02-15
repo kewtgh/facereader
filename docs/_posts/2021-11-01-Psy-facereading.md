@@ -1,4 +1,5 @@
 ---
+
 title: 面相靠谱吗？
 permalink: /categories/faceread/
 excerpt: "看到这个标题可能很多人会疑问：面相靠谱吗？因为我们一看到面相这个词，首先想到的可能就是面前摆个卦台，背后立个牌子，上写“半仙”二字。一股迷信和套路的味道油然而生。"
@@ -14,7 +15,11 @@ tags:
   - 面相
 classes: wide
 last_modified_at: 2020-08-02T20:25:52-05:00
+redirect_from:
+  - /docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-facereading/
+
 ---
+
 
 ## 一、面相靠谱吗？
 

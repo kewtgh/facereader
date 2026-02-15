@@ -1,4 +1,5 @@
 ---
+
 title: 从面相分析伊隆·马斯克和他的特斯拉
 excerpt: "Tesla并非马斯克创立，看起来更像是鸠占鹊巢。如今Tesla估值超过一万亿美金，马斯克也曾创纪录的成为3000亿美金身价的全球首富，究竟是马斯克成就了Tesla，还是Tesla成就了马斯克？"
 header:
@@ -28,7 +29,11 @@ sidebar:
 toc: true
 toc_sticky: true
 last_modified_at: 2021-12-06T22:25:52-05:00
+redirect_from:
+  - /docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-Tesla-musk/
+
 ---
+
 
 随着Tesla的迅猛成长，伊隆·马斯克现在也如日中天，不久前还曾以创纪录的3000亿美元身价成为全球首富，领先第二名杰夫·贝佐斯1000多亿美金。但是，Tesla并非马斯克创立，看起来更像是鸠占鹊巢，究竟是马斯克成就了Tesla，还是Tesla成就了马斯克？
 

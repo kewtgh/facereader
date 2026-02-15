@@ -1,4 +1,5 @@
 ---
+
 title: 《孙子兵法》释读：十、《地形篇》
 categories:
   - 经典解读
@@ -18,7 +19,11 @@ sidebar:
   nav: sidebar-sunzi
 classes: wide
 last_modified_at: 2021-09-23T20:25:52-05:00
+redirect_from:
+  - /docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-10dixing/
+
 ---
+
 
 >网上有个流传甚广的观点，一只狼带领的羊群是远胜于一只羊带领的狼群的。事实真如此吗？孙子在《地形篇》中给出了介绍，下面我们就来寻找这个问题的答案
 

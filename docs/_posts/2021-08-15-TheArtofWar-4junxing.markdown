@@ -1,4 +1,5 @@
 ---
+
 title: 《孙子兵法》释读：四、《军形篇》
 categories:
   - 经典解读
@@ -18,7 +19,11 @@ sidebar:
   nav: sidebar-sunzi
 classes: wide
 last_modified_at: 2021-08-16T20:25:52-05:00
+redirect_from:
+  - /docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-4junxing/
+
 ---
+
 
 >《军形篇》有一个重要的思想，就是能否战胜敌人决定权并不在于自己，那是为什么呢？那么让我们接下来具体看看。
 

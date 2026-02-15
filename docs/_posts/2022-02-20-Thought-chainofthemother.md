@@ -1,4 +1,5 @@
 ---
+
 title: 从那条“徐州八孩母亲”脖子上的铁链说起
 excerpt: "当一个人被像狗一样拴住时，旁观者却习以为常，这就已经是毫无人性的表现了；但却有人向被铁链拴住者施以虚伪的同情，再将此表演拍做视频炫耀，以示自己的仁慈与高尚。"
 header:
@@ -18,7 +19,11 @@ tags:
   - 社会评论
   - 热点事件
 last_modified_at: 2022-02-20T19:25:52-05:00
+redirect_from:
+  - /docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Thought-chainofthemother/
+
 ---
+
 
 ![shackle](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/2022/shackle.jpg)
 

@@ -1,4 +1,5 @@
 ---
+
 title: 疫情与百态人生
 excerpt: "谈了谈个人思绪，也聊聊疫情以来的民众之情绪，这主要是源于我在校友微信群中的一些观察！算不上百态人生，只能算个百态情绪。"
 header:
@@ -20,7 +21,11 @@ tags:
 toc: true
 toc_sticky: true
 last_modified_at: 2022-06-18T19:25:52-05:00
+redirect_from:
+  - /docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Thought-epidemicinshanghai/
+
 ---
+
 
 ## 个人思绪
 

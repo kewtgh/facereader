@@ -1,4 +1,5 @@
 ---
+
 title: 《凯洛的末日日常》和存在主义
 excerpt: "亲爱的Brooke，当我开始写这封信时，我想了很多能让你回心转意的话，比如我是如何练出一身肌肉，还学会了开飞机。但这都是骗你的。Brooke，你是我见过的最聪明、最善良、最美丽的女人，失去你以后，我的生活天翻地覆。但这不是这封信的主题……"
 header:
@@ -35,7 +36,11 @@ tags:
 toc: true
 toc_sticky: true
 last_modified_at: 2024-01-18T19:25:52-05:00
+redirect_from:
+  - /docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Thought-carolandexistentialism/
+
 ---
+
 
 最近心情很不好，正在一段人生的低谷之中，虽然写了很多东西，但也没有心情发出来。
 
