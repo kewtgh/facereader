@@ -1,31 +1,70 @@
+/**
+ * push-algolia.mjs
+ *
+ * Usage:
+ *   node assets/scripts/push-algolia.mjs _site/algolia-records.json
+ *
+ * Env required:
+ *   ALGOLIA_APP_ID
+ *   ALGOLIA_ADMIN_API_KEY
+ *   ALGOLIA_INDEX_NAME
+ *
+ * Notes:
+ * - Algolia JS Client v5 has NO initIndex(). All operations are done on the client with indexName passed in.
+ *   https://algolia.com/doc/libraries/sdk/upgrade/javascript
+ * - replaceAllObjects uses a temporary index. Your API key must have rights for the tmp index as well.
+ *   https://algolia.com/doc/libraries/sdk/methods/search/replace-all-objects
+ */
+
 import fs from "node:fs/promises";
 import crypto from "node:crypto";
 import { algoliasearch } from "algoliasearch";
 
-const { ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY, ALGOLIA_INDEX_NAME } = process.env;
+const {
+  ALGOLIA_APP_ID,
+  ALGOLIA_ADMIN_API_KEY,
+  ALGOLIA_INDEX_NAME,
+} = process.env;
 
 if (!ALGOLIA_APP_ID || !ALGOLIA_ADMIN_API_KEY || !ALGOLIA_INDEX_NAME) {
-  console.error("Missing env: ALGOLIA_APP_ID / ALGOLIA_ADMIN_API_KEY / ALGOLIA_INDEX_NAME");
+  console.error(
+    "Missing env vars. Required: ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY, ALGOLIA_INDEX_NAME"
+  );
   process.exit(1);
 }
 
 const inputPath = process.argv[2] || "_site/algolia-records.json";
-const raw = await fs.readFile(inputPath, "utf-8");
-const pages = JSON.parse(raw);
 
-// 保守字节限制，避免 record too big
-const MAX_BYTES = 8000;
-const MIN_CHUNK_CHARS = 200;
-const MAX_HITS_PER_PAGE = 20;
+/**
+ * Keep records comfortably below typical per-record size limits.
+ * You previously saw 9.765KB threshold errors in Crawler; we'll stay conservative.
+ */
+const MAX_BYTES = Number(process.env.ALGOLIA_MAX_BYTES || 8000);
+const MIN_CHUNK_CHARS = Number(process.env.ALGOLIA_MIN_CHUNK_CHARS || 200);
+const MAX_HITS_PER_PAGE = Number(process.env.ALGOLIA_MAX_HITS_PER_PAGE || 20);
+const BATCH_SIZE = Number(process.env.ALGOLIA_BATCH_SIZE || 1000);
 
+// ---- utils ----
 function byteLen(s) {
   return Buffer.byteLength(s || "", "utf8");
 }
 
+function normalizeText(text) {
+  return (text || "")
+    .replace(/\u00a0/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/**
+ * Chunk text by sentence-ish boundaries first, then hard-slice if needed.
+ * Goal: each chunk <= MAX_BYTES (utf8).
+ */
 function chunkText(text) {
-  const t = (text || "").replace(/\s+/g, " ").trim();
+  const t = normalizeText(text);
   if (!t) return [];
 
+  // Try to split by punctuation + whitespace (works okay for Chinese & English)
   const parts = t.split(/(?<=[。！？.!?])\s+/);
   const chunks = [];
   let buf = "";
@@ -38,15 +77,20 @@ function chunkText(text) {
       continue;
     }
 
+    // flush current buffer
     if (buf && buf.length >= MIN_CHUNK_CHARS) chunks.push(buf);
 
+    // if single part itself is too big, hard split
     if (byteLen(part) > MAX_BYTES) {
       let start = 0;
       while (start < part.length && chunks.length < MAX_HITS_PER_PAGE) {
         let slice = part.slice(start, start + 1200);
-        while (byteLen(slice) > MAX_BYTES && slice.length > 100) {
+
+        // shrink slice until within byte limit
+        while (byteLen(slice) > MAX_BYTES && slice.length > 120) {
           slice = slice.slice(0, Math.floor(slice.length * 0.8));
         }
+
         if (slice.length >= MIN_CHUNK_CHARS) chunks.push(slice);
         start += 1200;
       }
@@ -58,48 +102,117 @@ function chunkText(text) {
     if (chunks.length >= MAX_HITS_PER_PAGE) break;
   }
 
-  if (buf && buf.length >= MIN_CHUNK_CHARS && chunks.length < MAX_HITS_PER_PAGE) chunks.push(buf);
+  if (buf && buf.length >= MIN_CHUNK_CHARS && chunks.length < MAX_HITS_PER_PAGE) {
+    chunks.push(buf);
+  }
+
   return chunks;
 }
 
 function stableObjectID(url, idx) {
-  const h = crypto.createHash("sha1").update(`${url}#${idx}`).digest("hex").slice(0, 16);
+  const h = crypto
+    .createHash("sha1")
+    .update(`${url}#${idx}`)
+    .digest("hex")
+    .slice(0, 16);
   return `${url}#${idx}-${h}`;
 }
 
-const records = [];
-for (const p of pages) {
-  const chunks = chunkText(p.content);
-
-  if (chunks.length <= 1) {
-    records.push({
-      ...p,
-      objectID: stableObjectID(p.url, 0),
-      content: (p.content || "").slice(0, 5000),
-    });
-  } else {
-    chunks.forEach((c, i) => {
-      records.push({
-        ...p,
-        objectID: stableObjectID(p.url, i),
-        content: c,
-        chunk: i,
-      });
-    });
-  }
+function pickString(v, fallback = "") {
+  return typeof v === "string" ? v : fallback;
 }
 
-console.log(`Prepared ${records.length} records from ${pages.length} pages`);
+function ensureArray(v) {
+  return Array.isArray(v) ? v : [];
+}
 
-console.log("algoliasearch typeof:", typeof algoliasearch);
-const client = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY);
-console.log("client keys:", Object.keys(client));
-console.log("client:", client);
+// ---- main ----
+(async function main() {
+  const raw = await fs.readFile(inputPath, "utf-8");
+  let pages;
+  try {
+    pages = JSON.parse(raw);
+  } catch (e) {
+    console.error(`Failed to parse JSON at ${inputPath}`);
+    throw e;
+  }
 
-// v5: initIndex 在 client.searchClient 上
-const index = client.searchClient.initIndex(ALGOLIA_INDEX_NAME);
+  // Build chunked records
+  const records = [];
+  for (const p of pages) {
+    const url = pickString(p.url, pickString(p.objectID, ""));
+    if (!url) continue;
 
-// 安全替换（原子切换）
-await index.replaceAllObjects(records, { safe: true });
+    const content = pickString(p.content, "");
+    const chunks = chunkText(content);
 
-console.log("Algolia indexing done.");
+    const base = {
+      // Keep original fields; your front-end can map headline/title etc.
+      ...p,
+      url: url,
+      title: pickString(p.title, pickString(p.headline, url)),
+      description: pickString(p.description, ""),
+      categories: ensureArray(p.categories),
+      tags: ensureArray(p.tags),
+    };
+
+    if (chunks.length <= 1) {
+      records.push({
+        ...base,
+        objectID: stableObjectID(url, 0),
+        content: normalizeText(content).slice(0, 5000),
+      });
+    } else {
+      chunks.forEach((c, i) => {
+        records.push({
+          ...base,
+          objectID: stableObjectID(url, i),
+          content: c,
+          chunk: i,
+        });
+      });
+    }
+  }
+
+  // Ensure objectID exists
+  const missing = records.find((r) => !r.objectID);
+  if (missing) {
+    throw new Error(
+      `Missing objectID in record: ${JSON.stringify(missing).slice(0, 200)}`
+    );
+  }
+
+  console.log(`Prepared ${records.length} records from ${pages.length} pages`);
+  console.log(
+    `Chunking policy: MAX_BYTES=${MAX_BYTES}, MAX_HITS_PER_PAGE=${MAX_HITS_PER_PAGE}, BATCH_SIZE=${BATCH_SIZE}`
+  );
+
+  const client = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY);
+
+  // Algolia v5: replaceAllObjects at client-level, pass indexName.
+  // It uses a temporary index. Your key must have access to tmp index too.
+  // https://algolia.com/doc/libraries/sdk/methods/search/replace-all-objects
+  const res = await client.replaceAllObjects(
+    {
+      indexName: ALGOLIA_INDEX_NAME,
+      objects: records,
+      batchSize: BATCH_SIZE,
+      // Keep existing index config
+      scopes: ["settings", "synonyms", "rules"],
+      // Wait for tasks so CI only succeeds when indexing is actually done
+      waitForTasks: true,
+    },
+    {
+      // Extra safety: ensure moveIndex waits for indexing completion
+      // (Some accounts/versions may ignore it, but it's safe to pass)
+      queryParameters: { safe: true },
+    }
+  );
+
+  console.log(
+    `Algolia indexing done. Operations: ${Array.isArray(res) ? res.length : "ok"}`
+  );
+})().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
