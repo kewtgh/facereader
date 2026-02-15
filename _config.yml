@@ -75,8 +75,7 @@ algolia:
   files_to_exclude:
     - index.html
     - index.md
-    - /docs/_pages/*.md
-    - /docs/_pages/*.html
+    - "/docs/_pages/*"
     - /docs/_drafts/*.md
     - _documents/*.md
     - _posts/2017-11-28-post-exclude-search.md
