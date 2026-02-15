@@ -1,4 +1,68 @@
 ---
-layout: home
-author_profile: true
+layout: splash
+permalink: /
+hidden: true
+sitemap: false
+title: "FaceReader-企业观察"
+
+header:
+  overlay_image: /assets/img/page-header-image-vision10.jpg
+  overlay_filter: rgba(51, 117, 255, 0.5)
+  actions:
+    - label_key: "home_hero_primary_action"
+      url: "/posts/"
+      class: "btn--primary"
+    - label_key: "home_hero_secondary_action"
+      url: "/about/"
+      class: "btn--secondary"
+
+# 摘要同理，用 key
+excerpt_key: "home_hero_excerpt"
+
+feature_row:
+  - image_path: /assets/img/page-header-image-wit-500x300.jpg
+    alt: "创始人和团队的剪影"
+    title_key: "home_section_company_analysis"
+    excerpt_key: "home_section_company_intro"
+    url: "/categories/#阅相识人"
+    btn_class: "btn--primary"
+    btn_label_key: "home_btn_view_company_analysis"
+
+  - image_path: /assets/img/page-header-image-tech4-500x300.jpg
+    alt: "管理与商业经典书的封面"
+    title_key: "home_section_classic_reviews"
+    excerpt_key: "home_section_classic_intro"
+    url: "/categories/#经典解读"
+    btn_class: "btn--primary"
+    btn_label_key: "home_btn_view_classic_reviews"
+
+  - image_path: /assets/img/page-header-image-eye4-500x300.jpg
+    alt: "人物侧影与城市轮廓"
+    title_key: "home_section_personal_growth"
+    excerpt_key: "home_section_growth_intro"
+    url: "/categories/#人格成长"
+    btn_class: "btn--primary"
+    btn_label_key: "home_btn_view_personal_growth"
 ---
+
+{%- comment -%} 顶部三张栏目卡片 {%- endcomment -%}
+{% include feature_row %}
+
+{%- comment -%} 最近更新文章 {%- endcomment -%}
+<section class="home-section home-section--posts">
+  <header class="home-section__header">
+    <h2 class="home-section__title">{{ site.data.ui-text[site.locale].home_recent_updates }}</h2>
+    <a class="home-section__more" href="{{ '/posts/' | relative_url }}">
+      {{ site.data.ui-text[site.locale].home_view_all_posts }} →
+    </a>
+  </header>
+
+  {% assign entries_layout = 'grid' %}
+  <div class="entries-{{ entries_layout }}">
+    {% for post in site.posts limit: 4 %}
+      {% include archive-single.html type=entries_layout %}
+    {% endfor %}
+  </div>
+</section>
+
+{% include home-cta.html %}
