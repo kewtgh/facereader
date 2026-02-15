@@ -6,4 +6,5 @@ collection: most_popular
 entries_layout: grid
 classes: wide
 sort_by: title
+sitemap: false
 ---
