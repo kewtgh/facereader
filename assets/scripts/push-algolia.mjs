@@ -1,9 +1,10 @@
-import fs from "node:fs/promises";
-import crypto from "node:crypto";
-import { algoliasearch } from "algoliasearch";
+import fs from "fs/promises";
+import crypto from "crypto";
+import { algoliasearch } from "algoliasearch";  // Algolia v5+
 import YAML from "yaml";
-import path from "node:path";
+import path from "path";
 
+// 环境变量设置
 const {
   ALGOLIA_APP_ID,
   ALGOLIA_ADMIN_API_KEY,
@@ -11,24 +12,17 @@ const {
 } = process.env;
 
 if (!ALGOLIA_APP_ID || !ALGOLIA_ADMIN_API_KEY || !ALGOLIA_INDEX_NAME) {
-  console.error(
-    "Missing env vars. Required: ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY, ALGOLIA_INDEX_NAME"
-  );
+  console.error("Missing env vars. Required: ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY, ALGOLIA_INDEX_NAME");
   process.exit(1);
 }
 
 const inputPath = process.argv[2] || "_site/algolia-records.json";
 
-/**
- * Keep records comfortably below typical per-record size limits.
- * You previously saw 9.765KB threshold errors in Crawler; we'll stay conservative.
- */
-const MAX_BYTES = Number(process.env.ALGOLIA_MAX_BYTES || 8000);
-const MIN_CHUNK_CHARS = Number(process.env.ALGOLIA_MIN_CHUNK_CHARS || 200);
-const MAX_HITS_PER_PAGE = Number(process.env.ALGOLIA_MAX_HITS_PER_PAGE || 20);
-const BATCH_SIZE = Number(process.env.ALGOLIA_BATCH_SIZE || 1000);
+// 配置常量
+const MAX_BYTES = 8000;  // 每个文本块的最大字节数
+const MAX_HITS_PER_PAGE = 20;  // 每页最大记录数
+const BATCH_SIZE = 1000;  // 每次批量推送的记录数
 
-// ---- utils ----
 function byteLen(s) {
   return Buffer.byteLength(s || "", "utf8");
 }
@@ -40,10 +34,6 @@ function normalizeText(text) {
     .trim();
 }
 
-/**
- * Chunk text by sentence-ish boundaries first, then hard-slice if needed.
- * Goal: each chunk <= MAX_BYTES (utf8).
- */
 function chunkText(text) {
   const t = normalizeText(text);
   if (!t) return [];
@@ -60,7 +50,7 @@ function chunkText(text) {
       continue;
     }
 
-    if (buf && buf.length >= MIN_CHUNK_CHARS) chunks.push(buf);
+    if (buf && buf.length >= 100) chunks.push(buf);
 
     if (byteLen(part) > MAX_BYTES) {
       let start = 0;
@@ -71,7 +61,7 @@ function chunkText(text) {
           slice = slice.slice(0, Math.floor(slice.length * 0.8));
         }
 
-        if (slice.length >= MIN_CHUNK_CHARS) chunks.push(slice);
+        if (slice.length >= 100) chunks.push(slice);
         start += 1200;
       }
       buf = "";
@@ -82,7 +72,7 @@ function chunkText(text) {
     if (chunks.length >= MAX_HITS_PER_PAGE) break;
   }
 
-  if (buf && buf.length >= MIN_CHUNK_CHARS && chunks.length < MAX_HITS_PER_PAGE) {
+  if (buf && buf.length >= 100 && chunks.length < MAX_HITS_PER_PAGE) {
     chunks.push(buf);
   }
 
@@ -115,7 +105,6 @@ async function loadExcludePatterns() {
   return Array.isArray(patterns) ? patterns.map(globToRegExp) : [];
 }
 
-// glob -> RegExp（支持 *, **）
 function globToRegExp(glob) {
   let g = String(glob || "").trim();
   g = g.replace(/^[./]+/, "").replace(/^\/+/, "");
