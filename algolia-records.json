@@ -31,16 +31,14 @@ sitemap: false
     {% if url_path == "feed.xml" %}{% continue %}{% endif %}
     {% if url_path == "sitemap.xml" %}{% continue %}{% endif %}
     {% if url_path == "robots.txt" %}{% continue %}{% endif %}
-    
-    function shouldExcludeRecord(rec, excludeRegexes) {
-      const urlPath = safePath(rec.path);
-      if (urlPath.startsWith("/docs/_pages/")) return true;  // 排除 docs/_pages 下的页面
-      return false;  // 其他情况默认不过滤
-    },
+
+    {# 排除 docs/_pages/ 路径 #}
+    {% if url_path contains "/docs/_pages/" %}{% continue %}{% endif %}
 
     {% if url_path contains "tags/" %}{% continue %}{% endif %}
     {% if url_path contains "categories/" %}{% continue %}{% endif %}
     
+    {# 排除分页页面 #}
     {% if url_path contains "/page" %}{% continue %}{% endif %}
     {% if url_path contains "page" and url_path contains "posts/" %}{% continue %}{% endif %}
 
