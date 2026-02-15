@@ -40,10 +40,7 @@ sidebar:
   nav: sidebar-series-leadership
 toc: true
 toc_sticky: true
-last_modified_at: 2026-02-13T09:25:52-05:00
-redirect_from:
-  - /docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E4%B8%8D%E9%9D%A0%E8%B0%B1%E9%A2%86%E5%AF%BC%E5%8A%9B/manage-leadership11/
-
+last_modified_at: 2026-02-16T09:25:52-05:00
 ---
 
 前面我们讨论了“**尽责**”品质的必要性和稀缺性，下面我们来看看“**尽责**”缺失的后果，以及如何确保做到尽责。
