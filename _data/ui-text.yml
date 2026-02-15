@@ -137,19 +137,19 @@ en: &DEFAULT_EN
   home_picks_title: "Selected essays"
   home_picks_desc: "A few entry points. Grounds, causality, measure."
 
-  home_pick_1_url: "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/"
+  home_pick_1_url: "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/"
   home_pick_1_title: "Starting from a face: the source of a company’s temperament"
   home_pick_1_excerpt: "Begin with face and character structure, then land on decisions and organizational outcomes."
 
-  home_pick_2_url: "/docs/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/"
+  home_pick_2_url: "/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/"
   home_pick_2_title: "Why do organizations distort?"
   home_pick_2_excerpt: "How power, incentives, and information step by step push people into systematic bias."
 
-  home_pick_3_url: "/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/"
+  home_pick_3_url: "/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/"
   home_pick_3_title: "Could “being yourself” hurt you?"
   home_pick_3_excerpt: "Personal growth: from self-comfort back to self-knowledge."
 
-  home_pick_4_url: "/docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/"
+  home_pick_4_url: "/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/"
   home_pick_4_title: "The Art of War: reading without the myth"
   home_pick_4_excerpt: "Put the ancients back into their time—and our projections back into ourselves."
 
@@ -330,19 +330,19 @@ es: &DEFAULT_ES
   home_picks_title: "Selección"
   home_picks_desc: "Unas piezas como entrada: fundamentos, causalidad y medida."
 
-  home_pick_1_url: "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/"
+  home_pick_1_url: "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/"
   home_pick_1_title: "Desde un rostro: el origen del temperamento de una empresa"
   home_pick_1_excerpt: "Del rostro y la estructura del carácter, a las decisiones y sus consecuencias organizacionales."
 
-  home_pick_2_url: "/docs/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/"
+  home_pick_2_url: "/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/"
   home_pick_2_title: "¿Por qué se deforma una organización?"
   home_pick_2_excerpt: "Cómo poder, incentivos e información empujan paso a paso hacia sesgos sistemáticos."
 
-  home_pick_3_url: "/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/"
+  home_pick_3_url: "/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/"
   home_pick_3_title: "¿Ser tú mismo puede hacerte daño?"
   home_pick_3_excerpt: "Crecimiento personal: del auto-consuelo al auto-conocimiento."
 
-  home_pick_4_url: "/docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/"
+  home_pick_4_url: "/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/"
   home_pick_4_title: "El arte de la guerra: una lectura sin mito"
   home_pick_4_excerpt: "Devolver a los antiguos a su época, y nuestras proyecciones a nosotros mismos."
 
@@ -824,19 +824,19 @@ zh: &DEFAULT_ZH_HANS
   home_picks_title: "代表作精选"
   home_picks_desc: "此处选录数篇作为阅读入口，以示写作取径：依据、因果与尺度。"
 
-  home_pick_1_url: "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/"
+  home_pick_1_url: "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/"
   home_pick_1_title: "从一张脸开始：公司气质的源头"
   home_pick_1_excerpt: "从面相与性格结构谈起，最终落到决策与组织结果。"
 
-  home_pick_2_url: "/docs/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/"
+  home_pick_2_url: "/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/"
   home_pick_2_title: "组织为什么会失真？"
   home_pick_2_excerpt: "权责、激励与信息如何一步步把人推向系统性的偏差。"
 
-  home_pick_3_url: "/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/"
+  home_pick_3_url: "/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/"
   home_pick_3_title: "做自己，会害了你吗？"
   home_pick_3_excerpt: "人格成长：从自我安慰回到自我认识。"
 
-  home_pick_4_url: "/docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/"
+  home_pick_4_url: "/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/"
   home_pick_4_title: "孙子兵法：去神话化的读法"
   home_pick_4_excerpt: "把古人放回古代，把我们的投射放回我们自己。"
 
@@ -1318,19 +1318,19 @@ ko: &DEFAULT_KO
   home_picks_title: "대표 글"
   home_picks_desc: "몇 편을 읽기入口로 고른다: 근거, 인과, 척도."
 
-  home_pick_1_url: "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/"
+  home_pick_1_url: "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/"
   home_pick_1_title: "한 장의 얼굴에서: 기업 기질의 근원"
   home_pick_1_excerpt: "인상과 성격 구조에서 시작해, 결정과 조직의 결과로 내려간다."
 
-  home_pick_2_url: "/docs/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/"
+  home_pick_2_url: "/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/"
   home_pick_2_title: "조직은 왜 왜곡되는가?"
   home_pick_2_excerpt: "권한·인센티브·정보가 사람을 체계적 편향으로 밀어가는 과정."
 
-  home_pick_3_url: "/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/"
+  home_pick_3_url: "/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/"
   home_pick_3_title: "‘있는 그대로’가 해가 될 때"
   home_pick_3_excerpt: "인격 성장: 자기위안에서 자기인식으로."
 
-  home_pick_4_url: "/docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/"
+  home_pick_4_url: "/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/"
   home_pick_4_title: "손자병법: 신화를 벗기는 읽기"
   home_pick_4_excerpt: "옛사람을 옛시대로, 우리의 투영을 우리 자신으로 되돌린다."
 
@@ -1504,19 +1504,19 @@ ru: &DEFAULT_RU
   home_picks_title: "Подборка"
   home_picks_desc: "Несколько текстов как вход: основания, причинность, мера."
 
-  home_pick_1_url: "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/"
+  home_pick_1_url: "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/"
   home_pick_1_title: "С лица: источник темперамента компании"
   home_pick_1_excerpt: "От «лика» и структуры характера — к решениям и организационным последствиям."
 
-  home_pick_2_url: "/docs/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/"
+  home_pick_2_url: "/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/"
   home_pick_2_title: "Почему организация искажает реальность?"
   home_pick_2_excerpt: "Как власть, стимулы и информация шаг за шагом ведут к систематическому смещению."
 
-  home_pick_3_url: "/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/"
+  home_pick_3_url: "/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/"
   home_pick_3_title: "«Быть собой» может навредить?"
   home_pick_3_excerpt: "Личностный рост: от самоутешения к самопониманию."
 
-  home_pick_4_url: "/docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/"
+  home_pick_4_url: "/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/"
   home_pick_4_title: "Сунь-цзы: чтение без мифа"
   home_pick_4_excerpt: "Вернуть древних в их время, а наши проекции — нам самим."
 
@@ -2117,19 +2117,19 @@ ja: &DEFAULT_JA
   home_picks_title: "代表作精選"
   home_picks_desc: "入口となる数篇を選録。根拠・因果・尺度——書きぶりの取径を示す。"
 
-  home_pick_1_url: "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/"
+  home_pick_1_url: "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/"
   home_pick_1_title: "一枚の顔から：会社の気質の源"
   home_pick_1_excerpt: "相と性格構造から入り、意思決定と組織の帰結へ落とす。"
 
-  home_pick_2_url: "/docs/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/"
+  home_pick_2_url: "/%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/Society-OrganizationalDomestication/"
   home_pick_2_title: "組織はなぜ歪むのか"
   home_pick_2_excerpt: "権限・インセンティブ・情報が、体系的な偏りへ人を押しやる過程。"
 
-  home_pick_3_url: "/docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/"
+  home_pick_3_url: "/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-1/"
   home_pick_3_title: "「自分らしく」で傷つくことがある"
   home_pick_3_excerpt: "人格成長：自己慰撫から自己認識へ。"
 
-  home_pick_4_url: "/docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/"
+  home_pick_4_url: "/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5AD%90%E5%85%B5%E6%B3%95/TheArtofWar-1shiji/"
   home_pick_4_title: "孫子兵法：神話を剥ぐ読み方"
   home_pick_4_excerpt: "古人を古代へ、私たちの投射を私たち自身へ戻す。"
 

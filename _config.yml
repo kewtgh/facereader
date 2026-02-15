@@ -86,6 +86,7 @@ algolia:
     - "robots.txt"
     - "feed.xml"
     - posts/*
+    - norobots/index.html-institution.bak
   application_id         : 6OPPKGJAVV # YOUR_APPLICATION_ID
   index_name             : facereader_prod # YOUR_INDEX_NAME
   search_only_api_key    : a6f5fefa42805d8cef72dba95e2ece04 # YOUR_SEARCH_ONLY_API_KEY
