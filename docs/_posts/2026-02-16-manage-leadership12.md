@@ -40,7 +40,7 @@ sidebar:
   nav: sidebar-series-leadership
 toc: true
 toc_sticky: true
-last_modified_at: 2026-02-16T09:25:52-05:00
+last_modified_at: 2026-02-15T19:35:52-05:00
 ---
 
 前面我们讨论了“**尽责**”品质的必要性和稀缺性，下面我们来看看“**尽责**”缺失的后果，以及如何确保做到尽责。
