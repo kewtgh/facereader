@@ -44,9 +44,32 @@
         secondaryText: "{{ site.algolia.secondary_text | default: 'description' }}",
         tertiaryText: "{{ site.algolia.tertiary_text | default: 'content' }}",
         url: "{{ site.algolia.url_attribute | default: 'url' }}",
-        image: "{{ site.algolia.image_attribute | default: 'image' }}"
+        image: "{{ site.algolia.image_attribute | default: 'image' }}" // 使用 default 来避免出错
       },
-      darkMode: false
+      darkMode: false,
+      render: function(hits) {
+        // 用默认图片或其他字段填充
+        const defaultImage = "path/to/default/image.jpg"; // 设定默认图片路径
+
+        const resultsList = document.querySelector(".search-results-list");
+        resultsList.innerHTML = ""; // 清空之前的内容
+
+        hits.forEach(hit => {
+          const imageUrl = hit.image || defaultImage; // 如果没有 image 字段，使用默认图片
+          const resultHTML = `
+            <li class="search-result-item">
+              <div class="result-item-left">
+                <img src="${imageUrl}" alt="Teaser Image" class="result-item-image">
+              </div>
+              <div class="result-item-right">
+                <h3><a href="${hit.url}">${hit._highlightResult.title.value}</a></h3>
+                <p>${hit._highlightResult.description.value}</p>
+              </div>
+            </li>
+          `;
+          resultsList.innerHTML += resultHTML; // 动态添加每一条结果
+        });
+      }
     });
   }
 

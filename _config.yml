@@ -76,6 +76,7 @@ algolia:
     - index.html
     - index.md
     - index.html.bak
+    - norobots/index.html.bak
     - "docs/_pages/*.*"
     - docs/_drafts/*.md
     - _documents/*.md
