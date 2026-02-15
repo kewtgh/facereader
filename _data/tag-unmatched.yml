@@ -1,17 +1,11 @@
 # Tags NOT shown on /tags/ because they do not match any declared group rules
 # You can fix by adding to rules.force / match.exact / match.regex
 unmatched:
-  - tag: "杰克·韦尔奇"
-    count: 4
   - tag: "四小龙"
     count: 4
   - tag: "奥古斯都"
     count: 2
-  - tag: "陈垣"
-    count: 2
   - tag: "成功创业"
-    count: 2
-  - tag: "大师"
     count: 2
   - tag: "道德"
     count: 2
@@ -23,13 +17,7 @@ unmatched:
     count: 2
   - tag: "企业"
     count: 2
-  - tag: "项羽"
-    count: 2
-  - tag: "萧何"
-    count: 2
   - tag: "学生"
-    count: 2
-  - tag: "正直"
     count: 2
   - tag: "组织"
     count: 2
@@ -53,8 +41,6 @@ unmatched:
     count: 1
   - tag: "《人民公仆》"
     count: 1
-  - tag: "《少有人走的路》"
-    count: 1
   - tag: "《我与地坛》"
     count: 1
   - tag: "《赠刘景文》"
@@ -67,13 +53,9 @@ unmatched:
     count: 1
   - tag: "2009年"
     count: 1
-  - tag: "阿富汗"
-    count: 1
   - tag: "哀其不幸"
     count: 1
   - tag: "埃德·胡德"
-    count: 1
-  - tag: "安全与稳定"
     count: 1
   - tag: "奥托·夏莫"
     count: 1
@@ -185,8 +167,6 @@ unmatched:
     count: 1
   - tag: "雷吉·琼斯"
     count: 1
-  - tag: "雷曼兄弟"
-    count: 1
   - tag: "冷漠"
     count: 1
   - tag: "李安"
@@ -198,8 +178,6 @@ unmatched:
   - tag: "李彤彤"
     count: 1
   - tag: "李煜"
-    count: 1
-  - tag: "里巴巴"
     count: 1
   - tag: "利润"
     count: 1
@@ -243,8 +221,6 @@ unmatched:
     count: 1
   - tag: "权力与合法性"
     count: 1
-  - tag: "任人唯亲"
-    count: 1
   - tag: "任正非"
     count: 1
   - tag: "山姆·沃顿"
@@ -275,8 +251,6 @@ unmatched:
     count: 1
   - tag: "锁链"
     count: 1
-  - tag: "汤晓鸥"
-    count: 1
   - tag: "唐文斌"
     count: 1
   - tag: "唐玄宗"
@@ -294,8 +268,6 @@ unmatched:
   - tag: "王学集"
     count: 1
   - tag: "危机"
-    count: 1
-  - tag: "委内瑞拉"
     count: 1
   - tag: "未选择的路"
     count: 1
@@ -330,8 +302,6 @@ unmatched:
   - tag: "眼前的苟且"
     count: 1
   - tag: "业务能力"
-    count: 1
-  - tag: "伊朗"
     count: 1
   - tag: "伊隆·马斯克"
     count: 1
@@ -368,8 +338,6 @@ unmatched:
   - tag: "朱珑"
     count: 1
   - tag: "资源保存理论"
-    count: 1
-  - tag: "字节跳动"
     count: 1
   - tag: "自由"
     count: 1
