@@ -21,22 +21,15 @@
   "engines": {
     "node": ">= 18"
   },
-
   "type": "module",
   "scripts": {
     "algolia:push": "node assets/scripts/push-algolia.mjs _site/algolia-records.json"
   },
   "dependencies": {
-    "algoliasearch": "^5.0.0"
+    "algoliasearch": "^5.48.1",
+    "yaml": "^2.5.0"
   },
-
   "devDependencies": {
     "uglify-js": "^3.17.4"
-  },
-  
-  "dependencies": {
-  "algoliasearch": "^5.0.0",
-  "yaml": "^2.5.0"
   }
 }
-

@@ -229,6 +229,19 @@ function shouldExcludeRecord(rec, excludeRegexes) {
 
   // 后面上传用 filtered 而不是 records
   const client = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY);
+  
+  // 检查是否成功初始化
+  if (!client) {
+    throw new Error("Failed to initialize Algolia client.");
+  }
+
+  // 初始化索引
+  const index = client.initIndex(ALGOLIA_INDEX_NAME);
+
+  // 确认初始化
+  if (!index) {
+    throw new Error(`Failed to initialize index: ${ALGOLIA_INDEX_NAME}`);
+  };
 
   // Algolia v5: replaceAllObjects at client-level, pass indexName.
   const res = await client
