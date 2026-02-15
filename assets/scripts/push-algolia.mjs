@@ -14,115 +14,94 @@ if (!ALGOLIA_APP_ID || !ALGOLIA_ADMIN_API_KEY || !ALGOLIA_INDEX_NAME) {
 const inputPath = process.argv[2] || "_site/algolia-records.json";
 
 // --- 工具函数 ---
-function normalizeText(text) { return (text || "").replace(/\s+/g, " ").trim(); }
-function pickString(v, fallback = "") { return typeof v === "string" ? v : fallback; }
-function ensureArray(v) { return Array.isArray(v) ? v : []; }
+function normalizeText(text) {
+  return (text || "").replace(/\s+/g, " ").trim();
+}
 function stableObjectID(url, idx) {
   const h = crypto.createHash("sha1").update(`${url}#${idx}`).digest("hex").slice(0, 16);
   return `${url}#${idx}-${h}`;
 }
+function pickString(v, fallback = "") { return typeof v === "string" ? v : fallback; }
+function ensureArray(v) { return Array.isArray(v) ? v : []; }
 
-/**
- * 路径清洗：针对 permalink: /:categories/:title/
- * 无论输入是完整 URL 还是相对路径，都强行提取出漂亮链接
- */
-function fixPrettyUrl(rawUrl, rawPath) {
-  // 如果 URL 为空，则尝试从物理路径构建
-  let path = String(rawUrl || rawPath || "");
-  
-  // 如果是完整 URL，只提取 path 部分
-  if (path.startsWith("http")) {
-    try {
-      path = new URL(path).pathname;
-    } catch (e) {
-      path = path.replace(/^https?:\/\/[^\/]+/, "");
-    }
-  }
-
-  // 1. 移除物理目录名
-  path = path.replace(/\/_(posts|pages|documents)\//g, "/"); 
-  // 2. 移除日期前缀
-  path = path.replace(/\/\d{4}-\d{2}-\d{2}-/g, "/");
-  // 3. 移除扩展名
-  path = path.replace(/\.(html|md)$/, "/");
-  // 4. 清理双斜杠并补全结尾斜杠
-  path = path.replace(/\/+/g, "/");
-  if (path && !path.endsWith("/")) path += "/";
-  if (!path.startsWith("/")) path = "/" + path;
-
-  return path;
+// 路径标准化：移除首尾斜杠，统一使用正斜杠
+function safePath(p) {
+  return String(p || "").replace(/\\/g, "/").replace(/^\/+|\/+$/g, "");
 }
 
-function safePath(p) { return String(p || "").replace(/\\/g, "/").replace(/^\/+|\/+$/g, ""); }
-
+// 2. 加载并转换排除规则
 async function loadExcludePatterns() {
   try {
     const configPath = JEKYLL_CONFIG || "_config.yml";
     const raw = await fs.readFile(configPath, "utf8");
     const cfg = YAML.parse(raw) || {};
     const excludes = cfg.algolia?.files_to_exclude || [];
+    
     return excludes.map(g => {
-      let r = String(g).trim().replace(/^\/+/, "").replace(/\./g, "\\.").replace(/\*\*/g, ".*").replace(/\*/g, "[^/]*");
+      // 处理通配符，特别是像 /docs/_pages/*.* 这样的路径
+      let r = String(g).trim()
+        .replace(/^\/+/, "")                   // 移除开头的斜杠
+        .replace(/\./g, "\\.")                 // 转义点号
+        .replace(/\*\*/g, ".*")                // ** 匹配任意路径
+        .replace(/\*/g, "[^/]*");              // * 匹配单层文件名
       return new RegExp(`^${r}$`, "i");
     });
-  } catch (e) { return []; }
+  } catch (e) {
+    console.warn("⚠️ 配置文件读取失败，使用默认过滤。");
+    return [];
+  }
 }
 
+// 3. 过滤逻辑实现
 function shouldExcludeRecord(rec, patterns) {
-  const p = safePath(rec.path);
-  if (p.includes("docs/_pages/")) return true;
+  const p = safePath(rec.path); // 使用源文件路径进行匹配 (如 docs/_pages/terms.md)
+  
+  // 匹配 _config.yml 中的规则
   if (patterns.some(re => re.test(p))) return true;
-  if (/^(assets|images|js|css)(\/|$)/i.test(p)) return true;
+
+  // 默认内置硬编码过滤 (作为双重保险)
+  if (p.startsWith("docs/_pages/")) return true;
+  if (/^(tags|categories|assets|images|js|css)(\/|$)/i.test(p)) return true;
+  if (/\/(page\d+|posts\/page\d+)\/?$/i.test(rec.url)) return true;
+
   return false;
 }
 
-// 2. 执行主函数
+// 4. 执行主函数
 (async function main() {
   try {
     console.log(`🔍 正在读取: ${inputPath}...`);
-    const rawData = await fs.readFile(inputPath, "utf-8");
-    const pages = JSON.parse(rawData);
+    const raw = await fs.readFile(inputPath, "utf-8");
+    let pages = JSON.parse(raw);
+
     const patterns = await loadExcludePatterns();
 
     const records = pages
-      .filter(p => !shouldExcludeRecord(p, patterns))
+      .filter(p => !shouldExcludeRecord(p, patterns)) // 先过滤，减少处理开销
       .map(p => {
-        const rawUrl = pickString(p.url, "");
-        const rawPath = pickString(p.path, "");
-        
-        // 核心修复：基于 pathname 重新构建完整的、漂亮的 URL
-        const prettyPath = fixPrettyUrl(rawUrl, rawPath);
-        const domain = "https://facereader.witbacon.com"; // 你的主站域名
-        const finalUrl = `${domain}${prettyPath}`;
-
+        const url = pickString(p.url, "");
+        const rawContent = normalizeText(pickString(p.content, ""));
         return {
           ...p,
-          url: finalUrl,
-          objectID: stableObjectID(finalUrl, 0),
-          content: normalizeText(pickString(p.content, "")).slice(0, 2000),
-          categories: ensureArray(p.categories),
-          tags: ensureArray(p.tags)
+          objectID: stableObjectID(url, 0),
+          content: rawContent.slice(0, 2000) // 解决 Record too big 问题
         };
       });
 
-    console.log(`📦 数据处理完成: 原始 ${pages.length} 条 -> 最终推送 ${records.length} 条`);
+    console.log(`📦 数据处理: 原始 ${pages.length} -> 过滤后 ${records.length}`);
 
-    if (records.length === 0) {
-      console.warn("⚠️ 没有检测到有效记录，请检查过滤逻辑或 algolia-records.json 内容。");
-      return;
-    }
-
+    // Algolia v5 修正后的调用
     const client = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY);
-    console.log(`🚀 正在同步至索引: [${ALGOLIA_INDEX_NAME}]...`);
     
+    console.log(`🚀 正在推送至索引: [${ALGOLIA_INDEX_NAME}]...`);
     await client.replaceAllObjects({
       indexName: ALGOLIA_INDEX_NAME,
       objects: records,
     });
 
-    console.log("✅ Algolia 推送成功！所有记录已强制纠正为漂亮 URL 格式。");
+    console.log("✅ Algolia 推送成功！已排除 _pages 文件夹。");
   } catch (error) {
-    console.error("❌ 执行出错:", error.message);
+    console.error("❌ 执行失败:", error.message);
     process.exit(1);
   }
 })();
