@@ -1040,7 +1040,8 @@ body { line-height: 1.7; }
 
 .algolia-searchbox {
   margin-bottom: 1rem;
-
+  width: 100%;
+  max-width: 100%;
   .ais-SearchBox-form {
     display: flex;
     gap: .5rem;
@@ -1164,3 +1165,88 @@ body { line-height: 1.7; }
   }
 }
 
+.algolia-searchbox .ais-SearchBox-form {
+  position: relative;
+  display: block;        // 不用 flex，避免 svg / button 参与计算导致溢出
+  width: 100%;
+  max-width: 100%;
+}
+
+.algolia-searchbox .ais-SearchBox-input {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  height: 44px;
+  line-height: 44px;
+
+  padding-left: 44px;    // 给左侧 icon 留位置
+  padding-right: 44px;   // 给右侧 reset(X) 留位置
+  border-radius: 10px;
+
+  border: 1px solid rgba(0,0,0,.12);
+  font-size: 16px;
+  outline: none;
+}
+
+/* 左侧搜索按钮（图标容器） */
+.algolia-searchbox .ais-SearchBox-submit {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+/* 修复 SVG 图标“怪异”（大小/对齐/颜色） */
+.algolia-searchbox .ais-SearchBox-submitIcon {
+  width: 18px;
+  height: 18px;
+  display: block;
+  fill: rgba(0,0,0,.55);
+}
+
+/* 右侧清空按钮 */
+.algolia-searchbox .ais-SearchBox-reset {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.algolia-searchbox .ais-SearchBox-resetIcon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  fill: rgba(0,0,0,.55);
+}
+
+/* 防止按钮本身撑开 form / 造成溢出 */
+.algolia-searchbox .ais-SearchBox-submit,
+.algolia-searchbox .ais-SearchBox-reset {
+  box-sizing: border-box;
+}
+
+/* 可选：输入时高亮边框 */
+.algolia-searchbox .ais-SearchBox-input:focus {
+  border-color: rgba(59, 130, 246, .55);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, .12);
+}
