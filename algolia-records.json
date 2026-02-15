@@ -4,22 +4,28 @@ permalink: /algolia-records.json
 sitemap: false
 ---
 [
-  {% assign posts = site.posts | where_exp: "p", 'p.search != false' %}
-  {% assign pages = site.pages | where_exp: "p", 'p.search != false and p.layout and p.url != "/algolia-records.json"' %}
-  {% assign all = posts | concat: pages %}
+  {% assign items = site.posts | concat: site.pages %}
+  {% assign first = true %}
 
-  {% for p in all %}
-  {
-    "objectID": {{ p.url | jsonify }},
-    "type": {{ p.collection | default: "page" | jsonify }},
-    "title": {{ p.title | default: p.url | jsonify }},
-    "description": {{ p.excerpt | default: "" | strip_html | strip_newlines | jsonify }},
-    "content": {{ p.content | strip_html | strip_newlines | jsonify }},
-    "url": {{ p.url | absolute_url | jsonify }},
-    "date": {{ p.date | default: site.time | date_to_xmlschema | jsonify }},
-    "date_ts": {{ p.date | default: site.time | date: "%s" | plus: 0 }},
-    "categories": {{ p.categories | default: empty | jsonify }},
-    "tags": {{ p.tags | default: empty | jsonify }}
-  }{% unless forloop.last %},{% endunless %}
+  {% for p in items %}
+    {% if p.search == false %}{% continue %}{% endif %}
+    {% if p.url == "/algolia-records.json" %}{% continue %}{% endif %}
+    {% if p.layout == nil %}{% continue %}{% endif %}
+
+    {% unless first %},{% endunless %}
+    {% assign first = false %}
+
+    {
+      "objectID": {{ p.url | jsonify }},
+      "type": {{ p.collection | default: "page" | jsonify }},
+      "title": {{ p.title | default: p.url | jsonify }},
+      "description": {{ p.excerpt | default: "" | strip_html | strip_newlines | jsonify }},
+      "content": {{ p.content | strip_html | strip_newlines | jsonify }},
+      "url": {{ p.url | absolute_url | jsonify }},
+      "date": {{ p.date | default: site.time | date_to_xmlschema | jsonify }},
+      "date_ts": {{ p.date | default: site.time | date: "%s" | plus: 0 }},
+      "categories": {{ p.categories | default: empty | jsonify }},
+      "tags": {{ p.tags | default: empty | jsonify }}
+    }
   {% endfor %}
 ]
