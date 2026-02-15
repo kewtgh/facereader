@@ -75,15 +75,16 @@ algolia:
   files_to_exclude:
     - index.html
     - index.md
-    - "/docs/_pages/*.*"
-    - /docs/_drafts/*.md
+    - index.html.bak
+    - "docs/_pages/*.*"
+    - docs/_drafts/*.md
     - _documents/*.md
     - _posts/2017-11-28-post-exclude-search.md
-    - /assets/*.*
-    - "/sitemap.xml"
-    - "/robots.txt"
-    - "/feed.xml"
-    - /posts/*
+    - assets/*.*
+    - "sitemap.xml"
+    - "robots.txt"
+    - "feed.xml"
+    - posts/*
   application_id         : 6OPPKGJAVV # YOUR_APPLICATION_ID
   index_name             : facereader_prod # YOUR_INDEX_NAME
   search_only_api_key    : a6f5fefa42805d8cef72dba95e2ece04 # YOUR_SEARCH_ONLY_API_KEY
