@@ -427,3 +427,12 @@ defaults:
       sitemap: false
       robots: noindex
       search: false
+#  exclude sitemap
+  - scope:
+      path: "docs/_posts"
+    values:
+      sitemap: false
+  - scope:
+      path: "posts"
+    values:
+      sitemap: false
