@@ -19,6 +19,8 @@ unmatched:
     count: 2
   - tag: "学生"
     count: 2
+  - tag: "伊隆·马斯克"
+    count: 2
   - tag: "组织"
     count: 2
   - tag: "NBA"
@@ -302,8 +304,6 @@ unmatched:
   - tag: "眼前的苟且"
     count: 1
   - tag: "业务能力"
-    count: 1
-  - tag: "伊隆·马斯克"
     count: 1
   - tag: "以德报怨"
     count: 1
