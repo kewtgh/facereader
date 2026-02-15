@@ -19,12 +19,12 @@
   },
   "homepage": "https://mmistakes.github.io/minimal-mistakes/",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 18"
   },
 
   "type": "module",
   "scripts": {
-    "algolia:push": "node scripts/push-algolia.mjs _site/algolia-records.json"
+    "algolia:push": "node assets/scripts/push-algolia.mjs _site/algolia-records.json"
   },
   "dependencies": {
     "algoliasearch": "^5.0.0"

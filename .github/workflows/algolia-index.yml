@@ -46,4 +46,4 @@ jobs:
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
           ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
         run: |
-          node scripts/push-algolia.mjs _site/algolia-records.json
+          node assets/scripts/push-algolia.mjs _site/algolia-records.json
