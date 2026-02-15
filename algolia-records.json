@@ -8,22 +8,50 @@ sitemap: false
   {% assign first = true %}
 
   {% for p in items %}
+    {%- comment -%}
+      Basic excludes (cheap and GitHub-Pages-safe, no where_exp):
+      - front matter: search: false
+      - self page: /algolia-records.json
+      - no layout pages (often helper files)
+      - common non-content routes (tags/categories/assets/feed/sitemap/robots)
+    {%- endcomment -%}
+
     {% if p.search == false %}{% continue %}{% endif %}
     {% if p.url == "/algolia-records.json" %}{% continue %}{% endif %}
+
+    {% assign url_path = p.url | remove_first: "/" %}
+
     {% if p.layout == nil %}{% continue %}{% endif %}
+    {% if url_path == "" %}{% continue %}{% endif %}
+    {% if url_path contains "assets/" %}{% continue %}{% endif %}
+    {% if url_path contains "images/" %}{% continue %}{% endif %}
+    {% if url_path contains "css/" %}{% continue %}{% endif %}
+    {% if url_path contains "js/" %}{% continue %}{% endif %}
+
+    {% if url_path == "feed.xml" %}{% continue %}{% endif %}
+    {% if url_path == "sitemap.xml" %}{% continue %}{% endif %}
+    {% if url_path == "robots.txt" %}{% continue %}{% endif %}
+
+    {% if url_path contains "tags/" %}{% continue %}{% endif %}
+    {% if url_path contains "categories/" %}{% continue %}{% endif %}
 
     {% unless first %},{% endunless %}
     {% assign first = false %}
 
     {
       "objectID": {{ p.url | jsonify }},
+      "path": {{ p.path | jsonify }},
       "type": {{ p.collection | default: "page" | jsonify }},
+
       "title": {{ p.title | default: p.url | jsonify }},
       "description": {{ p.excerpt | default: "" | strip_html | strip_newlines | jsonify }},
       "content": {{ p.content | strip_html | strip_newlines | jsonify }},
+
       "url": {{ p.url | absolute_url | jsonify }},
+
       "date": {{ p.date | default: site.time | date_to_xmlschema | jsonify }},
       "date_ts": {{ p.date | default: site.time | date: "%s" | plus: 0 }},
+
       "categories": {{ p.categories | default: empty | jsonify }},
       "tags": {{ p.tags | default: empty | jsonify }}
     }

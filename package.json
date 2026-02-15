@@ -32,6 +32,11 @@
 
   "devDependencies": {
     "uglify-js": "^3.17.4"
+  },
+  
+  "dependencies": {
+  "algoliasearch": "^5.0.0",
+  "yaml": "^2.5.0"
   }
 }
 

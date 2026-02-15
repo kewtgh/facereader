@@ -187,6 +187,75 @@ function ensureArray(v) {
     `Chunking policy: MAX_BYTES=${MAX_BYTES}, MAX_HITS_PER_PAGE=${MAX_HITS_PER_PAGE}, BATCH_SIZE=${BATCH_SIZE}`
   );
 
+  import YAML from "yaml";
+  import path from "node:path";
+
+  // 读取 _config.yml 中的排除规则
+  async function loadExcludePatterns() {
+    const configPath = process.env.JEKYLL_CONFIG || "_config.yml";
+    const yml = await fs.readFile(configPath, "utf8");
+    const cfg = YAML.parse(yml) || {};
+    const patterns = cfg?.algolia?.files_to_exclude || [];
+    return Array.isArray(patterns) ? patterns : [];
+  }
+
+  // glob -> RegExp（支持 *, **）
+  function globToRegExp(glob) {
+    let g = String(glob || "").trim();
+    // 你 _config.yml 里很多 pattern 以 / 开头，Jekyll 的 p.path 不以 / 开头，所以统一去掉前导 /
+    g = g.replace(/^[./]+/, "").replace(/^\/+/, "");
+    // 转义正则特殊字符
+    g = g.replace(/[.+^${}()|[\]\\]/g, "\\$&");
+    // ** -> .*
+    g = g.replace(/\\\*\\\*/g, ".*");
+    // * -> [^/]* (不跨目录)
+    g = g.replace(/\\\*/g, "[^/]*");
+    return new RegExp(`^${g}$`);
+  }
+
+  function safePath(p) {
+    return String(p || "").replace(/\\/g, "/").replace(/^\/+/, "");
+  }
+
+  function shouldExcludeRecord(rec, excludeRegexes) {
+    const p = safePath(rec.path);
+    const urlPath = (() => {
+      try {
+        const u = new URL(rec.url);
+        return safePath(u.pathname);
+      } catch {
+        return safePath(rec.url);
+      }
+    })();
+
+    // 1) 先用 _config.yml 里的 files_to_exclude 匹配 path / urlPath
+    if (excludeRegexes.some((re) => re.test(p) || re.test(urlPath))) return true;
+
+    // 2) 额外兜底：排除常见“非内容页”（你不想手动 search:false 的那些）
+    if (/^(tags|categories)(\/|$)/.test(urlPath)) return true;
+    if (/^(assets|images|js|css)(\/|$)/.test(urlPath)) return true;
+    if (/^(sitemap\.xml|feed\.xml|robots\.txt)$/.test(urlPath)) return true;
+
+    return false;
+  }
+
+  // —— 在你 records 生成完成后调用 ——
+  // const records = ...;
+
+  const excludePatterns = await loadExcludePatterns();
+  const excludeRegexes = excludePatterns.map(globToRegExp);
+
+  // 过滤前/后统计
+  const before = records.length;
+  const filtered = records.filter((r) => !shouldExcludeRecord(r, excludeRegexes));
+  const after = filtered.length;
+
+  console.log(`Exclude patterns loaded: ${excludePatterns.length}`);
+  console.log(`Records filtered: ${before} -> ${after} (excluded ${before - after})`);
+
+  // 后面上传用 filtered 而不是 records
+  // await client.replaceAllObjects({ indexName: ..., objects: filtered, ... })
+
   const client = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY);
 
   // Algolia v5: replaceAllObjects at client-level, pass indexName.

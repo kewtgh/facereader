@@ -1,72 +1,64 @@
 <script>
-  // Lazy-load Algolia SiteSearch only when the search toggle is clicked
-  const loadSearch = function () {
-    const loadCSS = function (href) {
-      var link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.type = "text/css";
-      link.href = href;
-      link.media = "all";
-      document.head.appendChild(link);
-    };
+  function loadCSS(href) {
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = href;
+    document.head.appendChild(link);
+  }
 
-    const loadScript = function (src, onload) {
-      var script = document.createElement("script");
-      script.setAttribute("type", "text/javascript");
-      script.setAttribute("src", src);
-      script.addEventListener("load", onload);
-      document.body.appendChild(script);
-    };
-
-    // 1) Load SiteSearch CSS
-    loadCSS("https://unpkg.com/@algolia/sitesearch@latest/dist/search.min.css");
-
-    // 2) Load SiteSearch JS, then init
-    loadScript("https://unpkg.com/@algolia/sitesearch@latest/dist/search.min.js", function () {
-      // Make sure container exists
-      var container = document.querySelector("#search");
-      if (!container) {
-        console.error("[Algolia] #search container not found. Did you update search_form.html?");
-        return;
-      }
-
-      // Optional: allow overriding attribute names from _config.yml
-      // If not set, fall back to your current field naming
-      var primaryText   = "{{ site.algolia.primary_text | default: 'headline' }}";
-      var secondaryText = "{{ site.algolia.secondary_text | default: 'description' }}";
-      var tertiaryText  = "{{ site.algolia.tertiary_text | default: 'content' }}";
-      var urlAttr       = "{{ site.algolia.url_attribute | default: 'url' }}";
-      var imageAttr     = "{{ site.algolia.image_attribute | default: 'image' }}";
-
-      // Init SiteSearch
-      SiteSearch.init({
-        container: "#search",
-        applicationId: "{{ site.algolia.application_id }}",
-        apiKey: "{{ site.algolia.search_only_api_key }}",
-        indexName: "{{ site.algolia.index_name }}",
-        attributes: {
-          primaryText: primaryText,
-          secondaryText: secondaryText,
-          tertiaryText: tertiaryText,
-
-          // IMPORTANT: don't leave this empty, otherwise results can't link out correctly
-          url: urlAttr,
-          image: imageAttr
-        },
-        darkMode: false
-      });
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var s = document.createElement("script");
+      s.src = src;
+      s.onload = resolve;
+      s.onerror = reject;
+      document.body.appendChild(s);
     });
-  };
+  }
 
-  // Start only when toggle is clicked (same behavior as your current file) :contentReference[oaicite:4]{index=4}
-  $(document).ready(function () {
-    var scriptLoaded = false;
+  async function initSiteSearchOnce() {
+    // 防重复初始化
+    if (window.__FACEREADER_SITESEARCH_INITED__) return;
+    window.__FACEREADER_SITESEARCH_INITED__ = true;
 
-    $(".search__toggle").on("click", function () {
-      if (!scriptLoaded) {
-        loadSearch();
-        scriptLoaded = true;
-      }
+    // 确保容器存在
+    var container = document.querySelector("#search");
+    if (!container) {
+      console.error("[SiteSearch] #search container not found. Check search_form.html.");
+      window.__FACEREADER_SITESEARCH_INITED__ = false;
+      return;
+    }
+
+    // 加载资源
+    loadCSS("https://unpkg.com/@algolia/sitesearch@latest/dist/search.min.css");
+    await loadScript("https://unpkg.com/@algolia/sitesearch@latest/dist/search.min.js");
+
+    // 初始化
+    SiteSearch.init({
+      container: "#search",
+      applicationId: "{{ site.algolia.application_id }}",
+      apiKey: "{{ site.algolia.search_only_api_key }}",
+      indexName: "{{ site.algolia.index_name }}",
+      attributes: {
+        primaryText: "{{ site.algolia.primary_text | default: 'title' }}",
+        secondaryText: "{{ site.algolia.secondary_text | default: 'description' }}",
+        tertiaryText: "{{ site.algolia.tertiary_text | default: 'content' }}",
+        url: "{{ site.algolia.url_attribute | default: 'url' }}",
+        image: "{{ site.algolia.image_attribute | default: 'image' }}"
+      },
+      darkMode: false
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var btn = document.querySelector(".search__toggle");
+    if (!btn) return;
+
+    btn.addEventListener("click", function () {
+      initSiteSearchOnce().catch(function (e) {
+        console.error("[SiteSearch] init failed:", e);
+        window.__FACEREADER_SITESEARCH_INITED__ = false;
+      });
     });
   });
 </script>
