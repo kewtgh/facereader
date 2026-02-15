@@ -91,7 +91,10 @@ for (const p of pages) {
 
 console.log(`Prepared ${records.length} records from ${pages.length} pages`);
 
+console.log("algoliasearch typeof:", typeof algoliasearch);
 const client = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY);
+console.log("client keys:", Object.keys(client));
+console.log("client:", client);
 
 // v5: initIndex 在 client.searchClient 上
 const index = client.searchClient.initIndex(ALGOLIA_INDEX_NAME);
