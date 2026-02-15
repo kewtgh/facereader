@@ -1180,7 +1180,7 @@ body { line-height: 1.7; }
   height: 52px !important;
   line-height: 44px;
   
-  padding: 0 54px 0 54px !important;
+  padding: 0 58px 0 58px !important;
   border-radius: 14px !important;
 
   border: 1px solid rgba(0,0,0,.14) !important;
@@ -1219,7 +1219,7 @@ body { line-height: 1.7; }
 /* 左侧按钮：我们用 ::before 自绘/替换图标 */
 .algolia-searchbox .ais-SearchBox-submit {
   position: absolute;
-  left: 12px;
+  left: 24px;
   top: 50%;
   transform: translateY(-50%);
   width: 24px;
@@ -1257,7 +1257,7 @@ body { line-height: 1.7; }
 /* 右侧清空按钮：更大 + 圆形 + 居中对齐 */
 .algolia-searchbox .ais-SearchBox-reset {
   position: absolute;
-  right: 12px;
+  right: 24px;
   top: 50%;
   transform: translateY(-50%);
   width: 32px;
@@ -1300,4 +1300,26 @@ body { line-height: 1.7; }
 .algolia-searchbox .ais-SearchBox-input:focus {
   border-color: rgba(43, 103, 255, .55) !important;
   box-shadow: 0 0 0 4px rgba(43, 103, 255, .12) !important;
+}
+
+/* ✅ 干掉 satellite-min.css 注入的 form::before 放大镜 */
+.algolia-searchbox form.ais-SearchBox-form::before {
+  content: none !important;
+  background: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+/* ✅ 白色背景框就是它：让它变大并包住 input */
+.algolia-searchbox .ais-SearchBox {
+  background: #fff;
+  padding: 14px;              // 让白底更厚实
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+/* form 不要固定高度（否则容易挤） */
+.algolia-searchbox .ais-SearchBox-form {
+  height: auto !important;
 }
