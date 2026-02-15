@@ -234,6 +234,8 @@ function ensureArray(v) {
     if (/^(tags|categories)(\/|$)/.test(urlPath)) return true;
     if (/^(assets|images|js|css)(\/|$)/.test(urlPath)) return true;
     if (/^(sitemap\.xml|feed\.xml|robots\.txt)$/.test(urlPath)) return true;
+    if (/\/page\d+\/?$/.test(urlPath)) return true;          // /page2/ /page10/
+    if (/\/posts\/page\d+\/?$/.test(urlPath)) return true;   // /posts/page4/
 
     return false;
   }

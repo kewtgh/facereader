@@ -34,6 +34,9 @@ sitemap: false
 
     {% if url_path contains "tags/" %}{% continue %}{% endif %}
     {% if url_path contains "categories/" %}{% continue %}{% endif %}
+    
+    {% if url_path contains "/page" %}{% continue %}{% endif %}
+    {% if url_path contains "page" and url_path contains "posts/" %}{% continue %}{% endif %}
 
     {% unless first %},{% endunless %}
     {% assign first = false %}
