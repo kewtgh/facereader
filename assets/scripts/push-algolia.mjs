@@ -3,6 +3,12 @@ import crypto from "node:crypto";
 import { algoliasearch } from "algoliasearch";
 import YAML from "yaml";
 
+/**
+ * Algolia 数据推送脚本 - 最终修正版
+ * 1. 适配 Algolia v5 SDK 语法
+ * 2. 自动截断超长正文，防止 "Record too big" 错误
+ */
+
 // 1. 环境变量校验
 const {
   ALGOLIA_APP_ID,
@@ -12,7 +18,7 @@ const {
 } = process.env;
 
 if (!ALGOLIA_APP_ID || !ALGOLIA_ADMIN_API_KEY || !ALGOLIA_INDEX_NAME) {
-  console.error("❌ 错误: 缺少必要的环境变量");
+  console.error("❌ 错误: 缺少必要的环境变量 (APP_ID, ADMIN_KEY, INDEX_NAME)");
   process.exit(1);
 }
 
@@ -22,16 +28,20 @@ const inputPath = process.argv[2] || "_site/algolia-records.json";
 function normalizeText(text) {
   return (text || "").replace(/\s+/g, " ").trim();
 }
+
 function stableObjectID(url, idx) {
   const h = crypto.createHash("sha1").update(`${url}#${idx}`).digest("hex").slice(0, 16);
   return `${url}#${idx}-${h}`;
 }
+
 function pickString(v, fallback = "") {
   return typeof v === "string" ? v : fallback;
 }
+
 function ensureArray(v) {
   return Array.isArray(v) ? v : [];
 }
+
 function safePath(p) {
   return String(p || "").replace(/\\/g, "/").replace(/^\/+/, "");
 }
@@ -64,21 +74,26 @@ function shouldExcludeRecord(rec, excludeRegexes) {
   return false;
 }
 
-// 4. 执行推送
+// 4. 执行推送逻辑
 (async function main() {
   try {
-    console.log(`🔍 正在读取: ${inputPath}...`);
+    console.log(`🔍 正在读取数据: ${inputPath}...`);
     const raw = await fs.readFile(inputPath, "utf-8");
     let pages = JSON.parse(raw);
 
+    // 处理并过滤记录
     const records = pages.map(p => {
       const url = pickString(p.url, pickString(p.objectID, ""));
+      const rawContent = normalizeText(pickString(p.content, ""));
+      
       return {
         ...p,
         objectID: stableObjectID(url, 0),
         url,
         title: pickString(p.title, url),
-        content: normalizeText(pickString(p.content, "")),
+        description: pickString(p.description, ""),
+        // ✨ 重点：截断内容至 2000 字符，确保不超 10KB 限制
+        content: rawContent.slice(0, 2000), 
         categories: ensureArray(p.categories),
         tags: ensureArray(p.tags)
       };
@@ -87,22 +102,22 @@ function shouldExcludeRecord(rec, excludeRegexes) {
     const patterns = await loadExcludePatterns();
     const filtered = records.filter(r => !shouldExcludeRecord(r, patterns));
 
-    console.log(`📦 数据处理: 原始 ${records.length} -> 过滤后 ${filtered.length}`);
+    console.log(`📦 数据准备完成: 原始 ${records.length} 条 -> 过滤后 ${filtered.length} 条`);
 
-    // --- Algolia v5 修正后的调用方式 ---
+    // --- Algolia v5 客户端调用 ---
     const client = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY);
+    
+    console.log(`🚀 正在同步至 Algolia 索引: [${ALGOLIA_INDEX_NAME}]...`);
 
-    console.log(`🚀 正在同步至索引: [${ALGOLIA_INDEX_NAME}]...`);
-
-    // 在 v5 中，直接使用 client 上的方法，指定 indexName 即可
+    // 使用 v5 标准的原子替换方法
     await client.replaceAllObjects({
       indexName: ALGOLIA_INDEX_NAME,
       objects: filtered,
     });
 
-    console.log("✅ Algolia 推送成功！");
+    console.log("✅ Algolia 推送成功！内容已安全截断并完成同步。");
   } catch (error) {
-    console.error("❌ 执行失败:");
+    console.error("❌ 推送失败:");
     console.error(error.message);
     process.exit(1);
   }
