@@ -1423,35 +1423,27 @@ body { line-height: 1.7; }
 }
 
 /* =====================================================
- * 加类：score-table，评分表
+ * 加类：score-table，评分表；table-wrap，滚动列表
  * ===================================================== */
 
-/* 移动端表格横向滑动 */
-.score-table .table-wrap {
+/* 让 table 自己能横向滚动 */
+.table-wrap {
+  display: block;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  width: 100%;
 }
 
-/* 第二列表头不换行 */
-.score-table .table-wrap table th:nth-child(2),
-.score-table .table-wrap table td:nth-child(2) {
+/* 第二列不换行 */
+.table-wrap th:nth-child(2),
+.table-wrap td:nth-child(2) {
   white-space: nowrap;
 }
 
-/* 让表格按内容撑开，配合横向滚动 */
-.score-table .table-wrap table {
-  width: max-content; 
-}
-
-/* 表头固定 */
-.score-table .table-wrap thead th {
+/* 固定表头（若有 thead 则更精确） */
+.table-wrap thead th {
   position: sticky;
   top: 0;
-  z-index: 2;              /* 确保压住 tbody */
-  background: #fff;        /* 必须有背景，否则滚动时会透出内容 */
-}
-
-/* 可选：左上角（如果还有固定列时会用到） */
-.score-table .table-wrap thead th:first-child {
-  z-index: 3;
+  z-index: 2;
+  background: #fff;
 }
