@@ -1449,7 +1449,7 @@ body { line-height: 1.7; }
 
   /* 让它成为滚动容器（纵向 + 横向） */
   display: block;
-  max-height: 70vh;      /* 超出就内部滚动，表头 sticky 才明显 */
+  max-height: 70vh;      /* 超出就内部滚动，表头 sticky 才明显，默认移动端 */
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 
@@ -1457,6 +1457,13 @@ body { line-height: 1.7; }
   table-layout: auto;
   border-collapse: separate;
   border-spacing: 0;
+}
+
+/* 桌面端固定像素 */
+@media (min-width: 1024px) {
+  .score-table table.table-wrap {
+    max-height: 720px;
+  }
 }
 
 /* 表头固定（ DOM 里有 thead，用这个最准） */
