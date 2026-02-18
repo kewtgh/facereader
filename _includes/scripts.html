@@ -20,6 +20,8 @@
 
 {% include /comments-providers/scripts.html %}
 
+<script defer src="{{ '/assets/js/table-wrap.js' | relative_url }}"></script>
+
 {% if site.after_footer_scripts %}
   {% for script in site.after_footer_scripts %}
     <script src="{{ script | relative_url }}"></script>

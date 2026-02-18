@@ -1426,55 +1426,56 @@ body { line-height: 1.7; }
  * 加类：score-table，评分表；table-wrap，滚动列表
  * ===================================================== */
 
-/* 让 table 本身变成“滚动容器” */
-.table-wrap{
-  display: block;
-  width: 100%;
-  max-width: 100%;
-
-  /* ✅ 开启横向滚动 */
-  overflow-x: auto;
-
-  /* ✅ 开启纵向滚动（否则表头固定看不出来） */
-  max-height: 100vh;     /* 可改 60vh/500px 等 */
-  overflow-y: auto;
-
+/* 仅在该页面生效（推荐你在 front matter 加 classes: [score-table]） */
+.score-table .table-wrap {
+  /* ✅ 关键：容器内纵向滚动，sticky 才会明显生效 */
+  max-height: 70vh;          /* 你可改 60vh/500px 等 */
+  overflow: auto;            /* x + y */
   -webkit-overflow-scrolling: touch;
+
+  /* ✅ 关键：不要撑满整页，按内容收缩并居中 */
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+
+  /* 可选：视觉 */
+  border-radius: 10px;
 }
 
-/* 关键：让表格宽度按内容撑开，否则永远不溢出 → 就没有横向滚动 */
-.table-wrap{
-  border-collapse: separate; /* sticky 兼容更好 */
+/* 表格本体：不要 width:100% 撑满 */
+.score-table .table-wrap > table {
+  width: auto;               /* ✅ 关键：按内容宽度 */
+  table-layout: auto;
+  border-collapse: separate; /* sticky 更稳一点 */
   border-spacing: 0;
 }
-.table-wrap {
-  /* 有些主题会把 table 设成 width:100% 并强制换行，导致不溢出 */
-}
-.table-wrap {
-  /* table-wrap 本身是 table，这里给它一个最小宽度策略 */
-  min-width: max-content; /* ✅ 让它按内容扩展 */
+
+/* 更紧凑一点（你可按需调小） */
+.score-table .table-wrap th,
+.score-table .table-wrap td {
+  padding: 10px 12px;
+  text-align: center;
 }
 
-/* ✅ 表头固定：不要依赖 thead（Markdown 有时不生成 thead） */
-.table-wrap th{
+/* 第二列不换行（企业名称） */
+.score-table .table-wrap th:nth-child(2),
+.score-table .table-wrap td:nth-child(2) {
+  white-space: nowrap;
+  text-align: left; /* 名称左对齐更舒服，可删 */
+}
+
+/* ✅ sticky 表头：不要依赖 thead（Markdown 有时结构不完全一致），对 th 统一处理 */
+.score-table .table-wrap th {
   position: sticky;
-  top: 0;               /* 若有固定导航栏，改成 64px/72px */
+  top: 0;                     /* 若你有固定导航栏，改为 64px/72px */
   z-index: 5;
-  background: #fff6cc;  /* 的表头底色，看起来一致 */
+  background: #fff2c6;        /* 你表头的底色 */
 }
 
-/* ✅ 第二列不换行（表头 + 内容） */
-.table-wrap th:nth-child(2),
-.table-wrap td:nth-child(2){
-  white-space: nowrap;
+/* 可选：如果数字列太宽，可让数字更紧凑 */
+.score-table .table-wrap td {
+  font-variant-numeric: tabular-nums;
 }
 
-/* 可选：如果希望所有列都不换行以强制产生横向滚动（更像“数据表”） */
-/*
-.table-wrap th,
-.table-wrap td{
-  white-space: nowrap;
-}
-*/
 
 
