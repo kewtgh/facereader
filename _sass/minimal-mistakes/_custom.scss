@@ -1488,5 +1488,15 @@ body { line-height: 1.7; }
   font-variant-numeric: tabular-nums;
 }
 
-
-
+/* =====================================================
+ * Minimal Mistakes: hero overlay 里列表默认不是白色，手动补齐 *
+ * ===================================================== */
+.page__hero--overlay .page__lead li,
+.page__hero--overlay .page__lead ul,
+.page__hero--overlay .page__lead ol {
+  color: #fff;
+}
+.page__hero--overlay .page__lead a {
+  color: #fff;
+  text-decoration: underline;
+}
