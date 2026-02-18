@@ -1426,24 +1426,29 @@ body { line-height: 1.7; }
  * 加类：score-table，评分表；table-wrap，滚动列表
  * ===================================================== */
 
-/* 让 table 自己能横向滚动 */
+/* 让容器同时支持横向 + 纵向滚动（纵向滚动是 sticky 能“看见效果”的关键） */
 .table-wrap {
-  display: block;
-  overflow-x: auto;
+  max-height: 70vh;                 /* 你可调：60vh/80vh/500px */
+  overflow: auto;                   /* 同时 x/y */
   -webkit-overflow-scrolling: touch;
-  width: 100%;
+}
+
+/* 一些浏览器在 border-collapse: collapse 时 sticky 表头会抽风 */
+.table-wrap table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* ✅ 不依赖 thead：只要是 th 就当表头 sticky（Markdown 表格通常用 th 渲染第一行） */
+.table-wrap table th {
+  position: sticky;
+  top: 0;                           /* 如果你有固定导航栏，top 改成导航高度，比如 64px */
+  z-index: 5;
+  background: #fff;                 /* 必须有背景，否则会透出内容 */
 }
 
 /* 第二列不换行 */
-.table-wrap th:nth-child(2),
-.table-wrap td:nth-child(2) {
+.table-wrap table th:nth-child(2),
+.table-wrap table td:nth-child(2) {
   white-space: nowrap;
-}
-
-/* 固定表头（若有 thead 则更精确） */
-.table-wrap thead th {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  background: #fff;
 }
