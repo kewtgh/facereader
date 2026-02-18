@@ -1426,36 +1426,55 @@ body { line-height: 1.7; }
  * 加类：score-table，评分表；table-wrap，滚动列表
  * ===================================================== */
 
-/* 让 table 自己变成可横向滚动的块 */
-.table-wrap {
+/* 让 table 本身变成“滚动容器” */
+.table-wrap{
   display: block;
   width: 100%;
+  max-width: 100%;
+
+  /* ✅ 开启横向滚动 */
   overflow-x: auto;
+
+  /* ✅ 开启纵向滚动（否则表头固定看不出来） */
+  max-height: 100vh;     /* 可改 60vh/500px 等 */
+  overflow-y: auto;
+
   -webkit-overflow-scrolling: touch;
 }
 
-/* 第二列不换行 */
+/* 关键：让表格宽度按内容撑开，否则永远不溢出 → 就没有横向滚动 */
+.table-wrap{
+  border-collapse: separate; /* sticky 兼容更好 */
+  border-spacing: 0;
+}
+.table-wrap {
+  /* 有些主题会把 table 设成 width:100% 并强制换行，导致不溢出 */
+}
+.table-wrap {
+  /* table-wrap 本身是 table，这里给它一个最小宽度策略 */
+  min-width: max-content; /* ✅ 让它按内容扩展 */
+}
+
+/* ✅ 表头固定：不要依赖 thead（Markdown 有时不生成 thead） */
+.table-wrap th{
+  position: sticky;
+  top: 0;               /* 若有固定导航栏，改成 64px/72px */
+  z-index: 5;
+  background: #fff6cc;  /* 的表头底色，看起来一致 */
+}
+
+/* ✅ 第二列不换行（表头 + 内容） */
 .table-wrap th:nth-child(2),
-.table-wrap td:nth-child(2) {
+.table-wrap td:nth-child(2){
   white-space: nowrap;
 }
 
-/* ✅ 固定表头：给 th sticky（不依赖 thead，有的 Markdown 不生成 thead） */
-.table-wrap {
-  max-height: 70vh;  /* 可调 */
-  overflow: auto;    /* x+y */
+/* 可选：如果希望所有列都不换行以强制产生横向滚动（更像“数据表”） */
+/*
+.table-wrap th,
+.table-wrap td{
+  white-space: nowrap;
 }
+*/
 
-.table-wrap th {
-  position: sticky;
-  top: 0;            /* 若有固定导航栏，改成 64px/72px 等 */
-  z-index: 5;
-  background: #fff;
-}
-
-/* 可选：有些主题 collapse 会影响 sticky */
-.table-wrap {
-  border-collapse: separate;
-  border-spacing: 0;
-}
 
