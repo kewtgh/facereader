@@ -47,6 +47,8 @@ sitemap: false
   <button onclick="resetFilter()" class="btn btn--small btn--light-outline tag-clear-btn">
     {{ site.data.ui-text[site.locale].tag_clear }}
   </button>
+  
+  <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
 </div>
 
 <!-- 文章列表（使用主题原生样式） -->
