@@ -45,7 +45,7 @@ last_modified_at: 2026-02-20T11:35:52-05:00
 
 ## 二、驿道
 
-<figure class="fr-figure"><img src="驿站.jpg" alt="驿站" /></figure>
+<figure class="fr-figure"><img src="https://kewtgh.github.io/PicSunflowers/img/2026/驿站.jpg" alt="驿站" /></figure>
 
 零陵县往北，有条驿道，连着州府与祁阳县城。驿站里有个驿夫，姓刘，小名阿成，四十来岁，背不驼，腿不瘸，靠跑腿送文书吃饭。
 
