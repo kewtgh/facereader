@@ -4,6 +4,7 @@ title: "条款与隐私政策 / Terms & Privacy Policy"
 last_modified_at: 2026-02-25T00:00:00-08:00
 toc: true
 description: 本网站的条款、隐私政策与第三方服务说明（Google Analytics、Disqus、AdSense 计划）。
+classes: wide
 ---
 
 > 本页面为中英文双语版本。若两种语言存在差异，以中文版本为准。  
