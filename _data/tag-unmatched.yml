@@ -77,6 +77,8 @@ unmatched:
     count: 1
   - tag: "2009年"
     count: 1
+  - tag: "阿里·哈梅内伊之死"
+    count: 1
   - tag: "哀其不幸"
     count: 1
   - tag: "埃德·胡德"
@@ -117,6 +119,10 @@ unmatched:
     count: 1
   - tag: "地形篇"
     count: 1
+  - tag: "独裁者"
+    count: 1
+  - tag: "独裁政体"
+    count: 1
   - tag: "独断专行"
     count: 1
   - tag: "读万卷书"
@@ -150,6 +156,10 @@ unmatched:
   - tag: "赫茨伯格"
     count: 1
   - tag: "火攻篇"
+    count: 1
+  - tag: "火药桶"
+    count: 1
+  - tag: "霍尔木兹海峡"
     count: 1
   - tag: "嘉庆元年"
     count: 1
@@ -221,6 +231,8 @@ unmatched:
     count: 1
   - tag: "美军"
     count: 1
+  - tag: "美以轰炸伊朗"
+    count: 1
   - tag: "莫里斯·古斯塔夫·甘末林"
     count: 1
   - tag: "谋攻篇"
@@ -230,6 +242,8 @@ unmatched:
   - tag: "目光短浅"
     count: 1
   - tag: "拿破仑三世"
+    count: 1
+  - tag: "能源波动"
     count: 1
   - tag: "怒其不争"
     count: 1
@@ -313,6 +327,8 @@ unmatched:
     count: 1
   - tag: "业务能力"
     count: 1
+  - tag: "伊朗政权"
+    count: 1
   - tag: "以德报怨"
     count: 1
   - tag: "驿卒刘阿成"
@@ -342,6 +358,8 @@ unmatched:
   - tag: "制度"
     count: 1
   - tag: "治大国若烹小鲜"
+    count: 1
+  - tag: "中东石油供应"
     count: 1
   - tag: "朱珑"
     count: 1
