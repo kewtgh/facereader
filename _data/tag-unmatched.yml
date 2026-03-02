@@ -119,8 +119,6 @@ unmatched:
     count: 1
   - tag: "地形篇"
     count: 1
-  - tag: "独裁者"
-    count: 1
   - tag: "独裁政体"
     count: 1
   - tag: "独断专行"
@@ -158,8 +156,6 @@ unmatched:
   - tag: "火攻篇"
     count: 1
   - tag: "火药桶"
-    count: 1
-  - tag: "霍尔木兹海峡"
     count: 1
   - tag: "嘉庆元年"
     count: 1
