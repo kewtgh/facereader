@@ -1529,101 +1529,57 @@ body { line-height: 1.7; }
 
 /* =========================================================
    Nested Ordered List Markers (L2 / L3 / L4) — REPLACE BLOCK
-   L1: default 1. 2. 3. (no change)
+   L1: 1. 2. 3. (no change)
    L2: 1) 2) 3)
    L3: A. B. C.
    L4: a. b. c.
-   Fixes:
-   - No "1. -> 9." jumping (use counter(list-item))
-   - No marker being covered by text
-   - Avoid <li><p>...</p></li> causing line breaks
+   Notes:
+   - No @supports selector(...)
+   - Fixes "1) wraps to its own line" by using ::marker
+   - Handles <li><p>...</p></li> rendering in Jekyll
    ========================================================= */
 
-/* 如果你的主题会把 li 内容包成 <p>，这里避免 “编号一行、文字下一行” */
+/* 避免 <li><p>...</p></li> 让编号和正文分行（之前 L2 主要就是这里触发） */
 .page__content ol li > p:first-child {
   display: inline;
   margin: 0;
 }
 
-/* 嵌套层级的统一缩进（防止 marker 和文字打架） */
+/* 嵌套 ol 的统一缩进（防止 marker 被内容挤/盖） */
 .page__content ol ol,
 .page__content ol ol ol,
 .page__content ol ol ol ol {
-  padding-left: 1.9em;         /* 可在 1.6 ~ 2.2em 调整 */
   list-style-position: outside;
+  padding-left: 2.2em;  /* 可按页面观感微调：1.8~2.6em */
+  margin-left: 0;
 }
 
-/* --- 主方案：用 ::marker + counter(list-item)（最稳，不串号） --- */
-@supports selector(::marker) {
-
-  /* L2：1) 2) 3) */
-  .page__content ol ol > li::marker {
-    content: counter(list-item) ") ";
-    font-variant-numeric: tabular-nums;
-  }
-
-  /* L3：A. B. C. */
-  .page__content ol ol ol > li::marker {
-    content: counter(list-item, upper-alpha) ". ";
-  }
-
-  /* L4：a. b. c. */
-  .page__content ol ol ol ol > li::marker {
-    content: counter(list-item, lower-alpha) ". ";
-  }
+/* ---------------- L2：1) 2) 3) ---------------- */
+.page__content ol ol {
+  list-style-type: decimal; /* 确保是数字序 */
 }
 
-/* --- 兜底方案：极少数环境不支持 ::marker content，则用 ::before --- */
-@supports not selector(::marker) {
+.page__content ol ol > li::marker {
+  content: counter(list-item) ") ";
+  font-variant-numeric: tabular-nums;
+}
 
-  /* L2 fallback */
-  .page__content ol ol {
-    list-style: none;
-    counter-reset: mm-l2;
-  }
-  .page__content ol ol > li {
-    counter-increment: mm-l2;
-  }
-  .page__content ol ol > li::before {
-    content: counter(mm-l2) ") ";
-    display: inline-block;
-    width: 2em;
-    margin-left: -2em;
-    text-align: right;
-    font-variant-numeric: tabular-nums;
-  }
+/* ---------------- L3：A. B. C. ---------------- */
+.page__content ol ol ol {
+  list-style-type: upper-alpha;
+}
 
-  /* L3 fallback */
-  .page__content ol ol ol {
-    list-style: none;
-    counter-reset: mm-l3;
-  }
-  .page__content ol ol ol > li {
-    counter-increment: mm-l3;
-  }
-  .page__content ol ol ol > li::before {
-    content: counter(mm-l3, upper-alpha) ". ";
-    display: inline-block;
-    width: 2em;
-    margin-left: -2em;
-    text-align: right;
-  }
+.page__content ol ol ol > li::marker {
+  content: counter(list-item, upper-alpha) ". ";
+}
 
-  /* L4 fallback */
-  .page__content ol ol ol ol {
-    list-style: none;
-    counter-reset: mm-l4;
-  }
-  .page__content ol ol ol ol > li {
-    counter-increment: mm-l4;
-  }
-  .page__content ol ol ol ol > li::before {
-    content: counter(mm-l4, lower-alpha) ". ";
-    display: inline-block;
-    width: 2em;
-    margin-left: -2em;
-    text-align: right;
-  }
+/* ---------------- L4：a. b. c. ---------------- */
+.page__content ol ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.page__content ol ol ol ol > li::marker {
+  content: counter(list-item, lower-alpha) ". ";
 }
 
 /* ================================
