@@ -1506,3 +1506,68 @@ body { line-height: 1.7; }
 .page__hero--overlay .page__lead li {
   margin: 0.2rem 0;
 }
+
+/* =========================================
+   Ordered List markers: level 1/2/3 styling
+   L1: 1. 2. 3.
+   L2: 1) 2) 3)
+   L3: A. B. C.
+   ========================================= */
+
+/* 一级：默认 decimal + 点 */
+.page__content ol,
+.page__content ol > li > ol,
+.page__content ol > li > ol > li > ol {
+  list-style-position: outside;
+  padding-left: 1.5em; /* 视主题默认可微调 */
+}
+
+/* L1 */
+.page__content ol {
+  list-style-type: decimal;
+}
+
+/* L2：用 marker 自定义 "1)" */
+.page__content ol ol {
+  list-style: none;        /* 关闭默认 marker */
+  counter-reset: l2;       /* 二级计数器 */
+}
+
+.page__content ol ol > li {
+  counter-increment: l2;
+}
+
+.page__content ol ol > li::marker {
+  content: ""; /* 某些浏览器需要清空 marker（保险） */
+}
+
+/* 用 ::before 造 marker（跨浏览器更稳） */
+.page__content ol ol > li::before {
+  content: counter(l2) ") ";
+  font-variant-numeric: tabular-nums;
+  margin-left: -1.5em;  /* 和 padding-left 对齐 */
+  width: 1.5em;
+  display: inline-block;
+}
+
+/* L3：大写字母 + 点 */
+.page__content ol ol ol {
+  list-style: none;
+  counter-reset: l3;     /* 三级计数器 */
+}
+
+.page__content ol ol ol > li {
+  counter-increment: l3;
+}
+
+.page__content ol ol ol > li::before {
+  content: counter(l3, upper-alpha) ". ";
+  margin-left: -1.5em;
+  width: 1.5em;
+  display: inline-block;
+}
+
+/* 如果你还有四级/五级，可以继续加：
+   - l4: lower-roman
+   - l5: lower-alpha
+*/
