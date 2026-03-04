@@ -1527,47 +1527,66 @@ body { line-height: 1.7; }
   list-style-type: decimal;
 }
 
-/* L2：用 marker 自定义 "1)" */
+/* L2：1) 2) 3) —— 改为绝对定位，避免 <p> 换行把正文挤下去 */
 .page__content ol ol {
-  list-style: none;        /* 关闭默认 marker */
-  counter-reset: l2;       /* 二级计数器 */
+  list-style: none;
+  counter-reset: l2;
+  padding-left: 1.8em; /* 给编号预留空间，可调 */
 }
 
 .page__content ol ol > li {
+  position: relative;
   counter-increment: l2;
 }
 
-.page__content ol ol > li::marker {
-  content: ""; /* 某些浏览器需要清空 marker（保险） */
-}
-
-/* 用 ::before 造 marker（跨浏览器更稳） */
 .page__content ol ol > li::before {
   content: counter(l2) ") ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.6em;       /* 编号占位宽，可调 */
+  text-align: right;
   font-variant-numeric: tabular-nums;
-  margin-left: -1.5em;  /* 和 padding-left 对齐 */
-  width: 1.5em;
-  display: inline-block;
 }
 
-/* L3：大写字母 + 点 */
+/* L3：A. B. C. —— 同理 */
 .page__content ol ol ol {
   list-style: none;
-  counter-reset: l3;     /* 三级计数器 */
+  counter-reset: l3;
+  padding-left: 1.8em;
 }
 
 .page__content ol ol ol > li {
+  position: relative;
   counter-increment: l3;
 }
 
 .page__content ol ol ol > li::before {
   content: counter(l3, upper-alpha) ". ";
-  margin-left: -1.5em;
-  width: 1.5em;
-  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.6em;
+  text-align: right;
 }
 
-/* 如果你还有四级/五级，可以继续加：
-   - l4: lower-roman
-   - l5: lower-alpha
-*/
+/* L4：a. b. c. */
+.page__content ol ol ol ol {
+  list-style: none;
+  counter-reset: l4;
+  padding-left: 1.8em; /* 跟 L2/L3 一致即可，可调 */
+}
+
+.page__content ol ol ol ol > li {
+  position: relative;
+  counter-increment: l4;
+}
+
+.page__content ol ol ol ol > li::before {
+  content: counter(l4, lower-alpha) ". ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.6em;       /* 跟 L2/L3 一致即可，可调 */
+  text-align: right;
+}
