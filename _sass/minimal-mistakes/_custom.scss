@@ -1527,66 +1527,173 @@ body { line-height: 1.7; }
   list-style-type: decimal;
 }
 
-/* L2：1) 2) 3) —— 改为绝对定位，避免 <p> 换行把正文挤下去 */
-.page__content ol ol {
-  list-style: none;
-  counter-reset: l2;
-  padding-left: 1.8em; /* 给编号预留空间，可调 */
+/* =========================================================
+   Nested Ordered List Markers (L2 / L3 / L4) — REPLACE BLOCK
+   L1: default 1. 2. 3. (no change)
+   L2: 1) 2) 3)
+   L3: A. B. C.
+   L4: a. b. c.
+   Fixes:
+   - No "1. -> 9." jumping (use counter(list-item))
+   - No marker being covered by text
+   - Avoid <li><p>...</p></li> causing line breaks
+   ========================================================= */
+
+/* 如果你的主题会把 li 内容包成 <p>，这里避免 “编号一行、文字下一行” */
+.page__content ol li > p:first-child {
+  display: inline;
+  margin: 0;
 }
 
-.page__content ol ol > li {
-  position: relative;
-  counter-increment: l2;
-}
-
-.page__content ol ol > li::before {
-  content: counter(l2) ") ";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 1.6em;       /* 编号占位宽，可调 */
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-/* L3：A. B. C. —— 同理 */
-.page__content ol ol ol {
-  list-style: none;
-  counter-reset: l3;
-  padding-left: 1.8em;
-}
-
-.page__content ol ol ol > li {
-  position: relative;
-  counter-increment: l3;
-}
-
-.page__content ol ol ol > li::before {
-  content: counter(l3, upper-alpha) ". ";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 1.6em;
-  text-align: right;
-}
-
-/* L4：a. b. c. */
+/* 嵌套层级的统一缩进（防止 marker 和文字打架） */
+.page__content ol ol,
+.page__content ol ol ol,
 .page__content ol ol ol ol {
-  list-style: none;
-  counter-reset: l4;
-  padding-left: 1.8em; /* 跟 L2/L3 一致即可，可调 */
+  padding-left: 1.9em;         /* 可在 1.6 ~ 2.2em 调整 */
+  list-style-position: outside;
 }
 
-.page__content ol ol ol ol > li {
-  position: relative;
-  counter-increment: l4;
+/* --- 主方案：用 ::marker + counter(list-item)（最稳，不串号） --- */
+@supports selector(::marker) {
+
+  /* L2：1) 2) 3) */
+  .page__content ol ol > li::marker {
+    content: counter(list-item) ") ";
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* L3：A. B. C. */
+  .page__content ol ol ol > li::marker {
+    content: counter(list-item, upper-alpha) ". ";
+  }
+
+  /* L4：a. b. c. */
+  .page__content ol ol ol ol > li::marker {
+    content: counter(list-item, lower-alpha) ". ";
+  }
 }
 
-.page__content ol ol ol ol > li::before {
-  content: counter(l4, lower-alpha) ". ";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 1.6em;       /* 跟 L2/L3 一致即可，可调 */
-  text-align: right;
+/* --- 兜底方案：极少数环境不支持 ::marker content，则用 ::before --- */
+@supports not selector(::marker) {
+
+  /* L2 fallback */
+  .page__content ol ol {
+    list-style: none;
+    counter-reset: mm-l2;
+  }
+  .page__content ol ol > li {
+    counter-increment: mm-l2;
+  }
+  .page__content ol ol > li::before {
+    content: counter(mm-l2) ") ";
+    display: inline-block;
+    width: 2em;
+    margin-left: -2em;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* L3 fallback */
+  .page__content ol ol ol {
+    list-style: none;
+    counter-reset: mm-l3;
+  }
+  .page__content ol ol ol > li {
+    counter-increment: mm-l3;
+  }
+  .page__content ol ol ol > li::before {
+    content: counter(mm-l3, upper-alpha) ". ";
+    display: inline-block;
+    width: 2em;
+    margin-left: -2em;
+    text-align: right;
+  }
+
+  /* L4 fallback */
+  .page__content ol ol ol ol {
+    list-style: none;
+    counter-reset: mm-l4;
+  }
+  .page__content ol ol ol ol > li {
+    counter-increment: mm-l4;
+  }
+  .page__content ol ol ol ol > li::before {
+    content: counter(mm-l4, lower-alpha) ". ";
+    display: inline-block;
+    width: 2em;
+    margin-left: -2em;
+    text-align: right;
+  }
+}
+
+/* ================================
+   Pre / Code block polish (Minimal Mistakes + Rouge)
+   ================================ */
+
+/* 行内 code（不影响代码块） */
+.page__content :not(pre) > code {
+  background: rgba(0,0,0,.06);
+  border: 1px solid rgba(0,0,0,.08);
+  padding: .12em .35em;
+  border-radius: .35em;
+  font-size: .92em;
+}
+
+/* 代码块容器（Rouge） */
+.page__content div.highlighter-rouge,
+.page__content figure.highlight,
+.page__content .highlight {
+  margin: 1rem 0 1.25rem;
+}
+
+/* 代码块本体 */
+.page__content pre,
+.page__content pre.highlight,
+.page__content .highlight pre {
+  background: #0f172a;          /* 深色更耐看（也可换成 #111827） */
+  color: #e5e7eb;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  overflow-x: auto;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, .12);
+}
+
+/* 让 code 不再继承怪异背景（避免“黄块里套黄块”） */
+.page__content pre code,
+.page__content .highlight pre code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: 0 !important;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* 代码行太长时更好看：滚动条（可选） */
+.page__content pre::-webkit-scrollbar {
+  height: 10px;
+}
+.page__content pre::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,.18);
+  border-radius: 999px;
+}
+.page__content pre::-webkit-scrollbar-track {
+  background: rgba(255,255,255,.06);
+}
+
+/* 如果代码块带行号（Rouge lineno），顺手美化一下（可选） */
+.page__content .rouge-table {
+  margin: 0;
+  border: 0;
+}
+.page__content .rouge-gutter {
+  user-select: none;
+  opacity: .6;
+  padding-right: .8rem;
+  border-right: 1px solid rgba(255,255,255,.10);
+}
+.page__content .rouge-code {
+  padding-left: .8rem;
 }
