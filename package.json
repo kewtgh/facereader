@@ -1,8 +1,8 @@
 {
   "name": "minimal-mistakes",
   "private": true,
-  "version": "4.27.3",
-  "description": "Minimal Mistakes 2 column Jekyll theme.",
+  "version": "4.28.0",
+  "description": "FaceReader custom site based on Minimal Mistakes 4.28.0, heavily refactored for Witbacon.",
   "repository": {
     "type": "git",
     "url": "https://github.com/mmistakes/minimal-mistakes.git"

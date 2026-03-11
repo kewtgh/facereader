@@ -178,38 +178,44 @@ feature_row:
       {%- assign pick_url_encoded = '' -%}
       {%- for _p in _parts -%}
         {%- if _p == '' -%}{%- continue -%}{%- endif -%}
-        {%- assign pick_url_encoded = pick_url_encoded | append: '/' | append: (_p | uri_escape) -%}
+        {%- assign _p_escaped = _p | uri_escape -%}
+        {%- assign pick_url_encoded = pick_url_encoded | append: '/' | append: _p_escaped -%}
       {%- endfor -%}
 
       {%- assign _parts2 = pick_url_nobase | split: '/' -%}
       {%- assign pick_url_nobase_encoded = '' -%}
       {%- for _p2 in _parts2 -%}
         {%- if _p2 == '' -%}{%- continue -%}{%- endif -%}
-        {%- assign pick_url_nobase_encoded = pick_url_nobase_encoded | append: '/' | append: (_p2 | uri_escape) -%}
+        {%- assign _p2_escaped = _p2 | uri_escape -%}
+        {%- assign pick_url_nobase_encoded = pick_url_nobase_encoded | append: '/' | append: _p2_escaped -%}
       {%- endfor -%}
 
       {%- comment -%} trailing slash variants (slice-based) {%- endcomment -%}
       {%- assign pick_raw_slash = pick_url_raw -%}
-      {%- unless pick_raw_slash | slice: -1, 1 == '/' -%}
+      {%- assign pick_raw_last = pick_raw_slash | slice: -1, 1 -%}
+      {%- unless pick_raw_last == '/' -%}
         {%- assign pick_raw_slash = pick_raw_slash | append: '/' -%}
       {%- endunless -%}
 
       {%- assign pick_enc_slash = pick_url_encoded -%}
-      {%- unless pick_enc_slash | slice: -1, 1 == '/' -%}
+      {%- assign pick_enc_last = pick_enc_slash | slice: -1, 1 -%}
+      {%- unless pick_enc_last == '/' -%}
         {%- assign pick_enc_slash = pick_enc_slash | append: '/' -%}
       {%- endunless -%}
 
       {%- assign pick_nb_slash = pick_url_nobase -%}
-      {%- unless pick_nb_slash | slice: -1, 1 == '/' -%}
+      {%- assign pick_nb_last = pick_nb_slash | slice: -1, 1 -%}
+      {%- unless pick_nb_last == '/' -%}
         {%- assign pick_nb_slash = pick_nb_slash | append: '/' -%}
       {%- endunless -%}
 
       {%- assign pick_nb_enc_slash = pick_url_nobase_encoded -%}
-      {%- unless pick_nb_enc_slash | slice: -1, 1 == '/' -%}
+      {%- assign pick_nb_enc_last = pick_nb_enc_slash | slice: -1, 1 -%}
+      {%- unless pick_nb_enc_last == '/' -%}
         {%- assign pick_nb_enc_slash = pick_nb_enc_slash | append: '/' -%}
       {%- endunless -%}
 
-      {%- assign pick_doc = nil -%}
+      {%- assign pick_doc = '' -%}
 
       {%- comment -%}
         Match helper:
@@ -228,7 +234,7 @@ feature_row:
       {%- endfor -%}
 
       {%- comment -%} 2) documents {%- endcomment -%}
-      {%- if pick_doc == nil -%}
+      {%- if pick_doc == blank -%}
         {%- for d in site.documents -%}
           {%- assign u1 = d.url -%}
           {%- assign u2 = d.url | relative_url -%}
@@ -241,7 +247,7 @@ feature_row:
       {%- endif -%}
 
       {%- comment -%} 3) pages {%- endcomment -%}
-      {%- if pick_doc == nil -%}
+      {%- if pick_doc == blank -%}
         {%- for p in site.pages -%}
           {%- assign u1 = p.url -%}
           {%- assign u2 = p.url | relative_url -%}
@@ -254,7 +260,7 @@ feature_row:
       {%- endif -%}
 
       {%- comment -%} teaser priority {%- endcomment -%}
-      {%- assign teaser = nil -%}
+      {%- assign teaser = '' -%}
       {%- if pick_doc -%}
         {%- assign teaser = pick_doc.header.teaser
           | default: pick_doc.teaser

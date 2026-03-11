@@ -5,8 +5,6 @@ source "https://rubygems.org"
 
 group :jekyll_plugins do
   gem "github-pages"
-  gem "jekyll-algolia"
-  gem "jekyll-archives"
 end
 
 gem "csv"
@@ -24,6 +22,5 @@ gem "wdm", ">= 0.1.1", platforms: :windows
 # Ruby 里这两个一般是标准库/默认库，不建议写在 Gemfile（除非确实遇到缺失报错）
 # gem "fiddle"
 
-# faraday-retry：只有确实遇到 Faraday 警告且来自某个插件时再加
-# 否则建议删掉，交给 github-pages 锁定的依赖来管理
+# GitHub Pages 当前依赖 Faraday v2，需要显式补上 retry middleware
 gem "faraday-retry", "~> 2.2"

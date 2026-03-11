@@ -1,5 +1,6 @@
 /*!
- * Minimal Mistakes Jekyll Theme 4.26.1 by Michael Rose
+ * Based on Minimal Mistakes Jekyll Theme 4.28.0 by Michael Rose
+ * FaceReader custom edition, heavily refactored for Witbacon
  * Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
  * Free for personal and commercial use under the MIT license
  * https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE

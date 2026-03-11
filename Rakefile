@@ -115,7 +115,8 @@ file "docs/_docs/18-history.md" => "CHANGELOG.md" do |t|
 end
 
 COPYRIGHT_LINES = [
-  "Minimal Mistakes Jekyll Theme #{package_json["version"]} by Michael Rose",
+  "Based on Minimal Mistakes Jekyll Theme #{package_json["version"]} by Michael Rose",
+  "FaceReader custom edition, heavily refactored for Witbacon",
   "Copyright 2013-#{Time.now.year} Michael Rose - mademistakes.com | @mmistakes",
   "Free for personal and commercial use under the MIT license",
   "https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE",
@@ -181,24 +182,12 @@ task :watch_js do
   end
 end
 
-task :version => ["docs/_data/theme.yml", "README.md", "docs/_pages/home.md"]
+task :version => ["_data/theme.yml"]
 
-file "docs/_data/theme.yml" => "package.json" do |t|
+file "_data/theme.yml" => "package.json" do |t|
   theme = { "version" => package_json["version"] }
   File.open(t.name, "w") do |f|
     f.puts "# for use with in-page templates"
     f.puts theme.to_yaml
   end
-end
-
-file "README.md" => "package.json" do |t|
-  content = File.read(t.name)
-  content = content.gsub(/(mmistakes\/minimal-mistakes@)[\d.]+/, '\1' + package_json["version"])
-  File.write(t.name, content)
-end
-
-file "docs/_pages/home.md" => "package.json" do |t|
-  content = File.read(t.name)
-  content = content.gsub(/(\breleases\/tag\/|Latest release v)[\d.]+/, '\1' + package_json["version"])
-  File.write(t.name, content)
 end

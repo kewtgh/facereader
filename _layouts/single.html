@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{%- assign locale = page.locale | default: layout.locale | default: locale %}
+{%- assign locale = page.locale | default: layout.locale | default: site.locale | default: "" %}
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html locale=locale %}
