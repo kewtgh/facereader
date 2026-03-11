@@ -107,6 +107,7 @@ facebook:
   app_id                 :
   publisher              :
 og_image                 : # Open Graph/Twitter default site image
+og_image_alt             : # Alt text for Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -129,9 +130,10 @@ author:
   bio              : "爱看点书，略知人性，稍通管理，心存正义。"
 #  location         : ""
   email            : "facereader@witbacon.com"
+  # fediverse      : "@you@instance.social"  # used for fediverse:creator meta tag
   links:
     - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
+      icon: "fas fa-fw fa-square-envelope"
       # url: "facereader@witbacon.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
@@ -140,7 +142,7 @@ author:
       icon: "fab fa-fw fa-square-x-twitter"
       # url: "https://x.com/"
     - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
+      icon: "fab fa-fw fa-square-facebook"
       url: "https://www.facebook.com/profile.php?id=100088693703792"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -156,7 +158,7 @@ footer:
       icon: "fab fa-fw fa-square-x-twitter"
       url: "https://x.com/"
     - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
+      icon: "fab fa-fw fa-square-facebook"
       url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -305,6 +307,7 @@ category_archive:
 tag_archive:
   type: liquid # liquid (default)
   path: /tags/
+# show_taxonomy: false  # set to false to hide tag/category lists on posts
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:

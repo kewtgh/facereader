@@ -1,4 +1,5 @@
-{% assign t = site.data.ui-text[site.locale] %}
+{% assign locale = include.locale | default: site.locale %}
+{% assign t = site.data.ui-text[locale] %}
 
 {% capture overlay_img_path %}{{ page.header.overlay_image | relative_url }}{% endcapture %}
 
@@ -61,7 +62,7 @@
         这里输出日期 / 阅读时间等 meta，继续用默认的 page__meta，
         不要动它的 class，这样布局就走主题自带样式（横排）。
       {%- endcomment -%}
-      {% include page__meta.html %}
+      {% include page__meta.html locale=locale %}
 
       {%- if page.header.actions %}
         <p class="page__hero-actions">

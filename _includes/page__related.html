@@ -1,3 +1,4 @@
+{% assign locale = include.locale | default: site.locale %}
 {%- comment -%}
   智能相关文章推荐（兼容 GitHub Pages + Jekyll 3.9）
   优先级：
@@ -79,7 +80,7 @@
 {%- if related.size > 0 -%}
 <div class="page__related">
   <h2 class="page__related-title">
-    {{ site.data.ui-text[site.locale].related_label }}
+    {{ site.data.ui-text[locale].related_label }}
   </h2>
 
   <div class="grid__wrapper">

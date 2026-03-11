@@ -1,3 +1,4 @@
+{% assign locale = include.locale | default: site.locale %}
 {%- comment -%}
   本地化版 feature_row：
   - 支持 title_key / excerpt_key / btn_label_key
@@ -5,7 +6,7 @@
   这样旧页面不需要改 front matter 也能正常工作。
 {%- endcomment -%}
 
-{%- assign t = site.data.ui-text[site.locale] -%}
+{%- assign t = site.data.ui-text[locale] -%}
 
 {%- if include.id -%}
   {%- assign feature_row = page[include.id] -%}

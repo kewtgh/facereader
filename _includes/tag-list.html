@@ -1,3 +1,4 @@
+{% assign locale = include.locale | default: locale %}
 {% comment %}
   _includes/tag-list.html
 
@@ -18,7 +19,7 @@
   <p class="page__taxonomy">
     <strong>
       <i class="fas fa-fw fa-tags" aria-hidden="true"></i>
-      {{ site.data.ui-text[site.locale].tags_label | default: "Tags:" }}
+      {{ site.data.ui-text[locale].tags_label | default: "Tags:" }}
     </strong>
 
     <span itemprop="keywords">

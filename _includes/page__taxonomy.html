@@ -1,7 +1,11 @@
-{% if page.tags and page.tags.size > 0 %}
-  {% include tag-list.html %}
-{% endif %}
+{% assign locale = include.locale | default: site.locale %}
 
-{% if page.categories and page.categories.size > 0 %}
-  {% include category-list.html %}
-{% endif %}
+{% unless site.show_taxonomy == false %}
+  {% if site.tag_archive.type and page.tags[0] %}
+    {% include tag-list.html locale=locale %}
+  {% endif %}
+
+  {% if site.category_archive.type and page.categories[0] %}
+    {% include category-list.html locale=locale %}
+  {% endif %}
+{% endunless %}

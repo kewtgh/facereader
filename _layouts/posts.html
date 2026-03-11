@@ -4,6 +4,7 @@ sitemap: false
 description: 全站文章列表（按时间）：企业观察、识人方法与管理经典解读。
 title: 按年份查看全部文章
 ---
+{%- assign locale = page.locale | default: layout.locale | default: locale %}
 
 {{ content }}
 
@@ -25,9 +26,9 @@ title: 按年份查看全部文章
     <h2 class="archive__subtitle">{{ year.name }}</h2>
     <div class="entries-{{ entries_layout }}">
       {% for post in year.items %}
-        {% include archive-single.html type=entries_layout %}
+        {% include archive-single.html locale=locale type=entries_layout %}
       {% endfor %}
     </div>
-    <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+    <a href="#page-title" class="back-to-top">{{ site.data.ui-text[locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
   </section>
 {% endfor %}

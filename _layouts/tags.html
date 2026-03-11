@@ -2,6 +2,7 @@
 layout: archive
 sitemap: false
 ---
+{%- assign locale = page.locale | default: layout.locale | default: site.locale %}
 
 {{ content }}
 
@@ -56,7 +57,7 @@ sitemap: false
   {% for post in site.posts %}
     <div class="tag-post-item"
          data-tags="{{ post.tags | join: ',' }}">
-      {% include archive-single.html %}
+      {% include archive-single.html locale=locale %}
     </div>
   {% endfor %}
 </div>
