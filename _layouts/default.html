@@ -3,7 +3,7 @@
 
 <!doctype html>
 
-{%- assign locale = page.locale | default: layout.locale | default: locale %}
+{%- assign locale = page.locale | default: layout.locale | default: site.locale | default: "" %}
 {% include copyright.html locale=locale %}
 <html lang="{{ locale | slice: 0,2 | default: "en" }}" class="no-js">
   <head>

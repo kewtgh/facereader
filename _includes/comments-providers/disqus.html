@@ -1,13 +1,23 @@
 {% if site.comments.disqus.shortname %}
   <script>
     var disqus_config = function () {
-      this.page.url = "{{ page.url | absolute_url }}";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "{{ page.id }}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "{{ page.url | absolute_url }}";
+      this.page.identifier = "{{ page.id | default: page.url }}";
+      this.page.title = {{ page.title | default: site.title | jsonify }};
     };
-    (function() { /* DON'T EDIT BELOW THIS LINE */
-      var d = document, s = d.createElement('script');
+
+    (function() {
+      var d = document;
+      var thread = d.getElementById('disqus_thread');
+
+      if (!thread || thread.dataset.disqusLoaded === 'true') {
+        return;
+      }
+
+      var s = d.createElement('script');
       s.src = 'https://{{ site.comments.disqus.shortname }}.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
+      s.setAttribute('data-timestamp', String(+new Date()));
+      thread.dataset.disqusLoaded = 'true';
       (d.head || d.body).appendChild(s);
     })();
   </script>
