@@ -138,6 +138,18 @@
     }).join("");
   }
 
+  function renderTags(company) {
+    const tags = []
+      .concat(company.industry_tags || [])
+      .concat(company.region_tags || []);
+    if (!tags.length) return "";
+    return `
+      <div class="leaders-result__tags">
+        ${tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}
+      </div>
+    `;
+  }
+
   function referenceSummary(company) {
     if (company.reference_summary) return company.reference_summary;
     if (company.sources && company.sources.length) {
@@ -235,6 +247,7 @@
           <div><span>证据等级</span><strong>${company.evidence}</strong></div>
         </div>
         <p class="leaders-result__summary">${company.summary}</p>
+        ${renderTags(company)}
         <div class="leaders-result__grid">
           <section>
             <h3>LEADERS-7项评分</h3>

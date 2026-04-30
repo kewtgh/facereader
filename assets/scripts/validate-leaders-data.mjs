@@ -19,6 +19,46 @@ const scoreKeys = [
 
 const darwinKeys = ["financial", "moat", "signal"];
 const evidenceLevels = new Set(["A", "B", "C"]);
+const allowedIndustryTags = new Set([
+  "消费互联网",
+  "内容平台",
+  "人工智能",
+  "企业服务",
+  "SaaS",
+  "新能源汽车",
+  "智能驾驶",
+  "汽车制造",
+  "物联网",
+  "大模型",
+  "计算机视觉",
+  "金融科技",
+  "半导体",
+  "芯片设计",
+  "AI芯片",
+  "ODM",
+  "GPU",
+  "机器人",
+  "动力电池",
+  "ICT",
+  "云计算",
+  "储能"
+]);
+const allowedRegionTags = new Set([
+  "东南亚",
+  "中国大陆",
+  "台湾",
+  "日本",
+  "韩国",
+  "以色列",
+  "阿联酋和沙特",
+  "非洲",
+  "北美",
+  "英国",
+  "欧盟",
+  "俄罗斯",
+  "南美",
+  "澳洲"
+]);
 
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, "utf8"));
@@ -46,6 +86,16 @@ function validateCompanies() {
 
     assert(Array.isArray(company.aliases), `${label}: aliases must be an array.`, errors);
     assert(company.industry, `${label}: missing industry.`, errors);
+    assert(Array.isArray(company.industry_tags), `${label}: industry_tags must be an array.`, errors);
+    assert(Array.isArray(company.region_tags), `${label}: region_tags must be an array.`, errors);
+    assert(company.industry_tags?.length > 0, `${label}: missing industry_tags.`, errors);
+    assert(company.region_tags?.length > 0, `${label}: missing region_tags.`, errors);
+    for (const tag of company.industry_tags || []) {
+      assert(allowedIndustryTags.has(tag), `${label}: invalid industry tag "${tag}".`, errors);
+    }
+    for (const tag of company.region_tags || []) {
+      assert(allowedRegionTags.has(tag), `${label}: invalid region tag "${tag}".`, errors);
+    }
     assert(company.stage, `${label}: missing stage.`, errors);
     assert(company.url, `${label}: missing url.`, errors);
     assert(company.summary, `${label}: missing summary.`, errors);

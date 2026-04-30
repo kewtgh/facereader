@@ -502,6 +502,27 @@ body { line-height: 1.7; }
   background: rgba(255, 255, 255, 0.48);
 }
 
+.leaders-result__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.75rem 0 0;
+}
+
+.leaders-result__tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.7rem;
+  padding: 0.18rem 0.62rem;
+  border: 1px solid rgba($primary-color, 0.22);
+  border-radius: 999px;
+  background: rgba($primary-color, 0.08);
+  color: mix($text-color, $primary-color, 72%);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
 .leaders-result__grid {
   grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
   margin-top: 1rem;
