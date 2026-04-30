@@ -1,0 +1,575 @@
+[
+  {
+    "name": "字节跳动",
+    "aliases": ["ByteDance", "bytedance", "抖音"],
+    "industry": "消费互联网 / 内容平台",
+    "stage": "规模化 / 全球化",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/TMT/TMT-dancebyte/",
+    "scores": { "leadership": 9, "decision": 9, "execution": 8, "bench": 9, "alignment": 9, "coverage": 9, "governance": 9 },
+    "evidence": "B",
+    "summary": "创始人上限、二三号位补位和岗位完整度都较强，组织系统化能力突出。",
+    "risk": "全球化监管、平台治理与组织规模继续放大后的权责边界。",
+    "watch": ["核心业务增长质量", "海外合规压力", "高管梯队稳定性"]
+  },
+  {
+    "name": "第四范式",
+    "aliases": ["4Paradigm", "fourth paradigm"],
+    "industry": "AI / ToB解决方案",
+    "stage": "扩张期 / 商业化验证",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/AI/AI-4Paradigm(2)/",
+    "scores": { "leadership": 7, "decision": 8, "execution": 7, "bench": 7, "alignment": 5, "coverage": 6, "governance": 7 },
+    "evidence": "B",
+    "summary": "战略认知较强，但商业化、文化一致性和岗位专长厚度仍是关键变量。",
+    "risk": "ToB交付、回款、产品化能力不足时会拖累估值兑现。",
+    "watch": ["大客户续约与回款", "产品化比例", "关键岗位稳定性"]
+  },
+  {
+    "name": "小鹏汽车",
+    "aliases": ["小鹏", "XPeng", "xpev"],
+    "industry": "新能源汽车",
+    "stage": "规模化 / 强竞争",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-Xiaopeng/",
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 8, "alignment": 8, "coverage": 8, "governance": 8 },
+    "darwin": {
+      "financial": 6,
+      "moat": 8,
+      "signal": 7.5,
+      "evidence": "B",
+      "note": "智能化和组织迭代是真信号，技术护城河较强；但盈利质量、自由现金流和规模化成本优势仍需持续验证。"
+    },
+    "evidence": "B",
+    "summary": "技术与组织能力相对均衡，综合管理分布没有明显塌陷项。",
+    "risk": "智能化优势需要持续转化为销量、毛利与品牌稳定性。",
+    "watch": ["车型交付节奏", "毛利率改善", "智能驾驶商业化"]
+  },
+  {
+    "name": "蔚来汽车",
+    "aliases": ["蔚来", "NIO", "nio"],
+    "industry": "新能源汽车",
+    "stage": "规模化 / 承压增长",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/",
+    "scores": { "leadership": 9, "decision": 7, "execution": 8, "bench": 7, "alignment": 7, "coverage": 6, "governance": 7 },
+    "darwin": {
+      "financial": 4.5,
+      "moat": 7,
+      "signal": 7,
+      "evidence": "B",
+      "note": "品牌、换电网络和多品牌尝试构成动态护城河线索，但全年仍亏损，资本效率和自由现金流是主要扣分项。"
+    },
+    "evidence": "B",
+    "summary": "创始人号召力突出，品牌与用户组织强；短板在岗位完整度和经营效率。",
+    "risk": "高投入模式下，现金流、交付效率和组织精度是主要压力。",
+    "watch": ["现金消耗速度", "产品矩阵效率", "关键职能补位"]
+  },
+  {
+    "name": "理想汽车",
+    "aliases": ["理想", "Li Auto", "li auto"],
+    "industry": "新能源汽车",
+    "stage": "规模化 / 产品扩张",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-lixiang/",
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 8, "alignment": 8, "coverage": 7, "governance": 7 },
+    "darwin": {
+      "financial": 7,
+      "moat": 7,
+      "signal": 7,
+      "evidence": "B",
+      "note": "盈利和现金储备较多数新势力更稳，产品定义能力强；但车型周期、纯电转型和组织扩张压力削弱动态护城河分。"
+    },
+    "evidence": "B",
+    "summary": "战略取舍和执行闭环较强，产品定义与经营效率是优势。",
+    "risk": "品类扩张后，组织专业化和治理结构需要同步升级。",
+    "watch": ["新品成功率", "供应链韧性", "组织授权边界"]
+  },
+  {
+    "name": "吉利汽车",
+    "aliases": ["吉利", "Geely", "geely auto"],
+    "industry": "汽车制造",
+    "stage": "成熟期 / 转型",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-Geelyauto/",
+    "scores": { "leadership": 7, "decision": 8, "execution": 9, "bench": 7, "alignment": 7, "coverage": 7, "governance": 8 },
+    "evidence": "B",
+    "summary": "制造和执行基础扎实，治理与产业资源整合能力强。",
+    "risk": "多品牌、多路线并行容易稀释组织焦点。",
+    "watch": ["新能源品牌协同", "研发投入效率", "海外业务质量"]
+  },
+  {
+    "name": "哪吒汽车",
+    "aliases": ["哪咤汽车", "哪吒", "Hozon", "Neta"],
+    "industry": "新能源汽车",
+    "stage": "扩张期 / 承压",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-hozonauto-wmmotor/",
+    "scores": { "leadership": 7, "decision": 5, "execution": 8, "bench": 6, "alignment": 7, "coverage": 6, "governance": 6 },
+    "evidence": "B",
+    "summary": "执行端有一定冲刺能力，但决策质量、关键岗位补位与治理成熟度偏弱。",
+    "risk": "价格带、品牌定位和资本节奏若反复摇摆，会放大经营压力。",
+    "watch": ["销量结构", "现金流安全", "管理层稳定性"]
+  },
+  {
+    "name": "威马汽车",
+    "aliases": ["威马", "WM Motor", "wm motor"],
+    "industry": "新能源汽车",
+    "stage": "承压转型",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-hozonauto-wmmotor/",
+    "scores": { "leadership": 8, "decision": 9, "execution": 8, "bench": 6, "alignment": 7, "coverage": 7, "governance": 7 },
+    "evidence": "C",
+    "summary": "早期决策与执行表现不弱，但二三号位补位和持续治理韧性不足。",
+    "risk": "资金链、供应链和用户信任受损后，管理分数需要重新评估。",
+    "watch": ["债务与重组进展", "供应链恢复", "团队留存"]
+  },
+  {
+    "name": "涂鸦智能",
+    "aliases": ["涂鸦", "Tuya", "tuya smart"],
+    "industry": "IoT / SaaS平台",
+    "stage": "扩张期 / 商业化",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/AI/AI-Tuya/",
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 9, "alignment": 8, "coverage": 7, "governance": 7 },
+    "evidence": "B",
+    "summary": "团队补位能力强，平台型业务的执行和协同基础较好。",
+    "risk": "平台价值需要通过客户留存、生态控制力和盈利质量证明。",
+    "watch": ["客户留存", "生态议价能力", "费用率改善"]
+  },
+  {
+    "name": "商汤科技",
+    "aliases": ["商汤", "SenseTime", "sensetime"],
+    "industry": "AI / 多模态大模型 / 视觉AI",
+    "stage": "规模化 / 1+X转型",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/AI/AI-sensetime/",
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 8, "alignment": 8, "coverage": 8, "governance": 8 },
+    "darwin": {
+      "financial": 5.5,
+      "moat": 7.5,
+      "signal": 7,
+      "evidence": "A",
+      "note": "收入增长、亏损收窄和现金流改善提升财务硬度，但仍处盈利修复阶段；生成式AI投入和业务重组是真信号。"
+    },
+    "evidence": "A",
+    "summary": "商汤2025年收入突破50亿元，同比增长约33%，净亏损大幅收窄，下半年EBITDA与经营性现金流转正；生成式AI、视觉AI和1+X创新业务形成更清晰的经营结构，管理评分较旧版本上调。",
+    "risk": "公司仍处亏损收窄阶段，大模型商业化、算力成本、生态企业独立运营质量和海外扩张可持续性仍需验证。",
+    "watch": ["经调整亏损继续收窄", "生成式AI收入占比与毛利", "1+X生态企业融资与出表效果", "海外视觉AI复购率"],
+    "sources": [
+      "https://www.sensetime.com/cn/news-detail/51170571?categoryId=72",
+      "https://www.sensetime.com/cn/news-detail/51169907?categoryId=72",
+      "https://finance.sina.com.cn/tech/roll/2026-03-27/doc-inhsiusr8842141.shtml"
+    ],
+    "research_file": "research/leaders/sensetime.md",
+    "last_reviewed": "2026-04-30"
+  },
+  {
+    "name": "依图科技",
+    "aliases": ["依图", "Yitu", "yitu tech"],
+    "industry": "AI / 计算机视觉",
+    "stage": "扩张期 / 转型",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/AI/AI-yitu/",
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 7, "alignment": 9, "coverage": 7, "governance": 8 },
+    "evidence": "B",
+    "summary": "文化一致性和治理结构相对较好，整体评分分布稳定。",
+    "risk": "AI商业化路径和融资市场环境变化会影响管理结果兑现。",
+    "watch": ["收入可持续性", "产品化能力", "团队核心稳定"]
+  },
+  {
+    "name": "云从科技",
+    "aliases": ["云从", "CloudWalk", "cloudwalk"],
+    "industry": "AI / 计算机视觉",
+    "stage": "扩张期 / 上市后验证",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/AI/AI-yuncong/",
+    "scores": { "leadership": 7, "decision": 7, "execution": 8, "bench": 7, "alignment": 8, "coverage": 8, "governance": 7 },
+    "evidence": "B",
+    "summary": "岗位覆盖和执行基础尚可，但创始人上限与决策质量不算突出。",
+    "risk": "AI基础能力与市场订单之间的转化效率需要持续验证。",
+    "watch": ["订单质量", "现金流", "技术路线转化"]
+  },
+  {
+    "name": "旷视科技",
+    "aliases": ["旷视", "Megvii", "megvii"],
+    "industry": "AI / 计算机视觉",
+    "stage": "扩张期 / 转型",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/AI/AI-kuangshi/",
+    "scores": { "leadership": 7, "decision": 8, "execution": 7, "bench": 8, "alignment": 7, "coverage": 7, "governance": 7 },
+    "evidence": "B",
+    "summary": "决策和补位能力较好，综合结构较均衡但缺少明显高分项。",
+    "risk": "行业政策、商业化效率和资本路径不确定性较高。",
+    "watch": ["业务聚焦", "盈利路径", "组织精简质量"]
+  },
+  {
+    "name": "领创集团",
+    "aliases": ["领创", "Advance Intelligence", "advance group"],
+    "industry": "AI / 金融科技",
+    "stage": "扩张期",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/AI/AI-advancegroup-2/",
+    "scores": { "leadership": 9, "decision": 8, "execution": 9, "bench": 7, "alignment": 8, "coverage": 8, "governance": 8 },
+    "evidence": "B",
+    "summary": "创始人带动、执行兑现与治理基础较强，是高分组合。",
+    "risk": "跨市场扩张和金融科技合规要求会持续考验组织系统。",
+    "watch": ["区域合规", "组织复制能力", "风险控制质量"]
+  },
+  {
+    "name": "汇顶科技",
+    "aliases": ["汇顶", "Goodix", "goodix"],
+    "industry": "芯片半导体",
+    "stage": "成熟期 / 技术迭代",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-goodix/",
+    "scores": { "leadership": 9, "decision": 9, "execution": 8, "bench": 9, "alignment": 8, "coverage": 8, "governance": 9 },
+    "evidence": "B",
+    "summary": "创始人、决策、补位与治理结构都很强，管理评分处于第一梯队。",
+    "risk": "核心技术周期和下游客户结构变化会影响长期兑现。",
+    "watch": ["新产品曲线", "客户集中度", "研发效率"]
+  },
+  {
+    "name": "寒武纪",
+    "aliases": ["寒武纪科技", "Cambricon", "cambricon"],
+    "industry": "AI芯片",
+    "stage": "规模化 / 盈利兑现",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-cambricon/",
+    "scores": { "leadership": 8, "decision": 9, "execution": 9, "bench": 8, "alignment": 8, "coverage": 8, "governance": 8 },
+    "darwin": {
+      "financial": 7,
+      "moat": 8,
+      "signal": 7.5,
+      "evidence": "A",
+      "note": "盈利拐点和经营现金流转正显著改善财务硬度，AI芯片需求和研发投入是真信号；客户集中和供应链仍需折扣。"
+    },
+    "evidence": "A",
+    "summary": "寒武纪2026年一季度营收28.85亿元、归母净利润10.13亿元，经营现金流转正，较旧版从技术商业化验证进入盈利兑现阶段；AI算力需求放大后，公司战略聚焦与产品落地显著改善。",
+    "risk": "高增长依赖AI算力景气、客户结构与供应链稳定；存货周转、产品迭代和大客户回款仍是管理风险点。",
+    "watch": ["收入与净利环比持续性", "经营现金流", "客户集中度", "存货周转和供应链稳定"],
+    "sources": [
+      "https://finance.sina.com.cn/jjxw/2026-04-30/doc-inhwftwe7480367.shtml",
+      "https://finance.sina.com.cn/jjxw/2026-04-29/doc-inhweskv0802494.shtml",
+      "https://finance.sina.com.cn/jjxw/2025-04-19/doc-inetsauc1738348.shtml"
+    ],
+    "research_file": "research/leaders/cambricon.md",
+    "last_reviewed": "2026-04-30"
+  },
+  {
+    "name": "韦尔股份",
+    "aliases": ["韦尔", "Will Semiconductor", "omnivision"],
+    "industry": "芯片半导体",
+    "stage": "成熟期 / 整合",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-omnivision/",
+    "scores": { "leadership": 9, "decision": 9, "execution": 8, "bench": 7, "alignment": 8, "coverage": 7, "governance": 7 },
+    "evidence": "B",
+    "summary": "创始人和决策能力强，产业整合思路清晰。",
+    "risk": "并购整合后的岗位覆盖、治理透明度和周期管理需要持续跟踪。",
+    "watch": ["库存周期", "海外整合", "技术平台协同"]
+  },
+  {
+    "name": "平头哥",
+    "aliases": ["平头哥半导体", "T-Head", "thead"],
+    "industry": "芯片半导体",
+    "stage": "平台孵化 / 技术验证",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-thead/",
+    "scores": { "leadership": 9, "decision": 8, "execution": 8, "bench": 8, "alignment": 7, "coverage": 8, "governance": 7 },
+    "evidence": "B",
+    "summary": "技术组织和补位能力较强，岗位覆盖优于多数同类项目。",
+    "risk": "集团战略和独立商业化目标之间需要保持清晰边界。",
+    "watch": ["生态采用", "商业化授权", "集团资源持续性"]
+  },
+  {
+    "name": "燧原科技",
+    "aliases": ["燧原", "Enflame", "enflame tech"],
+    "industry": "AI芯片",
+    "stage": "扩张期 / 产品验证",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-enflame",
+    "scores": { "leadership": 7, "decision": 8, "execution": 8, "bench": 6, "alignment": 8, "coverage": 6, "governance": 6 },
+    "evidence": "B",
+    "summary": "执行与决策尚可，但补位力、岗位专长厚度和治理结构偏弱。",
+    "risk": "AI芯片周期长、资金重，弱治理会放大研发与交付风险。",
+    "watch": ["产品量产", "客户验证", "核心团队补强"]
+  },
+  {
+    "name": "闻泰科技",
+    "aliases": ["闻泰", "Wingtech", "wingtech"],
+    "industry": "半导体 / ODM",
+    "stage": "成熟期 / 整合",
+    "url": "https://facereader.witbacon.com/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-wingtech/",
+    "scores": { "leadership": 8, "decision": 9, "execution": 9, "bench": 8, "alignment": 9, "coverage": 9, "governance": 7 },
+    "evidence": "B",
+    "summary": "决策、执行、文化一致性和岗位覆盖都很强，经营型组织特征明显。",
+    "risk": "并购与周期波动对治理透明度、资本配置提出更高要求。",
+    "watch": ["半导体周期", "并购协同", "资本开支纪律"]
+  },
+  {
+    "name": "摩尔线程",
+    "aliases": ["摩尔线程智能", "Moore Threads", "mthreads", "MTT", "688795"],
+    "industry": "全功能GPU / AI芯片",
+    "stage": "扩张期 / 上市后商业化验证",
+    "url": "https://www.mthreads.com/aboutus",
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 7, "alignment": 7, "coverage": 8, "governance": 7 },
+    "darwin": {
+      "financial": 4,
+      "moat": 7.5,
+      "signal": 7,
+      "evidence": "B",
+      "note": "国产GPU窗口和软件生态建设具备动态护城河潜力，但上市后盈利、自由现金流和客户复购仍需验证。"
+    },
+    "evidence": "B",
+    "summary": "创始团队抓住国产GPU和AI算力窗口，产品从芯片、板卡、集群到软件栈快速迭代，2025年收入高速增长并在2026年一季度归母净利润转正；但公司仍处高研发投入和上市后验证阶段，扣非盈利、客户生态和治理成熟度需要继续观察。",
+    "risk": "持续高研发投入、国际供应链与先进制程限制、软件生态成熟度、客户集中与大规模集群交付稳定性，是当前管理评分的主要不确定性。",
+    "watch": ["扣非净利润转正节奏", "夸娥智算集群大单交付与回款", "MUSA生态开发者活跃度", "上市后高管与核心技术团队稳定性"],
+    "sources": [
+      "https://www.mthreads.com/aboutus",
+      "https://xinpi.cnstock.com/p/xg/detail/688795",
+      "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12200843&stockid=688795",
+      "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-04-26/doc-inhvvqry9692819.shtml"
+    ],
+    "research_file": "research/leaders/moore-threads.md",
+    "last_reviewed": "2026-04-30"
+  },
+  {
+    "name": "沐曦股份",
+    "aliases": ["沐曦", "沐曦集成电路", "METAX", "MetaX", "688802"],
+    "industry": "全栈GPU / AI芯片",
+    "stage": "扩张期 / 上市后商业化验证",
+    "url": "https://www.metax-tech.com/about.html",
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 8, "alignment": 7, "coverage": 8, "governance": 7 },
+    "darwin": {
+      "financial": 4,
+      "moat": 7,
+      "signal": 7,
+      "evidence": "B",
+      "note": "GPU研发和量产经验是真信号，但公司仍未盈利，财务硬度和客户持续采购需要上市后连续验证。"
+    },
+    "evidence": "B",
+    "summary": "沐曦股份2025年登陆科创板，全年营收16.44亿元、同比增长121.26%，亏损首次明显收窄；核心团队具备高性能GPU研发和量产经验，产品覆盖AI训练推理、通用计算和图形渲染。",
+    "risk": "仍未盈利，高研发投入、先进制程与软件生态、客户持续采购和大规模量产稳定性，是评分主要不确定性。",
+    "watch": ["盈利拐点兑现", "GPU产品销量与复购", "软件栈生态成熟度", "研发投入效率"],
+    "sources": [
+      "https://www.metax-tech.com/about.html",
+      "https://finance.sina.com.cn/tech/roll/2026-03-27/doc-inhsmxrr8171688.shtml",
+      "https://www.sse.com.cn/disclosure/announcement/listing/ipo/c/c_20251216_10801769.shtml"
+    ],
+    "research_file": "research/leaders/metax.md",
+    "last_reviewed": "2026-04-30"
+  },
+  {
+    "name": "科大讯飞",
+    "aliases": ["讯飞", "iFLYTEK", "iflytek", "002230", "星火大模型"],
+    "industry": "人工智能 / 语音语义 / 大模型应用",
+    "stage": "成熟期 / 大模型再增长",
+    "url": "https://www.iflytek.com/",
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 8, "alignment": 8, "coverage": 9, "governance": 8 },
+    "darwin": {
+      "financial": 7.5,
+      "moat": 8,
+      "signal": 8.5,
+      "evidence": "A",
+      "note": "经营现金流、研发投入占比和AI平台生态数据较强，属于高成本真信号；扣非利润仍不厚，财务硬度不宜给满分。"
+    },
+    "evidence": "A",
+    "summary": "科大讯飞2025年营收271.05亿元、归母净利润8.39亿元，收入、利润、扣非利润和经营现金流均增长；星火大模型、开放平台、教育和医疗等业务形成较完整的AI应用体系。",
+    "risk": "大模型投入强度高，政府和行业项目周期、AI应用商业化毛利、海外增长质量和平台生态活跃度仍需持续验证。",
+    "watch": ["扣非净利润增长", "开放平台开发者与MaaS收入", "教育医疗订单质量", "经营现金流"],
+    "sources": [
+      "https://huacheng.gz-cmc.com/pages/2026/04/30/b3c608876e0a4bbe8901afe9a5d4cf35.html",
+      "https://finance.sina.com.cn/tech/roll/2026-04-28/doc-inhwapmw8262077.shtml",
+      "https://www.smarthey.com/detail/596220302931.html"
+    ],
+    "research_file": "research/leaders/iflytek.md",
+    "last_reviewed": "2026-04-30"
+  },
+  {
+    "name": "地平线",
+    "aliases": ["地平线机器人", "Horizon Robotics", "horizonrobot", "9660", "09660"],
+    "industry": "智能驾驶芯片 / ADAS解决方案",
+    "stage": "规模化 / 上市后增长",
+    "url": "https://www.horizon.auto/",
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 8, "alignment": 8, "coverage": 8, "governance": 7 },
+    "darwin": {
+      "financial": 4.5,
+      "moat": 8,
+      "signal": 7,
+      "evidence": "B",
+      "note": "智能驾驶芯片出货和车企客户验证构成动态护城河，但公司仍处高投入和亏损收窄阶段，财务硬度保守处理。"
+    },
+    "evidence": "B",
+    "summary": "地平线2025年营收37.6亿元、同比增长57.7%，征程系列芯片出货超400万套，中高阶芯片出货约180万套，智能驾驶芯片和方案规模化能力突出。",
+    "risk": "公司仍在高投入和盈利拐点验证期，车企客户价格压力、智驾路线竞争和研发投入回报是主要不确定性。",
+    "watch": ["中高阶芯片出货占比", "产品解决方案收入增速", "车企定点与量产交付", "亏损收窄和现金储备"],
+    "sources": [
+      "https://www.horizon.auto/news/press/438",
+      "https://www.eeo.com.cn/2026/0319/813074.shtml",
+      "https://finance.sina.com.cn/roll/2026-03-19/doc-inhrpnfx7459727.shtml"
+    ],
+    "research_file": "research/leaders/horizon-robotics.md",
+    "last_reviewed": "2026-04-30"
+  },
+  {
+    "name": "DeepSeek",
+    "aliases": ["深度求索", "DeepSeek AI", "深求", "梁文锋"],
+    "industry": "大模型 / 开源AI",
+    "stage": "高影响力实验室 / 商业化待验证",
+    "url": "https://www.deepseek.com/",
+    "scores": { "leadership": 9, "decision": 9, "execution": 9, "bench": 7, "alignment": 8, "coverage": 7, "governance": 5 },
+    "evidence": "C",
+    "summary": "DeepSeek凭R1等开源模型在2025年显著改变全球AI竞争格局，以高效率训练、开源传播和强技术叙事形成极高影响力；但公司组织、财务、治理和商业化数据公开较少，评级应明确保守。",
+    "risk": "商业模式、收入结构、算力来源、数据合规、团队稳定性和外部监管压力缺少硬披露，是当前最大不确定性。",
+    "watch": ["后续模型迭代质量", "API与企业客户商业化", "核心研究团队稳定性", "合规与国际监管争议"],
+    "sources": [
+      "https://finance.sina.com.cn/tech/digi/2025-09-18/doc-infqwyzp0757394.shtml",
+      "https://finance.sina.com.cn/tech/digi/2025-01-25/doc-inehemyy3011412.shtml",
+      "https://www.theverge.com/news/602162/microsoft-deepseek-r1-model-azure-ai-foundry-github"
+    ],
+    "research_file": "research/leaders/deepseek.md",
+    "last_reviewed": "2026-04-30"
+  },
+  {
+    "name": "宇树科技",
+    "aliases": ["宇树", "Unitree", "Unitree Robotics", "王兴兴"],
+    "industry": "人形机器人 / 四足机器人 / 具身智能",
+    "stage": "扩张期 / IPO申报",
+    "url": "https://www.unitree.com/",
+    "scores": { "leadership": 9, "decision": 9, "execution": 9, "bench": 8, "alignment": 8, "coverage": 8, "governance": 7 },
+    "darwin": {
+      "financial": 7,
+      "moat": 8,
+      "signal": 7.5,
+      "evidence": "B",
+      "note": "IPO材料显示收入和扣非利润质量较好，人形机器人出货是真信号；但应用场景、治理结构和安全责任仍需复核。"
+    },
+    "evidence": "B",
+    "summary": "宇树科技2026年科创板IPO获受理，2025年营收约17.08亿元、扣非归母净利润约6亿元，且披露2025年人形机器人实际出货超5500台；在通用机器人商业化和规模化量产上领先。",
+    "risk": "人形机器人仍处应用早期，IPO前治理、特别表决权安排、客户结构、价格下行和安全责任需要重点复核。",
+    "watch": ["IPO进度与招股书更新", "2026年1-2万台出货目标", "人形机器人毛利与价格变化", "实际应用场景复购"],
+    "sources": [
+      "https://www.eeo.com.cn/2026/0320/813654.shtml",
+      "https://www.stcn.com/article/detail/3607445.html",
+      "https://news.sina.com.cn/c/2026-03-20/doc-inhrrvnv6752745.shtml",
+      "https://finance.sina.com.cn/stock/t/2026-02-17/doc-inhnckri6124591.shtml"
+    ],
+    "research_file": "research/leaders/unitree.md",
+    "last_reviewed": "2026-04-30"
+  },
+  {
+    "name": "比亚迪",
+    "aliases": ["BYD", "比亚迪股份", "002594", "1211.HK", "1211"],
+    "industry": "新能源汽车 / 动力电池 / 垂直整合制造",
+    "stage": "成熟期 / 全球化扩张与利润承压",
+    "url": "https://www.bydglobal.com/",
+    "scores": { "leadership": 7, "decision": 8, "execution": 7, "bench": 6, "alignment": 6, "coverage": 8, "governance": 7 },
+    "darwin": {
+      "financial": 5.5,
+      "moat": 7.5,
+      "signal": 6,
+      "evidence": "B",
+      "note": "规模、供应链和海外扩张仍强，但利润下滑、国内承压、账期和现金流质量需要复核；高研发和制造投入是真信号，组织数字化效率疑点压低信号分。"
+    },
+    "evidence": "B",
+    "summary": "比亚迪仍具备强制造、供应链和海外扩张能力，但2025年净利润和扣非净利润明显下滑，国内收入下降、单季收入和利润承压；若叠加内部数字化/OA落地弱、依赖Excel运转等人工复核线索，管理效率与补位力不能按第一梯队打分。",
+    "risk": "价格战压缩利润、国内增长放缓、应收/账期与现金流质量、超大组织数字化治理不足、多品牌与海外管理复杂度，是当前主要扣分项。",
+    "watch": ["国内收入和单季利润修复", "汽车业务毛利率", "应收账款和供应商账期", "内部数字化/OA落地", "多品牌组织协同"],
+    "sources": [
+      "https://finance.sina.com.cn/stock/aigc/stockfs/2026-03-27/doc-inhsmxri9389675.shtml",
+      "https://finance.sina.com.cn/stock/aigc/stockfs/2025-10-31/doc-inhpwzrv6710855.shtml",
+      "https://stock.stockstar.com/RB2025090600003972.shtml",
+      "https://www.bydglobal.com/"
+    ],
+    "research_file": "research/leaders/byd.md",
+    "last_reviewed": "2026-04-30"
+  },
+  {
+    "name": "华为",
+    "aliases": ["Huawei", "华为技术", "华为公司", "HarmonyOS", "昇腾", "鸿蒙"],
+    "industry": "ICT基础设施 / 终端 / 云 / AI计算 / 智能汽车解决方案",
+    "stage": "成熟期 / 战略韧性与财务质量复核",
+    "url": "https://www.huawei.com/cn/annual-report/2025",
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 8, "alignment": 8, "coverage": 9, "governance": 6 },
+    "darwin": {
+      "financial": 6.5,
+      "moat": 8.5,
+      "signal": 7.5,
+      "evidence": "B",
+      "note": "研发投入、芯片与操作系统生态构成高成本真信号；但非上市披露使ROCE、分部利润质量和业务间结算难以强验证，财务硬度保守处理。"
+    },
+    "evidence": "B",
+    "summary": "华为2025年收入和现金流公开数据仍显示韧性，但总收入仅低个位数增长，云计算和其他业务承压，现金与短期投资低于2024年；作为非上市公司，其利润质量、业务间结算、内部效率和治理透明度不能按上市公司强证据处理。",
+    "risk": "非上市披露透明度、业务间结算口径、外部制裁与先进制程、云业务竞争力、车BU边界、组织高压文化与领导层接续，是当前主要不确定性。",
+    "watch": ["现金与短期投资变化", "云业务收入和利润质量", "昇腾生态真实客户复购", "智能汽车解决方案边界", "核心干部接续与治理透明度"],
+    "sources": [
+      "https://www.huawei.com/cn/news/2026/3/annual-report-2025",
+      "https://www.huawei.com/cn/annual-report/2025",
+      "https://finance.sina.com.cn/stock/t/2026-04-01/doc-inhsxeik3114656.shtml"
+    ],
+    "research_file": "research/leaders/huawei.md",
+    "last_reviewed": "2026-04-30"
+  },
+  {
+    "name": "宁德时代",
+    "aliases": ["CATL", "宁德时代新能源", "300750"],
+    "industry": "动力电池 / 储能 / 新能源供应链",
+    "stage": "成熟期 / 全球龙头扩张",
+    "url": "https://www.catl.com/",
+    "scores": { "leadership": 8, "decision": 9, "execution": 9, "bench": 8, "alignment": 8, "coverage": 9, "governance": 9 },
+    "darwin": {
+      "financial": 8.5,
+      "moat": 8.5,
+      "signal": 8,
+      "evidence": "A",
+      "note": "盈利、现金流和行业地位较强，研发、制造和全球客户体系是真信号；扣分项是重资产周期、车企议价、储能安全和海外合规。"
+    },
+    "evidence": "A",
+    "summary": "宁德时代2026年一季度营收和扣非净利仍高速增长，业务系统化能力强；但动力电池行业资本开支重、车企议价增强、技术路线迭代和海外合规压力上升，因此不宜仅按龙头规模给满分。",
+    "risk": "海外贸易壁垒、车企议价、技术路线替代、产能周期、储能安全和资本开支纪律，是管理评分需要持续观察的核心变量。",
+    "watch": ["海外产能和合规进展", "储能业务利润质量", "客户集中度", "新技术路线量产", "资本开支纪律"],
+    "sources": [
+      "https://finance.sina.cn/2026-04-15/detail-inhuqwta4552448.d.html",
+      "https://www.catl.com/"
+    ],
+    "research_file": "research/leaders/catl.md",
+    "last_reviewed": "2026-04-30"
+  },
+  {
+    "name": "OpenAI",
+    "aliases": ["ChatGPT", "OpenAI Group PBC", "Sam Altman", "奥特曼", "Codex"],
+    "industry": "前沿大模型 / AI平台 / AI基础设施",
+    "stage": "超高速扩张 / 治理重构",
+    "url": "https://openai.com/",
+    "scores": { "leadership": 9, "decision": 9, "execution": 9, "bench": 8, "alignment": 7, "coverage": 9, "governance": 6 },
+    "darwin": {
+      "financial": 4.5,
+      "moat": 9,
+      "signal": 7,
+      "evidence": "C",
+      "note": "产品创新和生态扩张极强，但算力资本开支、盈利质量和自由现金流缺少强披露；持续研发是真信号，治理争议和大额融资依赖压低财务硬度。"
+    },
+    "evidence": "B",
+    "summary": "OpenAI在2026年完成1220亿美元融资、估值8520亿美元，并调整为OpenAI Group PBC结构；ChatGPT、API、企业产品和Codex形成强商业飞轮，但超大规模算力承诺、治理争议和盈利质量仍是突出风险。",
+    "risk": "算力资本开支过重、与微软/AWS/NVIDIA等伙伴关系复杂、治理结构和使命商业化张力、监管与版权诉讼，是当前主要不确定性。",
+    "watch": ["年化收入与毛利率", "算力承诺兑现和成本", "OpenAI Foundation控制权", "企业客户和Codex商业化"],
+    "sources": [
+      "https://openai.com/index/accelerating-the-next-phase-ai/",
+      "https://openai.com/our-structure",
+      "https://openai.com/index/next-phase-of-microsoft-partnership/",
+      "https://openai.com/index/aws-and-openai-partnership/",
+      "https://sacra.com/research/openai/"
+    ],
+    "research_file": "research/leaders/openai.md",
+    "last_reviewed": "2026-04-30"
+  },
+  {
+    "name": "Anthropic",
+    "aliases": ["Claude", "Claude Code", "Dario Amodei", "Anthropic PBC"],
+    "industry": "前沿大模型 / 企业AI / Agentic Coding",
+    "stage": "超高速扩张 / 企业AI领先",
+    "url": "https://www.anthropic.com/",
+    "scores": { "leadership": 9, "decision": 9, "execution": 9, "bench": 8, "alignment": 9, "coverage": 8, "governance": 8 },
+    "darwin": {
+      "financial": 4.5,
+      "moat": 8.5,
+      "signal": 8,
+      "evidence": "C",
+      "note": "企业AI和编码代理增长强，安全文化、研发投入和员工福利叙事是真信号线索；但公司仍高度依赖融资和算力伙伴，ROCE与自由现金流不可强验证。"
+    },
+    "evidence": "B",
+    "summary": "Anthropic 2026年宣布300亿美元G轮融资、投后估值3800亿美元，Claude Code年化收入超过25亿美元，500多家客户年化支出超100万美元；公司在企业AI、编码代理和安全叙事上形成强势位置。",
+    "risk": "对AWS/Google等算力和渠道伙伴依赖高，收入增速极快但成本结构、净收入口径、模型竞争和大客户集中度仍需复核。",
+    "watch": ["Claude Code收入和留存", "企业客户扩张", "Google TPU与AWS算力交付", "安全治理与产品速度平衡"],
+    "sources": [
+      "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation?pubDate=20250818",
+      "https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services",
+      "https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone?s=33",
+      "https://sacra.com/research/anthropic/"
+    ],
+    "research_file": "research/leaders/anthropic.md",
+    "last_reviewed": "2026-04-30"
+  }
+]

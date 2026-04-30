@@ -10,6 +10,8 @@ main:
     url: /tags/
   - title: "Most Popular"
     url: /most_popular/
+  - title: "LEADERS评级"
+    url: /leaders-scorecard/
   # - title: "Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"

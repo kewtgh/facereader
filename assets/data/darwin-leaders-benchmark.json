@@ -1,0 +1,113 @@
+{
+  "name": "Darwin-LEADERS 对照样本池",
+  "version": "2026-H1",
+  "updated": "2026-04-30",
+  "selection_rule": "优先选择上市公司、年报/公告/招股书可核验、经营数据连续、已有研究底稿或公开披露稳定的企业；排除证据等级C且财务与治理信息过少的企业。",
+  "review_cycle": "每年6月和12月复盘一次",
+  "companies": [
+    {
+      "name": "宁德时代",
+      "tier": "core",
+      "info_quality": "A",
+      "reason": "A股上市龙头，财务、治理、研发、产能和客户结构信息连续，适合校准成熟制造龙头。"
+    },
+    {
+      "name": "科大讯飞",
+      "tier": "core",
+      "info_quality": "A",
+      "reason": "A股上市AI应用公司，收入、利润、现金流、研发投入和行业业务披露较完整。"
+    },
+    {
+      "name": "寒武纪",
+      "tier": "core",
+      "info_quality": "A",
+      "reason": "A股上市AI芯片公司，盈利拐点、现金流、研发和客户风险可从公告持续追踪。"
+    },
+    {
+      "name": "商汤科技",
+      "tier": "core",
+      "info_quality": "A",
+      "reason": "港股上市AI公司，亏损收窄、现金流、业务重组和AI商业化数据可持续跟踪。"
+    },
+    {
+      "name": "比亚迪",
+      "tier": "core",
+      "info_quality": "B+",
+      "reason": "A/H上市，财务披露充分；适合检验规模、热度与利润质量之间的偏差。"
+    },
+    {
+      "name": "华为",
+      "tier": "core",
+      "info_quality": "B+",
+      "reason": "非上市但年报披露稳定，适合校准非上市企业治理透明度和财务硬度折扣。"
+    },
+    {
+      "name": "小鹏汽车",
+      "tier": "core",
+      "info_quality": "B+",
+      "reason": "美股/港股上市，销量、毛利、现金、研发和智能化投入可持续追踪。"
+    },
+    {
+      "name": "理想汽车",
+      "tier": "core",
+      "info_quality": "B+",
+      "reason": "美股/港股上市，盈利质量、现金储备、产品节奏和组织效率数据较完整。"
+    },
+    {
+      "name": "蔚来汽车",
+      "tier": "core",
+      "info_quality": "B+",
+      "reason": "美股/港股上市，亏损、现金消耗、产品矩阵和组织效率适合做反向校准。"
+    },
+    {
+      "name": "地平线",
+      "tier": "core",
+      "info_quality": "B",
+      "reason": "港股上市后披露增强，芯片出货、解决方案收入和亏损收窄可跟踪。"
+    },
+    {
+      "name": "摩尔线程",
+      "tier": "core",
+      "info_quality": "B",
+      "reason": "上市后信息质量提升，适合校准国产GPU公司从叙事到财务兑现的偏差。"
+    },
+    {
+      "name": "沐曦股份",
+      "tier": "core",
+      "info_quality": "B",
+      "reason": "科创板上市后披露完整度提升，适合与摩尔线程做同业对照。"
+    },
+    {
+      "name": "宇树科技",
+      "tier": "satellite",
+      "info_quality": "B",
+      "reason": "IPO材料带来较高信息增量，适合校准高增长机器人公司的订单、利润和治理信号。"
+    },
+    {
+      "name": "OpenAI",
+      "tier": "satellite",
+      "info_quality": "B-",
+      "reason": "披露不如上市公司，但融资、结构、合作和收入线索密集，适合校准高热度非上市AI企业。"
+    },
+    {
+      "name": "Anthropic",
+      "tier": "satellite",
+      "info_quality": "B-",
+      "reason": "融资、客户、产品和算力合作信息较多，适合与OpenAI对照治理与财务硬度偏差。"
+    }
+  ],
+  "excluded_examples": [
+    {
+      "name": "DeepSeek",
+      "reason": "技术影响力强，但财务、治理、收入和组织信息披露不足，暂不进入信息质量最高样本池。"
+    },
+    {
+      "name": "字节跳动",
+      "reason": "公司质量重要，但当前本地数据缺少来源和复盘底稿，待补齐后再进入样本池。"
+    },
+    {
+      "name": "吉利汽车",
+      "reason": "上市披露质量较好，但本期样本优先保留小鹏、理想、蔚来作为新能源车同组校准。"
+    }
+  ]
+}

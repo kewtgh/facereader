@@ -207,6 +207,17 @@ exclude:
   - category-tag.zip.bak
   - _config.yml.b
   - docs/_drafts
+  - docs/_pages/archive-layout-with-content.md
+  - docs/_pages/collection-archive.html
+  - docs/_pages/edge-case.md
+  - docs/_pages/foo-bar.md
+  - docs/_pages/foo.md
+  - docs/_pages/markup.md
+  - docs/_pages/page-archive.html
+  - docs/_pages/portfolio-archive.md
+  - docs/_pages/post-archive-feature-rows.html
+  - docs/_pages/recipes-archive.md
+  - docs/_pages/splash-page.md
 keep_files:
   - .git
   - .svn

@@ -1,0 +1,168 @@
+---
+title: "LEADERS企业评级搜索"
+layout: single
+permalink: /leaders-scorecard/
+description: 使用LEADERS企业管理评分卡查询企业管理能力画像、证据等级、风险判断与后续验证点。
+classes:
+  - wide
+header:
+  teaser: /assets/img/facereader-leaders-hero.webp
+  overlay_image: /assets/img/facereader-leaders-hero.webp
+  overlay_filter: "linear-gradient(90deg, rgba(8, 14, 18, 0.82) 0%, rgba(8, 14, 18, 0.62) 42%, rgba(8, 14, 18, 0.28) 100%)"
+  actions:
+    - label: "开始查询"
+      url: "#leaders-search"
+      class: "btn--primary btn--large"
+    - label: "专业版入口"
+      url: "#leaders-pro"
+      class: "btn--secondary btn--large"
+categories:
+  - 企业剖析
+tags:
+  - LEADERS企业评级体系
+  - 企业管理评分
+  - 企业剖析
+sitemap: true
+---
+
+<section class="leaders-intro leaders-intro--feature">
+  <p class="leaders-kicker">LEADERS Management Scorecard</p>
+  <h2>把企业管理能力拆成可查询、可复盘、可持续更新的数据。</h2>
+  <p>LEADERS 不是只看财务结果的评分表，而是把企业能否长期兑现，拆解为创始人上限、二三号位补位、岗位完整度和治理成熟度。系统当前收录站内企业评析对象，并持续接入公开资料、财报、招股书、公告和人工复核底稿。</p>
+  <p><a class="btn btn--primary" href="{{ '/darwin-leaders-benchmark/' | relative_url }}">查看 Darwin-LEADERS 对照样本池</a></p>
+</section>
+
+<section class="leaders-entry-grid" id="leaders-free">
+  <article>
+    <h2>免费查询版</h2>
+    <p>适合快速了解已收录企业的管理能力画像、七项分数、证据等级、主要风险和未来验证点。</p>
+    <ul>
+      <li>覆盖已入库的站内企业评析对象和新增研究企业</li>
+      <li>按企业名称或英文别名查询</li>
+      <li>支持早期、扩张期、规模化三种加权口径</li>
+    </ul>
+  </article>
+  <article id="leaders-pro">
+    <h2>付费专业版</h2>
+    <p>适合投资、合作、招聘高管、供应商准入和风控决策场景。</p>
+    <ul>
+      <li>企业公开信息与材料清单整理</li>
+      <li>证据等级 A/B/C 与不确定性区间</li>
+      <li>内部决策版报告、红线项和跟踪指标</li>
+    </ul>
+    <p><a class="btn btn--primary" href="mailto:facereader@witbacon.com?subject=LEADERS%E4%BC%81%E4%B8%9A%E8%AF%84%E7%BA%A7%E4%B8%93%E4%B8%9A%E7%89%88%E5%92%A8%E8%AF%A2">咨询专业版</a></p>
+  </article>
+</section>
+
+<section class="leaders-tool" id="leaders-scorecard-app" data-source="{{ '/assets/data/leaders-companies.json' | relative_url }}">
+  <div class="leaders-tool__header" id="leaders-search">
+    <p class="leaders-kicker">Company Lookup</p>
+    <h2>输入企业名称，查看 LEADERS 评分结果</h2>
+    <p>系统会返回简单平均分、阶段加权分、证据等级、七项能力条形图、主要风险和后续验证点。</p>
+  </div>
+  <form class="leaders-search" id="leaders-search-form">
+    <label for="leaders-company-input">输入企业名称</label>
+    <div class="leaders-search__row">
+      <input id="leaders-company-input" name="company" type="search" placeholder="例如：寒武纪、商汤科技、DeepSeek、Unitree、688795" autocomplete="off">
+      <select id="leaders-stage" name="stage" aria-label="权重口径">
+        <option value="growth" selected>扩张期权重</option>
+        <option value="early">早期权重</option>
+        <option value="mature">规模化/成熟期权重</option>
+      </select>
+      <button class="btn btn--primary" type="submit">查询</button>
+    </div>
+  </form>
+
+  <div class="leaders-examples" id="leaders-examples" aria-label="示例企业"></div>
+  <div id="leaders-result"></div>
+</section>
+
+<section class="leaders-model-figure">
+  <figure class="fr-figure">
+    <a href="{{ '/assets/img/facereader-leaders-scorecard-model.jpg' | relative_url }}">
+      <img src="{{ '/assets/img/facereader-leaders-scorecard-model.jpg' | relative_url }}"
+           alt="Facereader LEADERS 企业管理评分模型">
+    </a>
+    <figcaption>
+      <a href="{{ '/assets/img/facereader-leaders-scorecard-model.jpg' | relative_url }}">Facereader LEADERS 企业管理评分模型</a>
+    </figcaption>
+  </figure>
+</section>
+
+<section class="leaders-method">
+  <p class="leaders-kicker">Method</p>
+  <h2>LEADERS 评析体系如何读一家企业</h2>
+  <p class="leaders-method__lead">一家公司真正的管理质量，不能只看创始人的光环，也不能只看短期收入。LEADERS 将企业拆成三层：创始人决定上限，二三号位决定下限，治理成熟度决定长期兑现能力。</p>
+  <p>这个体系的核心问题不是“这家公司现在热不热”，而是“它在下一阶段能不能继续兑现”。因此，评分会同时看三个层面：第一，创始人和核心领导者是否具备吸引强人才、做关键取舍、承担压力和纠偏的能力；第二，二三号位是否能补齐创始人的短板，让组织不依赖单点英雄；第三，岗位、文化和治理机制是否足够成熟，能把短期机会沉淀为长期能力。</p>
+  <p>LEADERS 的评分不追求一次性给出绝对结论，而是把判断拆成可复盘的证据链。每家公司都会尽量标出信息来源、证据等级、主要风险和未来验证点。随着财报、公告、招股书、组织任命、重大订单、监管事件和人工复核材料更新，分数也应随之调整。</p>
+  <div class="leaders-method__grid">
+    <article>
+      <h3>Founder 创始人</h3>
+      <p>领袖气质、决策力和实干性决定企业能不能抓住关键窗口，并在压力下做出正确取舍。</p>
+    </article>
+    <article>
+      <h3>Bench Strength 补位力</h3>
+      <p>关键二三号位是否强且稳定，决定组织离开创始人后还能不能独立解决问题。</p>
+    </article>
+    <article>
+      <h3>Governance 治理成熟度</h3>
+      <p>文化契合度、岗位专长完整度和专业化治理结构，决定企业能否跨周期复盘、纠偏和持续兑现。</p>
+    </article>
+  </div>
+  <div class="leaders-dimensions">
+    <article>
+      <h3>L · Leadership Presence 领袖气质</h3>
+      <p>看创始人是否能形成信任半径、吸引强人才，并在压力下保持责任、公正和稳定价值观。</p>
+    </article>
+    <article>
+      <h3>E · Execution Orientation 实干性</h3>
+      <p>看目标、产品、交付、财务和客户结果是否真实兑现，而不是只看叙事和短期热度。</p>
+    </article>
+    <article>
+      <h3>A · Alignment 文化契合度</h3>
+      <p>看高管团队在诚信、责任、客户、结果和冲突处理方式上是否一致，是否能形成建设性闭环。</p>
+    </article>
+    <article>
+      <h3>D · Decision-making 决策力</h3>
+      <p>看战略选择、资源配置、关键用人和错误纠偏速度，尤其关注逆风期的代价控制。</p>
+    </article>
+    <article>
+      <h3>E · Executive Bench 补位力</h3>
+      <p>看COO、CFO、CTO、CHO、合规/风控等关键岗位是否强且稳定，是否能独立解决关键问题。</p>
+    </article>
+    <article>
+      <h3>R · Role Coverage 岗位专长完整度</h3>
+      <p>看关键职能是否齐全，是否存在交付、财务、合规、产品、技术、供应链或销售短板。</p>
+    </article>
+    <article>
+      <h3>S · Structure of Governance 专业化治理结构</h3>
+      <p>看权责边界、董事会/审计/薪酬等约束机制、信息披露和风险纠偏机制是否有效。</p>
+    </article>
+  </div>
+  <div class="leaders-method__notes">
+    <p><strong>证据等级：</strong>A 代表年报、公告、审计报告、招股书等强证据；B 代表多方一致但仍需复核的公开资料；C 代表推断性材料较多，结论需要保守使用。</p>
+    <p><strong>使用边界：</strong>免费版适合快速比较和线索判断；涉及投资、合作、招聘高管或供应商准入时，应结合专业版底稿、原始材料和人工复核。</p>
+  </div>
+
+  <div class="leaders-feedback">
+    <h3>Darwin 优质企业评分与反馈优化</h3>
+    <p>LEADERS 主要判断管理系统能不能持续兑现，Darwin 评分则用投资视角过滤“热度、叙事和低成本信号”。两套分数每半年对照一次：如果 Darwin 明显低于 LEADERS，说明组织分可能被创始人光环、规模或市场热度抬高；如果 Darwin 明显高于 LEADERS，说明企业可能财务质量好但组织叙事偏弱，需要重新看管理层学习能力和人才结构。</p>
+    <div class="leaders-feedback__grid">
+      <article>
+        <h4>1. 财务硬</h4>
+        <p>看长期已动用资本回报率 ROCE 是否超过20%、负债是否保守、自由现金流是否稳定。它对应企业真正的“繁殖能力”。</p>
+      </article>
+      <article>
+        <h4>2. 动态护城河</h4>
+        <p>看管理层是否持续学习、产品和技术是否迭代、优势是否来自系统能力，而不是一时运气或单个窗口。</p>
+      </article>
+      <article>
+        <h4>3. 诚实信号</h4>
+        <p>弱化乐观业绩指引，优先看高成本真信号：持续研发、员工福利、长期人才投入、透明披露和逆风期的资本纪律。</p>
+      </article>
+    </div>
+    <p><strong>反馈规则：</strong>偏差小于0.5分视为正常；0.5到1.2分进入跟踪；超过1.2分触发人工复核，并调整 LEADERS 的权重、证据折扣或 Darwin 的财务阈值。</p>
+  </div>
+</section>
+
+<script src="{{ '/assets/js/leaders-scorecard.js' | relative_url }}" defer></script>

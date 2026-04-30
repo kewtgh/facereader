@@ -1,0 +1,149 @@
+---
+title: "Darwin-LEADERS对照样本池"
+layout: single
+permalink: /darwin-leaders-benchmark/
+description: Darwin优质企业评分与LEADERS管理评分的15家半年度对照样本，用于观察偏差并修正评估模型。
+classes:
+  - wide
+header:
+  teaser: /assets/img/facereader-leaders-hero.webp
+  overlay_image: /assets/img/facereader-leaders-hero.webp
+  overlay_filter: "linear-gradient(90deg, rgba(8, 14, 18, 0.84) 0%, rgba(8, 14, 18, 0.64) 44%, rgba(8, 14, 18, 0.30) 100%)"
+  actions:
+    - label: "返回评级搜索"
+      url: "/leaders-scorecard/"
+      class: "btn--primary btn--large"
+    - label: "查看企业总表"
+      url: "/most_popular/企业评析总表/"
+      class: "btn--secondary btn--large"
+categories:
+  - 企业剖析
+tags:
+  - LEADERS企业评级体系
+  - Darwin优质企业评分
+  - 企业管理评分
+sitemap: true
+---
+
+<section class="leaders-intro leaders-intro--feature">
+  <p class="leaders-kicker">Darwin x LEADERS Benchmark</p>
+  <h2>用15家高信息质量企业，校准管理评分与优质企业评分的偏差。</h2>
+  <p>LEADERS 关注管理系统能否持续兑现，Darwin 评分关注财务硬度、动态护城河和高成本诚实信号。这个样本池每半年复盘一次，用来识别网络热度、创始人光环、融资叙事和财务不透明对评分的误导。</p>
+</section>
+
+<section class="leaders-benchmark" id="darwin-leaders-benchmark" data-source="{{ '/assets/data/darwin-leaders-benchmark.json' | relative_url }}">
+  <div class="leaders-tool__header">
+    <p class="leaders-kicker">2026-H1 Sample Pool</p>
+    <h2>15家对照企业</h2>
+    <p>样本选择按信息质量排序，不按企业热度或分数高低排序。核心样本用于模型修正，卫星样本用于观察非上市高热度企业的披露折扣。</p>
+  </div>
+  <div class="leaders-benchmark__summary" id="leaders-benchmark-summary">
+    <div><span>样本数量</span><strong>15</strong></div>
+    <div><span>复盘频率</span><strong>每半年</strong></div>
+    <div><span>版本</span><strong>2026-H1</strong></div>
+  </div>
+  <div class="leaders-benchmark__table-wrap">
+    <table class="leaders-benchmark__table">
+      <thead>
+        <tr>
+          <th>企业</th>
+          <th>层级</th>
+          <th>信息质量</th>
+          <th>LEADERS</th>
+          <th>Darwin</th>
+          <th>偏差</th>
+          <th>动作</th>
+          <th>选择理由</th>
+        </tr>
+      </thead>
+      <tbody id="leaders-benchmark-rows">
+        <tr><td colspan="4">样本池加载中...</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="leaders-feedback">
+  <h3>半年度修正用法</h3>
+  <p>每半年为这15家企业补齐近三年 ROCE、自由现金流、净负债率、研发投入率和员工/治理信号，再计算 Darwin - LEADERS 偏差。偏差超过 1.2 分的企业强制进入人工复核。</p>
+  <div class="leaders-feedback__grid">
+    <article>
+      <h4>偏差正常</h4>
+      <p>绝对偏差不超过0.5分，说明管理评分和优质企业评分基本互相印证。</p>
+    </article>
+    <article>
+      <h4>进入跟踪</h4>
+      <p>偏差在0.5到1.2分之间，下一期重点检查现金流、研发投入和治理信号。</p>
+    </article>
+    <article>
+      <h4>触发复核</h4>
+      <p>偏差超过1.2分，检查是否被热度、融资、创始人声望或低成本业绩指引误导。</p>
+    </article>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const root = document.querySelector("#darwin-leaders-benchmark");
+  const rows = document.querySelector("#leaders-benchmark-rows");
+  const summary = document.querySelector("#leaders-benchmark-summary");
+  if (!root || !rows) return;
+
+  const scoreKeys = ["leadership", "decision", "execution", "bench", "alignment", "coverage", "governance"];
+  const darwinKeys = ["financial", "moat", "signal"];
+  const escapeHTML = (value) => String(value || "").replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[char]));
+  const average = (values) => values.reduce((sum, value) => sum + Number(value || 0), 0) / values.length;
+  const leadersScore = (company) => average(scoreKeys.map((key) => company.scores && company.scores[key]));
+  const darwinScore = (company) => company.darwin ? average(darwinKeys.map((key) => company.darwin[key])) : null;
+  const actionLabel = (delta) => {
+    const abs = Math.abs(delta);
+    if (abs <= 0.5) return "正常";
+    if (abs <= 1.2) return "跟踪";
+    return "复核";
+  };
+
+  try {
+    const [benchmarkResponse, companyResponse] = await Promise.all([
+      fetch(root.dataset.source),
+      fetch("{{ '/assets/data/leaders-companies.json' | relative_url }}")
+    ]);
+    const data = await benchmarkResponse.json();
+    const companies = await companyResponse.json();
+    const companyMap = new Map(companies.map((company) => [company.name, company]));
+
+    rows.innerHTML = data.companies.map((company) => `
+      ${(() => {
+        const source = companyMap.get(company.name);
+        const leaders = source ? leadersScore(source) : null;
+        const darwin = source ? darwinScore(source) : null;
+        const delta = leaders !== null && darwin !== null ? darwin - leaders : null;
+        const action = delta !== null ? actionLabel(delta) : "待评分";
+        const deltaText = delta !== null ? `${delta >= 0 ? "+" : ""}${delta.toFixed(1)}` : "待补";
+        return `<tr>
+        <td><strong>${escapeHTML(company.name)}</strong>${source && source.darwin ? `<small>${escapeHTML(source.darwin.evidence || source.evidence || "")}</small>` : ""}</td>
+        <td>${company.tier === "core" ? "核心" : "卫星"}</td>
+        <td><span class="leaders-benchmark__quality">${escapeHTML(company.info_quality)}</span></td>
+        <td>${leaders !== null ? leaders.toFixed(1) : "待补"}</td>
+        <td>${darwin !== null ? darwin.toFixed(1) : "待补"}</td>
+        <td><span class="leaders-benchmark__delta leaders-benchmark__delta--${action}">${deltaText}</span></td>
+        <td>${action}</td>
+        <td>${escapeHTML(company.reason)}</td>
+      </tr>`;
+      })()}
+    `).join("");
+    summary.innerHTML = `
+      <div><span>样本数量</span><strong>${data.companies.length}</strong></div>
+      <div><span>复盘频率</span><strong>${escapeHTML(data.review_cycle)}</strong></div>
+      <div><span>版本</span><strong>${escapeHTML(data.version)}</strong></div>
+    `;
+  } catch (error) {
+    rows.innerHTML = "<tr><td colspan=\"4\">样本池加载失败，请稍后再试。</td></tr>";
+  }
+});
+</script>

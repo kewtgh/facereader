@@ -7,3 +7,11 @@ unless "".respond_to?(:tainted?)
     end
   end
 end
+
+unless "".respond_to?(:untaint)
+  class Object
+    def untaint
+      self
+    end
+  end
+end
