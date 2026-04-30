@@ -136,4 +136,14 @@ redirect_from:
 
 字节跳动的核心人员任用情况评分：
 
-<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/bytedance.png" alt="bytedance"  /></figure>
+| 评分项 | 分数 |
+| :-- | --: |
+| 创始人领袖气质 | 9 |
+| 创始人决策力 | 9 |
+| 创始人实干性 | 8 |
+| 二三号补位力 | 9 |
+| 文化契合度 | 9 |
+| 岗位专长完整性 | 9 |
+| 专业化治理结构 | 9 |
+| 平均分 | 8.9 |
+{: .fr-score-table }

@@ -1,3 +1,15 @@
 <!-- start custom footer snippets -->
+<script>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get("from") !== "leaders-scorecard") return;
+
+    var link = document.createElement("a");
+    link.className = "leaders-floating-back";
+    link.href = "{{ '/leaders-scorecard/#leaders-search' | relative_url }}";
+    link.textContent = "返回评级搜索";
+    document.body.appendChild(link);
+  })();
+</script>
 
 <!-- end custom footer snippets -->

@@ -11,10 +11,10 @@ header:
   overlay_filter: "linear-gradient(90deg, rgba(8, 14, 18, 0.82) 0%, rgba(8, 14, 18, 0.62) 42%, rgba(8, 14, 18, 0.28) 100%)"
   actions:
     - label: "开始查询"
-      url: "#leaders-search"
+      url: "/leaders-scorecard/#leaders-search"
       class: "btn--primary btn--large"
     - label: "专业版入口"
-      url: "#leaders-pro"
+      url: "mailto:facereader@witbacon.com?subject=LEADERS%E4%BC%81%E4%B8%9A%E8%AF%84%E7%BA%A7%E4%B8%93%E4%B8%9A%E7%89%88%E5%92%A8%E8%AF%A2"
       class: "btn--secondary btn--large"
 categories:
   - 企业剖析
@@ -144,25 +144,27 @@ sitemap: true
     <p><strong>使用边界：</strong>免费版适合快速比较和线索判断；涉及投资、合作、招聘高管或供应商准入时，应结合专业版底稿、原始材料和人工复核。</p>
   </div>
 
-  <div class="leaders-feedback">
-    <h3>Darwin 优质企业评分与反馈优化</h3>
-    <p>LEADERS 主要判断管理系统能不能持续兑现，Darwin 评分则用投资视角过滤“热度、叙事和低成本信号”。两套分数每半年对照一次：如果 Darwin 明显低于 LEADERS，说明组织分可能被创始人光环、规模或市场热度抬高；如果 Darwin 明显高于 LEADERS，说明企业可能财务质量好但组织叙事偏弱，需要重新看管理层学习能力和人才结构。</p>
-    <div class="leaders-feedback__grid">
-      <article>
-        <h4>1. 财务硬</h4>
-        <p>看长期已动用资本回报率 ROCE 是否超过20%、负债是否保守、自由现金流是否稳定。它对应企业真正的“繁殖能力”。</p>
-      </article>
-      <article>
-        <h4>2. 动态护城河</h4>
-        <p>看管理层是否持续学习、产品和技术是否迭代、优势是否来自系统能力，而不是一时运气或单个窗口。</p>
-      </article>
-      <article>
-        <h4>3. 诚实信号</h4>
-        <p>弱化乐观业绩指引，优先看高成本真信号：持续研发、员工福利、长期人才投入、透明披露和逆风期的资本纪律。</p>
-      </article>
-    </div>
-    <p><strong>反馈规则：</strong>偏差小于0.5分视为正常；0.5到1.2分进入跟踪；超过1.2分触发人工复核，并调整 LEADERS 的权重、证据折扣或 Darwin 的财务阈值。</p>
+</section>
+
+<section class="leaders-feedback leaders-feedback--standalone">
+  <p class="leaders-kicker">Darwin Feedback</p>
+  <h3>Darwin 优质企业评分与反馈优化</h3>
+  <p>LEADERS 主要判断管理系统能不能持续兑现，Darwin 评分则用投资视角过滤“热度、叙事和低成本信号”。两套分数每半年对照一次：如果 Darwin 明显低于 LEADERS，说明组织分可能被创始人光环、规模或市场热度抬高；如果 Darwin 明显高于 LEADERS，说明企业可能财务质量好但组织叙事偏弱，需要重新看管理层学习能力和人才结构。</p>
+  <div class="leaders-feedback__grid">
+    <article>
+      <h4>1. 资本回报韧性</h4>
+      <p>看长期已动用资本回报率 ROCE 是否超过20%、负债是否保守、自由现金流是否稳定。它对应企业真正的“繁殖能力”。</p>
+    </article>
+    <article>
+      <h4>2. 动态护城河</h4>
+      <p>看管理层是否持续学习、产品和技术是否迭代、优势是否来自系统能力，而不是一时运气或单个窗口。</p>
+    </article>
+    <article>
+      <h4>3. 诚实信号</h4>
+      <p>弱化乐观业绩指引，优先看高成本真信号：持续研发、员工福利、长期人才投入、透明披露和逆风期的资本纪律。</p>
+    </article>
   </div>
+  <p><strong>反馈规则：</strong>偏差小于0.5分视为正常；0.5到1.2分进入跟踪；超过1.2分触发人工复核，并调整 LEADERS 的权重、证据折扣或 Darwin 的财务阈值。</p>
 </section>
 
 <script src="{{ '/assets/js/leaders-scorecard.js' | relative_url }}" defer></script>

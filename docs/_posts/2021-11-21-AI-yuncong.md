@@ -183,7 +183,17 @@ redirect_from:
 
 整体评价，云从科技的团队评分为：
 
-<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/yuncong.png" alt="yuncong" /></figure>
+| 评分项 | 分数 |
+| :-- | --: |
+| 创始人领袖气质 | 7 |
+| 创始人决策力 | 7 |
+| 创始人实干性 | 8 |
+| 二三号补位力 | 7 |
+| 文化契合度 | 8 |
+| 岗位专长完整性 | 8 |
+| 专业化治理结构 | 7 |
+| 平均分 | 7.4 |
+{: .fr-score-table }
 
 ---
 

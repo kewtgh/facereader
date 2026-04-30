@@ -17,7 +17,7 @@
 
   const evidenceCoef = { A: 1, B: 0.85, C: 0.7 };
   const darwinKeys = [
-    ["financial", "财务硬"],
+    ["financial", "资本回报韧性"],
     ["moat", "动态护城河"],
     ["signal", "诚实信号"]
   ];
@@ -25,8 +25,37 @@
 
   const $ = (selector) => document.querySelector(selector);
   const normalize = (value) => String(value || "").trim().toLowerCase().replace(/\s+/g, "");
+  const escapeHtml = (value) => String(value || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
   const average = (scores) => scoreKeys.reduce((sum, [key]) => sum + Number(scores[key] || 0), 0) / scoreKeys.length;
   const averageDarwin = (scores) => darwinKeys.reduce((sum, [key]) => sum + Number(scores[key] || 0), 0) / darwinKeys.length;
+
+  function isSiteArticle(url) {
+    return /^\/docs\//.test(url || "") || /^https?:\/\/facereader\.witbacon\.com\/docs\//.test(url || "");
+  }
+
+  function localizeUrl(url) {
+    return String(url || "").replace(/^https?:\/\/facereader\.witbacon\.com/i, "");
+  }
+
+  function addReturnParam(url) {
+    const localUrl = localizeUrl(url);
+    const separator = localUrl.includes("?") ? "&" : "?";
+    return `${localUrl}${separator}from=leaders-scorecard`;
+  }
+
+  function showFloatingBack() {
+    if (document.querySelector(".leaders-floating-back")) return;
+    const link = document.createElement("a");
+    link.className = "leaders-floating-back";
+    link.href = "#leaders-search";
+    link.textContent = "返回评级搜索";
+    document.body.appendChild(link);
+  }
 
   function weightedScore(company, mode) {
     const plan = weights[mode] || weights.growth;
@@ -109,6 +138,41 @@
     }).join("");
   }
 
+  function referenceSummary(company) {
+    if (company.reference_summary) return company.reference_summary;
+    if (company.sources && company.sources.length) {
+      return `${company.name}暂无站内企业评析文章，以下公开资料用于支撑当前 LEADERS 与 Darwin 评分：${company.summary}`;
+    }
+    return `${company.name}暂无站内企业评析文章，当前评分依据企业基础信息、公开风险线索和后续人工复核要求形成。`;
+  }
+
+  function renderReferences(company) {
+    const links = (company.sources && company.sources.length ? company.sources : [company.url])
+      .filter(Boolean)
+      .map((source, index) => `
+        <li>
+          <a href="${escapeHtml(source)}" target="_blank" rel="noopener">参考链接 ${index + 1}</a>
+        </li>
+      `)
+      .join("");
+
+    return `
+      <section class="leaders-references" id="leaders-reference-materials">
+        <h3>参考链接及摘要</h3>
+        <p>${escapeHtml(referenceSummary(company))}</p>
+        <ul>${links}</ul>
+      </section>
+    `;
+  }
+
+  function renderResourceLink(company) {
+    if (isSiteArticle(company.url)) {
+      return `<a class="btn btn--primary" href="${escapeHtml(addReturnParam(company.url))}">查看关联文章</a>`;
+    }
+
+    return `<a class="btn btn--primary" href="#leaders-reference-materials" data-show-back="true">查看参考资料</a>`;
+  }
+
   function renderDarwinPanel(company, leadersScore) {
     if (!company.darwin) {
       return `
@@ -182,11 +246,17 @@
             <p><strong>主要风险：</strong>${company.risk}</p>
             <p><strong>未来验证点：</strong></p>
             <ul>${watch}</ul>
-            <p><a href="${company.url}">查看关联资料</a></p>
+            <p>${renderResourceLink(company)}</p>
           </section>
         </div>
+        ${isSiteArticle(company.url) ? "" : renderReferences(company)}
       </article>
     `;
+
+    const referenceLink = document.querySelector("[data-show-back='true']");
+    if (referenceLink) {
+      referenceLink.addEventListener("click", showFloatingBack);
+    }
   }
 
   function renderEmpty(query) {

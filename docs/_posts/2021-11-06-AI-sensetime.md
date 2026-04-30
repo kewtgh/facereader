@@ -239,7 +239,17 @@ redirect_from:
 
 整体评价，商汤科技的团队评分为：
 
-<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/sensetime.png" alt="sensetime" /></figure>
+| 评分项 | 分数 |
+| :-- | --: |
+| 创始人领袖气质 | 8 |
+| 创始人决策力 | 8 |
+| 创始人实干性 | 7 |
+| 二三号补位力 | 7 |
+| 文化契合度 | 7 |
+| 岗位专长完整性 | 6 |
+| 专业化治理结构 | 6 |
+| 平均分 | 7.0 |
+{: .fr-score-table }
 
 ---
 
