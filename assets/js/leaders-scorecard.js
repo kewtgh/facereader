@@ -204,7 +204,7 @@
         <div class="leaders-darwin__head">
           <div>
             <h3>Darwin 优质企业评分</h3>
-            <p>用财务硬度、动态护城河和诚实信号过滤网络热度与低成本叙事。</p>
+            <p>用财务硬度、动态护城河和诚实信号过滤市场关注度与低成本叙事。</p>
           </div>
           <div class="leaders-darwin__score">
             <span>${score.toFixed(1)}</span>
