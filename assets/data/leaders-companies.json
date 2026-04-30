@@ -380,16 +380,16 @@
     "industry": "半导体 / ODM",
     "stage": "成熟期 / 整合",
     "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-wingtech/",
-    "scores": { "leadership": 8, "decision": 9, "execution": 9, "bench": 8, "alignment": 9, "coverage": 9, "governance": 7 },
+    "scores": { "leadership": 8, "decision": 9, "execution": 9, "bench": 8, "alignment": 9, "coverage": 8, "governance": 7 },
     "darwin": {
       "financial": 6.5,
       "moat": 7.5,
       "signal": 7,
       "evidence": "B",
-      "note": "ODM与半导体整合能力较强，执行和岗位覆盖是真信号；但并购周期、半导体波动和资本配置透明度限制财务硬度。"
+      "note": "ODM与半导体整合能力较强，执行能力是真信号；但创新短板、并购周期、半导体波动和资本配置透明度限制财务硬度。"
     },
     "evidence": "B",
-    "summary": "决策、执行、文化一致性和岗位覆盖都很强，经营型组织特征明显。",
+    "summary": "决策、执行和文化一致性较强，经营型组织特征明显；但创新能力和专业化治理仍有短板，岗位专长完整度不宜给到顶格高分。",
     "risk": "并购与周期波动对治理透明度、资本配置提出更高要求。",
     "watch": ["半导体周期", "并购协同", "资本开支纪律"]
   },
