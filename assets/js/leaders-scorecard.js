@@ -35,7 +35,7 @@
   const averageDarwin = (scores) => darwinKeys.reduce((sum, [key]) => sum + Number(scores[key] || 0), 0) / darwinKeys.length;
 
   function isSiteArticle(url) {
-    return /^\/docs\//.test(url || "") || /^https?:\/\/facereader\.witbacon\.com\/docs\//.test(url || "");
+    return /^\//.test(url || "") || /^https?:\/\/facereader\.witbacon\.com\//.test(url || "");
   }
 
   function localizeUrl(url) {

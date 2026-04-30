@@ -4,7 +4,7 @@
     "aliases": ["ByteDance", "bytedance", "抖音"],
     "industry": "消费互联网 / 内容平台",
     "stage": "规模化 / 全球化",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/TMT/TMT-dancebyte/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/tmt/TMT-dancebyte/",
     "scores": { "leadership": 9, "decision": 9, "execution": 8, "bench": 9, "alignment": 9, "coverage": 9, "governance": 9 },
     "darwin": {
       "financial": 7,
@@ -23,7 +23,7 @@
     "aliases": ["4Paradigm", "fourth paradigm"],
     "industry": "AI / ToB解决方案",
     "stage": "扩张期 / 商业化验证",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/AI/AI-4Paradigm(2)/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ai/AI-4Paradigm(2)/",
     "scores": { "leadership": 7, "decision": 8, "execution": 7, "bench": 7, "alignment": 5, "coverage": 6, "governance": 7 },
     "darwin": {
       "financial": 4.5,
@@ -42,7 +42,7 @@
     "aliases": ["小鹏", "XPeng", "xpev"],
     "industry": "新能源汽车",
     "stage": "规模化 / 强竞争",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-Xiaopeng/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-Xiaopeng/",
     "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 8, "alignment": 8, "coverage": 8, "governance": 8 },
     "darwin": {
       "financial": 6,
@@ -61,7 +61,7 @@
     "aliases": ["蔚来", "NIO", "nio"],
     "industry": "新能源汽车",
     "stage": "规模化 / 承压增长",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/",
     "scores": { "leadership": 9, "decision": 7, "execution": 8, "bench": 7, "alignment": 7, "coverage": 6, "governance": 7 },
     "darwin": {
       "financial": 4.5,
@@ -80,7 +80,7 @@
     "aliases": ["理想", "Li Auto", "li auto"],
     "industry": "新能源汽车",
     "stage": "规模化 / 产品扩张",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-lixiang/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-lixiang/",
     "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 8, "alignment": 8, "coverage": 7, "governance": 7 },
     "darwin": {
       "financial": 7,
@@ -99,7 +99,7 @@
     "aliases": ["吉利", "Geely", "geely auto"],
     "industry": "汽车制造",
     "stage": "成熟期 / 转型",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-Geelyauto/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-Geelyauto/",
     "scores": { "leadership": 7, "decision": 8, "execution": 9, "bench": 7, "alignment": 7, "coverage": 7, "governance": 8 },
     "darwin": {
       "financial": 6.5,
@@ -118,7 +118,7 @@
     "aliases": ["哪咤汽车", "哪吒", "Hozon", "Neta"],
     "industry": "新能源汽车",
     "stage": "扩张期 / 承压",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-hozonauto-wmmotor/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-hozonauto-wmmotor/",
     "scores": { "leadership": 7, "decision": 5, "execution": 8, "bench": 6, "alignment": 7, "coverage": 6, "governance": 6 },
     "darwin": {
       "financial": 3.5,
@@ -137,7 +137,7 @@
     "aliases": ["威马", "WM Motor", "wm motor"],
     "industry": "新能源汽车",
     "stage": "承压转型",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-hozonauto-wmmotor/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-hozonauto-wmmotor/",
     "scores": { "leadership": 8, "decision": 9, "execution": 8, "bench": 6, "alignment": 7, "coverage": 7, "governance": 7 },
     "darwin": {
       "financial": 2.5,
@@ -156,7 +156,7 @@
     "aliases": ["涂鸦", "Tuya", "tuya smart"],
     "industry": "IoT / SaaS平台",
     "stage": "扩张期 / 商业化",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/AI/AI-Tuya/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ai/AI-Tuya/",
     "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 9, "alignment": 8, "coverage": 7, "governance": 7 },
     "darwin": {
       "financial": 5.5,
@@ -175,7 +175,7 @@
     "aliases": ["商汤", "SenseTime", "sensetime"],
     "industry": "AI / 多模态大模型 / 视觉AI",
     "stage": "规模化 / 1+X转型",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/AI/AI-sensetime/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ai/AI-sensetime/",
     "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 8, "alignment": 8, "coverage": 8, "governance": 8 },
     "darwin": {
       "financial": 5.5,
@@ -201,7 +201,7 @@
     "aliases": ["依图", "Yitu", "yitu tech"],
     "industry": "AI / 计算机视觉",
     "stage": "扩张期 / 转型",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/AI/AI-yitu/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ai/AI-yitu/",
     "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 7, "alignment": 9, "coverage": 7, "governance": 8 },
     "darwin": {
       "financial": 4,
@@ -220,7 +220,7 @@
     "aliases": ["云从", "CloudWalk", "cloudwalk"],
     "industry": "AI / 计算机视觉",
     "stage": "扩张期 / 上市后验证",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/AI/AI-yuncong/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ai/AI-yuncong/",
     "scores": { "leadership": 7, "decision": 7, "execution": 8, "bench": 7, "alignment": 8, "coverage": 8, "governance": 7 },
     "darwin": {
       "financial": 4,
@@ -239,7 +239,7 @@
     "aliases": ["旷视", "Megvii", "megvii"],
     "industry": "AI / 计算机视觉",
     "stage": "扩张期 / 转型",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/AI/AI-kuangshi/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ai/AI-kuangshi/",
     "scores": { "leadership": 7, "decision": 8, "execution": 7, "bench": 8, "alignment": 7, "coverage": 7, "governance": 7 },
     "darwin": {
       "financial": 4,
@@ -258,7 +258,7 @@
     "aliases": ["领创", "Advance Intelligence", "advance group"],
     "industry": "AI / 金融科技",
     "stage": "扩张期",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/AI/AI-advancegroup-2/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ai/AI-advancegroup-2/",
     "scores": { "leadership": 9, "decision": 8, "execution": 9, "bench": 7, "alignment": 8, "coverage": 8, "governance": 8 },
     "darwin": {
       "financial": 5.5,
@@ -277,7 +277,7 @@
     "aliases": ["汇顶", "Goodix", "goodix"],
     "industry": "芯片半导体",
     "stage": "成熟期 / 技术迭代",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-goodix/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-goodix/",
     "scores": { "leadership": 9, "decision": 9, "execution": 8, "bench": 9, "alignment": 8, "coverage": 8, "governance": 9 },
     "darwin": {
       "financial": 7,
@@ -296,7 +296,7 @@
     "aliases": ["寒武纪科技", "Cambricon", "cambricon"],
     "industry": "AI芯片",
     "stage": "规模化 / 盈利兑现",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-cambricon/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-cambricon/",
     "scores": { "leadership": 8, "decision": 9, "execution": 9, "bench": 8, "alignment": 8, "coverage": 8, "governance": 8 },
     "darwin": {
       "financial": 7,
@@ -322,7 +322,7 @@
     "aliases": ["韦尔", "Will Semiconductor", "omnivision"],
     "industry": "芯片半导体",
     "stage": "成熟期 / 整合",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-omnivision/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-omnivision/",
     "scores": { "leadership": 9, "decision": 9, "execution": 8, "bench": 7, "alignment": 8, "coverage": 7, "governance": 7 },
     "darwin": {
       "financial": 6.5,
@@ -341,7 +341,7 @@
     "aliases": ["平头哥半导体", "T-Head", "thead"],
     "industry": "芯片半导体",
     "stage": "平台孵化 / 技术验证",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-thead/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-thead/",
     "scores": { "leadership": 9, "decision": 8, "execution": 8, "bench": 8, "alignment": 7, "coverage": 8, "governance": 7 },
     "darwin": {
       "financial": 5,
@@ -360,7 +360,7 @@
     "aliases": ["燧原", "Enflame", "enflame tech"],
     "industry": "AI芯片",
     "stage": "扩张期 / 产品验证",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-enflame/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-enflame/",
     "scores": { "leadership": 7, "decision": 8, "execution": 8, "bench": 6, "alignment": 8, "coverage": 6, "governance": 6 },
     "darwin": {
       "financial": 3.5,
@@ -379,7 +379,7 @@
     "aliases": ["闻泰", "Wingtech", "wingtech"],
     "industry": "半导体 / ODM",
     "stage": "成熟期 / 整合",
-    "url": "/docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-wingtech/",
+    "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-wingtech/",
     "scores": { "leadership": 8, "decision": 9, "execution": 9, "bench": 8, "alignment": 9, "coverage": 9, "governance": 7 },
     "darwin": {
       "financial": 6.5,
