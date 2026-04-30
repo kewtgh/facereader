@@ -1,0 +1,69 @@
+{
+  "version": "2026-05-01",
+  "score_bands": [
+    { "range": "0-2", "label": "严重缺失", "rule": "关键岗位或治理机制缺位，已经形成明显组织风险。" },
+    { "range": "3-4", "label": "明显不足", "rule": "有局部能力，但无法稳定支撑当前阶段业务。" },
+    { "range": "5-6", "label": "中等可用", "rule": "能够维持基本运转，但存在一个或多个关键短板。" },
+    { "range": "7-8", "label": "稳定有效", "rule": "多数证据支持该能力有效，仍需保留阶段、周期或披露折扣。" },
+    { "range": "9-10", "label": "卓越系统化", "rule": "必须有强证据证明能力可复制、可持续，且不是单次业绩或叙事带来的高分。" }
+  ],
+  "evidence_levels": {
+    "A": "财报、公告、招股书、审计报告、正式任命、可复算经营数据等强证据。",
+    "B": "多方公开报道、行业声誉、客户/产品案例、公司正式新闻稿等中等证据。",
+    "C": "单一访谈、媒体叙事、推断、营销材料或信息披露不足。"
+  },
+  "dimensions": {
+    "leadership": {
+      "label": "领袖气质",
+      "question": "创始人或核心领导者是否能吸引强人才、承压并建立组织信任。",
+      "high_score_guardrail": "9分需要跨周期人才吸引、关键组织凝聚和外部资源号召的可验证证据。"
+    },
+    "decision": {
+      "label": "决策力",
+      "question": "创始人是否在战略方向、关键用人、资源配置和纠偏上持续做出高质量判断。",
+      "high_score_guardrail": "不能把收入、股价、融资或短期热度直接等同于决策力9分；必须能看到关键取舍、关键用人和低代价纠偏。"
+    },
+    "execution": {
+      "label": "实干性",
+      "question": "组织是否把方向转化为产品、交付、利润、现金流或客户复购。",
+      "high_score_guardrail": "9分需要重复兑现的结果证据，单次爆发或行业beta只能支撑7-8分。"
+    },
+    "bench": {
+      "label": "补位力",
+      "question": "二三号位是否能补齐创始人短板，让组织不依赖单点英雄。",
+      "high_score_guardrail": "9分需要多名关键高管、跨职能协同和继任/授权线索。"
+    },
+    "alignment": {
+      "label": "文化契合度",
+      "question": "组织文化是否和业务阶段、客户价值、成本纪律及长期目标一致。",
+      "high_score_guardrail": "9分需要文化与经营结果互相印证，不能只看价值观表述。"
+    },
+    "coverage": {
+      "label": "岗位专长完整度",
+      "question": "关键职能是否有足够专业的人和机制覆盖。",
+      "high_score_guardrail": "9分需要研发、产品、销售、财务、法务合规、人力、供应链或对应行业关键职能均有强人和机制。"
+    },
+    "governance": {
+      "label": "专业化治理结构",
+      "question": "董事会、财务披露、内控、授权和风险管理是否足以约束组织。",
+      "high_score_guardrail": "9分需要上市公司级强披露或等价治理证据，治理争议、非上市不透明或资本依赖应降分。"
+    }
+  },
+  "guardrails": {
+    "score_9_requires": {
+      "min_evidence": "B",
+      "requires_sources_or_research_file": true,
+      "description": "任何9分都必须有可追溯资料，且公司证据等级不能为C。"
+    },
+    "dimension_caps": [
+      { "dimension": "decision", "max_when_evidence": { "C": 8 }, "rule": "C级证据下，创始人决策力最高8分。" },
+      { "dimension": "governance", "max_when_evidence": { "B": 8, "C": 6 }, "rule": "治理结构9分必须有A级强披露。" },
+      { "dimension": "coverage", "max_when_evidence": { "C": 7 }, "rule": "岗位专长完整度需要可验证岗位和关键人员，C级证据最高7分。" }
+    ],
+    "darwin_feedback": {
+      "warn_delta": 0.5,
+      "review_delta": 1.2,
+      "rule": "LEADERS明显高于Darwin时，优先复核创始人光环、市场热度、规模叙事和低成本信号。"
+    }
+  }
+}

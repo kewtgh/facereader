@@ -74,7 +74,17 @@ redirect_from:
 
 小鹏汽车的核心人员任用情况评分：
 
-<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/xiaopeng.png" alt="xiaopeng"  /></figure>
+| 评分项 | 分数 |
+|---|---:|
+| 创始人领袖气质 | 8 |
+| 创始人决策力 | 8 |
+| 创始人实干性 | 8 |
+| 二三号补位力 | 8 |
+| 文化契合度 | 8 |
+| 岗位专长完整性 | 8 |
+| 专业化治理结构 | 8 |
+| 平均分 | 8.0 |
+{: .fr-score-table }
 
 ---
 

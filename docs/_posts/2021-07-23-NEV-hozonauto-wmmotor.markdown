@@ -96,7 +96,17 @@ redirect_from:
 
   哪咤汽车的高层任用情况评分：
 
-<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/nezha.png" alt="nezha"  /></figure>
+| 评分项 | 分数 |
+|---|---:|
+| 创始人领袖气质 | 7 |
+| 创始人决策力 | 5 |
+| 创始人实干性 | 8 |
+| 二三号补位力 | 6 |
+| 文化契合度 | 7 |
+| 岗位专长完整性 | 6 |
+| 专业化治理结构 | 6 |
+| 平均分 | 6.4 |
+{: .fr-score-table }
 
 ---
 
@@ -128,7 +138,17 @@ redirect_from:
 
 &emsp;威马汽车的核心人员任用情况评分：
 
-<figure class="fr-figure"><img src="https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/weima.png" alt="weima"  /></figure>
+| 评分项 | 分数 |
+|---|---:|
+| 创始人领袖气质 | 7 |
+| 创始人决策力 | 6 |
+| 创始人实干性 | 6 |
+| 二三号补位力 | 5 |
+| 文化契合度 | 6 |
+| 岗位专长完整性 | 5 |
+| 专业化治理结构 | 5 |
+| 平均分 | 5.7 |
+{: .fr-score-table }
 
 ---
 

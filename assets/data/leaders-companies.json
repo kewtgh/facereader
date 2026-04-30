@@ -5,7 +5,7 @@
     "industry": "消费互联网 / 内容平台",
     "stage": "规模化 / 全球化",
     "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/tmt/TMT-dancebyte/",
-    "scores": { "leadership": 9, "decision": 9, "execution": 8, "bench": 9, "alignment": 9, "coverage": 9, "governance": 9 },
+    "scores": { "leadership": 9, "decision": 9, "execution": 8, "bench": 9, "alignment": 8, "coverage": 9, "governance": 8 },
     "darwin": {
       "financial": 7,
       "moat": 8.5,
@@ -14,9 +14,12 @@
       "note": "平台规模、产品迭代和人才密度较强，构成动态护城河；但非上市披露限制了ROCE、自由现金流和业务分部利润的强验证，财务硬度保守处理。"
     },
     "evidence": "B",
-    "summary": "创始人上限、二三号位补位和岗位完整度都较强，组织系统化能力突出。",
+    "summary": "创始人上限、关键决策、二三号位补位和岗位专长完整度都较强；非上市披露、全球监管和平台治理压力使文化契合度与治理结构保留8分口径。",
     "risk": "全球化监管、平台治理与组织规模继续放大后的权责边界。",
-    "watch": ["核心业务增长质量", "海外合规压力", "高管梯队稳定性"]
+    "watch": ["核心业务增长质量", "海外合规压力", "高管梯队稳定性"],
+    "sources": [
+      "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/tmt/TMT-dancebyte/"
+    ]
   },
   {
     "name": "第四范式",
@@ -62,7 +65,7 @@
     "industry": "新能源汽车",
     "stage": "规模化 / 承压增长",
     "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-nio/",
-    "scores": { "leadership": 9, "decision": 7, "execution": 8, "bench": 7, "alignment": 7, "coverage": 6, "governance": 7 },
+    "scores": { "leadership": 8, "decision": 7, "execution": 8, "bench": 7, "alignment": 7, "coverage": 6, "governance": 7 },
     "darwin": {
       "financial": 4.5,
       "moat": 7,
@@ -100,7 +103,7 @@
     "industry": "汽车制造",
     "stage": "成熟期 / 转型",
     "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-Geelyauto/",
-    "scores": { "leadership": 7, "decision": 8, "execution": 9, "bench": 7, "alignment": 7, "coverage": 7, "governance": 8 },
+    "scores": { "leadership": 7, "decision": 8, "execution": 8, "bench": 7, "alignment": 7, "coverage": 7, "governance": 8 },
     "darwin": {
       "financial": 6.5,
       "moat": 7.5,
@@ -138,7 +141,7 @@
     "industry": "新能源汽车",
     "stage": "承压转型",
     "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-hozonauto-wmmotor/",
-    "scores": { "leadership": 8, "decision": 9, "execution": 8, "bench": 6, "alignment": 7, "coverage": 7, "governance": 7 },
+    "scores": { "leadership": 7, "decision": 6, "execution": 6, "bench": 5, "alignment": 6, "coverage": 5, "governance": 5 },
     "darwin": {
       "financial": 2.5,
       "moat": 4.5,
@@ -147,7 +150,7 @@
       "note": "早期战略和执行评分不能抵消资金链、供应链和用户信任受损后的财务硬约束；Darwin按重组风险和现金流压力显著降分。"
     },
     "evidence": "C",
-    "summary": "早期决策与执行表现不弱，但二三号位补位和持续治理韧性不足。",
+    "summary": "早期战略窗口不能抵消后续资金链、供应链和用户信任受损，按当前评分卡需下调决策、执行、补位和治理。",
     "risk": "资金链、供应链和用户信任受损后，管理分数需要重新评估。",
     "watch": ["债务与重组进展", "供应链恢复", "团队留存"]
   },
@@ -157,7 +160,7 @@
     "industry": "IoT / SaaS平台",
     "stage": "扩张期 / 商业化",
     "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ai/AI-Tuya/",
-    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 9, "alignment": 8, "coverage": 7, "governance": 7 },
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 8, "alignment": 8, "coverage": 7, "governance": 7 },
     "darwin": {
       "financial": 5.5,
       "moat": 7,
@@ -202,7 +205,7 @@
     "industry": "AI / 计算机视觉",
     "stage": "扩张期 / 转型",
     "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ai/AI-yitu/",
-    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 7, "alignment": 9, "coverage": 7, "governance": 8 },
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 7, "alignment": 8, "coverage": 7, "governance": 8 },
     "darwin": {
       "financial": 4,
       "moat": 5.5,
@@ -259,7 +262,7 @@
     "industry": "AI / 金融科技",
     "stage": "扩张期",
     "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/ai/AI-advancegroup-2/",
-    "scores": { "leadership": 9, "decision": 8, "execution": 9, "bench": 7, "alignment": 8, "coverage": 8, "governance": 8 },
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 7, "alignment": 8, "coverage": 8, "governance": 8 },
     "darwin": {
       "financial": 5.5,
       "moat": 7,
@@ -278,7 +281,7 @@
     "industry": "芯片半导体",
     "stage": "成熟期 / 技术迭代",
     "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-goodix/",
-    "scores": { "leadership": 9, "decision": 9, "execution": 8, "bench": 9, "alignment": 8, "coverage": 8, "governance": 9 },
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 8, "alignment": 8, "coverage": 8, "governance": 8 },
     "darwin": {
       "financial": 7,
       "moat": 7.5,
@@ -287,7 +290,7 @@
       "note": "成熟芯片公司具备产品周期和客户积累，但下游周期、技术迭代和单品依赖会压低长期资本回报确定性。"
     },
     "evidence": "B",
-    "summary": "创始人、决策、补位与治理结构都很强，管理评分处于第一梯队。",
+    "summary": "创始人、产品决策、补位与治理结构较强，但芯片周期和客户结构变化要求按稳定有效而非顶格卓越处理。",
     "risk": "核心技术周期和下游客户结构变化会影响长期兑现。",
     "watch": ["新产品曲线", "客户集中度", "研发效率"]
   },
@@ -297,7 +300,7 @@
     "industry": "AI芯片",
     "stage": "规模化 / 盈利兑现",
     "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-cambricon/",
-    "scores": { "leadership": 8, "decision": 9, "execution": 9, "bench": 8, "alignment": 8, "coverage": 8, "governance": 8 },
+    "scores": { "leadership": 8, "decision": 7, "execution": 9, "bench": 7, "alignment": 7, "coverage": 7, "governance": 7 },
     "darwin": {
       "financial": 7,
       "moat": 8,
@@ -306,9 +309,9 @@
       "note": "盈利拐点和经营现金流转正显著改善财务硬度，AI芯片需求和研发投入是真信号；客户集中和供应链仍需折扣。"
     },
     "evidence": "A",
-    "summary": "寒武纪2026年一季度营收28.85亿元、归母净利润10.13亿元，经营现金流转正，较旧版从技术商业化验证进入盈利兑现阶段；AI算力需求放大后，公司战略聚焦与产品落地显著改善。",
-    "risk": "高增长依赖AI算力景气、客户结构与供应链稳定；存货周转、产品迭代和大客户回款仍是管理风险点。",
-    "watch": ["收入与净利环比持续性", "经营现金流", "客户集中度", "存货周转和供应链稳定"],
+    "summary": "寒武纪2026年一季度营收、利润和经营现金流显著改善，说明执行兑现能力增强；但按LEADERS创始人决策力量表，业绩释放不能直接等同于9分决策力，关键用人、纠偏代价、客户集中、供应链和治理透明度仍需保守折扣。",
+    "risk": "高增长依赖AI算力景气、客户结构与供应链稳定；关键二三号位补位、存货周转、产品迭代和大客户回款仍是管理风险点。",
+    "watch": ["收入与净利环比持续性", "经营现金流", "客户集中度", "关键二三号位稳定性", "存货周转和供应链稳定"],
     "sources": [
       "https://finance.sina.com.cn/jjxw/2026-04-30/doc-inhwftwe7480367.shtml",
       "https://finance.sina.com.cn/jjxw/2026-04-29/doc-inhweskv0802494.shtml",
@@ -323,7 +326,7 @@
     "industry": "芯片半导体",
     "stage": "成熟期 / 整合",
     "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-omnivision/",
-    "scores": { "leadership": 9, "decision": 9, "execution": 8, "bench": 7, "alignment": 8, "coverage": 7, "governance": 7 },
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 7, "alignment": 8, "coverage": 7, "governance": 7 },
     "darwin": {
       "financial": 6.5,
       "moat": 7.5,
@@ -342,7 +345,7 @@
     "industry": "芯片半导体",
     "stage": "平台孵化 / 技术验证",
     "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-thead/",
-    "scores": { "leadership": 9, "decision": 8, "execution": 8, "bench": 8, "alignment": 7, "coverage": 8, "governance": 7 },
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 8, "alignment": 7, "coverage": 8, "governance": 7 },
     "darwin": {
       "financial": 5,
       "moat": 7,
@@ -380,7 +383,7 @@
     "industry": "半导体 / ODM",
     "stage": "成熟期 / 整合",
     "url": "/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E8%8A%AF%E7%89%87%E5%8D%8A%E5%AF%BC%E4%BD%93/IC-wingtech/",
-    "scores": { "leadership": 8, "decision": 9, "execution": 9, "bench": 8, "alignment": 9, "coverage": 8, "governance": 7 },
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 8, "alignment": 8, "coverage": 8, "governance": 7 },
     "darwin": {
       "financial": 6.5,
       "moat": 7.5,
@@ -389,7 +392,7 @@
       "note": "ODM与半导体整合能力较强，执行能力是真信号；但创新短板、并购周期、半导体波动和资本配置透明度限制财务硬度。"
     },
     "evidence": "B",
-    "summary": "决策、执行和文化一致性较强，经营型组织特征明显；但创新能力和专业化治理仍有短板，岗位专长完整度不宜给到顶格高分。",
+    "summary": "经营型组织特征明显，但创新能力、并购周期和专业化治理仍有短板，决策、执行、文化和岗位完整度均不宜按顶格高分处理。",
     "risk": "并购与周期波动对治理透明度、资本配置提出更高要求。",
     "watch": ["半导体周期", "并购协同", "资本开支纪律"]
   },
@@ -452,7 +455,7 @@
     "industry": "人工智能 / 语音语义 / 大模型应用",
     "stage": "成熟期 / 大模型再增长",
     "url": "https://www.iflytek.com/",
-    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 8, "alignment": 8, "coverage": 9, "governance": 8 },
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 8, "alignment": 8, "coverage": 8, "governance": 8 },
     "darwin": {
       "financial": 7.5,
       "moat": 8,
@@ -504,7 +507,7 @@
     "industry": "大模型 / 开源AI",
     "stage": "高影响力实验室 / 商业化待验证",
     "url": "https://www.deepseek.com/",
-    "scores": { "leadership": 9, "decision": 9, "execution": 9, "bench": 7, "alignment": 8, "coverage": 7, "governance": 5 },
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 7, "alignment": 8, "coverage": 7, "governance": 5 },
     "darwin": {
       "financial": 3,
       "moat": 8.5,
@@ -513,7 +516,7 @@
       "note": "模型效率和开源影响力构成很强动态护城河线索，但收入、利润、算力来源、治理与现金流披露不足，财务硬度必须低分处理。"
     },
     "evidence": "C",
-    "summary": "DeepSeek凭R1等开源模型在2025年显著改变全球AI竞争格局，以高效率训练、开源传播和强技术叙事形成极高影响力；但公司组织、财务、治理和商业化数据公开较少，评级应明确保守。",
+    "summary": "DeepSeek凭R1等开源模型形成极高技术影响力；但公司组织、财务、治理和商业化数据公开较少，领袖气质、决策力和实干性不能按9分处理。",
     "risk": "商业模式、收入结构、算力来源、数据合规、团队稳定性和外部监管压力缺少硬披露，是当前最大不确定性。",
     "watch": ["后续模型迭代质量", "API与企业客户商业化", "核心研究团队稳定性", "合规与国际监管争议"],
     "sources": [
@@ -530,7 +533,7 @@
     "industry": "人形机器人 / 四足机器人 / 具身智能",
     "stage": "扩张期 / IPO申报",
     "url": "https://www.unitree.com/",
-    "scores": { "leadership": 9, "decision": 9, "execution": 9, "bench": 8, "alignment": 8, "coverage": 8, "governance": 7 },
+    "scores": { "leadership": 8, "decision": 8, "execution": 9, "bench": 8, "alignment": 8, "coverage": 8, "governance": 7 },
     "darwin": {
       "financial": 7,
       "moat": 8,
@@ -539,7 +542,7 @@
       "note": "IPO材料显示收入和扣非利润质量较好，人形机器人出货是真信号；但应用场景、治理结构和安全责任仍需复核。"
     },
     "evidence": "B",
-    "summary": "宇树科技2026年科创板IPO获受理，2025年营收约17.08亿元、扣非归母净利润约6亿元，且披露2025年人形机器人实际出货超5500台；在通用机器人商业化和规模化量产上领先。",
+    "summary": "宇树科技2026年科创板IPO获受理，2025年营收、扣非归母净利润和人形机器人出货披露支撑实干性高分；但创始人决策力和领袖气质仍需IPO后治理与客户复购继续验证。",
     "risk": "人形机器人仍处应用早期，IPO前治理、特别表决权安排、客户结构、价格下行和安全责任需要重点复核。",
     "watch": ["IPO进度与招股书更新", "2026年1-2万台出货目标", "人形机器人毛利与价格变化", "实际应用场景复购"],
     "sources": [
@@ -584,7 +587,7 @@
     "industry": "ICT基础设施 / 终端 / 云 / AI计算 / 智能汽车解决方案",
     "stage": "成熟期 / 战略韧性与财务质量复核",
     "url": "https://www.huawei.com/cn/annual-report/2025",
-    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 8, "alignment": 8, "coverage": 9, "governance": 6 },
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 8, "alignment": 8, "coverage": 8, "governance": 6 },
     "darwin": {
       "financial": 6.5,
       "moat": 8.5,
@@ -610,7 +613,7 @@
     "industry": "动力电池 / 储能 / 新能源供应链",
     "stage": "成熟期 / 全球龙头扩张",
     "url": "https://www.catl.com/",
-    "scores": { "leadership": 8, "decision": 9, "execution": 9, "bench": 8, "alignment": 8, "coverage": 9, "governance": 9 },
+    "scores": { "leadership": 8, "decision": 8, "execution": 9, "bench": 8, "alignment": 8, "coverage": 9, "governance": 8 },
     "darwin": {
       "financial": 8.5,
       "moat": 8.5,
@@ -635,7 +638,7 @@
     "industry": "前沿大模型 / AI平台 / AI基础设施",
     "stage": "超高速扩张 / 治理重构",
     "url": "https://openai.com/",
-    "scores": { "leadership": 9, "decision": 9, "execution": 9, "bench": 8, "alignment": 7, "coverage": 9, "governance": 6 },
+    "scores": { "leadership": 9, "decision": 8, "execution": 9, "bench": 8, "alignment": 7, "coverage": 8, "governance": 6 },
     "darwin": {
       "financial": 4.5,
       "moat": 9,
@@ -663,7 +666,7 @@
     "industry": "前沿大模型 / 企业AI / Agentic Coding",
     "stage": "超高速扩张 / 企业AI领先",
     "url": "https://www.anthropic.com/",
-    "scores": { "leadership": 9, "decision": 9, "execution": 9, "bench": 8, "alignment": 9, "coverage": 8, "governance": 8 },
+    "scores": { "leadership": 8, "decision": 8, "execution": 8, "bench": 8, "alignment": 8, "coverage": 8, "governance": 8 },
     "darwin": {
       "financial": 4.5,
       "moat": 8.5,

@@ -99,7 +99,17 @@ redirect_from:
 
 理想汽车的核心人员任用情况评分：
 
-![lixiang](https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/img/lixiang.png)
+| 评分项 | 分数 |
+|---|---:|
+| 创始人领袖气质 | 8 |
+| 创始人决策力 | 8 |
+| 创始人实干性 | 8 |
+| 二三号补位力 | 8 |
+| 文化契合度 | 8 |
+| 岗位专长完整性 | 7 |
+| 专业化治理结构 | 7 |
+| 平均分 | 7.7 |
+{: .fr-score-table }
 
 ---
 
