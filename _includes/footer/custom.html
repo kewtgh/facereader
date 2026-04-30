@@ -12,4 +12,39 @@
   })();
 </script>
 
+<script>
+  (function () {
+    function enhanceScoreTables() {
+      var tables = document.querySelectorAll(".page__content table.fr-score-table");
+      tables.forEach(function (table) {
+        if (table.closest(".fr-score-card")) return;
+
+        var card = document.createElement("div");
+        card.className = "fr-score-card";
+
+        var note = document.createElement("aside");
+        note.className = "fr-score-card__note";
+        note.innerHTML = [
+          "<div>",
+          "<h4>LEADERS 团队评分</h4>",
+          "<p>左侧为文章中的团队七项评分，用来呈现创始人、二三号位、岗位完整度与治理结构的组织画像。</p>",
+          "<p>搜索页会在此基础上叠加 Darwin 投资视角，用资本回报韧性、动态护城河和诚实信号进行复核。</p>",
+          "</div>",
+          "<a class=\"btn btn--primary\" href=\"{{ '/leaders-scorecard/#leaders-search' | relative_url }}\">查看 LEADERS 评分页</a>"
+        ].join("");
+
+        table.parentNode.insertBefore(card, table);
+        card.appendChild(table);
+        card.appendChild(note);
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", enhanceScoreTables);
+    } else {
+      enhanceScoreTables();
+    }
+  })();
+</script>
+
 <!-- end custom footer snippets -->
