@@ -873,6 +873,91 @@ body { line-height: 1.7; }
   margin-bottom: 0;
 }
 
+.leaders-table {
+  max-width: 1120px;
+  margin: 0 auto 1.6rem;
+}
+
+.leaders-table__toolbar {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(34, 48, 66, 0.08);
+  border-radius: 0.55rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.76)),
+    rgba(32, 94, 117, 0.08);
+}
+
+.leaders-table__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: flex-end;
+}
+
+.leaders-table__filters label {
+  margin: 0;
+}
+
+.leaders-table__filters span {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: $muted-text-color;
+  font-family: $sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.leaders-table__filters select {
+  min-width: 11rem;
+  min-height: 2.25rem;
+  border-radius: 0.35rem;
+  border-color: rgba(34, 48, 66, 0.18);
+  background-color: rgba(255, 255, 255, 0.94);
+}
+
+.leaders-table__toolbar p {
+  margin: 0 0 0.4rem;
+  color: mix($text-color, $muted-text-color, 72%);
+  font-family: $sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.leaders-table__wrap {
+  overflow-x: auto;
+  border: 1px solid rgba(34, 48, 66, 0.08);
+  border-radius: 0.55rem;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.leaders-table table.table-wrap {
+  min-width: 1120px;
+  margin: 0;
+}
+
+.leaders-table table.table-wrap th,
+.leaders-table table.table-wrap td {
+  white-space: nowrap;
+}
+
+.leaders-table table.table-wrap td:nth-child(2) {
+  min-width: 13rem;
+  white-space: normal;
+}
+
+.leaders-table table.table-wrap td:nth-child(2) small {
+  display: block;
+  margin-top: 0.2rem;
+  color: $muted-text-color;
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
 .leaders-floating-back {
   position: fixed;
   right: 1.1rem;
@@ -1039,6 +1124,19 @@ body { line-height: 1.7; }
   .leaders-metrics,
   .leaders-search__row {
     grid-template-columns: 1fr;
+  }
+
+  .leaders-table__toolbar {
+    display: block;
+  }
+
+  .leaders-table__filters {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .leaders-table__filters select {
+    width: 100%;
   }
 
   .leaders-result__head {

@@ -16,6 +16,18 @@
   };
 
   const evidenceCoef = { A: 1, B: 0.85, C: 0.7 };
+  const hotCompanyNames = [
+    "NVIDIA",
+    "OpenAI",
+    "Microsoft",
+    "Apple",
+    "Tesla",
+    "Meta",
+    "字节跳动",
+    "华为",
+    "宁德时代",
+    "DeepSeek"
+  ];
   const darwinKeys = [
     ["financial", "资本回报韧性"],
     ["moat", "动态护城河"],
@@ -33,6 +45,7 @@
     .replace(/'/g, "&#039;");
   const average = (scores) => scoreKeys.reduce((sum, [key]) => sum + Number(scores[key] || 0), 0) / scoreKeys.length;
   const averageDarwin = (scores) => darwinKeys.reduce((sum, [key]) => sum + Number(scores[key] || 0), 0) / darwinKeys.length;
+  const tagText = (tags) => (tags && tags.length ? tags.join("、") : "未标注");
 
   function isSiteArticle(url) {
     return /^\//.test(url || "") || /^https?:\/\/facereader\.witbacon\.com\//.test(url || "");
@@ -217,7 +230,7 @@
           <div><span>偏差判断</span><strong>${deviationLabel(delta)}</strong></div>
           <div><span>证据等级</span><strong>${company.darwin.evidence || company.evidence || "C"}</strong></div>
         </div>
-        <p class="leaders-darwin__note">${company.darwin.note || "等待半年度复核补充说明。"}</p>
+        <p class="leaders-darwin__note">${escapeHtml(company.darwin.note || "等待半年度复核补充说明。")}</p>
       </section>
     `;
   }
@@ -227,14 +240,14 @@
     const weighted = weightedScore(company, mode);
     const adjusted = evidenceAdjustedScore(company, mode);
     const plan = weights[mode] || weights.growth;
-    const watch = (company.watch || []).map((item) => `<li>${item}</li>`).join("");
+    const watch = (company.watch || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
 
     $("#leaders-result").innerHTML = `
       <article class="leaders-result" aria-live="polite">
         <div class="leaders-result__head">
           <div>
-            <p class="leaders-kicker">${company.industry} · ${company.stage}</p>
-            <h2>${company.name}</h2>
+            <p class="leaders-kicker">${escapeHtml(company.industry)} · ${escapeHtml(company.stage)}</p>
+            <h2>${escapeHtml(company.name)}</h2>
           </div>
           <div class="leaders-result__grade">
             <span>${adjusted.toFixed(1)}</span>
@@ -246,7 +259,7 @@
           <div><span>${plan.label}加权</span><strong>${weighted.toFixed(1)}</strong></div>
           <div><span>证据等级</span><strong>${company.evidence}</strong></div>
         </div>
-        <p class="leaders-result__summary">${company.summary}</p>
+        <p class="leaders-result__summary">${escapeHtml(company.summary)}</p>
         ${renderTags(company)}
         <div class="leaders-result__grid">
           <section>
@@ -256,7 +269,7 @@
           </section>
           <section>
             <h3>判断与跟踪</h3>
-            <p><strong>主要风险：</strong>${company.risk}</p>
+            <p><strong>主要风险：</strong>${escapeHtml(company.risk)}</p>
             <p><strong>未来验证点：</strong></p>
             <ul>${watch}</ul>
             <p>${renderResourceLink(company)}</p>
@@ -275,7 +288,7 @@
   function renderEmpty(query) {
     $("#leaders-result").innerHTML = `
       <article class="leaders-result leaders-result--empty" aria-live="polite">
-        <h2>暂未收录：${query || "该企业"}</h2>
+        <h2>暂未收录：${escapeHtml(query || "该企业")}</h2>
         <p>免费查询库目前覆盖站内评分企业和新增研究企业。你可以尝试输入：寒武纪、商汤科技、摩尔线程、科大讯飞、DeepSeek、宇树科技。</p>
         <p>专业版可按行业、阶段和证据材料生成新企业评分卡，并输出内部决策版报告。</p>
       </article>
@@ -295,10 +308,15 @@
   }
 
   function renderExamples() {
-    const examples = companies
-      .slice()
-      .sort((a, b) => average(b.scores) - average(a.scores))
-      .slice(0, 8)
+    const hotCompanies = hotCompanyNames
+      .map((name) => findCompany(name))
+      .filter(Boolean);
+    const fallbackCompanies = companies
+      .filter((company) => !hotCompanies.includes(company))
+      .sort((a, b) => average(b.scores) - average(a.scores));
+    const examples = hotCompanies
+      .concat(fallbackCompanies)
+      .slice(0, 10)
       .map((company) => `<button type="button" data-company="${company.name}">${company.name}</button>`)
       .join("");
     $("#leaders-examples").innerHTML = examples;
@@ -310,6 +328,82 @@
     });
   }
 
+  function uniqueTags(key) {
+    return Array.from(new Set(companies.flatMap((company) => company[key] || []))).sort((a, b) => {
+      return a.localeCompare(b, "zh-Hans-CN");
+    });
+  }
+
+  function renderFilterOptions(select, tags, label) {
+    select.innerHTML = [`<option value="">全部${label}</option>`]
+      .concat(tags.map((tag) => `<option value="${escapeHtml(tag)}">${escapeHtml(tag)}</option>`))
+      .join("");
+  }
+
+  function renderLeadersTable() {
+    const tableRoot = $("#leaders-companies-table");
+    if (!tableRoot) return;
+
+    const industrySelect = $("#leaders-industry-filter");
+    const regionSelect = $("#leaders-region-filter");
+    const resetButton = $("#leaders-filter-reset");
+    const countEl = $("#leaders-table-count");
+    const bodyEl = $("#leaders-table-body");
+    if (!industrySelect || !regionSelect || !bodyEl) return;
+
+    renderFilterOptions(industrySelect, uniqueTags("industry_tags"), "行业");
+    renderFilterOptions(regionSelect, uniqueTags("region_tags"), "地区");
+
+    const applyFilters = () => {
+      const industry = industrySelect.value;
+      const region = regionSelect.value;
+      const filtered = companies.filter((company) => {
+        const industryMatched = !industry || (company.industry_tags || []).includes(industry);
+        const regionMatched = !region || (company.region_tags || []).includes(region);
+        return industryMatched && regionMatched;
+      });
+
+      bodyEl.innerHTML = filtered.map((company, index) => {
+        const score = average(company.scores);
+        const url = company.url || "#";
+        return `
+          <tr>
+            <td>${index + 1}</td>
+            <td>
+              <a href="${escapeHtml(url)}">${escapeHtml(company.name)}</a>
+              <small>${escapeHtml((company.aliases || []).slice(0, 4).join(" / "))}</small>
+            </td>
+            <td>${escapeHtml(tagText(company.industry_tags))}</td>
+            <td>${escapeHtml(tagText(company.region_tags))}</td>
+            <td>${Number(company.scores.leadership || 0).toFixed(1)}</td>
+            <td>${Number(company.scores.decision || 0).toFixed(1)}</td>
+            <td>${Number(company.scores.execution || 0).toFixed(1)}</td>
+            <td>${Number(company.scores.bench || 0).toFixed(1)}</td>
+            <td>${Number(company.scores.alignment || 0).toFixed(1)}</td>
+            <td>${Number(company.scores.coverage || 0).toFixed(1)}</td>
+            <td>${Number(company.scores.governance || 0).toFixed(1)}</td>
+            <td><strong>${score.toFixed(1)}</strong></td>
+          </tr>
+        `;
+      }).join("");
+
+      if (countEl) {
+        countEl.textContent = `显示 ${filtered.length} / ${companies.length} 家企业`;
+      }
+    };
+
+    industrySelect.addEventListener("change", applyFilters);
+    regionSelect.addEventListener("change", applyFilters);
+    if (resetButton) {
+      resetButton.addEventListener("click", () => {
+        industrySelect.value = "";
+        regionSelect.value = "";
+        applyFilters();
+      });
+    }
+    applyFilters();
+  }
+
   document.addEventListener("DOMContentLoaded", async () => {
     const root = $("#leaders-scorecard-app");
     if (!root) return;
@@ -319,6 +413,7 @@
       companies = await response.json();
       renderExamples();
       renderResult(companies[0], "growth");
+      renderLeadersTable();
       $("#leaders-search-form").addEventListener("submit", runSearch);
       $("#leaders-stage").addEventListener("change", () => {
         const company = findCompany($("#leaders-company-input").value) || companies[0];

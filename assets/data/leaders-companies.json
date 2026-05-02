@@ -1396,6 +1396,7 @@
   {
     "name": "Anthropic",
     "aliases": [
+      "安斯罗匹克",
       "Claude",
       "Claude Code",
       "Dario Amodei",
@@ -1606,6 +1607,8 @@
   {
     "name": "Meta",
     "aliases": [
+      "脸书",
+      "元宇宙平台",
       "Facebook",
       "Meta Platforms",
       "META",
@@ -1658,6 +1661,7 @@
   {
     "name": "Salesforce",
     "aliases": [
+      "赛富时",
       "CRM",
       "Salesforce.com",
       "Agentforce",
@@ -1811,6 +1815,7 @@
   {
     "name": "ServiceNow",
     "aliases": [
+      "服务现在",
       "NOW",
       "ServiceNow Platform",
       "Workflow Data Fabric",
@@ -1861,6 +1866,7 @@
   {
     "name": "Adobe",
     "aliases": [
+      "奥多比",
       "ADBE",
       "Adobe Creative Cloud",
       "Document Cloud",
@@ -1911,6 +1917,7 @@
   {
     "name": "Snowflake",
     "aliases": [
+      "雪花公司",
       "SNOW",
       "Snowflake AI Data Cloud",
       "AI Data Cloud",
@@ -1961,6 +1968,7 @@
   {
     "name": "Databricks",
     "aliases": [
+      "数据砖",
       "Databricks Lakehouse",
       "Lakehouse",
       "MosaicML",
@@ -2011,6 +2019,7 @@
   {
     "name": "Palantir",
     "aliases": [
+      "帕兰提尔",
       "PLTR",
       "Palantir Technologies",
       "AIP",
@@ -2064,6 +2073,7 @@
   {
     "name": "Workday",
     "aliases": [
+      "沃克戴",
       "WDAY",
       "Workday HCM",
       "Workday Financials",
@@ -2114,6 +2124,7 @@
   {
     "name": "Atlassian",
     "aliases": [
+      "阿特拉斯",
       "TEAM",
       "Jira",
       "Confluence",
@@ -2165,6 +2176,7 @@
   {
     "name": "Shopify",
     "aliases": [
+      "商铺平台",
       "SHOP",
       "Shopify Plus",
       "Shopify Magic",
@@ -2216,6 +2228,7 @@
   {
     "name": "Cloudflare",
     "aliases": [
+      "云闪耀",
       "NET",
       "Cloudflare Workers",
       "Connectivity Cloud",
@@ -2266,6 +2279,7 @@
   {
     "name": "Datadog",
     "aliases": [
+      "数据狗",
       "DDOG",
       "Datadog Observability",
       "Bits AI",
@@ -2316,6 +2330,7 @@
   {
     "name": "MongoDB",
     "aliases": [
+      "芒果数据库",
       "MDB",
       "MongoDB Atlas",
       "Atlas",
@@ -2367,6 +2382,7 @@
   {
     "name": "UiPath",
     "aliases": [
+      "优傲路径",
       "PATH",
       "UiPath Automation Platform",
       "Autopilot",
@@ -2418,6 +2434,7 @@
   {
     "name": "Zoom",
     "aliases": [
+      "祖姆",
       "Zoom Communications",
       "ZM",
       "Zoom Workplace",
@@ -3001,6 +3018,7 @@
   {
     "name": "Netflix",
     "aliases": [
+      "奈飞",
       "NFLX",
       "Netflix Ads",
       "Ted Sarandos",
@@ -3052,6 +3070,7 @@
   {
     "name": "Spotify",
     "aliases": [
+      "声田",
       "SPOT",
       "Spotify Technology",
       "Daniel Ek",
@@ -3104,6 +3123,7 @@
   {
     "name": "Disney",
     "aliases": [
+      "迪士尼",
       "The Walt Disney Company",
       "DIS",
       "Disney+",
@@ -3156,6 +3176,7 @@
   {
     "name": "Uber",
     "aliases": [
+      "优步",
       "Uber Technologies",
       "UBER",
       "Uber Eats",
@@ -3206,6 +3227,7 @@
   {
     "name": "Airbnb",
     "aliases": [
+      "爱彼迎",
       "ABNB",
       "Airbnb Experiences",
       "Brian Chesky"
@@ -3255,6 +3277,7 @@
   {
     "name": "Booking Holdings",
     "aliases": [
+      "缤客控股",
       "BKNG",
       "Booking.com",
       "Priceline",
@@ -3308,6 +3331,7 @@
   {
     "name": "MercadoLibre",
     "aliases": [
+      "美客多",
       "Mercado Libre",
       "MELI",
       "Mercado Pago",
@@ -3626,6 +3650,7 @@
   {
     "name": "ASML",
     "aliases": [
+      "阿斯麦",
       "ASML Holding",
       "EUV",
       "High-NA EUV",
@@ -4193,6 +4218,7 @@
   {
     "name": "KLA",
     "aliases": [
+      "科磊",
       "KLA Corporation",
       "KLAC",
       "KLA-Tencor",
@@ -4295,6 +4321,7 @@
   {
     "name": "Arm",
     "aliases": [
+      "安谋",
       "Arm Holdings",
       "ARM",
       "Armv9",
@@ -4400,6 +4427,7 @@
   {
     "name": "Marvell Technology",
     "aliases": [
+      "迈威尔科技",
       "Marvell",
       "MRVL",
       "Custom AI Silicon",
@@ -4657,7 +4685,7 @@
   },
   {
     "name": "Stellantis",
-    "aliases": ["STLA", "Jeep", "Ram", "Peugeot", "Fiat", "Opel", "Citroen", "Antonio Filosa"],
+    "aliases": ["斯特兰蒂斯", "STLA", "Jeep", "Ram", "Peugeot", "Fiat", "Opel", "Citroen", "Antonio Filosa"],
     "industry": "汽车制造 / 多品牌集团 / 电动化重估",
     "stage": "重组修复 / 北美承压",
     "url": "https://www.stellantis.com/en/investors/investor-dashboard",
@@ -4674,7 +4702,7 @@
   },
   {
     "name": "Ford",
-    "aliases": ["Ford Motor", "F", "Ford Pro", "Ford Model E", "Jim Farley"],
+    "aliases": ["福特", "Ford Motor", "F", "Ford Pro", "Ford Model E", "Jim Farley"],
     "industry": "汽车制造 / 商用车 / 电动化转型",
     "stage": "成熟车企 / EV亏损修复",
     "url": "https://shareholder.ford.com/",
@@ -4776,7 +4804,7 @@
   },
   {
     "name": "Rivian",
-    "aliases": ["Rivian Automotive", "RIVN", "R1T", "R1S", "R2", "RJ Scaringe"],
+    "aliases": ["瑞维安", "Rivian Automotive", "RIVN", "R1T", "R1S", "R2", "RJ Scaringe"],
     "industry": "纯电SUV/皮卡 / 软件定义汽车 / 商用电动配送车",
     "stage": "规模化前夜 / R2关键期",
     "url": "https://rivian.com/investors",
@@ -4793,7 +4821,7 @@
   },
   {
     "name": "Lucid Group",
-    "aliases": ["Lucid", "LCID", "Lucid Air", "Lucid Gravity", "Marc Winterhoff"],
+    "aliases": ["Lucid集团", "Lucid", "LCID", "Lucid Air", "Lucid Gravity", "Marc Winterhoff"],
     "industry": "高端电动车 / 电驱技术 / 豪华EV",
     "stage": "小规模扩张 / 高亏损",
     "url": "https://ir.lucidmotors.com/",
@@ -4878,7 +4906,7 @@
   },
   {
     "name": "Polestar",
-    "aliases": ["Polestar Automotive", "PSNY", "Polestar 2", "Polestar 3", "Polestar 4", "Michael Lohscheller"],
+    "aliases": ["极星", "Polestar Automotive", "PSNY", "Polestar 2", "Polestar 3", "Polestar 4", "Michael Lohscheller"],
     "industry": "高端电动车 / 北欧品牌 / 吉利沃尔沃体系",
     "stage": "销量修复 / 高亏损融资期",
     "url": "https://investors.polestar.com/",
@@ -4895,7 +4923,7 @@
   },
   {
     "name": "Visa",
-    "aliases": ["Visa Inc.", "V", "VisaNet", "Ryan McInerney"],
+    "aliases": ["维萨", "Visa Inc.", "V", "VisaNet", "Ryan McInerney"],
     "industry": "全球支付网络 / 卡组织 / 商户收单基础设施",
     "stage": "成熟高利润 / 跨境支付和增值服务扩张",
     "url": "https://investor.visa.com/",
@@ -4912,7 +4940,7 @@
   },
   {
     "name": "Mastercard",
-    "aliases": ["Mastercard Incorporated", "MA", "Mastercard Network", "Michael Miebach"],
+    "aliases": ["万事达", "Mastercard Incorporated", "MA", "Mastercard Network", "Michael Miebach"],
     "industry": "全球支付网络 / 卡组织 / 数据与安全服务",
     "stage": "成熟高利润 / 服务化扩张",
     "url": "https://investor.mastercard.com/",
@@ -4929,7 +4957,7 @@
   },
   {
     "name": "PayPal",
-    "aliases": ["PayPal Holdings", "PYPL", "Venmo", "Braintree", "Alex Chriss"],
+    "aliases": ["贝宝", "PayPal Holdings", "PYPL", "Venmo", "Braintree", "Alex Chriss"],
     "industry": "数字钱包 / 电商支付 / 商户收单",
     "stage": "成熟平台 / 品牌支付再增长",
     "url": "https://investor.pypl.com/",
@@ -4946,7 +4974,7 @@
   },
   {
     "name": "Block",
-    "aliases": ["Block Inc.", "Square", "Cash App", "Afterpay", "XYZ", "Jack Dorsey"],
+    "aliases": ["布洛克", "Block Inc.", "Square", "Cash App", "Afterpay", "XYZ", "Jack Dorsey"],
     "industry": "商户支付 / 消费金融App / 比特币金融",
     "stage": "双生态整合 / 利润纪律强化",
     "url": "https://investors.block.xyz/",
@@ -4963,7 +4991,7 @@
   },
   {
     "name": "Stripe",
-    "aliases": ["Stripe Inc.", "Stripe Payments", "Patrick Collison", "John Collison"],
+    "aliases": ["条纹支付", "Stripe Inc.", "Stripe Payments", "Patrick Collison", "John Collison"],
     "industry": "开发者支付基础设施 / 商户收单 / 金融软件",
     "stage": "私营巨头 / 全球支付和AI商业基础设施",
     "url": "https://stripe.com/",
@@ -4980,7 +5008,7 @@
   },
   {
     "name": "Adyen",
-    "aliases": ["Adyen N.V.", "ADYEN", "Pieter van der Does", "Ingo Uytdehaage"],
+    "aliases": ["艾登", "Adyen N.V.", "ADYEN", "Pieter van der Does", "Ingo Uytdehaage"],
     "industry": "企业支付平台 / 全球收单 / 金融科技基础设施",
     "stage": "高质量增长 / 平台金融扩张",
     "url": "https://www.adyen.com/ir",
@@ -4997,7 +5025,7 @@
   },
   {
     "name": "Coinbase",
-    "aliases": ["Coinbase Global", "COIN", "Coinbase Exchange", "Brian Armstrong"],
+    "aliases": ["币库", "Coinbase Global", "COIN", "Coinbase Exchange", "Brian Armstrong"],
     "industry": "加密交易平台 / 托管 / 稳定币和链上基础设施",
     "stage": "上市加密平台 / 多资产交易扩张",
     "url": "https://investor.coinbase.com/",
@@ -5014,7 +5042,7 @@
   },
   {
     "name": "Robinhood",
-    "aliases": ["Robinhood Markets", "HOOD", "Vlad Tenev", "Robinhood Gold", "Bitstamp"],
+    "aliases": ["罗宾汉", "Robinhood Markets", "HOOD", "Vlad Tenev", "Robinhood Gold", "Bitstamp"],
     "industry": "零售交易平台 / 财富管理 / 加密和预测市场",
     "stage": "高增长扩品类 / 交易周期敏感",
     "url": "https://investors.robinhood.com/",
@@ -5031,7 +5059,7 @@
   },
   {
     "name": "Wise",
-    "aliases": ["Wise plc", "TransferWise", "WISE.L", "Kristo Kaarmann"],
+    "aliases": ["慧择汇款", "Wise plc", "TransferWise", "WISE.L", "Kristo Kaarmann"],
     "industry": "跨境汇款 / 多币种账户 / 支付基础设施",
     "stage": "上市高增长 / 全球账户网络扩张",
     "url": "https://wise.com/owners/",
@@ -5048,7 +5076,7 @@
   },
   {
     "name": "Revolut",
-    "aliases": ["Revolut Group", "Nik Storonsky", "Revolut Bank", "Revolut Business"],
+    "aliases": ["瑞沃鲁特", "Revolut Group", "Nik Storonsky", "Revolut Bank", "Revolut Business"],
     "industry": "数字银行 / 多币种账户 / 财富和商户金融",
     "stage": "私营规模化 / 全球银行化",
     "url": "https://www.revolut.com/",
@@ -5065,7 +5093,7 @@
   },
   {
     "name": "Klarna",
-    "aliases": ["Klarna Group", "KLAR", "Sebastian Siemiatkowski", "BNPL"],
+    "aliases": ["克拉纳", "Klarna Group", "KLAR", "Sebastian Siemiatkowski", "BNPL"],
     "industry": "先买后付 / 数字银行 / 商户营销网络",
     "stage": "上市后修复 / AI降本和盈利验证",
     "url": "https://investors.klarna.com/",
@@ -5082,7 +5110,7 @@
   },
   {
     "name": "Nubank",
-    "aliases": ["Nu Holdings", "NU", "Nubank Brasil", "David Velez"],
+    "aliases": ["努银行", "Nu Holdings", "NU", "Nubank Brasil", "David Velez"],
     "industry": "数字银行 / 拉美消费金融 / 信用卡和存款",
     "stage": "高速盈利扩张 / 拉美金融平台",
     "url": "https://international.nubank.com.br/investors/",
@@ -5099,7 +5127,7 @@
   },
   {
     "name": "Affirm",
-    "aliases": ["Affirm Holdings", "AFRM", "Max Levchin", "Affirm Card"],
+    "aliases": ["确认支付", "Affirm Holdings", "AFRM", "Max Levchin", "Affirm Card"],
     "industry": "先买后付 / 消费信贷网络 / 商户金融",
     "stage": "上市成长 / 盈利拐点验证",
     "url": "https://investors.affirm.com/",
@@ -5116,7 +5144,7 @@
   },
   {
     "name": "SoFi",
-    "aliases": ["SoFi Technologies", "SOFI", "SoFi Bank", "Galileo", "Anthony Noto"],
+    "aliases": ["索菲", "SoFi Technologies", "SOFI", "SoFi Bank", "Galileo", "Anthony Noto"],
     "industry": "数字银行 / 消费金融 / 金融科技平台",
     "stage": "盈利扩张 / 银行牌照协同",
     "url": "https://investors.sofi.com/",
@@ -5133,7 +5161,7 @@
   },
   {
     "name": "Chime",
-    "aliases": ["Chime Financial", "CHYM", "Chris Britt", "MyPay"],
+    "aliases": ["齐鸣银行", "Chime Financial", "CHYM", "Chris Britt", "MyPay"],
     "industry": "数字银行 / 工薪人群金融服务 / 支付和预支工资",
     "stage": "上市后增长 / 盈利转正前夜",
     "url": "https://investors.chime.com/",
@@ -5235,7 +5263,7 @@
   },
   {
     "name": "JPMorgan Chase",
-    "aliases": ["JPMorganChase", "JPM", "Chase", "J.P. Morgan", "Jamie Dimon"],
+    "aliases": ["摩根大通", "JPMorganChase", "JPM", "Chase", "J.P. Morgan", "Jamie Dimon"],
     "industry": "综合银行 / 投资银行 / 资产管理",
     "stage": "全球系统重要性银行 / 高质量复利",
     "url": "https://www.jpmorganchase.com/ir",
@@ -5252,7 +5280,7 @@
   },
   {
     "name": "Goldman Sachs",
-    "aliases": ["The Goldman Sachs Group", "GS", "Goldman", "David Solomon", "John Waldron"],
+    "aliases": ["高盛", "The Goldman Sachs Group", "GS", "Goldman", "David Solomon", "John Waldron"],
     "industry": "投资银行 / 交易 / 资产与财富管理",
     "stage": "核心投行强势 / 资本轻型化",
     "url": "https://www.goldmansachs.com/investor-relations/",
@@ -5269,7 +5297,7 @@
   },
   {
     "name": "Morgan Stanley",
-    "aliases": ["MS", "Morgan Stanley Wealth Management", "E*TRADE", "Ted Pick", "James Gorman"],
+    "aliases": ["摩根士丹利", "MS", "Morgan Stanley Wealth Management", "E*TRADE", "Ted Pick", "James Gorman"],
     "industry": "财富管理 / 投资银行 / 机构证券",
     "stage": "财富管理平台化 / 投行周期修复",
     "url": "https://www.morganstanley.com/about-us-ir",
@@ -5286,7 +5314,7 @@
   },
   {
     "name": "Bank of America",
-    "aliases": ["BofA", "BAC", "Merrill", "Brian Moynihan"],
+    "aliases": ["美国银行", "BofA", "BAC", "Merrill", "Brian Moynihan"],
     "industry": "综合银行 / 消费银行 / 财富管理和投行",
     "stage": "成熟大行 / 利率和存款周期管理",
     "url": "https://investor.bankofamerica.com/",
@@ -5303,7 +5331,7 @@
   },
   {
     "name": "Citigroup",
-    "aliases": ["Citi", "Citigroup Inc.", "C", "Jane Fraser"],
+    "aliases": ["花旗集团", "Citi", "Citigroup Inc.", "C", "Jane Fraser"],
     "industry": "全球银行 / 交易服务 / 市场和财富管理",
     "stage": "结构性转型 / 控制和回报修复",
     "url": "https://www.citigroup.com/global/investors",
@@ -5320,7 +5348,7 @@
   },
   {
     "name": "Wells Fargo",
-    "aliases": ["WFC", "Wells", "Charlie Scharf"],
+    "aliases": ["富国银行", "WFC", "Wells", "Charlie Scharf"],
     "industry": "美国商业银行 / 消费金融 / 财富管理",
     "stage": "监管修复后扩张 / 回报提升",
     "url": "https://www.wellsfargo.com/about/investor-relations/",
@@ -5337,7 +5365,7 @@
   },
   {
     "name": "HSBC",
-    "aliases": ["HSBC Holdings", "HSBA", "Hongkong and Shanghai Banking Corporation", "Georges Elhedery"],
+    "aliases": ["汇丰银行", "汇丰控股", "HSBC Holdings", "HSBA", "Hongkong and Shanghai Banking Corporation", "Georges Elhedery"],
     "industry": "全球银行 / 亚洲财富管理 / 跨境企业金融",
     "stage": "亚洲重心 / 结构简化",
     "url": "https://www.hsbc.com/investors",
@@ -5354,7 +5382,7 @@
   },
   {
     "name": "UBS",
-    "aliases": ["UBS Group", "UBSG", "Credit Suisse integration", "Sergio Ermotti"],
+    "aliases": ["瑞银集团", "UBS Group", "UBSG", "Credit Suisse integration", "Sergio Ermotti"],
     "industry": "全球财富管理 / 投资银行 / 瑞士银行",
     "stage": "Credit Suisse整合 / 全球财富龙头",
     "url": "https://www.ubs.com/global/en/investor-relations.html",
@@ -5371,7 +5399,7 @@
   },
   {
     "name": "Deutsche Bank",
-    "aliases": ["DB", "DBKGn.DE", "Deutsche Bank AG", "Christian Sewing"],
+    "aliases": ["德意志银行", "DB", "DBKGn.DE", "Deutsche Bank AG", "Christian Sewing"],
     "industry": "欧洲综合银行 / 投资银行 / 企业银行",
     "stage": "转型兑现 / Global Hausbank",
     "url": "https://investor-relations.db.com/",
@@ -5388,7 +5416,7 @@
   },
   {
     "name": "BNP Paribas",
-    "aliases": ["BNPP", "BNP Paribas Group", "Jean-Laurent Bonnafe"],
+    "aliases": ["法国巴黎银行", "BNPP", "BNP Paribas Group", "Jean-Laurent Bonnafe"],
     "industry": "欧洲综合银行 / 商业银行 / 企业投行和保险",
     "stage": "欧洲龙头 / 多元化稳健增长",
     "url": "https://invest.bnpparibas/",
@@ -5405,7 +5433,7 @@
   },
   {
     "name": "Société Générale",
-    "aliases": ["Societe Generale", "SocGen", "GLE", "Slawomir Krupa"],
+    "aliases": ["法国兴业银行", "Societe Generale", "SocGen", "GLE", "Slawomir Krupa"],
     "industry": "欧洲银行 / 法国零售银行 / 市场和结构化产品",
     "stage": "重组修复 / 回报改善",
     "url": "https://investors.societegenerale.com/en",
@@ -5422,7 +5450,7 @@
   },
   {
     "name": "Barclays",
-    "aliases": ["Barclays PLC", "BCS", "BARC", "C.S. Venkatakrishnan", "Venkat"],
+    "aliases": ["巴克莱", "Barclays PLC", "BCS", "BARC", "C.S. Venkatakrishnan", "Venkat"],
     "industry": "英国银行 / 投资银行 / 信用卡和零售金融",
     "stage": "战略再平衡 / 投行和英国零售并重",
     "url": "https://home.barclays/investor-relations/",
@@ -5439,7 +5467,7 @@
   },
   {
     "name": "BlackRock",
-    "aliases": ["BlackRock Inc.", "BLK", "iShares", "Aladdin", "Larry Fink"],
+    "aliases": ["贝莱德", "BlackRock Inc.", "BLK", "iShares", "Aladdin", "Larry Fink"],
     "industry": "资管 / ETF / 金融科技平台",
     "stage": "全球最大资管 / 私募市场扩张",
     "url": "https://ir.blackrock.com/",
@@ -5456,7 +5484,7 @@
   },
   {
     "name": "Vanguard",
-    "aliases": ["The Vanguard Group", "Vanguard Group", "Vanguard ETFs", "Tim Buckley", "Salim Ramji"],
+    "aliases": ["先锋集团", "The Vanguard Group", "Vanguard Group", "Vanguard ETFs", "Tim Buckley", "Salim Ramji"],
     "industry": "资管 / 指数基金 / 低成本投资平台",
     "stage": "私营互惠结构 / 被动投资基础设施",
     "url": "https://corporate.vanguard.com/",
@@ -5473,7 +5501,7 @@
   },
   {
     "name": "Fidelity Investments",
-    "aliases": ["Fidelity", "FMR", "Fidelity Brokerage", "Abigail Johnson"],
+    "aliases": ["富达投资", "Fidelity", "FMR", "Fidelity Brokerage", "Abigail Johnson"],
     "industry": "财富管理 / 经纪业务 / 退休金和资管",
     "stage": "私营巨头 / 交易和退休平台增长",
     "url": "https://about.fidelity.com/",
@@ -5490,7 +5518,7 @@
   },
   {
     "name": "Berkshire Hathaway",
-    "aliases": ["Berkshire", "BRK.A", "BRK.B", "Warren Buffett", "Greg Abel", "Ajit Jain"],
+    "aliases": ["伯克希尔哈撒韦", "Berkshire", "BRK.A", "BRK.B", "Warren Buffett", "Greg Abel", "Ajit Jain"],
     "industry": "保险控股 / 多元产业控股 / 长期资本配置",
     "stage": "接班期 / 现金和保险浮存金驱动",
     "url": "https://www.berkshirehathaway.com/",
@@ -5541,7 +5569,7 @@
   },
   {
     "name": "Allianz",
-    "aliases": ["Allianz Group", "Allianz SE", "ALV.DE", "Oliver Bate"],
+    "aliases": ["安联", "Allianz Group", "Allianz SE", "ALV.DE", "Oliver Bate"],
     "industry": "保险 / 资管 / 全球财险寿险集团",
     "stage": "欧洲保险龙头 / 现金回报稳定",
     "url": "https://www.allianz.com/en/investor_relations.html",
@@ -5558,7 +5586,7 @@
   },
   {
     "name": "AXA",
-    "aliases": ["AXA Group", "AXA SA", "CS.PA", "Thomas Buberl"],
+    "aliases": ["安盛", "AXA Group", "AXA SA", "CS.PA", "Thomas Buberl"],
     "industry": "保险 / 财险寿险健康险 / 全球风险管理",
     "stage": "全球保险集团 / 资产管理剥离后聚焦保险",
     "url": "https://www.axa.com/en/investor",
@@ -5575,7 +5603,7 @@
   },
   {
     "name": "Walmart",
-    "aliases": ["Walmart Inc.", "WMT", "Sam's Club", "Doug McMillon", "John Furner"],
+    "aliases": ["沃尔玛", "Walmart Inc.", "WMT", "Sam's Club", "Doug McMillon", "John Furner"],
     "industry": "综合零售 / 电商 / 会员仓储",
     "stage": "全球零售龙头 / 线下线上一体化",
     "url": "https://corporate.walmart.com/investors",
@@ -5592,7 +5620,7 @@
   },
   {
     "name": "Costco",
-    "aliases": ["Costco Wholesale", "COST", "Costco Wholesale Corporation", "Ron Vachris"],
+    "aliases": ["好市多", "Costco Wholesale", "COST", "Costco Wholesale Corporation", "Ron Vachris"],
     "industry": "会员仓储零售 / 必选消费 / 全球扩张",
     "stage": "高忠诚会员模型 / 稳健扩张",
     "url": "https://investor.costco.com/",
@@ -5609,7 +5637,7 @@
   },
   {
     "name": "Target",
-    "aliases": ["Target Corporation", "TGT", "Michael Fiddelke", "Brian Cornell"],
+    "aliases": ["塔吉特", "Target Corporation", "TGT", "Michael Fiddelke", "Brian Cornell"],
     "industry": "综合零售 / 自有品牌 / 生活方式零售",
     "stage": "增长修复 / 门店体验重建",
     "url": "https://corporate.target.com/investors",
@@ -5626,7 +5654,7 @@
   },
   {
     "name": "Home Depot",
-    "aliases": ["The Home Depot", "HD", "Ted Decker"],
+    "aliases": ["家得宝", "The Home Depot", "HD", "Ted Decker"],
     "industry": "家居建材零售 / 专业承包商渠道 / 维修维护",
     "stage": "成熟龙头 / 房地产周期承压",
     "url": "https://ir.homedepot.com/",
@@ -5643,7 +5671,7 @@
   },
   {
     "name": "Nike",
-    "aliases": ["NIKE, Inc.", "NKE", "Jordan Brand", "Converse", "Elliott Hill"],
+    "aliases": ["耐克", "NIKE, Inc.", "NKE", "Jordan Brand", "Converse", "Elliott Hill"],
     "industry": "运动品牌 / 鞋服 / 全球品牌零售",
     "stage": "品牌修复 / 批发渠道再平衡",
     "url": "https://investors.nikeinc.com/",
@@ -5660,7 +5688,7 @@
   },
   {
     "name": "LVMH",
-    "aliases": ["LVMH Moet Hennessy Louis Vuitton", "Louis Vuitton", "Dior", "Bernard Arnault", "MC.PA"],
+    "aliases": ["路威酩轩", "LVMH Moet Hennessy Louis Vuitton", "Louis Vuitton", "Dior", "Bernard Arnault", "MC.PA"],
     "industry": "奢侈品集团 / 时装皮具 / 酒类和美妆零售",
     "stage": "奢侈品周期下行 / 多品牌韧性",
     "url": "https://www.lvmh.com/investors",
@@ -5694,7 +5722,7 @@
   },
   {
     "name": "Kering",
-    "aliases": ["Kering SA", "Gucci", "Saint Laurent", "Bottega Veneta", "KER.PA", "Francois-Henri Pinault"],
+    "aliases": ["开云集团", "Kering SA", "Gucci", "Saint Laurent", "Bottega Veneta", "KER.PA", "Francois-Henri Pinault"],
     "industry": "奢侈品集团 / 时装皮具 / 品牌修复",
     "stage": "Gucci重塑 / 利润修复期",
     "url": "https://www.kering.com/en/finance/",
@@ -5711,7 +5739,7 @@
   },
   {
     "name": "Inditex",
-    "aliases": ["Zara", "Industria de Diseno Textil", "ITX.MC", "Massimo Dutti", "Pull&Bear", "Oscar Garcia Maceiras"],
+    "aliases": ["印地纺", "Zara", "Industria de Diseno Textil", "ITX.MC", "Massimo Dutti", "Pull&Bear", "Oscar Garcia Maceiras"],
     "industry": "快时尚 / 全球服装零售 / 供应链反应速度",
     "stage": "成熟增长 / 全渠道效率优化",
     "url": "https://www.inditex.com/itxcomweb/en/investors",
@@ -5745,7 +5773,7 @@
   },
   {
     "name": "Procter & Gamble",
-    "aliases": ["P&G", "PG", "Procter and Gamble", "Jon Moeller", "Shailesh Jejurikar"],
+    "aliases": ["宝洁", "P&G", "PG", "Procter and Gamble", "Jon Moeller", "Shailesh Jejurikar"],
     "industry": "日用消费品 / 家庭护理 / 个护健康",
     "stage": "成熟复利 / 组合和生产率优化",
     "url": "https://www.pginvestor.com/",
@@ -5762,7 +5790,7 @@
   },
   {
     "name": "Unilever",
-    "aliases": ["Unilever PLC", "UL", "UNA.AS", "Dove", "Axe", "Ben & Jerry's", "Fernando Fernandez"],
+    "aliases": ["联合利华", "Unilever PLC", "UL", "UNA.AS", "Dove", "Axe", "Ben & Jerry's", "Fernando Fernandez"],
     "industry": "日用消费品 / 美护家清 / 食品组合重塑",
     "stage": "组合瘦身 / 增长和利润修复",
     "url": "https://www.unilever.com/investors/",
@@ -5779,7 +5807,7 @@
   },
   {
     "name": "Nestlé",
-    "aliases": ["Nestle", "Nestle S.A.", "NESN.SW", "Nescafe", "KitKat", "Purina", "Philipp Navratil"],
+    "aliases": ["雀巢", "Nestle", "Nestle S.A.", "NESN.SW", "Nescafe", "KitKat", "Purina", "Philipp Navratil"],
     "industry": "食品饮料 / 咖啡 / 宠物和营养",
     "stage": "战略聚焦 / 量增修复",
     "url": "https://www.nestle.com/investors",
@@ -5796,7 +5824,7 @@
   },
   {
     "name": "Coca-Cola",
-    "aliases": ["The Coca-Cola Company", "KO", "Coke", "Coca-Cola Zero Sugar", "James Quincey"],
+    "aliases": ["可口可乐", "The Coca-Cola Company", "KO", "Coke", "Coca-Cola Zero Sugar", "James Quincey"],
     "industry": "软饮料 / 品牌授权 / 全球瓶装系统",
     "stage": "成熟高利润 / 轻资产饮料平台",
     "url": "https://investors.coca-colacompany.com/",
@@ -5813,7 +5841,7 @@
   },
   {
     "name": "PepsiCo",
-    "aliases": ["PepsiCo Inc.", "PEP", "Pepsi", "Frito-Lay", "Gatorade", "Ramon Laguarta"],
+    "aliases": ["百事公司", "PepsiCo Inc.", "PEP", "Pepsi", "Frito-Lay", "Gatorade", "Ramon Laguarta"],
     "industry": "食品饮料 / 零食 / 碳酸饮料和功能饮料",
     "stage": "成熟消费品 / 北美修复",
     "url": "https://investor.pepsico.com/",
@@ -5847,7 +5875,7 @@
   },
   {
     "name": "McDonald’s",
-    "aliases": ["McDonald's", "McDonald’s Corporation", "MCD", "Golden Arches", "Chris Kempczinski"],
+    "aliases": ["麦当劳", "McDonald's", "McDonald’s Corporation", "MCD", "Golden Arches", "Chris Kempczinski"],
     "industry": "快餐连锁 / 特许经营 / 全球餐饮平台",
     "stage": "成熟全球平台 / 价值菜单和数字会员驱动",
     "url": "https://corporate.mcdonalds.com/corpmcd/investors.html",
@@ -5915,7 +5943,7 @@
   },
   {
     "name": "Johnson & Johnson",
-    "aliases": ["J&J", "JNJ", "Johnson and Johnson", "MedTech", "Joaquin Duato"],
+    "aliases": ["强生", "J&J", "JNJ", "Johnson and Johnson", "MedTech", "Joaquin Duato"],
     "industry": "医药 / 医疗器械 / 消费健康剥离后聚焦",
     "stage": "多元医疗龙头 / 创新药和器械并重",
     "url": "https://www.investor.jnj.com/",
@@ -5932,7 +5960,7 @@
   },
   {
     "name": "Pfizer",
-    "aliases": ["PFE", "Pfizer Inc.", "Albert Bourla", "Comirnaty", "Paxlovid"],
+    "aliases": ["辉瑞", "PFE", "Pfizer Inc.", "Albert Bourla", "Comirnaty", "Paxlovid"],
     "industry": "创新药 / 疫苗 / 肿瘤和抗感染",
     "stage": "新冠红利回落 / 管线和并购修复",
     "url": "https://investors.pfizer.com/",
@@ -5949,7 +5977,7 @@
   },
   {
     "name": "Merck & Co.",
-    "aliases": ["Merck", "MSD", "MRK", "Keytruda", "Robert Davis"],
+    "aliases": ["默沙东", "Merck", "MSD", "MRK", "Keytruda", "Robert Davis"],
     "industry": "创新药 / 肿瘤免疫 / 疫苗和动物保健",
     "stage": "Keytruda峰值期 / 下一代管线转换",
     "url": "https://www.merck.com/investor-relations/",
@@ -5966,7 +5994,7 @@
   },
   {
     "name": "Eli Lilly",
-    "aliases": ["Lilly", "LLY", "Mounjaro", "Zepbound", "David Ricks"],
+    "aliases": ["礼来", "Lilly", "LLY", "Mounjaro", "Zepbound", "David Ricks"],
     "industry": "创新药 / GLP-1 / 糖尿病和肥胖症",
     "stage": "超级增长 / 产能和适应症扩张",
     "url": "https://investor.lilly.com/",
@@ -5983,7 +6011,7 @@
   },
   {
     "name": "Novo Nordisk",
-    "aliases": ["Novo", "NVO", "NOVO-B.CO", "Ozempic", "Wegovy", "Lars Fruergaard Jorgensen"],
+    "aliases": ["诺和诺德", "Novo", "NVO", "NOVO-B.CO", "Ozempic", "Wegovy", "Lars Fruergaard Jorgensen"],
     "industry": "糖尿病 / 肥胖症 / GLP-1生物制药",
     "stage": "超级增长 / 全球供给扩张",
     "url": "https://www.novonordisk.com/investors.html",
@@ -6000,7 +6028,7 @@
   },
   {
     "name": "Roche",
-    "aliases": ["Roche Holding", "ROG.SW", "Genentech", "Diagnostics", "Thomas Schinecker"],
+    "aliases": ["罗氏", "Roche Holding", "ROG.SW", "Genentech", "Diagnostics", "Thomas Schinecker"],
     "industry": "创新药 / 诊断 / 肿瘤和免疫",
     "stage": "管线修复 / 诊断协同",
     "url": "https://www.roche.com/investors",
@@ -6017,7 +6045,7 @@
   },
   {
     "name": "Novartis",
-    "aliases": ["NVS", "Novartis AG", "Vas Narasimhan", "Kisqali", "Pluvicto"],
+    "aliases": ["诺华", "NVS", "Novartis AG", "Vas Narasimhan", "Kisqali", "Pluvicto"],
     "industry": "创新药 / 肿瘤 / 心血管和放射配体疗法",
     "stage": "纯创新药聚焦 / 组合提质",
     "url": "https://www.novartis.com/investors",
@@ -6034,7 +6062,7 @@
   },
   {
     "name": "AstraZeneca",
-    "aliases": ["AZN", "AstraZeneca PLC", "Tagrisso", "Farxiga", "Pascal Soriot"],
+    "aliases": ["阿斯利康", "AZN", "AstraZeneca PLC", "Tagrisso", "Farxiga", "Pascal Soriot"],
     "industry": "创新药 / 肿瘤 / 心肾代谢和呼吸免疫",
     "stage": "高增长大药企 / 全球管线扩张",
     "url": "https://www.astrazeneca.com/investor-relations.html",
@@ -6051,7 +6079,7 @@
   },
   {
     "name": "Sanofi",
-    "aliases": ["Sanofi SA", "SNY", "Dupixent", "Paul Hudson"],
+    "aliases": ["赛诺菲", "Sanofi SA", "SNY", "Dupixent", "Paul Hudson"],
     "industry": "创新药 / 免疫 / 疫苗和罕见病",
     "stage": "免疫平台扩张 / 消费健康剥离后聚焦",
     "url": "https://www.sanofi.com/en/investors",
@@ -6068,7 +6096,7 @@
   },
   {
     "name": "GSK",
-    "aliases": ["GlaxoSmithKline", "GSK plc", "GSK.L", "Emma Walmsley", "Shingrix"],
+    "aliases": ["葛兰素史克", "GlaxoSmithKline", "GSK plc", "GSK.L", "Emma Walmsley", "Shingrix"],
     "industry": "疫苗 / HIV / 呼吸和肿瘤",
     "stage": "Haleon剥离后聚焦 / 疫苗驱动",
     "url": "https://www.gsk.com/en-gb/investors/",
@@ -6085,7 +6113,7 @@
   },
   {
     "name": "AbbVie",
-    "aliases": ["ABBV", "Humira", "Skyrizi", "Rinvoq", "Robert Michael"],
+    "aliases": ["艾伯维", "ABBV", "Humira", "Skyrizi", "Rinvoq", "Robert Michael"],
     "industry": "免疫 / 肿瘤 / 神经科学和美学",
     "stage": "Humira专利悬崖后修复 / 新品放量",
     "url": "https://investors.abbvie.com/",
@@ -6102,7 +6130,7 @@
   },
   {
     "name": "Amgen",
-    "aliases": ["AMGN", "Amgen Inc.", "Repatha", "Tepezza", "Robert Bradway"],
+    "aliases": ["安进", "AMGN", "Amgen Inc.", "Repatha", "Tepezza", "Robert Bradway"],
     "industry": "生物科技 / 抗体药 / 心血管和罕见病",
     "stage": "成熟生物药企 / Horizon整合",
     "url": "https://investors.amgen.com/",
@@ -6119,7 +6147,7 @@
   },
   {
     "name": "Gilead Sciences",
-    "aliases": ["Gilead", "GILD", "Biktarvy", "Kite", "Daniel O'Day"],
+    "aliases": ["吉利德科学", "Gilead", "GILD", "Biktarvy", "Kite", "Daniel O'Day"],
     "industry": "抗病毒 / HIV / 肿瘤细胞治疗",
     "stage": "HIV现金流 / 肿瘤转型验证",
     "url": "https://investors.gilead.com/",
@@ -6136,7 +6164,7 @@
   },
   {
     "name": "Moderna",
-    "aliases": ["MRNA", "Moderna Inc.", "Spikevax", "mRNA platform", "Stephane Bancel"],
+    "aliases": ["莫德纳", "MRNA", "Moderna Inc.", "Spikevax", "mRNA platform", "Stephane Bancel"],
     "industry": "mRNA生物科技 / 疫苗 / 肿瘤免疫",
     "stage": "新冠后重建 / 平台验证",
     "url": "https://investors.modernatx.com/",
@@ -6153,7 +6181,7 @@
   },
   {
     "name": "BioNTech",
-    "aliases": ["BNTX", "BioNTech SE", "Comirnaty", "mRNA", "Ugur Sahin"],
+    "aliases": ["拜恩泰科", "BNTX", "BioNTech SE", "Comirnaty", "mRNA", "Ugur Sahin"],
     "industry": "mRNA生物科技 / 肿瘤免疫 / 疫苗",
     "stage": "新冠后转型 / 肿瘤管线验证",
     "url": "https://investors.biontech.de/",
@@ -6170,7 +6198,7 @@
   },
   {
     "name": "Regeneron",
-    "aliases": ["REGN", "Regeneron Pharmaceuticals", "Eylea", "Dupixent", "Leonard Schleifer", "George Yancopoulos"],
+    "aliases": ["再生元", "REGN", "Regeneron Pharmaceuticals", "Eylea", "Dupixent", "Leonard Schleifer", "George Yancopoulos"],
     "industry": "生物科技 / 抗体药 / 眼科和免疫",
     "stage": "研发驱动 / 多产品接力",
     "url": "https://investor.regeneron.com/",
@@ -6187,7 +6215,7 @@
   },
   {
     "name": "Medtronic",
-    "aliases": ["MDT", "Medtronic plc", "Geoff Martha", "Minimed", "PulseSelect"],
+    "aliases": ["美敦力", "MDT", "Medtronic plc", "Geoff Martha", "Minimed", "PulseSelect"],
     "industry": "医疗器械 / 心血管 / 糖尿病和外科设备",
     "stage": "成熟器械龙头 / 增长修复",
     "url": "https://investorrelations.medtronic.com/",
@@ -6204,7 +6232,7 @@
   },
   {
     "name": "Abbott Laboratories",
-    "aliases": ["Abbott", "ABT", "FreeStyle Libre", "Ensure", "Robert Ford"],
+    "aliases": ["雅培", "Abbott", "ABT", "FreeStyle Libre", "Ensure", "Robert Ford"],
     "industry": "医疗器械 / 诊断 / 营养和成熟药品",
     "stage": "多元医疗平台 / Libre驱动增长",
     "url": "https://www.abbottinvestor.com/",
@@ -6221,7 +6249,7 @@
   },
   {
     "name": "Thermo Fisher Scientific",
-    "aliases": ["Thermo Fisher", "TMO", "Marc Casper", "Life sciences tools"],
+    "aliases": ["赛默飞世尔科技", "Thermo Fisher", "TMO", "Marc Casper", "Life sciences tools"],
     "industry": "生命科学工具 / 实验室设备 / CDMO和诊断",
     "stage": "科研工具龙头 / 生物医药资本开支修复",
     "url": "https://ir.thermofisher.com/",
@@ -6253,48 +6281,48 @@
     "industry_tags": ["企业服务"],
     "region_tags": ["中国大陆"]
   },
-  {"name":"Saudi Aramco","aliases":["Aramco","Saudi Arabian Oil Company","2222.SE","Amin Nasser"],"industry":"石油天然气 / 上游和炼化 / 国家能源公司","stage":"超大型现金流 / 国家战略资产","url":"https://www.aramco.com/en/investors","scores":{"leadership":8,"decision":8,"execution":9,"bench":8,"alignment":8,"coverage":9,"governance":8},"darwin":{"financial":9.5,"moat":9.5,"signal":8.5,"evidence":"A","note":"低成本储量、全球最大油气产能和国家支持构成极强现金流；能源转型、油价和国家治理折扣需保留。"},"evidence":"A","summary":"Saudi Aramco是全球最重要的油气生产商之一，核心优势是低成本储量和超大规模现金流。","risk":"油价、地缘政治、能源转型、少数股东治理，是主要风险。","watch":["Oil production","Free cash flow","Dividend capacity","Capex"],"sources":["https://www.aramco.com/en/investors","https://www.aramco.com/en/investors/investor-tools/reports-and-presentations"],"last_reviewed":"2026-05-02","industry_tags":["储能","企业服务"],"region_tags":["阿联酋和沙特"]},
-  {"name":"ExxonMobil","aliases":["Exxon Mobil","XOM","Darren Woods","Permian","Guyana"],"industry":"综合油气 / 上游 / 化工和低碳","stage":"高回报油气龙头 / 资本纪律强化","url":"https://investor.exxonmobil.com/","scores":{"leadership":8,"decision":8,"execution":9,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":9,"moat":9,"signal":8.5,"evidence":"A","note":"圭亚那、Permian、LNG和炼化化工一体化构成强资产组合，资本纪律改善；油价和政策周期是折扣。"},"evidence":"A","summary":"ExxonMobil是资本纪律最强的全球综合油气公司之一，优质上游资产和规模化工程能力突出。","risk":"油价、气候政策、项目执行、化工周期，是主要风险。","watch":["Upstream earnings","Permian production","Guyana output","Shareholder returns"],"sources":["https://investor.exxonmobil.com/","https://investor.exxonmobil.com/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["储能","企业服务"],"region_tags":["北美"]},
-  {"name":"Chevron","aliases":["CVX","Chevron Corporation","Mike Wirth","Hess"],"industry":"综合油气 / 上游 / LNG和炼化","stage":"高分红现金流 / Hess整合","url":"https://www.chevron.com/investors","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":8.5,"signal":8,"evidence":"A","note":"强资产负债表、Permian和LNG资产提供现金流，Hess带来圭亚那敞口；并购仲裁和油价周期需折扣。"},"evidence":"A","summary":"Chevron以稳健资本结构、分红回购和上游资产质量见长，是传统能源中的高质量现金流公司。","risk":"Hess交易不确定、油价、项目成本、监管和气候诉讼，是主要风险。","watch":["Free cash flow","Permian growth","Hess integration","Dividend coverage"],"sources":["https://www.chevron.com/investors","https://www.chevron.com/investors/financial-information/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["储能","企业服务"],"region_tags":["北美"]},
-  {"name":"Shell","aliases":["Shell plc","SHEL","Wael Sawan","LNG"],"industry":"综合能源 / LNG / 油气和低碳","stage":"组合再聚焦 / 股东回报优先","url":"https://www.shell.com/investors.html","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":8.5,"signal":8,"evidence":"A","note":"LNG、交易和全球油气资产强，近年更强调回报纪律；能源转型战略摆动和欧洲政策压力是折扣。"},"evidence":"A","summary":"Shell是全球LNG和能源交易能力最强的综合能源公司之一，当前战略更偏资本回报和高质量资产。","risk":"油气价格、LNG周期、低碳资产减值、欧洲监管，是主要风险。","watch":["LNG volumes","Trading results","Cash flow from operations","Share buybacks"],"sources":["https://www.shell.com/investors.html","https://www.shell.com/investors/results-and-reporting.html"],"last_reviewed":"2026-05-02","industry_tags":["储能","企业服务"],"region_tags":["英国"]},
-  {"name":"BP","aliases":["bp plc","BP.L","Murray Auchincloss"],"industry":"综合能源 / 油气 / 低碳转型","stage":"战略再平衡 / 回归油气回报","url":"https://www.bp.com/en/global/corporate/investors.html","scores":{"leadership":7,"decision":6,"execution":7,"bench":8,"alignment":7,"coverage":9,"governance":9},"darwin":{"financial":7.5,"moat":7.5,"signal":7,"evidence":"A","note":"全球油气和交易能力仍强，但低碳转型节奏、战略摇摆和同业回报差距压低评分。"},"evidence":"A","summary":"BP正在从激进低碳转型回调至更强调油气回报和资本纪律，组织需要重建投资者信任。","risk":"战略反复、油价、资产减值、安全事故、低碳项目回报，是主要风险。","watch":["Upstream production","ROACE","Net debt","Buyback capacity"],"sources":["https://www.bp.com/en/global/corporate/investors.html","https://www.bp.com/en/global/corporate/investors/results-and-reporting.html"],"last_reviewed":"2026-05-02","industry_tags":["储能","企业服务"],"region_tags":["英国"]},
-  {"name":"TotalEnergies","aliases":["TTE","TotalEnergies SE","Patrick Pouyanne"],"industry":"综合能源 / LNG / 电力和可再生能源","stage":"多能源组合 / LNG和电力扩张","url":"https://totalenergies.com/investors","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":8,"signal":8.5,"evidence":"A","note":"LNG、上游和电力可再生组合较均衡，资本纪律好；油气周期和低碳资产回报仍需折扣。"},"evidence":"A","summary":"TotalEnergies是欧洲能源公司中多能源转型路径较平衡的一家，LNG和电力业务提供长期增量。","risk":"油气价格、项目执行、非洲和中东地缘风险、低碳回报，是主要风险。","watch":["LNG cash flow","Renewables capacity","ROACE","Net investments"],"sources":["https://totalenergies.com/investors","https://totalenergies.com/investors/results-investor-presentations"],"last_reviewed":"2026-05-02","industry_tags":["储能","企业服务"],"region_tags":["欧盟"]},
+  {"name":"Saudi Aramco","aliases":["沙特阿美","Aramco","Saudi Arabian Oil Company","2222.SE","Amin Nasser"],"industry":"石油天然气 / 上游和炼化 / 国家能源公司","stage":"超大型现金流 / 国家战略资产","url":"https://www.aramco.com/en/investors","scores":{"leadership":8,"decision":8,"execution":9,"bench":8,"alignment":8,"coverage":9,"governance":8},"darwin":{"financial":9.5,"moat":9.5,"signal":8.5,"evidence":"A","note":"低成本储量、全球最大油气产能和国家支持构成极强现金流；能源转型、油价和国家治理折扣需保留。"},"evidence":"A","summary":"Saudi Aramco是全球最重要的油气生产商之一，核心优势是低成本储量和超大规模现金流。","risk":"油价、地缘政治、能源转型、少数股东治理，是主要风险。","watch":["Oil production","Free cash flow","Dividend capacity","Capex"],"sources":["https://www.aramco.com/en/investors","https://www.aramco.com/en/investors/investor-tools/reports-and-presentations"],"last_reviewed":"2026-05-02","industry_tags":["储能","企业服务"],"region_tags":["阿联酋和沙特"]},
+  {"name":"ExxonMobil","aliases":["埃克森美孚","Exxon Mobil","XOM","Darren Woods","Permian","Guyana"],"industry":"综合油气 / 上游 / 化工和低碳","stage":"高回报油气龙头 / 资本纪律强化","url":"https://investor.exxonmobil.com/","scores":{"leadership":8,"decision":8,"execution":9,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":9,"moat":9,"signal":8.5,"evidence":"A","note":"圭亚那、Permian、LNG和炼化化工一体化构成强资产组合，资本纪律改善；油价和政策周期是折扣。"},"evidence":"A","summary":"ExxonMobil是资本纪律最强的全球综合油气公司之一，优质上游资产和规模化工程能力突出。","risk":"油价、气候政策、项目执行、化工周期，是主要风险。","watch":["Upstream earnings","Permian production","Guyana output","Shareholder returns"],"sources":["https://investor.exxonmobil.com/","https://investor.exxonmobil.com/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["储能","企业服务"],"region_tags":["北美"]},
+  {"name":"Chevron","aliases":["雪佛龙","CVX","Chevron Corporation","Mike Wirth","Hess"],"industry":"综合油气 / 上游 / LNG和炼化","stage":"高分红现金流 / Hess整合","url":"https://www.chevron.com/investors","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":8.5,"signal":8,"evidence":"A","note":"强资产负债表、Permian和LNG资产提供现金流，Hess带来圭亚那敞口；并购仲裁和油价周期需折扣。"},"evidence":"A","summary":"Chevron以稳健资本结构、分红回购和上游资产质量见长，是传统能源中的高质量现金流公司。","risk":"Hess交易不确定、油价、项目成本、监管和气候诉讼，是主要风险。","watch":["Free cash flow","Permian growth","Hess integration","Dividend coverage"],"sources":["https://www.chevron.com/investors","https://www.chevron.com/investors/financial-information/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["储能","企业服务"],"region_tags":["北美"]},
+  {"name":"Shell","aliases":["壳牌","Shell plc","SHEL","Wael Sawan","LNG"],"industry":"综合能源 / LNG / 油气和低碳","stage":"组合再聚焦 / 股东回报优先","url":"https://www.shell.com/investors.html","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":8.5,"signal":8,"evidence":"A","note":"LNG、交易和全球油气资产强，近年更强调回报纪律；能源转型战略摆动和欧洲政策压力是折扣。"},"evidence":"A","summary":"Shell是全球LNG和能源交易能力最强的综合能源公司之一，当前战略更偏资本回报和高质量资产。","risk":"油气价格、LNG周期、低碳资产减值、欧洲监管，是主要风险。","watch":["LNG volumes","Trading results","Cash flow from operations","Share buybacks"],"sources":["https://www.shell.com/investors.html","https://www.shell.com/investors/results-and-reporting.html"],"last_reviewed":"2026-05-02","industry_tags":["储能","企业服务"],"region_tags":["英国"]},
+  {"name":"BP","aliases":["英国石油","bp plc","BP.L","Murray Auchincloss"],"industry":"综合能源 / 油气 / 低碳转型","stage":"战略再平衡 / 回归油气回报","url":"https://www.bp.com/en/global/corporate/investors.html","scores":{"leadership":7,"decision":6,"execution":7,"bench":8,"alignment":7,"coverage":9,"governance":9},"darwin":{"financial":7.5,"moat":7.5,"signal":7,"evidence":"A","note":"全球油气和交易能力仍强，但低碳转型节奏、战略摇摆和同业回报差距压低评分。"},"evidence":"A","summary":"BP正在从激进低碳转型回调至更强调油气回报和资本纪律，组织需要重建投资者信任。","risk":"战略反复、油价、资产减值、安全事故、低碳项目回报，是主要风险。","watch":["Upstream production","ROACE","Net debt","Buyback capacity"],"sources":["https://www.bp.com/en/global/corporate/investors.html","https://www.bp.com/en/global/corporate/investors/results-and-reporting.html"],"last_reviewed":"2026-05-02","industry_tags":["储能","企业服务"],"region_tags":["英国"]},
+  {"name":"TotalEnergies","aliases":["道达尔能源","TTE","TotalEnergies SE","Patrick Pouyanne"],"industry":"综合能源 / LNG / 电力和可再生能源","stage":"多能源组合 / LNG和电力扩张","url":"https://totalenergies.com/investors","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":8,"signal":8.5,"evidence":"A","note":"LNG、上游和电力可再生组合较均衡，资本纪律好；油气周期和低碳资产回报仍需折扣。"},"evidence":"A","summary":"TotalEnergies是欧洲能源公司中多能源转型路径较平衡的一家，LNG和电力业务提供长期增量。","risk":"油气价格、项目执行、非洲和中东地缘风险、低碳回报，是主要风险。","watch":["LNG cash flow","Renewables capacity","ROACE","Net investments"],"sources":["https://totalenergies.com/investors","https://totalenergies.com/investors/results-investor-presentations"],"last_reviewed":"2026-05-02","industry_tags":["储能","企业服务"],"region_tags":["欧盟"]},
   {"name":"PetroChina","aliases":["中国石油","PetroChina Company","PTR","601857.SS","857.HK"],"industry":"中国油气 / 上游 / 管道和炼化销售","stage":"国家能源平台 / 稳健现金流","url":"http://www.petrochina.com.cn/ptr/ir/xxpl/nb.shtml","scores":{"leadership":7,"decision":7,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":8},"darwin":{"financial":8.5,"moat":8.5,"signal":8,"evidence":"A","note":"中国最大油气生产和销售平台之一，国家能源安全定位强；政策定价、国企治理和油价周期是折扣。"},"evidence":"A","summary":"PetroChina/中国石油是中国油气能源安全核心平台，上游资源和管网销售体系构成稳定基础。","risk":"油价、政策定价、炼化周期、国企资本配置，是主要风险。","watch":["Oil and gas production","Refining margin","Dividend payout","Capex"],"sources":["http://www.petrochina.com.cn/ptr/ir/xxpl/nb.shtml","https://www.hkexnews.hk/"],"last_reviewed":"2026-05-02","industry_tags":["储能","企业服务"],"region_tags":["中国大陆"]},
   {"name":"Sinopec","aliases":["中国石化","China Petroleum & Chemical","SNP","600028.SS","386.HK"],"industry":"炼化 / 成品油销售 / 化工和上游","stage":"中国炼化销售龙头 / 化工周期修复","url":"http://www.sinopec.com/listco/en/investor_centre/","scores":{"leadership":7,"decision":7,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":8},"darwin":{"financial":8,"moat":8,"signal":7.5,"evidence":"A","note":"炼化、加油站和化工规模巨大，国内渠道强；化工景气、成品油政策和国企治理带来折扣。"},"evidence":"A","summary":"Sinopec/中国石化是中国炼化和成品油销售龙头，优势在渠道、规模和一体化供应链。","risk":"化工周期、油价波动、成品油价格政策、能源转型，是主要风险。","watch":["Refining throughput","Marketing volume","Chemicals margin","Dividend"],"sources":["http://www.sinopec.com/listco/en/investor_centre/","https://www.hkexnews.hk/"],"last_reviewed":"2026-05-02","industry_tags":["储能","企业服务"],"region_tags":["中国大陆"]},
-  {"name":"LG Energy Solution","aliases":["LGES","LG Energy","373220.KS","Kim Dong-myung"],"industry":"动力电池 / 储能 / 全球电池制造","stage":"电池龙头 / EV需求波动期","url":"https://www.lgensol.com/en/ir","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":7.5,"moat":8,"signal":8,"evidence":"A","note":"全球车企客户、北美合资产能和电池制造能力强；EV需求放缓、价格压力和召回质量风险需折扣。"},"evidence":"A","summary":"LG Energy Solution是全球动力电池核心供应商之一，北美布局和客户组合强，但处在电动车需求波动周期。","risk":"EV需求放缓、价格竞争、原材料、召回和客户集中，是主要风险。","watch":["Battery shipments","North America capacity","Operating margin","Order backlog"],"sources":["https://www.lgensol.com/en/ir","https://www.lgensol.com/en/ir/ir-archive"],"last_reviewed":"2026-05-02","industry_tags":["动力电池","储能"],"region_tags":["韩国"]},
-  {"name":"Panasonic Holdings","aliases":["Panasonic","6752.T","Panasonic Energy","Yuki Kusumi"],"industry":"电子制造 / 动力电池 / 工业和家电","stage":"组合转型 / 电池和工业软件化","url":"https://holdings.panasonic/global/corporate/ir.html","scores":{"leadership":7,"decision":7,"execution":7,"bench":8,"alignment":7,"coverage":9,"governance":9},"darwin":{"financial":7.5,"moat":7.5,"signal":7.5,"evidence":"A","note":"车载电池、电子元件和工业客户基础强，但业务组合复杂、增长弹性弱于纯电池龙头。"},"evidence":"A","summary":"Panasonic Holdings是日本老牌电子和电池制造集团，当前重点是提升电池、工业和软件服务的资本效率。","risk":"Tesla等客户集中、电池竞争、家电低利润、日元和原材料，是主要风险。","watch":["Panasonic Energy profit","Battery capacity","ROIC","Segment restructuring"],"sources":["https://holdings.panasonic/global/corporate/ir.html","https://holdings.panasonic/global/corporate/ir/library/annual-report.html"],"last_reviewed":"2026-05-02","industry_tags":["动力电池","ICT"],"region_tags":["日本"]},
-  {"name":"Siemens","aliases":["Siemens AG","SIE.DE","Digital Industries","Roland Busch"],"industry":"工业自动化 / 数字化工业 / 智能基础设施","stage":"工业软件化 / 自动化周期修复","url":"https://www.siemens.com/global/en/company/investor-relations.html","scores":{"leadership":8,"decision":8,"execution":9,"bench":9,"alignment":9,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":9,"signal":8.5,"evidence":"A","note":"工业自动化、PLM软件和智能基础设施构成强工业科技平台；中国和离散制造周期波动是折扣。"},"evidence":"A","summary":"Siemens是全球工业自动化和工业软件龙头之一，长期受益于制造业数字化和电气化。","risk":"自动化周期、中国需求、软件并购整合、工业资本开支，是主要风险。","watch":["Digital Industries orders","Software revenue","Smart Infrastructure margin","Free cash flow"],"sources":["https://www.siemens.com/global/en/company/investor-relations.html","https://www.siemens.com/global/en/company/investor-relations/financial-publications.html"],"last_reviewed":"2026-05-02","industry_tags":["机器人","ICT","企业服务"],"region_tags":["欧盟"]},
-  {"name":"General Electric","aliases":["GE","GE Aerospace","H. Lawrence Culp","GE Vernova"],"industry":"航空发动机 / 工业制造 / 能源设备拆分后聚焦","stage":"航空发动机纯化 / 高质量售后服务","url":"https://www.geaerospace.com/investor-relations","scores":{"leadership":9,"decision":9,"execution":9,"bench":8,"alignment":9,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":9.5,"signal":9,"evidence":"A","note":"拆分后GE Aerospace成为航空发动机和售后服务高护城河公司，Larry Culp转型执行力强；航空周期和供应链是折扣。"},"evidence":"A","summary":"General Electric在完成拆分后主要体现为GE Aerospace，航空发动机装机基础和售后服务构成高质量复利模型。","risk":"航空供应链、发动机质量、航司资本开支、国防预算，是主要风险。","watch":["Engine deliveries","Services revenue","Operating margin","Free cash flow"],"sources":["https://www.geaerospace.com/investor-relations","https://www.geaerospace.com/investor-relations/financial-reporting"],"last_reviewed":"2026-05-02","industry_tags":["ICT","企业服务"],"region_tags":["北美"]},
-  {"name":"Schneider Electric","aliases":["Schneider","SU.PA","EcoStruxure","Jean-Pascal Tricoire","Peter Herweck"],"industry":"能源管理 / 工业自动化 / 数据中心电气化","stage":"电气化和数据中心受益 / 高质量增长","url":"https://www.se.com/ww/en/about-us/investor-relations/","scores":{"leadership":9,"decision":9,"execution":9,"bench":9,"alignment":9,"coverage":9,"governance":9},"darwin":{"financial":9,"moat":9,"signal":9,"evidence":"A","note":"能源管理、低压电气、数据中心和工业软件组合高度受益于电气化和AI基础设施。"},"evidence":"A","summary":"Schneider Electric是全球能源管理和电气化龙头，数据中心、电网和工业自动化需求形成长期顺风。","risk":"数据中心周期、供应链、欧洲需求、估值，是主要风险。","watch":["Energy Management growth","Data center demand","Software revenue","Adjusted EBITA margin"],"sources":["https://www.se.com/ww/en/about-us/investor-relations/","https://www.se.com/ww/en/about-us/investor-relations/financial-results.jsp"],"last_reviewed":"2026-05-02","industry_tags":["储能","ICT","企业服务"],"region_tags":["欧盟"]},
-  {"name":"ABB","aliases":["ABB Ltd","ABBN.SW","Bjorn Rosengren","Morten Wierod"],"industry":"电气设备 / 自动化 / 机器人和运动控制","stage":"组合提质 / 自动化和电气化扩张","url":"https://global.abb/group/en/investors","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":8.5,"signal":8.5,"evidence":"A","note":"电气化、运动控制、过程自动化和机器人业务质量改善，组合更聚焦；周期性和中国自动化需求需折扣。"},"evidence":"A","summary":"ABB是全球电气和自动化龙头之一，近年来组合优化提升了利润率和资本回报。","risk":"工业周期、中国需求、机器人竞争、汇率，是主要风险。","watch":["Order growth","Operational EBITA margin","Robotics demand","Cash conversion"],"sources":["https://global.abb/group/en/investors","https://global.abb/group/en/investors/results-reports-presentations"],"last_reviewed":"2026-05-02","industry_tags":["机器人","ICT","企业服务"],"region_tags":["欧盟"]},
-  {"name":"Honeywell","aliases":["HON","Honeywell International","Vimal Kapur"],"industry":"工业自动化 / 航空航天 / 楼宇和能源技术","stage":"工业组合重塑 / 自动化和航空驱动","url":"https://investor.honeywell.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":9,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":8.5,"signal":8,"evidence":"A","note":"航空、自动化和控制系统平台强，现金流稳；组合拆分/重组和工业周期带来执行折扣。"},"evidence":"A","summary":"Honeywell是美国多元工业龙头，正围绕自动化、航空和能源转型重塑组合。","risk":"工业周期、航空供应链、并购整合、组合复杂度，是主要风险。","watch":["Aerospace growth","Automation orders","Segment margins","Portfolio actions"],"sources":["https://investor.honeywell.com/","https://investor.honeywell.com/financials/sec-filings/default.aspx"],"last_reviewed":"2026-05-02","industry_tags":["ICT","企业服务"],"region_tags":["北美"]},
-  {"name":"Caterpillar","aliases":["CAT","Caterpillar Inc.","Jim Umpleby"],"industry":"工程机械 / 矿山设备 / 发动机和能源系统","stage":"周期高位 / 服务收入韧性","url":"https://investors.caterpillar.com/","scores":{"leadership":8,"decision":8,"execution":9,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":9,"signal":8,"evidence":"A","note":"工程机械品牌、经销商网络、矿山和能源系统强，服务收入提高韧性；建筑和矿业资本开支周期是折扣。"},"evidence":"A","summary":"Caterpillar是全球工程机械和矿山设备龙头，护城河在品牌、经销商网络和长期服务体系。","risk":"建筑周期、矿业资本开支、利率、库存周期，是主要风险。","watch":["Dealer inventory","Services revenue","Construction Industries margin","Resource Industries orders"],"sources":["https://investors.caterpillar.com/","https://investors.caterpillar.com/financials/sec-filings/default.aspx"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
-  {"name":"John Deere","aliases":["Deere & Company","DE","John Deere", "John May"],"industry":"农业机械 / 精准农业 / 工程设备","stage":"农业周期下行 / 智能农机长期化","url":"https://investor.deere.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8.5,"signal":8,"evidence":"A","note":"农业机械品牌、经销商和精准农业软件能力强；农产品价格和农户资本开支周期压制短期。"},"evidence":"A","summary":"John Deere是全球农业机械龙头，长期优势在设备、经销商和精准农业数据平台。","risk":"农业周期、农户收入、库存、融资业务信用风险，是主要风险。","watch":["Large Ag sales","Precision ag adoption","Dealer inventory","Operating margin"],"sources":["https://investor.deere.com/","https://investor.deere.com/financial-information/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","ICT"],"region_tags":["北美"]},
+  {"name":"LG Energy Solution","aliases":["LG新能源","LGES","LG Energy","373220.KS","Kim Dong-myung"],"industry":"动力电池 / 储能 / 全球电池制造","stage":"电池龙头 / EV需求波动期","url":"https://www.lgensol.com/en/ir","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":7.5,"moat":8,"signal":8,"evidence":"A","note":"全球车企客户、北美合资产能和电池制造能力强；EV需求放缓、价格压力和召回质量风险需折扣。"},"evidence":"A","summary":"LG Energy Solution是全球动力电池核心供应商之一，北美布局和客户组合强，但处在电动车需求波动周期。","risk":"EV需求放缓、价格竞争、原材料、召回和客户集中，是主要风险。","watch":["Battery shipments","North America capacity","Operating margin","Order backlog"],"sources":["https://www.lgensol.com/en/ir","https://www.lgensol.com/en/ir/ir-archive"],"last_reviewed":"2026-05-02","industry_tags":["动力电池","储能"],"region_tags":["韩国"]},
+  {"name":"Panasonic Holdings","aliases":["松下控股","Panasonic","6752.T","Panasonic Energy","Yuki Kusumi"],"industry":"电子制造 / 动力电池 / 工业和家电","stage":"组合转型 / 电池和工业软件化","url":"https://holdings.panasonic/global/corporate/ir.html","scores":{"leadership":7,"decision":7,"execution":7,"bench":8,"alignment":7,"coverage":9,"governance":9},"darwin":{"financial":7.5,"moat":7.5,"signal":7.5,"evidence":"A","note":"车载电池、电子元件和工业客户基础强，但业务组合复杂、增长弹性弱于纯电池龙头。"},"evidence":"A","summary":"Panasonic Holdings是日本老牌电子和电池制造集团，当前重点是提升电池、工业和软件服务的资本效率。","risk":"Tesla等客户集中、电池竞争、家电低利润、日元和原材料，是主要风险。","watch":["Panasonic Energy profit","Battery capacity","ROIC","Segment restructuring"],"sources":["https://holdings.panasonic/global/corporate/ir.html","https://holdings.panasonic/global/corporate/ir/library/annual-report.html"],"last_reviewed":"2026-05-02","industry_tags":["动力电池","ICT"],"region_tags":["日本"]},
+  {"name":"Siemens","aliases":["西门子","Siemens AG","SIE.DE","Digital Industries","Roland Busch"],"industry":"工业自动化 / 数字化工业 / 智能基础设施","stage":"工业软件化 / 自动化周期修复","url":"https://www.siemens.com/global/en/company/investor-relations.html","scores":{"leadership":8,"decision":8,"execution":9,"bench":9,"alignment":9,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":9,"signal":8.5,"evidence":"A","note":"工业自动化、PLM软件和智能基础设施构成强工业科技平台；中国和离散制造周期波动是折扣。"},"evidence":"A","summary":"Siemens是全球工业自动化和工业软件龙头之一，长期受益于制造业数字化和电气化。","risk":"自动化周期、中国需求、软件并购整合、工业资本开支，是主要风险。","watch":["Digital Industries orders","Software revenue","Smart Infrastructure margin","Free cash flow"],"sources":["https://www.siemens.com/global/en/company/investor-relations.html","https://www.siemens.com/global/en/company/investor-relations/financial-publications.html"],"last_reviewed":"2026-05-02","industry_tags":["机器人","ICT","企业服务"],"region_tags":["欧盟"]},
+  {"name":"General Electric","aliases":["通用电气","GE","GE Aerospace","H. Lawrence Culp","GE Vernova"],"industry":"航空发动机 / 工业制造 / 能源设备拆分后聚焦","stage":"航空发动机纯化 / 高质量售后服务","url":"https://www.geaerospace.com/investor-relations","scores":{"leadership":9,"decision":9,"execution":9,"bench":8,"alignment":9,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":9.5,"signal":9,"evidence":"A","note":"拆分后GE Aerospace成为航空发动机和售后服务高护城河公司，Larry Culp转型执行力强；航空周期和供应链是折扣。"},"evidence":"A","summary":"General Electric在完成拆分后主要体现为GE Aerospace，航空发动机装机基础和售后服务构成高质量复利模型。","risk":"航空供应链、发动机质量、航司资本开支、国防预算，是主要风险。","watch":["Engine deliveries","Services revenue","Operating margin","Free cash flow"],"sources":["https://www.geaerospace.com/investor-relations","https://www.geaerospace.com/investor-relations/financial-reporting"],"last_reviewed":"2026-05-02","industry_tags":["ICT","企业服务"],"region_tags":["北美"]},
+  {"name":"Schneider Electric","aliases":["施耐德电气","Schneider","SU.PA","EcoStruxure","Jean-Pascal Tricoire","Peter Herweck"],"industry":"能源管理 / 工业自动化 / 数据中心电气化","stage":"电气化和数据中心受益 / 高质量增长","url":"https://www.se.com/ww/en/about-us/investor-relations/","scores":{"leadership":9,"decision":9,"execution":9,"bench":9,"alignment":9,"coverage":9,"governance":9},"darwin":{"financial":9,"moat":9,"signal":9,"evidence":"A","note":"能源管理、低压电气、数据中心和工业软件组合高度受益于电气化和AI基础设施。"},"evidence":"A","summary":"Schneider Electric是全球能源管理和电气化龙头，数据中心、电网和工业自动化需求形成长期顺风。","risk":"数据中心周期、供应链、欧洲需求、估值，是主要风险。","watch":["Energy Management growth","Data center demand","Software revenue","Adjusted EBITA margin"],"sources":["https://www.se.com/ww/en/about-us/investor-relations/","https://www.se.com/ww/en/about-us/investor-relations/financial-results.jsp"],"last_reviewed":"2026-05-02","industry_tags":["储能","ICT","企业服务"],"region_tags":["欧盟"]},
+  {"name":"ABB","aliases":["ABB集团","ABB Ltd","ABBN.SW","Bjorn Rosengren","Morten Wierod"],"industry":"电气设备 / 自动化 / 机器人和运动控制","stage":"组合提质 / 自动化和电气化扩张","url":"https://global.abb/group/en/investors","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":8.5,"signal":8.5,"evidence":"A","note":"电气化、运动控制、过程自动化和机器人业务质量改善，组合更聚焦；周期性和中国自动化需求需折扣。"},"evidence":"A","summary":"ABB是全球电气和自动化龙头之一，近年来组合优化提升了利润率和资本回报。","risk":"工业周期、中国需求、机器人竞争、汇率，是主要风险。","watch":["Order growth","Operational EBITA margin","Robotics demand","Cash conversion"],"sources":["https://global.abb/group/en/investors","https://global.abb/group/en/investors/results-reports-presentations"],"last_reviewed":"2026-05-02","industry_tags":["机器人","ICT","企业服务"],"region_tags":["欧盟"]},
+  {"name":"Honeywell","aliases":["霍尼韦尔","HON","Honeywell International","Vimal Kapur"],"industry":"工业自动化 / 航空航天 / 楼宇和能源技术","stage":"工业组合重塑 / 自动化和航空驱动","url":"https://investor.honeywell.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":9,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":8.5,"signal":8,"evidence":"A","note":"航空、自动化和控制系统平台强，现金流稳；组合拆分/重组和工业周期带来执行折扣。"},"evidence":"A","summary":"Honeywell是美国多元工业龙头，正围绕自动化、航空和能源转型重塑组合。","risk":"工业周期、航空供应链、并购整合、组合复杂度，是主要风险。","watch":["Aerospace growth","Automation orders","Segment margins","Portfolio actions"],"sources":["https://investor.honeywell.com/","https://investor.honeywell.com/financials/sec-filings/default.aspx"],"last_reviewed":"2026-05-02","industry_tags":["ICT","企业服务"],"region_tags":["北美"]},
+  {"name":"Caterpillar","aliases":["卡特彼勒","CAT","Caterpillar Inc.","Jim Umpleby"],"industry":"工程机械 / 矿山设备 / 发动机和能源系统","stage":"周期高位 / 服务收入韧性","url":"https://investors.caterpillar.com/","scores":{"leadership":8,"decision":8,"execution":9,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":9,"signal":8,"evidence":"A","note":"工程机械品牌、经销商网络、矿山和能源系统强，服务收入提高韧性；建筑和矿业资本开支周期是折扣。"},"evidence":"A","summary":"Caterpillar是全球工程机械和矿山设备龙头，护城河在品牌、经销商网络和长期服务体系。","risk":"建筑周期、矿业资本开支、利率、库存周期，是主要风险。","watch":["Dealer inventory","Services revenue","Construction Industries margin","Resource Industries orders"],"sources":["https://investors.caterpillar.com/","https://investors.caterpillar.com/financials/sec-filings/default.aspx"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
+  {"name":"John Deere","aliases":["约翰迪尔","Deere & Company","DE","John Deere", "John May"],"industry":"农业机械 / 精准农业 / 工程设备","stage":"农业周期下行 / 智能农机长期化","url":"https://investor.deere.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8.5,"signal":8,"evidence":"A","note":"农业机械品牌、经销商和精准农业软件能力强；农产品价格和农户资本开支周期压制短期。"},"evidence":"A","summary":"John Deere是全球农业机械龙头，长期优势在设备、经销商和精准农业数据平台。","risk":"农业周期、农户收入、库存、融资业务信用风险，是主要风险。","watch":["Large Ag sales","Precision ag adoption","Dealer inventory","Operating margin"],"sources":["https://investor.deere.com/","https://investor.deere.com/financial-information/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","ICT"],"region_tags":["北美"]},
   {"name":"Mitsubishi Heavy Industries","aliases":["三菱重工","MHI","7011.T","Seiji Izumisawa"],"industry":"重工 / 防务 / 发电和航空航天","stage":"防务和能源设备增长 / 日本工业旗舰","url":"https://www.mhi.com/finance/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8,"signal":8.5,"evidence":"A","note":"防务、燃气轮机、核能和航空航天需求受益于日本安全和能源政策；项目执行和重工周期需折扣。"},"evidence":"A","summary":"Mitsubishi Heavy Industries是日本重工核心公司，防务和能源设备需求改善推升长期订单能见度。","risk":"大型项目延期、防务预算波动、核能政策、供应链，是主要风险。","watch":["Order backlog","Gas turbine orders","Defense revenue","Operating profit margin"],"sources":["https://www.mhi.com/finance/","https://www.mhi.com/finance/library/result"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","ICT"],"region_tags":["日本"]},
-  {"name":"Hitachi","aliases":["Hitachi Ltd.","6501.T","Lumada","Keiji Kojima"],"industry":"工业数字化 / 电力电网 / 铁路和IT服务","stage":"组合重塑成功 / 数字和电网驱动","url":"https://www.hitachi.com/IR-e/","scores":{"leadership":8,"decision":9,"execution":8,"bench":8,"alignment":9,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":8.5,"signal":8.5,"evidence":"A","note":"经过多年组合瘦身后聚焦数字、绿色能源和连接产业，电网和Lumada是关键增长点。"},"evidence":"A","summary":"Hitachi是日本工业集团转型较成功的样本，已经从多元制造向数字基础设施和电网系统聚焦。","risk":"大型项目执行、IT服务竞争、电网供应链、汇率，是主要风险。","watch":["Lumada revenue","Green Energy orders","Adjusted EBITA","Free cash flow"],"sources":["https://www.hitachi.com/IR-e/","https://www.hitachi.com/IR-e/library/"],"last_reviewed":"2026-05-02","industry_tags":["ICT","企业服务"],"region_tags":["日本"]},
-  {"name":"Eaton","aliases":["Eaton Corporation","ETN","Craig Arnold"],"industry":"电气设备 / 数据中心电力 / 航空液压","stage":"电气化红利 / 数据中心和电网需求","url":"https://www.eaton.com/us/en-us/company/investor-relations.html","scores":{"leadership":8,"decision":8,"execution":9,"bench":8,"alignment":9,"coverage":9,"governance":9},"darwin":{"financial":9,"moat":8.5,"signal":9,"evidence":"A","note":"电气设备、数据中心、电网升级和航空业务共同驱动高质量增长；估值和周期性是主要折扣。"},"evidence":"A","summary":"Eaton是电气化和数据中心电力基础设施的重要受益者，近年利润率和订单能见度强。","risk":"数据中心资本开支波动、供应链、估值、工业周期，是主要风险。","watch":["Electrical Americas orders","Backlog","Segment margin","Aerospace growth"],"sources":["https://www.eaton.com/us/en-us/company/investor-relations.html","https://www.eaton.com/us/en-us/company/investor-relations/financials.html"],"last_reviewed":"2026-05-02","industry_tags":["储能","ICT","企业服务"],"region_tags":["北美"]},
-  {"name":"Emerson Electric","aliases":["Emerson","EMR","Lal Karsanbhai","Process automation"],"industry":"过程自动化 / 工业软件 / 控制系统","stage":"组合转型 / 自动化纯化","url":"https://www.emerson.com/en-us/investors","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8,"signal":8,"evidence":"A","note":"过程自动化、控制阀、测量仪表和工业软件组合聚焦后质量改善；能源和化工资本开支周期仍影响订单。"},"evidence":"A","summary":"Emerson Electric正在从传统工业集团转为更聚焦的自动化公司，优势在过程工业控制和测量系统。","risk":"过程工业资本开支、并购整合、软件转型、能源周期，是主要风险。","watch":["Automation orders","Adjusted segment EBITA","AspenTech contribution","Free cash flow"],"sources":["https://www.emerson.com/en-us/investors","https://www.emerson.com/en-us/investors/financial-information"],"last_reviewed":"2026-05-02","industry_tags":["ICT","企业服务"],"region_tags":["北美"]},
-  {"name":"UPS","aliases":["United Parcel Service","UPS Inc.","Carol Tome"],"industry":"包裹快递 / 合同物流 / 全球供应链","stage":"网络重构 / 成本纪律修复","url":"https://investors.ups.com/","scores":{"leadership":7,"decision":7,"execution":8,"bench":8,"alignment":7,"coverage":9,"governance":9},"darwin":{"financial":7.5,"moat":8,"signal":7.5,"evidence":"A","note":"美国包裹网络、B2B和医疗物流能力强，但电商结构变化、劳动力成本和Amazon内化压制增长。"},"evidence":"A","summary":"UPS是全球包裹和供应链网络龙头之一，当前重点是削减成本、提高高利润包裹和医疗物流占比。","risk":"劳资成本、Amazon和区域快递竞争、包裹需求波动、燃油和网络利用率，是主要风险。","watch":["Average daily volume","Operating margin","Healthcare logistics","Cost savings"],"sources":["https://investors.ups.com/","https://investors.ups.com/financials/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
-  {"name":"FedEx","aliases":["FedEx Corporation","FDX","Raj Subramaniam","Federal Express"],"industry":"快递 / 空运网络 / 供应链服务","stage":"网络整合 / DRIVE降本","url":"https://investors.fedex.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8,"signal":8,"evidence":"A","note":"全球空运和地面网络强，One FedEx整合与DRIVE降本提升回报；宏观货量和燃油成本仍波动。"},"evidence":"A","summary":"FedEx正在整合Express、Ground和Freight网络，目标是把复杂全球网络转化为更高利润率。","risk":"货量周期、网络整合执行、燃油、国际贸易疲弱，是主要风险。","watch":["Yield","Package volume","DRIVE savings","FedEx Freight separation"],"sources":["https://investors.fedex.com/","https://investors.fedex.com/financial-information/sec-filings/default.aspx"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
-  {"name":"DHL Group","aliases":["Deutsche Post DHL","DHL","DHL Group AG","DHLGY","Tobias Meyer"],"industry":"国际快递 / 货代 / 合同物流","stage":"全球物流平台 / 贸易周期修复","url":"https://group.dhl.com/en/investors.html","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8.5,"signal":8,"evidence":"A","note":"国际快递、货代和合同物流组合全球化程度高，网络效应强；全球贸易和航空货运周期是折扣。"},"evidence":"A","summary":"DHL Group是全球物流和国际快递龙头，覆盖快递、货代、电商和合同物流多个环节。","risk":"贸易周期、货代价格、劳动力成本、欧洲经济，是主要风险。","watch":["Express EBIT","Global forwarding volumes","Supply chain margin","Free cash flow"],"sources":["https://group.dhl.com/en/investors.html","https://group.dhl.com/en/investors/financial-reports.html"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["欧盟"]},
-  {"name":"Maersk","aliases":["A.P. Moller - Maersk","MAERSK-B.CO","A.P. Moller Maersk","Vincent Clerc"],"industry":"集装箱航运 / 港口 / 综合物流","stage":"航运周期下行 / 端到端物流转型","url":"https://investor.maersk.com/","scores":{"leadership":8,"decision":7,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":7.5,"moat":8,"signal":7.5,"evidence":"A","note":"全球航线、码头和客户关系强，但集装箱航运高度周期，综合物流转型利润质量仍需验证。"},"evidence":"A","summary":"Maersk是全球集装箱航运和物流核心公司，疫情后利润回归周期均值，战略重点是端到端供应链服务。","risk":"运价周期、红海和地缘扰动、船舶供给、物流并购整合，是主要风险。","watch":["Freight rates","Ocean EBIT","Logistics margin","Fleet capacity"],"sources":["https://investor.maersk.com/","https://investor.maersk.com/financial-reports"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["欧盟"]},
+  {"name":"Hitachi","aliases":["日立","Hitachi Ltd.","6501.T","Lumada","Keiji Kojima"],"industry":"工业数字化 / 电力电网 / 铁路和IT服务","stage":"组合重塑成功 / 数字和电网驱动","url":"https://www.hitachi.com/IR-e/","scores":{"leadership":8,"decision":9,"execution":8,"bench":8,"alignment":9,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":8.5,"signal":8.5,"evidence":"A","note":"经过多年组合瘦身后聚焦数字、绿色能源和连接产业，电网和Lumada是关键增长点。"},"evidence":"A","summary":"Hitachi是日本工业集团转型较成功的样本，已经从多元制造向数字基础设施和电网系统聚焦。","risk":"大型项目执行、IT服务竞争、电网供应链、汇率，是主要风险。","watch":["Lumada revenue","Green Energy orders","Adjusted EBITA","Free cash flow"],"sources":["https://www.hitachi.com/IR-e/","https://www.hitachi.com/IR-e/library/"],"last_reviewed":"2026-05-02","industry_tags":["ICT","企业服务"],"region_tags":["日本"]},
+  {"name":"Eaton","aliases":["伊顿","Eaton Corporation","ETN","Craig Arnold"],"industry":"电气设备 / 数据中心电力 / 航空液压","stage":"电气化红利 / 数据中心和电网需求","url":"https://www.eaton.com/us/en-us/company/investor-relations.html","scores":{"leadership":8,"decision":8,"execution":9,"bench":8,"alignment":9,"coverage":9,"governance":9},"darwin":{"financial":9,"moat":8.5,"signal":9,"evidence":"A","note":"电气设备、数据中心、电网升级和航空业务共同驱动高质量增长；估值和周期性是主要折扣。"},"evidence":"A","summary":"Eaton是电气化和数据中心电力基础设施的重要受益者，近年利润率和订单能见度强。","risk":"数据中心资本开支波动、供应链、估值、工业周期，是主要风险。","watch":["Electrical Americas orders","Backlog","Segment margin","Aerospace growth"],"sources":["https://www.eaton.com/us/en-us/company/investor-relations.html","https://www.eaton.com/us/en-us/company/investor-relations/financials.html"],"last_reviewed":"2026-05-02","industry_tags":["储能","ICT","企业服务"],"region_tags":["北美"]},
+  {"name":"Emerson Electric","aliases":["艾默生电气","Emerson","EMR","Lal Karsanbhai","Process automation"],"industry":"过程自动化 / 工业软件 / 控制系统","stage":"组合转型 / 自动化纯化","url":"https://www.emerson.com/en-us/investors","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8,"signal":8,"evidence":"A","note":"过程自动化、控制阀、测量仪表和工业软件组合聚焦后质量改善；能源和化工资本开支周期仍影响订单。"},"evidence":"A","summary":"Emerson Electric正在从传统工业集团转为更聚焦的自动化公司，优势在过程工业控制和测量系统。","risk":"过程工业资本开支、并购整合、软件转型、能源周期，是主要风险。","watch":["Automation orders","Adjusted segment EBITA","AspenTech contribution","Free cash flow"],"sources":["https://www.emerson.com/en-us/investors","https://www.emerson.com/en-us/investors/financial-information"],"last_reviewed":"2026-05-02","industry_tags":["ICT","企业服务"],"region_tags":["北美"]},
+  {"name":"UPS","aliases":["联合包裹","United Parcel Service","UPS Inc.","Carol Tome"],"industry":"包裹快递 / 合同物流 / 全球供应链","stage":"网络重构 / 成本纪律修复","url":"https://investors.ups.com/","scores":{"leadership":7,"decision":7,"execution":8,"bench":8,"alignment":7,"coverage":9,"governance":9},"darwin":{"financial":7.5,"moat":8,"signal":7.5,"evidence":"A","note":"美国包裹网络、B2B和医疗物流能力强，但电商结构变化、劳动力成本和Amazon内化压制增长。"},"evidence":"A","summary":"UPS是全球包裹和供应链网络龙头之一，当前重点是削减成本、提高高利润包裹和医疗物流占比。","risk":"劳资成本、Amazon和区域快递竞争、包裹需求波动、燃油和网络利用率，是主要风险。","watch":["Average daily volume","Operating margin","Healthcare logistics","Cost savings"],"sources":["https://investors.ups.com/","https://investors.ups.com/financials/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
+  {"name":"FedEx","aliases":["联邦快递","FedEx Corporation","FDX","Raj Subramaniam","Federal Express"],"industry":"快递 / 空运网络 / 供应链服务","stage":"网络整合 / DRIVE降本","url":"https://investors.fedex.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8,"signal":8,"evidence":"A","note":"全球空运和地面网络强，One FedEx整合与DRIVE降本提升回报；宏观货量和燃油成本仍波动。"},"evidence":"A","summary":"FedEx正在整合Express、Ground和Freight网络，目标是把复杂全球网络转化为更高利润率。","risk":"货量周期、网络整合执行、燃油、国际贸易疲弱，是主要风险。","watch":["Yield","Package volume","DRIVE savings","FedEx Freight separation"],"sources":["https://investors.fedex.com/","https://investors.fedex.com/financial-information/sec-filings/default.aspx"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
+  {"name":"DHL Group","aliases":["敦豪集团","Deutsche Post DHL","DHL","DHL Group AG","DHLGY","Tobias Meyer"],"industry":"国际快递 / 货代 / 合同物流","stage":"全球物流平台 / 贸易周期修复","url":"https://group.dhl.com/en/investors.html","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8.5,"signal":8,"evidence":"A","note":"国际快递、货代和合同物流组合全球化程度高，网络效应强；全球贸易和航空货运周期是折扣。"},"evidence":"A","summary":"DHL Group是全球物流和国际快递龙头，覆盖快递、货代、电商和合同物流多个环节。","risk":"贸易周期、货代价格、劳动力成本、欧洲经济，是主要风险。","watch":["Express EBIT","Global forwarding volumes","Supply chain margin","Free cash flow"],"sources":["https://group.dhl.com/en/investors.html","https://group.dhl.com/en/investors/financial-reports.html"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["欧盟"]},
+  {"name":"Maersk","aliases":["马士基","A.P. Moller - Maersk","MAERSK-B.CO","A.P. Moller Maersk","Vincent Clerc"],"industry":"集装箱航运 / 港口 / 综合物流","stage":"航运周期下行 / 端到端物流转型","url":"https://investor.maersk.com/","scores":{"leadership":8,"decision":7,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":7.5,"moat":8,"signal":7.5,"evidence":"A","note":"全球航线、码头和客户关系强，但集装箱航运高度周期，综合物流转型利润质量仍需验证。"},"evidence":"A","summary":"Maersk是全球集装箱航运和物流核心公司，疫情后利润回归周期均值，战略重点是端到端供应链服务。","risk":"运价周期、红海和地缘扰动、船舶供给、物流并购整合，是主要风险。","watch":["Freight rates","Ocean EBIT","Logistics margin","Fleet capacity"],"sources":["https://investor.maersk.com/","https://investor.maersk.com/financial-reports"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["欧盟"]},
   {"name":"COSCO Shipping","aliases":["中远海控","COSCO SHIPPING Holdings","1919.HK","601919.SS"],"industry":"集装箱航运 / 港口物流 / 中国远洋运输","stage":"航运周期回落 / 国企航运平台","url":"https://hold.coscoshipping.com/","scores":{"leadership":7,"decision":7,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":8},"darwin":{"financial":7.5,"moat":8,"signal":7.5,"evidence":"A","note":"中国全球航运平台、船队和港口协同强；运价周期、国企治理和全球贸易波动需折扣。"},"evidence":"A","summary":"COSCO Shipping/中远海控是中国集装箱航运核心平台，规模和港航协同明显，但盈利高度受运价周期影响。","risk":"集运运价、船舶供给、贸易摩擦、国企资本配置，是主要风险。","watch":["Container volume","Freight index","Net profit","Fleet expansion"],"sources":["https://hold.coscoshipping.com/","https://www.hkexnews.hk/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["中国大陆"]},
-  {"name":"Delta Air Lines","aliases":["Delta","DAL","Ed Bastian","SkyMiles"],"industry":"航空公司 / 高端客运 / 联名信用卡生态","stage":"美国高质量航司 / 高端和忠诚度驱动","url":"https://ir.delta.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8,"signal":8,"evidence":"A","note":"高端舱、枢纽网络、SkyMiles和AmEx合作提供强盈利韧性；燃油、劳动力和周期冲击仍显著。"},"evidence":"A","summary":"Delta Air Lines是美国盈利质量较高的航司，品牌、枢纽和忠诚度计划强化了高端旅客和信用卡收入。","risk":"燃油、工资合同、经济周期、飞机交付延迟，是主要风险。","watch":["Premium revenue","SkyMiles/AmEx economics","CASM ex fuel","Free cash flow"],"sources":["https://ir.delta.com/","https://ir.delta.com/financials/sec-filings/default.aspx"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["北美"]},
-  {"name":"United Airlines","aliases":["United","UAL","United Airlines Holdings","Scott Kirby"],"industry":"航空公司 / 国际航线 / 枢纽网络","stage":"国际长航线复苏 / 机队升级","url":"https://ir.united.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":7.5,"moat":8,"signal":8,"evidence":"A","note":"国际航线、枢纽网络和United Next机队战略提供增长；资本开支、劳动力和飞机交付风险较高。"},"evidence":"A","summary":"United Airlines是美国国际航线敞口最强的航司之一，战略重点是机队更新和高收益国际/高端需求。","risk":"燃油、波音交付、资本开支、劳资和经济周期，是主要风险。","watch":["International PRASM","Capacity growth","Capex", "Operating margin"],"sources":["https://ir.united.com/","https://ir.united.com/financials/sec-filings/default.aspx"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["北美"]},
-  {"name":"American Airlines","aliases":["American","AAL","American Airlines Group","Robert Isom"],"industry":"航空公司 / 美国枢纽网络 / 联名卡收入","stage":"去杠杆修复 / 成本和债务压力","url":"https://americanairlines.gcs-web.com/","scores":{"leadership":7,"decision":6,"execution":7,"bench":8,"alignment":7,"coverage":9,"governance":9},"darwin":{"financial":7,"moat":7.5,"signal":7.5,"evidence":"A","note":"美国大型枢纽和AAdvantage仍有价值，但债务、成本和商务销售策略调整压低财务硬度。"},"evidence":"A","summary":"American Airlines拥有庞大枢纽网络和忠诚度资产，但相较Delta和United，债务和执行压力更高。","risk":"高杠杆、燃油、劳资成本、商务客户份额，是主要风险。","watch":["Debt reduction","AAdvantage revenue","CASM ex fuel","Corporate sales"],"sources":["https://americanairlines.gcs-web.com/","https://americanairlines.gcs-web.com/financial-results/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["北美"]},
-  {"name":"Southwest Airlines","aliases":["Southwest","LUV","Bob Jordan"],"industry":"低成本航空 / 美国国内航线 / 点对点网络","stage":"模式重构 / 运营和收益修复","url":"https://investors.southwest.com/","scores":{"leadership":7,"decision":6,"execution":7,"bench":7,"alignment":7,"coverage":8,"governance":9},"darwin":{"financial":6.5,"moat":7.5,"signal":7,"evidence":"A","note":"品牌和低成本文化曾强，但开放座位、机队和运营中断后需重塑收益管理和客户体验。"},"evidence":"A","summary":"Southwest Airlines仍有美国国内低成本航司品牌优势，但传统商业模式正在被迫重构。",
+  {"name":"Delta Air Lines","aliases":["达美航空","Delta","DAL","Ed Bastian","SkyMiles"],"industry":"航空公司 / 高端客运 / 联名信用卡生态","stage":"美国高质量航司 / 高端和忠诚度驱动","url":"https://ir.delta.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8,"signal":8,"evidence":"A","note":"高端舱、枢纽网络、SkyMiles和AmEx合作提供强盈利韧性；燃油、劳动力和周期冲击仍显著。"},"evidence":"A","summary":"Delta Air Lines是美国盈利质量较高的航司，品牌、枢纽和忠诚度计划强化了高端旅客和信用卡收入。","risk":"燃油、工资合同、经济周期、飞机交付延迟，是主要风险。","watch":["Premium revenue","SkyMiles/AmEx economics","CASM ex fuel","Free cash flow"],"sources":["https://ir.delta.com/","https://ir.delta.com/financials/sec-filings/default.aspx"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["北美"]},
+  {"name":"United Airlines","aliases":["美国联合航空","United","UAL","United Airlines Holdings","Scott Kirby"],"industry":"航空公司 / 国际航线 / 枢纽网络","stage":"国际长航线复苏 / 机队升级","url":"https://ir.united.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":7.5,"moat":8,"signal":8,"evidence":"A","note":"国际航线、枢纽网络和United Next机队战略提供增长；资本开支、劳动力和飞机交付风险较高。"},"evidence":"A","summary":"United Airlines是美国国际航线敞口最强的航司之一，战略重点是机队更新和高收益国际/高端需求。","risk":"燃油、波音交付、资本开支、劳资和经济周期，是主要风险。","watch":["International PRASM","Capacity growth","Capex", "Operating margin"],"sources":["https://ir.united.com/","https://ir.united.com/financials/sec-filings/default.aspx"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["北美"]},
+  {"name":"American Airlines","aliases":["美国航空","American","AAL","American Airlines Group","Robert Isom"],"industry":"航空公司 / 美国枢纽网络 / 联名卡收入","stage":"去杠杆修复 / 成本和债务压力","url":"https://americanairlines.gcs-web.com/","scores":{"leadership":7,"decision":6,"execution":7,"bench":8,"alignment":7,"coverage":9,"governance":9},"darwin":{"financial":7,"moat":7.5,"signal":7.5,"evidence":"A","note":"美国大型枢纽和AAdvantage仍有价值，但债务、成本和商务销售策略调整压低财务硬度。"},"evidence":"A","summary":"American Airlines拥有庞大枢纽网络和忠诚度资产，但相较Delta和United，债务和执行压力更高。","risk":"高杠杆、燃油、劳资成本、商务客户份额，是主要风险。","watch":["Debt reduction","AAdvantage revenue","CASM ex fuel","Corporate sales"],"sources":["https://americanairlines.gcs-web.com/","https://americanairlines.gcs-web.com/financial-results/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["北美"]},
+  {"name":"Southwest Airlines","aliases":["西南航空","Southwest","LUV","Bob Jordan"],"industry":"低成本航空 / 美国国内航线 / 点对点网络","stage":"模式重构 / 运营和收益修复","url":"https://investors.southwest.com/","scores":{"leadership":7,"decision":6,"execution":7,"bench":7,"alignment":7,"coverage":8,"governance":9},"darwin":{"financial":6.5,"moat":7.5,"signal":7,"evidence":"A","note":"品牌和低成本文化曾强，但开放座位、机队和运营中断后需重塑收益管理和客户体验。"},"evidence":"A","summary":"Southwest Airlines仍有美国国内低成本航司品牌优势，但传统商业模式正在被迫重构。",
 "risk":"收益管理落后、运营韧性、波音737交付、激进股东压力，是主要风险。","watch":["RASM", "Operational reliability", "Assigned seating rollout", "Cost per ASM"],"sources":["https://investors.southwest.com/","https://investors.southwest.com/financials/sec-filings/default.aspx"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["北美"]},
-  {"name":"Emirates","aliases":["Emirates Airline","The Emirates Group","Tim Clark","Dubai"],"industry":"国际航空 / 中东枢纽 / 长航线网络","stage":"超连接枢纽 / 高利润周期","url":"https://www.emirates.com/media-centre/annual-reports/","scores":{"leadership":8,"decision":8,"execution":9,"bench":8,"alignment":8,"coverage":9,"governance":7},"darwin":{"financial":8.5,"moat":8.5,"signal":8.5,"evidence":"B","note":"迪拜枢纽、宽体机队和全球长航线网络强，近年盈利强；非上市和国家所有治理透明度低于上市同业。"},"evidence":"B","summary":"Emirates是全球长航线网络和中东枢纽航空的标杆，强在机队、服务和迪拜转机网络。","risk":"地缘政治、燃油、长航线需求、非上市披露有限，是主要风险。","watch":["Passenger yield","Load factor","Fleet orders","Annual profit"],"sources":["https://www.emirates.com/media-centre/annual-reports/","https://www.theemiratesgroup.com/english/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["阿联酋和沙特"]},
-  {"name":"Singapore Airlines","aliases":["SIA","Singapore Airlines Group","C6L.SI","Goh Choon Phong"],"industry":"航空公司 / 高端服务 / 亚洲枢纽","stage":"高质量航司 / 国际需求复苏","url":"https://www.singaporeair.com/en_UK/sg/about-us/information-for-investors/","scores":{"leadership":8,"decision":8,"execution":9,"bench":8,"alignment":9,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":8.5,"signal":8.5,"evidence":"A","note":"新加坡枢纽、服务品牌、机队和成本纪律强；小本土市场、燃油和亚洲国际需求周期是折扣。"},"evidence":"A","summary":"Singapore Airlines是全球服务和运营质量最强的航司之一，凭借新加坡枢纽和品牌获得高端客流。","risk":"燃油、亚洲需求、汇率、小本土市场、竞争性长航线，是主要风险。","watch":["Passenger load factor","Premium revenue","Cargo yield","Operating profit"],"sources":["https://www.singaporeair.com/en_UK/sg/about-us/information-for-investors/","https://www.singaporeair.com/en_UK/sg/about-us/information-for-investors/annual-report/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["东南亚"]},
-  {"name":"Ryanair","aliases":["Ryanair Holdings","RYAAY","RYA.I","Michael O'Leary"],"industry":"低成本航空 / 欧洲短途 / 高效率机队","stage":"欧洲低成本龙头 / 成本优势扩张","url":"https://investor.ryanair.com/","scores":{"leadership":9,"decision":9,"execution":9,"bench":8,"alignment":9,"coverage":8,"governance":9},"darwin":{"financial":8.5,"moat":9,"signal":8.5,"evidence":"A","note":"欧洲最低成本结构、机队订单和机场议价能力强，Michael O'Leary执行风格鲜明；波音交付和监管劳资风险是折扣。"},"evidence":"A","summary":"Ryanair是欧洲低成本航空最强执行样本之一，成本纪律、利用率和票价刺激能力构成核心优势。","risk":"波音交付、劳资关系、机场费用、欧洲碳监管，是主要风险。","watch":["Load factor","Cost per passenger","Fleet deliveries","Ancillary revenue"],"sources":["https://investor.ryanair.com/","https://investor.ryanair.com/results-centre/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["欧盟"]},
+  {"name":"Emirates","aliases":["阿联酋航空","Emirates Airline","The Emirates Group","Tim Clark","Dubai"],"industry":"国际航空 / 中东枢纽 / 长航线网络","stage":"超连接枢纽 / 高利润周期","url":"https://www.emirates.com/media-centre/annual-reports/","scores":{"leadership":8,"decision":8,"execution":9,"bench":8,"alignment":8,"coverage":9,"governance":7},"darwin":{"financial":8.5,"moat":8.5,"signal":8.5,"evidence":"B","note":"迪拜枢纽、宽体机队和全球长航线网络强，近年盈利强；非上市和国家所有治理透明度低于上市同业。"},"evidence":"B","summary":"Emirates是全球长航线网络和中东枢纽航空的标杆，强在机队、服务和迪拜转机网络。","risk":"地缘政治、燃油、长航线需求、非上市披露有限，是主要风险。","watch":["Passenger yield","Load factor","Fleet orders","Annual profit"],"sources":["https://www.emirates.com/media-centre/annual-reports/","https://www.theemiratesgroup.com/english/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["阿联酋和沙特"]},
+  {"name":"Singapore Airlines","aliases":["新加坡航空","SIA","Singapore Airlines Group","C6L.SI","Goh Choon Phong"],"industry":"航空公司 / 高端服务 / 亚洲枢纽","stage":"高质量航司 / 国际需求复苏","url":"https://www.singaporeair.com/en_UK/sg/about-us/information-for-investors/","scores":{"leadership":8,"decision":8,"execution":9,"bench":8,"alignment":9,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":8.5,"signal":8.5,"evidence":"A","note":"新加坡枢纽、服务品牌、机队和成本纪律强；小本土市场、燃油和亚洲国际需求周期是折扣。"},"evidence":"A","summary":"Singapore Airlines是全球服务和运营质量最强的航司之一，凭借新加坡枢纽和品牌获得高端客流。","risk":"燃油、亚洲需求、汇率、小本土市场、竞争性长航线，是主要风险。","watch":["Passenger load factor","Premium revenue","Cargo yield","Operating profit"],"sources":["https://www.singaporeair.com/en_UK/sg/about-us/information-for-investors/","https://www.singaporeair.com/en_UK/sg/about-us/information-for-investors/annual-report/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["东南亚"]},
+  {"name":"Ryanair","aliases":["瑞安航空","Ryanair Holdings","RYAAY","RYA.I","Michael O'Leary"],"industry":"低成本航空 / 欧洲短途 / 高效率机队","stage":"欧洲低成本龙头 / 成本优势扩张","url":"https://investor.ryanair.com/","scores":{"leadership":9,"decision":9,"execution":9,"bench":8,"alignment":9,"coverage":8,"governance":9},"darwin":{"financial":8.5,"moat":9,"signal":8.5,"evidence":"A","note":"欧洲最低成本结构、机队订单和机场议价能力强，Michael O'Leary执行风格鲜明；波音交付和监管劳资风险是折扣。"},"evidence":"A","summary":"Ryanair是欧洲低成本航空最强执行样本之一，成本纪律、利用率和票价刺激能力构成核心优势。","risk":"波音交付、劳资关系、机场费用、欧洲碳监管，是主要风险。","watch":["Load factor","Cost per passenger","Fleet deliveries","Ancillary revenue"],"sources":["https://investor.ryanair.com/","https://investor.ryanair.com/results-centre/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["欧盟"]},
   {"name":"Trip.com Group","aliases":["携程集团","Trip.com","TCOM","9961.HK","Ctrip","梁建章","Jane Sun"],"industry":"在线旅游 / 酒店机票预订 / 出境游平台","stage":"中国出境游复苏 / 全球化扩张","url":"https://investors.trip.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":8,"governance":9},"darwin":{"financial":8,"moat":8,"signal":8,"evidence":"A","note":"中国OTA龙头、供应链和用户心智强，出境游复苏和国际化带来增量；宏观消费和地缘签证限制需折扣。"},"evidence":"A","summary":"Trip.com Group/携程是中国在线旅游核心平台，酒店、机票和出境游供应链能力深厚。","risk":"消费疲弱、出境游政策、竞争补贴、汇率和地缘风险，是主要风险。","watch":["Accommodation revenue","Outbound travel", "International Trip.com growth", "Operating margin"],"sources":["https://investors.trip.com/","https://investors.trip.com/financial-information/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","企业服务"],"region_tags":["中国大陆"]},
-  {"name":"Expedia Group","aliases":["Expedia","EXPE","Vrbo","Hotels.com","Ariane Gorin"],"industry":"在线旅游 / 酒店和民宿预订 / B2B旅行技术","stage":"平台整合 / B2B和广告增长","url":"https://ir.expediagroup.com/","scores":{"leadership":7,"decision":7,"execution":8,"bench":8,"alignment":7,"coverage":8,"governance":9},"darwin":{"financial":7.5,"moat":7.5,"signal":7.5,"evidence":"A","note":"Expedia、Hotels.com和Vrbo品牌组合强，B2B和广告有增长；与Booking、Airbnb竞争激烈。"},"evidence":"A","summary":"Expedia Group是全球OTA核心玩家之一，正在整合品牌和技术平台以提升效率和B2B能力。","risk":"Booking竞争、Vrbo增长、搜索广告成本、旅游周期，是主要风险。","watch":["Gross bookings","B2B revenue","Lodging room nights","Adjusted EBITDA"],"sources":["https://ir.expediagroup.com/","https://ir.expediagroup.com/financial-information/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","企业服务"],"region_tags":["北美"]},
-  {"name":"Marriott International","aliases":["Marriott","MAR","Bonvoy","Anthony Capuano"],"industry":"酒店管理 / 特许经营 / 全球会员体系","stage":"轻资产酒店龙头 / 全球房量扩张","url":"https://marriott.gcs-web.com/","scores":{"leadership":8,"decision":8,"execution":9,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":9,"signal":8.5,"evidence":"A","note":"轻资产管理和特许经营、Bonvoy会员和全球品牌矩阵构成强平台；旅游周期和开发商融资是折扣。"},"evidence":"A","summary":"Marriott International是全球最大酒店管理平台之一，轻资产模式和会员体系支撑高现金流。","risk":"旅游周期、开发商资本、地缘冲击、品牌标准和网络安全，是主要风险。","watch":["RevPAR","Net rooms growth","Bonvoy members","Fee revenue"],"sources":["https://marriott.gcs-web.com/","https://marriott.gcs-web.com/financial-information/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","企业服务"],"region_tags":["北美"]},
-  {"name":"Hilton","aliases":["Hilton Worldwide","HLT","Hilton Honors","Christopher Nassetta"],"industry":"酒店管理 / 特许经营 / 会员体系","stage":"轻资产扩张 / 中高端品牌组合","url":"https://ir.hilton.com/","scores":{"leadership":8,"decision":8,"execution":9,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":8.5,"signal":8.5,"evidence":"A","note":"轻资产酒店模式、Hilton Honors和品牌开发能力强；旅游周期和开发商融资条件需折扣。"},"evidence":"A","summary":"Hilton是轻资产酒店管理和特许经营模式的高质量公司，品牌组合和开发管线带来稳定扩张。","risk":"RevPAR周期、开发管线放缓、劳动力成本、地缘旅行冲击，是主要风险。","watch":["Net unit growth","RevPAR","Fee revenue","Pipeline rooms"],"sources":["https://ir.hilton.com/","https://ir.hilton.com/financial-reporting/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","企业服务"],"region_tags":["北美"]},
-  {"name":"Hyatt Hotels","aliases":["Hyatt","H","World of Hyatt","Mark Hoplamazian"],"industry":"酒店管理 / 高端和生活方式酒店 / 轻资产转型","stage":"高端品牌扩张 / 资产轻量化","url":"https://investors.hyatt.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":8,"governance":9},"darwin":{"financial":8,"moat":8,"signal":8,"evidence":"A","note":"高端和生活方式酒店品牌强，资产出售和管理费化提升质量；规模小于Marriott/Hilton。"},"evidence":"A","summary":"Hyatt Hotels在高端和生活方式酒店领域定位清晰，轻资产转型提升资本效率。",
+  {"name":"Expedia Group","aliases":["亿客行集团","Expedia","EXPE","Vrbo","Hotels.com","Ariane Gorin"],"industry":"在线旅游 / 酒店和民宿预订 / B2B旅行技术","stage":"平台整合 / B2B和广告增长","url":"https://ir.expediagroup.com/","scores":{"leadership":7,"decision":7,"execution":8,"bench":8,"alignment":7,"coverage":8,"governance":9},"darwin":{"financial":7.5,"moat":7.5,"signal":7.5,"evidence":"A","note":"Expedia、Hotels.com和Vrbo品牌组合强，B2B和广告有增长；与Booking、Airbnb竞争激烈。"},"evidence":"A","summary":"Expedia Group是全球OTA核心玩家之一，正在整合品牌和技术平台以提升效率和B2B能力。","risk":"Booking竞争、Vrbo增长、搜索广告成本、旅游周期，是主要风险。","watch":["Gross bookings","B2B revenue","Lodging room nights","Adjusted EBITDA"],"sources":["https://ir.expediagroup.com/","https://ir.expediagroup.com/financial-information/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","企业服务"],"region_tags":["北美"]},
+  {"name":"Marriott International","aliases":["万豪国际","Marriott","MAR","Bonvoy","Anthony Capuano"],"industry":"酒店管理 / 特许经营 / 全球会员体系","stage":"轻资产酒店龙头 / 全球房量扩张","url":"https://marriott.gcs-web.com/","scores":{"leadership":8,"decision":8,"execution":9,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":9,"signal":8.5,"evidence":"A","note":"轻资产管理和特许经营、Bonvoy会员和全球品牌矩阵构成强平台；旅游周期和开发商融资是折扣。"},"evidence":"A","summary":"Marriott International是全球最大酒店管理平台之一，轻资产模式和会员体系支撑高现金流。","risk":"旅游周期、开发商资本、地缘冲击、品牌标准和网络安全，是主要风险。","watch":["RevPAR","Net rooms growth","Bonvoy members","Fee revenue"],"sources":["https://marriott.gcs-web.com/","https://marriott.gcs-web.com/financial-information/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","企业服务"],"region_tags":["北美"]},
+  {"name":"Hilton","aliases":["希尔顿","Hilton Worldwide","HLT","Hilton Honors","Christopher Nassetta"],"industry":"酒店管理 / 特许经营 / 会员体系","stage":"轻资产扩张 / 中高端品牌组合","url":"https://ir.hilton.com/","scores":{"leadership":8,"decision":8,"execution":9,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":8.5,"signal":8.5,"evidence":"A","note":"轻资产酒店模式、Hilton Honors和品牌开发能力强；旅游周期和开发商融资条件需折扣。"},"evidence":"A","summary":"Hilton是轻资产酒店管理和特许经营模式的高质量公司，品牌组合和开发管线带来稳定扩张。","risk":"RevPAR周期、开发管线放缓、劳动力成本、地缘旅行冲击，是主要风险。","watch":["Net unit growth","RevPAR","Fee revenue","Pipeline rooms"],"sources":["https://ir.hilton.com/","https://ir.hilton.com/financial-reporting/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","企业服务"],"region_tags":["北美"]},
+  {"name":"Hyatt Hotels","aliases":["凯悦酒店","Hyatt","H","World of Hyatt","Mark Hoplamazian"],"industry":"酒店管理 / 高端和生活方式酒店 / 轻资产转型","stage":"高端品牌扩张 / 资产轻量化","url":"https://investors.hyatt.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":8,"governance":9},"darwin":{"financial":8,"moat":8,"signal":8,"evidence":"A","note":"高端和生活方式酒店品牌强，资产出售和管理费化提升质量；规模小于Marriott/Hilton。"},"evidence":"A","summary":"Hyatt Hotels在高端和生活方式酒店领域定位清晰，轻资产转型提升资本效率。",
 "risk":"规模劣势、旅游周期、开发商融资、品牌并购整合，是主要风险。","watch":["Fee-based earnings","Net rooms growth","Luxury/lifestyle mix","Asset dispositions"],"sources":["https://investors.hyatt.com/","https://investors.hyatt.com/financial-information/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","企业服务"],"region_tags":["北美"]},
   {"name":"Didi Global","aliases":["滴滴","DiDi","DIDIY","Didi Chuxing","程维","柳青"],"industry":"网约车 / 出行平台 / 自动驾驶和企业用车","stage":"监管后修复 / 盈利纪律强化","url":"https://ir.didiglobal.com/","scores":{"leadership":7,"decision":6,"execution":8,"bench":7,"alignment":7,"coverage":8,"governance":6},"darwin":{"financial":7,"moat":8,"signal":7,"evidence":"B","note":"中国出行网络和供需匹配能力强，监管整改后盈利纪律改善；退市、治理和政策风险仍显著。"},"evidence":"B","summary":"Didi Global/滴滴仍是中国网约车核心平台，但监管和治理事件使其评分明显低于全球一线平台公司。","risk":"监管、数据安全、退市后披露、价格补贴、自动驾驶投入，是主要风险。","watch":["GTV", "China mobility orders", "Adjusted EBITA", "Relisting progress"],"sources":["https://ir.didiglobal.com/","https://ir.didiglobal.com/financials/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","企业服务"],"region_tags":["中国大陆"]},
-  {"name":"Grab","aliases":["Grab Holdings","GRAB","Anthony Tan","GrabFood","GrabPay"],"industry":"东南亚出行 / 外卖 / 金融科技超级App","stage":"盈利转正 / 多业务平台化","url":"https://investors.grab.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":8,"governance":9},"darwin":{"financial":7.5,"moat":8,"signal":8,"evidence":"A","note":"东南亚出行、外卖和金融服务网络效应强，盈利纪律改善；区域竞争和补贴周期仍需折扣。"},"evidence":"A","summary":"Grab是东南亚超级App和本地服务平台代表，出行、外卖和金融服务协同正在进入盈利验证期。","risk":"区域竞争、司机供给、监管、外卖补贴、金融服务信用风险，是主要风险。","watch":["GMV","Adjusted EBITDA","Monthly transacting users","Fintech loan losses"],"sources":["https://investors.grab.com/","https://investors.grab.com/financials/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","金融科技"],"region_tags":["东南亚"]},
+  {"name":"Grab","aliases":["Grab集团","Grab Holdings","GRAB","Anthony Tan","GrabFood","GrabPay"],"industry":"东南亚出行 / 外卖 / 金融科技超级App","stage":"盈利转正 / 多业务平台化","url":"https://investors.grab.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":8,"governance":9},"darwin":{"financial":7.5,"moat":8,"signal":8,"evidence":"A","note":"东南亚出行、外卖和金融服务网络效应强，盈利纪律改善；区域竞争和补贴周期仍需折扣。"},"evidence":"A","summary":"Grab是东南亚超级App和本地服务平台代表，出行、外卖和金融服务协同正在进入盈利验证期。","risk":"区域竞争、司机供给、监管、外卖补贴、金融服务信用风险，是主要风险。","watch":["GMV","Adjusted EBITDA","Monthly transacting users","Fintech loan losses"],"sources":["https://investors.grab.com/","https://investors.grab.com/financials/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","金融科技"],"region_tags":["东南亚"]},
   {"name":"Vanke","aliases":["万科","China Vanke","000002.SZ","2202.HK","郁亮","祝九胜"],"industry":"房地产开发 / 物业服务 / 城市更新","stage":"流动性承压 / 国资支持修复","url":"https://www.vanke.com/","scores":{"leadership":6,"decision":5,"execution":6,"bench":7,"alignment":6,"coverage":8,"governance":8},"darwin":{"financial":5.5,"moat":7,"signal":6,"evidence":"A","note":"品牌、土储和物业体系仍有价值，但中国地产周期和流动性压力显著压低财务硬度。"},"evidence":"A","summary":"Vanke/万科曾是中国房企治理标杆，但当前核心变量是流动性修复、项目交付和国资支持。","risk":"销售下滑、债务再融资、资产处置、交付和信心修复，是主要风险。","watch":["Contracted sales","Debt maturity","Asset disposals","Cash balance"],"sources":["https://www.vanke.com/","https://www.hkexnews.hk/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["中国大陆"]},
   {"name":"China Resources Land","aliases":["华润置地","CR Land","1109.HK"],"industry":"房地产开发 / 商业地产 / 城市综合体","stage":"央企地产龙头 / 商业运营稳健","url":"https://www.crland.com.hk/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8,"signal":8,"evidence":"A","note":"央企信用、购物中心运营和高能级城市布局提供韧性；地产销售周期仍是折扣。"},"evidence":"A","summary":"China Resources Land/华润置地是中国少数具备高质量商业运营和央企融资优势的房企。","risk":"地产销售、商业租金、土地投资纪律、政策变化，是主要风险。","watch":["Contracted sales","Rental income","Net gearing","Land bank quality"],"sources":["https://www.crland.com.hk/","https://www.hkexnews.hk/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["中国大陆"]},
   {"name":"Longfor Group","aliases":["龙湖集团","Longfor","960.HK","吴亚军"],"industry":"房地产开发 / 商业运营 / 物业租赁","stage":"民营优质房企 / 债务周期防守","url":"https://www.longfor.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":8,"governance":8},"darwin":{"financial":7.5,"moat":8,"signal":8,"evidence":"A","note":"商业运营和经营性现金流较强，民营房企中质量较高；行业信用收缩仍需折扣。"},"evidence":"A","summary":"Longfor Group/龙湖集团是中国民营房企中少数仍具商业运营和信用韧性的公司。","risk":"销售下滑、融资环境、租金增长、资产出售，是主要风险。","watch":["Recurring income","Contracted sales","Net debt","Commercial occupancy"],"sources":["https://www.longfor.com/","https://www.hkexnews.hk/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["中国大陆"]},
@@ -6304,35 +6332,35 @@
   {"name":"Evergrande","aliases":["恒大","China Evergrande","3333.HK","许家印"],"industry":"房地产开发 / 债务危机 / 清盘处置","stage":"清盘和资产处置 / 极高风险","url":"https://www.evergrande.com/","scores":{"leadership":1,"decision":1,"execution":1,"bench":2,"alignment":1,"coverage":4,"governance":2},"darwin":{"financial":1,"moat":2,"signal":1,"evidence":"B","note":"债务危机、清盘和退市风险已摧毁财务与治理可信度，仅保留品牌历史和项目处置价值。"},"evidence":"B","summary":"Evergrande/恒大已从大型开发商变成房地产危机和债务清算样本，评分重点反映严重治理和财务失效。","risk":"清盘、项目交付、债权回收、法律责任，是主要风险。","watch":["Liquidation process","Asset disposals","Home delivery","Creditor recovery"],"sources":["https://www.evergrande.com/","https://www.hkexnews.hk/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["中国大陆"]},
   {"name":"Sunac China","aliases":["融创中国","Sunac","1918.HK","孙宏斌"],"industry":"房地产开发 / 文旅资产 / 债务重组后修复","stage":"重组后修复 / 销售和交付承压","url":"https://www.sunac.com.cn/","scores":{"leadership":5,"decision":4,"execution":5,"bench":6,"alignment":5,"coverage":7,"governance":6},"darwin":{"financial":4,"moat":6,"signal":5,"evidence":"A","note":"品牌和一二线项目仍有残余价值，但债务重组、销售疲弱和资产处置压力显著。"},"evidence":"A","summary":"Sunac China/融创中国处于债务重组后的修复期，组织评分反映其仍需重新证明持续经营能力。","risk":"销售低迷、二次流动性压力、文旅资产处置、交付，是主要风险。","watch":["Contracted sales","Debt restructuring compliance","Cash collection","Asset sales"],"sources":["https://www.sunac.com.cn/","https://www.hkexnews.hk/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["中国大陆"]},
   {"name":"Greentown China","aliases":["绿城中国","Greentown","3900.HK"],"industry":"房地产开发 / 高品质住宅 / 代建服务","stage":"品质房企 / 代建和央国资协同","url":"https://www.greentownchina.com/","scores":{"leadership":7,"decision":7,"execution":8,"bench":8,"alignment":8,"coverage":8,"governance":8},"darwin":{"financial":7,"moat":7.5,"signal":7.5,"evidence":"A","note":"产品口碑和代建业务强，股东背景改善信用；行业需求低迷仍限制弹性。"},"evidence":"A","summary":"Greentown China/绿城中国以产品品质和代建能力见长，在地产下行中相对具备差异化。","risk":"销售周期、毛利率、融资环境、代建回款，是主要风险。","watch":["Contracted sales","Project management revenue","Gross margin","Debt metrics"],"sources":["https://www.greentownchina.com/","https://www.hkexnews.hk/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["中国大陆"]},
-  {"name":"CapitaLand","aliases":["CapitaLand Investment","CLI","9CI.SI","Lee Chee Koon"],"industry":"不动产投资管理 / 商业地产 / 亚洲地产平台","stage":"资产轻量化 / REIT和基金管理","url":"https://www.capitaland.com/en/about-capitaland/investor-relations.html","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8,"signal":8,"evidence":"A","note":"亚洲商业地产运营、REIT和基金管理平台强，资产轻量化提升质量；房地产资本市场周期仍是折扣。"},"evidence":"A","summary":"CapitaLand是亚洲不动产投资管理和商业地产运营核心平台，战略重点从开发转向基金和运营管理。","risk":"利率、商业地产估值、REIT融资、亚洲消费周期，是主要风险。","watch":["FUM","Fee income","REIT performance","Occupancy"],"sources":["https://www.capitaland.com/en/about-capitaland/investor-relations.html","https://www.capitaland.com/en/about-capitaland/investor-relations/financial-results.html"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["东南亚"]},
+  {"name":"CapitaLand","aliases":["凯德投资","CapitaLand Investment","CLI","9CI.SI","Lee Chee Koon"],"industry":"不动产投资管理 / 商业地产 / 亚洲地产平台","stage":"资产轻量化 / REIT和基金管理","url":"https://www.capitaland.com/en/about-capitaland/investor-relations.html","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8,"signal":8,"evidence":"A","note":"亚洲商业地产运营、REIT和基金管理平台强，资产轻量化提升质量；房地产资本市场周期仍是折扣。"},"evidence":"A","summary":"CapitaLand是亚洲不动产投资管理和商业地产运营核心平台，战略重点从开发转向基金和运营管理。","risk":"利率、商业地产估值、REIT融资、亚洲消费周期，是主要风险。","watch":["FUM","Fee income","REIT performance","Occupancy"],"sources":["https://www.capitaland.com/en/about-capitaland/investor-relations.html","https://www.capitaland.com/en/about-capitaland/investor-relations/financial-results.html"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["东南亚"]},
   {"name":"Mitsui Fudosan","aliases":["三井不动产","8801.T","Mitsui Fudosan Co."],"industry":"日本地产开发 / 办公商业 / 物流和酒店","stage":"日本地产龙头 / 资产重估","url":"https://www.mitsuifudosan.co.jp/english/corporate/ir/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8.5,"signal":8,"evidence":"A","note":"东京核心资产、综合开发和租赁运营能力强；利率上行和日本地产周期需折扣。"},"evidence":"A","summary":"Mitsui Fudosan是日本最大综合地产公司之一，核心资产和城市综合开发能力强。","risk":"日本利率、办公室需求、开发成本、资产估值，是主要风险。","watch":["Leasing income","Property sales","NAV discount","Tokyo office occupancy"],"sources":["https://www.mitsuifudosan.co.jp/english/corporate/ir/","https://www.mitsuifudosan.co.jp/english/corporate/ir/library/annual/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["日本"]},
   {"name":"Mitsubishi Estate","aliases":["三菱地所","8802.T","Marunouchi"],"industry":"日本地产 / 办公楼 / 城市更新","stage":"东京核心资产 / 丸之内护城河","url":"https://www.mec.co.jp/en/ir/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8.5,"signal":8,"evidence":"A","note":"丸之内等东京核心资产和长期开发能力形成强护城河；利率和办公室需求是折扣。"},"evidence":"A","summary":"Mitsubishi Estate以东京核心商务区资产见长，是日本商业地产长期持有和开发的代表。","risk":"利率上行、办公室空置、开发成本、资产重估，是主要风险。","watch":["Marunouchi occupancy","Rental income","Asset recycling","NAV"],"sources":["https://www.mec.co.jp/en/ir/","https://www.mec.co.jp/en/ir/library/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["日本"]},
-  {"name":"Brookfield Corporation","aliases":["Brookfield","BN","Brookfield Asset Management","Bruce Flatt"],"industry":"另类资产管理 / 基础设施 / 房地产和可再生能源","stage":"全球另类资产平台 / 资本配置复利","url":"https://bn.brookfield.com/","scores":{"leadership":9,"decision":9,"execution":9,"bench":8,"alignment":9,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":9,"signal":9,"evidence":"A","note":"基础设施、地产、信贷和能源转型平台全球化，资本配置和募资能力强；结构复杂和利率周期是折扣。"},"evidence":"A","summary":"Brookfield Corporation是全球另类资产管理和长期实物资产投资平台，强在资本配置和运营改善。","risk":"利率、商业地产估值、结构复杂度、募资周期，是主要风险。","watch":["Distributable earnings","Fee-bearing capital","Asset sales","Real estate impairments"],"sources":["https://bn.brookfield.com/","https://bn.brookfield.com/reports-and-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","金融科技"],"region_tags":["北美"]},
-  {"name":"Prologis","aliases":["PLD","Prologis Inc.","Hamid Moghadam"],"industry":"物流地产 / 仓储REIT / 全球供应链不动产","stage":"全球物流地产龙头 / 电商和近岸化受益","url":"https://ir.prologis.com/","scores":{"leadership":9,"decision":9,"execution":9,"bench":8,"alignment":9,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":9.5,"signal":8.5,"evidence":"A","note":"全球稀缺物流节点、客户网络和开发能力形成顶级物流地产护城河；利率和租金增速周期是折扣。"},"evidence":"A","summary":"Prologis是全球物流地产和仓储REIT龙头，核心资产位于供应链关键节点。","risk":"利率、租金增长放缓、开发收益率、客户需求，是主要风险。","watch":["Occupancy","Rent change","Development starts","FFO"],"sources":["https://ir.prologis.com/","https://ir.prologis.com/financials/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
-  {"name":"CBRE Group","aliases":["CBRE","CBRE Group Inc.","CBRE Global Workplace Solutions","Bob Sulentic"],"industry":"商业地产服务 / 物业设施管理 / 投资销售","stage":"全球地产服务龙头 / 资本市场周期修复","url":"https://ir.cbre.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8.5,"signal":8,"evidence":"A","note":"全球商业地产经纪、设施管理和投资管理网络强，轻资产服务韧性好；交易市场低迷仍影响利润。"},"evidence":"A","summary":"CBRE Group是全球商业地产服务龙头，设施管理和外包业务提升了周期韧性。","risk":"地产交易低迷、办公室需求、利率、客户预算，是主要风险。","watch":["Advisory revenue","Global Workplace Solutions","Investment sales","Adjusted EPS"],"sources":["https://ir.cbre.com/","https://ir.cbre.com/financial-information/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
-  {"name":"JLL","aliases":["Jones Lang LaSalle","JLL Inc.","JLL","Christian Ulbrich"],"industry":"商业地产服务 / 设施管理 / 投资管理","stage":"全球服务平台 / 交易周期修复","url":"https://ir.jll.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":7.5,"moat":8,"signal":8,"evidence":"A","note":"全球租赁、资本市场、设施管理和咨询能力强；地产交易周期和办公室结构性变化是折扣。"},"evidence":"A","summary":"JLL是全球商业地产服务和设施管理核心公司之一，收入组合正向更稳定的外包服务倾斜。","risk":"交易量周期、办公室需求、利率、外包合同利润率，是主要风险。","watch":["Leasing revenue","Work Dynamics revenue","Capital Markets recovery","Adjusted EBITDA"],"sources":["https://ir.jll.com/","https://ir.jll.com/financials/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
-  {"name":"Cushman & Wakefield","aliases":["Cushman","CWK","Cushman and Wakefield","Michelle MacKay"],"industry":"商业地产服务 / 物业设施 / 经纪和资本市场","stage":"去杠杆修复 / 服务收入稳定化","url":"https://ir.cushmanwakefield.com/","scores":{"leadership":7,"decision":7,"execution":7,"bench":8,"alignment":7,"coverage":8,"governance":9},"darwin":{"financial":7,"moat":7.5,"signal":7.5,"evidence":"A","note":"全球地产服务网络具备规模，但利润率、杠杆和资本市场低迷使确定性弱于CBRE/JLL。"},"evidence":"A","summary":"Cushman & Wakefield是全球商业地产服务公司，当前重点是降杠杆、提升利润率和等待交易市场恢复。","risk":"杠杆、地产交易低迷、办公室需求、客户预算收缩，是主要风险。","watch":["Net debt leverage","Services revenue","Brokerage recovery","Adjusted EBITDA margin"],"sources":["https://ir.cushmanwakefield.com/","https://ir.cushmanwakefield.com/financial-information/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
-  {"name":"Savills","aliases":["Savills plc","SVS.L"],"industry":"房地产服务 / 物业管理 / 投资和租赁咨询","stage":"全球咨询平台 / 亚洲和欧洲周期修复","url":"https://www.savills.com/investor-relations/","scores":{"leadership":7,"decision":7,"execution":8,"bench":8,"alignment":8,"coverage":8,"governance":9},"darwin":{"financial":7.5,"moat":7.5,"signal":8,"evidence":"A","note":"全球高端地产咨询和物业管理品牌强，亚洲网络有优势；交易周期和规模小于CBRE/JLL。"},"evidence":"A","summary":"Savills是英国起家的全球房地产服务公司，强在高端地产咨询、物业管理和亚洲市场网络。","risk":"交易市场低迷、办公室需求、亚洲地产周期、汇率，是主要风险。","watch":["Transaction advisory","Property management revenue","Asia Pacific profit","Cash conversion"],"sources":["https://www.savills.com/investor-relations/","https://www.savills.com/investor-relations/results-reports-and-presentations.aspx"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["英国"]},
-  {"name":"Emaar Properties","aliases":["Emaar","EMAAR.DU","Burj Khalifa","Mohamed Alabbar"],"industry":"迪拜地产开发 / 商业和酒店 / 城市综合体","stage":"中东地产繁荣 / 品牌项目驱动","url":"https://properties.emaar.com/en/investor-relations/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":8,"governance":8},"darwin":{"financial":8,"moat":8,"signal":8,"evidence":"A","note":"迪拜核心开发商、商业和旅游资产强，受益中东资金和人口流入；地产周期和区域地缘风险需折扣。"},"evidence":"A","summary":"Emaar Properties是迪拜地产和城市综合体开发的核心品牌，Burj Khalifa和Dubai Mall强化全球识别度。","risk":"迪拜地产周期、预售回款、地缘政治、外资需求波动，是主要风险。","watch":["Property sales","Backlog","Hospitality revenue","Dividend"],"sources":["https://properties.emaar.com/en/investor-relations/","https://www.dfm.ae/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["阿联酋和沙特"]},
-  {"name":"Vonovia","aliases":["Vonovia SE","VNA.DE","Rolf Buch"],"industry":"住宅租赁 / 德国公寓 / 物业运营","stage":"利率冲击后去杠杆 / 租金韧性","url":"https://investors.vonovia.de/","scores":{"leadership":7,"decision":7,"execution":7,"bench":8,"alignment":7,"coverage":8,"governance":9},"darwin":{"financial":6.5,"moat":8,"signal":7,"evidence":"A","note":"德国住宅组合和租金韧性强，但高利率导致资产估值下调和杠杆压力。"},"evidence":"A","summary":"Vonovia是欧洲最大住宅租赁平台之一，租金现金流稳定，但利率上行显著影响估值和资本结构。","risk":"利率、资产减值、德国租金监管、融资成本，是主要风险。","watch":["Rental growth","LTV","Disposals","FFO"],"sources":["https://investors.vonovia.de/","https://investors.vonovia.de/en/publications/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["欧盟"]},
+  {"name":"Brookfield Corporation","aliases":["布鲁克菲尔德","Brookfield","BN","Brookfield Asset Management","Bruce Flatt"],"industry":"另类资产管理 / 基础设施 / 房地产和可再生能源","stage":"全球另类资产平台 / 资本配置复利","url":"https://bn.brookfield.com/","scores":{"leadership":9,"decision":9,"execution":9,"bench":8,"alignment":9,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":9,"signal":9,"evidence":"A","note":"基础设施、地产、信贷和能源转型平台全球化，资本配置和募资能力强；结构复杂和利率周期是折扣。"},"evidence":"A","summary":"Brookfield Corporation是全球另类资产管理和长期实物资产投资平台，强在资本配置和运营改善。","risk":"利率、商业地产估值、结构复杂度、募资周期，是主要风险。","watch":["Distributable earnings","Fee-bearing capital","Asset sales","Real estate impairments"],"sources":["https://bn.brookfield.com/","https://bn.brookfield.com/reports-and-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","金融科技"],"region_tags":["北美"]},
+  {"name":"Prologis","aliases":["普洛斯","PLD","Prologis Inc.","Hamid Moghadam"],"industry":"物流地产 / 仓储REIT / 全球供应链不动产","stage":"全球物流地产龙头 / 电商和近岸化受益","url":"https://ir.prologis.com/","scores":{"leadership":9,"decision":9,"execution":9,"bench":8,"alignment":9,"coverage":9,"governance":9},"darwin":{"financial":8.5,"moat":9.5,"signal":8.5,"evidence":"A","note":"全球稀缺物流节点、客户网络和开发能力形成顶级物流地产护城河；利率和租金增速周期是折扣。"},"evidence":"A","summary":"Prologis是全球物流地产和仓储REIT龙头，核心资产位于供应链关键节点。","risk":"利率、租金增长放缓、开发收益率、客户需求，是主要风险。","watch":["Occupancy","Rent change","Development starts","FFO"],"sources":["https://ir.prologis.com/","https://ir.prologis.com/financials/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
+  {"name":"CBRE Group","aliases":["世邦魏理仕","CBRE","CBRE Group Inc.","CBRE Global Workplace Solutions","Bob Sulentic"],"industry":"商业地产服务 / 物业设施管理 / 投资销售","stage":"全球地产服务龙头 / 资本市场周期修复","url":"https://ir.cbre.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8.5,"signal":8,"evidence":"A","note":"全球商业地产经纪、设施管理和投资管理网络强，轻资产服务韧性好；交易市场低迷仍影响利润。"},"evidence":"A","summary":"CBRE Group是全球商业地产服务龙头，设施管理和外包业务提升了周期韧性。","risk":"地产交易低迷、办公室需求、利率、客户预算，是主要风险。","watch":["Advisory revenue","Global Workplace Solutions","Investment sales","Adjusted EPS"],"sources":["https://ir.cbre.com/","https://ir.cbre.com/financial-information/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
+  {"name":"JLL","aliases":["仲量联行","Jones Lang LaSalle","JLL Inc.","JLL","Christian Ulbrich"],"industry":"商业地产服务 / 设施管理 / 投资管理","stage":"全球服务平台 / 交易周期修复","url":"https://ir.jll.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":7.5,"moat":8,"signal":8,"evidence":"A","note":"全球租赁、资本市场、设施管理和咨询能力强；地产交易周期和办公室结构性变化是折扣。"},"evidence":"A","summary":"JLL是全球商业地产服务和设施管理核心公司之一，收入组合正向更稳定的外包服务倾斜。","risk":"交易量周期、办公室需求、利率、外包合同利润率，是主要风险。","watch":["Leasing revenue","Work Dynamics revenue","Capital Markets recovery","Adjusted EBITDA"],"sources":["https://ir.jll.com/","https://ir.jll.com/financials/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
+  {"name":"Cushman & Wakefield","aliases":["戴德梁行","Cushman","CWK","Cushman and Wakefield","Michelle MacKay"],"industry":"商业地产服务 / 物业设施 / 经纪和资本市场","stage":"去杠杆修复 / 服务收入稳定化","url":"https://ir.cushmanwakefield.com/","scores":{"leadership":7,"decision":7,"execution":7,"bench":8,"alignment":7,"coverage":8,"governance":9},"darwin":{"financial":7,"moat":7.5,"signal":7.5,"evidence":"A","note":"全球地产服务网络具备规模，但利润率、杠杆和资本市场低迷使确定性弱于CBRE/JLL。"},"evidence":"A","summary":"Cushman & Wakefield是全球商业地产服务公司，当前重点是降杠杆、提升利润率和等待交易市场恢复。","risk":"杠杆、地产交易低迷、办公室需求、客户预算收缩，是主要风险。","watch":["Net debt leverage","Services revenue","Brokerage recovery","Adjusted EBITDA margin"],"sources":["https://ir.cushmanwakefield.com/","https://ir.cushmanwakefield.com/financial-information/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
+  {"name":"Savills","aliases":["第一太平戴维斯","Savills plc","SVS.L"],"industry":"房地产服务 / 物业管理 / 投资和租赁咨询","stage":"全球咨询平台 / 亚洲和欧洲周期修复","url":"https://www.savills.com/investor-relations/","scores":{"leadership":7,"decision":7,"execution":8,"bench":8,"alignment":8,"coverage":8,"governance":9},"darwin":{"financial":7.5,"moat":7.5,"signal":8,"evidence":"A","note":"全球高端地产咨询和物业管理品牌强，亚洲网络有优势；交易周期和规模小于CBRE/JLL。"},"evidence":"A","summary":"Savills是英国起家的全球房地产服务公司，强在高端地产咨询、物业管理和亚洲市场网络。","risk":"交易市场低迷、办公室需求、亚洲地产周期、汇率，是主要风险。","watch":["Transaction advisory","Property management revenue","Asia Pacific profit","Cash conversion"],"sources":["https://www.savills.com/investor-relations/","https://www.savills.com/investor-relations/results-reports-and-presentations.aspx"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["英国"]},
+  {"name":"Emaar Properties","aliases":["伊玛尔地产","Emaar","EMAAR.DU","Burj Khalifa","Mohamed Alabbar"],"industry":"迪拜地产开发 / 商业和酒店 / 城市综合体","stage":"中东地产繁荣 / 品牌项目驱动","url":"https://properties.emaar.com/en/investor-relations/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":8,"governance":8},"darwin":{"financial":8,"moat":8,"signal":8,"evidence":"A","note":"迪拜核心开发商、商业和旅游资产强，受益中东资金和人口流入；地产周期和区域地缘风险需折扣。"},"evidence":"A","summary":"Emaar Properties是迪拜地产和城市综合体开发的核心品牌，Burj Khalifa和Dubai Mall强化全球识别度。","risk":"迪拜地产周期、预售回款、地缘政治、外资需求波动，是主要风险。","watch":["Property sales","Backlog","Hospitality revenue","Dividend"],"sources":["https://properties.emaar.com/en/investor-relations/","https://www.dfm.ae/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["阿联酋和沙特"]},
+  {"name":"Vonovia","aliases":["冯诺维亚","Vonovia SE","VNA.DE","Rolf Buch"],"industry":"住宅租赁 / 德国公寓 / 物业运营","stage":"利率冲击后去杠杆 / 租金韧性","url":"https://investors.vonovia.de/","scores":{"leadership":7,"decision":7,"execution":7,"bench":8,"alignment":7,"coverage":8,"governance":9},"darwin":{"financial":6.5,"moat":8,"signal":7,"evidence":"A","note":"德国住宅组合和租金韧性强，但高利率导致资产估值下调和杠杆压力。"},"evidence":"A","summary":"Vonovia是欧洲最大住宅租赁平台之一，租金现金流稳定，但利率上行显著影响估值和资本结构。","risk":"利率、资产减值、德国租金监管、融资成本，是主要风险。","watch":["Rental growth","LTV","Disposals","FFO"],"sources":["https://investors.vonovia.de/","https://investors.vonovia.de/en/publications/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["欧盟"]},
   {"name":"New Oriental","aliases":["新东方","New Oriental Education","EDU","9901.HK","俞敏洪","东方甄选"],"industry":"教育培训 / 留学考试 / 直播电商转型","stage":"双减后修复 / 文旅和素养扩张","url":"https://investor.neworiental.org/","scores":{"leadership":8,"decision":8,"execution":8,"bench":7,"alignment":8,"coverage":8,"governance":9},"darwin":{"financial":8,"moat":8,"signal":8,"evidence":"A","note":"品牌、教师体系和现金储备帮助其穿越双减冲击，东方甄选带来新增长但波动较大。"},"evidence":"A","summary":"New Oriental/新东方是中国教育培训行业少数在监管冲击后完成再定位的公司，创始人影响力仍强。","risk":"教育监管、直播电商波动、创始人依赖、线下扩张成本，是主要风险。","watch":["Education revenue","Overseas test prep", "东方甄选GMV", "Operating margin"],"sources":["https://investor.neworiental.org/","https://investor.neworiental.org/financial-information/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","企业服务"],"region_tags":["中国大陆"]},
   {"name":"TAL Education","aliases":["好未来","TAL","TAL Education Group","学而思","Zhang Bangxin"],"industry":"教育科技 / 素养教育 / 学习内容平台","stage":"双减后重建 / AI学习产品验证","url":"https://ir.100tal.com/","scores":{"leadership":7,"decision":7,"execution":7,"bench":7,"alignment":7,"coverage":8,"governance":9},"darwin":{"financial":7,"moat":7,"signal":7,"evidence":"A","note":"学而思品牌和内容能力仍有价值，但监管后业务模型和AI硬件/内容增长仍在验证。"},"evidence":"A","summary":"TAL Education/好未来在双减后重新聚焦素养、内容和AI学习产品，仍需证明新模式盈利稳定性。","risk":"教育监管、产品迭代、获客成本、AI硬件库存，是主要风险。","watch":["Learning services revenue","AI products","Cash balance","Operating margin"],"sources":["https://ir.100tal.com/","https://ir.100tal.com/financial-information/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","企业服务"],"region_tags":["中国大陆"]},
-  {"name":"Duolingo","aliases":["DUOL","Duolingo Inc.","Luis von Ahn","Duolingo Max"],"industry":"在线教育 / 语言学习 / AI订阅应用","stage":"高增长盈利 / AI产品扩张","url":"https://investors.duolingo.com/","scores":{"leadership":9,"decision":9,"execution":9,"bench":8,"alignment":9,"coverage":8,"governance":9},"darwin":{"financial":8.5,"moat":9,"signal":9,"evidence":"A","note":"游戏化学习、品牌心智、订阅转化和AI功能迭代强，仍需扩展语言外第二曲线。"},"evidence":"A","summary":"Duolingo是消费级在线教育中产品和增长飞轮最强的公司之一，AI正在增强内容生产和高价订阅。","risk":"增长估值、AI替代、广告/订阅转化、语言外扩张，是主要风险。","watch":["DAU/MAU","Paid subscribers","Bookings growth","Duolingo Max adoption"],"sources":["https://investors.duolingo.com/","https://investors.duolingo.com/financials/sec-filings/default.aspx"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","人工智能"],"region_tags":["北美"]},
-  {"name":"Coursera","aliases":["COUR","Coursera Inc.","Jeff Maggioncalda","Andrew Ng"],"industry":"在线教育 / 职业技能 / 大学和企业学习平台","stage":"AI冲击下转型 / B2B和证书增长","url":"https://investor.coursera.com/","scores":{"leadership":7,"decision":7,"execution":7,"bench":8,"alignment":8,"coverage":8,"governance":9},"darwin":{"financial":7,"moat":7.5,"signal":7.5,"evidence":"A","note":"大学和企业内容网络强，AI技能需求带来机会；消费者学习流量和付费转化承压。"},"evidence":"A","summary":"Coursera是全球在线高等教育和职业证书平台，当前挑战是AI时代内容稀缺性和企业培训转化。","risk":"AI免费内容替代、大学合作依赖、获客成本、增长放缓，是主要风险。","watch":["Enterprise revenue","Degrees revenue","Paid learners","Adjusted EBITDA"],"sources":["https://investor.coursera.com/","https://investor.coursera.com/financials/sec-filings/default.aspx"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","企业服务"],"region_tags":["北美"]},
-  {"name":"Udemy","aliases":["Udemy Inc.","UDMY","Udemy Business","Greg Brown"],"industry":"在线课程 / 企业学习 / 技能培训平台","stage":"企业学习转型 / 消费课程承压","url":"https://investors.udemy.com/","scores":{"leadership":7,"decision":7,"execution":7,"bench":7,"alignment":7,"coverage":8,"governance":9},"darwin":{"financial":7,"moat":7,"signal":7.5,"evidence":"A","note":"课程供给和Udemy Business有规模，但消费者课程同质化和企业培训竞争压低护城河。"},"evidence":"A","summary":"Udemy拥有开放课程市场和企业学习业务，关键在于提高企业订阅质量并降低消费者业务波动。","risk":"课程同质化、AI内容替代、企业培训预算、获客成本，是主要风险。","watch":["Udemy Business ARR","Net retention","Consumer revenue","Adjusted EBITDA"],"sources":["https://investors.udemy.com/","https://investors.udemy.com/financials/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","企业服务"],"region_tags":["北美"]},
-  {"name":"Pearson","aliases":["Pearson plc","PSO","PSON.L","Andy Bird"],"industry":"教育出版 / 测评认证 / 数字学习","stage":"出版到数字学习转型 / 测评驱动","url":"https://plc.pearson.com/en-GB/investors","scores":{"leadership":7,"decision":7,"execution":7,"bench":8,"alignment":7,"coverage":8,"governance":9},"darwin":{"financial":7.5,"moat":7.5,"signal":7.5,"evidence":"A","note":"测评、教材和认证资产仍有规模，数字化改善利润；传统教材下滑和AI冲击仍需折扣。"},"evidence":"A","summary":"Pearson是全球教育出版和测评公司，正在把传统教材业务转向数字学习、认证和劳动力技能。","risk":"教材下滑、AI内容替代、学校预算、数字产品执行，是主要风险。","watch":["Assessment revenue","Virtual Learning","Digital subscriptions","Margin"],"sources":["https://plc.pearson.com/en-GB/investors","https://plc.pearson.com/en-GB/investors/results-reports-presentations"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["英国"]},
-  {"name":"Chegg","aliases":["CHGG","Chegg Inc.","Dan Rosensweig","Chegg Study"],"industry":"在线学习 / 学业辅导 / 职业技能转型","stage":"AI冲击后重组 / Skilling转型","url":"https://investor.chegg.com/","scores":{"leadership":5,"decision":4,"execution":5,"bench":6,"alignment":5,"coverage":7,"governance":9},"darwin":{"financial":5,"moat":5.5,"signal":6,"evidence":"A","note":"AI搜索和生成式内容严重冲击传统学业服务，Skilling转型有早期信号但仍需验证。"},"evidence":"A","summary":"Chegg是AI冲击在线教育商业模式的典型案例，当前从学生答疑转向职业技能平台。","risk":"收入下滑、AI替代、债务和现金消耗、转型失败，是主要风险。","watch":["Chegg Skilling revenue","Academic Services decline","Adjusted EBITDA","Debt reduction"],"sources":["https://investor.chegg.com/","https://investor.chegg.com/Press-Releases/press-release-details/2026/Chegg-Reports-2025-Fourth-Quarter-and-Full-Year-Financial-Results/default.aspx"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","企业服务"],"region_tags":["北美"]},
-  {"name":"2U","aliases":["2U Inc.","edX","TWOU","Chip Paucek"],"industry":"在线高等教育 / OPM / edX平台","stage":"债务重组后私有化 / 模式重建","url":"https://2u.com/","scores":{"leadership":4,"decision":3,"execution":4,"bench":5,"alignment":4,"coverage":6,"governance":5},"darwin":{"financial":3.5,"moat":5,"signal":4,"evidence":"B","note":"edX和大学合作资产仍有价值，但债务重组和OPM模式压力显著削弱财务与治理确定性。"},"evidence":"B","summary":"2U是在线高等教育OPM模式压力的代表，经历债务重组后需要重新证明商业模式。","risk":"债务重组后经营、大学合作流失、获客成本、监管，是主要风险。","watch":["edX revenue","University partners","Cash flow","Restructuring progress"],"sources":["https://2u.com/","https://investor.2u.com/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["北美"]},
-  {"name":"Adtalem Global Education","aliases":["Adtalem","ATGE","Chamberlain University","Walden University","Steve Beard"],"industry":"职业教育 / 医护教育 / 高等教育服务","stage":"医护职业教育增长 / 盈利改善","url":"https://investors.adtalem.com/","scores":{"leadership":7,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":8,"governance":9},"darwin":{"financial":8,"moat":7.5,"signal":8,"evidence":"A","note":"医护和职业教育需求强，Chamberlain和Walden提供规模；监管和学生贷款政策需折扣。"},"evidence":"A","summary":"Adtalem Global Education聚焦医护和职业教育，受益美国医疗人才短缺和职业学位需求。","risk":"教育监管、学生贷款政策、招生质量、就业结果，是主要风险。","watch":["Enrollment growth","Revenue per student","Operating margin","Regulatory compliance"],"sources":["https://investors.adtalem.com/","https://investors.adtalem.com/financials/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
-  {"name":"Grand Canyon Education","aliases":["GCE","LOPE","Grand Canyon University services","Brian Mueller"],"industry":"教育服务 / 大学运营服务 / 在线和线下高教","stage":"高利润教育服务 / 监管争议折扣","url":"https://investors.gce.com/","scores":{"leadership":7,"decision":7,"execution":8,"bench":7,"alignment":7,"coverage":8,"governance":9},"darwin":{"financial":8,"moat":7.5,"signal":7.5,"evidence":"A","note":"服务Grand Canyon University的高利润模型强，但监管和关联模式争议需折扣。"},"evidence":"A","summary":"Grand Canyon Education是高等教育服务公司，财务质量强，但监管和大学关系结构是主要不确定性。","risk":"监管调查、招生合规、单一客户依赖、声誉，是主要风险。","watch":["Enrollment","Service revenue","Operating margin","Regulatory updates"],"sources":["https://investors.gce.com/","https://investors.gce.com/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
-  {"name":"ManpowerGroup","aliases":["Manpower","MAN","Experis","Jonas Prising"],"industry":"人力资源服务 / 临时用工 / 招聘和外包","stage":"周期底部 / 专业人才服务转型","url":"https://investor.manpowergroup.com/","scores":{"leadership":7,"decision":7,"execution":7,"bench":8,"alignment":7,"coverage":8,"governance":9},"darwin":{"financial":7.5,"moat":7,"signal":7.5,"evidence":"A","note":"全球临时用工网络和Experis专业服务有价值，但招聘周期高度受宏观影响。"},"evidence":"A","summary":"ManpowerGroup是全球人力资源服务公司，覆盖临时用工、专业人才和外包服务，弹性取决于就业周期。","risk":"经济周期、企业招聘冻结、工资法规、AI自动化，是主要风险。","watch":["Revenue by region","Experis growth","Gross margin","Operating profit"],"sources":["https://investor.manpowergroup.com/","https://investor.manpowergroup.com/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
-  {"name":"Randstad","aliases":["Randstad N.V.","RAND.AS","Sander van 't Noordende"],"industry":"人力资源服务 / 临时用工 / RPO和HR技术","stage":"全球用工周期低位 / 数字化招聘","url":"https://www.randstad.com/workforce360/investor-relations/","scores":{"leadership":7,"decision":7,"execution":8,"bench":8,"alignment":8,"coverage":8,"governance":9},"darwin":{"financial":7.5,"moat":7.5,"signal":7.5,"evidence":"A","note":"全球人力资源服务规模、客户关系和数字化匹配能力强；招聘周期和欧洲经济疲弱是折扣。"},"evidence":"A","summary":"Randstad是全球最大人力资源服务公司之一，长期优势在客户覆盖、候选人网络和本地劳动法规能力。","risk":"宏观招聘周期、临时工法规、AI匹配替代、欧洲需求，是主要风险。","watch":["Perm fees","Temp staffing revenue","Gross margin","Digital adoption"],"sources":["https://www.randstad.com/workforce360/investor-relations/","https://www.randstad.com/workforce360/investor-relations/results-and-reports/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["欧盟"]},
-  {"name":"Adecco Group","aliases":["Adecco","ADEN.SW","Akkodis","LHH","Denis Machuel"],"industry":"人力资源服务 / 专业外包 / 职业转型","stage":"利润修复 / Akkodis整合","url":"https://www.adeccogroup.com/investors","scores":{"leadership":7,"decision":7,"execution":7,"bench":8,"alignment":7,"coverage":8,"governance":9},"darwin":{"financial":7.5,"moat":7,"signal":7.5,"evidence":"A","note":"全球用工服务、LHH和Akkodis组合具备规模，但整合、利润率和周期压力仍明显。"},"evidence":"A","summary":"Adecco Group是全球人力资源服务三巨头之一，正在通过Akkodis和LHH提升专业服务比重。","risk":"招聘周期、整合执行、利润率、欧洲经济，是主要风险。","watch":["Akkodis growth","LHH performance","EBITA margin","Working capital"],"sources":["https://www.adeccogroup.com/investors","https://www.adeccogroup.com/investors/results-and-reports"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["欧盟"]},
-  {"name":"Recruit Holdings","aliases":["Recruit","6098.T","Indeed","Glassdoor","Hisayuki Idekoba"],"industry":"招聘平台 / HR技术 / 生活服务和派遣","stage":"全球招聘平台 / Indeed周期修复","url":"https://recruit-holdings.com/en/ir/","scores":{"leadership":8,"decision":9,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8.5,"signal":8,"evidence":"A","note":"Indeed和Glassdoor构成全球招聘流量平台，日本人材派遣和生活服务提供韧性；招聘广告周期是折扣。"},"evidence":"A","summary":"Recruit Holdings把日本本土生活服务和全球招聘平台结合起来，Indeed是其最重要的全球化资产。","risk":"招聘广告周期、AI匹配替代、美国就业放缓、平台流量成本，是主要风险。","watch":["HR Technology revenue","Indeed paid clicks","Adjusted EBITDA margin","Japan staffing"],"sources":["https://recruit-holdings.com/en/ir/","https://recruit-holdings.com/en/ir/library/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["日本"]},
-  {"name":"LinkedIn","aliases":["LinkedIn Corporation","Microsoft LinkedIn","LinkedIn Learning","Ryan Roslansky"],"industry":"职业社交 / 招聘平台 / B2B广告和学习","stage":"Microsoft子公司 / 职业数据网络","url":"https://www.linkedin.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":8,"governance":7},"darwin":{"financial":8,"moat":9,"signal":8.5,"evidence":"B","note":"职业身份、招聘、广告和学习数据网络极强，但作为Microsoft子公司披露有限，独立治理评分保守。"},"evidence":"B","summary":"LinkedIn是全球职业身份和招聘网络基础设施，Microsoft生态强化了企业销售、广告和学习场景。","risk":"招聘周期、隐私监管、AI生成内容质量、子公司披露不足，是主要风险。","watch":["Member growth","Talent Solutions", "Marketing Solutions", "LinkedIn Learning"],"sources":["https://www.linkedin.com/","https://www.microsoft.com/en-us/Investor/annual-reports.aspx"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["北美"]},
-  {"name":"Accenture","aliases":["ACN","Accenture plc","Julie Sweet"],"industry":"IT咨询 / 管理咨询 / 云和AI服务","stage":"全球专业服务龙头 / AI转型需求","url":"https://investor.accenture.com/","scores":{"leadership":9,"decision":9,"execution":9,"bench":9,"alignment":9,"coverage":9,"governance":9},"darwin":{"financial":9,"moat":8.5,"signal":8.5,"evidence":"A","note":"全球交付网络、客户关系、云和AI转型能力强，现金流质量高；咨询预算周期和生成式AI交付效率变化需观察。"},"evidence":"A","summary":"Accenture是全球管理咨询和IT服务结合最强的平台之一，受益于企业云、数据和AI转型。","risk":"客户IT预算、生成式AI价格压力、人才成本、外包竞争，是主要风险。","watch":["Bookings","GenAI revenue","Consulting growth","Operating margin"],"sources":["https://investor.accenture.com/","https://investor.accenture.com/financials/sec-filings/default.aspx"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","人工智能","云计算"],"region_tags":["北美"]},
-  {"name":"Deloitte","aliases":["Deloitte Touche Tohmatsu","Deloitte Global","Joe Ucuzoglu"],"industry":"四大会计师事务所 / 咨询 / 审计税务和风险服务","stage":"全球专业服务网络 / AI和咨询再配置","url":"https://www.deloitte.com/global/en/about/annual-report.html","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":7},"darwin":{"financial":8,"moat":8.5,"signal":8,"evidence":"B","note":"全球成员所网络、审计资质和咨询客户关系强；合伙制网络披露和独立治理透明度低于上市公司。"},"evidence":"B","summary":"Deloitte是全球最大专业服务网络之一，覆盖审计、税务、咨询、风险和技术转型。","risk":"审计监管、咨询周期、合伙制治理、声誉事件，是主要风险。","watch":["Global revenue","Consulting growth","Audit quality findings","AI service investment"],"sources":["https://www.deloitte.com/global/en/about/annual-report.html","https://www.deloitte.com/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
-  {"name":"PwC","aliases":["PricewaterhouseCoopers","PwC Global","Mohamed Kande"],"industry":"四大会计师事务所 / 审计税务 / 咨询和交易服务","stage":"全球专业服务网络 / 审计质量修复","url":"https://www.pwc.com/gx/en/about/global-annual-review.html","scores":{"leadership":7,"decision":7,"execution":8,"bench":8,"alignment":7,"coverage":9,"governance":7},"darwin":{"financial":8,"moat":8,"signal":7.5,"evidence":"B","note":"全球客户和审计税务网络强，但合伙制披露有限，部分市场审计/税务争议压低治理评分。"},"evidence":"B","summary":"PwC是全球四大专业服务网络之一，强在审计、税务和企业转型咨询，但近年审计质量和声誉管理压力上升。","risk":"审计监管、声誉事件、咨询需求、合伙网络治理，是主要风险。","watch":["Global revenue","Assurance quality", "Consulting growth", "Regulatory findings"],"sources":["https://www.pwc.com/gx/en/about/global-annual-review.html","https://www.pwc.com/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["英国"]},
-  {"name":"EY","aliases":["Ernst & Young","EY Global","Janet Truncale"],"industry":"四大会计师事务所 / 审计税务 / 咨询和战略交易","stage":"分拆失败后重整 / 全球网络治理","url":"https://www.ey.com/en_gl/about-us/annual-review","scores":{"leadership":7,"decision":6,"execution":7,"bench":8,"alignment":7,"coverage":9,"governance":7},"darwin":{"financial":7.5,"moat":8,"signal":7,"evidence":"B","note":"全球审计税务和咨询网络强，但Project Everest分拆失败显示治理和战略协调复杂。"},"evidence":"B","summary":"EY是全球四大专业服务网络之一，分拆失败后重点是恢复内部协同和提升咨询/审计平衡。","risk":"合伙网络治理、审计监管、人才流失、咨询周期，是主要风险。","watch":["Global revenue","Audit quality", "Consulting demand", "Governance reforms"],"sources":["https://www.ey.com/en_gl/about-us/annual-review","https://www.ey.com/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["英国"]},
-  {"name":"KPMG","aliases":["KPMG International","KPMG Global","Bill Thomas"],"industry":"四大会计师事务所 / 审计税务 / 咨询和风险服务","stage":"全球专业服务网络 / 审计质量和AI转型","url":"https://kpmg.com/xx/en/home/about/overview/annual-review.html","scores":{"leadership":7,"decision":7,"execution":7,"bench":8,"alignment":7,"coverage":9,"governance":7},"darwin":{"financial":7.5,"moat":8,"signal":7.5,"evidence":"B","note":"全球审计、税务和咨询网络强，审计资质护城河明显；合伙制披露、审计监管和声誉事件限制治理评分。"},"evidence":"B","summary":"KPMG是全球四大专业服务网络之一，核心资产是审计资质、客户关系和跨国合规服务网络。","risk":"审计监管、合伙网络治理、咨询周期、人才竞争，是主要风险。","watch":["Global revenue","Audit inspection findings","Advisory growth","AI investment"],"sources":["https://kpmg.com/xx/en/home/about/overview/annual-review.html","https://kpmg.com/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["欧盟"]}
+  {"name":"Duolingo","aliases":["多邻国","DUOL","Duolingo Inc.","Luis von Ahn","Duolingo Max"],"industry":"在线教育 / 语言学习 / AI订阅应用","stage":"高增长盈利 / AI产品扩张","url":"https://investors.duolingo.com/","scores":{"leadership":9,"decision":9,"execution":9,"bench":8,"alignment":9,"coverage":8,"governance":9},"darwin":{"financial":8.5,"moat":9,"signal":9,"evidence":"A","note":"游戏化学习、品牌心智、订阅转化和AI功能迭代强，仍需扩展语言外第二曲线。"},"evidence":"A","summary":"Duolingo是消费级在线教育中产品和增长飞轮最强的公司之一，AI正在增强内容生产和高价订阅。","risk":"增长估值、AI替代、广告/订阅转化、语言外扩张，是主要风险。","watch":["DAU/MAU","Paid subscribers","Bookings growth","Duolingo Max adoption"],"sources":["https://investors.duolingo.com/","https://investors.duolingo.com/financials/sec-filings/default.aspx"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","人工智能"],"region_tags":["北美"]},
+  {"name":"Coursera","aliases":["课睿思","COUR","Coursera Inc.","Jeff Maggioncalda","Andrew Ng"],"industry":"在线教育 / 职业技能 / 大学和企业学习平台","stage":"AI冲击下转型 / B2B和证书增长","url":"https://investor.coursera.com/","scores":{"leadership":7,"decision":7,"execution":7,"bench":8,"alignment":8,"coverage":8,"governance":9},"darwin":{"financial":7,"moat":7.5,"signal":7.5,"evidence":"A","note":"大学和企业内容网络强，AI技能需求带来机会；消费者学习流量和付费转化承压。"},"evidence":"A","summary":"Coursera是全球在线高等教育和职业证书平台，当前挑战是AI时代内容稀缺性和企业培训转化。","risk":"AI免费内容替代、大学合作依赖、获客成本、增长放缓，是主要风险。","watch":["Enterprise revenue","Degrees revenue","Paid learners","Adjusted EBITDA"],"sources":["https://investor.coursera.com/","https://investor.coursera.com/financials/sec-filings/default.aspx"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","企业服务"],"region_tags":["北美"]},
+  {"name":"Udemy","aliases":["优达米","Udemy Inc.","UDMY","Udemy Business","Greg Brown"],"industry":"在线课程 / 企业学习 / 技能培训平台","stage":"企业学习转型 / 消费课程承压","url":"https://investors.udemy.com/","scores":{"leadership":7,"decision":7,"execution":7,"bench":7,"alignment":7,"coverage":8,"governance":9},"darwin":{"financial":7,"moat":7,"signal":7.5,"evidence":"A","note":"课程供给和Udemy Business有规模，但消费者课程同质化和企业培训竞争压低护城河。"},"evidence":"A","summary":"Udemy拥有开放课程市场和企业学习业务，关键在于提高企业订阅质量并降低消费者业务波动。","risk":"课程同质化、AI内容替代、企业培训预算、获客成本，是主要风险。","watch":["Udemy Business ARR","Net retention","Consumer revenue","Adjusted EBITDA"],"sources":["https://investors.udemy.com/","https://investors.udemy.com/financials/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","企业服务"],"region_tags":["北美"]},
+  {"name":"Pearson","aliases":["培生","Pearson plc","PSO","PSON.L","Andy Bird"],"industry":"教育出版 / 测评认证 / 数字学习","stage":"出版到数字学习转型 / 测评驱动","url":"https://plc.pearson.com/en-GB/investors","scores":{"leadership":7,"decision":7,"execution":7,"bench":8,"alignment":7,"coverage":8,"governance":9},"darwin":{"financial":7.5,"moat":7.5,"signal":7.5,"evidence":"A","note":"测评、教材和认证资产仍有规模，数字化改善利润；传统教材下滑和AI冲击仍需折扣。"},"evidence":"A","summary":"Pearson是全球教育出版和测评公司，正在把传统教材业务转向数字学习、认证和劳动力技能。","risk":"教材下滑、AI内容替代、学校预算、数字产品执行，是主要风险。","watch":["Assessment revenue","Virtual Learning","Digital subscriptions","Margin"],"sources":["https://plc.pearson.com/en-GB/investors","https://plc.pearson.com/en-GB/investors/results-reports-presentations"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["英国"]},
+  {"name":"Chegg","aliases":["切格","CHGG","Chegg Inc.","Dan Rosensweig","Chegg Study"],"industry":"在线学习 / 学业辅导 / 职业技能转型","stage":"AI冲击后重组 / Skilling转型","url":"https://investor.chegg.com/","scores":{"leadership":5,"decision":4,"execution":5,"bench":6,"alignment":5,"coverage":7,"governance":9},"darwin":{"financial":5,"moat":5.5,"signal":6,"evidence":"A","note":"AI搜索和生成式内容严重冲击传统学业服务，Skilling转型有早期信号但仍需验证。"},"evidence":"A","summary":"Chegg是AI冲击在线教育商业模式的典型案例，当前从学生答疑转向职业技能平台。","risk":"收入下滑、AI替代、债务和现金消耗、转型失败，是主要风险。","watch":["Chegg Skilling revenue","Academic Services decline","Adjusted EBITDA","Debt reduction"],"sources":["https://investor.chegg.com/","https://investor.chegg.com/Press-Releases/press-release-details/2026/Chegg-Reports-2025-Fourth-Quarter-and-Full-Year-Financial-Results/default.aspx"],"last_reviewed":"2026-05-02","industry_tags":["消费互联网","企业服务"],"region_tags":["北美"]},
+  {"name":"2U","aliases":["2U公司","2U Inc.","edX","TWOU","Chip Paucek"],"industry":"在线高等教育 / OPM / edX平台","stage":"债务重组后私有化 / 模式重建","url":"https://2u.com/","scores":{"leadership":4,"decision":3,"execution":4,"bench":5,"alignment":4,"coverage":6,"governance":5},"darwin":{"financial":3.5,"moat":5,"signal":4,"evidence":"B","note":"edX和大学合作资产仍有价值，但债务重组和OPM模式压力显著削弱财务与治理确定性。"},"evidence":"B","summary":"2U是在线高等教育OPM模式压力的代表，经历债务重组后需要重新证明商业模式。","risk":"债务重组后经营、大学合作流失、获客成本、监管，是主要风险。","watch":["edX revenue","University partners","Cash flow","Restructuring progress"],"sources":["https://2u.com/","https://investor.2u.com/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["北美"]},
+  {"name":"Adtalem Global Education","aliases":["阿德塔莱姆全球教育","Adtalem","ATGE","Chamberlain University","Walden University","Steve Beard"],"industry":"职业教育 / 医护教育 / 高等教育服务","stage":"医护职业教育增长 / 盈利改善","url":"https://investors.adtalem.com/","scores":{"leadership":7,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":8,"governance":9},"darwin":{"financial":8,"moat":7.5,"signal":8,"evidence":"A","note":"医护和职业教育需求强，Chamberlain和Walden提供规模；监管和学生贷款政策需折扣。"},"evidence":"A","summary":"Adtalem Global Education聚焦医护和职业教育，受益美国医疗人才短缺和职业学位需求。","risk":"教育监管、学生贷款政策、招生质量、就业结果，是主要风险。","watch":["Enrollment growth","Revenue per student","Operating margin","Regulatory compliance"],"sources":["https://investors.adtalem.com/","https://investors.adtalem.com/financials/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
+  {"name":"Grand Canyon Education","aliases":["大峡谷教育","GCE","LOPE","Grand Canyon University services","Brian Mueller"],"industry":"教育服务 / 大学运营服务 / 在线和线下高教","stage":"高利润教育服务 / 监管争议折扣","url":"https://investors.gce.com/","scores":{"leadership":7,"decision":7,"execution":8,"bench":7,"alignment":7,"coverage":8,"governance":9},"darwin":{"financial":8,"moat":7.5,"signal":7.5,"evidence":"A","note":"服务Grand Canyon University的高利润模型强，但监管和关联模式争议需折扣。"},"evidence":"A","summary":"Grand Canyon Education是高等教育服务公司，财务质量强，但监管和大学关系结构是主要不确定性。","risk":"监管调查、招生合规、单一客户依赖、声誉，是主要风险。","watch":["Enrollment","Service revenue","Operating margin","Regulatory updates"],"sources":["https://investors.gce.com/","https://investors.gce.com/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
+  {"name":"ManpowerGroup","aliases":["万宝盛华","Manpower","MAN","Experis","Jonas Prising"],"industry":"人力资源服务 / 临时用工 / 招聘和外包","stage":"周期底部 / 专业人才服务转型","url":"https://investor.manpowergroup.com/","scores":{"leadership":7,"decision":7,"execution":7,"bench":8,"alignment":7,"coverage":8,"governance":9},"darwin":{"financial":7.5,"moat":7,"signal":7.5,"evidence":"A","note":"全球临时用工网络和Experis专业服务有价值，但招聘周期高度受宏观影响。"},"evidence":"A","summary":"ManpowerGroup是全球人力资源服务公司，覆盖临时用工、专业人才和外包服务，弹性取决于就业周期。","risk":"经济周期、企业招聘冻结、工资法规、AI自动化，是主要风险。","watch":["Revenue by region","Experis growth","Gross margin","Operating profit"],"sources":["https://investor.manpowergroup.com/","https://investor.manpowergroup.com/sec-filings"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
+  {"name":"Randstad","aliases":["任仕达","Randstad N.V.","RAND.AS","Sander van 't Noordende"],"industry":"人力资源服务 / 临时用工 / RPO和HR技术","stage":"全球用工周期低位 / 数字化招聘","url":"https://www.randstad.com/workforce360/investor-relations/","scores":{"leadership":7,"decision":7,"execution":8,"bench":8,"alignment":8,"coverage":8,"governance":9},"darwin":{"financial":7.5,"moat":7.5,"signal":7.5,"evidence":"A","note":"全球人力资源服务规模、客户关系和数字化匹配能力强；招聘周期和欧洲经济疲弱是折扣。"},"evidence":"A","summary":"Randstad是全球最大人力资源服务公司之一，长期优势在客户覆盖、候选人网络和本地劳动法规能力。","risk":"宏观招聘周期、临时工法规、AI匹配替代、欧洲需求，是主要风险。","watch":["Perm fees","Temp staffing revenue","Gross margin","Digital adoption"],"sources":["https://www.randstad.com/workforce360/investor-relations/","https://www.randstad.com/workforce360/investor-relations/results-and-reports/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["欧盟"]},
+  {"name":"Adecco Group","aliases":["德科集团","Adecco","ADEN.SW","Akkodis","LHH","Denis Machuel"],"industry":"人力资源服务 / 专业外包 / 职业转型","stage":"利润修复 / Akkodis整合","url":"https://www.adeccogroup.com/investors","scores":{"leadership":7,"decision":7,"execution":7,"bench":8,"alignment":7,"coverage":8,"governance":9},"darwin":{"financial":7.5,"moat":7,"signal":7.5,"evidence":"A","note":"全球用工服务、LHH和Akkodis组合具备规模，但整合、利润率和周期压力仍明显。"},"evidence":"A","summary":"Adecco Group是全球人力资源服务三巨头之一，正在通过Akkodis和LHH提升专业服务比重。","risk":"招聘周期、整合执行、利润率、欧洲经济，是主要风险。","watch":["Akkodis growth","LHH performance","EBITA margin","Working capital"],"sources":["https://www.adeccogroup.com/investors","https://www.adeccogroup.com/investors/results-and-reports"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["欧盟"]},
+  {"name":"Recruit Holdings","aliases":["瑞可利控股","Recruit","6098.T","Indeed","Glassdoor","Hisayuki Idekoba"],"industry":"招聘平台 / HR技术 / 生活服务和派遣","stage":"全球招聘平台 / Indeed周期修复","url":"https://recruit-holdings.com/en/ir/","scores":{"leadership":8,"decision":9,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":9},"darwin":{"financial":8,"moat":8.5,"signal":8,"evidence":"A","note":"Indeed和Glassdoor构成全球招聘流量平台，日本人材派遣和生活服务提供韧性；招聘广告周期是折扣。"},"evidence":"A","summary":"Recruit Holdings把日本本土生活服务和全球招聘平台结合起来，Indeed是其最重要的全球化资产。","risk":"招聘广告周期、AI匹配替代、美国就业放缓、平台流量成本，是主要风险。","watch":["HR Technology revenue","Indeed paid clicks","Adjusted EBITDA margin","Japan staffing"],"sources":["https://recruit-holdings.com/en/ir/","https://recruit-holdings.com/en/ir/library/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["日本"]},
+  {"name":"LinkedIn","aliases":["领英","LinkedIn Corporation","Microsoft LinkedIn","LinkedIn Learning","Ryan Roslansky"],"industry":"职业社交 / 招聘平台 / B2B广告和学习","stage":"Microsoft子公司 / 职业数据网络","url":"https://www.linkedin.com/","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":8,"governance":7},"darwin":{"financial":8,"moat":9,"signal":8.5,"evidence":"B","note":"职业身份、招聘、广告和学习数据网络极强，但作为Microsoft子公司披露有限，独立治理评分保守。"},"evidence":"B","summary":"LinkedIn是全球职业身份和招聘网络基础设施，Microsoft生态强化了企业销售、广告和学习场景。","risk":"招聘周期、隐私监管、AI生成内容质量、子公司披露不足，是主要风险。","watch":["Member growth","Talent Solutions", "Marketing Solutions", "LinkedIn Learning"],"sources":["https://www.linkedin.com/","https://www.microsoft.com/en-us/Investor/annual-reports.aspx"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","消费互联网"],"region_tags":["北美"]},
+  {"name":"Accenture","aliases":["埃森哲","ACN","Accenture plc","Julie Sweet"],"industry":"IT咨询 / 管理咨询 / 云和AI服务","stage":"全球专业服务龙头 / AI转型需求","url":"https://investor.accenture.com/","scores":{"leadership":9,"decision":9,"execution":9,"bench":9,"alignment":9,"coverage":9,"governance":9},"darwin":{"financial":9,"moat":8.5,"signal":8.5,"evidence":"A","note":"全球交付网络、客户关系、云和AI转型能力强，现金流质量高；咨询预算周期和生成式AI交付效率变化需观察。"},"evidence":"A","summary":"Accenture是全球管理咨询和IT服务结合最强的平台之一，受益于企业云、数据和AI转型。","risk":"客户IT预算、生成式AI价格压力、人才成本、外包竞争，是主要风险。","watch":["Bookings","GenAI revenue","Consulting growth","Operating margin"],"sources":["https://investor.accenture.com/","https://investor.accenture.com/financials/sec-filings/default.aspx"],"last_reviewed":"2026-05-02","industry_tags":["企业服务","人工智能","云计算"],"region_tags":["北美"]},
+  {"name":"Deloitte","aliases":["德勤","Deloitte Touche Tohmatsu","Deloitte Global","Joe Ucuzoglu"],"industry":"四大会计师事务所 / 咨询 / 审计税务和风险服务","stage":"全球专业服务网络 / AI和咨询再配置","url":"https://www.deloitte.com/global/en/about/annual-report.html","scores":{"leadership":8,"decision":8,"execution":8,"bench":8,"alignment":8,"coverage":9,"governance":7},"darwin":{"financial":8,"moat":8.5,"signal":8,"evidence":"B","note":"全球成员所网络、审计资质和咨询客户关系强；合伙制网络披露和独立治理透明度低于上市公司。"},"evidence":"B","summary":"Deloitte是全球最大专业服务网络之一，覆盖审计、税务、咨询、风险和技术转型。","risk":"审计监管、咨询周期、合伙制治理、声誉事件，是主要风险。","watch":["Global revenue","Consulting growth","Audit quality findings","AI service investment"],"sources":["https://www.deloitte.com/global/en/about/annual-report.html","https://www.deloitte.com/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["北美"]},
+  {"name":"PwC","aliases":["普华永道","PricewaterhouseCoopers","PwC Global","Mohamed Kande"],"industry":"四大会计师事务所 / 审计税务 / 咨询和交易服务","stage":"全球专业服务网络 / 审计质量修复","url":"https://www.pwc.com/gx/en/about/global-annual-review.html","scores":{"leadership":7,"decision":7,"execution":8,"bench":8,"alignment":7,"coverage":9,"governance":7},"darwin":{"financial":8,"moat":8,"signal":7.5,"evidence":"B","note":"全球客户和审计税务网络强，但合伙制披露有限，部分市场审计/税务争议压低治理评分。"},"evidence":"B","summary":"PwC是全球四大专业服务网络之一，强在审计、税务和企业转型咨询，但近年审计质量和声誉管理压力上升。","risk":"审计监管、声誉事件、咨询需求、合伙网络治理，是主要风险。","watch":["Global revenue","Assurance quality", "Consulting growth", "Regulatory findings"],"sources":["https://www.pwc.com/gx/en/about/global-annual-review.html","https://www.pwc.com/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["英国"]},
+  {"name":"EY","aliases":["安永","Ernst & Young","EY Global","Janet Truncale"],"industry":"四大会计师事务所 / 审计税务 / 咨询和战略交易","stage":"分拆失败后重整 / 全球网络治理","url":"https://www.ey.com/en_gl/about-us/annual-review","scores":{"leadership":7,"decision":6,"execution":7,"bench":8,"alignment":7,"coverage":9,"governance":7},"darwin":{"financial":7.5,"moat":8,"signal":7,"evidence":"B","note":"全球审计税务和咨询网络强，但Project Everest分拆失败显示治理和战略协调复杂。"},"evidence":"B","summary":"EY是全球四大专业服务网络之一，分拆失败后重点是恢复内部协同和提升咨询/审计平衡。","risk":"合伙网络治理、审计监管、人才流失、咨询周期，是主要风险。","watch":["Global revenue","Audit quality", "Consulting demand", "Governance reforms"],"sources":["https://www.ey.com/en_gl/about-us/annual-review","https://www.ey.com/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["英国"]},
+  {"name":"KPMG","aliases":["毕马威","KPMG International","KPMG Global","Bill Thomas"],"industry":"四大会计师事务所 / 审计税务 / 咨询和风险服务","stage":"全球专业服务网络 / 审计质量和AI转型","url":"https://kpmg.com/xx/en/home/about/overview/annual-review.html","scores":{"leadership":7,"decision":7,"execution":7,"bench":8,"alignment":7,"coverage":9,"governance":7},"darwin":{"financial":7.5,"moat":8,"signal":7.5,"evidence":"B","note":"全球审计、税务和咨询网络强，审计资质护城河明显；合伙制披露、审计监管和声誉事件限制治理评分。"},"evidence":"B","summary":"KPMG是全球四大专业服务网络之一，核心资产是审计资质、客户关系和跨国合规服务网络。","risk":"审计监管、合伙网络治理、咨询周期、人才竞争，是主要风险。","watch":["Global revenue","Audit inspection findings","Advisory growth","AI investment"],"sources":["https://kpmg.com/xx/en/home/about/overview/annual-review.html","https://kpmg.com/"],"last_reviewed":"2026-05-02","industry_tags":["企业服务"],"region_tags":["欧盟"]}
 ]
