@@ -64,6 +64,15 @@
       "warn_delta": 0.5,
       "review_delta": 1.2,
       "rule": "LEADERS明显高于Darwin时，优先复核创始人个人影响力、市场关注度、规模叙事和低成本信号。"
+    },
+    "flat_score_review": {
+      "min_average": 8,
+      "warn_range": 0,
+      "review_range": 1,
+      "rule": "高分企业也应体现领导者、决策、执行、补位、文化、岗位和治理之间的结构差异；全项同分或高分过于平整时，需复核是否过度依赖财务表现、行业地位或成熟制度惯性。"
+    },
+    "leadership_manual_inputs": {
+      "rule": "领导者与二三号位评分应优先引入过往领导企业表现、关键任期内的战略取舍、媒体和投资者评价、继任/授权线索，以及高管团队可见度；缺少这些人工判断时，成熟巨头的 leadership、decision、bench 默认不顶格。"
     }
   }
 }

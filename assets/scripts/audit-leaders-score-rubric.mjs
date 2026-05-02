@@ -77,6 +77,18 @@ for (const company of companies) {
       warnings.push(`${company.name}: LEADERS均分 ${leadersAverage.toFixed(1)} 高于 Darwin ${darwinAverage.toFixed(1)}，偏差 ${delta.toFixed(1)}，建议半年度复核。`);
     }
   }
+
+  const scoreValues = scoreKeys.map((key) => Number(company.scores?.[key]));
+  const leadersAverage = average(scoreValues);
+  const scoreRange = Math.max(...scoreValues) - Math.min(...scoreValues);
+  const flatReview = rubric.guardrails.flat_score_review;
+  if (flatReview && leadersAverage >= flatReview.min_average) {
+    if (scoreRange <= flatReview.warn_range) {
+      warnings.push(`${company.name}: LEADERS均分 ${leadersAverage.toFixed(1)} 且七项完全同分，需复核是否过度依赖财务表现、行业地位或成熟制度惯性。`);
+    } else if (scoreRange <= flatReview.review_range && leadersAverage >= 8.8) {
+      warnings.push(`${company.name}: LEADERS均分 ${leadersAverage.toFixed(1)} 且七项分差仅 ${scoreRange.toFixed(1)}，建议复核领导者、二三号位和治理证据是否足以支撑高分。`);
+    }
+  }
 }
 
 if (warnings.length) {
