@@ -33,6 +33,42 @@
     ["moat", "动态护城河"],
     ["signal", "诚实信号"]
   ];
+  const industryLabels = {
+    "半导体": "Semiconductors",
+    "储能": "Energy Storage",
+    "大模型": "Foundation Models",
+    "动力电池": "Power Batteries",
+    "机器人": "Robotics",
+    "计算机视觉": "Computer Vision",
+    "金融科技": "FinTech",
+    "内容平台": "Content Platforms",
+    "企业服务": "Enterprise Services",
+    "汽车制造": "Automotive Manufacturing",
+    "人工智能": "Artificial Intelligence",
+    "物联网": "IoT",
+    "消费互联网": "Consumer Internet",
+    "芯片设计": "Chip Design",
+    "新能源汽车": "New Energy Vehicles",
+    "云计算": "Cloud Computing",
+    "智能驾驶": "Autonomous Driving",
+    "AI芯片": "AI Chips",
+    "GPU": "GPU",
+    "ICT": "ICT",
+    "ODM": "ODM",
+    "SaaS": "SaaS"
+  };
+  const regionLabels = {
+    "阿联酋和沙特": "UAE and Saudi Arabia",
+    "北美": "North America",
+    "东南亚": "Southeast Asia",
+    "韩国": "South Korea",
+    "南美": "South America",
+    "欧盟": "European Union",
+    "日本": "Japan",
+    "台湾": "Taiwan",
+    "英国": "United Kingdom",
+    "中国大陆": "Mainland China"
+  };
   let companies = [];
 
   const $ = (selector) => document.querySelector(selector);
@@ -45,7 +81,8 @@
     .replace(/'/g, "&#039;");
   const average = (scores) => scoreKeys.reduce((sum, [key]) => sum + Number(scores[key] || 0), 0) / scoreKeys.length;
   const averageDarwin = (scores) => darwinKeys.reduce((sum, [key]) => sum + Number(scores[key] || 0), 0) / darwinKeys.length;
-  const tagText = (tags) => (tags && tags.length ? tags.join("、") : "未标注");
+  const tagLabel = (tag, labels) => labels[tag] ? `${tag} / ${labels[tag]}` : tag;
+  const tagText = (tags, labels) => (tags && tags.length ? tags.map((tag) => tagLabel(tag, labels)).join("、") : "未标注 / Unlabeled");
   const companyNames = (company) => [company.name].concat(company.aliases || []);
 
   function isSiteArticle(url) {
@@ -408,9 +445,9 @@
     });
   }
 
-  function renderFilterOptions(select, tags, label) {
-    select.innerHTML = [`<option value="">全部${label}</option>`]
-      .concat(tags.map((tag) => `<option value="${escapeHtml(tag)}">${escapeHtml(tag)}</option>`))
+  function renderFilterOptions(select, tags, label, labels) {
+    select.innerHTML = [`<option value="">${escapeHtml(label)}</option>`]
+      .concat(tags.map((tag) => `<option value="${escapeHtml(tag)}">${escapeHtml(tagLabel(tag, labels))}</option>`))
       .join("");
   }
 
@@ -425,8 +462,8 @@
     const bodyEl = $("#leaders-table-body");
     if (!industrySelect || !regionSelect || !bodyEl) return;
 
-    renderFilterOptions(industrySelect, uniqueTags("industry_tags"), "行业");
-    renderFilterOptions(regionSelect, uniqueTags("region_tags"), "地区");
+    renderFilterOptions(industrySelect, uniqueTags("industry_tags"), "全部行业 / All industries", industryLabels);
+    renderFilterOptions(regionSelect, uniqueTags("region_tags"), "全部地区 / All regions", regionLabels);
 
     const applyFilters = () => {
       const industry = industrySelect.value;
@@ -447,8 +484,8 @@
               <a href="${escapeHtml(url)}">${escapeHtml(company.name)}</a>
               <small>${escapeHtml((company.aliases || []).slice(0, 4).join(" / "))}</small>
             </td>
-            <td data-label="行业">${escapeHtml(tagText(company.industry_tags))}</td>
-            <td data-label="地区">${escapeHtml(tagText(company.region_tags))}</td>
+            <td data-label="行业 / Industry">${escapeHtml(tagText(company.industry_tags, industryLabels))}</td>
+            <td data-label="地区 / Region">${escapeHtml(tagText(company.region_tags, regionLabels))}</td>
             <td data-label="证据等级">${escapeHtml(company.evidence || "C")}</td>
             <td data-label="更新时间">${escapeHtml(company.last_reviewed || "待复核")}</td>
             <td data-label="领袖气质">${Number(company.scores.leadership || 0).toFixed(1)}</td>
