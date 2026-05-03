@@ -46,6 +46,7 @@
   const average = (scores) => scoreKeys.reduce((sum, [key]) => sum + Number(scores[key] || 0), 0) / scoreKeys.length;
   const averageDarwin = (scores) => darwinKeys.reduce((sum, [key]) => sum + Number(scores[key] || 0), 0) / darwinKeys.length;
   const tagText = (tags) => (tags && tags.length ? tags.join("、") : "未标注");
+  const companyNames = (company) => [company.name].concat(company.aliases || []);
 
   function isSiteArticle(url) {
     return /^\//.test(url || "") || /^https?:\/\/facereader\.witbacon\.com\//.test(url || "");
@@ -109,16 +110,67 @@
     return "需要复核参数";
   }
 
-  function findCompany(query) {
+  function orderedCharScore(haystack, needle) {
+    let index = -1;
+    let gaps = 0;
+    for (const char of needle) {
+      const next = haystack.indexOf(char, index + 1);
+      if (next === -1) return 0;
+      gaps += next - index - 1;
+      index = next;
+    }
+    return Math.max(0, 66 - gaps * 3);
+  }
+
+  function levenshtein(a, b) {
+    if (!a || !b) return Math.max(a.length, b.length);
+    const row = Array.from({ length: b.length + 1 }, (_, index) => index);
+    for (let i = 1; i <= a.length; i += 1) {
+      let prev = row[0];
+      row[0] = i;
+      for (let j = 1; j <= b.length; j += 1) {
+        const temp = row[j];
+        row[j] = a[i - 1] === b[j - 1]
+          ? prev
+          : Math.min(prev + 1, row[j] + 1, row[j - 1] + 1);
+        prev = temp;
+      }
+    }
+    return row[b.length];
+  }
+
+  function matchScore(name, query) {
+    const target = normalize(name);
     const needle = normalize(query);
-    if (!needle) return null;
-    return companies.find((company) => {
-      const names = [company.name].concat(company.aliases || []);
-      return names.some((name) => normalize(name) === needle);
-    }) || companies.find((company) => {
-      const names = [company.name].concat(company.aliases || []);
-      return names.some((name) => normalize(name).includes(needle) || needle.includes(normalize(name)));
-    });
+    if (!target || !needle) return 0;
+    if (target === needle) return 100;
+    if (/^[a-z0-9]+$/.test(needle) && needle.length < 3) return 0;
+    if (target.includes(needle)) return Math.max(78, 96 - (target.length - needle.length));
+    if (needle.includes(target)) return Math.max(72, 88 - (needle.length - target.length));
+
+    const ordered = orderedCharScore(target, needle);
+    const maxLength = Math.max(target.length, needle.length);
+    const distance = maxLength <= 24 ? levenshtein(target, needle) : maxLength;
+    const edit = Math.max(0, Math.round(78 * (1 - distance / maxLength)));
+    return Math.max(ordered, edit);
+  }
+
+  function rankedCompanies(query) {
+    const needle = normalize(query);
+    if (!needle) return [];
+    return companies
+      .map((company) => ({
+        company,
+        score: Math.max(...companyNames(company).map((name) => matchScore(name, needle)))
+      }))
+      .filter((item) => item.score >= 52)
+      .sort((a, b) => b.score - a.score || average(b.company.scores) - average(a.company.scores));
+  }
+
+  function findCompany(query) {
+    const matches = rankedCompanies(query);
+    const best = matches[0];
+    return best && best.score >= 72 ? best.company : null;
   }
 
   function renderBars(company) {
@@ -285,14 +337,29 @@
     }
   }
 
+  function renderSuggestions(query) {
+    const suggestions = rankedCompanies(query)
+      .slice(0, 6)
+      .map(({ company }) => `<button type="button" data-company="${escapeHtml(company.name)}">${escapeHtml(company.name)}</button>`)
+      .join("");
+    if (!suggestions) return "";
+    return `
+      <div class="leaders-suggestions" aria-label="相近企业">
+        <p>你可能想查：</p>
+        <div>${suggestions}</div>
+      </div>
+    `;
+  }
+
   function renderEmpty(query) {
     $("#leaders-result").innerHTML = `
       <article class="leaders-result leaders-result--empty" aria-live="polite">
         <h2>暂未收录：${escapeHtml(query || "该企业")}</h2>
         <p>免费查询库目前覆盖站内评分企业和新增研究企业。你可以尝试输入：寒武纪、商汤科技、摩尔线程、科大讯飞、DeepSeek、宇树科技。</p>
-        <p>专业版可按行业、阶段和证据材料生成新企业评分卡，并输出内部决策版报告。</p>
+        ${renderSuggestions(query)}
       </article>
     `;
+    bindCompanyButtons("#leaders-result");
   }
 
   function runSearch(event) {
@@ -317,10 +384,17 @@
     const examples = hotCompanies
       .concat(fallbackCompanies)
       .slice(0, 10)
-      .map((company) => `<button type="button" data-company="${company.name}">${company.name}</button>`)
+      .map((company) => `<button type="button" data-company="${escapeHtml(company.name)}">${escapeHtml(company.name)}</button>`)
       .join("");
     $("#leaders-examples").innerHTML = examples;
-    $("#leaders-examples").addEventListener("click", (event) => {
+    bindCompanyButtons("#leaders-examples");
+  }
+
+  function bindCompanyButtons(scopeSelector) {
+    const scope = $(scopeSelector);
+    if (!scope || scope.dataset.companyButtonsBound) return;
+    scope.dataset.companyButtonsBound = "true";
+    scope.addEventListener("click", (event) => {
       const target = event.target.closest("button[data-company]");
       if (!target) return;
       $("#leaders-company-input").value = target.dataset.company;
@@ -368,21 +442,23 @@
         const url = company.url || "#";
         return `
           <tr>
-            <td>${index + 1}</td>
-            <td>
+            <td data-label="序号">${index + 1}</td>
+            <td data-label="企业名称">
               <a href="${escapeHtml(url)}">${escapeHtml(company.name)}</a>
               <small>${escapeHtml((company.aliases || []).slice(0, 4).join(" / "))}</small>
             </td>
-            <td>${escapeHtml(tagText(company.industry_tags))}</td>
-            <td>${escapeHtml(tagText(company.region_tags))}</td>
-            <td>${Number(company.scores.leadership || 0).toFixed(1)}</td>
-            <td>${Number(company.scores.decision || 0).toFixed(1)}</td>
-            <td>${Number(company.scores.execution || 0).toFixed(1)}</td>
-            <td>${Number(company.scores.bench || 0).toFixed(1)}</td>
-            <td>${Number(company.scores.alignment || 0).toFixed(1)}</td>
-            <td>${Number(company.scores.coverage || 0).toFixed(1)}</td>
-            <td>${Number(company.scores.governance || 0).toFixed(1)}</td>
-            <td><strong>${score.toFixed(1)}</strong></td>
+            <td data-label="行业">${escapeHtml(tagText(company.industry_tags))}</td>
+            <td data-label="地区">${escapeHtml(tagText(company.region_tags))}</td>
+            <td data-label="证据等级">${escapeHtml(company.evidence || "C")}</td>
+            <td data-label="更新时间">${escapeHtml(company.last_reviewed || "待复核")}</td>
+            <td data-label="领袖气质">${Number(company.scores.leadership || 0).toFixed(1)}</td>
+            <td data-label="决策力">${Number(company.scores.decision || 0).toFixed(1)}</td>
+            <td data-label="实干性">${Number(company.scores.execution || 0).toFixed(1)}</td>
+            <td data-label="补位力">${Number(company.scores.bench || 0).toFixed(1)}</td>
+            <td data-label="文化契合度">${Number(company.scores.alignment || 0).toFixed(1)}</td>
+            <td data-label="岗位完整性">${Number(company.scores.coverage || 0).toFixed(1)}</td>
+            <td data-label="治理结构">${Number(company.scores.governance || 0).toFixed(1)}</td>
+            <td data-label="平均分"><strong>${score.toFixed(1)}</strong></td>
           </tr>
         `;
       }).join("");
