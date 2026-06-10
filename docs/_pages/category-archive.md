@@ -3,6 +3,8 @@ title: "Posts by Category"
 layout: categories
 permalink: /categories/
 author_profile: true
+classes:
+  - fr-wide-sidebar
 sitemap: false
 search: false
 robots: noindex

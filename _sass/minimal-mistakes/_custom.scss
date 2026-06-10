@@ -2949,3 +2949,121 @@ body { line-height: 1.7; }
 .page__content .rouge-code {
   padding-left: .8rem;
 }
+
+/* =========================================================
+   FaceReader width fixes
+   Target:
+   - posts / categories / tags: keep left author sidebar, expand right content
+   - most-popular / leaders-scorecard: full width aligned with masthead
+   ========================================================= */
+
+:root {
+  --fr-sidebar-width: 220px;
+  --fr-sidebar-gap: 56px;
+}
+
+/* ---------- posts / categories / tags ---------- */
+
+@media (min-width: 64em) {
+  body.fr-wide-sidebar #main {
+    display: grid !important;
+    grid-template-columns: var(--fr-sidebar-width) minmax(0, 1fr);
+    column-gap: var(--fr-sidebar-gap);
+    align-items: start;
+  }
+
+  body.fr-wide-sidebar #main::before,
+  body.fr-wide-sidebar #main::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  body.fr-wide-sidebar #main > .sidebar {
+    grid-column: 1;
+    float: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  body.fr-wide-sidebar #main > .sidebar.sticky {
+    align-self: start;
+  }
+
+  body.fr-wide-sidebar #main > .archive,
+  body.fr-wide-sidebar #main > .page {
+    grid-column: 2;
+    float: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  body.fr-wide-sidebar #main > .archive *,
+  body.fr-wide-sidebar #main > .page .page__content {
+    max-width: none;
+  }
+}
+
+/* ---------- most-popular / leaders-scorecard ---------- */
+
+@media (min-width: 64em) {
+  body.fr-wide-full #main > .archive,
+  body.fr-wide-full #main > .page {
+    float: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  body.fr-wide-full #main > .page .page__inner-wrap,
+  body.fr-wide-full #main > .page .page__content,
+  body.fr-wide-full #main > .archive {
+    float: none !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  body.fr-wide-full #main .grid__wrapper,
+  body.fr-wide-full #main .archive__entries,
+  body.fr-wide-full #main .entries-grid,
+  body.fr-wide-full #main .popular-grid,
+  body.fr-wide-full #main .leaders-scorecard,
+  body.fr-wide-full #main .leaders-scorecard-wrap,
+  body.fr-wide-full #main .scorecard-wrap {
+    width: 100%;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* ---------- mobile safety ---------- */
+
+@media (max-width: 63.99em) {
+  body.fr-wide-sidebar #main,
+  body.fr-wide-full #main {
+    display: block;
+  }
+
+  body.fr-wide-sidebar #main > .sidebar,
+  body.fr-wide-sidebar #main > .archive,
+  body.fr-wide-sidebar #main > .page,
+  body.fr-wide-full #main > .archive,
+  body.fr-wide-full #main > .page {
+    float: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
