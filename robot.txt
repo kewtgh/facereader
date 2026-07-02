@@ -8,6 +8,47 @@ User-agent: *
 Disallow: /docs/_pages/
 Disallow: /norobots/
 
+# robots.txt for facereader.witbacon.com
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: *
+Disallow: /search
+Disallow: /tag/
+Disallow: /tags/
+Disallow: /category/
+Disallow: /categories/
+Disallow: /*?q=
+Disallow: /*?s=
+
 Sitemap: https://facereader.witbacon.com/sitemap.xml
 
 # Algolia-Crawler-Verif: 93228A2236EB8100

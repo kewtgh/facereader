@@ -89,7 +89,7 @@ algolia:
     - norobots/index.html-institution.bak
   application_id         : 6OPPKGJAVV # YOUR_APPLICATION_ID
   index_name             : facereader_prod # YOUR_INDEX_NAME
-  search_only_api_key    : a6f5fefa42805d8cef72dba95e2ece04 # YOUR_SEARCH_ONLY_API_KEY
+  search_only_api_key    : c7748ca99c306152364e45522528ff6e # YOUR_SEARCH_ONLY_API_KEY
   powered_by             : true # true (default), false
 
 # SEO Related
