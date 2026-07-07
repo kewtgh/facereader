@@ -509,6 +509,8 @@ Woke movie。
 
 比如《小美人鱼》。
 
+<figure class="fr-figure"><img src="https://kewtgh.github.io/PicSunflowers/img/2026/movie-little-mermaid-2023.jpg" alt="movie-little-mermaid-2023" /></figure>
+
 Halle Bailey出演Ariel，引发了极大的争议。
 
 她本人也公开谈过，希望这个角色能够给有色人种儿童带来代表性和激励。
@@ -556,6 +558,8 @@ Halle Bailey出演Ariel，引发了极大的争议。
 ---
 
 《永恒族》也一样。
+
+<figure class="fr-figure"><img src="https://kewtgh.github.io/PicSunflowers/img/2026/movie-the-eternals-2021.jpg" alt="movie-the-eternals-2021" /></figure>
 
 Marvel当时非常强调电影演员阵容的多元化。
 
@@ -616,6 +620,8 @@ Marvel当时非常强调电影演员阵容的多元化。
 至少在我看来，它真正触碰到了我们今天要讨论的问题。
 
 ## 《白雪公主》的问题根本不是白雪公主够不够白
+
+<figure class="fr-figure"><img src="https://kewtgh.github.io/PicSunflowers/img/2026/movie-snow-white-2025.jpg" alt="movie-snow-white-2025" /></figure>
 
 Rachel Zegler拥有哥伦比亚血统。
 
