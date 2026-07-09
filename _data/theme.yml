@@ -1,3 +1,9 @@
 # for use with in-page templates
 ---
-version: 4.28.0
+name: FaceReader
+version: 6.9.5
+upstream_theme:
+  name: Minimal Mistakes
+  version: 4.28.0
+  license: MIT
+  url: https://github.com/mmistakes/minimal-mistakes

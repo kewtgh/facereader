@@ -10,6 +10,8 @@ require "yaml"
 task :default => %i[copyright changelog js version]
 
 package_json = JSON.parse(File.read("package.json"))
+FACEREADER_VERSION = package_json["version"]
+MINIMAL_MISTAKES_VERSION = "4.28.0"
 
 def listen_ignore_paths(base, options)
   [
@@ -46,7 +48,7 @@ task :preview do
     "destination"   => base.join('test/_site').to_s,
     "force_polling" => false,
     "serving"       => true,
-    "theme"         => "minimal-mistakes-jekyll"
+    "theme"         => "facereader-jekyll-theme"
   }
 
   options = Jekyll.configuration(options)
@@ -115,8 +117,8 @@ file "docs/_docs/18-history.md" => "CHANGELOG.md" do |t|
 end
 
 COPYRIGHT_LINES = [
-  "Based on Minimal Mistakes Jekyll Theme #{package_json["version"]} by Michael Rose",
-  "FaceReader custom edition, heavily refactored for Witbacon",
+  "FaceReader #{FACEREADER_VERSION}, deeply customized for Witbacon",
+  "Based on Minimal Mistakes Jekyll Theme #{MINIMAL_MISTAKES_VERSION} by Michael Rose",
   "Copyright 2013-#{Time.now.year} Michael Rose - mademistakes.com | @mmistakes",
   "Free for personal and commercial use under the MIT license",
   "https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE",
@@ -185,7 +187,16 @@ end
 task :version => ["_data/theme.yml"]
 
 file "_data/theme.yml" => "package.json" do |t|
-  theme = { "version" => package_json["version"] }
+  theme = {
+    "name" => "FaceReader",
+    "version" => FACEREADER_VERSION,
+    "upstream_theme" => {
+      "name" => "Minimal Mistakes",
+      "version" => MINIMAL_MISTAKES_VERSION,
+      "license" => "MIT",
+      "url" => "https://github.com/mmistakes/minimal-mistakes"
+    }
+  }
   File.open(t.name, "w") do |f|
     f.puts "# for use with in-page templates"
     f.puts theme.to_yaml

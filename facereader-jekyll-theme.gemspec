@@ -5,22 +5,29 @@ require "json"
 package_json = JSON.parse(File.read("package.json"))
 
 Gem::Specification.new do |spec|
-  spec.name                    = "minimal-mistakes-jekyll"
+  spec.name                    = "facereader-jekyll-theme"
   spec.version                 = package_json["version"]
-  spec.authors                 = ["Michael Rose", "iBug"]
+  spec.authors                 = ["FaceReader", "Michael Rose", "iBug"]
 
-  spec.summary                 = %q{A flexible two-column Jekyll theme.}
-  spec.homepage                = "https://github.com/mmistakes/minimal-mistakes"
+  spec.summary                 = %q{FaceReader site theme, deeply customized from Minimal Mistakes 4.28.0.}
+  spec.homepage                = "https://facereader.witbacon.com/"
   spec.license                 = "MIT"
 
   spec.metadata["plugin_type"] = "theme"
   
-  files = `git ls-files -z`
-  files.force_encoding("UTF-8")
-
-  spec.files                   = files.split("\x0").select do |f|
-    f.match(%r{^(assets|_(data|includes|layouts|sass)/|(LICENSE|README|CHANGELOG)((\.(txt|md|markdown)|$)))}i)
-  end
+  spec.files                   = Dir.glob(
+    [
+      "assets/**/*",
+      "_data/**/*",
+      "_includes/**/*",
+      "_layouts/**/*",
+      "_sass/**/*",
+      "LICENSE",
+      "README*",
+      "CHANGELOG*"
+    ],
+    File::FNM_DOTMATCH
+  ).select { |f| File.file?(f) }
 
   spec.add_runtime_dependency "jekyll", ">= 3.7", "< 5.0"
   spec.add_runtime_dependency "jekyll-paginate", "~> 1.1"
