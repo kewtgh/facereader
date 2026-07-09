@@ -12,8 +12,6 @@ main:
     url: /most_popular/
   - title: "LEADERS评级"
     url: /leaders-scorecard/
-  - title: "网站说明"
-    url: /site-guide/
   # - title: "Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
