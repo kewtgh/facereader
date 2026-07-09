@@ -69,6 +69,7 @@
     "英国": "United Kingdom",
     "中国大陆": "Mainland China"
   };
+  const compareColors = ["#205e75", "#b86b1b", "#5f6f52"];
   let companies = [];
 
   const $ = (selector) => document.querySelector(selector);
@@ -527,28 +528,54 @@
     applyFilters();
   }
 
-  function fillCompareSelects() {
+  function compareInputSelectors() {
+    return ["#leaders-compare-a", "#leaders-compare-b", "#leaders-compare-c"];
+  }
+
+  function compareInputs() {
+    return compareInputSelectors()
+      .map((selector) => $(selector))
+      .filter(Boolean);
+  }
+
+  function compareCompanyFromValue(value) {
+    return byName(value) || findCompany(value);
+  }
+
+  function fillCompareInputs() {
     const compareRoot = $("#leaders-compare");
     if (!compareRoot) return;
 
-    const selects = ["#leaders-compare-a", "#leaders-compare-b", "#leaders-compare-c"]
-      .map((selector) => $(selector))
-      .filter(Boolean);
+    const inputs = compareInputs();
+    const datalist = $("#leaders-compare-options");
     const sorted = [...companies].sort((a, b) => average(b.scores) - average(a.scores) || a.name.localeCompare(b.name, "zh-Hans-CN"));
-    const options = [`<option value="">选择企业</option>`]
-      .concat(sorted.map((company) => `<option value="${escapeHtml(company.name)}">${escapeHtml(company.name)}</option>`))
-      .join("");
+    if (datalist) {
+      datalist.innerHTML = sorted.flatMap((company) => {
+        const alias = (company.aliases || []).slice(0, 3).join(" / ");
+        const label = [company.industry, alias].filter(Boolean).join(" · ");
+        const options = [`<option value="${escapeHtml(company.name)}"${label ? ` label="${escapeHtml(label)}"` : ""}></option>`];
+        for (const name of (company.aliases || []).slice(0, 6)) {
+          options.push(`<option value="${escapeHtml(name)}" label="${escapeHtml(company.name)}"></option>`);
+        }
+        return options;
+      }).join("");
+    }
 
-    selects.forEach((select, index) => {
-      select.innerHTML = options;
-      select.value = sorted[index]?.name || "";
-      select.addEventListener("change", renderCompare);
+    inputs.forEach((input, index) => {
+      input.value = sorted[index]?.name || "";
+      input.addEventListener("input", renderCompare);
+      input.addEventListener("change", renderCompare);
+      input.addEventListener("blur", () => {
+        const company = compareCompanyFromValue(input.value);
+        if (company) input.value = company.name;
+        renderCompare();
+      });
     });
 
     const clearButton = $("#leaders-compare-clear");
     if (clearButton) {
       clearButton.addEventListener("click", () => {
-        selects.forEach((select) => { select.value = ""; });
+        inputs.forEach((input) => { input.value = ""; });
         renderCompare();
       });
     }
@@ -559,18 +586,16 @@
   function addCompareCompany(name) {
     const compareRoot = $("#leaders-compare");
     if (!compareRoot || !name) return;
-    const selects = ["#leaders-compare-a", "#leaders-compare-b", "#leaders-compare-c"]
-      .map((selector) => $(selector))
-      .filter(Boolean);
-    if (!selects.length) return;
+    const inputs = compareInputs();
+    if (!inputs.length) return;
 
-    const existing = selects.find((select) => select.value === name);
+    const existing = inputs.find((input) => compareCompanyFromValue(input.value)?.name === name);
     if (existing) {
       compareRoot.scrollIntoView({ behavior: "smooth", block: "start" });
       return;
     }
 
-    const target = selects.find((select) => !select.value) || selects[0];
+    const target = inputs.find((input) => !input.value) || inputs[0];
     target.value = name;
     renderCompare();
     compareRoot.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -603,14 +628,73 @@
     `).join("");
   }
 
+  function radarPoint(index, value, center, radius) {
+    const angle = -Math.PI / 2 + (Math.PI * 2 * index / scoreKeys.length);
+    const distance = radius * Math.max(0, Math.min(10, Number(value) || 0)) / 10;
+    return {
+      x: center + Math.cos(angle) * distance,
+      y: center + Math.sin(angle) * distance
+    };
+  }
+
+  function radarGridPoint(index, ratio, center, radius) {
+    const angle = -Math.PI / 2 + (Math.PI * 2 * index / scoreKeys.length);
+    return {
+      x: center + Math.cos(angle) * radius * ratio,
+      y: center + Math.sin(angle) * radius * ratio
+    };
+  }
+
+  function renderCompareRadar(selected) {
+    const center = 180;
+    const radius = 118;
+    const rings = [0.25, 0.5, 0.75, 1]
+      .map((ratio) => {
+        const points = scoreKeys.map((_, index) => radarGridPoint(index, ratio, center, radius));
+        return `<polygon points="${points.map((point) => `${point.x.toFixed(1)},${point.y.toFixed(1)}`).join(" ")}"></polygon>`;
+      })
+      .join("");
+    const axes = scoreKeys.map(([, label], index) => {
+      const point = radarGridPoint(index, 1, center, radius);
+      const text = radarGridPoint(index, 1.17, center, radius);
+      return `
+        <line x1="${center}" y1="${center}" x2="${point.x.toFixed(1)}" y2="${point.y.toFixed(1)}"></line>
+        <text x="${text.x.toFixed(1)}" y="${text.y.toFixed(1)}">${escapeHtml(label)}</text>
+      `;
+    }).join("");
+    const shapes = selected.map((company, index) => {
+      const color = compareColors[index % compareColors.length];
+      const points = scoreKeys
+        .map(([key], scoreIndex) => radarPoint(scoreIndex, company.scores[key], center, radius))
+        .map((point) => `${point.x.toFixed(1)},${point.y.toFixed(1)}`)
+        .join(" ");
+      return `<polygon class="leaders-compare-radar__shape" points="${points}" style="--series-color: ${color};"></polygon>`;
+    }).join("");
+    const legend = selected.map((company, index) => `
+      <span><i style="background:${compareColors[index % compareColors.length]}"></i>${escapeHtml(company.name)}</span>
+    `).join("");
+
+    return `
+      <div class="leaders-compare-radar">
+        <div class="leaders-compare-radar__chart" aria-label="LEADERS 七项评分雷达图">
+          <svg viewBox="0 0 360 360" role="img">
+            <g class="leaders-compare-radar__grid">${rings}${axes}</g>
+            <g>${shapes}</g>
+          </svg>
+        </div>
+        <div class="leaders-compare-radar__legend">${legend}</div>
+      </div>
+    `;
+  }
+
   function renderCompare() {
     const output = $("#leaders-compare-output");
     if (!output) return;
 
-    const selected = ["#leaders-compare-a", "#leaders-compare-b", "#leaders-compare-c"]
-      .map((selector) => $(selector)?.value)
+    const selected = compareInputs()
+      .map((input) => input.value)
       .filter(Boolean)
-      .map(byName)
+      .map(compareCompanyFromValue)
       .filter(Boolean)
       .filter((company, index, list) => list.findIndex((item) => item.name === company.name) === index);
     const mode = $("#leaders-stage")?.value || "growth";
@@ -621,6 +705,7 @@
     }
 
     output.innerHTML = `
+      ${renderCompareRadar(selected)}
       <div class="leaders-compare__cards">
         ${selected.map((company) => {
           const adjusted = evidenceAdjustedScore(company, mode);
@@ -664,7 +749,7 @@
       renderExamples();
       renderResult(companies[0], "growth");
       renderLeadersTable();
-      fillCompareSelects();
+      fillCompareInputs();
       $("#leaders-search-form").addEventListener("submit", runSearch);
       $("#leaders-stage").addEventListener("change", () => {
         const company = findCompany($("#leaders-company-input").value) || companies[0];

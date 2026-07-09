@@ -5,6 +5,8 @@ permalink: /leaders-scorecard/
 description: 使用LEADERS企业管理评分卡查询企业管理能力画像、证据等级、风险判断与后续验证点。
 classes:
   - fr-wide-full
+  - data-page
+  - score-table
 header:
   teaser: /assets/img/facereader-leaders-hero.webp
   overlay_image: /assets/img/facereader-leaders-hero.webp
@@ -86,16 +88,17 @@ sitemap: true
   <div class="leaders-compare__selectors" aria-label="企业对比选择">
     <label>
       <span>企业 A</span>
-      <select id="leaders-compare-a"></select>
+      <input id="leaders-compare-a" class="leaders-compare__input" type="search" list="leaders-compare-options" placeholder="输入公司名或别名">
     </label>
     <label>
       <span>企业 B</span>
-      <select id="leaders-compare-b"></select>
+      <input id="leaders-compare-b" class="leaders-compare__input" type="search" list="leaders-compare-options" placeholder="例如：NVIDIA">
     </label>
     <label>
       <span>企业 C</span>
-      <select id="leaders-compare-c"></select>
+      <input id="leaders-compare-c" class="leaders-compare__input" type="search" list="leaders-compare-options" placeholder="可选第三家公司">
     </label>
+    <datalist id="leaders-compare-options"></datalist>
     <button class="btn" id="leaders-compare-clear" type="button">清空</button>
   </div>
   <div id="leaders-compare-output" class="leaders-compare__output"></div>
