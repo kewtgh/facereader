@@ -2544,9 +2544,26 @@ body { line-height: 1.7; }
   margin-bottom: 2.2rem;
 }
 
+.home-section--picks,
+.home-section--posts {
+  margin-top: 3.2rem;
+}
+
+.home-section--picks .home-section__header,
+.home-section--posts .home-section__header {
+  margin-bottom: 1.15rem;
+}
+
 /* 更“稳”，避免 margin 折叠，可选加 padding */
 .home-section--about-cta {
   padding-top: 0.2rem;
+}
+
+@include breakpoint(max-width $small - 1px) {
+  .home-section--picks,
+  .home-section--posts {
+    margin-top: 2.35rem;
+  }
 }
 
 /* 段落首行缩进 */
