@@ -23,6 +23,7 @@
   },
   "type": "module",
   "scripts": {
+    "build": "npm run site:build",
     "leaders:validate": "node assets/scripts/validate-leaders-data.mjs",
     "leaders:audit": "node assets/scripts/audit-leaders-score-rubric.mjs",
     "actions:lint": "node assets/scripts/validate-actions-workflows.mjs",
