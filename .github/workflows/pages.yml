@@ -23,6 +23,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
+          bundler: "4.0.3"
           bundler-cache: true
 
       - name: Setup Node
@@ -40,6 +41,7 @@ jobs:
 
       - name: Build site
         env:
+          BUNDLE_FROZEN: "true"
           JEKYLL_ENV: production
         run: npm run site:build
 
