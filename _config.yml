@@ -75,8 +75,6 @@ algolia:
   files_to_exclude:
     - index.html
     - index.md
-    - index.html.bak
-    - norobots/index.html.bak
     - "docs/_pages/*.*"
     - docs/_drafts/*.md
     - _documents/*.md
@@ -86,7 +84,6 @@ algolia:
     - "robots.txt"
     - "feed.xml"
     - posts/*
-    - norobots/index.html-institution.bak
   application_id         : 6OPPKGJAVV # YOUR_APPLICATION_ID
   index_name             : facereader_prod # YOUR_INDEX_NAME
   search_only_api_key    : c7748ca99c306152364e45522528ff6e # YOUR_SEARCH_ONLY_API_KEY
@@ -204,7 +201,6 @@ exclude:
   - Rakefile
   - README
   - tmp
-  - category-tag.zip.bak
   - _config.yml.b
   - docs/_drafts
   - docs/_pages/archive-layout-with-content.md

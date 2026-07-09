@@ -1,23 +1,23 @@
 {
-  "name": "minimal-mistakes",
+  "name": "facereader",
   "private": true,
-  "version": "4.28.0",
-  "description": "FaceReader custom site based on Minimal Mistakes 4.28.0, heavily refactored for Witbacon.",
+  "version": "1.0.0",
+  "description": "FaceReader production site for enterprise observation and leadership analysis.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mmistakes/minimal-mistakes.git"
+    "url": "https://github.com/kewtgh/facereader.git"
   },
   "keywords": [
     "jekyll",
-    "theme",
-    "minimal"
+    "facereader",
+    "enterprise-analysis"
   ],
-  "author": "Michael Rose",
+  "author": "FaceReader",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mmistakes/minimal-mistakes/issues"
+    "url": "https://github.com/kewtgh/facereader/issues"
   },
-  "homepage": "https://mmistakes.github.io/minimal-mistakes/",
+  "homepage": "https://facereader.witbacon.com/",
   "engines": {
     "node": ">= 18"
   },
@@ -25,6 +25,7 @@
   "scripts": {
     "leaders:validate": "node assets/scripts/validate-leaders-data.mjs",
     "leaders:audit": "node assets/scripts/audit-leaders-score-rubric.mjs",
+    "actions:lint": "node assets/scripts/validate-actions-workflows.mjs",
     "site:build": "bundle exec ruby -r./_plugins/liquid_taint_compat.rb -S jekyll build",
     "site:links": "node assets/scripts/check-internal-links.mjs",
     "site:check": "npm run leaders:validate && npm run leaders:audit && npm run site:build && npm run site:links",
