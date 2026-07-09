@@ -611,21 +611,42 @@
       ["更新时间", (company) => company.last_reviewed || "待复核"]
     ];
 
-    return rows.map(([label, getter]) => `
-      <tr>
-        <th>${escapeHtml(label)}</th>
-        ${selected.map((company) => `<td>${escapeHtml(getter(company))}</td>`).join("")}
-      </tr>
-    `).join("");
+    return rows.map(([label, getter], rowIndex) => {
+      const values = selected.map(getter);
+      const numericValues = rowIndex < 4 ? values.map((value) => Number.parseFloat(value)) : [];
+      const finiteValues = numericValues.filter(Number.isFinite);
+      const best = finiteValues.length ? Math.max(...finiteValues) : null;
+
+      return `
+        <tr>
+          <th>${escapeHtml(label)}</th>
+          ${selected.map((company, index) => {
+            const value = values[index];
+            const numericValue = numericValues[index];
+            const bestClass = best !== null && Number.isFinite(numericValue) && numericValue === best ? ` class="is-best"` : "";
+            return `<td${bestClass}>${escapeHtml(value)}</td>`;
+          }).join("")}
+        </tr>
+      `;
+    }).join("");
   }
 
   function compareScoreRows(selected) {
-    return scoreKeys.map(([key, label]) => `
-      <tr>
-        <th>${escapeHtml(label)}</th>
-        ${selected.map((company) => `<td>${Number(company.scores[key] || 0).toFixed(1)}</td>`).join("")}
-      </tr>
-    `).join("");
+    return scoreKeys.map(([key, label]) => {
+      const values = selected.map((company) => Number(company.scores[key] || 0));
+      const best = Math.max(...values);
+
+      return `
+        <tr>
+          <th>${escapeHtml(label)}</th>
+          ${selected.map((company, index) => {
+            const value = values[index];
+            const bestClass = value === best ? ` class="is-best"` : "";
+            return `<td${bestClass}>${value.toFixed(1)}</td>`;
+          }).join("")}
+        </tr>
+      `;
+    }).join("");
   }
 
   function radarPoint(index, value, center, radius) {

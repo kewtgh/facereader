@@ -919,6 +919,15 @@ body { line-height: 1.7; }
   margin: 0 auto 1.6rem;
 }
 
+.data-page .leaders-intro,
+.data-page .leaders-tool,
+.data-page .leaders-table,
+.data-page .leaders-compare,
+.data-page .leaders-model-details {
+  width: 100%;
+  max-width: none;
+}
+
 .leaders-compare {
   width: 100%;
   max-width: 1120px;
@@ -1115,7 +1124,14 @@ body { line-height: 1.7; }
 }
 
 .leaders-compare__table tbody td {
+  color: mix($text-color, $muted-text-color, 84%);
   font-variant-numeric: tabular-nums;
+}
+
+.leaders-compare__table tbody td.is-best {
+  color: #2356c4;
+  font-family: $sans-serif;
+  font-weight: 800;
 }
 
 .leaders-compare__empty {
@@ -1244,11 +1260,6 @@ body { line-height: 1.7; }
   border-radius: 0.55rem;
   background: rgba(255, 255, 255, 0.86);
   -webkit-overflow-scrolling: touch;
-}
-
-.fr-wide-full .leaders-table {
-  width: 100%;
-  max-width: none;
 }
 
 .leaders-table table.table-wrap {
@@ -1845,6 +1856,42 @@ body { line-height: 1.7; }
 .page__content table:not(.rouge-table) td:last-child {
   font-weight: 800 !important;
   color: #2758c8 !important;
+}
+
+.page__content table.leaders-compare__table {
+  width: 100%;
+  min-width: 720px;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.page__content table.leaders-compare__table thead th {
+  background: rgba(32, 94, 117, 0.08) !important;
+  color: mix($text-color, $primary-color, 76%) !important;
+  text-align: left !important;
+}
+
+.page__content table.leaders-compare__table th,
+.page__content table.leaders-compare__table td {
+  padding: 0.68rem 0.75rem !important;
+  border-bottom: 1px solid rgba(34, 48, 66, 0.08) !important;
+}
+
+.page__content table.leaders-compare__table tbody td,
+.page__content table.leaders-compare__table tbody td:last-child {
+  color: mix($text-color, $muted-text-color, 84%) !important;
+  font-weight: 400 !important;
+  text-align: left !important;
+}
+
+.page__content table.leaders-compare__table tbody td.is-best,
+.page__content table.leaders-compare__table tbody td.is-best:last-child {
+  color: #2356c4 !important;
+  font-family: $sans-serif;
+  font-weight: 800 !important;
 }
 
 /* =====================================================
