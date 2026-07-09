@@ -27,7 +27,7 @@
     "leaders:validate": "node assets/scripts/validate-leaders-data.mjs",
     "leaders:audit": "node assets/scripts/audit-leaders-score-rubric.mjs",
     "actions:lint": "node assets/scripts/validate-actions-workflows.mjs",
-    "site:build": "bundle exec ruby -r./_plugins/liquid_taint_compat.rb -S jekyll build",
+    "site:build": "bundle exec ruby -EUTF-8 -r./_plugins/liquid_taint_compat.rb -S jekyll build",
     "site:links": "node assets/scripts/check-internal-links.mjs",
     "site:check": "npm run leaders:validate && npm run leaders:audit && npm run site:build && npm run site:links",
     "algolia:push": "node assets/scripts/push-algolia.mjs _site/algolia-records.json"
