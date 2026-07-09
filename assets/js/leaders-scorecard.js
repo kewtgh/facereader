@@ -743,7 +743,6 @@
         }).join("")}
       </div>
       <div class="leaders-compare__detail">
-        ${renderCompareRadar(selected)}
         <div class="leaders-compare__table-wrap">
           <table class="leaders-compare__table">
             <thead>
@@ -758,6 +757,7 @@
             </tbody>
           </table>
         </div>
+        ${renderCompareRadar(selected)}
       </div>
     `;
   }

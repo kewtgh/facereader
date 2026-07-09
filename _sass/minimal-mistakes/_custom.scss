@@ -978,7 +978,9 @@ body { line-height: 1.7; }
   grid-template-columns: 1fr;
   gap: 0.85rem;
   align-items: start;
+  justify-items: stretch;
   min-width: 0;
+  width: 100%;
   margin: 0;
   padding: 1rem;
   border: 1px solid rgba(34, 48, 66, 0.08);
@@ -989,7 +991,8 @@ body { line-height: 1.7; }
 }
 
 .leaders-compare-radar__chart {
-  width: min(100%, 420px);
+  width: 100%;
+  max-width: 640px;
   aspect-ratio: 1;
   margin: 0 auto;
 }
@@ -1062,10 +1065,16 @@ body { line-height: 1.7; }
 
 .leaders-compare__detail {
   display: grid;
-  grid-template-columns: minmax(320px, 0.95fr) minmax(540px, 1.45fr);
+  grid-template-columns: minmax(640px, max-content) minmax(360px, 1fr);
   gap: 1rem;
   align-items: stretch;
   width: 100%;
+}
+
+@media (max-width: 1180px) {
+  .leaders-compare__detail {
+    grid-template-columns: 1fr;
+  }
 }
 
 .leaders-compare__cards article {
