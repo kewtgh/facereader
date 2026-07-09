@@ -726,7 +726,6 @@
     }
 
     output.innerHTML = `
-      ${renderCompareRadar(selected)}
       <div class="leaders-compare__cards">
         ${selected.map((company) => {
           const adjusted = evidenceAdjustedScore(company, mode);
@@ -743,19 +742,22 @@
           `;
         }).join("")}
       </div>
-      <div class="leaders-compare__table-wrap">
-        <table class="leaders-compare__table">
-          <thead>
-            <tr>
-              <th>指标</th>
-              ${selected.map((company) => `<th>${escapeHtml(company.name)}</th>`).join("")}
-            </tr>
-          </thead>
-          <tbody>
-            ${compareMetricRows(selected, mode)}
-            ${compareScoreRows(selected)}
-          </tbody>
-        </table>
+      <div class="leaders-compare__detail">
+        ${renderCompareRadar(selected)}
+        <div class="leaders-compare__table-wrap">
+          <table class="leaders-compare__table">
+            <thead>
+              <tr>
+                <th>指标</th>
+                ${selected.map((company) => `<th>${escapeHtml(company.name)}</th>`).join("")}
+              </tr>
+            </thead>
+            <tbody>
+              ${compareMetricRows(selected, mode)}
+              ${compareScoreRows(selected)}
+            </tbody>
+          </table>
+        </div>
       </div>
     `;
   }

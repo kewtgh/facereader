@@ -975,10 +975,11 @@ body { line-height: 1.7; }
 
 .leaders-compare-radar {
   display: grid;
-  grid-template-columns: minmax(300px, 420px) minmax(0, 1fr);
-  gap: 1rem;
-  align-items: center;
-  margin: 0.6rem 0 1rem;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  align-items: start;
+  min-width: 0;
+  margin: 0;
   padding: 1rem;
   border: 1px solid rgba(34, 48, 66, 0.08);
   border-radius: 0.6rem;
@@ -988,7 +989,7 @@ body { line-height: 1.7; }
 }
 
 .leaders-compare-radar__chart {
-  width: min(100%, 380px);
+  width: min(100%, 420px);
   aspect-ratio: 1;
   margin: 0 auto;
 }
@@ -1029,9 +1030,11 @@ body { line-height: 1.7; }
 }
 
 .leaders-compare-radar__legend {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.55rem;
-  align-content: center;
+  align-content: start;
+  justify-content: center;
 }
 
 .leaders-compare-radar__legend span {
@@ -1052,9 +1055,17 @@ body { line-height: 1.7; }
 
 .leaders-compare__cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 0.75rem;
   margin-bottom: 1rem;
+}
+
+.leaders-compare__detail {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(540px, 1.45fr);
+  gap: 1rem;
+  align-items: stretch;
+  width: 100%;
 }
 
 .leaders-compare__cards article {
@@ -1096,6 +1107,7 @@ body { line-height: 1.7; }
 }
 
 .leaders-compare__table-wrap {
+  min-width: 0;
   overflow-x: auto;
   border: 1px solid rgba(34, 48, 66, 0.08);
   border-radius: 0.55rem;
@@ -1104,7 +1116,7 @@ body { line-height: 1.7; }
 
 .leaders-compare__table {
   width: 100%;
-  min-width: 720px;
+  min-width: 640px;
   margin: 0;
   border-collapse: collapse;
   font-size: 0.9rem;
@@ -1462,6 +1474,7 @@ body { line-height: 1.7; }
   .leaders-method__notes,
   .leaders-compare__selectors,
   .leaders-compare__cards,
+  .leaders-compare__detail,
   .leaders-compare-radar,
   .leaders-feedback__grid,
   .leaders-benchmark__summary,
@@ -1860,7 +1873,7 @@ body { line-height: 1.7; }
 
 .page__content table.leaders-compare__table {
   width: 100%;
-  min-width: 720px;
+  min-width: 640px;
   margin: 0 !important;
   border: 0 !important;
   border-radius: 0 !important;
