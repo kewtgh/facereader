@@ -24,6 +24,22 @@ function setActiveTag(tag) {
   if (activeBtn) activeBtn.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
+function updateCurrentTagMeta(tag) {
+  const countEl = document.getElementById("current-tag-count");
+  const descEl = document.getElementById("current-tag-description");
+  const totalPosts = document.querySelectorAll(".tag-post-item").length;
+
+  if (!tag) {
+    if (countEl) countEl.innerText = `${totalPosts} posts`;
+    if (descEl) descEl.innerText = "选择标签后，会显示该标签说明和对应文章列表。";
+    return;
+  }
+
+  const activeBtn = document.querySelector(`.tag-filter-btn[data-tag="${CSS.escape(tag)}"]`);
+  if (countEl) countEl.innerText = `${activeBtn?.dataset.count || 0} posts`;
+  if (descEl) descEl.innerText = activeBtn?.dataset.description || "该标签暂无单独说明。";
+}
+
 function applyFilter(tag, { push = false } = {}) {
   const posts = document.querySelectorAll(".tag-post-item");
 
@@ -37,6 +53,7 @@ function applyFilter(tag, { push = false } = {}) {
       b.classList.remove("is-active");
       b.setAttribute("aria-pressed", "false");
     });
+    updateCurrentTagMeta("");
 
     if (push) history.pushState(null, "", location.pathname);
     else history.replaceState(null, "", location.pathname);
@@ -54,6 +71,7 @@ function applyFilter(tag, { push = false } = {}) {
   if (currentTagEl) currentTagEl.innerText = tag;
 
   setActiveTag(tag);
+  updateCurrentTagMeta(tag);
 
   const url = `?tag=${encodeURIComponent(tag)}`;
   if (push) history.pushState(null, "", url);

@@ -77,6 +77,81 @@ sitemap: true
   <div id="leaders-result"></div>
 </section>
 
+<section class="leaders-compare" id="leaders-compare">
+  <div class="leaders-section-head">
+    <p class="leaders-kicker">Compare</p>
+    <h2>企业评分对比</h2>
+    <p>选择二到三家公司，横向比较 LEADERS 七项分数、证据等级、阶段加权分和 Darwin 复核偏差。</p>
+  </div>
+  <div class="leaders-compare__selectors" aria-label="企业对比选择">
+    <label>
+      <span>企业 A</span>
+      <select id="leaders-compare-a"></select>
+    </label>
+    <label>
+      <span>企业 B</span>
+      <select id="leaders-compare-b"></select>
+    </label>
+    <label>
+      <span>企业 C</span>
+      <select id="leaders-compare-c"></select>
+    </label>
+    <button class="btn" id="leaders-compare-clear" type="button">清空</button>
+  </div>
+  <div id="leaders-compare-output" class="leaders-compare__output"></div>
+</section>
+
+<section class="leaders-table" id="leaders-companies-table">
+  <div class="leaders-section-head">
+    <p class="leaders-kicker">Filter</p>
+    <h2>按行业与地区筛选</h2>
+  </div>
+  <div class="leaders-table__toolbar" aria-label="企业评分筛选">
+    <div class="leaders-table__filters">
+      <label>
+        <span>行业 / Industry</span>
+        <select id="leaders-industry-filter" aria-label="按行业筛选"></select>
+      </label>
+      <label>
+        <span>地区 / Region</span>
+        <select id="leaders-region-filter" aria-label="按地区筛选"></select>
+      </label>
+    </div>
+    <div class="leaders-table__actions">
+      <button class="btn" id="leaders-filter-reset" type="button">重置</button>
+      <p id="leaders-table-count">正在加载企业数据…</p>
+    </div>
+  </div>
+  <div class="leaders-table__wrap">
+    <table class="table-wrap">
+      <thead>
+        <tr>
+          <th>序号</th>
+          <th>企业名称</th>
+          <th>行业标签 / Industry</th>
+          <th>地区标签 / Region</th>
+          <th>证据等级</th>
+          <th>更新时间</th>
+          <th>创始人领袖气质</th>
+          <th>创始人决策力</th>
+          <th>创始人实干性</th>
+          <th>二三号补位力</th>
+          <th>文化契合度</th>
+          <th>岗位专长完整性</th>
+          <th>专业化治理结构</th>
+          <th>平均分</th>
+        </tr>
+      </thead>
+      <tbody id="leaders-table-body">
+        <tr>
+          <td colspan="14">正在加载企业评分数据…</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="leaders-table__note">筛选和对比均使用最新结构化数据；文章页面中的旧评分表可能保留写作当时的判断。</p>
+</section>
+
 <section class="leaders-model-figure">
   <figure class="fr-figure">
     <a href="{{ '/assets/img/facereader-leaders-scorecard-model.jpg' | relative_url }}">

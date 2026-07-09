@@ -36,8 +36,12 @@ layout: default
           <gcse:searchresults-only></gcse:searchresults-only>
         </div>
       {%- when "algolia" -%}
-        <div class="search-searchbar"></div>
-        <div class="search-hits"></div>
+        <div class="algolia-page">
+          <div class="algolia-searchbox"></div>
+          <div class="algolia-stats"></div>
+          <div class="algolia-hits"></div>
+          <div class="algolia-pagination"></div>
+        </div>
     {%- endcase -%}
   </div>
 </div>

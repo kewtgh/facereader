@@ -1,12 +1,5 @@
 {% assign locale = include.locale | default: site.locale %}
 <script>
-  function loadCSS(href) {
-    var link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = href;
-    document.head.appendChild(link);
-  }
-
   function loadScript(src) {
     return new Promise(function (resolve, reject) {
       var s = document.createElement("script");
@@ -27,23 +20,25 @@
   }
 
   async function initAlgoliaInstantSearchOnce() {
-    if (window.__FACEREADER_INSTANTSEARCH_INITED__) return;
-    window.__FACEREADER_INSTANTSEARCH_INITED__ = true;
-
-    var searchBoxEl = document.querySelector("#algolia-searchbox");
-    var hitsEl = document.querySelector("#algolia-hits");
-    if (!searchBoxEl || !hitsEl) {
-      // 不在搜索页面就不初始化
-      window.__FACEREADER_INSTANTSEARCH_INITED__ = false;
-      return;
-    }
+    var roots = Array.prototype.slice.call(document.querySelectorAll(".algolia-page"));
+    if (!roots.length) return;
 
     // InstantSearch 默认主题（也可以自己全部重写）
-    loadCSS("https://cdn.jsdelivr.net/npm/instantsearch.css@8/themes/satellite-min.css");
+    if (!document.querySelector("link[data-fr-instantsearch-css]")) {
+      var css = document.createElement("link");
+      css.rel = "stylesheet";
+      css.href = "https://cdn.jsdelivr.net/npm/instantsearch.css@8/themes/satellite-min.css";
+      css.setAttribute("data-fr-instantsearch-css", "true");
+      document.head.appendChild(css);
+    }
 
     // 加载依赖
-    await loadScript("https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js");
-    await loadScript("https://cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js");
+    if (!window.algoliasearch) {
+      await loadScript("https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js");
+    }
+    if (!window.instantsearch) {
+      await loadScript("https://cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js");
+    }
 
     var appId = "{{ site.algolia.application_id }}";
     var apiKey = "{{ site.algolia.search_only_api_key }}";
@@ -51,95 +46,129 @@
 
     var searchClient = algoliasearch(appId, apiKey);
 
-    var search = instantsearch({
-      indexName: indexName,
-      searchClient: searchClient
-    });
+    roots.forEach(function (root) {
+      if (root.dataset.algoliaInited === "true") return;
+      var searchBoxEl = root.querySelector(".algolia-searchbox");
+      var statsEl = root.querySelector(".algolia-stats");
+      var hitsEl = root.querySelector(".algolia-hits");
+      var paginationEl = root.querySelector(".algolia-pagination");
+      if (!searchBoxEl || !hitsEl) return;
+      root.dataset.algoliaInited = "true";
 
-    search.addWidgets([
-      instantsearch.widgets.searchBox({
-        container: "#algolia-searchbox",
-        placeholder: "搜索文章…",
-        showReset: true,
-        showSubmit: true,
-        showLoadingIndicator: false
-      }),
+      var search = instantsearch({
+        indexName: indexName,
+        searchClient: searchClient
+      });
 
-      instantsearch.widgets.configure({
-        hitsPerPage: 10,
-        attributesToSnippet: ["description:28"],
-        snippetEllipsisText: "…"
-      }),
+      var widgets = [
+        instantsearch.widgets.searchBox({
+          container: searchBoxEl,
+          placeholder: "搜索文章…",
+          showReset: true,
+          showSubmit: true,
+          showLoadingIndicator: false
+        }),
 
-      instantsearch.widgets.hits({
-        container: "#algolia-hits",
-        templates: {
-          empty: function (data) {
-            return `<div class="algolia-empty">没有找到「${escapeHTML(data.query)}」相关内容</div>`;
-          },
-          item: function (hit, { html, components }) {
-            // teaser: 推送的绝对地址字段
-            var img = hit.teaser || "{{ '/assets/img/page-header-image-manufacture-teaser.jpg' | absolute_url }}";
-            var titleHTML = (hit._highlightResult && hit._highlightResult.title && hit._highlightResult.title.value)
-              ? hit._highlightResult.title.value
-              : escapeHTML(hit.title);
+        instantsearch.widgets.configure({
+          hitsPerPage: 10,
+          attributesToSnippet: ["description:28", "content:32"],
+          snippetEllipsisText: "…"
+        }),
 
-            // 用 snippetResult.description（更干净），没有就 fallback 到 description
-            var descHTML = (hit._snippetResult && hit._snippetResult.description && hit._snippetResult.description.value)
-              ? hit._snippetResult.description.value
-              : escapeHTML(hit.description || "");
+        instantsearch.widgets.hits({
+          container: hitsEl,
+          templates: {
+            empty: function (data) {
+              return `<div class="algolia-empty">没有找到「${escapeHTML(data.query)}」相关内容</div>`;
+            },
+            item: function (hit) {
+              var img = hit.teaser || "{{ '/assets/img/page-header-image-manufacture-teaser.jpg' | absolute_url }}";
+              var titleHTML = (hit._highlightResult && hit._highlightResult.title && hit._highlightResult.title.value)
+                ? hit._highlightResult.title.value
+                : escapeHTML(hit.title);
 
-            return `
-              <article class="algolia-hit">
-                <a class="algolia-hit__link" href="${escapeHTML(hit.url)}">
-                  <div class="algolia-hit__media">
-                    <img class="algolia-hit__img" src="${escapeHTML(img)}" alt="">
-                  </div>
-                  <div class="algolia-hit__body">
-                    <h3 class="algolia-hit__title">${titleHTML}</h3>
-                    <p class="algolia-hit__desc">${descHTML}</p>
-                    <div class="algolia-hit__meta">
-                      ${hit.date ? `<time datetime="${escapeHTML(hit.date)}">${escapeHTML(hit.date.slice(0,10))}</time>` : ""}
+              var descHTML = (hit._snippetResult && hit._snippetResult.description && hit._snippetResult.description.value)
+                ? hit._snippetResult.description.value
+                : ((hit._snippetResult && hit._snippetResult.content && hit._snippetResult.content.value)
+                  ? hit._snippetResult.content.value
+                  : escapeHTML(hit.description || ""));
+
+              var categories = Array.isArray(hit.categories) ? hit.categories : [];
+              var tags = Array.isArray(hit.tags) ? hit.tags : [];
+              var meta = [];
+              if (hit.date) meta.push(`<time datetime="${escapeHTML(hit.date)}">${escapeHTML(hit.date.slice(0, 10))}</time>`);
+              if (categories.length) meta.push(`<span>${escapeHTML(categories.join(" / "))}</span>`);
+              var tagHtml = tags.slice(0, 5).map(function (tag) {
+                return `<span>${escapeHTML(tag)}</span>`;
+              }).join("");
+
+              return `
+                <article class="algolia-hit">
+                  <a class="algolia-hit__link" href="${escapeHTML(hit.url)}">
+                    <div class="algolia-hit__media">
+                      <img class="algolia-hit__img" src="${escapeHTML(img)}" alt="">
                     </div>
-                  </div>
-                </a>
-              </article>
-            `;
+                    <div class="algolia-hit__body">
+                      <h3 class="algolia-hit__title">${titleHTML}</h3>
+                      <p class="algolia-hit__desc">${descHTML}</p>
+                      <div class="algolia-hit__meta">
+                        ${meta.join("<span aria-hidden='true'>·</span>")}
+                      </div>
+                      ${tagHtml ? `<div class="algolia-hit__tags">${tagHtml}</div>` : ""}
+                    </div>
+                  </a>
+                </article>
+              `;
+            }
           }
-        }
-      }),
+        })
+      ];
 
-      instantsearch.widgets.pagination({
-        container: "#algolia-pagination",
-        padding: 2,
-        showFirst: false,
-        showLast: false
-      })
-    ]);
-
-    search.start();
-
-    // 支持 /search/?q=xxx 直接带入查询
-    try {
-      var params = new URLSearchParams(location.search);
-      var q = params.get("q");
-      if (q) {
-        // InstantSearch 的 searchBox input 渲染后才能赋值，所以稍微延迟一下
-        setTimeout(function () {
-          var input = document.querySelector("#algolia-searchbox input[type='search']");
-          if (input) {
-            input.value = q;
-            input.dispatchEvent(new Event("input", { bubbles: true }));
+      if (statsEl) {
+        widgets.push(instantsearch.widgets.stats({
+          container: statsEl,
+          templates: {
+            text: function (data) {
+              if (!data.query) return "输入关键词搜索站内文章";
+              return `找到 ${data.nbHits} 条结果，用时 ${data.processingTimeMS} ms`;
+            }
           }
-        }, 0);
+        }));
       }
-    } catch (e) {}
+
+      if (paginationEl) {
+        widgets.push(instantsearch.widgets.pagination({
+          container: paginationEl,
+          padding: 2,
+          showFirst: false,
+          showLast: false
+        }));
+      }
+
+      search.addWidgets(widgets);
+
+      search.start();
+
+      // 支持 /search/?q=xxx 直接带入查询
+      try {
+        var params = new URLSearchParams(location.search);
+        var q = params.get("q");
+        if (q) {
+          setTimeout(function () {
+            var input = root.querySelector(".algolia-searchbox input[type='search']");
+            if (input) {
+              input.value = q;
+              input.dispatchEvent(new Event("input", { bubbles: true }));
+            }
+          }, 0);
+        }
+      } catch (e) {}
+    });
   }
 
   document.addEventListener("DOMContentLoaded", function () {
     initAlgoliaInstantSearchOnce().catch(function (e) {
       console.error("[InstantSearch] init failed:", e);
-      window.__FACEREADER_INSTANTSEARCH_INITED__ = false;
     });
   });
 </script>

@@ -84,6 +84,7 @@
   const tagLabel = (tag, labels) => labels[tag] ? `${tag} / ${labels[tag]}` : tag;
   const tagText = (tags, labels) => (tags && tags.length ? tags.map((tag) => tagLabel(tag, labels)).join("、") : "未标注 / Unlabeled");
   const companyNames = (company) => [company.name].concat(company.aliases || []);
+  const byName = (name) => companies.find((company) => company.name === name);
 
   function isSiteArticle(url) {
     return /^\//.test(url || "") || /^https?:\/\/facereader\.witbacon\.com\//.test(url || "");
@@ -287,6 +288,11 @@
     return `<a class="btn btn--primary" href="#leaders-reference-materials" data-show-back="true">查看参考资料</a>`;
   }
 
+  function renderCompareButton(company) {
+    if (!$("#leaders-compare")) return "";
+    return `<button class="btn leaders-compare-add" type="button" data-compare-company="${escapeHtml(company.name)}">加入对比</button>`;
+  }
+
   function renderDarwinPanel(company, leadersScore) {
     if (!company.darwin) {
       return `
@@ -361,7 +367,7 @@
             <p><strong>主要风险：</strong>${escapeHtml(company.risk)}</p>
             <p><strong>未来验证点：</strong></p>
             <ul>${watch}</ul>
-            <p>${renderResourceLink(company)}</p>
+            <p class="leaders-result__actions">${renderResourceLink(company)}${renderCompareButton(company)}</p>
           </section>
         </div>
         ${isSiteArticle(company.url) ? "" : renderReferences(company)}
@@ -371,6 +377,10 @@
     const referenceLink = document.querySelector("[data-show-back='true']");
     if (referenceLink) {
       referenceLink.addEventListener("click", showFloatingBack);
+    }
+    const compareButton = document.querySelector("[data-compare-company]");
+    if (compareButton) {
+      compareButton.addEventListener("click", () => addCompareCompany(compareButton.dataset.compareCompany));
     }
   }
 
@@ -517,6 +527,133 @@
     applyFilters();
   }
 
+  function fillCompareSelects() {
+    const compareRoot = $("#leaders-compare");
+    if (!compareRoot) return;
+
+    const selects = ["#leaders-compare-a", "#leaders-compare-b", "#leaders-compare-c"]
+      .map((selector) => $(selector))
+      .filter(Boolean);
+    const sorted = [...companies].sort((a, b) => average(b.scores) - average(a.scores) || a.name.localeCompare(b.name, "zh-Hans-CN"));
+    const options = [`<option value="">选择企业</option>`]
+      .concat(sorted.map((company) => `<option value="${escapeHtml(company.name)}">${escapeHtml(company.name)}</option>`))
+      .join("");
+
+    selects.forEach((select, index) => {
+      select.innerHTML = options;
+      select.value = sorted[index]?.name || "";
+      select.addEventListener("change", renderCompare);
+    });
+
+    const clearButton = $("#leaders-compare-clear");
+    if (clearButton) {
+      clearButton.addEventListener("click", () => {
+        selects.forEach((select) => { select.value = ""; });
+        renderCompare();
+      });
+    }
+
+    renderCompare();
+  }
+
+  function addCompareCompany(name) {
+    const compareRoot = $("#leaders-compare");
+    if (!compareRoot || !name) return;
+    const selects = ["#leaders-compare-a", "#leaders-compare-b", "#leaders-compare-c"]
+      .map((selector) => $(selector))
+      .filter(Boolean);
+    if (!selects.length) return;
+
+    const existing = selects.find((select) => select.value === name);
+    if (existing) {
+      compareRoot.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+
+    const target = selects.find((select) => !select.value) || selects[0];
+    target.value = name;
+    renderCompare();
+    compareRoot.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function compareMetricRows(selected, mode) {
+    const rows = [
+      ["阶段加权", (company) => weightedScore(company, mode).toFixed(1)],
+      ["证据调整", (company) => evidenceAdjustedScore(company, mode).toFixed(1)],
+      ["简单平均", (company) => average(company.scores).toFixed(1)],
+      ["Darwin平均", (company) => company.darwin ? averageDarwin(company.darwin).toFixed(1) : "待评分"],
+      ["证据等级", (company) => company.evidence || "C"],
+      ["更新时间", (company) => company.last_reviewed || "待复核"]
+    ];
+
+    return rows.map(([label, getter]) => `
+      <tr>
+        <th>${escapeHtml(label)}</th>
+        ${selected.map((company) => `<td>${escapeHtml(getter(company))}</td>`).join("")}
+      </tr>
+    `).join("");
+  }
+
+  function compareScoreRows(selected) {
+    return scoreKeys.map(([key, label]) => `
+      <tr>
+        <th>${escapeHtml(label)}</th>
+        ${selected.map((company) => `<td>${Number(company.scores[key] || 0).toFixed(1)}</td>`).join("")}
+      </tr>
+    `).join("");
+  }
+
+  function renderCompare() {
+    const output = $("#leaders-compare-output");
+    if (!output) return;
+
+    const selected = ["#leaders-compare-a", "#leaders-compare-b", "#leaders-compare-c"]
+      .map((selector) => $(selector)?.value)
+      .filter(Boolean)
+      .map(byName)
+      .filter(Boolean)
+      .filter((company, index, list) => list.findIndex((item) => item.name === company.name) === index);
+    const mode = $("#leaders-stage")?.value || "growth";
+
+    if (selected.length < 2) {
+      output.innerHTML = `<p class="leaders-compare__empty">请选择至少两家公司进行横向对比。</p>`;
+      return;
+    }
+
+    output.innerHTML = `
+      <div class="leaders-compare__cards">
+        ${selected.map((company) => {
+          const adjusted = evidenceAdjustedScore(company, mode);
+          const darwin = company.darwin ? averageDarwin(company.darwin) : null;
+          const delta = darwin === null ? "" : `${darwin - adjusted >= 0 ? "+" : ""}${(darwin - adjusted).toFixed(1)}`;
+          return `
+            <article>
+              <h3>${escapeHtml(company.name)}</h3>
+              <p>${escapeHtml(company.industry)} · ${escapeHtml(company.stage)}</p>
+              <strong>${adjusted.toFixed(1)}</strong>
+              <span>${escapeHtml(rating(adjusted))}</span>
+              ${delta ? `<small>Darwin - LEADERS: ${escapeHtml(delta)}</small>` : `<small>Darwin: 待评分</small>`}
+            </article>
+          `;
+        }).join("")}
+      </div>
+      <div class="leaders-compare__table-wrap">
+        <table class="leaders-compare__table">
+          <thead>
+            <tr>
+              <th>指标</th>
+              ${selected.map((company) => `<th>${escapeHtml(company.name)}</th>`).join("")}
+            </tr>
+          </thead>
+          <tbody>
+            ${compareMetricRows(selected, mode)}
+            ${compareScoreRows(selected)}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
   document.addEventListener("DOMContentLoaded", async () => {
     const root = $("#leaders-scorecard-app");
     if (!root) return;
@@ -527,10 +664,12 @@
       renderExamples();
       renderResult(companies[0], "growth");
       renderLeadersTable();
+      fillCompareSelects();
       $("#leaders-search-form").addEventListener("submit", runSearch);
       $("#leaders-stage").addEventListener("change", () => {
         const company = findCompany($("#leaders-company-input").value) || companies[0];
         renderResult(company, $("#leaders-stage").value);
+        renderCompare();
       });
     } catch (error) {
       $("#leaders-result").innerHTML = "<p>评分数据加载失败，请稍后再试。</p>";

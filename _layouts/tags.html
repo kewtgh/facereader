@@ -18,14 +18,19 @@ sitemap: false
         {% else %}
           {{ g.title_en }}
         {% endif %}
+        <span class="tag-group-count">{{ g.tags | size }} tags</span>
       </h2>
 
       <div class="tag-group-list">
         {% for tag in g.tags %}
           {% if site.tags[tag] %}
+            {% assign tag_description = site.data.tag_descriptions[tag] | default: "" | strip %}
             <a href="javascript:void(0);"
                class="tag-item tag-filter-btn"
-               data-tag="{{ tag }}">
+               data-tag="{{ tag }}"
+               data-count="{{ site.tags[tag].size }}"
+               data-description="{{ tag_description | strip_html | strip_newlines | escape }}"
+               title="{{ tag_description | strip_html | strip_newlines | escape }}">
               {{ tag }}
               <span class="tag-count">({{ site.tags[tag].size }})</span>
             </a>
@@ -44,13 +49,13 @@ sitemap: false
 <div class="tag-filter-status" id="current-tag-anchor">
   <strong>{{ site.data.ui-text[site.locale].tag_current }}:</strong>
   <span id="current-tag">All</span>
+  <span id="current-tag-count" class="tag-filter-count">{{ site.posts | size }} posts</span>
 
   <button onclick="resetFilter()" class="btn btn--small btn--light-outline tag-clear-btn">
     {{ site.data.ui-text[site.locale].tag_clear }}
   </button>
-  
-  <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
 </div>
+<p class="tag-filter-description" id="current-tag-description">选择标签后，会显示该标签说明和对应文章列表。</p>
 
 <!-- 文章列表（使用主题原生样式） -->
 <div class="entries-list" id="tag-posts">
@@ -63,7 +68,3 @@ sitemap: false
 </div>
 
 <script src="{{ '/assets/js/tag-filter.js' | relative_url }}"></script>
-
-<a href="#page-title" class="back-to-top">
-  {{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;
-</a>
