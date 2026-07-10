@@ -27,9 +27,13 @@ unmatched:
     count: 1
   - tag: "变故"
     count: 1
+  - tag: "沉默的大多数"
+    count: 1
   - tag: "打破规则"
     count: 1
   - tag: "大快人心"
+    count: 1
+  - tag: "倒台"
     count: 1
   - tag: "道天神君"
     count: 1
@@ -43,6 +47,10 @@ unmatched:
     count: 1
   - tag: "蜂群"
     count: 1
+  - tag: "革命"
+    count: 1
+  - tag: "共识"
+    count: 1
   - tag: "管理"
     count: 1
   - tag: "规章"
@@ -55,6 +63,8 @@ unmatched:
     count: 1
   - tag: "经营"
     count: 1
+  - tag: "决策逻辑"
+    count: 1
   - tag: "老师"
     count: 1
   - tag: "利润"
@@ -62,6 +72,8 @@ unmatched:
   - tag: "良多"
     count: 1
   - tag: "流星"
+    count: 1
+  - tag: "罗马尼亚"
     count: 1
   - tag: "逻辑"
     count: 1
@@ -71,11 +83,15 @@ unmatched:
     count: 1
   - tag: "拿破仑三世"
     count: 1
+  - tag: "纳什均衡"
+    count: 1
   - tag: "怒其不争"
     count: 1
   - tag: "平头哥"
     count: 1
   - tag: "普通人"
+    count: 1
+  - tag: "齐奥塞斯库"
     count: 1
   - tag: "上进"
     count: 1
@@ -94,6 +110,8 @@ unmatched:
   - tag: "锁链"
     count: 1
   - tag: "团队"
+    count: 1
+  - tag: "推翻暴政"
     count: 1
   - tag: "王平"
     count: 1
