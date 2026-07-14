@@ -1,0 +1,73 @@
+@use "sass:list";
+@use "sass:math";
+@use "sass:meta";
+
+@function _fr-media-value($value) {
+  @if meta.type-of($value) == "number" and math.unit($value) == "px" {
+    @return math.div($value, 16px) * 1em;
+  }
+
+  @return $value;
+}
+
+@mixin breakpoint($query, $no-query: false) {
+  @if meta.type-of($query) == "number" {
+    @media (min-width: _fr-media-value($query)) {
+      @content;
+    }
+  } @else if meta.type-of($query) == "list" and list.length($query) >= 2 {
+    $feature: list.nth($query, 1);
+    $value: list.nth($query, 2);
+
+    @if $feature == max-width or $feature == "max-width" {
+      @media (max-width: _fr-media-value($value)) {
+        @content;
+      }
+    } @else if $feature == min-width or $feature == "min-width" {
+      @media (min-width: _fr-media-value($value)) {
+        @content;
+      }
+    } @else {
+      @media (#{$feature}: #{_fr-media-value($value)}) {
+        @content;
+      }
+    }
+  } @else {
+    @media #{$query} {
+      @content;
+    }
+  }
+}
+
+@function span($span) {
+  @if meta.type-of($span) == "list" and list.length($span) >= 3 and list.nth($span, 2) == of {
+    $columns: list.nth($span, 3);
+    $span-columns: list.nth($span, 1);
+    $gutters: 0.25;
+    $span-width: $span-columns + (math.ceil($span-columns) - 1) * $gutters;
+    $container-width: $columns + ($columns - 1) * $gutters;
+
+    @return math.div($span-width, $container-width) * 100%;
+  }
+
+  @if meta.type-of($span) == "number" {
+    @return math.div($span, 12) * 100%;
+  }
+
+  @error "Unsupported FaceReader span() syntax: #{meta.inspect($span)}";
+}
+
+@function gutter($context) {
+  $gutters: 0.25;
+  $columns: 12;
+
+  @if meta.type-of($context) == "list" {
+    @if list.length($context) == 2 and list.nth($context, 1) == of {
+      $columns: list.nth($context, 2);
+    } @else if list.length($context) >= 3 and list.nth($context, 2) == of {
+      $columns: list.nth($context, 3);
+    }
+  }
+
+  @return math.div($gutters, $columns + ($columns - 1) * $gutters) * 100%;
+}

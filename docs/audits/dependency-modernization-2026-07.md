@@ -198,17 +198,109 @@ Vercel deployment shape:
 - `vercel.json` delegates build to `bash scripts/vercel-build.sh`.
 - `scripts/vercel-build.sh` runs the canonical production build with `BUNDLE_FROZEN=true`, `JEKYLL_ENV=production`, Ruby `4.0`, Node `24.18.0`, and `npm run site:build`.
 
+## SCSS Modernization Addendum
+
+Baseline for this addendum:
+
+- Starting HEAD: `5b3fdd485ac5e446d9a0f395ec5626e51cfc38cd`.
+- Starting FaceReader version: `6.9.7`.
+- Final FaceReader version: `6.10.0`.
+- Sass converter: `jekyll-sass-converter 3.1.0`.
+- Sass implementation: `sass-embedded 1.101.0`.
+- Active Dart Sass implementation: Sass Embedded `1.101.0`.
+
+Warning inventory before migration:
+
+| Category | Displayed count | Notes |
+| --- | ---: | --- |
+| `import` | 5 | old project and local theme entrypoints |
+| `global-builtin` | 5 | old Sass global functions |
+| `if-function` | 5 | legacy function syntax |
+| `slash-div` | 5 | old Sass math division |
+| `color-functions` | 5 | old color helpers such as `darken()` |
+| omitted repetitive warnings | 289 | Dart Sass summary cap |
+
+Warning inventory after migration:
+
+| Scope | Count | Notes |
+| --- | ---: | --- |
+| Project-owned Sass deprecation warnings | 0 | enforced by `npm run site:sass:warnings` |
+| Active local theme Sass deprecation warnings | 0 | Minimal Mistakes copy migrated in repo |
+| Active vendor Sass deprecation warnings | 0 | Magnific Popup partials migrated |
+| Warning allowlist | 0 | no allowlist entries |
+
+Migration work completed:
+
+- Replaced active Sass `@import` usage with `@use` and `@forward`.
+- Added `_sass/minimal-mistakes/_support.scss` as the local theme support facade.
+- Added `_sass/minimal-mistakes/_tools.scss` for local `breakpoint`, `span`, and `gutter` compatibility that replaced old Breakpoint and Susy imports.
+- Kept the configured production skin deterministic by loading the active `sunrise` skin through Sass modules, matching `_config.yml`.
+- Converted global built-ins to module functions where used: `color.mix`, `color.adjust`, `color.channel`, `math.div`, `selector.unify`, and `string.unquote`.
+- Removed unused legacy Sass files: `_base-scss`, `_footer_scss`, `vendor/breakpoint/**`, and `vendor/susy/**`.
+- Migrated active Magnific Popup vendor Sass instead of silencing it.
+- Added `assets/scripts/check-sass-warnings.mjs`.
+- Added `npm run site:sass:warnings` and included it in `npm run site:check`.
+
+Module structure after migration:
+
+```text
+assets/css/main.scss
+  -> @use "minimal-mistakes"
+
+_sass/minimal-mistakes.scss
+  -> side-effect @use aggregator for theme, active vendor, layout, and custom partials
+
+_sass/minimal-mistakes/_support.scss
+  -> @forward "variables"
+  -> @forward "tools"
+  -> @forward "mixins"
+
+_sass/minimal-mistakes/_tools.scss
+  -> local breakpoint/span/gutter helpers
+```
+
+The theme partials still use `@use "support" as *` as a scoped compatibility layer inside the local Minimal Mistakes-derived theme. This preserves the existing customized visual output while removing deprecated Sass loading and function syntax. It is intentionally limited to the theme Sass tree rather than exposing globals from the application entrypoint.
+
+CSS output comparison:
+
+| Metric | Before | After | Result |
+| --- | ---: | ---: | --- |
+| CSS files | 1 | 1 | unchanged |
+| `assets/css/main.css` bytes | 139,778 | 139,697 | -81 bytes |
+| Rule blocks | 1,490 | 1,490 | unchanged |
+| Media queries | 98 | 98 | unchanged |
+| CSS custom properties | 60 | 60 | unchanged |
+| `@font-face` blocks | 0 | 0 | unchanged |
+| Keyframes | 2 | 2 | unchanged |
+| Source maps | 1 | 1 | unchanged |
+
+Additional output checks:
+
+- Percent-based layout values matched after replacing Susy with local `span()` and `gutter()` helpers.
+- `rg -n "@import" assets/css _sass`: no matches.
+- Deprecated global Sass function grep over `assets/css` and `_sass`: no matches.
+- Slash syntax remaining in Sass sources is native CSS slash syntax such as grid placement, comments, and shorthands, not Sass math division.
+
+Visual smoke:
+
+- Tool: Playwright CLI `1.61.1`.
+- Local server: `_site` served on `http://127.0.0.1:4017/`.
+- Captured 32 screenshots across 8 representative pages and 4 viewports.
+- Viewports: `375px`, `768px`, `1280px`, `1440px`.
+- Pages covered: home, about, leaders scorecard, categories, tags, search, representative Chinese article with code/table/TOC, and 404.
+- Spot checks found no obvious header, masthead, content width, table, code block, search, sidebar, TOC, footer, or responsive navigation breakage.
+
 ## Deferred / Follow-Up
 
 - System PATH Node is still `v22.22.3`; the repository and CI are set to Node `24.18.0`. Local Node 24 was verified through `npx node@24.18.0`, but the user's global Node installation was not modified.
 - Local RubyInstaller is `4.0.1-1`; RubyInstaller downloads page showed `4.0.5-1`, while Ruby official releases showed `4.0.6`. The repo uses `.ruby-version` = `4.0` so CI can resolve the current Ruby 4.0 patch and Windows can remain on an available RubyInstaller 4.0 patch.
 - Official Ruby latest is `4.0.6`, but `ruby:4.0.6` had no available `linux/amd64` manifest in Docker during validation. The available `ruby:4.0` image resolved to Ruby `4.0.5`; Linux validation passed on that Ruby 4.0 patch. CI reads `.ruby-version` = `4.0` and should use the newest Ruby 4.0 patch supported by `ruby/setup-ruby`.
-- Sass deprecation warnings are deferred. They are caused by inherited Minimal Mistakes Sass syntax under Dart Sass and do not currently fail the build.
+- No active Sass deprecation warning is deferred. The current allowlist is empty.
 
 ## Final State
 
 - `github-pages` aggregation gem removed.
-- FaceReader project version advanced to `6.9.7`.
+- FaceReader project version advanced to `6.10.0`.
 - Jekyll upgraded from `3.9.0` to `4.4.1`.
 - Bundler upgraded from `4.0.3` to `4.0.16`.
 - Node target upgraded to `24.18.0`.

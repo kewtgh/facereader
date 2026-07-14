@@ -1,3 +1,5 @@
+@use "support" as *;
+@use "sass:color";
 /* =====================================================
  * FaceReader · Custom SCSS (FINAL - Stable)
  * based on original custom SCSS, merged + cleaned
@@ -8,8 +10,8 @@
 /* =========================
  * 统一的卡片风格变量
  * ========================= */
-$fr-card-bg: mix(#ffffff, $background-color, 92%);
-$fr-card-border: mix(#000000, $border-color, 7%);
+$fr-card-bg: color.mix(#ffffff, $background-color, 92%);
+$fr-card-border: color.mix(#000000, $border-color, 7%);
 $fr-card-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
 $fr-card-radius: 1.05rem;
 
@@ -216,7 +218,7 @@ body { line-height: 1.7; }
   font-size: 0.96rem;
   font-weight: 500;
   margin-bottom: 0.25rem;
-  color: mix($text-color, #000, 82%);
+  color: color.mix($text-color, #000, 82%);
 }
 
 .layout--single .sidebar .author__bio {
@@ -293,7 +295,7 @@ body { line-height: 1.7; }
 
 .leaders-intro--feature {
   padding: 1.25rem 1.35rem;
-  border-left: 4px solid mix($primary-color, #ffffff, 58%);
+  border-left: 4px solid color.mix($primary-color, #ffffff, 58%);
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.34)),
     linear-gradient(135deg, rgba(32, 94, 117, 0.10), rgba(178, 119, 54, 0.10));
@@ -309,7 +311,7 @@ body { line-height: 1.7; }
 
 .leaders-kicker {
   margin: 0 0 0.35rem;
-  color: mix($primary-color, $text-color, 72%);
+  color: color.mix($primary-color, $text-color, 72%);
   font-family: $sans-serif;
   font-size: 0.82rem;
   font-weight: 700;
@@ -354,7 +356,7 @@ body { line-height: 1.7; }
   position: absolute;
   inset: 0 auto 0 0;
   width: 4px;
-  background: linear-gradient(180deg, mix($primary-color, #ffffff, 70%), rgba(178, 119, 54, 0.58));
+  background: linear-gradient(180deg, color.mix($primary-color, #ffffff, 70%), rgba(178, 119, 54, 0.58));
 }
 
 .leaders-entry-grid h2,
@@ -416,7 +418,7 @@ body { line-height: 1.7; }
 
 .leaders-tool__header p:last-child {
   margin-bottom: 0;
-  color: mix($text-color, $muted-text-color, 72%);
+  color: color.mix($text-color, $muted-text-color, 72%);
 }
 
 .leaders-examples {
@@ -437,7 +439,7 @@ body { line-height: 1.7; }
 }
 
 .leaders-examples button:hover {
-  border-color: mix($primary-color, $border-color, 55%);
+  border-color: color.mix($primary-color, $border-color, 55%);
   color: $primary-color;
 }
 
@@ -468,7 +470,7 @@ body { line-height: 1.7; }
 }
 
 .leaders-suggestions button:hover {
-  border-color: mix($primary-color, $border-color, 55%);
+  border-color: color.mix($primary-color, $border-color, 55%);
   color: $primary-color;
 }
 
@@ -491,7 +493,7 @@ body { line-height: 1.7; }
   border: 1px solid rgba(34, 48, 66, 0.08);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.70)),
-    mix($primary-color, #ffffff, 10%);
+    color.mix($primary-color, #ffffff, 10%);
   text-align: center;
 }
 
@@ -501,7 +503,7 @@ body { line-height: 1.7; }
   font-size: 2rem;
   font-weight: 800;
   line-height: 1.1;
-  color: mix($primary-color, $text-color, 78%);
+  color: color.mix($primary-color, $text-color, 78%);
 }
 
 .leaders-result__grade small {
@@ -539,7 +541,7 @@ body { line-height: 1.7; }
 
 .leaders-result__summary {
   padding: 0.8rem 0.95rem;
-  border-left: 4px solid mix($primary-color, $border-color, 60%);
+  border-left: 4px solid color.mix($primary-color, $border-color, 60%);
   background: rgba(255, 255, 255, 0.48);
 }
 
@@ -558,7 +560,7 @@ body { line-height: 1.7; }
   border: 1px solid rgba($primary-color, 0.22);
   border-radius: 999px;
   background: rgba($primary-color, 0.08);
-  color: mix($text-color, $primary-color, 72%);
+  color: color.mix($text-color, $primary-color, 72%);
   font-size: 0.78rem;
   font-weight: 700;
   line-height: 1.2;
@@ -593,7 +595,7 @@ body { line-height: 1.7; }
   display: block;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, mix($primary-color, #ffffff, 50%), $primary-color);
+  background: linear-gradient(90deg, color.mix($primary-color, #ffffff, 50%), $primary-color);
 }
 
 .leaders-darwin {
@@ -621,7 +623,7 @@ body { line-height: 1.7; }
 .leaders-darwin__head p,
 .leaders-darwin__note {
   margin: 0;
-  color: mix($text-color, $muted-text-color, 76%);
+  color: color.mix($text-color, $muted-text-color, 76%);
   font-size: 0.86rem;
   line-height: 1.65;
 }
@@ -715,7 +717,7 @@ body { line-height: 1.7; }
 
 .leaders-method__lead {
   max-width: 900px;
-  color: mix($text-color, $muted-text-color, 80%);
+  color: color.mix($text-color, $muted-text-color, 80%);
 }
 
 .leaders-method__grid {
@@ -753,7 +755,7 @@ body { line-height: 1.7; }
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  background: var(--leaders-dimension-accent, mix($primary-color, #ffffff, 72%));
+  background: var(--leaders-dimension-accent, color.mix($primary-color, #ffffff, 72%));
   color: #ffffff;
   font-family: $sans-serif;
   font-size: 0.78rem;
@@ -767,7 +769,7 @@ body { line-height: 1.7; }
   position: absolute;
   inset: auto 0 0;
   height: 3px;
-  background: var(--leaders-dimension-accent, mix($primary-color, #ffffff, 72%));
+  background: var(--leaders-dimension-accent, color.mix($primary-color, #ffffff, 72%));
   opacity: 0.82;
 }
 
@@ -808,7 +810,7 @@ body { line-height: 1.7; }
 
 .leaders-dimensions h3 {
   margin: 0 0 0.45rem;
-  color: mix($text-color, $primary-color, 74%);
+  color: color.mix($text-color, $primary-color, 74%);
   font-family: $sans-serif;
   font-size: 0.98rem;
   line-height: 1.24;
@@ -816,7 +818,7 @@ body { line-height: 1.7; }
 
 .leaders-dimensions p {
   margin: 0;
-  color: mix($text-color, $muted-text-color, 78%);
+  color: color.mix($text-color, $muted-text-color, 78%);
   font-size: 0.88rem;
   line-height: 1.72;
 }
@@ -847,11 +849,11 @@ body { line-height: 1.7; }
   position: absolute;
   inset: 0 auto 0 0;
   width: 4px;
-  background: linear-gradient(180deg, mix($primary-color, #ffffff, 70%), rgba(178, 119, 54, 0.72));
+  background: linear-gradient(180deg, color.mix($primary-color, #ffffff, 70%), rgba(178, 119, 54, 0.72));
 }
 
 .leaders-method__notes strong {
-  color: mix($text-color, $primary-color, 72%);
+  color: color.mix($text-color, $primary-color, 72%);
   font-family: $sans-serif;
 }
 
@@ -878,7 +880,7 @@ body { line-height: 1.7; }
 }
 
 .leaders-feedback p {
-  color: mix($text-color, $muted-text-color, 78%);
+  color: color.mix($text-color, $muted-text-color, 78%);
   line-height: 1.72;
 }
 
@@ -1016,7 +1018,7 @@ body { line-height: 1.7; }
 }
 
 .leaders-compare-radar__grid text {
-  fill: mix($text-color, $muted-text-color, 70%);
+  fill: color.mix($text-color, $muted-text-color, 70%);
   font-family: $sans-serif;
   font-size: 0.62rem;
   font-weight: 700;
@@ -1044,7 +1046,7 @@ body { line-height: 1.7; }
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  color: mix($text-color, $primary-color, 82%);
+  color: color.mix($text-color, $primary-color, 82%);
   font-family: $sans-serif;
   font-weight: 800;
 }
@@ -1083,7 +1085,7 @@ body { line-height: 1.7; }
   border-radius: 0.55rem;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.74)),
-    mix($primary-color, #ffffff, 8%);
+    color.mix($primary-color, #ffffff, 8%);
 }
 
 .leaders-compare__cards h3,
@@ -1093,7 +1095,7 @@ body { line-height: 1.7; }
 
 .leaders-compare__cards p {
   margin-top: 0.25rem;
-  color: mix($text-color, $muted-text-color, 70%);
+  color: color.mix($text-color, $muted-text-color, 70%);
   font-size: 0.84rem;
   line-height: 1.5;
 }
@@ -1101,7 +1103,7 @@ body { line-height: 1.7; }
 .leaders-compare__cards strong {
   display: block;
   margin-top: 0.55rem;
-  color: mix($primary-color, $text-color, 78%);
+  color: color.mix($primary-color, $text-color, 78%);
   font-family: $sans-serif;
   font-size: 1.8rem;
   line-height: 1;
@@ -1139,13 +1141,13 @@ body { line-height: 1.7; }
 }
 
 .leaders-compare__table th {
-  color: mix($text-color, $primary-color, 76%);
+  color: color.mix($text-color, $primary-color, 76%);
   font-family: $sans-serif;
   background: rgba(32, 94, 117, 0.08);
 }
 
 .leaders-compare__table tbody td {
-  color: mix($text-color, $muted-text-color, 84%);
+  color: color.mix($text-color, $muted-text-color, 84%);
   font-variant-numeric: tabular-nums;
 }
 
@@ -1185,7 +1187,7 @@ body { line-height: 1.7; }
 
 .leaders-model-details summary {
   padding: 0.8rem 1rem;
-  color: mix($text-color, $primary-color, 78%);
+  color: color.mix($text-color, $primary-color, 78%);
   font-family: $sans-serif;
   font-weight: 800;
   cursor: pointer;
@@ -1267,7 +1269,7 @@ body { line-height: 1.7; }
 
 .leaders-table__toolbar p {
   margin: 0;
-  color: mix($text-color, $muted-text-color, 72%);
+  color: color.mix($text-color, $muted-text-color, 72%);
   font-family: $sans-serif;
   font-size: 0.86rem;
   font-weight: 700;
@@ -1342,12 +1344,12 @@ body { line-height: 1.7; }
 
 .leaders-floating-back:hover,
 .leaders-floating-back:focus {
-  background: mix(#223042, $primary-color, 78%);
+  background: color.mix(#223042, $primary-color, 78%);
 }
 
 .leaders-feedback__grid h4 {
   margin: 0 0 0.35rem;
-  color: mix($text-color, $primary-color, 75%);
+  color: color.mix($text-color, $primary-color, 75%);
   font-family: $sans-serif;
   font-size: 0.96rem;
 }
@@ -1427,7 +1429,7 @@ body { line-height: 1.7; }
 }
 
 .leaders-benchmark__table th {
-  color: mix($text-color, $primary-color, 76%);
+  color: color.mix($text-color, $primary-color, 76%);
   font-family: $sans-serif;
   font-size: 0.8rem;
   text-align: left;
@@ -1844,8 +1846,8 @@ body { line-height: 1.7; }
   border-collapse: separate !important;
   border-spacing: 0 !important;
   margin: 1.6rem 0 2rem !important;
-  background: mix(#ffffff, $background-color, 97%) !important;
-  border: 1px solid mix(#000, $border-color, 9%) !important;
+  background: color.mix(#ffffff, $background-color, 97%) !important;
+  border: 1px solid color.mix(#000, $border-color, 9%) !important;
   border-radius: 0.9rem !important;
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
@@ -1865,7 +1867,7 @@ body { line-height: 1.7; }
   padding: 0.55rem 0.65rem !important;
   font-size: 0.9rem !important;
   text-align: center !important;
-  border-bottom: 1px solid mix(#000, $border-color, 7%) !important;
+  border-bottom: 1px solid color.mix(#000, $border-color, 7%) !important;
   background: transparent !important;
 }
 
@@ -1900,7 +1902,7 @@ body { line-height: 1.7; }
 
 .page__content table.leaders-compare__table thead th {
   background: rgba(32, 94, 117, 0.08) !important;
-  color: mix($text-color, $primary-color, 76%) !important;
+  color: color.mix($text-color, $primary-color, 76%) !important;
   text-align: left !important;
 }
 
@@ -1912,7 +1914,7 @@ body { line-height: 1.7; }
 
 .page__content table.leaders-compare__table tbody td,
 .page__content table.leaders-compare__table tbody td:last-child {
-  color: mix($text-color, $muted-text-color, 84%) !important;
+  color: color.mix($text-color, $muted-text-color, 84%) !important;
   font-weight: 400 !important;
   text-align: left !important;
 }
@@ -1941,15 +1943,15 @@ body { line-height: 1.7; }
 /* 顶层列表：非常轻的提示线 */
 .page__content > ul,
 .page__content > ol {
-  border-left: 3px solid mix($primary-color, #ffffff, 70%);
+  border-left: 3px solid color.mix($primary-color, #ffffff, 70%);
   padding-left: 1.45rem;
 }
 
 .page__content ul li::marker {
-  color: mix($primary-color, #000, 55%);
+  color: color.mix($primary-color, #000, 55%);
 }
 .page__content ol li::marker {
-  color: mix($primary-color, #000, 55%);
+  color: color.mix($primary-color, #000, 55%);
   font-weight: 800;
 }
 
@@ -1968,7 +1970,7 @@ body { line-height: 1.7; }
   margin: 1.5rem 0;
   padding: 0.9rem 1.1rem 0.9rem 1.2rem;
   border-inline-start: 4px solid rgba(34, 48, 66, 0.55) !important;
-  background: mix($background-color, #ffffff, 80%);
+  background: color.mix($background-color, #ffffff, 80%);
   border-radius: 0.6rem;
   font-family: $serif;
   font-style: normal;
@@ -2110,8 +2112,8 @@ body { line-height: 1.7; }
 }
 .btn--primary:hover,
 .btn--primary:focus {
-  background-color: darken(#3375ff, 7%);
-  border-color: darken(#3375ff, 7%);
+  background-color: color.adjust(#3375ff, $lightness: -7%);
+  border-color: color.adjust(#3375ff, $lightness: -7%);
   color: #fff !important;
 }
 .btn--secondary {
@@ -2187,8 +2189,8 @@ body { line-height: 1.7; }
 
 /* 卡片本体 */
 .home-section--about-cta .home-cta--about {
-  background: mix(#ffffff, $background-color, 92%) !important;
-  border: 1px solid mix(#000, $border-color, 8%) !important;
+  background: color.mix(#ffffff, $background-color, 92%) !important;
+  border: 1px solid color.mix(#000, $border-color, 8%) !important;
   border-radius: 1.1rem !important;
 
   padding: 1.35rem 2rem 1.55rem !important; /* ✅底部留白更明显 */
@@ -2421,7 +2423,7 @@ body { line-height: 1.7; }
   font-weight: 780;
   margin-top: 1.3rem;
   margin-bottom: 0.7rem;
-  color: mix(#223042, #6f4e37, 70%); /* 微棕调，跟 TOC 呼应 */
+  color: color.mix(#223042, #6f4e37, 70%); /* 微棕调，跟 TOC 呼应 */
 }
 
 /* =========================
@@ -2939,9 +2941,9 @@ body { line-height: 1.7; }
 .tag-filter-description {
   margin: -0.35rem 0 1rem;
   padding: 0.75rem 0.9rem;
-  border-left: 4px solid mix($primary-color, $border-color, 60%);
+  border-left: 4px solid color.mix($primary-color, $border-color, 60%);
   background: rgba(255, 255, 255, 0.48);
-  color: mix($text-color, $muted-text-color, 76%);
+  color: color.mix($text-color, $muted-text-color, 76%);
   text-indent: 0 !important;
 }
 
@@ -2966,7 +2968,7 @@ body { line-height: 1.7; }
   height: 100%;
   transform: scaleX(0);
   transform-origin: left center;
-  background: linear-gradient(90deg, mix($primary-color, #ffffff, 42%), $primary-color);
+  background: linear-gradient(90deg, color.mix($primary-color, #ffffff, 42%), $primary-color);
 }
 
 .fr-reader-tools {
@@ -2996,7 +2998,7 @@ body { line-height: 1.7; }
 .fr-reader-tools__btn:focus,
 .fr-mobile-toc__close:hover,
 .fr-mobile-toc__close:focus {
-  background: mix(#223042, $primary-color, 78%);
+  background: color.mix(#223042, $primary-color, 78%);
 }
 
 .fr-mobile-toc {
@@ -3263,7 +3265,7 @@ body { line-height: 1.7; }
 
 .fr-score-card__note p {
   margin: 0 0 0.75rem;
-  color: mix($text-color, #17384a, 74%);
+  color: color.mix($text-color, #17384a, 74%);
   font-size: 0.88rem;
   line-height: 1.76;
   text-indent: 0;

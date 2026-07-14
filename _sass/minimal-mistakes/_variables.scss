@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "minimal-mistakes/skins/sunrise" as skin;
+
 /* ==========================================================================
    Variables
    ========================================================================== */
@@ -83,27 +86,28 @@ $h-size-6: 1em !default; // ~16px
    ========================================================================== */
 
 $gray: #7a8288 !default;
-$dark-gray: mix(#000, $gray, 50%) !default;
-$darker-gray: mix(#000, $gray, 60%) !default;
-$light-gray: mix(#fff, $gray, 50%) !default;
-$lighter-gray: mix(#fff, $gray, 90%) !default;
+$dark-gray: skin.$dark-gray !default;
+$darker-gray: color.mix(#000, $gray, 60%) !default;
+$light-gray: color.mix(#fff, $gray, 50%) !default;
+$lighter-gray: color.mix(#fff, $gray, 90%) !default;
 
-$background-color: #fff !default;
-$code-background-color: #fafafa !default;
-$code-background-color-dark: $light-gray !default;
-$text-color: $dark-gray !default;
-$muted-text-color: mix(#fff, $text-color, 20%) !default;
-$border-color: $lighter-gray !default;
-$form-background-color: $lighter-gray !default;
-$footer-background-color: $lighter-gray !default;
+$background-color: skin.$background-color !default;
+$code-background-color: skin.$code-background-color !default;
+$code-background-color-dark: skin.$code-background-color-dark !default;
+$text-color: skin.$text-color !default;
+$accent-color: skin.$accent-color !default;
+$muted-text-color: skin.$muted-text-color !default;
+$border-color: skin.$border-color !default;
+$form-background-color: skin.$form-background-color !default;
+$footer-background-color: skin.$footer-background-color !default;
 
-$primary-color: #6f777d !default;
+$primary-color: skin.$primary-color !default;
 $success-color: #3fa63f !default;
 $warning-color: #d67f05 !default;
 $danger-color: #ee5f5b !default;
 $info-color: #3b9cba !default;
 $focus-color: $primary-color !default;
-$active-color: mix(#fff, $primary-color, 80%) !default;
+$active-color: color.mix(#fff, $primary-color, 80%) !default;
 
 /* YIQ color contrast */
 $yiq-contrasted-dark-default: $dark-gray !default;
@@ -146,34 +150,37 @@ $xing-color: #006567 !default;
 $youtube-color: #bb0000 !default;
 
 /* links */
-$link-color: mix(#000, $info-color, 20%) !default;
-$link-color-hover: mix(#000, $link-color, 25%) !default;
-$link-color-visited: mix(#fff, $link-color, 15%) !default;
-$masthead-link-color: $primary-color !default;
-$masthead-link-color-hover: mix(#000, $primary-color, 25%) !default;
-$navicon-link-color-hover: mix(#fff, $primary-color, 75%) !default;
+$link-color: skin.$link-color !default;
+$link-color-hover: skin.$link-color-hover !default;
+$link-color-visited: skin.$link-color-visited !default;
+$masthead-link-color: skin.$masthead-link-color !default;
+$masthead-backgroud-color: skin.$masthead-backgroud-color !default;
+$masthead-link-color-hover: skin.$masthead-link-color-hover !default;
+$navicon-link-color-hover: skin.$navicon-link-color-hover !default;
+$nav-color: skin.$nav-color !default;
+$nav-background-color: skin.$nav-background-color !default;
 
 /* notices */
-$notice-background-mix: 80% !default;
+$notice-background-mix: skin.$notice-background-mix !default;
 $code-notice-background-mix: 90% !default;
 
 /* syntax highlighting (base16) */
-$base00: #263238 !default;
-$base01: #2e3c43 !default;
-$base02: #314549 !default;
-$base03: #546e7a !default;
-$base04: #b2ccd6 !default;
-$base05: #eeffff !default;
-$base06: #eeffff !default;
-$base07: #ffffff !default;
-$base08: #f07178 !default;
-$base09: #f78c6c !default;
-$base0a: #ffcb6b !default;
-$base0b: #c3e88d !default;
-$base0c: #89ddff !default;
-$base0d: #82aaff !default;
-$base0e: #c792ea !default;
-$base0f: #ff5370 !default;
+$base00: skin.$base00 !default;
+$base01: skin.$base01 !default;
+$base02: skin.$base02 !default;
+$base03: skin.$base03 !default;
+$base04: skin.$base04 !default;
+$base05: skin.$base05 !default;
+$base06: skin.$base06 !default;
+$base07: skin.$base07 !default;
+$base08: skin.$base08 !default;
+$base09: skin.$base09 !default;
+$base0a: skin.$base0a !default;
+$base0b: skin.$base0b !default;
+$base0c: skin.$base0c !default;
+$base0d: skin.$base0d !default;
+$base0e: skin.$base0e !default;
+$base0f: skin.$base0f !default;
 
 /*
    Breakpoints

@@ -1,3 +1,5 @@
+@use "support" as *;
+@use "sass:color";
 /* ==========================================================================
    BASE ELEMENTS
    ========================================================================== */
@@ -114,7 +116,7 @@ blockquote {
   padding-inline: 1em;
   font-style: italic;
   border-inline-start: 0.25em solid $primary-color;
-  background-color: mix($background-color, $accent-color, 90%);
+  background-color: color.mix($background-color, $accent-color, 90%);
 
   cite {
     font-style: italic;
