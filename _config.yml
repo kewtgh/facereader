@@ -200,7 +200,9 @@ exclude:
   - package-lock.json
   - Rakefile
   - README
+  - README.md
   - tmp
+  - docs/audits
   - _config.yml.b
   - docs/_drafts
   - docs/_pages/archive-layout-with-content.md
@@ -279,23 +281,29 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-redirect-from
+  - jekyll-default-layout
+  - jekyll-optional-front-matter
   - jekyll-gist
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
   - jekyll-archives
   - jekyll-seo-tag
+  - jekyll-titles-from-headings
 #  - jekyll-paginate-v2
 
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-default-layout
+  - jekyll-optional-front-matter
   - jekyll-gist
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
   - jekyll-archives
+  - jekyll-titles-from-headings
 #  - jekyll-paginate-v2
 
 # Archives

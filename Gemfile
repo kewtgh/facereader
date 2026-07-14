@@ -1,26 +1,34 @@
 source "https://rubygems.org"
 
-# 如果不在做 gem 主题/插件发布，通常不需要 gemspec
-# gemspec
+ruby "~> 4.0"
 
 group :jekyll_plugins do
-  gem "github-pages"
+  gem "jekyll", "~> 4.4"
+  gem "jekyll-archives", "~> 2.3"
+  gem "jekyll-feed", "~> 0.17"
+  gem "jekyll-gist", "~> 1.5"
+  gem "jekyll-default-layout", "~> 0.1"
+  gem "jekyll-include-cache", "~> 0.2"
+  gem "jekyll-optional-front-matter", "~> 0.3"
+  gem "jekyll-paginate", "~> 1.1"
+  gem "jekyll-redirect-from", "~> 0.16"
+  gem "jekyll-seo-tag", "~> 2.8"
+  gem "jekyll-sitemap", "~> 1.4"
+  gem "jekyll-titles-from-headings", "~> 0.5"
+  gem "jemoji", "~> 0.13"
+  gem "kramdown-parser-gfm", "~> 1.1"
 end
 
 gem "csv"
 gem "bigdecimal"
+gem "faraday-retry", "~> 2.2"
+gem "json"
 gem "ostruct"
 
 group :development do
-  # Ruby 3 以后 webrick 不再默认附带；本地 serve 需要
-  gem "webrick", "~> 1.8"
+  gem "listen", "~> 3.10"
+  gem "rake", "~> 13.3"
+  gem "webrick", "~> 1.9"
 end
 
-# Windows 下监听文件变化（可选；如果不用 --livereload 或监听也可删）
 gem "wdm", ">= 0.1.1", platforms: :windows
-
-# Ruby 里这两个一般是标准库/默认库，不建议写在 Gemfile（除非确实遇到缺失报错）
-# gem "fiddle"
-
-# GitHub Pages 当前依赖 Faraday v2，需要显式补上 retry middleware
-gem "faraday-retry", "~> 2.2"

@@ -22,14 +22,14 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3"
-          bundler: "4.0.3"
+          ruby-version: .ruby-version
+          bundler: "4.0.16"
           bundler-cache: true
 
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
-          node-version: "24"
+          node-version-file: .node-version
           cache: "npm"
           cache-dependency-path: package-lock.json
 
@@ -104,7 +104,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
-          node-version: "24"
+          node-version-file: .node-version
           cache: "npm"
           cache-dependency-path: package-lock.json
 
