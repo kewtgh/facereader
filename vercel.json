@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "installCommand": "npm ci && gem install bundler -v 4.0.16 && bundle _4.0.16_ install",
-  "buildCommand": "LANG=C.UTF-8 LC_ALL=C.UTF-8 BUNDLE_FROZEN=true JEKYLL_ENV=production npm run site:build",
+  "installCommand": "bash scripts/vercel-install.sh",
+  "buildCommand": "bash scripts/vercel-build.sh",
   "outputDirectory": "_site"
 }

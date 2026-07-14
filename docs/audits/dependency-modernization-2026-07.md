@@ -69,6 +69,7 @@ Sources checked:
 - Updated GitHub Actions Node to read `.node-version`.
 - Updated CI Bundler pin to `4.0.16`.
 - Updated Vercel commands to Bundler `4.0.16` and the canonical `site:build` entry.
+- Added Vercel install/build scripts that bootstrap Ruby `4.0` and Node `24.18.0` through `mise`, because Vercel's default build image reported Ruby `3.3.0` and cannot satisfy `Gemfile` `ruby "~> 4.0"`.
 - Removed the command-line `-r./_plugins/liquid_taint_compat.rb` shim from `site:build`.
 - Kept `_plugins/liquid_taint_compat.rb`, but reclassified it as a Ruby 4 / Liquid 4 compatibility plugin loaded by Jekyll.
 - Added `README.md` with canonical runtime requirements and excluded it from site output.
@@ -154,6 +155,7 @@ Commands executed:
 - Linux Docker Node: `v24.18.0`.
 - Linux Docker npm: `11.16.0`.
 - Linux Docker checks passed: clean `bundle install`, `bundle check`, `bundle exec jekyll -v`, `npm ci`, `leaders:validate`, `leaders:audit`, `actions:lint`, production `site:build`, `site:links`, `site:check`.
+- Vercel-like Docker smoke test from `ruby:3.3`: pass after `scripts/vercel-install.sh` bootstrapped Ruby `4.0.5`, Node `24.18.0`, and Bundler `4.0.16`, then `scripts/vercel-build.sh` completed the production build.
 - Workflow grep for Node 20 selections: none.
 - Workflow grep for `actions/checkout@v4`, `setup-node@v4`, artifact v4 actions: none.
 - Pages/Algolia raw Jekyll authority check: only `package.json` `site:build` owns `jekyll build`.
@@ -189,6 +191,13 @@ Action/runtime versions:
 - `ruby/setup-ruby@v1`
 - Bundler pin: `4.0.16`
 
+Vercel deployment shape:
+
+- `vercel.json` delegates install to `bash scripts/vercel-install.sh`.
+- `scripts/vercel-install.sh` installs `mise`, resolves Ruby `4.0`, resolves Node `24.18.0`, installs Bundler `4.0.16`, then runs `npm ci` and `bundle _4.0.16_ install`.
+- `vercel.json` delegates build to `bash scripts/vercel-build.sh`.
+- `scripts/vercel-build.sh` runs the canonical production build with `BUNDLE_FROZEN=true`, `JEKYLL_ENV=production`, Ruby `4.0`, Node `24.18.0`, and `npm run site:build`.
+
 ## Deferred / Follow-Up
 
 - System PATH Node is still `v22.22.3`; the repository and CI are set to Node `24.18.0`. Local Node 24 was verified through `npx node@24.18.0`, but the user's global Node installation was not modified.
@@ -199,6 +208,7 @@ Action/runtime versions:
 ## Final State
 
 - `github-pages` aggregation gem removed.
+- FaceReader project version advanced to `6.9.7`.
 - Jekyll upgraded from `3.9.0` to `4.4.1`.
 - Bundler upgraded from `4.0.3` to `4.0.16`.
 - Node target upgraded to `24.18.0`.

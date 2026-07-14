@@ -8,3 +8,4 @@ CHANGELOG.md                    text merge=union
 docs/_docs/18-history.md        text merge=union
 
 *.md                            text
+*.sh                            text eol=lf
