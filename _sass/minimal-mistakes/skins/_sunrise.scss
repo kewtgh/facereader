@@ -12,7 +12,7 @@ $accent-color: #b86b1b !default;            // 强调色：偏橙的棕色，比
 $primary-color: #243447 !default;           // 主色：深蓝灰，显得更理性一些
 
 /* 文本与边界 */
-$muted-text-color: color.mix($text-color, $background-color, 55%) !default;
+$muted-text-color: color.mix($text-color, $background-color, 68%) !default;
 $border-color: color.mix(#000, $background-color, 18%) !default;
 $code-background-color: color.mix(#fff, $background-color, 18%) !default;
 $code-background-color-dark: color.mix(#000, $background-color, 10%) !default;

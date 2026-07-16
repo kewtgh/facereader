@@ -38,9 +38,6 @@ masthead_title           : "FaceReader-企业观察" # overrides the website tit
 masthead_title_i18n:
   zh: "FaceReader-企业观察"
   en: "FaceReader"
-language_home:
-  zh: "/"
-  en: "/en/"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 350
 chinese_words_per_minute : 300
@@ -258,6 +255,7 @@ kramdown:
 sass:
   sass_dir: _sass
   style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  sourcemap: development
 
 
 # Outputting

@@ -52,3 +52,9 @@ GitHub Pages must use **GitHub Actions** as its build source. Do not switch Page
 back to "Deploy from a branch"; the native Pages build cannot compile this
 project's Dart Sass `@use` entrypoint. The Pages workflow validates the compiled
 CSS before uploading `_site` and checks the deployed CSS after deployment.
+
+GitHub Pages is the production authority and serves `facereader.witbacon.com`.
+Vercel deploys the same repository as a mainland-China mirror at
+`faceread.witbacon.com`; it does not own a separate content tree or build mode.
+Keep internal links root-relative so readers remain on the host they opened,
+while canonical, sitemap, and feed URLs continue to use the Pages domain.

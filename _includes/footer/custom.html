@@ -55,6 +55,7 @@
 
       if (text !== null) {
         element.textContent = withSuffix(element, language, text);
+        element.setAttribute("lang", language === "en" ? "en" : "zh-CN");
       }
     }
 
@@ -162,6 +163,7 @@
 
       document.querySelectorAll("[data-fr-i18n-block]").forEach(function (element) {
         element.hidden = element.getAttribute("data-fr-i18n-block") !== language;
+        element.setAttribute("lang", element.getAttribute("data-fr-i18n-block") === "en" ? "en" : "zh-CN");
       });
 
       document.querySelectorAll("[data-fr-ui-lang-option]").forEach(function (button) {
@@ -228,6 +230,18 @@
 
 <script>
   (function () {
+    function currentLanguage() {
+      return (document.documentElement.getAttribute("data-fr-ui-lang") || "zh").slice(0, 2) === "en" ? "en" : "zh";
+    }
+
+    function applyNoteLanguage(note) {
+      var language = currentLanguage();
+      note.querySelectorAll("[data-fr-i18n-zh][data-fr-i18n-en]").forEach(function (element) {
+        element.textContent = element.getAttribute("data-fr-i18n-" + language);
+        element.setAttribute("lang", language === "en" ? "en" : "zh-CN");
+      });
+    }
+
     function enhanceScoreTables() {
       var tables = document.querySelectorAll(".page__content table.fr-score-table");
       tables.forEach(function (table) {
@@ -240,12 +254,14 @@
         note.className = "fr-score-card__note";
         note.innerHTML = [
           "<div>",
-          "<h4>LEADERS 团队评分</h4>",
-          "<p>左侧为文章中的团队七项评分，用来呈现创始人、二三号位、岗位完整度与治理结构的组织画像。</p>",
-          "<p>搜索页会在此基础上叠加 Darwin 投资视角，用资本回报韧性、动态护城河和诚实信号进行复核。</p>",
+          "<h4 data-fr-i18n-zh=\"LEADERS 团队评分\" data-fr-i18n-en=\"LEADERS team rating\">LEADERS 团队评分</h4>",
+          "<p data-fr-i18n-zh=\"左侧为文章中的团队七项评分，用来呈现创始人、二三号位、岗位完整度与治理结构的组织画像。\" data-fr-i18n-en=\"The seven team dimensions summarize the founder, key executives, role coverage, and governance structure described in the article.\">左侧为文章中的团队七项评分，用来呈现创始人、二三号位、岗位完整度与治理结构的组织画像。</p>",
+          "<p data-fr-i18n-zh=\"搜索页会在此基础上叠加 Darwin 投资视角，用资本回报韧性、动态护城河和诚实信号进行复核。\" data-fr-i18n-en=\"The search page adds the Darwin investment lens to review return resilience, dynamic moats, and honest signals.\">搜索页会在此基础上叠加 Darwin 投资视角，用资本回报韧性、动态护城河和诚实信号进行复核。</p>",
           "</div>",
-          "<a class=\"btn btn--primary\" href=\"{{ '/leaders-scorecard/#leaders-search' | relative_url }}\">查看 LEADERS 评分页</a>"
+          "<a class=\"btn btn--primary\" href=\"{{ '/leaders-scorecard/#leaders-search' | relative_url }}\" data-fr-i18n-zh=\"查看 LEADERS 评分页\" data-fr-i18n-en=\"Open the LEADERS scorecard\">查看 LEADERS 评分页</a>"
         ].join("");
+
+        applyNoteLanguage(note);
 
         table.parentNode.insertBefore(card, table);
         card.appendChild(table);
@@ -258,6 +274,10 @@
     } else {
       enhanceScoreTables();
     }
+
+    document.addEventListener("facereader:ui-language", function () {
+      document.querySelectorAll(".fr-score-card__note").forEach(applyNoteLanguage);
+    });
   })();
 </script>
 

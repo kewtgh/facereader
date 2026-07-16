@@ -19,11 +19,13 @@ $fr-ink: #223042;
 $fr-action-color: #2f5f9f;
 $fr-action-hover: color.adjust($fr-action-color, $lightness: -8%);
 $fr-warm-accent: #a8642a;
+$fr-accent-text: #8a4c10;
+$fr-muted-text: #64615c;
 
 $fr-panel-bg: rgba(255, 255, 255, 0.45);
 $fr-panel-border: rgba(34, 48, 66, 0.08);
 $fr-panel-text: rgba(34, 48, 66, 0.86);
-$fr-panel-muted: rgba(34, 48, 66, 0.60);
+$fr-panel-muted: #646b74;
 
 /* =========================
  * 全局排版
@@ -44,7 +46,7 @@ body { line-height: 1.7; }
     linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 252, 242, 0.64));
   box-shadow: 0 6px 16px rgba(34, 48, 66, 0.07);
   font-family: $sans-serif;
-  font-size: 0.73rem;
+  font-size: 0.76rem;
   font-weight: 800;
   line-height: 1;
   white-space: nowrap;
@@ -56,8 +58,8 @@ body { line-height: 1.7; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 2.05rem;
-  min-height: 1.55rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
   padding: 0.12rem 0.48rem;
   border-radius: 999px;
   text-decoration: none;
@@ -78,7 +80,7 @@ body { line-height: 1.7; }
 
 .masthead-language-switcher a,
 .masthead-language-switcher button {
-  color: rgba(34, 48, 66, 0.62);
+  color: #5f6770;
 }
 
 .masthead-language-switcher a:hover,
@@ -101,15 +103,15 @@ body { line-height: 1.7; }
 @media (max-width: 760px) {
   .masthead-language-switcher {
     margin-inline-start: 0.25rem;
-    font-size: 0.68rem;
+    font-size: 0.72rem;
     padding: 0.12rem;
   }
 
   .masthead-language-switcher a,
   .masthead-language-switcher button,
   .masthead-language-switcher .is-current {
-    min-width: 1.8rem;
-    min-height: 1.35rem;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
     padding-inline: 0.34rem;
   }
 }
@@ -145,7 +147,7 @@ body { line-height: 1.7; }
 .page-language-switcher .is-disabled {
   display: inline-flex;
   align-items: center;
-  min-height: 1.8rem;
+  min-height: 2.25rem;
   padding: 0.18rem 0.65rem;
   border: 1px solid rgba(34, 48, 66, 0.10);
   border-radius: 999px;
@@ -170,7 +172,7 @@ body { line-height: 1.7; }
 }
 
 .page-language-switcher .is-disabled {
-  color: rgba(34, 48, 66, 0.34);
+  color: $fr-muted-text;
   background: rgba(255, 255, 255, 0.28);
   cursor: not-allowed;
 }
@@ -179,6 +181,9 @@ body { line-height: 1.7; }
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
 }
 
 /* =====================================================
@@ -216,13 +221,6 @@ body { line-height: 1.7; }
 /* =====================================================
  * 图片和Caption (fr-figure + Markdown img+em fallback)
  * ===================================================== */
-
-/* 通用兜底：正文里的图片不要强制 100% 宽 */
-.page__content img {
-  width: auto !important;
-  max-width: 100% !important;
-  height: auto !important;
-}
 
 /* ---- A) figure.fr-figure 标准写法 ---- */
 .page__content figure.fr-figure {
@@ -279,11 +277,6 @@ body { line-height: 1.7; }
 }
 
 /* ---- B) Markdown 常见兜底：img + em / img + br + em ---- */
-
-/* 图片本体是 block，避免基线空隙造成“看起来隔很远” */
-.page__content img {
-  display: block;
-}
 
 /* 结构1：<img> 紧跟 <em> */
 .page__content img + em {
@@ -551,6 +544,34 @@ body { line-height: 1.7; }
 .leaders-data-page {
   width: 100%;
   max-width: none;
+}
+
+/* Keep the three primary homepage actions aligned when translated copy wraps. */
+@include breakpoint($small) {
+  .feature__wrapper--home-primary {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .feature__wrapper--home-primary .feature__item,
+  .feature__wrapper--home-primary .archive__item,
+  .feature__wrapper--home-primary .archive__item-body {
+    display: flex;
+  }
+
+  .feature__wrapper--home-primary .archive__item,
+  .feature__wrapper--home-primary .archive__item-body {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .feature__wrapper--home-primary .archive__item-body {
+    flex: 1 1 auto;
+  }
+
+  .feature__wrapper--home-primary .archive__item-body > p:last-child {
+    margin-top: auto;
+  }
 }
 
 .data-page.layout--single .page__content > .leaders-data-page {
@@ -1250,6 +1271,7 @@ body { line-height: 1.7; }
 .data-page .leaders-tool,
 .data-page .leaders-table,
 .data-page .leaders-compare,
+.data-page .leaders-benchmark,
 .data-page .leaders-model-details {
   width: 100%;
   max-width: none;
@@ -1863,7 +1885,7 @@ body { line-height: 1.7; }
   color: #7e3b3b;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .leaders-entry-grid,
   .leaders-method__grid,
   .leaders-dimensions,
@@ -1890,8 +1912,14 @@ body { line-height: 1.7; }
   }
 
   .leaders-table__actions {
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 0.75rem;
+  }
+
+  .leaders-table__actions p {
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
 
   .leaders-table__pagination {
@@ -2057,8 +2085,8 @@ body { line-height: 1.7; }
 /* hover */
 .sidebar .nav__items a:hover,
 .sidebar .nav__items a:focus {
-  background: rgba(52, 120, 246, 0.62) !important;    /* ✅深底 */
-  color: rgba(255, 255, 255, 0.98) !important;      /* ✅白字 */
+  background: $fr-action-color !important;
+  color: #ffffff !important;
 }
 
 /* active/current：也别太深 */
@@ -2066,8 +2094,8 @@ body { line-height: 1.7; }
 .sidebar .nav__items a.active,
 .sidebar .nav__items a[aria-current="true"],
 .sidebar .nav__items a[aria-current="page"] {
-  background: rgba(52, 120, 246, 0.20) !important; /* ✅比 hover 稍深但不遮字 */
-  color: rgba(255, 255, 255, 0.98) !important;
+  background: color.mix($fr-action-color, #ffffff, 16%) !important;
+  color: $fr-ink !important;
   font-weight: 700 !important;
 }
 
@@ -2421,7 +2449,7 @@ body { line-height: 1.7; }
 
 .greedy-nav .site-title {
   min-width: 0;
-  flex: 0 0 auto;
+  flex: 1 1 auto;
   max-width: min(34vw, 24rem);
   margin-inline-end: 0.6rem;
 }
@@ -2464,7 +2492,18 @@ body { line-height: 1.7; }
   }
 
   .greedy-nav .site-title {
-    max-width: min(58vw, 18rem);
+    max-width: min(32vw, 10rem);
+    margin-inline-end: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .greedy-nav .site-title {
+    max-width: 6.5rem;
+  }
+
+  .greedy-nav .site-subtitle {
+    display: none;
   }
 }
 
@@ -2630,154 +2669,52 @@ body { line-height: 1.7; }
 }
 
 /* =========================
- * Home About CTA (KEY - replace whole section)
+ * Home About CTA
  * ========================= */
+.home-section--about-cta {
+  clear: both;
+  padding-top: 0.2rem;
+}
 
-.home-section--about-cta { clear: both; }
-
-/* 卡片本体 */
 .home-section--about-cta .home-cta--about {
-  background: $fr-card-bg !important;
-  border: 1px solid $fr-card-border !important;
-  border-radius: 0.75rem !important;
-  box-shadow: $fr-card-shadow;
-
-  padding: 1.35rem 2rem 1.55rem !important; /* ✅底部留白更明显 */
   overflow: hidden;
+  padding: 1.35rem 2rem 1.55rem;
+  border: 1px solid $fr-card-border;
+  border-radius: 0.75rem;
+  background: $fr-card-bg;
+  box-shadow: $fr-card-shadow;
 }
-
-/* 桌面：两列稳定 */
-.home-section--about-cta .home-cta--about .home-cta__inner {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 1.75rem !important;
-  flex-wrap: wrap !important; /* ✅避免挤爆 */
-}
-
-/* 左侧图片区 */
-.home-section--about-cta .home-cta--about .home-cta__media {
-  flex: 0 0 340px !important;
-  max-width: 340px !important;
-}
-
-.home-section--about-cta .home-cta--about .home-cta__media img {
-  display: block !important;
-  width: 100% !important;
-  height: 240px !important;
-  object-fit: cover !important;
-  border-radius: 0.55rem !important;
-}
-
-/* 右侧文本区：用 column，把按钮区域独立出来 */
-.home-section--about-cta .home-cta--about .home-cta__text {
-  flex: 1 1 360px !important;
-  min-width: 0 !important;
-
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: stretch !important;
-}
-
-/* 正文段落左对齐（不影响按钮） */
-.home-section--about-cta .home-cta--about .home-cta__text,
-.home-section--about-cta .home-cta--about .home-cta__text p,
-.home-section--about-cta .home-cta--about .home-cta__text ul,
-.home-section--about-cta .home-cta--about .home-cta__text ol {
-  text-align: left !important;
-}
-
-/* ✅按钮：强制卡片中间（水平居中） */
-/*.home-section--about-cta .home-cta--about .home-cta__text .btn,
- *.home-section--about-cta .home-cta--about .home-cta__text a.btn,
- *.home-section--about-cta .home-cta--about .home-cta__text .btn--primary,
- *.home-section--about-cta .home-cta--about .home-cta__text a.btn--primary {
- *  display: inline-flex !important;
- *  align-items: center !important;
- *  justify-content: center !important;
- *
- *  align-self: center !important;
- *  margin: 1.15rem auto 0.95rem !important;
- *} */
-
-/* About CTA 按钮：终极强制居中（无视外层结构） */
-.home-section--about-cta .home-cta--about a.btn,
-.home-section--about-cta .home-cta--about .btn,
-.home-section--about-cta .home-cta--about a.btn--primary,
-.home-section--about-cta .home-cta--about .btn--primary {
-  /* ✅关键：用 table/block + margin auto 让按钮永远在“卡片内容宽度”正中 */
-  display: table !important;
-  width: fit-content !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-
-  /* ✅清掉可能导致偏移的东西 */
-  float: none !important;
-  position: relative !important;
-  left: auto !important;
-  right: auto !important;
-  transform: none !important;
-
-  /* 间距：上、下留白 */
-  margin-top: 1.15rem !important;
-  margin-bottom: 1.1rem !important;
-}
-
-/* 兼容：按钮被包在 p/div/span 里（不使用 :has 的写法） */
-.home-section--about-cta .home-cta--about .home-cta__text p:last-child,
-.home-section--about-cta .home-cta--about .home-cta__text div:last-child,
-.home-section--about-cta .home-cta--about .home-cta__text span:last-child {
-  width: 100% !important;
-  text-align: center !important; /* ✅让内部按钮可居中 */
-  margin-top: 1.15rem !important;
-  margin-bottom: 0.95rem !important; /* ✅按钮下方留白 */
-}
-
-/* 如果按钮在最后一个 p 里，避免 p 自带 margin 影响高度 */
-.home-section--about-cta .home-cta--about .home-cta__text p:last-child {
-  padding: 0 !important;
-}
-
-/* 补充：加入RSS订阅后，并排显示2个按键 */
-/* =====================================================
- * About CTA layout polish (scoped)
- * ===================================================== */
 
 .home-section--about-cta .home-cta--about .home-cta__inner {
   display: grid;
   grid-template-columns: minmax(240px, 340px) 1fr;
-  gap: 1.4rem;
+  gap: 1.6rem;
   align-items: center;
 }
 
-@include breakpoint($medium) {
-  .home-section--about-cta .home-cta--about .home-cta__inner {
-    gap: 1.6rem;
-  }
+.home-section--about-cta .home-cta--about .home-cta__media {
+  min-width: 0;
 }
 
-/* Mobile: stack */
-@media (max-width: 767px) {
-  .home-section--about-cta .home-cta--about .home-cta__inner {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Media sizing */
 .home-section--about-cta .home-cta--about .home-cta__media img {
-  width: 100%;
-  height: auto;
-  border-radius: 0.55rem;
   display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 0.55rem;
 }
 
-/* Tighten text rhythm */
+.home-section--about-cta .home-cta--about .home-cta__text {
+  min-width: 0;
+  text-align: left;
+}
+
 .home-section--about-cta .home-cta--about .home-cta__text p {
   margin: 0 0 0.6rem;
 }
 
 .home-section--about-cta .home-cta--about .home-cta__text p + ul {
-  margin-top: 0.25rem; /* ✅ 解决“ul 上方行距太大” */
+  margin-top: 0.25rem;
 }
 
 .home-section--about-cta .home-cta--about .home-cta__text ul {
@@ -2789,56 +2726,39 @@ body { line-height: 1.7; }
   margin: 0.3rem 0;
 }
 
-/* Note spacing */
 .home-section--about-cta .home-cta--about .home-cta__note {
   margin: 0.7rem 0 0;
 }
 
-/* Actions: buttons closer, aligned */
 .home-section--about-cta .home-cta--about .home-cta__actions {
   display: flex;
-  gap: 2.26rem;           /* ✅ 按钮间距 */
+  gap: 0.75rem;
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-top: 0.85rem;
 }
 
-/* Mobile: center looks nicer */
-@media (max-width: 767px) {
-  .home-section--about-cta .home-cta--about .home-cta__actions {
-    justify-content: center;
-  }
-}
-
 .home-section--about-cta .home-cta--about .home-cta__actions .btn {
-  margin: 0 !important;
-  display: inline-flex !important;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 132px;      /* ✅ 避免按钮过宽导致间距显得大 */
+  min-width: 132px;
+  margin: 0;
   padding: 0.62rem 1.1rem;
   border-radius: 999px;
 }
 
-
-/* 小屏：一列 */
 @include breakpoint(max-width $medium - 1px) {
   .home-section--about-cta .home-cta--about {
-    padding: 1.15rem 1.25rem 1.35rem !important;
+    padding: 1.15rem 1.25rem 1.35rem;
   }
 
   .home-section--about-cta .home-cta--about .home-cta__inner {
-    flex-direction: column !important;
-    align-items: stretch !important;
+    grid-template-columns: 1fr;
   }
 
-  .home-section--about-cta .home-cta--about .home-cta__media {
-    flex: 1 1 auto !important;
-    max-width: 100% !important;
-  }
-
-  .home-section--about-cta .home-cta--about .home-cta__media img {
-    height: 200px !important;
+  .home-section--about-cta .home-cta--about .home-cta__actions {
+    justify-content: center;
   }
 }
 
@@ -2882,7 +2802,7 @@ body { line-height: 1.7; }
 /* 选中tag突出效果 */
 .tag-item.is-active {
   border-color: $fr-warm-accent;
-  color: $fr-warm-accent;
+  color: $fr-accent-text;
   background: rgba(168, 100, 42, 0.08);
   font-weight: 600;
 }
@@ -2941,11 +2861,6 @@ body { line-height: 1.7; }
 .home-section--picks .entries-grid > .archive__item {
   width: auto !important;
   max-width: none !important;
-}
-
-/* card look (only start-here & picks) */
-.home-section--start-here .entries-grid > .archive__item,
-.home-section--picks .entries-grid > .archive__item {
   border-radius: $fr-card-radius;
   overflow: hidden;
   background: $fr-card-bg;
@@ -3039,11 +2954,6 @@ body { line-height: 1.7; }
 .home-section--picks .home-section__header,
 .home-section--posts .home-section__header {
   margin-bottom: 1.15rem;
-}
-
-/* 更“稳”，避免 margin 折叠，可选加 padding */
-.home-section--about-cta {
-  padding-top: 0.2rem;
 }
 
 @include breakpoint(max-width $small - 1px) {
@@ -3267,10 +3177,10 @@ body { line-height: 1.7; }
 .algolia-searchbox .ais-SearchBox-reset {
   all: unset;                  // 把主题对 button 的样式全清掉
   position: absolute;
-  top: calc(14px + 26px) !important; /* 14px 是 .ais-SearchBox 的 padding；26px = 52/2 */
-  transform: translateY(-50%) !important;
-  width: 34px;
-  height: 34px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -3289,20 +3199,7 @@ body { line-height: 1.7; }
 
 /* 左侧按钮：我们用 ::before 自绘/替换图标 */
 .algolia-searchbox .ais-SearchBox-submit {
-  position: absolute;
-  left: 24px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-
-  display: grid;
-  place-items: center;
+  left: 20px;
 }
 
 /* 左侧自定义图标：方案1（纯 CSS 放大镜，简单耐用） */
@@ -3327,21 +3224,9 @@ body { line-height: 1.7; }
 
 /* 右侧清空按钮：更大 + 圆形 + 居中对齐 */
 .algolia-searchbox .ais-SearchBox-reset {
-  position: absolute;
-  right: 24px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  margin: 0;
-  border: 0;
+  right: 20px;
   border-radius: 999px;
   background: rgba(0,0,0,.06);
-  cursor: pointer;
-
-  display: grid;
-  place-items: center;
 }
 
 /* 右侧自定义 “X” */
@@ -3359,6 +3244,12 @@ body { line-height: 1.7; }
 
 .algolia-searchbox .ais-SearchBox-reset:hover {
   background: rgba(0,0,0,.10);
+}
+
+.algolia-searchbox .ais-SearchBox-submit:focus-visible,
+.algolia-searchbox .ais-SearchBox-reset:focus-visible {
+  outline: 2px solid $fr-action-color;
+  outline-offset: 2px;
 }
 
 /* 防止按钮撑开/影响布局 */
@@ -3388,12 +3279,6 @@ body { line-height: 1.7; }
   padding: 14px;              // 让白底更厚实
   border-radius: 12px;
   box-sizing: border-box;
-}
-
-/* form 不要固定高度（否则容易挤） */
-.algolia-searchbox .ais-SearchBox-form {
-  height: auto !important;
-  position: relative;
 }
 
 /* =====================================================
@@ -3537,12 +3422,29 @@ body { line-height: 1.7; }
 }
 
 .fr-mobile-toc-open {
-  overflow: auto;
+  overflow: hidden;
+}
+
+@media (max-width: 63.99em) {
+  .page__content > .sidebar__right {
+    display: none;
+  }
 }
 
 @media (min-width: 64em) {
   .fr-reader-tools__btn--toc {
     display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
 

@@ -62,17 +62,17 @@
     if (!document.querySelector("link[data-fr-instantsearch-css]")) {
       var css = document.createElement("link");
       css.rel = "stylesheet";
-      css.href = "https://cdn.jsdelivr.net/npm/instantsearch.css@8/themes/satellite-min.css";
+      css.href = "https://cdn.jsdelivr.net/npm/instantsearch.css@8.18.0/themes/satellite-min.css";
       css.setAttribute("data-fr-instantsearch-css", "true");
       document.head.appendChild(css);
     }
 
     // 加载依赖
     if (!window.algoliasearch) {
-      await loadScript("https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js");
+      await loadScript("https://cdn.jsdelivr.net/npm/algoliasearch@4.27.0/dist/algoliasearch-lite.umd.js");
     }
     if (!window.instantsearch) {
-      await loadScript("https://cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js");
+      await loadScript("https://cdn.jsdelivr.net/npm/instantsearch.js@4.106.0/dist/instantsearch.production.min.js");
     }
 
     var appId = "{{ site.algolia.application_id }}";
@@ -141,7 +141,7 @@
                 <article class="algolia-hit">
                   <a class="algolia-hit__link" href="${escapeHTML(hit.url)}">
                     <div class="algolia-hit__media">
-                      <img class="algolia-hit__img" src="${escapeHTML(img)}" alt="">
+                      <img class="algolia-hit__img" src="${escapeHTML(img)}" alt="" loading="lazy" decoding="async">
                     </div>
                     <div class="algolia-hit__body">
                       <h3 class="algolia-hit__title">${titleHTML}</h3>

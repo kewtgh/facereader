@@ -16,25 +16,25 @@
     {%- endif -%}
   {%- endfor -%}
 {%- endif -%}
-<nav class="page-language-switcher" aria-label="{{ t.translation_label | default: 'Language versions' }}">
-  <span class="page-language-switcher__label">{{ t.translation_label | default: "Language versions" }}</span>
+<nav class="page-language-switcher" aria-label="{{ t.article_language_label | default: 'Article version' }}" data-fr-i18n-aria-label-key="article_language_label">
+  <span class="page-language-switcher__label" data-fr-i18n-key="article_language_label">{{ t.article_language_label | default: "Article version" }}</span>
   <ul>
     <li>
       {%- if locale contains "zh" -%}
-        <span class="is-current" aria-current="page">{{ t.language_zh | default: "中文" }}</span>
+        <span class="is-current" aria-current="page" lang="zh-CN">中文</span>
       {%- elsif zh_url != "" -%}
         <a href="{{ zh_url | relative_url }}" lang="zh-CN">{{ t.language_zh | default: "中文" }}</a>
       {%- else -%}
-        <span class="is-disabled" aria-disabled="true">{{ t.language_zh | default: "中文" }}</span>
+        <span class="is-disabled" aria-disabled="true" lang="zh-CN">中文</span>
       {%- endif -%}
     </li>
     <li>
       {%- if locale contains "en" -%}
-        <span class="is-current" aria-current="page">{{ t.language_en | default: "English" }}</span>
+        <span class="is-current" aria-current="page" lang="en">English</span>
       {%- elsif en_url != "" -%}
         <a href="{{ en_url | relative_url }}" lang="en-US">{{ t.language_en | default: "English" }}</a>
       {%- else -%}
-        <span class="is-disabled" aria-disabled="true">{{ t.language_en | default: "English" }}</span>
+        <span class="is-disabled" aria-disabled="true" lang="en">English</span>
       {%- endif -%}
     </li>
   </ul>

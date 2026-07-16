@@ -40,7 +40,9 @@ layout: default
         </header>
       {% endunless %}
 
-      {% include language-switcher.html locale=locale %}
+      {% unless page.article_language_switcher == false %}
+        {% include language-switcher.html locale=locale %}
+      {% endunless %}
 
       <section class="page__content e-content" itemprop="text">
         {% if page.toc %}

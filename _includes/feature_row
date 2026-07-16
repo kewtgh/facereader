@@ -15,14 +15,16 @@
 {%- endif -%}
 
 {%- if feature_row -%}
-  <div class="feature__wrapper">
+  <div class="feature__wrapper{% if include.class %} {{ include.class }}{% endif %}">
     {%- for f in feature_row -%}
       <div class="feature__item">
         <article class="archive__item">
 
           {%- if f.image_path -%}
             <div class="archive__item-teaser">
-              <img src="{{ f.image_path | relative_url }}" alt="{{ f.alt | default: '' }}">
+              {%- assign image_alt_key = f.alt_key | default: f.title_key -%}
+              {%- assign image_alt = t[image_alt_key] | default: f.alt | default: '' -%}
+              <img src="{{ f.image_path | relative_url }}" alt="{{ image_alt }}" width="500" height="300" decoding="async"{% unless forloop.first %} loading="lazy"{% endunless %}{% if image_alt_key %} data-fr-i18n-alt-key="{{ image_alt_key }}"{% endif %}>
             </div>
           {%- endif -%}
 

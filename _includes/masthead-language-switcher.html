@@ -2,7 +2,7 @@
 {%- assign lang = locale | slice: 0, 2 -%}
 {%- assign t = site.data.ui-text[locale] | default: site.data.ui-text[site.locale] -%}
 
-<nav class="masthead-language-switcher" aria-label="{{ t.translation_label | default: 'Language' }}" data-fr-ui-lang-switcher data-fr-default-ui-lang="{{ lang }}" data-fr-i18n-aria-label-key="translation_label">
+<nav class="masthead-language-switcher" aria-label="{{ t.interface_language_label | default: 'Interface language' }}" data-fr-ui-lang-switcher data-fr-default-ui-lang="{{ lang }}" data-fr-i18n-aria-label-key="interface_language_label">
   <button type="button" class="{% if lang == 'zh' %}is-current{% endif %}" data-fr-ui-lang-option="zh" aria-pressed="{% if lang == 'zh' %}true{% else %}false{% endif %}" aria-label="{{ t.language_zh | default: '中文' }}" data-fr-i18n-aria-label-key="language_zh">中</button>
   <button type="button" class="{% if lang == 'en' %}is-current{% endif %}" data-fr-ui-lang-option="en" aria-pressed="{% if lang == 'en' %}true{% else %}false{% endif %}" aria-label="{{ t.language_en | default: 'English' }}" data-fr-i18n-aria-label-key="language_en">EN</button>
 </nav>
