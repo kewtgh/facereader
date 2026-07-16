@@ -76,7 +76,11 @@
       notCovered: "暂未收录：",
       unknownCompany: "该企业",
       notCoveredHint: "免费查询库目前覆盖站内评分企业和新增研究企业。你可以尝试输入：寒武纪、商汤科技、摩尔线程、科大讯飞、DeepSeek、宇树科技。",
-      tableCount: (visible, total) => `显示 ${visible} / ${total} 家企业`,
+      tableCount: (start, end, filtered, total) => `显示 ${start}-${end} / ${filtered} 家企业（共 ${total} 家）`,
+      tableEmpty: "没有符合筛选条件的企业。",
+      pagePrevious: "上一页",
+      pageNext: "下一页",
+      pageStatus: (current, total) => `第 ${current} / ${total} 页`,
       loadFailure: "评分数据加载失败，请稍后再试。",
       noCompare: "请选择至少两家公司进行横向对比。",
       metric: "指标",
@@ -123,7 +127,11 @@
       notCovered: "Not covered yet: ",
       unknownCompany: "this company",
       notCoveredHint: "The free lookup currently covers rated companies on this site and newly researched companies. Try: Cambricon, SenseTime, Moore Threads, iFLYTEK, DeepSeek, or Unitree.",
-      tableCount: (visible, total) => `Showing ${visible} / ${total} companies`,
+      tableCount: (start, end, filtered, total) => `Showing ${start}-${end} of ${filtered} companies (${total} total)`,
+      tableEmpty: "No companies match the current filters.",
+      pagePrevious: "Previous",
+      pageNext: "Next",
+      pageStatus: (current, total) => `Page ${current} of ${total}`,
       loadFailure: "Rating data failed to load. Please try again later.",
       noCompare: "Select at least two companies for comparison.",
       metric: "Metric",
@@ -197,6 +205,8 @@
   let darwinRatingBands = [];
   let darwinWarnDelta = 0.5;
   let darwinReviewDelta = 1.2;
+  const tablePageSize = 25;
+  let tablePage = 1;
 
   const $ = (selector) => document.querySelector(selector);
   const lang = () => (document.documentElement.getAttribute("data-fr-ui-lang") || "zh").slice(0, 2) === "en" ? "en" : "zh";
@@ -613,6 +623,21 @@
       .join("");
   }
 
+  function tablePageNumbers(current, total) {
+    const pages = new Set([1, total, current - 1, current, current + 1]);
+    if (current <= 3) {
+      pages.add(2);
+      pages.add(3);
+    }
+    if (current >= total - 2) {
+      pages.add(total - 1);
+      pages.add(total - 2);
+    }
+    return Array.from(pages)
+      .filter((page) => page >= 1 && page <= total)
+      .sort((a, b) => a - b);
+  }
+
   function renderLeadersTable() {
     const tableRoot = $("#leaders-companies-table");
     if (!tableRoot) return;
@@ -623,6 +648,13 @@
     const countEl = $("#leaders-table-count");
     const bodyEl = $("#leaders-table-body");
     if (!industrySelect || !regionSelect || !bodyEl) return;
+    let paginationEl = tableRoot.querySelector(".leaders-table__pagination");
+    if (!paginationEl) {
+      paginationEl = document.createElement("nav");
+      paginationEl.className = "leaders-table__pagination";
+      paginationEl.setAttribute("aria-label", lang() === "en" ? "Company table pagination" : "企业评分表分页");
+      tableRoot.querySelector(".leaders-table__wrap")?.insertAdjacentElement("afterend", paginationEl);
+    }
 
     const currentIndustry = industrySelect.value;
     const currentRegion = regionSelect.value;
@@ -641,13 +673,17 @@
         const regionMatched = !region || (company.region_tags || []).includes(region);
         return industryMatched && regionMatched;
       });
+      const totalPages = Math.max(1, Math.ceil(filtered.length / tablePageSize));
+      tablePage = Math.max(1, Math.min(tablePage, totalPages));
+      const pageStart = (tablePage - 1) * tablePageSize;
+      const pageItems = filtered.slice(pageStart, pageStart + tablePageSize);
 
-      bodyEl.innerHTML = filtered.map((company, index) => {
+      bodyEl.innerHTML = pageItems.length ? pageItems.map((company, index) => {
         const score = average(company.scores);
         const url = company.url || "#";
         return `
           <tr>
-            <td data-label="${lang() === "en" ? "#" : "序号"}">${index + 1}</td>
+            <td data-label="${lang() === "en" ? "#" : "序号"}">${pageStart + index + 1}</td>
             <td data-label="${lang() === "en" ? "Company" : "企业名称"}">
               <a href="${escapeHtml(url)}">${escapeHtml(company.name)}</a>
               <small>${escapeHtml((company.aliases || []).slice(0, 4).join(" / "))}</small>
@@ -666,20 +702,56 @@
             <td data-label="${lang() === "en" ? "Average" : "平均分"}"><strong>${score.toFixed(1)}</strong></td>
           </tr>
         `;
-      }).join("");
+      }).join("") : `<tr><td colspan="14">${t("tableEmpty")}</td></tr>`;
 
       if (countEl) {
-        countEl.textContent = t("tableCount", filtered.length, companies.length);
+        countEl.textContent = filtered.length
+          ? t("tableCount", pageStart + 1, pageStart + pageItems.length, filtered.length, companies.length)
+          : t("tableEmpty");
+      }
+
+      if (paginationEl) {
+        const pageButtons = tablePageNumbers(tablePage, totalPages)
+          .map((page, index, list) => {
+            const gap = index > 0 && page - list[index - 1] > 1 ? `<span class="leaders-table__pagination-gap">...</span>` : "";
+            return `${gap}<button type="button" data-page="${page}" aria-current="${page === tablePage ? "page" : "false"}">${page}</button>`;
+          })
+          .join("");
+        paginationEl.hidden = filtered.length <= tablePageSize;
+        paginationEl.setAttribute("aria-label", lang() === "en" ? "Company table pagination" : "企业评分表分页");
+        paginationEl.innerHTML = `
+          <button type="button" data-page="prev" ${tablePage <= 1 ? "disabled" : ""}>${t("pagePrevious")}</button>
+          <span class="leaders-table__pagination-pages">${pageButtons}</span>
+          <button type="button" data-page="next" ${tablePage >= totalPages ? "disabled" : ""}>${t("pageNext")}</button>
+          <span class="leaders-table__pagination-status">${t("pageStatus", tablePage, totalPages)}</span>
+        `;
+        paginationEl.onclick = (event) => {
+          const button = event.target.closest("button[data-page]");
+          if (!button || button.disabled) return;
+          const action = button.dataset.page;
+          if (action === "prev") tablePage -= 1;
+          else if (action === "next") tablePage += 1;
+          else tablePage = Number(action) || tablePage;
+          applyFilters();
+          tableRoot.querySelector(".leaders-table__wrap")?.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        };
       }
     };
 
     if (!tableRoot.dataset.filtersBound) {
-      industrySelect.addEventListener("change", applyFilters);
-      regionSelect.addEventListener("change", applyFilters);
+      industrySelect.addEventListener("change", () => {
+        tablePage = 1;
+        applyFilters();
+      });
+      regionSelect.addEventListener("change", () => {
+        tablePage = 1;
+        applyFilters();
+      });
       tableRoot.dataset.filtersBound = "true";
     }
     if (resetButton && !resetButton.dataset.resetBound) {
       resetButton.addEventListener("click", () => {
+        tablePage = 1;
         industrySelect.value = "";
         regionSelect.value = "";
         applyFilters();
