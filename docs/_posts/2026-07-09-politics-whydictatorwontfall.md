@@ -24,6 +24,8 @@ tags:
   - 社会学分析
 toc: true
 toc_sticky: true
+locale: zh-CN
+translation_key: politics-article-0001-2026
 last_modified_at: 2026-07-09T7:55:52-05:00
 ---
 
