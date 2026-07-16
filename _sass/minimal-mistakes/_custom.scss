@@ -381,57 +381,17 @@ body { line-height: 1.7; }
   border-bottom: none !important;
 }
 
-.about-page .sidebar {
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-items: center;
-  row-gap: 0.35rem;
-  max-width: 18rem;
-  margin: 0 auto 1rem;
-  padding: 0.45rem 0.25rem 0.75rem;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-  color: $fr-panel-text;
+@include breakpoint($large) {
+  .about-page.layout--single .page {
+    float: none !important;
+    width: 100% !important;
+    padding-inline-end: 200px;
+  }
 }
 
-.about-page .sidebar > img {
-  display: block;
-  width: 88px;
-  height: 88px;
-  object-fit: contain;
-  margin: 0 auto 0.35rem;
-  padding: 0.48rem;
-  border: 1px solid rgba(34, 48, 66, 0.08);
-  border-radius: 0.55rem;
-  background: rgba(255, 255, 255, 0.32);
-  box-shadow: none;
-}
-
-.about-page .sidebar > h3 {
-  margin: 0.05rem 0 0;
-  font-family: $sans-serif;
-  font-size: 1.14rem;
-  line-height: 1.25;
-  text-align: center;
-  color: color.mix($fr-ink, #000000, 88%);
-}
-
-.about-page .sidebar > p {
-  margin: 0.05rem auto 0;
-  max-width: 15.5rem;
-  color: $fr-panel-muted;
-  font-family: $sans-serif;
-  font-size: 1rem;
-  line-height: 1.62;
-  text-align: center;
-}
-
-@media (max-width: 63.99em) {
-  .about-page .sidebar {
-    max-width: none;
-    margin-bottom: 1.25rem;
+@include breakpoint($x-large) {
+  .about-page.layout--single .page {
+    padding-inline-end: 300px;
   }
 }
 
@@ -471,9 +431,25 @@ body { line-height: 1.7; }
 
 .about-page .about-entry-actions .btn {
   margin: 0;
+  border: 1px solid rgba(34, 48, 66, 0.16);
   border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  color: color.mix($text-color, $fr-ink, 82%) !important;
   font-size: 0.86rem;
+  font-weight: 700;
   line-height: 1.35;
+  text-decoration: none;
+}
+
+.about-page .about-entry-actions .btn:hover,
+.about-page .about-entry-actions .btn:focus-visible {
+  border-color: rgba(168, 100, 42, 0.34);
+  background: rgba(255, 246, 220, 0.66);
+  color: color.mix($fr-warm-accent, $text-color, 72%) !important;
+}
+
+.about-page .about-entry-mail {
+  margin-left: auto !important;
 }
 
 .about-page .about-entry-links {

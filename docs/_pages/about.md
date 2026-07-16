@@ -10,11 +10,6 @@ classes:
   - about-page
 toc: true
 toc_sticky: true
-sidebar:
-  - image: /assets/img/logo-facereader.png
-    image_alt: "FaceReader 企业观察"
-  - title: "FaceReader 企业观察"
-    text: "从人物、组织与制度结构进入企业和时代。"
 author_profile: false
 show_date: false
 ---
@@ -93,9 +88,8 @@ show_date: false
 
 <div class="about-entry-panel about-entry-panel--primary">
   <strong>如果你第一次来到这里：</strong>
-  可以先从首页进入，也可以直接查看全部文章、热门文章或标签索引。
+  可以直接查看全部文章、热门文章或标签索引。
   <div class="about-entry-actions">
-    <a class="btn btn--primary" href="{{ '/' | relative_url }}">回到首页</a>
     <a class="btn btn--secondary" href="{{ '/posts/' | relative_url }}">全部文章</a>
     <a class="btn btn--secondary" href="{{ '/most_popular/' | relative_url }}">热门文章</a>
     <a class="btn btn--secondary" href="{{ '/tags/' | relative_url }}">标签索引</a>
@@ -155,7 +149,7 @@ LEADERS 企业评分把组织管理能力拆成七项：领袖气质、决策力
 来信建议包含：你关心的主题、你看到的事实/链接、以及你最困惑的一个问题点即可。
 
 <div class="about-entry-actions about-entry-actions--inline">
-  <a class="btn btn--primary" href="mailto:facereader@witbacon.com">发送邮件</a>
+  <a class="btn btn--primary about-entry-mail" href="mailto:facereader@witbacon.com">发送邮件</a>
 </div>
 
 > 如果你不知道从哪里开始读：可以先从首页的「阅相识人」「经典解读」或你最熟悉的行业标签进入。
