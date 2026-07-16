@@ -10,7 +10,7 @@ header:
   overlay_filter: "rgba(51, 117, 255, 0.5)"
   actions:
     - label: "Read posts"
-      url: "/posts/"
+      url: "/en/posts/"
       class: "btn--primary"
     - label: "Browse tags"
       url: "/tags/"
@@ -32,9 +32,9 @@ excerpt: >
     </article>
 
     <article class="archive__item archive__item--home-card">
-      <h3 class="archive__item-title">Main archive</h3>
-      <p class="archive__item-excerpt">The current full archive remains available through the Chinese site while English versions are added gradually.</p>
-      <p><a class="btn btn--primary" href="{{ '/posts/' | relative_url }}">Read posts</a></p>
+      <h3 class="archive__item-title">English archive</h3>
+      <p class="archive__item-excerpt">English posts are listed separately so readers do not have to browse the full Chinese archive.</p>
+      <p><a class="btn btn--primary" href="{{ '/en/posts/' | relative_url }}">Read English posts</a></p>
     </article>
   </div>
 </section>

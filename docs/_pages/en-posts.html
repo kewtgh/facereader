@@ -1,0 +1,25 @@
+---
+layout: archive
+permalink: /en/posts/
+locale: en-US
+title: "English Posts"
+description: English versions of FaceReader articles.
+sitemap: true
+classes:
+  - fr-wide-sidebar
+---
+
+{% assign locale = page.locale | default: site.locale %}
+{% assign english_posts = site.posts | where: "locale", "en-US" %}
+
+{% if english_posts.size > 0 %}
+  <div class="entries-list">
+    {% for post in english_posts %}
+      {% include archive-single.html locale=locale %}
+    {% endfor %}
+  </div>
+{% else %}
+  <section class="notice">
+    <p>English article versions will appear here as they are published. The full Chinese archive remains available at <a href="{{ '/posts/' | relative_url }}">Posts</a>.</p>
+  </section>
+{% endif %}

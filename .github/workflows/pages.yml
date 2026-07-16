@@ -50,12 +50,23 @@ jobs:
           set -euo pipefail
 
           expected_domain="facereader.witbacon.com"
-          for required in _site/index.html _site/algolia-records.json _site/CNAME; do
+          for required in _site/index.html _site/assets/css/main.css _site/algolia-records.json _site/CNAME; do
             if [[ ! -f "$required" ]]; then
               echo "::error file=$required::Missing required production output: $required"
               exit 1
             fi
           done
+
+          css_bytes="$(wc -c < _site/assets/css/main.css)"
+          if [[ "$css_bytes" -lt 1000 ]]; then
+            echo "::error file=_site/assets/css/main.css::Compiled CSS is unexpectedly small: ${css_bytes} bytes"
+            exit 1
+          fi
+
+          if grep -q '@use "minimal-mistakes"' _site/assets/css/main.css; then
+            echo "::error file=_site/assets/css/main.css::CSS output contains uncompiled Sass @use source"
+            exit 1
+          fi
 
           actual_domain="$(tr -d '\r\n' < _site/CNAME)"
           if [[ "$actual_domain" != "$expected_domain" ]]; then
@@ -82,6 +93,8 @@ jobs:
     permissions:
       pages: write
       id-token: write
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -90,6 +103,38 @@ jobs:
       - name: Deploy Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+  smoke:
+    runs-on: ubuntu-latest
+    needs: deploy
+    permissions: {}
+
+    steps:
+      - name: Verify deployed Pages CSS
+        run: |
+          set -euo pipefail
+
+          page_url="${{ needs.deploy.outputs.page_url }}"
+          css_url="${page_url%/}/assets/css/main.css"
+
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 "$page_url" > /tmp/index.html
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 "$css_url" > /tmp/main.css
+
+          if ! grep -q 'assets/css/main.css' /tmp/index.html; then
+            echo "::error::Deployed homepage does not reference assets/css/main.css"
+            exit 1
+          fi
+
+          css_bytes="$(wc -c < /tmp/main.css)"
+          if [[ "$css_bytes" -lt 1000 ]]; then
+            echo "::error::Deployed CSS is unexpectedly small: ${css_bytes} bytes from $css_url"
+            exit 1
+          fi
+
+          if grep -q '@use "minimal-mistakes"' /tmp/main.css; then
+            echo "::error::Deployed CSS contains uncompiled Sass @use source"
+            exit 1
+          fi
 
   algolia:
     runs-on: ubuntu-latest

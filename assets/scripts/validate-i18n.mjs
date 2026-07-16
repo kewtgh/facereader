@@ -45,9 +45,14 @@ for (const post of posts) {
   const locale = fm.locale || defaultLocale;
   const lang = String(locale).slice(0, 2);
   const translationKey = fm.translation_key;
+  const permalink = String(fm.permalink || "");
 
   if (!supportedLocales.has(locale) && !supportedLocales.has(lang)) {
     errors.push(`${post.relative}: locale "${locale}" has no _data/ui-text.yml entry.`);
+  }
+
+  if (lang === "en" && permalink && !permalink.startsWith("/en/")) {
+    errors.push(`${post.relative}: English post permalink must start with /en/.`);
   }
 
   if (translationKey) {
@@ -57,21 +62,36 @@ for (const post of posts) {
     if (!groups.has(translationKey)) groups.set(translationKey, []);
     groups.get(translationKey).push({ ...post, locale });
   } else if (lang === "en") {
-    warnings.push(`${post.relative}: English post has no translation_key, so it cannot expose bilingual alternates.`);
+    errors.push(`${post.relative}: English post must set translation_key.`);
   }
 }
 
 for (const [key, translations] of groups) {
   const seenLocales = new Map();
+  const seenTitles = new Map();
+  const seenLangs = new Set();
   for (const translation of translations) {
+    const lang = String(translation.locale).slice(0, 2);
+    const title = String(translation.frontMatter.title || "").trim();
     if (seenLocales.has(translation.locale)) {
       errors.push(`${key}: duplicate locale "${translation.locale}" in ${seenLocales.get(translation.locale)} and ${translation.relative}.`);
     }
     seenLocales.set(translation.locale, translation.relative);
+    seenLangs.add(lang);
+
+    if (title) {
+      const normalizedTitle = title.toLowerCase();
+      if (seenTitles.has(normalizedTitle)) {
+        warnings.push(`${key}: "${translation.relative}" and "${seenTitles.get(normalizedTitle)}" use the same title; verify the translated title is intentional.`);
+      }
+      seenTitles.set(normalizedTitle, translation.relative);
+    }
   }
 
   if (translations.length === 1) {
     warnings.push(`${translations[0].relative}: translation_key "${key}" has only one language version.`);
+  } else if (!seenLangs.has("zh") || !seenLangs.has("en")) {
+    warnings.push(`${key}: translation group should include both Chinese and English versions.`);
   }
 }
 

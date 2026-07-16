@@ -42,3 +42,13 @@ language metadata with:
 ```bash
 npm run i18n:validate
 ```
+
+English posts are listed at `/en/posts/`. A page-level English button should be
+disabled until a matching English post exists for the current `translation_key`.
+
+## GitHub Pages
+
+GitHub Pages must use **GitHub Actions** as its build source. Do not switch Pages
+back to "Deploy from a branch"; the native Pages build cannot compile this
+project's Dart Sass `@use` entrypoint. The Pages workflow validates the compiled
+CSS before uploading `_site` and checks the deployed CSS after deployment.
