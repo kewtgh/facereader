@@ -5,16 +5,6 @@ const root = process.cwd();
 const companiesFile = path.join(root, "assets/data/leaders-companies.json");
 const rubricFile = path.join(root, "assets/data/leaders-score-rubric.json");
 
-const scoreKeys = [
-  "leadership",
-  "decision",
-  "execution",
-  "bench",
-  "alignment",
-  "coverage",
-  "governance"
-];
-const darwinKeys = ["financial", "moat", "signal"];
 const evidenceRank = { C: 1, B: 2, A: 3 };
 
 function readJson(file) {
@@ -35,6 +25,8 @@ function labelFor(rubric, key) {
 
 const companies = readJson(companiesFile);
 const rubric = readJson(rubricFile);
+const scoreKeys = rubric.dimension_order || Object.keys(rubric.dimensions || {});
+const darwinKeys = rubric.darwin_dimension_order || Object.keys(rubric.darwin_dimensions || {});
 const errors = [];
 const warnings = [];
 

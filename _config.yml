@@ -12,7 +12,8 @@
 
 # theme                  : "facereader-jekyll-theme"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "sunrise" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+# FaceReader ships with sunrise as its canonical production skin.
+minimal_mistakes_skin    : "sunrise"
 
 # Site Settings
 locale                   : "zh-CN"

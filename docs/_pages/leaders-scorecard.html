@@ -56,7 +56,14 @@ sitemap: true
   </article>
 </section>
 
-<section class="leaders-tool" id="leaders-scorecard-app" data-source="{{ '/assets/data/leaders-companies.json' | relative_url }}">
+<nav class="leaders-jump-nav" aria-label="LEADERS 页面导航">
+  <a href="#leaders-search">查询</a>
+  <a href="#leaders-compare">对比</a>
+  <a href="#leaders-companies-table">总表</a>
+  <a href="#leaders-method">方法</a>
+</nav>
+
+<section class="leaders-tool" id="leaders-scorecard-app" data-source="{{ '/assets/data/leaders-companies.json' | relative_url }}" data-model="{{ '/assets/data/leaders-score-rubric.json' | relative_url }}">
   <div class="leaders-tool__header" id="leaders-search">
     <p class="leaders-kicker">Company Lookup</p>
     <h2>输入企业名称，查看 LEADERS 评分结果</h2>
@@ -167,7 +174,7 @@ sitemap: true
   </figure>
 </section>
 
-<section class="leaders-method">
+<section class="leaders-method" id="leaders-method">
   <p class="leaders-kicker">Method</p>
   <h2>LEADERS 评析体系如何读一家企业</h2>
   <p class="leaders-method__lead">一家公司真正的管理质量，不能只看创始人个人影响力，也不能只看短期收入。LEADERS 将企业拆成三层：最高管理层决定战略与组织上限，核心高管梯队决定组织韧性，治理成熟度决定长期兑现能力。</p>

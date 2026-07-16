@@ -1,5 +1,27 @@
 {
   "version": "2026-05-01",
+  "dimension_order": ["leadership", "decision", "execution", "bench", "alignment", "coverage", "governance"],
+  "darwin_dimension_order": ["financial", "moat", "signal"],
+  "stage_weights": {
+    "early": { "label": "早期", "values": [0.15, 0.2, 0.2, 0.15, 0.1, 0.1, 0.1] },
+    "growth": { "label": "扩张期", "values": [0.12, 0.18, 0.18, 0.16, 0.12, 0.12, 0.12] },
+    "mature": { "label": "规模化/成熟期", "values": [0.1, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15] }
+  },
+  "evidence_coefficients": { "A": 1, "B": 0.85, "C": 0.7 },
+  "rating_bands": [
+    { "min": 8.5, "label": "A档：系统化优势" },
+    { "min": 7.5, "label": "B+档：稳定有效" },
+    { "min": 6.5, "label": "B档：基本可用" },
+    { "min": 5.5, "label": "C档：存在关键短板" },
+    { "min": 0, "label": "D档：高风险" }
+  ],
+  "darwin_rating_bands": [
+    { "min": 8.5, "label": "优质企业：繁殖能力强" },
+    { "min": 7.5, "label": "较优质：护城河可持续" },
+    { "min": 6.5, "label": "观察档：需验证财务质量" },
+    { "min": 5.5, "label": "承压档：真信号不足" },
+    { "min": 0, "label": "风险档：先看现金流" }
+  ],
   "score_bands": [
     { "range": "0-2", "label": "严重缺失", "rule": "关键岗位或治理机制缺位，已经形成明显组织风险。" },
     { "range": "3-4", "label": "明显不足", "rule": "有局部能力，但无法稳定支撑当前阶段业务。" },
@@ -48,6 +70,11 @@
       "question": "董事会、财务披露、内控、授权和风险管理是否足以约束组织。",
       "high_score_guardrail": "9分需要上市公司级强披露或等价治理证据，治理争议、非上市不透明或资本依赖应降分。"
     }
+  },
+  "darwin_dimensions": {
+    "financial": { "label": "资本回报韧性" },
+    "moat": { "label": "动态护城河" },
+    "signal": { "label": "诚实信号" }
   },
   "guardrails": {
     "score_9_requires": {

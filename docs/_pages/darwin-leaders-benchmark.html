@@ -31,7 +31,7 @@ sitemap: true
   <p>LEADERS 关注管理系统能否持续兑现，Darwin 评分关注财务硬度、动态护城河和高成本诚实信号。这个样本池每半年复盘一次，用来识别网络热度、创始人光环、融资叙事和财务不透明对评分的误导。</p>
 </section>
 
-<section class="leaders-benchmark" id="darwin-leaders-benchmark" data-source="{{ '/assets/data/darwin-leaders-benchmark.json' | relative_url }}">
+<section class="leaders-benchmark" id="darwin-leaders-benchmark" data-source="{{ '/assets/data/darwin-leaders-benchmark.json' | relative_url }}" data-model="{{ '/assets/data/leaders-score-rubric.json' | relative_url }}">
   <div class="leaders-tool__header">
     <p class="leaders-kicker">2026-H1 Sample Pool</p>
     <h2>15家对照企业</h2>
@@ -89,8 +89,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const summary = document.querySelector("#leaders-benchmark-summary");
   if (!root || !rows) return;
 
-  const scoreKeys = ["leadership", "decision", "execution", "bench", "alignment", "coverage", "governance"];
-  const darwinKeys = ["financial", "moat", "signal"];
   const escapeHTML = (value) => String(value || "").replace(/[&<>"']/g, (char) => ({
     "&": "&amp;",
     "<": "&lt;",
@@ -99,22 +97,28 @@ document.addEventListener("DOMContentLoaded", async () => {
     "'": "&#39;"
   }[char]));
   const average = (values) => values.reduce((sum, value) => sum + Number(value || 0), 0) / values.length;
-  const leadersScore = (company) => average(scoreKeys.map((key) => company.scores && company.scores[key]));
-  const darwinScore = (company) => company.darwin ? average(darwinKeys.map((key) => company.darwin[key])) : null;
-  const actionLabel = (delta) => {
-    const abs = Math.abs(delta);
-    if (abs <= 0.5) return "正常";
-    if (abs <= 1.2) return "跟踪";
-    return "复核";
-  };
 
   try {
-    const [benchmarkResponse, companyResponse] = await Promise.all([
+    const [benchmarkResponse, companyResponse, modelResponse] = await Promise.all([
       fetch(root.dataset.source),
-      fetch("{{ '/assets/data/leaders-companies.json' | relative_url }}")
+      fetch("{{ '/assets/data/leaders-companies.json' | relative_url }}"),
+      fetch(root.dataset.model)
     ]);
     const data = await benchmarkResponse.json();
     const companies = await companyResponse.json();
+    const model = await modelResponse.json();
+    const scoreKeys = model.dimension_order || Object.keys(model.dimensions || {});
+    const darwinKeys = model.darwin_dimension_order || Object.keys(model.darwin_dimensions || {});
+    const leadersScore = (company) => average(scoreKeys.map((key) => company.scores && company.scores[key]));
+    const darwinScore = (company) => company.darwin ? average(darwinKeys.map((key) => company.darwin[key])) : null;
+    const warnDelta = Number(model.guardrails?.darwin_feedback?.warn_delta ?? 0.5);
+    const reviewDelta = Number(model.guardrails?.darwin_feedback?.review_delta ?? 1.2);
+    const actionLabel = (delta) => {
+      const abs = Math.abs(delta);
+      if (abs <= warnDelta) return "正常";
+      if (abs <= reviewDelta) return "跟踪";
+      return "复核";
+    };
     const companyMap = new Map(companies.map((company) => [company.name, company]));
 
     rows.innerHTML = data.companies.map((company) => `

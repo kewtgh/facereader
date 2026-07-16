@@ -1,21 +1,4 @@
 (function () {
-  const scoreKeys = [
-    ["leadership", "领袖气质"],
-    ["decision", "决策力"],
-    ["execution", "实干性"],
-    ["bench", "补位力"],
-    ["alignment", "文化契合度"],
-    ["coverage", "岗位专长完整度"],
-    ["governance", "专业化治理结构"]
-  ];
-
-  const weights = {
-    early: { label: "早期", values: [0.15, 0.2, 0.2, 0.15, 0.1, 0.1, 0.1] },
-    growth: { label: "扩张期", values: [0.12, 0.18, 0.18, 0.16, 0.12, 0.12, 0.12] },
-    mature: { label: "规模化/成熟期", values: [0.1, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15] }
-  };
-
-  const evidenceCoef = { A: 1, B: 0.85, C: 0.7 };
   const hotCompanyNames = [
     "NVIDIA",
     "OpenAI",
@@ -27,11 +10,6 @@
     "华为",
     "宁德时代",
     "DeepSeek"
-  ];
-  const darwinKeys = [
-    ["financial", "资本回报韧性"],
-    ["moat", "动态护城河"],
-    ["signal", "诚实信号"]
   ];
   const industryLabels = {
     "半导体": "Semiconductors",
@@ -71,6 +49,14 @@
   };
   const compareColors = ["#205e75", "#b86b1b", "#5f6f52"];
   let companies = [];
+  let scoreKeys = [];
+  let weights = {};
+  let evidenceCoef = {};
+  let ratingBands = [];
+  let darwinKeys = [];
+  let darwinRatingBands = [];
+  let darwinWarnDelta = 0.5;
+  let darwinReviewDelta = 1.2;
 
   const $ = (selector) => document.querySelector(selector);
   const normalize = (value) => String(value || "").trim().toLowerCase().replace(/\s+/g, "");
@@ -86,6 +72,24 @@
   const tagText = (tags, labels) => (tags && tags.length ? tags.map((tag) => tagLabel(tag, labels)).join("、") : "未标注 / Unlabeled");
   const companyNames = (company) => [company.name].concat(company.aliases || []);
   const byName = (name) => companies.find((company) => company.name === name);
+
+  function modelEntries(order, definitions) {
+    return (order || Object.keys(definitions || {})).map((key) => [
+      key,
+      definitions?.[key]?.label || key
+    ]);
+  }
+
+  function configureModel(model) {
+    scoreKeys = modelEntries(model.dimension_order, model.dimensions);
+    darwinKeys = modelEntries(model.darwin_dimension_order, model.darwin_dimensions);
+    weights = model.stage_weights || {};
+    evidenceCoef = model.evidence_coefficients || {};
+    ratingBands = model.rating_bands || [];
+    darwinRatingBands = model.darwin_rating_bands || [];
+    darwinWarnDelta = Number(model.guardrails?.darwin_feedback?.warn_delta ?? darwinWarnDelta);
+    darwinReviewDelta = Number(model.guardrails?.darwin_feedback?.review_delta ?? darwinReviewDelta);
+  }
 
   function isSiteArticle(url) {
     return /^\//.test(url || "") || /^https?:\/\/facereader\.witbacon\.com\//.test(url || "");
@@ -112,13 +116,15 @@
 
   function weightedScore(company, mode) {
     const plan = weights[mode] || weights.growth;
+    if (!plan || !scoreKeys.length) return 0;
     const values = scoreKeys.map(([key]) => Number(company.scores[key] || 0));
     return values.reduce((sum, score, index) => sum + score * plan.values[index], 0);
   }
 
   function evidenceAdjustedScore(company, mode) {
     const plan = weights[mode] || weights.growth;
-    const coef = evidenceCoef[company.evidence] || evidenceCoef.C;
+    if (!plan || !scoreKeys.length) return 0;
+    const coef = evidenceCoef[company.evidence] ?? evidenceCoef.C ?? 0.7;
     const numerator = scoreKeys.reduce((sum, [key], index) => {
       return sum + Number(company.scores[key] || 0) * plan.values[index] * coef;
     }, 0);
@@ -126,26 +132,23 @@
     return numerator / denominator;
   }
 
+  function bandLabel(score, bands, fallback) {
+    const match = bands.find((band) => score >= Number(band.min));
+    return match ? match.label : fallback;
+  }
+
   function rating(score) {
-    if (score >= 8.5) return "A档：系统化优势";
-    if (score >= 7.5) return "B+档：稳定有效";
-    if (score >= 6.5) return "B档：基本可用";
-    if (score >= 5.5) return "C档：存在关键短板";
-    return "D档：高风险";
+    return bandLabel(score, ratingBands, "D档：高风险");
   }
 
   function darwinRating(score) {
-    if (score >= 8.5) return "优质企业：繁殖能力强";
-    if (score >= 7.5) return "较优质：护城河可持续";
-    if (score >= 6.5) return "观察档：需验证财务质量";
-    if (score >= 5.5) return "承压档：真信号不足";
-    return "风险档：先看现金流";
+    return bandLabel(score, darwinRatingBands, "风险档：先看现金流");
   }
 
   function deviationLabel(delta) {
     const abs = Math.abs(delta);
-    if (abs <= 0.5) return "偏差正常";
-    if (abs <= 1.2) return "需要跟踪";
+    if (abs <= darwinWarnDelta) return "偏差正常";
+    if (abs <= darwinReviewDelta) return "需要跟踪";
     return "需要复核参数";
   }
 
@@ -767,8 +770,12 @@
     if (!root) return;
 
     try {
-      const response = await fetch(root.dataset.source);
-      companies = await response.json();
+      const [companyResponse, modelResponse] = await Promise.all([
+        fetch(root.dataset.source),
+        fetch(root.dataset.model)
+      ]);
+      companies = await companyResponse.json();
+      configureModel(await modelResponse.json());
       renderExamples();
       renderResult(companies[0], "growth");
       renderLeadersTable();

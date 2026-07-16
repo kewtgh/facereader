@@ -4,20 +4,13 @@ import path from "node:path";
 const root = process.cwd();
 const files = {
   companies: path.join(root, "assets/data/leaders-companies.json"),
-  benchmark: path.join(root, "assets/data/darwin-leaders-benchmark.json")
+  benchmark: path.join(root, "assets/data/darwin-leaders-benchmark.json"),
+  rubric: path.join(root, "assets/data/leaders-score-rubric.json")
 };
 
-const scoreKeys = [
-  "leadership",
-  "decision",
-  "execution",
-  "bench",
-  "alignment",
-  "coverage",
-  "governance"
-];
-
-const darwinKeys = ["financial", "moat", "signal"];
+const rubric = JSON.parse(fs.readFileSync(files.rubric, "utf8"));
+const scoreKeys = rubric.dimension_order || Object.keys(rubric.dimensions || {});
+const darwinKeys = rubric.darwin_dimension_order || Object.keys(rubric.darwin_dimensions || {});
 const evidenceLevels = new Set(["A", "B", "C"]);
 const allowedIndustryTags = new Set([
   "消费互联网",
