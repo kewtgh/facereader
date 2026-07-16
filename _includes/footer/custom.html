@@ -206,11 +206,23 @@
     var params = new URLSearchParams(window.location.search);
     if (params.get("from") !== "leaders-scorecard") return;
 
+    function currentLanguage() {
+      return (document.documentElement.getAttribute("data-fr-ui-lang") || "zh").slice(0, 2) === "en" ? "en" : "zh";
+    }
+
+    function label() {
+      return currentLanguage() === "en" ? "Back to rating search" : "返回评级搜索";
+    }
+
     var link = document.createElement("a");
     link.className = "leaders-floating-back";
     link.href = "{{ '/leaders-scorecard/#leaders-search' | relative_url }}";
-    link.textContent = "返回评级搜索";
+    link.textContent = label();
     document.body.appendChild(link);
+
+    document.addEventListener("facereader:ui-language", function () {
+      link.textContent = label();
+    });
   })();
 </script>
 

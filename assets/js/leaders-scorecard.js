@@ -47,6 +47,146 @@
     "英国": "United Kingdom",
     "中国大陆": "Mainland China"
   };
+  const ui = {
+    zh: {
+      allIndustries: "全部行业",
+      allRegions: "全部地区",
+      unlabeled: "未标注",
+      backToSearch: "返回评级搜索",
+      referenceLink: "参考链接",
+      referencesTitle: "参考链接及摘要",
+      relatedArticle: "查看关联文章",
+      referenceMaterials: "查看参考资料",
+      addCompare: "加入对比",
+      darwinTitle: "Darwin 优质企业评分",
+      darwinEmpty: "该企业尚未完成 Darwin 三项复核。下次半年度复盘时，将补充财务硬度、动态护城河和诚实信号评分，并与 LEADERS 分数比较偏差。",
+      darwinIntro: "用财务硬度、动态护城河和诚实信号过滤市场关注度与低成本叙事。",
+      darwinDelta: "Darwin - LEADERS",
+      deviation: "偏差判断",
+      evidence: "证据等级",
+      pendingReview: "等待半年度复核补充说明。",
+      simpleAverage: "简单平均",
+      weightedSuffix: "加权",
+      leaders7: "LEADERS-7项评分",
+      judgmentTracking: "判断与跟踪",
+      mainRisk: "主要风险：",
+      watchPoints: "未来验证点：",
+      suggestionsLabel: "相近企业",
+      suggestionsIntro: "你可能想查：",
+      notCovered: "暂未收录：",
+      unknownCompany: "该企业",
+      notCoveredHint: "免费查询库目前覆盖站内评分企业和新增研究企业。你可以尝试输入：寒武纪、商汤科技、摩尔线程、科大讯飞、DeepSeek、宇树科技。",
+      tableCount: (visible, total) => `显示 ${visible} / ${total} 家企业`,
+      loadFailure: "评分数据加载失败，请稍后再试。",
+      noCompare: "请选择至少两家公司进行横向对比。",
+      metric: "指标",
+      stageWeighted: "阶段加权",
+      evidenceAdjusted: "证据调整",
+      darwinAverage: "Darwin平均",
+      updated: "更新时间",
+      pendingScore: "待评分",
+      pendingReviewShort: "待复核",
+      radarLabel: "LEADERS 七项评分雷达图",
+      deviationNormal: "偏差正常",
+      deviationWatch: "需要跟踪",
+      deviationReview: "需要复核参数",
+      defaultRating: "D档：高风险",
+      defaultDarwinRating: "风险档：先看现金流",
+      noArticleSummary: (name, summary) => `${name}暂无站内企业评析文章，以下公开资料用于支撑当前 LEADERS 与 Darwin 评分：${summary}`,
+      noArticleFallback: (name) => `${name}暂无站内企业评析文章，当前评分依据企业基础信息、公开风险线索和后续人工复核要求形成。`
+    },
+    en: {
+      allIndustries: "All industries",
+      allRegions: "All regions",
+      unlabeled: "Unlabeled",
+      backToSearch: "Back to rating search",
+      referenceLink: "Reference link",
+      referencesTitle: "Reference links and summary",
+      relatedArticle: "View related article",
+      referenceMaterials: "View reference materials",
+      addCompare: "Add to comparison",
+      darwinTitle: "Darwin quality-company score",
+      darwinEmpty: "This company has not completed the three Darwin review dimensions yet. The next half-year review will add scores for financial hardness, dynamic moat, and honest signals, then compare them with the LEADERS score.",
+      darwinIntro: "Filters market attention and low-cost narratives through financial hardness, dynamic moat, and honest signals.",
+      darwinDelta: "Darwin - LEADERS",
+      deviation: "Deviation",
+      evidence: "Evidence",
+      pendingReview: "Waiting for the next half-year review note.",
+      simpleAverage: "Simple average",
+      weightedSuffix: "weighted",
+      leaders7: "LEADERS-7 scores",
+      judgmentTracking: "Judgment and tracking",
+      mainRisk: "Main risk: ",
+      watchPoints: "Future validation points:",
+      suggestionsLabel: "Similar companies",
+      suggestionsIntro: "You may want to search:",
+      notCovered: "Not covered yet: ",
+      unknownCompany: "this company",
+      notCoveredHint: "The free lookup currently covers rated companies on this site and newly researched companies. Try: Cambricon, SenseTime, Moore Threads, iFLYTEK, DeepSeek, or Unitree.",
+      tableCount: (visible, total) => `Showing ${visible} / ${total} companies`,
+      loadFailure: "Rating data failed to load. Please try again later.",
+      noCompare: "Select at least two companies for comparison.",
+      metric: "Metric",
+      stageWeighted: "Stage-weighted",
+      evidenceAdjusted: "Evidence-adjusted",
+      darwinAverage: "Darwin average",
+      updated: "Updated",
+      pendingScore: "Pending",
+      pendingReviewShort: "Pending review",
+      radarLabel: "LEADERS seven-dimension radar chart",
+      deviationNormal: "Normal deviation",
+      deviationWatch: "Needs tracking",
+      deviationReview: "Needs parameter review",
+      defaultRating: "D: high risk",
+      defaultDarwinRating: "Risk tier: check cash flow first",
+      noArticleSummary: (name, summary) => `${name} does not yet have a site article. The public materials below support the current LEADERS and Darwin scores: ${summary}`,
+      noArticleFallback: (name) => `${name} does not yet have a site article. The current score is based on basic company information, public risk signals, and follow-up manual review requirements.`
+    }
+  };
+  const dimensionLabels = {
+    zh: {
+      leadership: "领袖气质",
+      decision: "决策力",
+      execution: "实干性",
+      bench: "补位力",
+      alignment: "文化契合度",
+      coverage: "岗位专长完整度",
+      governance: "专业化治理结构",
+      financial: "资本回报韧性",
+      moat: "动态护城河",
+      signal: "诚实信号"
+    },
+    en: {
+      leadership: "Leadership",
+      decision: "Decision-making",
+      execution: "Execution",
+      bench: "Executive bench",
+      alignment: "Alignment",
+      coverage: "Role coverage",
+      governance: "Governance",
+      financial: "Capital-return resilience",
+      moat: "Dynamic moat",
+      signal: "Honest signals"
+    }
+  };
+  const stageLabels = {
+    zh: { early: "早期", growth: "扩张期", mature: "规模化/成熟期" },
+    en: { early: "Early-stage", growth: "Growth-stage", mature: "Mature-stage" }
+  };
+  const ratingLabels = {
+    en: {
+      "A档：系统化优势": "A: systematic advantage",
+      "B+档：稳定有效": "B+: stable and effective",
+      "B档：基本可用": "B: basically workable",
+      "C档：存在关键短板": "C: key weaknesses",
+      "D档：高风险": "D: high risk",
+      "优质企业：繁殖能力强": "Quality company: strong compounding capacity",
+      "较优质：护城河可持续": "Strong quality: sustainable moat",
+      "观察档：需验证财务质量": "Watch tier: verify financial quality",
+      "承压档：真信号不足": "Pressure tier: insufficient true signals",
+      "风险档：先看现金流": "Risk tier: check cash flow first"
+    }
+  };
   const compareColors = ["#205e75", "#b86b1b", "#5f6f52"];
   let companies = [];
   let scoreKeys = [];
@@ -59,6 +199,14 @@
   let darwinReviewDelta = 1.2;
 
   const $ = (selector) => document.querySelector(selector);
+  const lang = () => (document.documentElement.getAttribute("data-fr-ui-lang") || "zh").slice(0, 2) === "en" ? "en" : "zh";
+  const t = (key, ...args) => {
+    const value = ui[lang()][key] ?? ui.zh[key] ?? key;
+    return typeof value === "function" ? value(...args) : value;
+  };
+  const localizedDimensionLabel = (key, fallback) => dimensionLabels[lang()][key] || fallback || key;
+  const localizedStageLabel = (key, fallback) => stageLabels[lang()][key] || fallback || key;
+  const localizedRatingLabel = (label) => lang() === "en" ? (ratingLabels.en[label] || label) : label;
   const normalize = (value) => String(value || "").trim().toLowerCase().replace(/\s+/g, "");
   const escapeHtml = (value) => String(value || "")
     .replace(/&/g, "&amp;")
@@ -68,8 +216,8 @@
     .replace(/'/g, "&#039;");
   const average = (scores) => scoreKeys.reduce((sum, [key]) => sum + Number(scores[key] || 0), 0) / scoreKeys.length;
   const averageDarwin = (scores) => darwinKeys.reduce((sum, [key]) => sum + Number(scores[key] || 0), 0) / darwinKeys.length;
-  const tagLabel = (tag, labels) => labels[tag] ? `${tag} / ${labels[tag]}` : tag;
-  const tagText = (tags, labels) => (tags && tags.length ? tags.map((tag) => tagLabel(tag, labels)).join("、") : "未标注 / Unlabeled");
+  const tagLabel = (tag, labels) => lang() === "en" ? (labels[tag] || tag) : tag;
+  const tagText = (tags, labels) => (tags && tags.length ? tags.map((tag) => tagLabel(tag, labels)).join(lang() === "en" ? ", " : "、") : t("unlabeled"));
   const companyNames = (company) => [company.name].concat(company.aliases || []);
   const byName = (name) => companies.find((company) => company.name === name);
 
@@ -110,7 +258,7 @@
     const link = document.createElement("a");
     link.className = "leaders-floating-back";
     link.href = "#leaders-search";
-    link.textContent = "返回评级搜索";
+    link.textContent = t("backToSearch");
     document.body.appendChild(link);
   }
 
@@ -138,18 +286,18 @@
   }
 
   function rating(score) {
-    return bandLabel(score, ratingBands, "D档：高风险");
+    return localizedRatingLabel(bandLabel(score, ratingBands, t("defaultRating")));
   }
 
   function darwinRating(score) {
-    return bandLabel(score, darwinRatingBands, "风险档：先看现金流");
+    return localizedRatingLabel(bandLabel(score, darwinRatingBands, t("defaultDarwinRating")));
   }
 
   function deviationLabel(delta) {
     const abs = Math.abs(delta);
-    if (abs <= darwinWarnDelta) return "偏差正常";
-    if (abs <= darwinReviewDelta) return "需要跟踪";
-    return "需要复核参数";
+    if (abs <= darwinWarnDelta) return t("deviationNormal");
+    if (abs <= darwinReviewDelta) return t("deviationWatch");
+    return t("deviationReview");
   }
 
   function orderedCharScore(haystack, needle) {
@@ -220,7 +368,7 @@
       const value = Number(company.scores[key] || 0);
       return `
         <div class="leaders-result__bar">
-          <span>${label}</span>
+          <span>${escapeHtml(localizedDimensionLabel(key, label))}</span>
           <strong>${value.toFixed(1)}</strong>
           <div class="leaders-result__track" aria-hidden="true">
             <i style="width: ${value * 10}%"></i>
@@ -235,7 +383,7 @@
       const value = Number(darwin[key] || 0);
       return `
         <div class="leaders-result__bar leaders-result__bar--darwin">
-          <span>${label}</span>
+          <span>${escapeHtml(localizedDimensionLabel(key, label))}</span>
           <strong>${value.toFixed(1)}</strong>
           <div class="leaders-result__track" aria-hidden="true">
             <i style="width: ${value * 10}%"></i>
@@ -260,9 +408,9 @@
   function referenceSummary(company) {
     if (company.reference_summary) return company.reference_summary;
     if (company.sources && company.sources.length) {
-      return `${company.name}暂无站内企业评析文章，以下公开资料用于支撑当前 LEADERS 与 Darwin 评分：${company.summary}`;
+      return t("noArticleSummary", company.name, company.summary);
     }
-    return `${company.name}暂无站内企业评析文章，当前评分依据企业基础信息、公开风险线索和后续人工复核要求形成。`;
+    return t("noArticleFallback", company.name);
   }
 
   function renderReferences(company) {
@@ -270,14 +418,14 @@
       .filter(Boolean)
       .map((source, index) => `
         <li>
-          <a href="${escapeHtml(source)}" target="_blank" rel="noopener">参考链接 ${index + 1}</a>
+          <a href="${escapeHtml(source)}" target="_blank" rel="noopener">${t("referenceLink")} ${index + 1}</a>
         </li>
       `)
       .join("");
 
     return `
       <section class="leaders-references" id="leaders-reference-materials">
-        <h3>参考链接及摘要</h3>
+        <h3>${t("referencesTitle")}</h3>
         <p>${escapeHtml(referenceSummary(company))}</p>
         <ul>${links}</ul>
       </section>
@@ -286,23 +434,23 @@
 
   function renderResourceLink(company) {
     if (isSiteArticle(company.url)) {
-      return `<a class="btn btn--primary" href="${escapeHtml(addReturnParam(company.url))}">查看关联文章</a>`;
+      return `<a class="btn btn--primary" href="${escapeHtml(addReturnParam(company.url))}">${t("relatedArticle")}</a>`;
     }
 
-    return `<a class="btn btn--primary" href="#leaders-reference-materials" data-show-back="true">查看参考资料</a>`;
+    return `<a class="btn btn--primary" href="#leaders-reference-materials" data-show-back="true">${t("referenceMaterials")}</a>`;
   }
 
   function renderCompareButton(company) {
     if (!$("#leaders-compare")) return "";
-    return `<button class="btn leaders-compare-add" type="button" data-compare-company="${escapeHtml(company.name)}">加入对比</button>`;
+    return `<button class="btn leaders-compare-add" type="button" data-compare-company="${escapeHtml(company.name)}">${t("addCompare")}</button>`;
   }
 
   function renderDarwinPanel(company, leadersScore) {
     if (!company.darwin) {
       return `
         <section class="leaders-darwin leaders-darwin--empty">
-          <h3>Darwin 优质企业评分</h3>
-          <p>该企业尚未完成 Darwin 三项复核。下次半年度复盘时，将补充财务硬度、动态护城河和诚实信号评分，并与 LEADERS 分数比较偏差。</p>
+          <h3>${t("darwinTitle")}</h3>
+          <p>${t("darwinEmpty")}</p>
         </section>
       `;
     }
@@ -315,8 +463,8 @@
       <section class="leaders-darwin">
         <div class="leaders-darwin__head">
           <div>
-            <h3>Darwin 优质企业评分</h3>
-            <p>用财务硬度、动态护城河和诚实信号过滤市场关注度与低成本叙事。</p>
+            <h3>${t("darwinTitle")}</h3>
+            <p>${t("darwinIntro")}</p>
           </div>
           <div class="leaders-darwin__score">
             <span>${score.toFixed(1)}</span>
@@ -325,11 +473,11 @@
         </div>
         ${renderDarwinBars(company.darwin)}
         <div class="leaders-darwin__compare">
-          <div><span>Darwin - LEADERS</span><strong>${deltaText}</strong></div>
-          <div><span>偏差判断</span><strong>${deviationLabel(delta)}</strong></div>
-          <div><span>证据等级</span><strong>${company.darwin.evidence || company.evidence || "C"}</strong></div>
+          <div><span>${t("darwinDelta")}</span><strong>${deltaText}</strong></div>
+          <div><span>${t("deviation")}</span><strong>${deviationLabel(delta)}</strong></div>
+          <div><span>${t("evidence")}</span><strong>${company.darwin.evidence || company.evidence || "C"}</strong></div>
         </div>
-        <p class="leaders-darwin__note">${escapeHtml(company.darwin.note || "等待半年度复核补充说明。")}</p>
+        <p class="leaders-darwin__note">${escapeHtml(company.darwin.note || t("pendingReview"))}</p>
       </section>
     `;
   }
@@ -354,22 +502,22 @@
           </div>
         </div>
         <div class="leaders-metrics">
-          <div><span>简单平均</span><strong>${raw.toFixed(1)}</strong></div>
-          <div><span>${plan.label}加权</span><strong>${weighted.toFixed(1)}</strong></div>
-          <div><span>证据等级</span><strong>${company.evidence}</strong></div>
+          <div><span>${t("simpleAverage")}</span><strong>${raw.toFixed(1)}</strong></div>
+          <div><span>${localizedStageLabel(mode, plan.label)} ${t("weightedSuffix")}</span><strong>${weighted.toFixed(1)}</strong></div>
+          <div><span>${t("evidence")}</span><strong>${company.evidence}</strong></div>
         </div>
         <p class="leaders-result__summary">${escapeHtml(company.summary)}</p>
         ${renderTags(company)}
         <div class="leaders-result__grid">
           <section>
-            <h3>LEADERS-7项评分</h3>
+            <h3>${t("leaders7")}</h3>
             ${renderBars(company)}
             ${renderDarwinPanel(company, adjusted)}
           </section>
           <section>
-            <h3>判断与跟踪</h3>
-            <p><strong>主要风险：</strong>${escapeHtml(company.risk)}</p>
-            <p><strong>未来验证点：</strong></p>
+            <h3>${t("judgmentTracking")}</h3>
+            <p><strong>${t("mainRisk")}</strong>${escapeHtml(company.risk)}</p>
+            <p><strong>${t("watchPoints")}</strong></p>
             <ul>${watch}</ul>
             <p class="leaders-result__actions">${renderResourceLink(company)}${renderCompareButton(company)}</p>
           </section>
@@ -395,8 +543,8 @@
       .join("");
     if (!suggestions) return "";
     return `
-      <div class="leaders-suggestions" aria-label="相近企业">
-        <p>你可能想查：</p>
+      <div class="leaders-suggestions" aria-label="${t("suggestionsLabel")}">
+        <p>${t("suggestionsIntro")}</p>
         <div>${suggestions}</div>
       </div>
     `;
@@ -405,8 +553,8 @@
   function renderEmpty(query) {
     $("#leaders-result").innerHTML = `
       <article class="leaders-result leaders-result--empty" aria-live="polite">
-        <h2>暂未收录：${escapeHtml(query || "该企业")}</h2>
-        <p>免费查询库目前覆盖站内评分企业和新增研究企业。你可以尝试输入：寒武纪、商汤科技、摩尔线程、科大讯飞、DeepSeek、宇树科技。</p>
+        <h2>${t("notCovered")}${escapeHtml(query || t("unknownCompany"))}</h2>
+        <p>${t("notCoveredHint")}</p>
         ${renderSuggestions(query)}
       </article>
     `;
@@ -476,8 +624,14 @@
     const bodyEl = $("#leaders-table-body");
     if (!industrySelect || !regionSelect || !bodyEl) return;
 
-    renderFilterOptions(industrySelect, uniqueTags("industry_tags"), "全部行业 / All industries", industryLabels);
-    renderFilterOptions(regionSelect, uniqueTags("region_tags"), "全部地区 / All regions", regionLabels);
+    const currentIndustry = industrySelect.value;
+    const currentRegion = regionSelect.value;
+    const industryTags = uniqueTags("industry_tags");
+    const regionTags = uniqueTags("region_tags");
+    renderFilterOptions(industrySelect, industryTags, t("allIndustries"), industryLabels);
+    renderFilterOptions(regionSelect, regionTags, t("allRegions"), regionLabels);
+    if (industryTags.includes(currentIndustry)) industrySelect.value = currentIndustry;
+    if (regionTags.includes(currentRegion)) regionSelect.value = currentRegion;
 
     const applyFilters = () => {
       const industry = industrySelect.value;
@@ -493,40 +647,44 @@
         const url = company.url || "#";
         return `
           <tr>
-            <td data-label="序号">${index + 1}</td>
-            <td data-label="企业名称">
+            <td data-label="${lang() === "en" ? "#" : "序号"}">${index + 1}</td>
+            <td data-label="${lang() === "en" ? "Company" : "企业名称"}">
               <a href="${escapeHtml(url)}">${escapeHtml(company.name)}</a>
               <small>${escapeHtml((company.aliases || []).slice(0, 4).join(" / "))}</small>
             </td>
-            <td data-label="行业 / Industry">${escapeHtml(tagText(company.industry_tags, industryLabels))}</td>
-            <td data-label="地区 / Region">${escapeHtml(tagText(company.region_tags, regionLabels))}</td>
-            <td data-label="证据等级">${escapeHtml(company.evidence || "C")}</td>
-            <td data-label="更新时间">${escapeHtml(company.last_reviewed || "待复核")}</td>
-            <td data-label="领袖气质">${Number(company.scores.leadership || 0).toFixed(1)}</td>
-            <td data-label="决策力">${Number(company.scores.decision || 0).toFixed(1)}</td>
-            <td data-label="实干性">${Number(company.scores.execution || 0).toFixed(1)}</td>
-            <td data-label="补位力">${Number(company.scores.bench || 0).toFixed(1)}</td>
-            <td data-label="文化契合度">${Number(company.scores.alignment || 0).toFixed(1)}</td>
-            <td data-label="岗位完整性">${Number(company.scores.coverage || 0).toFixed(1)}</td>
-            <td data-label="治理结构">${Number(company.scores.governance || 0).toFixed(1)}</td>
-            <td data-label="平均分"><strong>${score.toFixed(1)}</strong></td>
+            <td data-label="${lang() === "en" ? "Industry" : "行业"}">${escapeHtml(tagText(company.industry_tags, industryLabels))}</td>
+            <td data-label="${lang() === "en" ? "Region" : "地区"}">${escapeHtml(tagText(company.region_tags, regionLabels))}</td>
+            <td data-label="${t("evidence")}">${escapeHtml(company.evidence || "C")}</td>
+            <td data-label="${t("updated")}">${escapeHtml(company.last_reviewed || t("pendingReviewShort"))}</td>
+            <td data-label="${localizedDimensionLabel("leadership", "领袖气质")}">${Number(company.scores.leadership || 0).toFixed(1)}</td>
+            <td data-label="${localizedDimensionLabel("decision", "决策力")}">${Number(company.scores.decision || 0).toFixed(1)}</td>
+            <td data-label="${localizedDimensionLabel("execution", "实干性")}">${Number(company.scores.execution || 0).toFixed(1)}</td>
+            <td data-label="${localizedDimensionLabel("bench", "补位力")}">${Number(company.scores.bench || 0).toFixed(1)}</td>
+            <td data-label="${localizedDimensionLabel("alignment", "文化契合度")}">${Number(company.scores.alignment || 0).toFixed(1)}</td>
+            <td data-label="${localizedDimensionLabel("coverage", "岗位完整性")}">${Number(company.scores.coverage || 0).toFixed(1)}</td>
+            <td data-label="${localizedDimensionLabel("governance", "治理结构")}">${Number(company.scores.governance || 0).toFixed(1)}</td>
+            <td data-label="${lang() === "en" ? "Average" : "平均分"}"><strong>${score.toFixed(1)}</strong></td>
           </tr>
         `;
       }).join("");
 
       if (countEl) {
-        countEl.textContent = `显示 ${filtered.length} / ${companies.length} 家企业`;
+        countEl.textContent = t("tableCount", filtered.length, companies.length);
       }
     };
 
-    industrySelect.addEventListener("change", applyFilters);
-    regionSelect.addEventListener("change", applyFilters);
-    if (resetButton) {
+    if (!tableRoot.dataset.filtersBound) {
+      industrySelect.addEventListener("change", applyFilters);
+      regionSelect.addEventListener("change", applyFilters);
+      tableRoot.dataset.filtersBound = "true";
+    }
+    if (resetButton && !resetButton.dataset.resetBound) {
       resetButton.addEventListener("click", () => {
         industrySelect.value = "";
         regionSelect.value = "";
         applyFilters();
       });
+      resetButton.dataset.resetBound = "true";
     }
     applyFilters();
   }
@@ -606,12 +764,12 @@
 
   function compareMetricRows(selected, mode) {
     const rows = [
-      ["阶段加权", (company) => weightedScore(company, mode).toFixed(1)],
-      ["证据调整", (company) => evidenceAdjustedScore(company, mode).toFixed(1)],
-      ["简单平均", (company) => average(company.scores).toFixed(1)],
-      ["Darwin平均", (company) => company.darwin ? averageDarwin(company.darwin).toFixed(1) : "待评分"],
-      ["证据等级", (company) => company.evidence || "C"],
-      ["更新时间", (company) => company.last_reviewed || "待复核"]
+      [t("stageWeighted"), (company) => weightedScore(company, mode).toFixed(1)],
+      [t("evidenceAdjusted"), (company) => evidenceAdjustedScore(company, mode).toFixed(1)],
+      [t("simpleAverage"), (company) => average(company.scores).toFixed(1)],
+      [t("darwinAverage"), (company) => company.darwin ? averageDarwin(company.darwin).toFixed(1) : t("pendingScore")],
+      [t("evidence"), (company) => company.evidence || "C"],
+      [t("updated"), (company) => company.last_reviewed || t("pendingReviewShort")]
     ];
 
     return rows.map(([label, getter], rowIndex) => {
@@ -641,7 +799,7 @@
 
       return `
         <tr>
-          <th>${escapeHtml(label)}</th>
+          <th>${escapeHtml(localizedDimensionLabel(key, label))}</th>
           ${selected.map((company, index) => {
             const value = values[index];
             const bestClass = value === best ? ` class="is-best"` : "";
@@ -679,11 +837,12 @@
       })
       .join("");
     const axes = scoreKeys.map(([, label], index) => {
+      const key = scoreKeys[index][0];
       const point = radarGridPoint(index, 1, center, radius);
       const text = radarGridPoint(index, 1.17, center, radius);
       return `
         <line x1="${center}" y1="${center}" x2="${point.x.toFixed(1)}" y2="${point.y.toFixed(1)}"></line>
-        <text x="${text.x.toFixed(1)}" y="${text.y.toFixed(1)}">${escapeHtml(label)}</text>
+        <text x="${text.x.toFixed(1)}" y="${text.y.toFixed(1)}">${escapeHtml(localizedDimensionLabel(key, label))}</text>
       `;
     }).join("");
     const shapes = selected.map((company, index) => {
@@ -700,7 +859,7 @@
 
     return `
       <div class="leaders-compare-radar">
-        <div class="leaders-compare-radar__chart" aria-label="LEADERS 七项评分雷达图">
+        <div class="leaders-compare-radar__chart" aria-label="${t("radarLabel")}">
           <svg viewBox="0 0 360 360" role="img">
             <g class="leaders-compare-radar__grid">${rings}${axes}</g>
             <g>${shapes}</g>
@@ -724,7 +883,7 @@
     const mode = $("#leaders-stage")?.value || "growth";
 
     if (selected.length < 2) {
-      output.innerHTML = `<p class="leaders-compare__empty">请选择至少两家公司进行横向对比。</p>`;
+      output.innerHTML = `<p class="leaders-compare__empty">${t("noCompare")}</p>`;
       return;
     }
 
@@ -740,7 +899,7 @@
               <p>${escapeHtml(company.industry)} · ${escapeHtml(company.stage)}</p>
               <strong>${adjusted.toFixed(1)}</strong>
               <span>${escapeHtml(rating(adjusted))}</span>
-              ${delta ? `<small>Darwin - LEADERS: ${escapeHtml(delta)}</small>` : `<small>Darwin: 待评分</small>`}
+              ${delta ? `<small>${t("darwinDelta")}: ${escapeHtml(delta)}</small>` : `<small>Darwin: ${t("pendingScore")}</small>`}
             </article>
           `;
         }).join("")}
@@ -750,7 +909,7 @@
           <table class="leaders-compare__table">
             <thead>
               <tr>
-                <th>指标</th>
+                <th>${t("metric")}</th>
                 ${selected.map((company) => `<th>${escapeHtml(company.name)}</th>`).join("")}
               </tr>
             </thead>
@@ -765,14 +924,34 @@
     `;
   }
 
+  function refreshLanguageState() {
+    if (!companies.length) return;
+    renderExamples();
+    const input = $("#leaders-company-input");
+    const mode = $("#leaders-stage")?.value || "growth";
+    const query = input?.value || "";
+    const company = query ? findCompany(query) : companies[0];
+    if (company) {
+      renderResult(company, mode);
+    } else {
+      renderEmpty(query);
+    }
+    renderLeadersTable();
+    renderCompare();
+    document.querySelectorAll(".leaders-floating-back").forEach((link) => {
+      link.textContent = t("backToSearch");
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", async () => {
     const root = $("#leaders-scorecard-app");
     if (!root) return;
 
     try {
+      const modelUrl = root.dataset.model || "/assets/data/leaders-score-rubric.json";
       const [companyResponse, modelResponse] = await Promise.all([
         fetch(root.dataset.source),
-        fetch(root.dataset.model)
+        fetch(modelUrl)
       ]);
       companies = await companyResponse.json();
       configureModel(await modelResponse.json());
@@ -786,8 +965,9 @@
         renderResult(company, $("#leaders-stage").value);
         renderCompare();
       });
+      document.addEventListener("facereader:ui-language", refreshLanguageState);
     } catch (error) {
-      $("#leaders-result").innerHTML = "<p>评分数据加载失败，请稍后再试。</p>";
+      $("#leaders-result").innerHTML = `<p>${t("loadFailure")}</p>`;
     }
   });
 })();
