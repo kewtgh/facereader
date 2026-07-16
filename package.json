@@ -26,11 +26,12 @@
     "build": "npm run site:build",
     "leaders:validate": "node assets/scripts/validate-leaders-data.mjs",
     "leaders:audit": "node assets/scripts/audit-leaders-score-rubric.mjs",
+    "i18n:validate": "node assets/scripts/validate-i18n.mjs",
     "actions:lint": "node assets/scripts/validate-actions-workflows.mjs",
     "site:build": "bundle exec ruby -EUTF-8 -S jekyll build",
     "site:sass:warnings": "node assets/scripts/check-sass-warnings.mjs",
     "site:links": "node assets/scripts/check-internal-links.mjs",
-    "site:check": "npm run leaders:validate && npm run leaders:audit && npm run site:sass:warnings && npm run site:links",
+    "site:check": "npm run leaders:validate && npm run leaders:audit && npm run i18n:validate && npm run site:sass:warnings && npm run site:links",
     "algolia:push": "node assets/scripts/push-algolia.mjs _site/algolia-records.json"
   },
   "dependencies": {

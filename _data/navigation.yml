@@ -1,16 +1,28 @@
 # main links
 main:
   - title: "About"
+    title_zh: "关于"
+    title_en: "About"
     url: /about/
   - title: "Posts"
+    title_zh: "文章"
+    title_en: "Posts"
     url: /posts/
   - title: "Categories"
+    title_zh: "分类"
+    title_en: "Categories"
     url: /categories/
   - title: "Tags"
+    title_zh: "标签"
+    title_en: "Tags"
     url: /tags/
   - title: "Most Popular"
+    title_zh: "热门"
+    title_en: "Most Popular"
     url: /most_popular/
   - title: "LEADERS评级"
+    title_zh: "LEADERS评级"
+    title_en: "LEADERS"
     url: /leaders-scorecard/
   # - title: "Collections"
   #   url: /collection-archive/

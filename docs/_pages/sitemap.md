@@ -1,19 +1,19 @@
 ---
 layout: archive
-title: "Sitemap"
+title: "站点地图"
 permalink: /sitemap/
 author_profile: false
 sitemap: false
 ---
 
-A list of all the posts and pages found on the site. For you robots out there is an [XML version]({{ "sitemap.xml" | relative_url }}) available for digesting as well.
+这里列出站内主要页面与文章。面向搜索引擎和自动化工具的 XML 版本在 [sitemap.xml]({{ "sitemap.xml" | relative_url }})。
 
-<h2>Pages</h2>
+<h2>页面</h2>
 {% for post in site.pages %}
   {% include archive-single.html %}
 {% endfor %}
 
-<h2>Posts</h2>
+<h2>文章</h2>
 {% for post in site.posts %}
   {% include archive-single.html %}
 {% endfor %}

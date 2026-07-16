@@ -17,3 +17,28 @@ npm ci
 JEKYLL_ENV=production npm run site:build
 npm run site:check
 ```
+
+## Bilingual Articles
+
+FaceReader supports paired Chinese and English article versions through front matter.
+Keep the existing Chinese URL unchanged, and give both language versions the same
+`translation_key`:
+
+```yaml
+locale: zh-CN
+translation_key: why-dictators-dont-fall
+```
+
+```yaml
+locale: en-US
+translation_key: why-dictators-dont-fall
+permalink: /en/society/why-dictators-dont-fall/
+```
+
+When two posts share a `translation_key`, the site generates a visible language
+switcher on both articles and emits SEO `hreflang` alternates. Validate new
+language metadata with:
+
+```bash
+npm run i18n:validate
+```

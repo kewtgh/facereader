@@ -1,0 +1,20 @@
+{%- if page.translation_key -%}
+  {%- assign translation_documents = site.posts | concat: site.pages -%}
+  {%- assign translations = translation_documents | where: "translation_key", page.translation_key -%}
+  {%- if translations.size > 1 -%}
+    {%- assign x_default_href = "" -%}
+    {%- for translation in translations -%}
+      {%- assign translation_locale = translation.locale | default: site.locale -%}
+      {%- assign hreflang = translation.hreflang | default: translation_locale | replace: "_", "-" | downcase -%}
+      <link rel="alternate" hreflang="{{ hreflang }}" href="{{ translation.url | absolute_url }}">
+      {%- if translation_locale == site.locale -%}
+        {%- assign x_default_href = translation.url | absolute_url -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if x_default_href == "" -%}
+      {%- assign default_translation = translations | first -%}
+      {%- assign x_default_href = default_translation.url | absolute_url -%}
+    {%- endif -%}
+    <link rel="alternate" hreflang="x-default" href="{{ x_default_href }}">
+  {%- endif -%}
+{%- endif -%}

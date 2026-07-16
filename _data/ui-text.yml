@@ -56,6 +56,9 @@ en: &DEFAULT_EN
   tags_collapse: "Hide Tags"
   tag_current: "Current Tag"
   tag_clear: "Clear Filter"
+  translation_label: "Language"
+  language_zh: "Chinese"
+  language_en: "English"
 
   # Three cards
   home_hero_excerpt: >
@@ -745,6 +748,9 @@ zh: &DEFAULT_ZH_HANS
   tags_collapse: "收起标签"
   tag_current: "当前标签"
   tag_clear: "清除筛选"
+  translation_label: "语言版本"
+  language_zh: "中文"
+  language_en: "English"
   # 三张卡片
   home_hero_excerpt: >
     我写企业，也写时代，但总先看人。

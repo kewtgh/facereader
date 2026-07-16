@@ -1,11 +1,13 @@
 {% assign locale = include.locale | default: site.locale %}
+{% assign lang = locale | slice: 0, 2 %}
+{% assign site_title = site.title_i18n[lang] | default: site.title %}
 <meta charset="utf-8">
 
 {% include seo.html locale=locale %}
 {% include analytics.html %}
 
 {% unless site.atom_feed.hide %}
-  <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
+  <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site_title }} Feed">
 {% endunless %}
 
 {%- comment %} https://docs.google.com/presentation/d/1rmxwWa9P6_xHqonmh5ONXRS-jPc5XKbnv99Rjkhe04s/present {% endcomment -%}

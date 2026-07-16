@@ -13,7 +13,8 @@ sitemap: false
 
     <section class="tag-group">
       <h2 class="tag-group-title">
-        {% if site.locale == "zh" %}
+        {% assign lang = locale | slice: 0, 2 %}
+        {% if lang == "zh" %}
           {{ g.title_zh }}
         {% else %}
           {{ g.title_en }}
@@ -47,12 +48,12 @@ sitemap: false
 
 <!-- 当前筛选状态 -->
 <div class="tag-filter-status" id="current-tag-anchor">
-  <strong>{{ site.data.ui-text[site.locale].tag_current }}:</strong>
+  <strong>{{ site.data.ui-text[locale].tag_current }}:</strong>
   <span id="current-tag">All</span>
   <span id="current-tag-count" class="tag-filter-count">{{ site.posts | size }} posts</span>
 
   <button onclick="resetFilter()" class="btn btn--small btn--light-outline tag-clear-btn">
-    {{ site.data.ui-text[site.locale].tag_clear }}
+    {{ site.data.ui-text[locale].tag_clear }}
   </button>
 </div>
 <p class="tag-filter-description" id="current-tag-description">选择标签后，会显示该标签说明和对应文章列表。</p>

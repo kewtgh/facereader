@@ -1,5 +1,5 @@
 ---
-title: Most Popular
+title: 热门文章
 layout: collection
 permalink: /most_popular/
 collection: most_popular

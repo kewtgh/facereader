@@ -5,7 +5,7 @@
 
 {%- assign locale = page.locale | default: layout.locale | default: site.locale | default: "" %}
 {% include copyright.html locale=locale %}
-<html lang="{{ locale | slice: 0,2 | default: "en" }}" class="no-js">
+<html lang="{{ locale | replace: '_', '-' | default: "en" }}" class="no-js">
   <head>
     {% include head.html locale=locale %}
     {% include head/custom.html locale=locale %}

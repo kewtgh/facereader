@@ -1,0 +1,36 @@
+{%- assign locale = include.locale | default: page.locale | default: site.locale -%}
+{%- assign t = site.data.ui-text[locale] | default: site.data.ui-text[site.locale] -%}
+{%- if page.translation_key -%}
+  {%- assign translation_documents = site.posts | concat: site.pages -%}
+  {%- assign translations = translation_documents | where: "translation_key", page.translation_key | sort: "locale" -%}
+  {%- if translations.size > 1 -%}
+    <nav class="page-language-switcher" aria-label="{{ t.translation_label | default: 'Language versions' }}">
+      <span class="page-language-switcher__label">{{ t.translation_label | default: "Language versions" }}</span>
+      <ul>
+        {%- for translation in translations -%}
+          {%- assign translation_locale = translation.locale | default: site.locale -%}
+          {%- assign translation_lang = translation_locale | slice: 0, 2 -%}
+          {%- case translation_lang -%}
+            {%- when "zh" -%}
+              {%- assign language_label = t.language_zh | default: "中文" -%}
+            {%- when "en" -%}
+              {%- assign language_label = t.language_en | default: "English" -%}
+            {%- else -%}
+              {%- assign language_label = translation_locale -%}
+          {%- endcase -%}
+          {%- assign current_translation = false -%}
+          {%- if translation.url == page.url -%}
+            {%- assign current_translation = true -%}
+          {%- endif -%}
+          <li>
+            {%- if current_translation -%}
+              <span class="is-current" aria-current="page">{{ language_label }}</span>
+            {%- else -%}
+              <a href="{{ translation.url | relative_url }}" lang="{{ translation_locale | replace: '_', '-' }}">{{ language_label }}</a>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  {%- endif -%}
+{%- endif -%}

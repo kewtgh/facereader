@@ -1,4 +1,8 @@
 {% assign locale = include.locale | default: site.locale %}
+{% assign lang = locale | slice: 0, 2 %}
+{% assign site_title = site.title_i18n[lang] | default: site.title %}
+{% assign masthead_title = site.masthead_title_i18n[lang] | default: site.masthead_title | default: site_title %}
+{% assign site_subtitle = site.subtitle_i18n[lang] | default: site.subtitle %}
 {% capture logo_path %}{{ site.logo }}{% endcapture %}
 
 <div class="masthead">
@@ -6,20 +10,22 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
         {% unless logo_path == empty %}
-          <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
+          <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ masthead_title }}"></a>
         {% endunless %}
         <a class="site-title" href="{{ '/' | relative_url }}">
-          {{ site.masthead_title | default: site.title | escape_once | strip }}
-          {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle | escape_once | strip }}</span>{% endif %}
+          {{ masthead_title | escape_once | strip }}
+          {% if site_subtitle %}<span class="site-subtitle">{{ site_subtitle | escape_once | strip }}</span>{% endif %}
         </a>
         <ul class="visible-links">
           {%- for link in site.data.navigation.main -%}
+            {% assign title_key = "title_" | append: lang %}
+            {% assign link_title = link[title_key] | default: link.title %}
             <li class="masthead__menu-item">
               <a
                 href="{{ link.url | relative_url }}"
                 {% if link.description %} title="{{ link.description }}"{% endif %}
                 {% if link.target %} target="{{ link.target }}"{% endif %}
-              >{{ link.title }}</a>
+              >{{ link_title }}</a>
             </li>
           {%- endfor -%}
         </ul>

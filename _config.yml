@@ -19,8 +19,14 @@ minimal_mistakes_skin    : "sunrise"
 locale                   : "zh-CN"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "FaceReader-企业观察"
+title_i18n:
+  zh: "FaceReader-企业观察"
+  en: "FaceReader Enterprise Review"
 title_separator          : "|"
 subtitle                 : "解读人性，分析企业，洞悉社会，掌握趋势。" # site tagline that appears below site title in masthead
+subtitle_i18n:
+  zh: "解读人性，分析企业，洞悉社会，掌握趋势。"
+  en: "Reading people, companies, society, and trends."
 name                     : &name "FaceReader-企业观察"
 description              : &description "For Profound Thinkers."
 url                      : "https://facereader.witbacon.com" # the base hostname & protocol for your site e.g. "https://kewtgh.github.io"
@@ -29,6 +35,9 @@ repository               : "kewtgh/facereader" # GitHub username/repo-name e.g. 
 teaser                   : "/assets/img/bio-photo-500x300.png" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/img/logo-facereader.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : "FaceReader-企业观察" # overrides the website title displayed in the masthead, use " " for no title
+masthead_title_i18n:
+  zh: "FaceReader-企业观察"
+  en: "FaceReader"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 350
 chinese_words_per_minute : 300
