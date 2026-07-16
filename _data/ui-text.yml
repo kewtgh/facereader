@@ -84,26 +84,23 @@ en: &DEFAULT_EN
   home_hero_primary_action: "Read posts"
   home_hero_secondary_action: "Browse by tags"
 
-  home_section_company_analysis: "Reading Faces, Reading Firms"
+  home_section_company_analysis: "People & Companies"
   home_section_company_intro: >
-    To read a company, start with a few faces.
-    What drives this person? How do they decide? Where are their preferences and blind spots?
-    Then watch how the organization amplifies them—the trajectory shows itself there.
-  home_btn_view_company_analysis: "Enter"
+    Start with the people behind a company: what drives them, how they decide, and where their blind spots lie.
+    Then see how the organization turns those traits into strategy, culture, and results.
+  home_btn_view_company_analysis: "View firms"
 
   home_section_classic_reviews: "Classic Insights"
   home_section_classic_intro: >
-    I prefer to return classics to their original circumstances.
-    Less cutting with modern utility.
-    More asking: why did they write this, think this, and act this way—then and there?
-  home_btn_view_classic_reviews: "Start reading"
+    Return each classic to the circumstances that shaped it.
+    Ask why its author wrote, thought, and acted that way before applying old ideas to modern institutions, management, and judgment.
+  home_btn_view_classic_reviews: "Read classics"
 
   home_section_personal_growth: "Thought & Life"
   home_section_growth_intro: >
-    Some pages are written for confusion. Some for lucidity.
-    I write about reading and life—about existential doubt and self-rescue.
-    Not a list of methods, but a sustained gaze at life, fate, and being.
-  home_btn_view_personal_growth: "Continue"
+    Some writing begins in confusion and moves toward clarity.
+    These essays explore reading, life, doubt, and self-rescue, not as fixed methods but as an inquiry into fate and existence.
+  home_btn_view_personal_growth: "Explore ideas"
 
   # Recent updates
   home_recent_updates: "Recent updates"
@@ -201,7 +198,7 @@ en: &DEFAULT_EN
   home_about_card_bullet_2: "To read along a thread: use Categories/Tags—the smoothest way in."
   home_about_card_note: "I don’t chase headlines, and I don’t mass-produce conclusions. This place is closer to a slowly curated reading room. Grounds stay visible. Proportions stay intact. When you need it, read one piece—and re-check the origin and boundary of your judgment."
   home_about_card_button: "Read About"
-  home_about_card_rss_button: "RSS"
+  home_about_card_rss_button: "Follow RSS"
 en-US:
   <<: *DEFAULT_EN
 en-CA:
