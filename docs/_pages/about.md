@@ -15,7 +15,6 @@ sidebar:
     image_alt: "FaceReader 企业观察"
   - title: "FaceReader 企业观察"
     text: "从人物、组织与制度结构进入企业和时代。"
-    nav: sidebar-about
 author_profile: false
 show_date: false
 ---
@@ -92,6 +91,17 @@ show_date: false
 你也可以把它当作一个慢速更新的思考仓库：  
 **需要时来查一篇文章，帮你把判断的来路与边界重新校准。**
 
+<div class="about-entry-panel about-entry-panel--primary">
+  <strong>如果你第一次来到这里：</strong>
+  可以先从首页进入，也可以直接查看全部文章、热门文章或标签索引。
+  <div class="about-entry-actions">
+    <a class="btn btn--primary" href="{{ '/' | relative_url }}">回到首页</a>
+    <a class="btn btn--secondary" href="{{ '/posts/' | relative_url }}">全部文章</a>
+    <a class="btn btn--secondary" href="{{ '/most_popular/' | relative_url }}">热门文章</a>
+    <a class="btn btn--secondary" href="{{ '/tags/' | relative_url }}">标签索引</a>
+  </div>
+</div>
+
 ## 网站功能说明
 
 网站把文章、标签、专题页和结构化评分工具放在一起，便于从不同路径进入同一组问题。
@@ -103,13 +113,33 @@ show_date: false
 - 想看企业管理评分，进入“LEADERS评级”。
 - 想查特定公司、人物或概念，使用站内搜索。
 
+<div class="about-entry-links">
+  <a href="{{ '/categories/' | relative_url }}#企业剖析"><strong>企业剖析</strong><span>从人物、组织和产业位置读公司。</span></a>
+  <a href="{{ '/categories/' | relative_url }}#经典解读"><strong>经典解读</strong><span>把经典放回真实处境中理解。</span></a>
+  <a href="{{ '/categories/' | relative_url }}#人格成长"><strong>人格成长</strong><span>记录困境、自省与长期判断。</span></a>
+</div>
+
 ### 企业评分
 
 LEADERS 企业评分把组织管理能力拆成七项：领袖气质、决策力、实干性、补位力、文化契合度、岗位专长完整度、专业化治理结构。评分页支持企业查询、行业/地区筛选和多企业对比。
 
+<div class="about-entry-panel about-entry-panel--leaders">
+  <strong>LEADERS 企业评级</strong>
+  适合用来查询企业管理能力画像、证据等级、风险判断，也可以横向比较多家公司。
+  <div class="about-entry-actions">
+    <a class="btn btn--primary" href="{{ '/leaders-scorecard/' | relative_url }}">进入 LEADERS 评级</a>
+    <a class="btn btn--secondary" href="{{ '/leaders-scorecard/#leaders-compare' | relative_url }}">企业评分对比</a>
+  </div>
+</div>
+
 ### 搜索与标签
 
 搜索结果会优先显示标题、摘要、发布日期、分类和标签。标签页按主题组展示，每个标签带有文章数量；选择标签后会显示对应说明和文章列表。
+
+<div class="about-entry-actions about-entry-actions--inline">
+  <a class="btn btn--secondary" href="{{ '/tags/' | relative_url }}">浏览标签</a>
+  <a class="btn btn--secondary" href="{{ '/categories/' | relative_url }}">浏览分类</a>
+</div>
 
 ### 使用边界
 
@@ -123,5 +153,9 @@ LEADERS 企业评分把组织管理能力拆成七项：领袖气质、决策力
 
 如果你读完文章后有想讨论的问题、想补充的资料、或希望我关注某个方向，欢迎通过页面底部的邮箱联系我。  
 来信建议包含：你关心的主题、你看到的事实/链接、以及你最困惑的一个问题点即可。
+
+<div class="about-entry-actions about-entry-actions--inline">
+  <a class="btn btn--primary" href="mailto:facereader@witbacon.com">发送邮件</a>
+</div>
 
 > 如果你不知道从哪里开始读：可以先从首页的「阅相识人」「经典解读」或你最熟悉的行业标签进入。
