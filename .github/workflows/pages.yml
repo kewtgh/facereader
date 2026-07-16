@@ -123,8 +123,47 @@ jobs:
 
           css_url="${page_url%/}/assets/css/main.css"
 
-          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 "$page_url" > /tmp/index.html
-          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 "$css_url" > /tmp/main.css
+          fetch_deployed_file() {
+            local url="$1"
+            local destination="$2"
+            local label="$3"
+            local request_url="${url}?pages-smoke=${GITHUB_SHA}"
+            local temporary="${destination}.download"
+            local attempt
+            local curl_exit
+            local http_status
+
+            for attempt in $(seq 1 12); do
+              curl_exit=0
+              if http_status="$(curl \
+                --silent \
+                --show-error \
+                --location \
+                --connect-timeout 10 \
+                --max-time 30 \
+                --output "$temporary" \
+                --write-out '%{http_code}' \
+                "$request_url")"; then
+                if [[ "$http_status" == "200" ]]; then
+                  mv "$temporary" "$destination"
+                  echo "${label} is available at ${url}"
+                  return 0
+                fi
+              else
+                curl_exit=$?
+              fi
+
+              rm -f "$temporary"
+              echo "::notice::${label} check ${attempt}/12 returned HTTP ${http_status:-000} (curl ${curl_exit}); retrying in 10 seconds"
+              sleep 10
+            done
+
+            echo "::error::${label} did not return HTTP 200 after 12 attempts: ${url} (last HTTP ${http_status:-000}, curl ${curl_exit})"
+            return 1
+          }
+
+          fetch_deployed_file "$page_url" /tmp/index.html "Deployed homepage"
+          fetch_deployed_file "$css_url" /tmp/main.css "Deployed CSS"
 
           if ! grep -q 'assets/css/main.css' /tmp/index.html; then
             echo "::error::Deployed homepage does not reference assets/css/main.css"
