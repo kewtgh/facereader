@@ -114,6 +114,7 @@ jobs:
         run: |
           set -euo pipefail
 
+          expected_domain="facereader.witbacon.com"
           page_url="${{ needs.deploy.outputs.page_url }}"
 
           if [[ -z "$page_url" ]]; then
@@ -121,7 +122,16 @@ jobs:
             exit 1
           fi
 
+          page_host="${page_url#*://}"
+          page_host="${page_host%%/*}"
+          page_host="${page_host%%:*}"
           css_url="${page_url%/}/assets/css/main.css"
+          pages_origin_ips=(
+            "185.199.108.153"
+            "185.199.109.153"
+            "185.199.110.153"
+            "185.199.111.153"
+          )
 
           fetch_deployed_file() {
             local url="$1"
@@ -132,8 +142,17 @@ jobs:
             local attempt
             local curl_exit
             local http_status
+            local origin="public DNS"
+            local -a route=()
 
             for attempt in $(seq 1 12); do
+              route=()
+              origin="public DNS"
+              if [[ "$page_host" == "$expected_domain" ]]; then
+                origin="${pages_origin_ips[$(( (attempt - 1) % ${#pages_origin_ips[@]} ))]}"
+                route=(--resolve "${page_host}:443:${origin}")
+              fi
+
               curl_exit=0
               if http_status="$(curl \
                 --silent \
@@ -141,12 +160,13 @@ jobs:
                 --location \
                 --connect-timeout 10 \
                 --max-time 30 \
+                "${route[@]}" \
                 --output "$temporary" \
                 --write-out '%{http_code}' \
                 "$request_url")"; then
                 if [[ "$http_status" == "200" ]]; then
                   mv "$temporary" "$destination"
-                  echo "${label} is available at ${url}"
+                  echo "${label} is available at ${url} via ${origin}"
                   return 0
                 fi
               else
@@ -154,11 +174,11 @@ jobs:
               fi
 
               rm -f "$temporary"
-              echo "::notice::${label} check ${attempt}/12 returned HTTP ${http_status:-000} (curl ${curl_exit}); retrying in 10 seconds"
+              echo "::notice::${label} check ${attempt}/12 via ${origin} returned HTTP ${http_status:-000} (curl ${curl_exit}); retrying in 10 seconds"
               sleep 10
             done
 
-            echo "::error::${label} did not return HTTP 200 after 12 attempts: ${url} (last HTTP ${http_status:-000}, curl ${curl_exit})"
+            echo "::error::${label} did not return HTTP 200 from Pages after 12 attempts: ${url} (last route ${origin}, HTTP ${http_status:-000}, curl ${curl_exit})"
             return 1
           }
 
