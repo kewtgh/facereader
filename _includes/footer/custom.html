@@ -84,6 +84,19 @@
       }
     }
 
+    function setElementPlaceholder(element, language) {
+      var key = element.getAttribute("data-fr-i18n-placeholder-key");
+      var placeholder = key ? textForKey(language, key) : null;
+
+      if (placeholder === null) {
+        placeholder = element.getAttribute("data-fr-i18n-placeholder-" + language);
+      }
+
+      if (placeholder !== null) {
+        element.setAttribute("placeholder", placeholder);
+      }
+    }
+
     function syncTocLabels() {
       var tocLinks = Array.prototype.slice.call(document.querySelectorAll(".toc__menu a[href^='#']"));
       var visibleBlock = document.querySelector("[data-fr-i18n-block]:not([hidden])");
@@ -143,6 +156,10 @@
         setElementAriaLabel(element, language);
       });
 
+      document.querySelectorAll("[data-fr-i18n-placeholder-key], [data-fr-i18n-placeholder-zh][data-fr-i18n-placeholder-en]").forEach(function (element) {
+        setElementPlaceholder(element, language);
+      });
+
       document.querySelectorAll("[data-fr-i18n-block]").forEach(function (element) {
         element.hidden = element.getAttribute("data-fr-i18n-block") !== language;
       });
@@ -157,6 +174,10 @@
       window.setTimeout(function () {
         window.dispatchEvent(new Event("resize"));
       }, 0);
+
+      document.dispatchEvent(new CustomEvent("facereader:ui-language", {
+        detail: { language: language }
+      }));
     }
 
     function initialLanguage() {

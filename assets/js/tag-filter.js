@@ -28,16 +28,21 @@ function updateCurrentTagMeta(tag) {
   const countEl = document.getElementById("current-tag-count");
   const descEl = document.getElementById("current-tag-description");
   const totalPosts = document.querySelectorAll(".tag-post-item").length;
+  const lang = (document.documentElement.getAttribute("data-fr-ui-lang") || "zh").slice(0, 2);
+  const dictionary = window.FaceReaderUiText?.[lang] || window.FaceReaderUiText?.zh || {};
+  const postsLabel = dictionary.tag_posts_count_label || "posts";
+  const emptyDesc = dictionary.tag_filter_empty_desc || "选择标签后，会显示该标签说明和对应文章列表。";
+  const missingDesc = dictionary.tag_filter_missing_desc || "该标签暂无单独说明。";
 
   if (!tag) {
-    if (countEl) countEl.innerText = `${totalPosts} posts`;
-    if (descEl) descEl.innerText = "选择标签后，会显示该标签说明和对应文章列表。";
+    if (countEl) countEl.innerText = `${totalPosts} ${postsLabel}`;
+    if (descEl) descEl.innerText = emptyDesc;
     return;
   }
 
   const activeBtn = document.querySelector(`.tag-filter-btn[data-tag="${CSS.escape(tag)}"]`);
-  if (countEl) countEl.innerText = `${activeBtn?.dataset.count || 0} posts`;
-  if (descEl) descEl.innerText = activeBtn?.dataset.description || "该标签暂无单独说明。";
+  if (countEl) countEl.innerText = `${activeBtn?.dataset.count || 0} ${postsLabel}`;
+  if (descEl) descEl.innerText = activeBtn?.dataset.description || missingDesc;
 }
 
 function applyFilter(tag, { push = false } = {}) {
@@ -47,7 +52,9 @@ function applyFilter(tag, { push = false } = {}) {
     posts.forEach(p => (p.style.display = "block"));
 
     const currentTagEl = document.getElementById("current-tag");
-    if (currentTagEl) currentTagEl.innerText = "All";
+    const lang = (document.documentElement.getAttribute("data-fr-ui-lang") || "zh").slice(0, 2);
+    const dictionary = window.FaceReaderUiText?.[lang] || window.FaceReaderUiText?.zh || {};
+    if (currentTagEl) currentTagEl.innerText = dictionary.tag_all || "All";
 
     document.querySelectorAll(".tag-filter-btn").forEach(b => {
       b.classList.remove("is-active");
@@ -105,5 +112,18 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("popstate", () => {
     const p = new URLSearchParams(window.location.search);
     applyFilter(p.get("tag") || "", { push: false });
+  });
+
+  document.addEventListener("facereader:ui-language", () => {
+    const currentTagEl = document.getElementById("current-tag");
+    const currentTag = currentTagEl && !currentTagEl.hasAttribute("data-fr-tag-all-label") ? currentTagEl.innerText : "";
+    const params = new URLSearchParams(window.location.search);
+    const tag = params.get("tag") || (currentTag && currentTag !== "All" && currentTag !== "全部" ? currentTag : "");
+    if (!tag && currentTagEl) {
+      const lang = (document.documentElement.getAttribute("data-fr-ui-lang") || "zh").slice(0, 2);
+      const dictionary = window.FaceReaderUiText?.[lang] || window.FaceReaderUiText?.zh || {};
+      currentTagEl.innerText = dictionary.tag_all || "All";
+    }
+    updateCurrentTagMeta(tag);
   });
 });

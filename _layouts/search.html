@@ -18,7 +18,16 @@ layout: default
 
   <div class="archive">
     {% unless page.header.overlay_color or page.header.overlay_image %}
-      <h1 id="page-title" class="page__title">{{ page.title }}</h1>
+      {% assign page_title_zh = page.title_i18n.zh | default: page.title %}
+      {% assign page_title_en = page.title_i18n.en | default: page.title %}
+      <h1
+        id="page-title"
+        class="page__title"
+        {% if page.title_i18n %}
+          data-fr-i18n-zh="{{ page_title_zh | markdownify | strip_html | strip_newlines | escape_once }}"
+          data-fr-i18n-en="{{ page_title_en | markdownify | strip_html | strip_newlines | escape_once }}"
+        {% endif %}
+      >{{ page.title }}</h1>
     {% endunless %}
 
     {{ content }}
@@ -26,11 +35,11 @@ layout: default
     {%- assign search_provider = site.search_provider | default: "lunr" -%}
     {%- case search_provider -%}
       {%- when "lunr" -%}
-        <input type="text" id="search" class="search-input" placeholder="{{ site.data.ui-text[locale].search_placeholder_text | default: 'Enter your search term...' }}" />
+        <input type="text" id="search" class="search-input" placeholder="{{ site.data.ui-text[locale].search_placeholder_text | default: 'Enter your search term...' }}" data-fr-i18n-placeholder-key="search_placeholder_text" />
         <div id="results" class="results"></div>
       {%- when "google" -%}
         <form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
-        <input type="text" id="cse-search-input-box-id" class="search-input" placeholder="{{ site.data.ui-text[locale].search_placeholder_text | default: 'Enter your search term...' }}" />
+        <input type="text" id="cse-search-input-box-id" class="search-input" placeholder="{{ site.data.ui-text[locale].search_placeholder_text | default: 'Enter your search term...' }}" data-fr-i18n-placeholder-key="search_placeholder_text" />
         </form>
         <div id="results" class="results">
           <gcse:searchresults-only></gcse:searchresults-only>

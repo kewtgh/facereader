@@ -31,7 +31,7 @@
             {% include archive-single.html locale=locale type=entries_layout %}
           {% endfor %}
         </div>
-        <a href="#page-title" class="back-to-top">{{ site.data.ui-text[locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+        <a href="#page-title" class="back-to-top"><span data-fr-i18n-key="back_to_top" data-fr-i18n-suffix=" &uarr;">{{ site.data.ui-text[locale].back_to_top | default: 'Back to Top' }} &uarr;</span></a>
       </section>
     {% endif %}
   {% endfor %}

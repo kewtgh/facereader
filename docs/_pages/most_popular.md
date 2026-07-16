@@ -1,5 +1,8 @@
 ---
 title: 热门文章
+title_i18n:
+  zh: "热门文章"
+  en: "Most Popular"
 layout: collection
 permalink: /most_popular/
 collection: most_popular

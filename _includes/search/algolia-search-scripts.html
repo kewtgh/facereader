@@ -19,6 +19,41 @@
       .replace(/'/g, "&#039;");
   }
 
+  function currentUiLanguage() {
+    return (document.documentElement.getAttribute("data-fr-ui-lang") || "{{ locale | slice: 0, 2 }}" || "zh").slice(0, 2);
+  }
+
+  function algoliaText(key) {
+    var lang = currentUiLanguage() === "en" ? "en" : "zh";
+    var text = {
+      zh: {
+        placeholder: "搜索文章…",
+        emptyPrefix: "没有找到「",
+        emptySuffix: "」相关内容",
+        idle: "输入关键词搜索站内文章",
+        resultsPrefix: "找到 ",
+        resultsMiddle: " 条结果，用时 ",
+        resultsSuffix: " ms"
+      },
+      en: {
+        placeholder: "Search articles...",
+        emptyPrefix: "No results for \"",
+        emptySuffix: "\"",
+        idle: "Enter a keyword to search the site",
+        resultsPrefix: "",
+        resultsMiddle: " results in ",
+        resultsSuffix: " ms"
+      }
+    };
+    return text[lang][key] || text.zh[key] || "";
+  }
+
+  function refreshAlgoliaUiLanguage() {
+    document.querySelectorAll(".algolia-page .ais-SearchBox-input").forEach(function (input) {
+      input.setAttribute("placeholder", algoliaText("placeholder"));
+    });
+  }
+
   async function initAlgoliaInstantSearchOnce() {
     var roots = Array.prototype.slice.call(document.querySelectorAll(".algolia-page"));
     if (!roots.length) return;
@@ -63,7 +98,7 @@
       var widgets = [
         instantsearch.widgets.searchBox({
           container: searchBoxEl,
-          placeholder: "搜索文章…",
+          placeholder: algoliaText("placeholder"),
           showReset: true,
           showSubmit: true,
           showLoadingIndicator: false
@@ -79,7 +114,7 @@
           container: hitsEl,
           templates: {
             empty: function (data) {
-              return `<div class="algolia-empty">没有找到「${escapeHTML(data.query)}」相关内容</div>`;
+              return `<div class="algolia-empty">${algoliaText("emptyPrefix")}${escapeHTML(data.query)}${algoliaText("emptySuffix")}</div>`;
             },
             item: function (hit) {
               var img = hit.teaser || "{{ '/assets/img/page-header-image-manufacture-teaser.jpg' | absolute_url }}";
@@ -129,8 +164,8 @@
           container: statsEl,
           templates: {
             text: function (data) {
-              if (!data.query) return "输入关键词搜索站内文章";
-              return `找到 ${data.nbHits} 条结果，用时 ${data.processingTimeMS} ms`;
+              if (!data.query) return algoliaText("idle");
+              return `${algoliaText("resultsPrefix")}${data.nbHits}${algoliaText("resultsMiddle")}${data.processingTimeMS}${algoliaText("resultsSuffix")}`;
             }
           }
         }));
@@ -171,4 +206,6 @@
       console.error("[InstantSearch] init failed:", e);
     });
   });
+
+  document.addEventListener("facereader:ui-language", refreshAlgoliaUiLanguage);
 </script>

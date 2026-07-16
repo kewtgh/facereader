@@ -14,12 +14,14 @@ sitemap: false
     <section class="tag-group">
       <h2 class="tag-group-title">
         {% assign lang = locale | slice: 0, 2 %}
-        {% if lang == "zh" %}
-          {{ g.title_zh }}
-        {% else %}
-          {{ g.title_en }}
-        {% endif %}
-        <span class="tag-group-count">{{ g.tags | size }} tags</span>
+        <span data-fr-i18n-zh="{{ g.title_zh | escape_once }}" data-fr-i18n-en="{{ g.title_en | escape_once }}">
+          {% if lang == "zh" %}
+            {{ g.title_zh }}
+          {% else %}
+            {{ g.title_en }}
+          {% endif %}
+        </span>
+        <span class="tag-group-count">{{ g.tags | size }} <span data-fr-i18n-key="tag_group_count_label">{{ site.data.ui-text[locale].tag_group_count_label | default: 'tags' }}</span></span>
       </h2>
 
       <div class="tag-group-list">
@@ -48,15 +50,15 @@ sitemap: false
 
 <!-- 当前筛选状态 -->
 <div class="tag-filter-status" id="current-tag-anchor">
-  <strong>{{ site.data.ui-text[locale].tag_current }}:</strong>
-  <span id="current-tag">All</span>
-  <span id="current-tag-count" class="tag-filter-count">{{ site.posts | size }} posts</span>
+  <strong><span data-fr-i18n-key="tag_current">{{ site.data.ui-text[locale].tag_current }}</span>:</strong>
+  <span id="current-tag" data-fr-tag-all-label>{{ site.data.ui-text[locale].tag_all | default: 'All' }}</span>
+  <span id="current-tag-count" class="tag-filter-count" data-fr-tag-count="{{ site.posts | size }}">{{ site.posts | size }} {{ site.data.ui-text[locale].tag_posts_count_label | default: 'posts' }}</span>
 
   <button onclick="resetFilter()" class="btn btn--small btn--light-outline tag-clear-btn">
-    {{ site.data.ui-text[locale].tag_clear }}
+    <span data-fr-i18n-key="tag_clear">{{ site.data.ui-text[locale].tag_clear }}</span>
   </button>
 </div>
-<p class="tag-filter-description" id="current-tag-description">选择标签后，会显示该标签说明和对应文章列表。</p>
+<p class="tag-filter-description" id="current-tag-description" data-fr-i18n-key="tag_filter_empty_desc">选择标签后，会显示该标签说明和对应文章列表。</p>
 
 <!-- 文章列表（使用主题原生样式） -->
 <div class="entries-list" id="tag-posts">

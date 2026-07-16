@@ -1,5 +1,8 @@
 ---
 title: "按分类浏览"
+title_i18n:
+  zh: "按分类浏览"
+  en: "Browse by Categories"
 layout: categories
 permalink: /categories/
 author_profile: true

@@ -54,7 +54,7 @@
 
             {%- if excerpt_text -%}
               <p class="archive__item-excerpt"{% if f.excerpt_key %} data-fr-i18n-key="{{ f.excerpt_key }}"{% endif %}>
-                {{ excerpt_text | markdownify | strip }}
+                {{ excerpt_text | markdownify | strip_html | strip }}
               </p>
             {%- endif -%}
 
