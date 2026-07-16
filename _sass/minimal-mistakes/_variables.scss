@@ -228,6 +228,12 @@ $sans-serif-narrow: $sans-serif;
 $monospace: "JetBrains Mono", "Fira Code",
             Monaco, Consolas, "Lucida Console", monospace;
 
+$serif-latin: Charter, "Bitstream Charter", "Sitka Text", Cambria,
+              Georgia, "Times New Roman", serif;
+
+$sans-serif-latin: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, sans-serif;
+
 $global-font-family: $sans-serif; // 正文
 $header-font-family: $serif;      // 标题
 $caption-font-family: $serif;

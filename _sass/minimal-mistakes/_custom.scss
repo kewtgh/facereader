@@ -368,8 +368,44 @@ body { line-height: 1.7; }
 
 .layout--single .sidebar .author__urls-wrapper { margin-top: 0.85rem; }
 .layout--single .sidebar .author__urls-wrapper > .btn { display: none; }
-.layout--single .sidebar .author__urls { font-size: 1rem; opacity: 0.9; }
-.layout--single .sidebar .author__urls li { margin-bottom: 0.18rem; }
+.layout--single .sidebar .author__urls {
+  width: max-content;
+  max-width: 100%;
+  margin-inline: auto;
+  font-size: 1rem;
+  text-align: left;
+  opacity: 0.9;
+}
+
+.layout--single .sidebar .author__urls li {
+  margin-bottom: 0.18rem;
+  text-align: left;
+}
+
+.layout--single .sidebar .author__urls li > a,
+.layout--single .sidebar .author__urls li[itemprop="homeLocation"] {
+  display: grid;
+  grid-template-columns: 1.5rem minmax(0, 1fr);
+  column-gap: 0.4rem;
+  align-items: center;
+}
+
+.layout--single .sidebar .author__urls li > a > i,
+.layout--single .sidebar .author__urls li > a > .svg-inline--fa,
+.layout--single .sidebar .author__urls li[itemprop="homeLocation"] > i,
+.layout--single .sidebar .author__urls li[itemprop="homeLocation"] > .svg-inline--fa {
+  width: 1.25rem;
+  margin: 0;
+  justify-self: center;
+  text-align: center;
+}
+
+.layout--single .sidebar .author__urls .label,
+.layout--single .sidebar .author__urls .p-locality {
+  min-width: 0;
+  padding-inline-start: 0;
+  text-align: left;
+}
 
 /* =====================================================
  * 3) ✅ 专题栏（About 也要生效）—— 不依赖 layout--about
@@ -2291,8 +2327,10 @@ body { line-height: 1.7; }
   margin: 1.6rem 0 2rem !important;
   background: color.mix(#ffffff, $background-color, 97%) !important;
   border: 1px solid color.mix(#000, $border-color, 9%) !important;
-  border-radius: 0.9rem !important;
-  overflow: hidden;
+  border-radius: 0.5rem !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-gutter: stable;
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
 }
 
@@ -2303,13 +2341,13 @@ body { line-height: 1.7; }
   font-size: 0.9rem !important;
   padding: 0.6rem 0.65rem !important;
   border-bottom: 1px solid rgba(138, 104, 60, 0.20) !important;
-  text-align: center !important;
+  text-align: start;
 }
 
 .page__content table:not(.rouge-table) tbody td {
   padding: 0.55rem 0.65rem !important;
   font-size: 0.9rem !important;
-  text-align: center !important;
+  text-align: start;
   border-bottom: 1px solid color.mix(#000, $border-color, 7%) !important;
   background: transparent !important;
 }
@@ -2327,10 +2365,11 @@ body { line-height: 1.7; }
   border-bottom: none !important;
 }
 
-/* 最后一列轻度强调 */
-.page__content table:not(.rouge-table) td:last-child {
-  font-weight: 800 !important;
-  color: $fr-action-hover !important;
+@media (max-width: 760px) {
+  .page__content table:not(.rouge-table):not(.fr-score-table):not(.table-wrap):not(.leaders-benchmark__table):not(.leaders-compare__table) th,
+  .page__content table:not(.rouge-table):not(.fr-score-table):not(.table-wrap):not(.leaders-benchmark__table):not(.leaders-compare__table) td {
+    min-width: 6.5rem;
+  }
 }
 
 .page__content table.leaders-compare__table {
@@ -2375,7 +2414,7 @@ body { line-height: 1.7; }
 .page__content ul,
 .page__content ol {
   margin: 1.2rem 0 1.4rem;
-  padding-left: 1.55rem;
+  padding-inline-start: 1.55rem;
 }
 
 .page__content li {
@@ -2383,11 +2422,11 @@ body { line-height: 1.7; }
   line-height: 1.75;
 }
 
-/* 顶层列表：非常轻的提示线 */
+/* 顶层列表保持中性，避免每个列表都呈现为提示框。 */
 .page__content > ul,
 .page__content > ol {
-  border-left: 3px solid color.mix($primary-color, #ffffff, 70%);
-  padding-left: 1.45rem;
+  border-inline-start: 0;
+  padding-inline-start: 1.55rem;
 }
 
 .page__content ul li::marker {
@@ -2395,44 +2434,46 @@ body { line-height: 1.7; }
 }
 .page__content ol li::marker {
   color: color.mix($primary-color, #000, 55%);
-  font-weight: 800;
+  font-weight: 700;
 }
 
 /* 嵌套列表不要重复强调 */
 .page__content li > ul,
 .page__content li > ol {
-  border-left: none;
-  padding-left: 1.25rem;
+  border-inline-start: none;
+  padding-inline-start: 1.25rem;
   margin: 0.55rem 0 0.75rem;
 }
 
 /* =====================================================
- * 7) blockquote（保留 原风格）
+ * 7) Markdown 引用
  * ===================================================== */
 .page__content blockquote {
-  margin: 1.5rem 0;
-  padding: 0.9rem 1.1rem 0.9rem 1.2rem;
-  border-inline-start: 4px solid rgba(34, 48, 66, 0.55) !important;
-  background: color.mix($background-color, #ffffff, 80%);
-  border-radius: 0.6rem;
+  margin: 1.65rem 0;
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(34, 48, 66, 0.10);
+  border-inline-start: 4px solid color.mix($primary-color, $fr-warm-accent, 72%) !important;
+  background: rgba(255, 255, 255, 0.44);
+  border-radius: 0.4rem;
   font-family: $serif;
   font-style: normal;
-  font-size: 1.02em;
+  font-size: 1em;
+  line-height: 1.75;
   color: rgba(34, 48, 66, 0.92) !important;
-  position: relative;
 }
-.page__content blockquote p { margin: 0.3rem 0; }
+.page__content blockquote p { margin: 0.35rem 0; }
 .page__content blockquote p:last-child { margin-bottom: 0; }
 .page__content blockquote::before {
-  content: "“";
-  position: absolute;
-  inset-inline-start: 0.4rem;
-  inset-block-start: 0.1rem;
-  font-family: $serif;
-  font-size: 2.6rem;
-  line-height: 1;
-  color: rgba(34, 48, 66, 0.18) !important; /* 引号装饰更清晰 */
-  pointer-events: none;
+  content: none;
+}
+
+.page__content blockquote cite {
+  display: block;
+  margin-top: 0.65rem;
+  color: $muted-text-color;
+  font-family: $sans-serif;
+  font-size: 0.84em;
+  font-style: normal;
 }
 
 /* =====================================================
@@ -2809,8 +2850,10 @@ body { line-height: 1.7; }
 /* h2：章节标题 */
 .page__content h2 {
   font-size: 1.55rem;
-  font-weight: 850;
-  letter-spacing: 0.01em;
+  font-weight: 700;
+  line-height: 1.32;
+  letter-spacing: 0;
+  text-wrap: balance;
   margin-top: 2.2rem;
   margin-bottom: 1rem;
   padding-bottom: 0.35rem;
@@ -2820,7 +2863,10 @@ body { line-height: 1.7; }
 /* h3：小节标题 */
 .page__content h3 {
   font-size: 1.22rem;
-  font-weight: 820;
+  font-weight: 700;
+  line-height: 1.38;
+  letter-spacing: 0;
+  text-wrap: balance;
   margin-top: 1.7rem;
   margin-bottom: 0.85rem;
   color: #223042;
@@ -2829,7 +2875,10 @@ body { line-height: 1.7; }
 /* h4：更细标题 */
 .page__content h4 {
   font-size: 1.06rem;
-  font-weight: 780;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-wrap: balance;
   margin-top: 1.3rem;
   margin-bottom: 0.7rem;
   color: color.mix(#223042, #6f4e37, 70%); /* 微棕调，跟 TOC 呼应 */
@@ -3008,6 +3057,8 @@ body { line-height: 1.7; }
 /* 默认：正文段落首行缩进 */
 .page__content > p {
   text-indent: 2em;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
 }
 
 /* 关闭缩进的文章：外层加 no-indent */
@@ -3017,6 +3068,122 @@ body { line-height: 1.7; }
 
 /* 局部块不缩进 */
 .no-indent-block p { text-indent: 0 !important; }
+
+/* 英文文章采用拉丁字体、较紧凑行距和无首行缩进。 */
+article.page[lang^="en"] .page__content {
+  max-width: 72ch;
+  margin-inline: auto;
+  font-family: $sans-serif-latin;
+  line-height: 1.68;
+}
+
+article.page[lang^="en"] .page__content > p {
+  text-indent: 0;
+  margin-bottom: 1.15em;
+}
+
+article.page[lang^="en"] .page__content h1,
+article.page[lang^="en"] .page__content h2,
+article.page[lang^="en"] .page__content h3,
+article.page[lang^="en"] .page__content h4,
+article.page[lang^="en"] .page__content h5,
+article.page[lang^="en"] .page__content h6,
+article.page[lang^="en"] .page__content blockquote {
+  font-family: $serif-latin;
+}
+
+.page__content [data-fr-i18n-block="en"] {
+  font-family: $sans-serif-latin;
+  line-height: 1.68;
+}
+
+.page__content [data-fr-i18n-block="en"] p {
+  margin-bottom: 1.15em;
+  text-indent: 0;
+}
+
+.page__content [data-fr-i18n-block="en"] h1,
+.page__content [data-fr-i18n-block="en"] h2,
+.page__content [data-fr-i18n-block="en"] h3,
+.page__content [data-fr-i18n-block="en"] h4,
+.page__content [data-fr-i18n-block="en"] h5,
+.page__content [data-fr-i18n-block="en"] h6,
+.page__content [data-fr-i18n-block="en"] blockquote {
+  font-family: $serif-latin;
+}
+
+@include breakpoint($x-large) {
+  article.page[lang^="en"] .page__content,
+  .page__content [data-fr-i18n-block="en"] {
+    font-size: 20px;
+  }
+}
+
+/* Markdown 行内语义：强调清楚，但不把正文切成大量卡片。 */
+.page__content :where(p, li, dd, blockquote) strong {
+  color: color.mix($text-color, $primary-color, 82%);
+  font-weight: 700;
+}
+
+article.page:not([lang^="en"]) .page__content :where(p, li, dd, blockquote) em {
+  color: color.mix($text-color, $fr-warm-accent, 86%);
+  font-style: normal;
+  text-decoration-line: underline;
+  text-decoration-color: rgba($fr-warm-accent, 0.34);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+article.page .page__content [data-fr-i18n-block="en"] :where(p, li, dd, blockquote) em {
+  color: inherit;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.page__content :where(p, li, dd, blockquote) a:not(.btn) {
+  text-decoration-line: underline;
+  text-decoration-color: rgba($fr-action-color, 0.38);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  text-decoration-skip-ink: auto;
+}
+
+.page__content :where(p, li, dd, blockquote) a:not(.btn):hover,
+.page__content :where(p, li, dd, blockquote) a:not(.btn):focus-visible {
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
+}
+
+.page__content > hr {
+  width: min(9rem, 32%);
+  margin: 2.4rem auto;
+  border: 0;
+  border-top: 1px solid color.mix($border-color, $fr-warm-accent, 72%);
+}
+
+.page__content mark {
+  padding-inline: 0.12em;
+  color: inherit;
+  background: rgba(240, 198, 116, 0.42);
+  box-decoration-break: clone;
+}
+
+.page__content del {
+  color: $muted-text-color;
+  text-decoration-thickness: 1px;
+}
+
+.page__content kbd {
+  display: inline-block;
+  padding: 0.08em 0.42em;
+  border: 1px solid color.mix(#000, $border-color, 12%);
+  border-bottom-width: 2px;
+  border-radius: 0.3rem;
+  background: rgba(255, 255, 255, 0.64);
+  box-shadow: 0 1px 0 rgba(34, 48, 66, 0.08);
+  font-size: 0.82em;
+  line-height: 1.4;
+}
 
 /* =====================================================
  * Search: algolia
@@ -3812,6 +3979,13 @@ body { line-height: 1.7; }
   padding: .12em .35em;
   border-radius: .35em;
   font-size: .92em;
+  overflow-wrap: anywhere;
+}
+
+.page__content :not(pre) > code::before,
+.page__content :not(pre) > code::after {
+  content: none;
+  letter-spacing: 0;
 }
 
 /* 代码块容器（Rouge） */
