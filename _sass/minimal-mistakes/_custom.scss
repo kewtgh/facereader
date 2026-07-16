@@ -1847,18 +1847,18 @@ body { line-height: 1.7; }
   font-weight: 800;
 }
 
-.leaders-benchmark__delta--正常 {
+.leaders-benchmark__delta--normal {
   background: rgba(71, 112, 74, 0.12);
   color: #47704a;
 }
 
-.leaders-benchmark__delta--跟踪 {
+.leaders-benchmark__delta--track {
   background: rgba(155, 92, 32, 0.13);
   color: #9b5c20;
 }
 
-.leaders-benchmark__delta--复核,
-.leaders-benchmark__delta--待评分 {
+.leaders-benchmark__delta--review,
+.leaders-benchmark__delta--pending {
   background: rgba(126, 59, 59, 0.13);
   color: #7e3b3b;
 }

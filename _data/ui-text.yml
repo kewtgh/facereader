@@ -66,6 +66,8 @@ en: &DEFAULT_EN
   language_en: "English"
   leaders_hero_query: "Start search"
   leaders_hero_pro: "Professional version"
+  benchmark_hero_search: "Back to rating search"
+  benchmark_hero_table: "View company table"
 
   # Three cards
   home_hero_excerpt: >
@@ -765,6 +767,8 @@ zh: &DEFAULT_ZH_HANS
   language_en: "English"
   leaders_hero_query: "开始查询"
   leaders_hero_pro: "专业版入口"
+  benchmark_hero_search: "返回评级搜索"
+  benchmark_hero_table: "查看企业总表"
   # 三张卡片
   home_hero_excerpt: >
     我写企业，也写时代，但总先看人。

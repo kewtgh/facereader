@@ -1,99 +1,131 @@
 {
   "name": "Darwin-LEADERS 对照样本池",
+  "name_en": "Darwin-LEADERS benchmark pool",
   "version": "2026-H1",
   "updated": "2026-04-30",
   "selection_rule": "优先选择上市公司、年报/公告/招股书可核验、经营数据连续、已有研究底稿或公开披露稳定的企业；排除证据等级C且财务与治理信息过少的企业。",
   "review_cycle": "每年6月和12月复盘一次",
+  "review_cycle_en": "Reviewed every June and December",
   "companies": [
     {
       "name": "宁德时代",
+      "name_en": "CATL",
       "tier": "core",
       "info_quality": "A",
-      "reason": "A股上市龙头，财务、治理、研发、产能和客户结构信息连续，适合校准成熟制造龙头。"
+      "reason": "A股上市龙头，财务、治理、研发、产能和客户结构信息连续，适合校准成熟制造龙头。",
+      "reason_en": "An A-share listed battery leader with continuous financial, governance, R&D, capacity, and customer-structure disclosures, suitable for calibrating mature manufacturing leaders."
     },
     {
       "name": "科大讯飞",
+      "name_en": "iFLYTEK",
       "tier": "core",
       "info_quality": "A",
-      "reason": "A股上市AI应用公司，收入、利润、现金流、研发投入和行业业务披露较完整。"
+      "reason": "A股上市AI应用公司，收入、利润、现金流、研发投入和行业业务披露较完整。",
+      "reason_en": "An A-share listed AI application company with relatively complete disclosure of revenue, profit, cash flow, R&D investment, and industry operations."
     },
     {
       "name": "寒武纪",
+      "name_en": "Cambricon",
       "tier": "core",
       "info_quality": "A",
-      "reason": "A股上市AI芯片公司，盈利拐点、现金流、研发和客户风险可从公告持续追踪。"
+      "reason": "A股上市AI芯片公司，盈利拐点、现金流、研发和客户风险可从公告持续追踪。",
+      "reason_en": "An A-share listed AI chip company whose profitability inflection, cash flow, R&D, and customer risks can be tracked through continuing disclosures."
     },
     {
       "name": "商汤科技",
+      "name_en": "SenseTime",
       "tier": "core",
       "info_quality": "A",
-      "reason": "港股上市AI公司，亏损收窄、现金流、业务重组和AI商业化数据可持续跟踪。"
+      "reason": "港股上市AI公司，亏损收窄、现金流、业务重组和AI商业化数据可持续跟踪。",
+      "reason_en": "A Hong Kong-listed AI company with trackable data on narrowing losses, cash flow, business restructuring, and AI commercialization."
     },
     {
       "name": "比亚迪",
+      "name_en": "BYD",
       "tier": "core",
       "info_quality": "B+",
-      "reason": "A/H上市，财务披露充分；适合检验规模、热度与利润质量之间的偏差。"
+      "reason": "A/H上市，财务披露充分；适合检验规模、热度与利润质量之间的偏差。",
+      "reason_en": "Listed in both mainland China and Hong Kong with extensive financial disclosure; useful for testing divergence among scale, attention, and earnings quality."
     },
     {
       "name": "华为",
+      "name_en": "Huawei",
       "tier": "core",
       "info_quality": "B+",
-      "reason": "非上市但年报披露稳定，适合校准非上市企业治理透明度和财务硬度折扣。"
+      "reason": "非上市但年报披露稳定，适合校准非上市企业治理透明度和财务硬度折扣。",
+      "reason_en": "Privately held but consistent in annual-report disclosure, making it useful for calibrating governance-transparency and financial-hardness discounts for private companies."
     },
     {
       "name": "小鹏汽车",
+      "name_en": "XPeng",
       "tier": "core",
       "info_quality": "B+",
-      "reason": "美股/港股上市，销量、毛利、现金、研发和智能化投入可持续追踪。"
+      "reason": "美股/港股上市，销量、毛利、现金、研发和智能化投入可持续追踪。",
+      "reason_en": "Listed in the US and Hong Kong, with continuously trackable deliveries, gross margin, cash, R&D, and intelligent-vehicle investment."
     },
     {
       "name": "理想汽车",
+      "name_en": "Li Auto",
       "tier": "core",
       "info_quality": "B+",
-      "reason": "美股/港股上市，盈利质量、现金储备、产品节奏和组织效率数据较完整。"
+      "reason": "美股/港股上市，盈利质量、现金储备、产品节奏和组织效率数据较完整。",
+      "reason_en": "Listed in the US and Hong Kong, with relatively complete data on earnings quality, cash reserves, product cadence, and organizational efficiency."
     },
     {
       "name": "蔚来汽车",
+      "name_en": "NIO",
       "tier": "core",
       "info_quality": "B+",
-      "reason": "美股/港股上市，亏损、现金消耗、产品矩阵和组织效率适合做反向校准。"
+      "reason": "美股/港股上市，亏损、现金消耗、产品矩阵和组织效率适合做反向校准。",
+      "reason_en": "Listed in the US and Hong Kong; its losses, cash burn, product portfolio, and organizational efficiency make it useful for downside calibration."
     },
     {
       "name": "地平线",
+      "name_en": "Horizon Robotics",
       "tier": "core",
       "info_quality": "B",
-      "reason": "港股上市后披露增强，芯片出货、解决方案收入和亏损收窄可跟踪。"
+      "reason": "港股上市后披露增强，芯片出货、解决方案收入和亏损收窄可跟踪。",
+      "reason_en": "Disclosure improved after its Hong Kong listing, allowing continued tracking of chip shipments, solution revenue, and narrowing losses."
     },
     {
       "name": "摩尔线程",
+      "name_en": "Moore Threads",
       "tier": "core",
       "info_quality": "B",
-      "reason": "上市后信息质量提升，适合校准国产GPU公司从叙事到财务兑现的偏差。"
+      "reason": "上市后信息质量提升，适合校准国产GPU公司从叙事到财务兑现的偏差。",
+      "reason_en": "Post-listing information quality has improved, making it suitable for calibrating the gap between narrative and financial delivery among Chinese GPU companies."
     },
     {
       "name": "沐曦股份",
+      "name_en": "MetaX",
       "tier": "core",
       "info_quality": "B",
-      "reason": "科创板上市后披露完整度提升，适合与摩尔线程做同业对照。"
+      "reason": "科创板上市后披露完整度提升，适合与摩尔线程做同业对照。",
+      "reason_en": "Disclosure became more complete after its STAR Market listing, making it a useful peer comparison with Moore Threads."
     },
     {
       "name": "宇树科技",
+      "name_en": "Unitree Robotics",
       "tier": "satellite",
       "info_quality": "B",
-      "reason": "IPO材料带来较高信息增量，适合校准高增长机器人公司的订单、利润和治理信号。"
+      "reason": "IPO材料带来较高信息增量，适合校准高增长机器人公司的订单、利润和治理信号。",
+      "reason_en": "IPO materials provide substantial new information, useful for calibrating orders, profitability, and governance signals at a high-growth robotics company."
     },
     {
       "name": "OpenAI",
+      "name_en": "OpenAI",
       "tier": "satellite",
       "info_quality": "B-",
-      "reason": "披露不如上市公司，但融资、结构、合作和收入线索密集，适合校准高热度非上市AI企业。"
+      "reason": "披露不如上市公司，但融资、结构、合作和收入线索密集，适合校准高热度非上市AI企业。",
+      "reason_en": "Disclosure is weaker than at listed companies, but dense financing, structure, partnership, and revenue signals make it suitable for calibrating a high-profile private AI company."
     },
     {
       "name": "Anthropic",
+      "name_en": "Anthropic",
       "tier": "satellite",
       "info_quality": "B-",
-      "reason": "融资、客户、产品和算力合作信息较多，适合与OpenAI对照治理与财务硬度偏差。"
+      "reason": "融资、客户、产品和算力合作信息较多，适合与OpenAI对照治理与财务硬度偏差。",
+      "reason_en": "Its financing, customer, product, and compute-partnership disclosures support comparison with OpenAI on governance and financial-hardness divergence."
     }
   ],
   "excluded_examples": [

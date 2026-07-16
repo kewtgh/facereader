@@ -131,7 +131,10 @@ function validateBenchmark(companies) {
   const companyNames = new Set(companies.map((company) => company.name));
 
   assert(benchmark.name, "benchmark: missing name.", errors);
+  assert(benchmark.name_en, "benchmark: missing English name.", errors);
   assert(benchmark.version, "benchmark: missing version.", errors);
+  assert(benchmark.review_cycle, "benchmark: missing review cycle.", errors);
+  assert(benchmark.review_cycle_en, "benchmark: missing English review cycle.", errors);
   assert(Array.isArray(benchmark.companies), "benchmark: companies must be an array.", errors);
   assert(benchmark.companies.length === 15, `benchmark: expected 15 companies, got ${benchmark.companies.length}.`, errors);
 
@@ -139,12 +142,14 @@ function validateBenchmark(companies) {
   for (const item of benchmark.companies) {
     const label = item?.name || "<missing benchmark name>";
     assert(item.name, `${label}: missing benchmark name.`, errors);
+    assert(item.name_en, `${label}: missing English benchmark name.`, errors);
     assert(!benchmarkNames.has(item.name), `${label}: duplicate benchmark company.`, errors);
     benchmarkNames.add(item.name);
     assert(companyNames.has(item.name), `${label}: benchmark company is not in leaders-companies.json.`, errors);
     assert(["core", "satellite"].includes(item.tier), `${label}: tier must be core or satellite.`, errors);
     assert(item.info_quality, `${label}: missing info_quality.`, errors);
     assert(item.reason, `${label}: missing selection reason.`, errors);
+    assert(item.reason_en, `${label}: missing English selection reason.`, errors);
   }
 
   return errors;
