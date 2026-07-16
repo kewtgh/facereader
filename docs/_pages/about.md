@@ -6,11 +6,15 @@ header:
   overlay_image: /assets/img/page-header-image-vision10.jpg
   overlay_filter: "rgba(51, 117, 255, 0.5)"
 layout: single
+classes:
+  - about-page
 toc: true
 toc_sticky: true
 sidebar:
+  - image: /assets/img/logo-facereader.png
+    image_alt: "FaceReader 企业观察"
   - title: "FaceReader 企业观察"
-    text: "解读人性，分析企业，洞悉社会，掌握趋势。"
+    text: "从人物、组织与制度结构进入企业和时代。"
     nav: sidebar-about
 author_profile: false
 show_date: false

@@ -1,0 +1,32 @@
+{%- assign locale = include.locale | default: page.locale | default: site.locale -%}
+{%- assign lang = locale | slice: 0, 2 -%}
+{%- assign t = site.data.ui-text[locale] | default: site.data.ui-text[site.locale] -%}
+{%- assign zh_url = site.language_home.zh | default: "/" -%}
+{%- assign en_url = site.language_home.en | default: "/en/" -%}
+
+{%- if page.translation_key -%}
+  {%- assign translation_documents = site.posts | concat: site.pages -%}
+  {%- assign translations = translation_documents | where: "translation_key", page.translation_key -%}
+  {%- for translation in translations -%}
+    {%- assign translation_locale = translation.locale | default: site.locale -%}
+    {%- assign translation_lang = translation_locale | slice: 0, 2 -%}
+    {%- if translation_lang == "zh" -%}
+      {%- assign zh_url = translation.url -%}
+    {%- elsif translation_lang == "en" -%}
+      {%- assign en_url = translation.url -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+<nav class="masthead-language-switcher" aria-label="{{ t.translation_label | default: 'Language' }}">
+  {%- if lang == "zh" -%}
+    <span class="is-current" aria-current="page">{{ t.language_zh | default: "中文" }}</span>
+  {%- else -%}
+    <a href="{{ zh_url | relative_url }}" lang="zh-CN">{{ t.language_zh | default: "中文" }}</a>
+  {%- endif -%}
+  {%- if lang == "en" -%}
+    <span class="is-current" aria-current="page">{{ t.language_en | default: "English" }}</span>
+  {%- else -%}
+    <a href="{{ en_url | relative_url }}" lang="en-US">{{ t.language_en | default: "English" }}</a>
+  {%- endif -%}
+</nav>

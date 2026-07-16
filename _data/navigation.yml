@@ -189,19 +189,29 @@ sidebar-series-wayofrunningbusiness:
          url: https://facereader.witbacon.com/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/management-wayofrunningbusiness03/
 
 sidebar-about:
-  - title: "关于我们："
+  - title: "开始阅读"
     children:
-       - title: "一、首页"
+       - title: "首页"
          url: /
-  - title: "文章类别："
+       - title: "全部文章"
+         url: /posts/
+       - title: "热门文章"
+         url: /most_popular/
+  - title: "主题入口"
     children:
-       - title: "一、企业剖析"
+       - title: "企业剖析"
          url: /categories/#企业剖析
-       - title: "二、经典解读"
+       - title: "经典解读"
          url: /categories/#经典解读
-       - title: "三、人格成长"
+       - title: "人格成长"
          url: /categories/#人格成长
-  - title: "建议和问题："
+       - title: "标签索引"
+         url: /tags/
+  - title: "工具"
     children:
-       - title: "点此发送邮件"
+       - title: "LEADERS评级"
+         url: /leaders-scorecard/
+  - title: "联系"
+    children:
+       - title: "发送邮件"
          url: mailto:facereader@witbacon.com

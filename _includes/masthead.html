@@ -29,6 +29,7 @@
             </li>
           {%- endfor -%}
         </ul>
+        {% include masthead-language-switcher.html locale=locale %}
         {% if site.search == true %}
         <button class="search__toggle" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[locale].search_label | default: "Toggle search" }}</span>
