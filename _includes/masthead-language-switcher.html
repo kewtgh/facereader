@@ -20,13 +20,13 @@
 
 <nav class="masthead-language-switcher" aria-label="{{ t.translation_label | default: 'Language' }}">
   {%- if lang == "zh" -%}
-    <span class="is-current" aria-current="page">{{ t.language_zh | default: "中文" }}</span>
+    <span class="is-current" aria-current="page" aria-label="{{ t.language_zh | default: '中文' }}">ZH</span>
   {%- else -%}
-    <a href="{{ zh_url | relative_url }}" lang="zh-CN">{{ t.language_zh | default: "中文" }}</a>
+    <a href="{{ zh_url | relative_url }}" lang="zh-CN" aria-label="{{ t.language_zh | default: '中文' }}">ZH</a>
   {%- endif -%}
   {%- if lang == "en" -%}
-    <span class="is-current" aria-current="page">{{ t.language_en | default: "English" }}</span>
+    <span class="is-current" aria-current="page" aria-label="{{ t.language_en | default: 'English' }}">EN</span>
   {%- else -%}
-    <a href="{{ en_url | relative_url }}" lang="en-US">{{ t.language_en | default: "English" }}</a>
+    <a href="{{ en_url | relative_url }}" lang="en-US" aria-label="{{ t.language_en | default: 'English' }}">EN</a>
   {%- endif -%}
 </nav>
