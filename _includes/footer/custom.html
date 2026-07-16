@@ -1,5 +1,186 @@
 <!-- start custom footer snippets -->
 <script>
+  window.FaceReaderUiText = {
+    zh: {{ site.data.ui-text['zh-CN'] | jsonify }},
+    en: {{ site.data.ui-text.en | jsonify }}
+  };
+</script>
+
+<script>
+  (function () {
+    var storageKey = "facereader.uiLanguage";
+    var supported = { zh: true, en: true };
+
+    function normalizeLanguage(value) {
+      value = String(value || "").slice(0, 2).toLowerCase();
+      return supported[value] ? value : "zh";
+    }
+
+    function readStoredLanguage() {
+      try {
+        return window.localStorage.getItem(storageKey);
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function storeLanguage(language) {
+      try {
+        window.localStorage.setItem(storageKey, language);
+      } catch (error) {
+        // Local storage can be unavailable in strict privacy contexts.
+      }
+    }
+
+    function textForKey(language, key) {
+      var dictionary = window.FaceReaderUiText && window.FaceReaderUiText[language];
+      return dictionary && Object.prototype.hasOwnProperty.call(dictionary, key)
+        ? dictionary[key]
+        : null;
+    }
+
+    function withSuffix(element, language, value) {
+      var suffix = element.getAttribute("data-fr-i18n-suffix-" + language);
+      if (suffix === null) suffix = element.getAttribute("data-fr-i18n-suffix") || "";
+      return value + suffix;
+    }
+
+    function setElementText(element, language) {
+      var key = element.getAttribute("data-fr-i18n-key");
+      var text = key ? textForKey(language, key) : null;
+
+      if (text === null) {
+        text = element.getAttribute("data-fr-i18n-" + language);
+      }
+
+      if (text !== null) {
+        element.textContent = withSuffix(element, language, text);
+      }
+    }
+
+    function setElementAlt(element, language) {
+      var key = element.getAttribute("data-fr-i18n-alt-key");
+      var alt = key ? textForKey(language, key) : null;
+
+      if (alt === null) {
+        alt = element.getAttribute("data-fr-i18n-alt-" + language);
+      }
+
+      if (alt !== null) {
+        element.setAttribute("alt", alt);
+      }
+    }
+
+    function setElementAriaLabel(element, language) {
+      var key = element.getAttribute("data-fr-i18n-aria-label-key");
+      var label = key ? textForKey(language, key) : null;
+
+      if (label === null) {
+        label = element.getAttribute("data-fr-i18n-aria-label-" + language);
+      }
+
+      if (label !== null) {
+        element.setAttribute("aria-label", label);
+      }
+    }
+
+    function syncTocLabels() {
+      var tocLinks = Array.prototype.slice.call(document.querySelectorAll(".toc__menu a[href^='#']"));
+      var visibleBlock = document.querySelector("[data-fr-i18n-block]:not([hidden])");
+
+      if (visibleBlock && tocLinks.length) {
+        var visibleHeadings = Array.prototype.slice.call(visibleBlock.querySelectorAll("h2[id], h3[id]"));
+        if (visibleHeadings.length > 0) {
+          tocLinks.forEach(function (link, index) {
+            var item = link.closest("li");
+            if (index >= visibleHeadings.length) {
+              if (item) item.hidden = true;
+              link.hidden = true;
+              return;
+            }
+
+            var heading = visibleHeadings[index];
+            if (item) item.hidden = false;
+            link.hidden = false;
+            link.setAttribute("href", "#" + heading.id);
+            link.textContent = heading.textContent.trim();
+          });
+          return;
+        }
+      }
+
+      tocLinks.forEach(function (link) {
+        var href = link.getAttribute("href");
+        if (!href || href.length < 2) return;
+
+        var id = href.slice(1);
+        try {
+          id = decodeURIComponent(id);
+        } catch (error) {
+          // Keep the original id if it is not URI-encoded.
+        }
+
+        var target = document.getElementById(id);
+        if (target) {
+          link.textContent = target.textContent.trim();
+        }
+      });
+    }
+
+    function applyLanguage(language) {
+      language = normalizeLanguage(language);
+      document.documentElement.setAttribute("data-fr-ui-lang", language);
+
+      document.querySelectorAll("[data-fr-i18n-key], [data-fr-i18n-zh][data-fr-i18n-en]").forEach(function (element) {
+        setElementText(element, language);
+      });
+
+      document.querySelectorAll("[data-fr-i18n-alt-key], [data-fr-i18n-alt-zh][data-fr-i18n-alt-en]").forEach(function (element) {
+        setElementAlt(element, language);
+      });
+
+      document.querySelectorAll("[data-fr-i18n-aria-label-key], [data-fr-i18n-aria-label-zh][data-fr-i18n-aria-label-en]").forEach(function (element) {
+        setElementAriaLabel(element, language);
+      });
+
+      document.querySelectorAll("[data-fr-i18n-block]").forEach(function (element) {
+        element.hidden = element.getAttribute("data-fr-i18n-block") !== language;
+      });
+
+      document.querySelectorAll("[data-fr-ui-lang-option]").forEach(function (button) {
+        var isCurrent = button.getAttribute("data-fr-ui-lang-option") === language;
+        button.classList.toggle("is-current", isCurrent);
+        button.setAttribute("aria-pressed", isCurrent ? "true" : "false");
+      });
+
+      syncTocLabels();
+      window.setTimeout(function () {
+        window.dispatchEvent(new Event("resize"));
+      }, 0);
+    }
+
+    function initialLanguage() {
+      var switcher = document.querySelector("[data-fr-ui-lang-switcher]");
+      var defaultLanguage = switcher ? switcher.getAttribute("data-fr-default-ui-lang") : document.documentElement.lang;
+      return normalizeLanguage(readStoredLanguage() || defaultLanguage);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var language = initialLanguage();
+      applyLanguage(language);
+
+      document.querySelectorAll("[data-fr-ui-lang-option]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          var nextLanguage = normalizeLanguage(button.getAttribute("data-fr-ui-lang-option"));
+          storeLanguage(nextLanguage);
+          applyLanguage(nextLanguage);
+        });
+      });
+    });
+  })();
+</script>
+
+<script>
   (function () {
     var params = new URLSearchParams(window.location.search);
     if (params.get("from") !== "leaders-scorecard") return;

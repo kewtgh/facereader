@@ -38,9 +38,9 @@
             {%- if title -%}
               <h2 class="archive__item-title">
                 {%- if f.url -%}
-                  <a href="{{ f.url | relative_url }}">{{ title }}</a>
+                  <a href="{{ f.url | relative_url }}"{% if f.title_key %} data-fr-i18n-key="{{ f.title_key }}"{% endif %}>{{ title }}</a>
                 {%- else -%}
-                  {{ title }}
+                  <span{% if f.title_key %} data-fr-i18n-key="{{ f.title_key }}"{% endif %}>{{ title }}</span>
                 {%- endif -%}
               </h2>
             {%- endif -%}
@@ -53,7 +53,7 @@
             {%- endif -%}
 
             {%- if excerpt_text -%}
-              <p class="archive__item-excerpt">
+              <p class="archive__item-excerpt"{% if f.excerpt_key %} data-fr-i18n-key="{{ f.excerpt_key }}"{% endif %}>
                 {{ excerpt_text | markdownify | strip }}
               </p>
             {%- endif -%}
@@ -68,7 +68,8 @@
 
               <p>
                 <a href="{{ f.url | relative_url }}"
-                   class="btn {{ f.btn_class | default: 'btn--primary' }}">
+                   class="btn {{ f.btn_class | default: 'btn--primary' }}"
+                   {% if f.btn_label_key %}data-fr-i18n-key="{{ f.btn_label_key }}"{% endif %}>
                   {{ btn_label }}
                 </a>
               </p>

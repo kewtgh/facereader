@@ -8,26 +8,27 @@
         <img
           src="/assets/img/page-content-image-wide-people-teaser.jpg"
           alt="{{ t.home_about_card_image_alt }}"
+          data-fr-i18n-alt-key="home_about_card_image_alt"
         >
       </div>
 
       <div class="home-cta__text">
-        <h2>{{ t.home_about_card_title }}</h2>
+        <h2 data-fr-i18n-key="home_about_card_title">{{ t.home_about_card_title }}</h2>
 
-        <p>{{ t.home_about_card_desc }}</p>
+        <p data-fr-i18n-key="home_about_card_desc">{{ t.home_about_card_desc }}</p>
 
         <ul>
-          <li>{{ t.home_about_card_bullet_1 }}</li>
-          <li>{{ t.home_about_card_bullet_2 }}</li>
+          <li data-fr-i18n-key="home_about_card_bullet_1">{{ t.home_about_card_bullet_1 }}</li>
+          <li data-fr-i18n-key="home_about_card_bullet_2">{{ t.home_about_card_bullet_2 }}</li>
         </ul>
 
-        <p class="home-cta__note">{{ t.home_about_card_note }}</p>
+        <p class="home-cta__note" data-fr-i18n-key="home_about_card_note">{{ t.home_about_card_note }}</p>
 
         <div class="home-cta__actions">
-          <a class="btn btn--primary" href="{{ '/about/' | relative_url }}">
+          <a class="btn btn--primary" href="{{ '/about/' | relative_url }}" data-fr-i18n-key="home_about_card_button">
             {{ t.home_about_card_button }}
           </a>
-          <a class="btn btn--primary" href="{{ '/feed.xml' | relative_url }}">
+          <a class="btn btn--primary" href="{{ '/feed.xml' | relative_url }}" data-fr-i18n-key="home_about_card_rss_button">
             {{ t.home_about_card_rss_button }}
           </a>
         </div>

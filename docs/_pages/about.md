@@ -1,7 +1,13 @@
 ---
 permalink: /about/
 title: "从「人」出发看企业与世界"
+title_i18n:
+  zh: "从「人」出发看企业与世界"
+  en: "Reading Companies and the World Through People"
 excerpt: "FaceReader 是一份以人物视角拆解企业、产业与社会的长期写作。"
+excerpt_i18n:
+  zh: "FaceReader 是一份以人物视角拆解企业、产业与社会的长期写作。"
+  en: "FaceReader is a long-form writing project that reads companies, industries, and society through people."
 header:
   overlay_image: /assets/img/page-header-image-vision10.jpg
   overlay_filter: "rgba(51, 117, 255, 0.5)"
@@ -13,6 +19,8 @@ toc_sticky: true
 author_profile: false
 show_date: false
 ---
+
+<div data-fr-i18n-block="zh" markdown="1">
 
 **FaceReader 是我的个人写作站点。**
 
@@ -153,3 +161,132 @@ LEADERS 企业评分把组织管理能力拆成七项：领袖气质、决策力
 </div>
 
 > 如果你不知道从哪里开始读：可以先从首页的「阅相识人」「经典解读」或你最熟悉的行业标签进入。
+
+</div>
+
+<div data-fr-i18n-block="en" hidden>
+  <p><strong>FaceReader is my personal writing site.</strong></p>
+
+  <p>I write about companies, management, industries, society, and classics, but the entry point is always the same: <strong>a company is shaped not only by models and data, but by the people who make decisions, and by the organizational structures and institutional settings that amplify them.</strong></p>
+
+  <p>Rather than labeling a company too quickly, I care more about four questions:</p>
+
+  <ul>
+    <li>What kind of person is the key figure: the temperament suggested by the face, the structure of character, and the source of drive?</li>
+    <li>How do they make decisions: preferences, blind spots, and their instinct for power and risk?</li>
+    <li>How are these tendencies amplified inside the organization: hiring, division of work, incentives, information flow, authority, and accountability?</li>
+    <li>Where will the company eventually be taken: strategic rhythm, organizational temperament, and foreseeable costs?</li>
+  </ul>
+
+  <h2 id="what-i-write">What I Write</h2>
+
+  <p>The site currently has five main directions:</p>
+
+  <h3 id="leadership-management">1. Leadership &amp; Management</h3>
+  <p>Power and governance, organizational design, hiring, decision styles, and the sources of conflict. I prefer writing about management in real situations: how human nature collides with institutions, why organizations distort, and how they regain coherence.</p>
+
+  <h3 id="technology-industry">2. Technology &amp; Industry</h3>
+  <p>I break down industrial chains, business models, and technology inflection points in understandable terms: what is narrative and what is structure; what changes the division of work and profit, and what is only a temporary fluctuation.</p>
+
+  <h3 id="society-politics">3. Society &amp; Politics</h3>
+  <p>I look at the structures behind public issues: power, institutions, public opinion, interests, and information. Many disputes look like positions on the surface, but underneath they are mechanisms. Judgment gains footing only after the mechanism is clear.</p>
+
+  <h3 id="chinese-culture-classics">4. Chinese Culture &amp; Classics</h3>
+  <p>When I read classics, I care most about returning them to their circumstances. I try to avoid trimming ancient texts with modern convenience and utility, and instead ask: what problem were they facing, and why did they write or act this way? Works such as <em>The Art of War</em> are better read by removing projection and mythology, not by turning them into universal slogans.</p>
+
+  <h3 id="thoughts-life">5. Thoughts &amp; Life</h3>
+  <p>These essays are about growth, psychology, relationships, and life, often written through difficulty and self-examination. They are not answer sheets or method lists. They are my attempts to clarify questions and write experience honestly.</p>
+
+  <h2 id="how-i-write">How I Write</h2>
+
+  <p>I try to follow a few writing principles:</p>
+
+  <ol>
+    <li><strong>Start from people, but do not stop at people.</strong><br>I write about faces, character, drives, and decision preferences; I also write about structure: authority, accountability, incentives, information, and constraints. Many “personal choices” are really structures selecting and shaping people.</li>
+    <li><strong>Keep things as verifiable as possible.</strong><br>When something can be cited, I cite it; when it can be compared, I compare it. I separate facts, inferences, and personal judgment. A view can be strong, but the grounds should be visible.</li>
+    <li><strong>Do not make complex problems falsely simple.</strong><br>I pursue clarity, but not at the cost of deleting key variables. I keep necessary proportion and state uncertainty when it matters.</li>
+    <li><strong>Write for people who make serious judgments.</strong><br>I do not write to flatter emotion or chase speed. I care more about long-lasting frameworks of understanding and judgments that can still stand in complex situations.</li>
+  </ol>
+
+  <h2 id="how-to-use-this-site">How to Use This Site</h2>
+
+  <ul>
+    <li>To read a company: use the three layers of key people, organizational structure, and industry position.</li>
+    <li>To read a manager: look at drive, decision preference, and blind spots, then ask where the team will be taken.</li>
+    <li>To understand a social issue: set emotion aside first, and identify mechanisms, constraints, and incentives.</li>
+    <li>To read classics: return to the circumstance before interpreting the text.</li>
+  </ul>
+
+  <p>You can also treat this place as a slowly updated thinking archive: <strong>when needed, read one essay to recalibrate the origin and boundary of your judgment.</strong></p>
+
+  <div class="about-entry-panel about-entry-panel--primary">
+    <strong>If this is your first visit:</strong>
+    You can start from all posts, popular posts, or the tag index.
+    <div class="about-entry-actions">
+      <a class="btn btn--secondary" href="{{ '/posts/' | relative_url }}">All posts</a>
+      <a class="btn btn--secondary" href="{{ '/most_popular/' | relative_url }}">Popular posts</a>
+      <a class="btn btn--secondary" href="{{ '/tags/' | relative_url }}">Tag index</a>
+    </div>
+  </div>
+
+  <h2 id="site-guide">Site Guide</h2>
+
+  <p>The site brings together essays, tags, topic pages, and structured rating tools so that the same set of questions can be entered from different paths.</p>
+
+  <h3 id="reading-paths">Reading Paths</h3>
+
+  <ul>
+    <li>To browse by time, enter “Posts”.</li>
+    <li>To browse by theme, enter “Categories” or “Tags”.</li>
+    <li>To view company management ratings, enter “LEADERS Rating”.</li>
+    <li>To find a company, person, or concept, use site search.</li>
+  </ul>
+
+  <div class="about-entry-links">
+    <a href="{{ '/categories/' | relative_url }}#企业剖析"><strong>Company Analysis</strong><span>Read companies through people, organizations, and industry position.</span></a>
+    <a href="{{ '/categories/' | relative_url }}#经典解读"><strong>Classic Insights</strong><span>Understand classics in their real circumstances.</span></a>
+    <a href="{{ '/categories/' | relative_url }}#人格成长"><strong>Personal Growth</strong><span>Essays on difficulty, self-examination, and long-term judgment.</span></a>
+  </div>
+
+  <h3 id="company-ratings">Company Ratings</h3>
+
+  <p>LEADERS company ratings break organizational management capability into seven dimensions: leadership presence, decision quality, execution, complementarity, cultural fit, role expertise completeness, and professional governance structure. The rating page supports company search, industry/region filters, and multi-company comparison.</p>
+
+  <div class="about-entry-panel about-entry-panel--leaders">
+    <strong>LEADERS Company Rating</strong>
+    Use it to inspect management capability profiles, evidence level, risk judgment, and cross-company comparisons.
+    <div class="about-entry-actions">
+      <a class="btn btn--primary" href="{{ '/leaders-scorecard/' | relative_url }}">Open LEADERS Rating</a>
+      <a class="btn btn--secondary" href="{{ '/leaders-scorecard/#leaders-compare' | relative_url }}">Compare Companies</a>
+    </div>
+  </div>
+
+  <h3 id="search-and-tags">Search and Tags</h3>
+
+  <p>Search results prioritize title, excerpt, publish date, categories, and tags. The tag page groups tags by theme and shows article counts. Selecting a tag displays its description and related posts.</p>
+
+  <div class="about-entry-actions about-entry-actions--inline">
+    <a class="btn btn--secondary" href="{{ '/tags/' | relative_url }}">Browse tags</a>
+    <a class="btn btn--secondary" href="{{ '/categories/' | relative_url }}">Browse categories</a>
+  </div>
+
+  <h3 id="boundaries">Boundaries</h3>
+
+  <p>Essays and ratings on this site are for research, discussion, and clue-based judgment. They are not investment, legal, hiring, or business decision advice. For major decisions, use original materials, financial filings, announcements, and independent review.</p>
+
+  <hr>
+
+  <h2 id="contact">Contact</h2>
+
+  <p>I do not currently run this site as a commercial operation, and I do not offer a fixed paid-service format.</p>
+
+  <p>If you have a question, additional material, or a direction you hope I will pay attention to, feel free to contact me by email. A useful message usually includes the topic you care about, the facts or links you have seen, and the one question that most confuses you.</p>
+
+  <div class="about-entry-actions about-entry-actions--inline">
+    <a class="btn btn--primary about-entry-mail" href="mailto:facereader@witbacon.com">Send email</a>
+  </div>
+
+  <blockquote>
+    <p>If you do not know where to start, begin from “Reading Faces, Reading Firms”, “Classic Insights”, or the industry tag you know best.</p>
+  </blockquote>
+</div>

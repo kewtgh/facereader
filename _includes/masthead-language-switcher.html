@@ -1,32 +1,8 @@
 {%- assign locale = include.locale | default: page.locale | default: site.locale -%}
 {%- assign lang = locale | slice: 0, 2 -%}
 {%- assign t = site.data.ui-text[locale] | default: site.data.ui-text[site.locale] -%}
-{%- assign zh_url = site.language_home.zh | default: "/" -%}
-{%- assign en_url = site.language_home.en | default: "/en/" -%}
 
-{%- if page.translation_key -%}
-  {%- assign translation_documents = site.posts | concat: site.pages -%}
-  {%- assign translations = translation_documents | where: "translation_key", page.translation_key -%}
-  {%- for translation in translations -%}
-    {%- assign translation_locale = translation.locale | default: site.locale -%}
-    {%- assign translation_lang = translation_locale | slice: 0, 2 -%}
-    {%- if translation_lang == "zh" -%}
-      {%- assign zh_url = translation.url -%}
-    {%- elsif translation_lang == "en" -%}
-      {%- assign en_url = translation.url -%}
-    {%- endif -%}
-  {%- endfor -%}
-{%- endif -%}
-
-<nav class="masthead-language-switcher" aria-label="{{ t.translation_label | default: 'Language' }}">
-  {%- if lang == "zh" -%}
-    <span class="is-current" aria-current="page" aria-label="{{ t.language_zh | default: '中文' }}">ZH</span>
-  {%- else -%}
-    <a href="{{ zh_url | relative_url }}" lang="zh-CN" aria-label="{{ t.language_zh | default: '中文' }}">ZH</a>
-  {%- endif -%}
-  {%- if lang == "en" -%}
-    <span class="is-current" aria-current="page" aria-label="{{ t.language_en | default: 'English' }}">EN</span>
-  {%- else -%}
-    <a href="{{ en_url | relative_url }}" lang="en-US" aria-label="{{ t.language_en | default: 'English' }}">EN</a>
-  {%- endif -%}
+<nav class="masthead-language-switcher" aria-label="{{ t.translation_label | default: 'Language' }}" data-fr-ui-lang-switcher data-fr-default-ui-lang="{{ lang }}" data-fr-i18n-aria-label-key="translation_label">
+  <button type="button" class="{% if lang == 'zh' %}is-current{% endif %}" data-fr-ui-lang-option="zh" aria-pressed="{% if lang == 'zh' %}true{% else %}false{% endif %}" aria-label="{{ t.language_zh | default: '中文' }}" data-fr-i18n-aria-label-key="language_zh">ZH</button>
+  <button type="button" class="{% if lang == 'en' %}is-current{% endif %}" data-fr-ui-lang-option="en" aria-pressed="{% if lang == 'en' %}true{% else %}false{% endif %}" aria-label="{{ t.language_en | default: 'English' }}" data-fr-i18n-aria-label-key="language_en">EN</button>
 </nav>

@@ -1,8 +1,14 @@
 {% assign locale = include.locale | default: site.locale %}
 {% assign lang = locale | slice: 0, 2 %}
 {% assign site_title = site.title_i18n[lang] | default: site.title %}
+{% assign site_title_zh = site.title_i18n.zh | default: site.title %}
+{% assign site_title_en = site.title_i18n.en | default: site.title %}
 {% assign masthead_title = site.masthead_title_i18n[lang] | default: site.masthead_title | default: site_title %}
+{% assign masthead_title_zh = site.masthead_title_i18n.zh | default: site.masthead_title | default: site_title_zh %}
+{% assign masthead_title_en = site.masthead_title_i18n.en | default: site.masthead_title | default: site_title_en %}
 {% assign site_subtitle = site.subtitle_i18n[lang] | default: site.subtitle %}
+{% assign site_subtitle_zh = site.subtitle_i18n.zh | default: site.subtitle %}
+{% assign site_subtitle_en = site.subtitle_i18n.en | default: site.subtitle %}
 {% capture logo_path %}{{ site.logo }}{% endcapture %}
 
 <div class="masthead">
@@ -10,21 +16,25 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
         {% unless logo_path == empty %}
-          <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ masthead_title }}"></a>
+          <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ masthead_title }}" data-fr-i18n-alt-zh="{{ masthead_title_zh | escape_once }}" data-fr-i18n-alt-en="{{ masthead_title_en | escape_once }}"></a>
         {% endunless %}
         <a class="site-title" href="{{ '/' | relative_url }}">
-          {{ masthead_title | escape_once | strip }}
-          {% if site_subtitle %}<span class="site-subtitle">{{ site_subtitle | escape_once | strip }}</span>{% endif %}
+          <span class="site-title__text" data-fr-i18n-zh="{{ masthead_title_zh | escape_once | strip }}" data-fr-i18n-en="{{ masthead_title_en | escape_once | strip }}">{{ masthead_title | escape_once | strip }}</span>
+          {% if site_subtitle %}<span class="site-subtitle" data-fr-i18n-zh="{{ site_subtitle_zh | escape_once | strip }}" data-fr-i18n-en="{{ site_subtitle_en | escape_once | strip }}">{{ site_subtitle | escape_once | strip }}</span>{% endif %}
         </a>
         <ul class="visible-links">
           {%- for link in site.data.navigation.main -%}
             {% assign title_key = "title_" | append: lang %}
             {% assign link_title = link[title_key] | default: link.title %}
+            {% assign link_title_zh = link.title_zh | default: link.title %}
+            {% assign link_title_en = link.title_en | default: link.title %}
             <li class="masthead__menu-item">
               <a
                 href="{{ link.url | relative_url }}"
                 {% if link.description %} title="{{ link.description }}"{% endif %}
                 {% if link.target %} target="{{ link.target }}"{% endif %}
+                data-fr-i18n-zh="{{ link_title_zh | escape_once }}"
+                data-fr-i18n-en="{{ link_title_en | escape_once }}"
               >{{ link_title }}</a>
             </li>
           {%- endfor -%}
@@ -32,12 +42,12 @@
         {% include masthead-language-switcher.html locale=locale %}
         {% if site.search == true %}
         <button class="search__toggle" type="button">
-          <span class="visually-hidden">{{ site.data.ui-text[locale].search_label | default: "Toggle search" }}</span>
+          <span class="visually-hidden" data-fr-i18n-zh="{{ site.data.ui-text['zh-CN'].search_label | default: '切换搜索' | escape_once }}" data-fr-i18n-en="{{ site.data.ui-text.en.search_label | default: 'Toggle search' | escape_once }}">{{ site.data.ui-text[locale].search_label | default: "Toggle search" }}</span>
           <i class="fas fa-search"></i>
         </button>
         {% endif %}
         <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">{{ site.data.ui-text[locale].menu_label | default: "Toggle menu" }}</span>
+          <span class="visually-hidden" data-fr-i18n-zh="{{ site.data.ui-text['zh-CN'].menu_label | default: '切换菜单' | escape_once }}" data-fr-i18n-en="{{ site.data.ui-text.en.menu_label | default: 'Toggle menu' | escape_once }}">{{ site.data.ui-text[locale].menu_label | default: "Toggle menu" }}</span>
           <div class="navicon"></div>
         </button>
         <ul class="hidden-links hidden"></ul>
