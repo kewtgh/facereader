@@ -103,6 +103,22 @@ Use the short decorative variant only where a lighter pause is intended:
 Blockquotes, footnote references, footnote bodies, and return links are styled
 automatically. Do not add background colors or layout HTML around them.
 
+Use fenced code blocks and always declare the language when it is known. Rouge
+then supplies syntax highlighting, while long lines remain horizontally
+scrollable on narrow screens:
+
+````markdown
+```ruby
+def score(company)
+  company.leaders_average
+end
+```
+````
+
+Use single backticks for inline identifiers and commands. Do not add manual
+background colors, borders, or nested `<pre>` elements; standard code blocks,
+optional Rouge line numbers, and inline code share the site reading styles.
+
 ## GitHub Pages
 
 GitHub Pages must use **GitHub Actions** as its build source. Do not switch Pages

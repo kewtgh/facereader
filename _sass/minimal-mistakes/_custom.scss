@@ -2536,16 +2536,18 @@ body { line-height: 1.7; }
  * ===================================================== */
 .page__content blockquote {
   margin: 1.65rem 0;
-  padding: 1rem 1.15rem;
-  border: 1px solid rgba($fr-action-color, 0.16);
-  border-inline-start: 4px solid color.mix($primary-color, $fr-warm-accent, 72%) !important;
-  background: color.mix($background-color, #dce8ed, 82%);
+  padding: 1.05rem 1.2rem;
+  border: 1px solid rgba($fr-action-color, 0.24);
+  border-inline-start: 5px solid color.mix($primary-color, $fr-warm-accent, 68%) !important;
+  background: color.mix($background-color, #cddfe5, 70%);
   border-radius: 0.4rem;
   font-family: $serif;
+  font-weight: 500;
   font-style: normal;
-  font-size: 1em;
-  line-height: 1.75;
-  color: rgba(34, 48, 66, 0.92) !important;
+  font-size: 1.02em;
+  line-height: 1.82;
+  color: #2f4352 !important;
+  box-shadow: 0 5px 16px rgba(34, 48, 66, 0.05);
 }
 .page__content blockquote p { margin: 0.35rem 0; }
 .page__content blockquote p:last-child { margin-bottom: 0; }
@@ -3052,7 +3054,8 @@ body { line-height: 1.7; }
 
 /* h4：更细标题 */
 .page__content h4 {
-  position: relative;
+  width: fit-content;
+  max-width: 100%;
   font-size: 1.06rem;
   font-weight: 750;
   line-height: 1.45;
@@ -3060,18 +3063,9 @@ body { line-height: 1.7; }
   text-wrap: balance;
   margin-top: 1.3rem;
   margin-bottom: 0.7rem;
-  padding-inline-start: 0.8rem;
+  padding-bottom: 0.12rem;
+  border-bottom: 2px dotted rgba(#2f6f68, 0.42);
   color: #2f6f68;
-}
-
-.page__content h4::before {
-  position: absolute;
-  inset-inline-start: 0;
-  top: 0.56em;
-  width: 0.34em;
-  height: 0.34em;
-  background: #2f6f68;
-  content: "";
 }
 
 .page__content h5 {
@@ -4126,11 +4120,13 @@ article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
 
 /* 行内 code（不影响代码块） */
 .page__content :not(pre) > code {
-  background: rgba(0,0,0,.06);
-  border: 1px solid rgba(0,0,0,.08);
-  padding: .12em .35em;
-  border-radius: .35em;
-  font-size: .92em;
+  padding: 0.12em 0.36em;
+  border: 1px solid rgba($fr-action-color, 0.18);
+  border-radius: 0.3rem;
+  background: color.mix($background-color, #d5e2e7, 72%);
+  color: #254b61;
+  font-size: 0.9em;
+  font-weight: 600;
   overflow-wrap: anywhere;
 }
 
@@ -4140,26 +4136,52 @@ article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
   letter-spacing: 0;
 }
 
-/* 代码块容器（Rouge） */
+/* Rouge 外容器拥有完整视觉边界，避免行号模式中的多个 pre 重复成框。 */
 .page__content div.highlighter-rouge,
-.page__content figure.highlight,
-.page__content .highlight {
-  margin: 1rem 0 1.25rem;
+.page__content figure.highlight {
+  position: relative;
+  display: block;
+  margin: 1.25rem 0 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  background: #0f172a;
+  box-shadow: 0 7px 20px rgba(15, 23, 42, 0.14);
+  overflow: hidden;
 }
 
-/* 代码块本体 */
+.page__content div.highlighter-rouge > .highlight,
+.page__content figure.highlight > .highlight {
+  margin: 0;
+  background: transparent;
+}
+
+/* 独立 pre 保留完整边界；Rouge 内部 pre 复用外容器边界。 */
 .page__content pre,
 .page__content pre.highlight,
 .page__content .highlight pre {
-  background: #0f172a;          /* 深色更耐看（也可换成 #111827） */
-  color: #e5e7eb;
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 12px;
+  position: relative;
+  margin: 1.25rem 0 1.5rem;
   padding: 1rem 1.1rem;
-  line-height: 1.6;
-  font-size: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  background: #0f172a;
+  color: #e5e7eb;
+  font-size: 0.86rem;
+  line-height: 1.65;
+  tab-size: 2;
   overflow-x: auto;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, .12);
+  overscroll-behavior-inline: contain;
+  scrollbar-color: rgba(255, 255, 255, 0.24) rgba(255, 255, 255, 0.05);
+  scrollbar-gutter: stable;
+  box-shadow: 0 7px 20px rgba(15, 23, 42, 0.14);
+}
+
+.page__content div.highlighter-rouge pre,
+.page__content figure.highlight pre {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 /* 让 code 不再继承怪异背景（避免“黄块里套黄块”） */
@@ -4172,31 +4194,62 @@ article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
   font-size: inherit;
 }
 
-/* 代码行太长时更好看：滚动条（可选） */
+/* 代码行过长时保留横向滚动，并让滚动条保持低干扰。 */
 .page__content pre::-webkit-scrollbar {
-  height: 10px;
+  height: 8px;
 }
 .page__content pre::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,.18);
+  background: rgba(255, 255, 255, 0.24);
   border-radius: 999px;
 }
 .page__content pre::-webkit-scrollbar-track {
-  background: rgba(255,255,255,.06);
+  background: rgba(255, 255, 255, 0.05);
 }
 
-/* 如果代码块带行号（Rouge lineno），顺手美化一下（可选） */
+.page__content pre ::selection {
+  background: rgba($fr-warm-accent, 0.58);
+  color: #ffffff;
+}
+
+/* Rouge 行号表格继承同一个容器，不参与正文表格皮肤。 */
 .page__content .rouge-table {
-  margin: 0;
-  border: 0;
+  display: table;
+  width: 100%;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  font-size: inherit;
+  box-shadow: none !important;
 }
-.page__content .rouge-gutter {
+
+.page__content .rouge-table td {
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  vertical-align: top;
+}
+
+.page__content .rouge-table pre {
+  padding: 0;
+  overflow: visible;
+  scrollbar-gutter: auto;
+}
+
+.page__content .rouge-gutter,
+.page__content .rouge-table .gutter {
   user-select: none;
-  opacity: .6;
-  padding-right: .8rem;
-  border-right: 1px solid rgba(255,255,255,.10);
+  width: 1%;
+  padding-inline-end: 0.8rem !important;
+  border-inline-end: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: rgba(229, 231, 235, 0.55);
+  text-align: end;
+  white-space: nowrap;
 }
-.page__content .rouge-code {
-  padding-left: .8rem;
+
+.page__content .rouge-code,
+.page__content .rouge-table .code {
+  padding-inline-start: 0.9rem !important;
 }
 
 /* =========================================================

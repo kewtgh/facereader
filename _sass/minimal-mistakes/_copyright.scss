@@ -1,5 +1,5 @@
 /*!
- * FaceReader 6.12.0, deeply customized for Witbacon
+ * FaceReader 6.12.1, deeply customized for Witbacon
  * Based on Minimal Mistakes Jekyll Theme 4.28.0 by Michael Rose
  * Copyright 2013-2026 Michael Rose - mademistakes.com | @mmistakes
  * Free for personal and commercial use under the MIT license
