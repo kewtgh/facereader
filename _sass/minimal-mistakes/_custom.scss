@@ -388,11 +388,11 @@ body { line-height: 1.7; }
   row-gap: 0.2rem;
   max-width: 16rem;
   margin: 0 auto 1rem;
-  padding: 1.05rem 1rem 1.1rem;
-  border: 1px solid $fr-panel-border;
-  border-radius: 0.75rem;
-  background: rgba(255, 255, 255, 0.50);
-  box-shadow: $fr-card-shadow;
+  padding: 0.65rem 0.45rem 0.75rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
   color: $fr-panel-text;
 }
 
@@ -407,7 +407,7 @@ body { line-height: 1.7; }
   padding: 0.34rem;
   border: 1px solid rgba(34, 48, 66, 0.08);
   border-radius: 0.45rem;
-  background: rgba(255, 255, 255, 0.54);
+  background: rgba(255, 255, 255, 0.32);
   box-shadow: none;
 }
 
@@ -439,7 +439,7 @@ body { line-height: 1.7; }
   margin: 0.95rem 0 0;
   padding: 0.9rem 0 0 !important;
   border: 0 !important;
-  border-top: 1px solid rgba(34, 48, 66, 0.08) !important;
+  border-top: 1px solid rgba(34, 48, 66, 0.10) !important;
   border-radius: 0 !important;
   background: transparent !important;
   box-shadow: none;
