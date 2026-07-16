@@ -2167,7 +2167,7 @@ body { line-height: 1.7; }
   background: rgba(34, 48, 66, 0.06) !important;
   color: rgba(34, 48, 66, 0.78) !important;
   font-weight: 800 !important;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   padding: 0.42rem 0.70rem !important;
   border-bottom: 1px solid rgba(34, 48, 66, 0.10) !important;
   margin: 0 !important;
@@ -2239,6 +2239,8 @@ body { line-height: 1.7; }
 .sidebar__right .toc__menu > li > a,
 .sidebar .toc__menu > li > a {
   padding-left: 0.70rem !important;
+  color: $fr-ink !important;
+  font-weight: 700;
 }
 
 /* Level 2 (usually h3) */
@@ -2246,6 +2248,8 @@ body { line-height: 1.7; }
 .sidebar .toc__menu > li > ul > li > a {
   padding-left: 1.25rem !important;
   font-size: 0.76rem !important;
+  color: color.mix($fr-ink, $fr-warm-accent, 74%) !important;
+  font-weight: 600;
   opacity: 0.94;
 }
 
@@ -2254,6 +2258,7 @@ body { line-height: 1.7; }
 .sidebar .toc__menu > li > ul > li > ul > li > a {
   padding-left: 1.85rem !important;
   font-size: 0.74rem !important;
+  color: color.mix($fr-panel-muted, $fr-action-color, 72%) !important;
   opacity: 0.90;
 }
 
@@ -2262,6 +2267,7 @@ body { line-height: 1.7; }
 .sidebar .toc__menu > li > ul > li > ul > li > ul > li > a {
   padding-left: 2.35rem !important;
   font-size: 0.72rem !important;
+  color: $fr-panel-muted !important;
   opacity: 0.86;
 }
 
@@ -2409,7 +2415,7 @@ body { line-height: 1.7; }
 }
 
 /* =====================================================
- * 6) ✅ 列表美化：更克制（不再突兀）
+ * 6) Markdown 列表：用标记形状、颜色和缩进共同表达层级
  * ===================================================== */
 .page__content ul,
 .page__content ol {
@@ -2429,20 +2435,100 @@ body { line-height: 1.7; }
   padding-inline-start: 1.55rem;
 }
 
-.page__content ul li::marker {
-  color: color.mix($primary-color, #000, 55%);
-}
-.page__content ol li::marker {
-  color: color.mix($primary-color, #000, 55%);
-  font-weight: 700;
+.page__content ul {
+  list-style-type: disc;
 }
 
-/* 嵌套列表不要重复强调 */
+.page__content ul ul {
+  list-style-type: circle;
+}
+
+.page__content ul ul ul {
+  list-style-type: square;
+}
+
+.page__content ul ul ul ul {
+  list-style-type: "–  ";
+}
+
+.page__content ol {
+  list-style-position: outside;
+  list-style-type: decimal;
+}
+
+.page__content ol ol {
+  list-style-type: decimal;
+}
+
+.page__content ol ol > li::marker {
+  content: counter(list-item) ") ";
+  font-variant-numeric: tabular-nums;
+}
+
+.page__content ol ol ol {
+  list-style-type: upper-alpha;
+}
+
+.page__content ol ol ol > li::marker {
+  content: counter(list-item, upper-alpha) ". ";
+}
+
+.page__content ol ol ol ol {
+  list-style-type: lower-roman;
+}
+
+.page__content ol ol ol ol > li::marker {
+  content: counter(list-item, lower-roman) ". ";
+}
+
+.page__content ul > li::marker,
+.page__content ol > li::marker {
+  color: $fr-action-color;
+  font-weight: 800;
+}
+
+.page__content ul ul > li::marker,
+.page__content ol ol > li::marker {
+  color: $fr-warm-accent;
+}
+
+.page__content ul ul ul > li::marker,
+.page__content ol ol ol > li::marker {
+  color: #34756e;
+}
+
+.page__content ul ul ul ul > li::marker,
+.page__content ol ol ol ol > li::marker {
+  color: $fr-panel-muted;
+}
+
 .page__content li > ul,
 .page__content li > ol {
-  border-inline-start: none;
-  padding-inline-start: 1.25rem;
+  padding-inline-start: 1.45rem;
   margin: 0.55rem 0 0.75rem;
+}
+
+.page__content li > ul {
+  border-inline-start: 1px solid rgba($fr-action-color, 0.16);
+}
+
+.page__content li > ol {
+  border-inline-start: 1px solid rgba($fr-warm-accent, 0.18);
+}
+
+.page__content ol ol,
+.page__content ol ol ol,
+.page__content ol ol ol ol {
+  padding-inline-start: 2.15em;
+}
+
+.page__content li > p:first-child {
+  margin-top: 0;
+}
+
+.page__content ol li > p:first-child {
+  display: inline;
+  margin: 0;
 }
 
 /* =====================================================
@@ -2451,9 +2537,9 @@ body { line-height: 1.7; }
 .page__content blockquote {
   margin: 1.65rem 0;
   padding: 1rem 1.15rem;
-  border: 1px solid rgba(34, 48, 66, 0.10);
+  border: 1px solid rgba($fr-action-color, 0.16);
   border-inline-start: 4px solid color.mix($primary-color, $fr-warm-accent, 72%) !important;
-  background: rgba(255, 255, 255, 0.44);
+  background: color.mix($background-color, #dce8ed, 82%);
   border-radius: 0.4rem;
   font-family: $serif;
   font-style: normal;
@@ -2474,6 +2560,70 @@ body { line-height: 1.7; }
   font-family: $sans-serif;
   font-size: 0.84em;
   font-style: normal;
+}
+
+/* 脚注与回链使用独立的阅读层级，不与普通正文混在一起。 */
+.page__content .footnote {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.35em;
+  margin-inline: 0.08em;
+  padding-inline: 0.28em;
+  border: 1px solid rgba($fr-action-color, 0.24);
+  border-radius: 999px;
+  background: rgba($fr-action-color, 0.08);
+  color: $fr-action-color;
+  font-family: $sans-serif;
+  font-size: 0.72em;
+  font-weight: 800;
+  line-height: 1.35;
+  text-decoration: none !important;
+}
+
+.page__content .footnotes {
+  margin-top: 3rem;
+  padding: 1rem 1.1rem 0.7rem;
+  border-top: 2px solid rgba($fr-warm-accent, 0.46);
+  border-radius: 0.4rem;
+  background: color.mix($background-color, #ead9bd, 88%);
+  color: $fr-panel-muted;
+}
+
+.page__content .footnotes ol {
+  margin: 0;
+  padding-inline-start: 1.6rem;
+}
+
+.page__content .footnotes li {
+  margin: 0.55rem 0;
+  line-height: 1.65;
+}
+
+.page__content .footnotes li::marker {
+  color: $fr-warm-accent;
+  font-weight: 800;
+}
+
+.page__content .footnotes :where(p, li) {
+  font-size: 0.86rem;
+}
+
+.page__content a.reversefootnote {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5em;
+  margin-inline-start: 0.18em;
+  color: $fr-action-color;
+  font-weight: 800;
+  text-decoration: none !important;
+}
+
+.page__content a.reversefootnote:hover,
+.page__content a.reversefootnote:focus-visible {
+  color: $fr-action-hover;
+  background: rgba($fr-action-color, 0.08);
 }
 
 /* =====================================================
@@ -2844,44 +2994,104 @@ body { line-height: 1.7; }
 }
 
 /* =========================
- * 正文标题：更突出（h2/h3/h4）
+ * 正文标题：用字号、颜色和边界表达层级
  * ========================= */
+
+/* h1：正文内部的大主题；页面标题仍由 .page__title 控制。 */
+.page__content h1 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.15rem;
+  padding-inline-start: 0.75rem;
+  border-inline-start: 5px solid $fr-warm-accent;
+  color: $fr-ink;
+  font-size: 1.82rem;
+  font-weight: 800;
+  line-height: 1.28;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
 
 /* h2：章节标题 */
 .page__content h2 {
+  position: relative;
   font-size: 1.55rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.32;
   letter-spacing: 0;
   text-wrap: balance;
   margin-top: 2.2rem;
   margin-bottom: 1rem;
   padding-bottom: 0.35rem;
+  color: $fr-ink;
   border-bottom: 1px solid rgba(34, 48, 66, 0.15);
+}
+
+.page__content h2::after {
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: -1px;
+  width: 3.2rem;
+  height: 3px;
+  background: $fr-warm-accent;
+  content: "";
 }
 
 /* h3：小节标题 */
 .page__content h3 {
   font-size: 1.22rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.38;
   letter-spacing: 0;
   text-wrap: balance;
   margin-top: 1.7rem;
   margin-bottom: 0.85rem;
-  color: #223042;
+  padding-inline-start: 0.65rem;
+  border-inline-start: 3px solid rgba($fr-warm-accent, 0.74);
+  color: #70461f;
 }
 
 /* h4：更细标题 */
 .page__content h4 {
+  position: relative;
   font-size: 1.06rem;
-  font-weight: 600;
+  font-weight: 750;
   line-height: 1.45;
   letter-spacing: 0;
   text-wrap: balance;
   margin-top: 1.3rem;
   margin-bottom: 0.7rem;
-  color: color.mix(#223042, #6f4e37, 70%); /* 微棕调，跟 TOC 呼应 */
+  padding-inline-start: 0.8rem;
+  color: #2f6f68;
+}
+
+.page__content h4::before {
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.56em;
+  width: 0.34em;
+  height: 0.34em;
+  background: #2f6f68;
+  content: "";
+}
+
+.page__content h5 {
+  margin-top: 1.15rem;
+  margin-bottom: 0.55rem;
+  color: $fr-action-color;
+  font-size: 0.98rem;
+  font-weight: 750;
+  line-height: 1.48;
+  letter-spacing: 0;
+}
+
+.page__content h6 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: $fr-panel-muted;
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: 0;
 }
 
 /* =========================
@@ -3119,25 +3329,38 @@ article.page[lang^="en"] .page__content blockquote {
   }
 }
 
-/* Markdown 行内语义：强调清楚，但不把正文切成大量卡片。 */
-.page__content :where(p, li, dd, blockquote) strong {
-  color: color.mix($text-color, $primary-color, 82%);
-  font-weight: 700;
+/* Markdown 行内语义：以暖棕、青绿、蓝色和浅金区分不同强调层级。 */
+.page__content :where(p, li, dd, blockquote) :is(strong, b) {
+  color: #74420f;
+  font-weight: 800;
+  text-decoration-line: underline;
+  text-decoration-color: rgba($fr-warm-accent, 0.42);
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.12em;
+  text-decoration-skip-ink: auto;
 }
 
 article.page:not([lang^="en"]) .page__content :where(p, li, dd, blockquote) em {
-  color: color.mix($text-color, $fr-warm-accent, 86%);
+  color: #2f6f68;
+  font-weight: 650;
   font-style: normal;
   text-decoration-line: underline;
-  text-decoration-color: rgba($fr-warm-accent, 0.34);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.16em;
+  text-decoration-style: dotted;
+  text-decoration-color: rgba(#2f6f68, 0.58);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.18em;
 }
 
 article.page .page__content [data-fr-i18n-block="en"] :where(p, li, dd, blockquote) em {
-  color: inherit;
+  color: #2f6f68;
+  font-weight: 600;
   font-style: italic;
   text-decoration: none;
+}
+
+article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
+  color: #2f6f68;
+  font-weight: 600;
 }
 
 .page__content :where(p, li, dd, blockquote) a:not(.btn) {
@@ -3155,10 +3378,14 @@ article.page .page__content [data-fr-i18n-block="en"] :where(p, li, dd, blockquo
 }
 
 .page__content > hr {
-  width: min(9rem, 32%);
+  width: 100%;
   margin: 2.4rem auto;
   border: 0;
   border-top: 1px solid color.mix($border-color, $fr-warm-accent, 72%);
+}
+
+.page__content > hr.hr--short {
+  width: min(9rem, 32%);
 }
 
 .page__content mark {
@@ -3891,81 +4118,6 @@ article.page .page__content [data-fr-i18n-block="en"] :where(p, li, dd, blockquo
 }
 .page__hero--overlay .page__lead li {
   margin: 0.2rem 0;
-}
-
-/* =========================================
-   Ordered List markers: level 1/2/3 styling
-   L1: 1. 2. 3.
-   L2: 1) 2) 3)
-   L3: A. B. C.
-   ========================================= */
-
-/* 一级：默认 decimal + 点 */
-.page__content ol,
-.page__content ol > li > ol,
-.page__content ol > li > ol > li > ol {
-  list-style-position: outside;
-  padding-left: 1.5em; /* 视主题默认可微调 */
-}
-
-/* L1 */
-.page__content ol {
-  list-style-type: decimal;
-}
-
-/* =========================================================
-   Nested Ordered List Markers (L2 / L3 / L4) — REPLACE BLOCK
-   L1: 1. 2. 3. (no change)
-   L2: 1) 2) 3)
-   L3: A. B. C.
-   L4: a. b. c.
-   Notes:
-   - No @supports selector(...)
-   - Fixes "1) wraps to its own line" by using ::marker
-   - Handles <li><p>...</p></li> rendering in Jekyll
-   ========================================================= */
-
-/* 避免 <li><p>...</p></li> 让编号和正文分行（之前 L2 主要就是这里触发） */
-.page__content ol li > p:first-child {
-  display: inline;
-  margin: 0;
-}
-
-/* 嵌套 ol 的统一缩进（防止 marker 被内容挤/盖） */
-.page__content ol ol,
-.page__content ol ol ol,
-.page__content ol ol ol ol {
-  list-style-position: outside;
-  padding-left: 2.2em;  /* 可按页面观感微调：1.8~2.6em */
-  margin-left: 0;
-}
-
-/* ---------------- L2：1) 2) 3) ---------------- */
-.page__content ol ol {
-  list-style-type: decimal; /* 确保是数字序 */
-}
-
-.page__content ol ol > li::marker {
-  content: counter(list-item) ") ";
-  font-variant-numeric: tabular-nums;
-}
-
-/* ---------------- L3：A. B. C. ---------------- */
-.page__content ol ol ol {
-  list-style-type: upper-alpha;
-}
-
-.page__content ol ol ol > li::marker {
-  content: counter(list-item, upper-alpha) ". ";
-}
-
-/* ---------------- L4：a. b. c. ---------------- */
-.page__content ol ol ol ol {
-  list-style-type: lower-alpha;
-}
-
-.page__content ol ol ol ol > li::marker {
-  content: counter(list-item, lower-alpha) ". ";
 }
 
 /* ================================

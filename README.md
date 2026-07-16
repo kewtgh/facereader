@@ -46,6 +46,63 @@ npm run i18n:validate
 English posts are listed at `/en/posts/`. A page-level English button should be
 disabled until a matching English post exists for the current `translation_key`.
 
+## Markdown Reading Styles
+
+Article front matter supplies the page title, so article bodies should normally
+start with `##`. Heading levels have distinct visual roles: `##` starts a major
+section, `###` starts a subsection, and `####` through `######` provide
+progressively quieter detail. Do not skip levels only to obtain a visual style.
+
+Use Markdown semantics instead of inline colors:
+
+```markdown
+**Key conclusion**
+
+*Contextual emphasis*
+
+> A quotation or cited passage.
+
+Term with a footnote.[^1]
+
+[^1]: Footnote text and source details.
+```
+
+Bold text uses the warm key-conclusion treatment, emphasis uses the secondary
+teal treatment, links remain blue, and explicit `<mark>highlight</mark>` output
+uses the light-gold marker treatment. These distinctions are applied to both
+Chinese and English reading views; English emphasis remains italic.
+
+Nested lists acquire different markers and colors automatically. Keep the
+indentation structurally valid rather than inserting symbols manually:
+
+```markdown
+- First level
+    - Second level
+        - Third level
+            - Fourth level
+
+1. First level
+    1. Second level
+        1. Third level
+            1. Fourth level
+```
+
+A normal thematic break spans the reading column:
+
+```markdown
+---
+```
+
+Use the short decorative variant only where a lighter pause is intended:
+
+```markdown
+---
+{: .hr--short}
+```
+
+Blockquotes, footnote references, footnote bodies, and return links are styled
+automatically. Do not add background colors or layout HTML around them.
+
 ## GitHub Pages
 
 GitHub Pages must use **GitHub Actions** as its build source. Do not switch Pages
