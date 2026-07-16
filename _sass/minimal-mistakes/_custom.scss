@@ -342,14 +342,14 @@ body { line-height: 1.7; }
 }
 
 .layout--single .sidebar .author__bio {
-  font-size: 0.94rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: $muted-text-color;
 }
 
 .layout--single .sidebar .author__urls-wrapper { margin-top: 0.85rem; }
 .layout--single .sidebar .author__urls-wrapper > .btn { display: none; }
-.layout--single .sidebar .author__urls { font-size: 0.94rem; opacity: 0.88; }
+.layout--single .sidebar .author__urls { font-size: 1rem; opacity: 0.9; }
 .layout--single .sidebar .author__urls li { margin-bottom: 0.18rem; }
 
 /* =====================================================
@@ -423,7 +423,7 @@ body { line-height: 1.7; }
   max-width: 15.5rem;
   color: $fr-panel-muted;
   font-family: $sans-serif;
-  font-size: 0.94rem;
+  font-size: 1rem;
   line-height: 1.62;
   text-align: center;
 }
@@ -443,20 +443,22 @@ body { line-height: 1.7; }
 
 .about-page .sidebar .nav__items {
   display: grid;
-  gap: 0.7rem;
-  font-size: 0.92rem;
-  line-height: 1.55;
+  gap: 0.82rem;
+  font-size: 1.08rem;
+  line-height: 1.58;
+  text-align: center;
 }
 
 .about-page .sidebar .nav__sub-title {
   display: block;
-  margin: 0 0 0.28rem;
-  padding: 0 0 0.24rem;
+  margin: 0 0 0.36rem;
+  padding: 0 0 0.3rem;
   border-bottom: 1px solid rgba(34, 48, 66, 0.07) !important;
   color: color.mix($text-color, $fr-action-color, 76%);
-  font-size: 0.86rem;
+  font-size: 1.06rem;
   font-weight: 800;
   letter-spacing: 0;
+  text-align: center;
 }
 
 .about-page .sidebar .nav__items > li:first-child .nav__sub-title {
@@ -465,9 +467,10 @@ body { line-height: 1.7; }
 
 .about-page .sidebar .nav__items ul {
   display: grid;
-  gap: 0.1rem;
+  gap: 0.16rem;
   margin: 0;
   padding: 0;
+  justify-items: center;
 }
 
 .about-page .sidebar .nav__items li {
@@ -477,9 +480,10 @@ body { line-height: 1.7; }
 .about-page .sidebar .nav__items a {
   display: block;
   width: 100%;
-  padding: 0.24rem 0.38rem;
+  padding: 0.28rem 0.45rem;
   border-radius: 0.35rem;
   color: color.mix($text-color, $fr-ink, 78%);
+  text-align: center;
 }
 
 .about-page .sidebar .nav__items a:hover,
@@ -1937,8 +1941,8 @@ body { line-height: 1.7; }
 .sidebar .nav__items {
   margin: 0;
   padding-left: 0.2rem;
-  font-size: 1.05rem;
-  line-height: 1.78;
+  font-size: 1.1rem;
+  line-height: 1.72;
 }
 
 .sidebar .nav__items li { margin: 0.25rem 0; }
