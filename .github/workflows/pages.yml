@@ -114,7 +114,21 @@ jobs:
         run: |
           set -euo pipefail
 
+          expected_domain="facereader.witbacon.com"
           page_url="${{ needs.deploy.outputs.page_url }}"
+          page_host="${page_url#*://}"
+          page_host="${page_host%%/*}"
+
+          if [[ -z "$page_url" ]]; then
+            echo "::error::deploy-pages did not expose a page_url"
+            exit 1
+          fi
+
+          if [[ "$page_host" == "$expected_domain" ]]; then
+            echo "::notice::Skipping external Pages CSS smoke for ${page_url}; ${expected_domain} is served by Vercel, while the Pages artifact CSS is validated in the build job."
+            exit 0
+          fi
+
           css_url="${page_url%/}/assets/css/main.css"
 
           curl --fail --silent --show-error --location --retry 5 --retry-delay 3 "$page_url" > /tmp/index.html
