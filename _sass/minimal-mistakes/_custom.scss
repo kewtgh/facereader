@@ -2865,6 +2865,20 @@ body { line-height: 1.7; }
     min-height: 2.4rem;
   }
 
+  /* 首页 Hero 的两个入口在窄屏中保持等宽并围绕阅读区中心对齐。 */
+  .layout--splash .page__hero--overlay .page__hero-actions {
+    width: 100%;
+    max-width: 280px;
+    margin: 1.2rem auto 0;
+    align-items: stretch;
+  }
+
+  .layout--splash .page__hero--overlay .page__hero-actions .btn {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
   .layout--single .sidebar .h-card,
   .sidebar .nav__list {
     max-width: 100%;

@@ -119,6 +119,13 @@ Use single backticks for inline identifiers and commands. Do not add manual
 background colors, borders, or nested `<pre>` elements; standard code blocks,
 optional Rouge line numbers, and inline code share the site reading styles.
 
+## Interface Styles
+
+Homepage Hero actions are declared in `index.html` and styled through
+`.page__hero-actions`. On mobile, the two actions intentionally form a centered,
+equal-width column. Keep their translated labels concise and do not add
+per-button alignment or width styles in the page front matter.
+
 ## GitHub Pages
 
 GitHub Pages must use **GitHub Actions** as its build source. Do not switch Pages
