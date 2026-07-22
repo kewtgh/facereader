@@ -38,7 +38,6 @@ Disallow: /search
 Disallow: /tag/
 Disallow: /tags/
 Disallow: /category/
-Disallow: /categories/
 Disallow: /*?q=
 Disallow: /*?s=
 
