@@ -1,5 +1,9 @@
 {% assign locale = include.locale | default: site.locale %}
 <script>
+  var algoliaMinimumQueryLength = {{ site.algolia.minimum_query_length | default: 2 }};
+  var algoliaQueryDebounceMs = {{ site.algolia.query_debounce_ms | default: 450 }};
+  var algoliaHitsPerPage = {{ site.algolia.hits_per_page | default: 20 }};
+
   function loadScript(src) {
     return new Promise(function (resolve, reject) {
       var s = document.createElement("script");
@@ -30,7 +34,7 @@
         placeholder: "搜索文章…",
         emptyPrefix: "没有找到「",
         emptySuffix: "」相关内容",
-        idle: "输入关键词搜索站内文章",
+        idle: "请输入至少 " + algoliaMinimumQueryLength + " 个字符搜索站内文章",
         resultsPrefix: "找到 ",
         resultsMiddle: " 条结果，用时 ",
         resultsSuffix: " ms"
@@ -39,7 +43,7 @@
         placeholder: "Search articles...",
         emptyPrefix: "No results for \"",
         emptySuffix: "\"",
-        idle: "Enter a keyword to search the site",
+        idle: "Enter at least " + algoliaMinimumQueryLength + " characters to search",
         resultsPrefix: "",
         resultsMiddle: " results in ",
         resultsSuffix: " ms"
@@ -79,7 +83,55 @@
     var apiKey = "{{ site.algolia.search_only_api_key }}";
     var indexName = "{{ site.algolia.index_name }}";
 
-    var searchClient = algoliasearch(appId, apiKey);
+    var rawSearchClient = algoliasearch(appId, apiKey);
+    var searchResponseCache = new Map();
+
+    function emptySearchResult(request) {
+      var params = request && request.params ? request.params : {};
+      return {
+        hits: [],
+        nbHits: 0,
+        page: 0,
+        nbPages: 0,
+        hitsPerPage: Number(params.hitsPerPage) || algoliaHitsPerPage,
+        processingTimeMS: 0,
+        query: String(params.query || ""),
+        params: ""
+      };
+    }
+
+    // Prevent initial/short searches from reaching Algolia and reuse identical
+    // requests in this page session. Server-side API-key limits remain the
+    // authoritative protection against callers that bypass the website.
+    var searchClient = {
+      search: function (requests) {
+        var normalizedRequests = (requests || []).map(function (request) {
+          var params = Object.assign({}, request.params || {});
+          params.query = String(params.query || "").trim();
+          return Object.assign({}, request, { params: params });
+        });
+        var hasSearchableQuery = normalizedRequests.some(function (request) {
+          return request.params.query.length >= algoliaMinimumQueryLength;
+        });
+
+        if (!hasSearchableQuery) {
+          return Promise.resolve({ results: normalizedRequests.map(emptySearchResult) });
+        }
+
+        var cacheKey = JSON.stringify(normalizedRequests);
+        if (searchResponseCache.has(cacheKey)) return searchResponseCache.get(cacheKey);
+
+        var pending = rawSearchClient.search(normalizedRequests).catch(function (error) {
+          searchResponseCache.delete(cacheKey);
+          throw error;
+        });
+        searchResponseCache.set(cacheKey, pending);
+        if (searchResponseCache.size > 50) {
+          searchResponseCache.delete(searchResponseCache.keys().next().value);
+        }
+        return pending;
+      }
+    };
 
     roots.forEach(function (root) {
       if (root.dataset.algoliaInited === "true") return;
@@ -92,8 +144,11 @@
 
       var search = instantsearch({
         indexName: indexName,
-        searchClient: searchClient
+        searchClient: searchClient,
+        stalledSearchDelay: 500
       });
+
+      var queryTimer;
 
       var widgets = [
         instantsearch.widgets.searchBox({
@@ -101,11 +156,17 @@
           placeholder: algoliaText("placeholder"),
           showReset: true,
           showSubmit: true,
-          showLoadingIndicator: false
+          showLoadingIndicator: false,
+          queryHook: function (query, refine) {
+            clearTimeout(queryTimer);
+            queryTimer = setTimeout(function () {
+              refine(String(query || "").trim());
+            }, algoliaQueryDebounceMs);
+          }
         }),
 
         instantsearch.widgets.configure({
-          hitsPerPage: 10,
+          hitsPerPage: algoliaHitsPerPage,
           attributesToSnippet: ["description:28", "content:32"],
           snippetEllipsisText: "…"
         }),
@@ -114,6 +175,7 @@
           container: hitsEl,
           templates: {
             empty: function (data) {
+              if (!data.query || String(data.query).trim().length < algoliaMinimumQueryLength) return "";
               return `<div class="algolia-empty">${algoliaText("emptyPrefix")}${escapeHTML(data.query)}${algoliaText("emptySuffix")}</div>`;
             },
             item: function (hit) {

@@ -1,7 +1,7 @@
 {
   "name": "facereader",
   "private": true,
-  "version": "6.12.2",
+  "version": "6.12.3",
   "description": "FaceReader production site for enterprise observation and leadership analysis.",
   "repository": {
     "type": "git",
@@ -32,7 +32,8 @@
     "site:sass:warnings": "node assets/scripts/check-sass-warnings.mjs",
     "site:links": "node assets/scripts/check-internal-links.mjs",
     "site:check": "npm run leaders:validate && npm run leaders:audit && npm run i18n:validate && npm run site:sass:warnings && npm run site:links",
-    "algolia:push": "node assets/scripts/push-algolia.mjs _site/algolia-records.json"
+    "algolia:push": "node assets/scripts/push-algolia.mjs _site/algolia-records.json",
+    "algolia:protect": "node assets/scripts/protect-algolia-search-key.mjs"
   },
   "dependencies": {
     "algoliasearch": "^5.55.2",

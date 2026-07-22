@@ -96,7 +96,16 @@ algolia:
     - posts/*
   application_id         : 6OPPKGJAVV # YOUR_APPLICATION_ID
   index_name             : facereader_prod # YOUR_INDEX_NAME
-  search_only_api_key    : c7748ca99c306152364e45522528ff6e # YOUR_SEARCH_ONLY_API_KEY
+  # Search abuse protection. The GitHub Actions Algolia job applies the
+  # server-side key restrictions after every index update.
+  minimum_query_length   : 2
+  query_debounce_ms      : 450
+  hits_per_page          : 20
+  max_queries_per_ip_per_hour: 60
+  max_hits_per_query     : 50
+  allowed_referrers:
+    - "https://facereader.witbacon.com/*"
+    - "https://faceread.witbacon.com/*"
   powered_by             : true # true (default), false
 
 # SEO Related

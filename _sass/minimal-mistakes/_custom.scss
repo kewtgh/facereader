@@ -3589,10 +3589,14 @@ article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
 
 .algolia-searchbox .ais-SearchBox-form {
   position: relative;
-  display: block;        // 不用 flex，避免 svg / button 参与计算导致溢出
+  display: block !important; // 不用 flex，避免按钮参与输入框宽度计算
   width: 100%;
   max-width: 100%;
   height: 52px;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
 }
 
 .algolia-searchbox .ais-SearchBox-input {
@@ -3617,16 +3621,19 @@ article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
 /* 隐藏 Algolia 默认 SVG 图标 */
 .algolia-searchbox .ais-SearchBox-submit,
 .algolia-searchbox .ais-SearchBox-reset {
-  all: unset;                  // 把主题对 button 的样式全清掉
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  z-index: 2;
+  appearance: none !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 40px !important;
+  height: 40px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  cursor: pointer !important;
+  z-index: 2 !important;
   line-height: 1 !important;
 }
 
@@ -3641,7 +3648,8 @@ article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
 
 /* 左侧按钮：我们用 ::before 自绘/替换图标 */
 .algolia-searchbox .ais-SearchBox-submit {
-  left: 20px;
+  left: 6px !important;
+  background: transparent !important;
 }
 
 /* 左侧自定义图标：方案1（纯 CSS 放大镜，简单耐用） */
@@ -3666,9 +3674,13 @@ article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
 
 /* 右侧清空按钮：更大 + 圆形 + 居中对齐 */
 .algolia-searchbox .ais-SearchBox-reset {
-  right: 20px;
-  border-radius: 999px;
-  background: rgba(0,0,0,.06);
+  right: 6px !important;
+  border-radius: 999px !important;
+  background: rgba(0,0,0,.06) !important;
+}
+
+.algolia-searchbox .ais-SearchBox-reset[hidden] {
+  display: none !important;
 }
 
 /* 右侧自定义 “X” */
@@ -3685,7 +3697,7 @@ article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
 .algolia-searchbox .ais-SearchBox-reset::after  { transform: rotate(-45deg); }
 
 .algolia-searchbox .ais-SearchBox-reset:hover {
-  background: rgba(0,0,0,.10);
+  background: rgba(0,0,0,.10) !important;
 }
 
 .algolia-searchbox .ais-SearchBox-submit:focus-visible,

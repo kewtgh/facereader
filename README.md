@@ -138,3 +138,21 @@ Vercel deploys the same repository as a mainland-China mirror at
 `faceread.witbacon.com`; it does not own a separate content tree or build mode.
 Keep internal links root-relative so readers remain on the host they opened,
 while canonical, sitemap, and feed URLs continue to use the Pages domain.
+
+## Algolia search protection
+
+The Algolia deployment job reapplies the browser search-key restrictions after
+each index update. Limits and allowed production origins are configured under
+`algolia` in `_config.yml`. The key is restricted to the production index,
+search-only access, a per-IP hourly query budget, and a maximum hit count.
+Frontend search also suppresses empty and short queries, debounces typing, and
+caches repeated requests. Referrer checks are an additional filter only because
+HTTP referrers can be spoofed.
+
+`ALGOLIA_SEARCH_API_KEY` must be configured as both a GitHub Actions repository
+secret and a Vercel environment variable. `_plugins/algolia_search_key_env.rb`
+injects it only while Jekyll builds the site, so the value isn't stored in this
+repository. This is a browser search-only key and will still be visible in the
+rendered JavaScript; never use or inject the Algolia Admin API key. After moving
+to the environment secret, rotate the previously committed search key in the
+Algolia dashboard and revoke the old key.
