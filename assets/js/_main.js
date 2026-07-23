@@ -8,28 +8,45 @@ $(document).ready(function () {
 
   // Follow menu drop down
   $(".author__urls-wrapper button").on("click", function () {
-    $(".author__urls").toggleClass("is--visible");
-    $(".author__urls-wrapper").find("button").toggleClass("open");
+    var $button = $(this);
+    var $urls = $button.closest(".author__urls-wrapper").find(".author__urls");
+    var shouldOpen = !$urls.hasClass("is--visible");
+    $urls.toggleClass("is--visible", shouldOpen);
+    $button.toggleClass("open", shouldOpen).attr("aria-expanded", String(shouldOpen));
   });
+
+  var $searchContent = $(".search-content");
+  var $initialContent = $(".initial-content");
+  var $searchToggle = $(".search__toggle");
+
+  function setSearchVisibility(isVisible) {
+    $searchContent
+      .toggleClass("is--visible", isVisible)
+      .attr("aria-hidden", String(!isVisible));
+    $initialContent
+      .toggleClass("is--hidden", isVisible)
+      .attr("aria-hidden", String(isVisible));
+    $searchToggle.attr("aria-expanded", String(isVisible));
+  }
 
   // Close search screen with Esc key
   $(document).keyup(function (e) {
-    if (e.keyCode === 27) {
-      if ($(".initial-content").hasClass("is--hidden")) {
-        $(".search-content").toggleClass("is--visible");
-        $(".initial-content").toggleClass("is--hidden");
-      }
+    if ((e.key === "Escape" || e.keyCode === 27) && $searchContent.hasClass("is--visible")) {
+      setSearchVisibility(false);
+      $searchToggle.first().trigger("focus");
     }
   });
 
   // Search toggle
-  $(".search__toggle").on("click", function () {
-    $(".search-content").toggleClass("is--visible");
-    $(".initial-content").toggleClass("is--hidden");
-    // set focus on input
-    setTimeout(function () {
-      $(".search-content input").focus();
-    }, 400);
+  $searchToggle.on("click", function () {
+    var shouldOpen = !$searchContent.hasClass("is--visible");
+    setSearchVisibility(shouldOpen);
+    if (shouldOpen) {
+      // Wait for the opening transition before moving focus.
+      setTimeout(function () {
+        $searchContent.find("input").first().trigger("focus");
+      }, 400);
+    }
   });
 
   // Smooth scrolling
@@ -248,8 +265,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.querySelectorAll(".tag-group-title").forEach(title => {
-  title.addEventListener("click", () => {
-    title.nextElementSibling.classList.toggle("hidden");
+document.querySelectorAll(".tag-group-toggle").forEach(function (toggle) {
+  toggle.addEventListener("click", function () {
+    var list = document.getElementById(toggle.getAttribute("aria-controls"));
+    if (!list) return;
+    var shouldOpen = list.classList.contains("hidden");
+    list.classList.toggle("hidden", !shouldOpen);
+    toggle.setAttribute("aria-expanded", String(shouldOpen));
   });
 });

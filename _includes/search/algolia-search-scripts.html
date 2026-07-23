@@ -32,6 +32,9 @@
     var text = {
       zh: {
         placeholder: "搜索文章…",
+        inputLabel: "搜索站内文章",
+        submitTitle: "提交搜索",
+        resetTitle: "清除搜索",
         emptyPrefix: "没有找到「",
         emptySuffix: "」相关内容",
         idle: "请输入至少 " + algoliaMinimumQueryLength + " 个字符搜索站内文章",
@@ -41,6 +44,9 @@
       },
       en: {
         placeholder: "Search articles...",
+        inputLabel: "Search site articles",
+        submitTitle: "Submit search",
+        resetTitle: "Clear search",
         emptyPrefix: "No results for \"",
         emptySuffix: "\"",
         idle: "Enter at least " + algoliaMinimumQueryLength + " characters to search",
@@ -55,6 +61,15 @@
   function refreshAlgoliaUiLanguage() {
     document.querySelectorAll(".algolia-page .ais-SearchBox-input").forEach(function (input) {
       input.setAttribute("placeholder", algoliaText("placeholder"));
+      input.setAttribute("aria-label", algoliaText("inputLabel"));
+    });
+    document.querySelectorAll(".algolia-page .ais-SearchBox-submit").forEach(function (button) {
+      button.setAttribute("title", algoliaText("submitTitle"));
+      button.setAttribute("aria-label", algoliaText("submitTitle"));
+    });
+    document.querySelectorAll(".algolia-page .ais-SearchBox-reset").forEach(function (button) {
+      button.setAttribute("title", algoliaText("resetTitle"));
+      button.setAttribute("aria-label", algoliaText("resetTitle"));
     });
   }
 
@@ -157,6 +172,10 @@
           showReset: true,
           showSubmit: true,
           showLoadingIndicator: false,
+          translations: {
+            submitButtonTitle: algoliaText("submitTitle"),
+            resetButtonTitle: algoliaText("resetTitle")
+          },
           queryHook: function (query, refine) {
             clearTimeout(queryTimer);
             queryTimer = setTimeout(function () {
@@ -245,6 +264,7 @@
       search.addWidgets(widgets);
 
       search.start();
+      setTimeout(refreshAlgoliaUiLanguage, 0);
 
       // 支持 /search/?q=xxx 直接带入查询
       try {

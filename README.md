@@ -141,10 +141,11 @@ while canonical, sitemap, and feed URLs continue to use the Pages domain.
 
 ## Algolia search protection
 
-The Algolia deployment job reapplies the browser search-key restrictions after
-each index update. Limits and allowed production origins are configured under
-`algolia` in `_config.yml`. The key is restricted to the production index,
-search-only access, a per-IP hourly query budget, and a maximum hit count.
+The GitHub Pages build reapplies the browser search-key restrictions before a
+production artifact can be built or deployed. Limits and allowed production
+origins are configured under `algolia` in `_config.yml`. The key is restricted
+to the production index, search-only access, a per-IP hourly query budget, and
+a maximum hit count.
 Frontend search also suppresses empty and short queries, debounces typing, and
 caches repeated requests. Referrer checks are an additional filter only because
 HTTP referrers can be spoofed.

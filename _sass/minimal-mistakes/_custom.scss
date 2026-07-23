@@ -34,6 +34,13 @@ body { line-height: 1.7; }
 
 .masthead__menu-item a { font-weight: 500; }
 
+.search__toggle:focus-visible,
+.greedy-nav__toggle:focus-visible,
+.author__urls-wrapper > button:focus-visible {
+  outline: 2px solid $fr-action-color;
+  outline-offset: 3px;
+}
+
 .masthead-language-switcher {
   display: inline-flex;
   align-items: center;
@@ -3744,6 +3751,36 @@ article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
   flex-wrap: wrap;
   gap: 0.45rem;
   align-items: baseline;
+}
+
+.tag-group-toggle {
+  display: flex;
+  width: 100%;
+  align-items: baseline;
+  gap: 0.45rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: start;
+}
+
+.tag-group-toggle::after {
+  content: "▾";
+  margin-inline-start: auto;
+  transition: transform 160ms ease;
+}
+
+.tag-group-toggle[aria-expanded="false"]::after {
+  transform: rotate(-90deg);
+}
+
+.tag-group-toggle:focus-visible,
+.tag-filter-btn:focus-visible {
+  outline: 2px solid $fr-action-color;
+  outline-offset: 3px;
 }
 
 .tag-group-count,

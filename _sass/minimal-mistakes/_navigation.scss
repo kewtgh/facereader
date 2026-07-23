@@ -70,7 +70,8 @@
     float: inline-start;
     margin-inline-start: -1px;
 
-    a {
+    a,
+    .pagination__item {
       display: block;
       margin-bottom: 0.25em;
       padding: 0.5em 1em;
@@ -104,14 +105,16 @@
     &:first-child {
       margin-inline-start: 0;
 
-      a {
+      a,
+      .pagination__item {
         border-start-start-radius: $border-radius;
         border-end-start-radius: $border-radius;
       }
     }
 
     &:last-child {
-      a {
+      a,
+      .pagination__item {
         border-start-end-radius: $border-radius;
         border-end-end-radius: $border-radius;
       }

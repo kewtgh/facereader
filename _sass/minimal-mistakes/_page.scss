@@ -590,6 +590,9 @@ body {
   background: $background-color;
   border: 1px solid $border-color;
   border-radius: 4px;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
   font-size: 0.85rem;
   text-decoration: none;
 

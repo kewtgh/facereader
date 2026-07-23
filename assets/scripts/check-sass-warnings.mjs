@@ -3,6 +3,10 @@ import { spawn } from "node:child_process";
 const env = {
   ...process.env,
   JEKYLL_ENV: process.env.JEKYLL_ENV || "production",
+  // This subprocess validates Sass output, not live search. Keep production's
+  // missing-secret guard intact while giving this isolated build a non-secret
+  // placeholder when no deployment key is available.
+  ALGOLIA_SEARCH_API_KEY: process.env.ALGOLIA_SEARCH_API_KEY || "site-check-placeholder",
 };
 
 const command = process.env.RUBY || "ruby";

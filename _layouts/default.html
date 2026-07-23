@@ -15,13 +15,13 @@
     {% include_cached skip-links.html locale=locale %}
     {% include_cached masthead.html locale=locale %}
 
-    <div class="initial-content">
+    <div class="initial-content" aria-hidden="false">
       {{ content }}
       {% include after-content.html locale=locale %}
     </div>
 
     {% if site.search == true %}
-      <div class="search-content">
+      <div id="site-search" class="search-content" aria-hidden="true">
         {% include_cached search/search_form.html locale=locale %}
       </div>
     {% endif %}

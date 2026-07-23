@@ -39,6 +39,14 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v6
 
+      - name: Protect Algolia browser search key
+        env:
+          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
+          ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
+          ALGOLIA_SEARCH_API_KEY: ${{ secrets.ALGOLIA_SEARCH_API_KEY }}
+        run: npm run algolia:protect
+
       - name: Build site
         env:
           BUNDLE_FROZEN: "true"
@@ -227,14 +235,6 @@ jobs:
         with:
           name: algolia-records
           path: _site
-
-      - name: Protect Algolia browser search key
-        env:
-          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
-          ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
-          ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
-          ALGOLIA_SEARCH_API_KEY: ${{ secrets.ALGOLIA_SEARCH_API_KEY }}
-        run: npm run algolia:protect
 
       - name: Push records to Algolia
         env:

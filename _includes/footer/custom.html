@@ -143,6 +143,7 @@
 
     function applyLanguage(language) {
       language = normalizeLanguage(language);
+      document.documentElement.lang = language === "en" ? "en" : "zh-CN";
       document.documentElement.setAttribute("data-fr-ui-lang", language);
 
       document.querySelectorAll("[data-fr-i18n-key], [data-fr-i18n-zh][data-fr-i18n-en]").forEach(function (element) {

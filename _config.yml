@@ -96,8 +96,8 @@ algolia:
     - posts/*
   application_id         : 6OPPKGJAVV # YOUR_APPLICATION_ID
   index_name             : facereader_prod # YOUR_INDEX_NAME
-  # Search abuse protection. The GitHub Actions Algolia job applies the
-  # server-side key restrictions after every index update.
+  # Search abuse protection. GitHub Actions reapplies these server-side key
+  # restrictions before every production build can be deployed.
   minimum_query_length   : 2
   query_debounce_ms      : 450
   hits_per_page          : 20

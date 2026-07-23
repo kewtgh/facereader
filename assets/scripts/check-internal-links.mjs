@@ -61,7 +61,7 @@ function existingTargets(files) {
 }
 
 function shouldIgnore(rawHref, pathname) {
-  if (!rawHref || rawHref.startsWith("#")) return true;
+  if (rawHref.startsWith("#")) return true;
   if (rawHref.includes("${")) return true;
   if (/^(mailto:|tel:|javascript:|data:)/i.test(rawHref)) return true;
   return ignoredPrefixes.some((prefix) => pathname === prefix || pathname.startsWith(prefix));
@@ -97,7 +97,7 @@ const allFiles = walk(siteDir);
 const htmlFiles = allFiles.filter((file) => file.endsWith(".html"));
 const targets = existingTargets(allFiles);
 const misses = [];
-const hrefPattern = /\bhref=["']([^"']+)["']/g;
+const hrefPattern = /<a\b[^>]*?\bhref=["']([^"']*)["']/g;
 
 for (const file of htmlFiles) {
   const html = fs.readFileSync(file, "utf8");
@@ -105,6 +105,15 @@ for (const file of htmlFiles) {
   let match;
   while ((match = hrefPattern.exec(html))) {
     const rawHref = match[1].trim();
+    if (!rawHref || rawHref === "#") {
+      misses.push({
+        file,
+        href: rawHref || "(empty)",
+        reason: rawHref ? "placeholder href" : "empty href"
+      });
+      continue;
+    }
+
     let pathname;
     try {
       pathname = resolveHref(rawHref, currentPageUrl);

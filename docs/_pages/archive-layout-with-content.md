@@ -37,10 +37,10 @@ Multi line blockquote with a cite reference:
 
 | Employee         | Salary |                                                              |
 | --------         | ------ | ------------------------------------------------------------ |
-| [John Doe](#)    | $1     | Because that's all Steve Jobs needed for a salary.           |
-| [Jane Doe](#)    | $100K  | For all the blogging she does.                               |
-| [Fred Bloggs](#) | $100M  | Pictures are worth a thousand words, right? So Jane × 1,000. |
-| [Jane Bloggs](#) | $100B  | With hair like that?! Enough said.                           |
+| John Doe    | $1     | Because that's all Steve Jobs needed for a salary.           |
+| Jane Doe    | $100K  | For all the blogging she does.                               |
+| Fred Bloggs | $100M  | Pictures are worth a thousand words, right? So Jane × 1,000. |
+| Jane Bloggs | $100B  | With hair like that?! Enough said.                           |
 
 | Header1 | Header2 | Header3 |
 |:--------|:-------:|--------:|
@@ -101,16 +101,16 @@ Do It Live
 Make any link standout more when applying the `.btn` class.
 
 ```html
-<a href="#" class="btn--success">Success Button</a>
+<a href="/archive-layout-with-content/" class="btn btn--success">Success Button</a>
 ```
 
-[Primary Button](#){: .btn}
-[Success Button](#){: .btn .btn--success}
-[Warning Button](#){: .btn .btn--warning}
-[Danger Button](#){: .btn .btn--danger}
-[Info Button](#){: .btn .btn--info}
-[Inverse Button](#){: .btn .btn--inverse}
-[Light Outline Button](#){: .btn .btn--light-outline}
+<span class="btn">Primary Button</span>
+<span class="btn btn--success">Success Button</span>
+<span class="btn btn--warning">Warning Button</span>
+<span class="btn btn--danger">Danger Button</span>
+<span class="btn btn--info">Info Button</span>
+<span class="btn btn--inverse">Inverse Button</span>
+<span class="btn btn--light-outline">Light Outline Button</span>
 
 ```markdown
 [Primary Button Text](#link){: .btn}
@@ -122,10 +122,10 @@ Make any link standout more when applying the `.btn` class.
 [Light Outline Button](#link){: .btn .btn--light-outline}
 ```
 
-[X-Large Button](#){: .btn .btn--x-large}
-[Large Button](#){: .btn .btn--large}
-[Default Button](#){: .btn}
-[Small Button](#){: .btn .btn--small}
+<span class="btn btn--x-large">X-Large Button</span>
+<span class="btn btn--large">Large Button</span>
+<span class="btn">Default Button</span>
+<span class="btn btn--small">Small Button</span>
 
 ```markdown
 [X-Large Button](#link){: .btn .btn--x-large}

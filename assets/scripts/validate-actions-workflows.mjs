@@ -87,6 +87,19 @@ function checkPagesAuthority(file, workflow) {
   const siteBuilds = buildRuns.filter((run) => /\bnpm run site:build\b/.test(run)).length;
   if (siteBuilds !== 1) fail(`${file}: build job must run exactly one npm run site:build`);
 
+  const protectRuns = buildRuns.filter((run) => /\bnpm run algolia:protect\b/.test(run)).length;
+  if (protectRuns !== 1) fail(`${file}: build job must protect the Algolia browser key exactly once before deployment`);
+  const protectIndex = buildRuns.findIndex((run) => /\bnpm run algolia:protect\b/.test(run));
+  const siteBuildIndex = buildRuns.findIndex((run) => /\bnpm run site:build\b/.test(run));
+  if (protectIndex < 0 || protectIndex >= siteBuildIndex) {
+    fail(`${file}: Algolia key protection must complete before npm run site:build`);
+  }
+
+  const algoliaRuns = asArray(algolia?.steps).filter((step) => step.run).map((step) => step.run);
+  if (algoliaRuns.some((run) => /\bnpm run algolia:protect\b/.test(run))) {
+    fail(`${file}: Algolia key protection must run in build, not after deploy becomes eligible`);
+  }
+
   const allRuns = Object.values(workflow.jobs)
     .flatMap((job) => asArray(job?.steps))
     .filter((step) => step.run)
