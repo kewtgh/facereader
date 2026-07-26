@@ -1663,7 +1663,7 @@ body { line-height: 1.7; }
 
 .leaders-table__filters {
   display: grid;
-  grid-template-columns: repeat(3, minmax(12rem, 18rem));
+  grid-template-columns: minmax(15.5rem, 22rem) repeat(2, minmax(10rem, 15rem));
   gap: 0.7rem;
   align-items: flex-end;
 }
@@ -1702,6 +1702,11 @@ body { line-height: 1.7; }
   border-radius: 0.35rem;
   border-color: rgba(34, 48, 66, 0.18);
   background-color: rgba(255, 255, 255, 0.94);
+}
+
+#leaders-table-query::placeholder {
+  font-size: 0.82rem;
+  opacity: 1;
 }
 
 .leaders-table__toolbar p {
