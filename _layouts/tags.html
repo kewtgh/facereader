@@ -6,6 +6,19 @@ sitemap: false
 
 {{ content }}
 
+<div class="tag-directory-search">
+  <label for="tag-directory-query" data-fr-i18n-key="tag_search_label">{{ site.data.ui-text[locale].tag_search_label | default: '搜索标签' }}</label>
+  <input
+    id="tag-directory-query"
+    type="search"
+    autocomplete="off"
+    placeholder="{{ site.data.ui-text[locale].tag_search_placeholder | default: '输入标签名称或说明' }}"
+    data-fr-i18n-placeholder-key="tag_search_placeholder"
+    aria-describedby="tag-directory-status"
+  >
+  <p id="tag-directory-status" role="status" aria-live="polite" aria-atomic="true"></p>
+</div>
+
 <div class="tag-groups">
 
   {% for group in site.data.tag-groups %}
@@ -31,7 +44,7 @@ sitemap: false
         </button>
       </h2>
 
-      <div id="tag-group-{{ forloop.index }}" class="tag-group-list">
+      <div id="tag-group-{{ forloop.index }}" class="tag-group-list" aria-hidden="false">
         {% for tag in g.tags %}
           {% if site.tags[tag] %}
             {% assign tag_description = site.data.tag_descriptions[tag] | default: "" | strip %}
@@ -57,12 +70,12 @@ sitemap: false
 <hr>
 
 <!-- 当前筛选状态 -->
-<div class="tag-filter-status" id="current-tag-anchor">
+<div class="tag-filter-status" id="current-tag-anchor" role="status" aria-live="polite" aria-atomic="true">
   <strong><span data-fr-i18n-key="tag_current">{{ site.data.ui-text[locale].tag_current }}</span>:</strong>
   <span id="current-tag" data-fr-tag-all-label>{{ site.data.ui-text[locale].tag_all | default: 'All' }}</span>
   <span id="current-tag-count" class="tag-filter-count" data-fr-tag-count="{{ site.posts | size }}">{{ site.posts | size }} {{ site.data.ui-text[locale].tag_posts_count_label | default: 'posts' }}</span>
 
-  <button type="button" onclick="resetFilter()" class="btn btn--small btn--light-outline tag-clear-btn">
+  <button type="button" id="tag-filter-reset" class="btn btn--small btn--light-outline tag-clear-btn">
     <span data-fr-i18n-key="tag_clear">{{ site.data.ui-text[locale].tag_clear }}</span>
   </button>
 </div>
@@ -77,5 +90,6 @@ sitemap: false
     </div>
   {% endfor %}
 </div>
+<p id="tag-posts-empty" class="tag-posts-empty" hidden data-fr-i18n-key="tag_filter_no_posts">{{ site.data.ui-text[locale].tag_filter_no_posts | default: '没有找到该标签对应的文章。' }}</p>
 
 <script src="{{ '/assets/js/tag-filter.js' | relative_url }}"></script>

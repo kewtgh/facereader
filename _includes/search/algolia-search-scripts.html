@@ -1,8 +1,9 @@
-{% assign locale = include.locale | default: site.locale %}
-<script>
+{% if include.raw %}
+{% assign locale = site.locale %}
   var algoliaMinimumQueryLength = {{ site.algolia.minimum_query_length | default: 2 }};
   var algoliaQueryDebounceMs = {{ site.algolia.query_debounce_ms | default: 450 }};
   var algoliaHitsPerPage = {{ site.algolia.hits_per_page | default: 20 }};
+  var algoliaInitPromise;
 
   function loadScript(src) {
     return new Promise(function (resolve, reject) {
@@ -283,11 +284,27 @@
     });
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    initAlgoliaInstantSearchOnce().catch(function (e) {
+  function startAlgoliaSearch() {
+    if (!algoliaInitPromise) {
+      algoliaInitPromise = initAlgoliaInstantSearchOnce().catch(function (e) {
+        algoliaInitPromise = null;
+        throw e;
+      });
+    }
+    algoliaInitPromise.catch(function (e) {
       console.error("[InstantSearch] init failed:", e);
     });
+  }
+
+  document.addEventListener("facereader:search-open", startAlgoliaSearch);
+
+  document.addEventListener("DOMContentLoaded", function () {
+    if (document.body.classList.contains("layout--search")) {
+      startAlgoliaSearch();
+    }
   });
 
   document.addEventListener("facereader:ui-language", refreshAlgoliaUiLanguage);
-</script>
+{% else %}
+<script src="{{ '/assets/js/algolia-search.js' | relative_url }}?v={{ site.data.theme.version }}" defer></script>
+{% endif %}

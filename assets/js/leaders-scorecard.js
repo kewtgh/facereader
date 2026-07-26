@@ -1,3 +1,10 @@
+import {
+  averageScore,
+  evidenceAdjustedScore as calculateEvidenceAdjustedScore,
+  scoreBandLabel,
+  weightedScore as calculateWeightedScore
+} from "./leaders-scoring.mjs";
+
 (function () {
   const hotCompanyNames = [
     "NVIDIA",
@@ -58,6 +65,9 @@
       relatedArticle: "查看关联文章",
       referenceMaterials: "查看参考资料",
       addCompare: "加入对比",
+      copyQueryLink: "复制查询链接",
+      queryLinkCopied: "查询链接已复制",
+      queryLinkCopyFailed: "无法自动复制，请复制浏览器地址栏中的链接",
       darwinTitle: "Darwin 优质企业评分",
       darwinEmpty: "该企业尚未完成 Darwin 三项复核。下次半年度复盘时，将补充财务硬度、动态护城河和诚实信号评分，并与 LEADERS 分数比较偏差。",
       darwinIntro: "用财务硬度、动态护城河和诚实信号过滤市场关注度与低成本叙事。",
@@ -91,6 +101,7 @@
       pendingScore: "待评分",
       pendingReviewShort: "待复核",
       radarLabel: "LEADERS 七项评分雷达图",
+      radarDescription: "所选企业在 LEADERS 七项评分上的对比图，详细数值见相邻表格。",
       deviationNormal: "偏差正常",
       deviationWatch: "需要跟踪",
       deviationReview: "需要复核参数",
@@ -109,6 +120,9 @@
       relatedArticle: "View related article",
       referenceMaterials: "View reference materials",
       addCompare: "Add to comparison",
+      copyQueryLink: "Copy query link",
+      queryLinkCopied: "Query link copied",
+      queryLinkCopyFailed: "Automatic copy failed. Copy the URL from the browser address bar.",
       darwinTitle: "Darwin quality-company score",
       darwinEmpty: "This company has not completed the three Darwin review dimensions yet. The next half-year review will add scores for financial hardness, dynamic moat, and honest signals, then compare them with the LEADERS score.",
       darwinIntro: "Filters market attention and low-cost narratives through financial hardness, dynamic moat, and honest signals.",
@@ -142,6 +156,7 @@
       pendingScore: "Pending",
       pendingReviewShort: "Pending review",
       radarLabel: "LEADERS seven-dimension radar chart",
+      radarDescription: "Comparison of the selected companies across seven LEADERS dimensions. Exact values are available in the adjacent table.",
       deviationNormal: "Normal deviation",
       deviationWatch: "Needs tracking",
       deviationReview: "Needs parameter review",
@@ -209,6 +224,8 @@
   let tablePage = 1;
 
   const $ = (selector) => document.querySelector(selector);
+  const smoothBehavior = () =>
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
   const lang = () => (document.documentElement.getAttribute("data-fr-ui-lang") || "zh").slice(0, 2) === "en" ? "en" : "zh";
   const t = (key, ...args) => {
     const value = ui[lang()][key] ?? ui.zh[key] ?? key;
@@ -224,8 +241,8 @@
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
-  const average = (scores) => scoreKeys.reduce((sum, [key]) => sum + Number(scores[key] || 0), 0) / scoreKeys.length;
-  const averageDarwin = (scores) => darwinKeys.reduce((sum, [key]) => sum + Number(scores[key] || 0), 0) / darwinKeys.length;
+  const average = (scores) => averageScore(scores, scoreKeys);
+  const averageDarwin = (scores) => averageScore(scores, darwinKeys);
   const tagLabel = (tag, labels) => lang() === "en" ? (labels[tag] || tag) : tag;
   const tagText = (tags, labels) => (tags && tags.length ? tags.map((tag) => tagLabel(tag, labels)).join(lang() === "en" ? ", " : "、") : t("unlabeled"));
   const companyNames = (company) => [company.name].concat(company.aliases || []);
@@ -263,6 +280,58 @@
     return `${localUrl}${separator}from=leaders-scorecard`;
   }
 
+  function validMode(value) {
+    return weights[value] ? value : "growth";
+  }
+
+  function readSearchState() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+      company: params.get("company") || "",
+      mode: validMode(params.get("stage") || "growth")
+    };
+  }
+
+  function syncSearchUrl(companyName, mode, push) {
+    const url = new URL(window.location.href);
+    if (companyName) url.searchParams.set("company", companyName);
+    else url.searchParams.delete("company");
+    url.searchParams.set("stage", validMode(mode));
+    url.hash = "leaders-search";
+
+    const next = `${url.pathname}${url.search}${url.hash}`;
+    const current = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+    if (next === current) return;
+    window.history[push ? "pushState" : "replaceState"](null, "", next);
+  }
+
+  async function copyText(value) {
+    if (navigator.clipboard && window.isSecureContext) {
+      try {
+        await navigator.clipboard.writeText(value);
+        return true;
+      } catch (error) {
+        // Fall through to the selection-based copy path.
+      }
+    }
+
+    const helper = document.createElement("textarea");
+    helper.value = value;
+    helper.setAttribute("readonly", "");
+    helper.style.position = "fixed";
+    helper.style.opacity = "0";
+    document.body.appendChild(helper);
+    helper.select();
+    let copied = false;
+    try {
+      copied = document.execCommand("copy");
+    } catch (error) {
+      copied = false;
+    }
+    helper.remove();
+    return copied;
+  }
+
   function showFloatingBack() {
     if (document.querySelector(".leaders-floating-back")) return;
     const link = document.createElement("a");
@@ -273,26 +342,22 @@
   }
 
   function weightedScore(company, mode) {
-    const plan = weights[mode] || weights.growth;
-    if (!plan || !scoreKeys.length) return 0;
-    const values = scoreKeys.map(([key]) => Number(company.scores[key] || 0));
-    return values.reduce((sum, score, index) => sum + score * plan.values[index], 0);
+    return calculateWeightedScore(company.scores, mode, scoreKeys, weights);
   }
 
   function evidenceAdjustedScore(company, mode) {
-    const plan = weights[mode] || weights.growth;
-    if (!plan || !scoreKeys.length) return 0;
-    const coef = evidenceCoef[company.evidence] ?? evidenceCoef.C ?? 0.7;
-    const numerator = scoreKeys.reduce((sum, [key], index) => {
-      return sum + Number(company.scores[key] || 0) * plan.values[index] * coef;
-    }, 0);
-    const denominator = plan.values.reduce((sum, value) => sum + value * coef, 0);
-    return numerator / denominator;
+    return calculateEvidenceAdjustedScore(
+      company.scores,
+      company.evidence,
+      mode,
+      scoreKeys,
+      weights,
+      evidenceCoef
+    );
   }
 
   function bandLabel(score, bands, fallback) {
-    const match = bands.find((band) => score >= Number(band.min));
-    return match ? match.label : fallback;
+    return scoreBandLabel(score, bands, fallback);
   }
 
   function rating(score) {
@@ -404,9 +469,8 @@
   }
 
   function renderTags(company) {
-    const tags = []
-      .concat(company.industry_tags || [])
-      .concat(company.region_tags || []);
+    const tags = (company.industry_tags || []).map((tag) => tagLabel(tag, industryLabels))
+      .concat((company.region_tags || []).map((tag) => tagLabel(tag, regionLabels)));
     if (!tags.length) return "";
     return `
       <div class="leaders-result__tags">
@@ -453,6 +517,13 @@
   function renderCompareButton(company) {
     if (!$("#leaders-compare")) return "";
     return `<button class="btn leaders-compare-add" type="button" data-compare-company="${escapeHtml(company.name)}">${t("addCompare")}</button>`;
+  }
+
+  function renderCopyQueryButton() {
+    return `
+      <button class="btn leaders-copy-query" type="button" data-copy-query>${t("copyQueryLink")}</button>
+      <span class="leaders-copy-query__status" role="status" aria-live="polite"></span>
+    `;
   }
 
   function renderDarwinPanel(company, leadersScore) {
@@ -514,6 +585,7 @@
         <div class="leaders-metrics">
           <div><span>${t("simpleAverage")}</span><strong>${raw.toFixed(1)}</strong></div>
           <div><span>${localizedStageLabel(mode, plan.label)} ${t("weightedSuffix")}</span><strong>${weighted.toFixed(1)}</strong></div>
+          <div><span>${t("evidenceAdjusted")}</span><strong>${adjusted.toFixed(1)}</strong></div>
           <div><span>${t("evidence")}</span><strong>${company.evidence}</strong></div>
         </div>
         <p class="leaders-result__summary">${escapeHtml(company.summary)}</p>
@@ -529,7 +601,7 @@
             <p><strong>${t("mainRisk")}</strong>${escapeHtml(company.risk)}</p>
             <p><strong>${t("watchPoints")}</strong></p>
             <ul>${watch}</ul>
-            <p class="leaders-result__actions">${renderResourceLink(company)}${renderCompareButton(company)}</p>
+            <p class="leaders-result__actions">${renderResourceLink(company)}${renderCompareButton(company)}${renderCopyQueryButton()}</p>
           </section>
         </div>
         ${isSiteArticle(company.url) ? "" : renderReferences(company)}
@@ -543,6 +615,15 @@
     const compareButton = document.querySelector("[data-compare-company]");
     if (compareButton) {
       compareButton.addEventListener("click", () => addCompareCompany(compareButton.dataset.compareCompany));
+    }
+    const copyButton = document.querySelector("[data-copy-query]");
+    if (copyButton) {
+      copyButton.addEventListener("click", async () => {
+        syncSearchUrl(company.name, mode, false);
+        const copied = await copyText(window.location.href);
+        const status = copyButton.parentElement.querySelector(".leaders-copy-query__status");
+        if (status) status.textContent = copied ? t("queryLinkCopied") : t("queryLinkCopyFailed");
+      });
     }
   }
 
@@ -578,9 +659,29 @@
     const company = findCompany(query);
     if (company) {
       renderResult(company, mode);
+      syncSearchUrl(company.name, mode, true);
     } else {
       renderEmpty(query);
+      syncSearchUrl(query, mode, true);
     }
+  }
+
+  function restoreSearchFromUrl() {
+    const input = $("#leaders-company-input");
+    const stage = $("#leaders-stage");
+    if (!input || !stage || !companies.length) return;
+
+    const state = readSearchState();
+    stage.value = state.mode;
+    input.value = state.company;
+    if (!state.company) {
+      renderResult(companies[0], state.mode);
+    } else {
+      const company = findCompany(state.company);
+      if (company) renderResult(company, state.mode);
+      else renderEmpty(state.company);
+    }
+    renderCompare();
   }
 
   function renderExamples() {
@@ -644,6 +745,7 @@
 
     const industrySelect = $("#leaders-industry-filter");
     const regionSelect = $("#leaders-region-filter");
+    const queryInput = $("#leaders-table-query");
     const resetButton = $("#leaders-filter-reset");
     const countEl = $("#leaders-table-count");
     const bodyEl = $("#leaders-table-body");
@@ -668,10 +770,12 @@
     const applyFilters = () => {
       const industry = industrySelect.value;
       const region = regionSelect.value;
+      const query = normalize(queryInput?.value);
       const filtered = companies.filter((company) => {
         const industryMatched = !industry || (company.industry_tags || []).includes(industry);
         const regionMatched = !region || (company.region_tags || []).includes(region);
-        return industryMatched && regionMatched;
+        const queryMatched = !query || companyNames(company).some((name) => normalize(name).includes(query));
+        return industryMatched && regionMatched && queryMatched;
       });
       const totalPages = Math.max(1, Math.ceil(filtered.length / tablePageSize));
       tablePage = Math.max(1, Math.min(tablePage, totalPages));
@@ -681,11 +785,14 @@
       bodyEl.innerHTML = pageItems.length ? pageItems.map((company, index) => {
         const score = average(company.scores);
         const url = company.url || "#";
+        const linkAttributes = isSiteArticle(url) || url === "#"
+          ? ""
+          : ` target="_blank" rel="noopener"`;
         return `
           <tr>
             <td data-label="${lang() === "en" ? "#" : "序号"}">${pageStart + index + 1}</td>
             <td data-label="${lang() === "en" ? "Company" : "企业名称"}">
-              <a href="${escapeHtml(url)}">${escapeHtml(company.name)}</a>
+              <a href="${escapeHtml(url)}"${linkAttributes}>${escapeHtml(company.name)}</a>
               <small>${escapeHtml((company.aliases || []).slice(0, 4).join(" / "))}</small>
             </td>
             <td data-label="${lang() === "en" ? "Industry" : "行业"}">${escapeHtml(tagText(company.industry_tags, industryLabels))}</td>
@@ -709,6 +816,7 @@
           ? t("tableCount", pageStart + 1, pageStart + pageItems.length, filtered.length, companies.length)
           : t("tableEmpty");
       }
+      tableRoot.setAttribute("aria-busy", "false");
 
       if (paginationEl) {
         const pageButtons = tablePageNumbers(tablePage, totalPages)
@@ -733,7 +841,7 @@
           else if (action === "next") tablePage += 1;
           else tablePage = Number(action) || tablePage;
           applyFilters();
-          tableRoot.querySelector(".leaders-table__wrap")?.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+          tableRoot.querySelector(".leaders-table__wrap")?.scrollTo({ top: 0, left: 0, behavior: smoothBehavior() });
         };
       }
     };
@@ -747,6 +855,10 @@
         tablePage = 1;
         applyFilters();
       });
+      queryInput?.addEventListener("input", () => {
+        tablePage = 1;
+        applyFilters();
+      });
       tableRoot.dataset.filtersBound = "true";
     }
     if (resetButton && !resetButton.dataset.resetBound) {
@@ -754,6 +866,7 @@
         tablePage = 1;
         industrySelect.value = "";
         regionSelect.value = "";
+        if (queryInput) queryInput.value = "";
         applyFilters();
       });
       resetButton.dataset.resetBound = "true";
@@ -824,14 +937,14 @@
 
     const existing = inputs.find((input) => compareCompanyFromValue(input.value)?.name === name);
     if (existing) {
-      compareRoot.scrollIntoView({ behavior: "smooth", block: "start" });
+      compareRoot.scrollIntoView({ behavior: smoothBehavior(), block: "start" });
       return;
     }
 
-    const target = inputs.find((input) => !input.value) || inputs[0];
+    const target = inputs.find((input) => !input.value) || inputs[inputs.length - 1];
     target.value = name;
     renderCompare();
-    compareRoot.scrollIntoView({ behavior: "smooth", block: "start" });
+    compareRoot.scrollIntoView({ behavior: smoothBehavior(), block: "start" });
   }
 
   function compareMetricRows(selected, mode) {
@@ -931,8 +1044,10 @@
 
     return `
       <div class="leaders-compare-radar">
-        <div class="leaders-compare-radar__chart" aria-label="${t("radarLabel")}">
+        <div class="leaders-compare-radar__chart">
           <svg viewBox="0 0 360 360" role="img">
+            <title>${escapeHtml(t("radarLabel"))}</title>
+            <desc>${escapeHtml(t("radarDescription"))}</desc>
             <g class="leaders-compare-radar__grid">${rings}${axes}</g>
             <g>${shapes}</g>
           </svg>
@@ -1025,19 +1140,30 @@
         fetch(root.dataset.source),
         fetch(modelUrl)
       ]);
-      companies = await companyResponse.json();
-      configureModel(await modelResponse.json());
+      if (!companyResponse.ok || !modelResponse.ok) {
+        throw new Error("LEADERS data request failed.");
+      }
+      const loadedCompanies = await companyResponse.json();
+      const loadedModel = await modelResponse.json();
+      if (!Array.isArray(loadedCompanies) || !loadedCompanies.length) {
+        throw new Error("LEADERS company data is empty.");
+      }
+      companies = loadedCompanies;
+      configureModel(loadedModel);
       renderExamples();
-      renderResult(companies[0], "growth");
       renderLeadersTable();
       fillCompareInputs();
       $("#leaders-search-form").addEventListener("submit", runSearch);
       $("#leaders-stage").addEventListener("change", () => {
         const company = findCompany($("#leaders-company-input").value) || companies[0];
-        renderResult(company, $("#leaders-stage").value);
+        const mode = $("#leaders-stage").value;
+        renderResult(company, mode);
+        syncSearchUrl(company.name, mode, true);
         renderCompare();
       });
+      window.addEventListener("popstate", restoreSearchFromUrl);
       document.addEventListener("facereader:ui-language", refreshLanguageState);
+      restoreSearchFromUrl();
     } catch (error) {
       $("#leaders-result").innerHTML = `<p>${t("loadFailure")}</p>`;
     }

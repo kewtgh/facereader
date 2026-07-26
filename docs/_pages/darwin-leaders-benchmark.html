@@ -39,7 +39,7 @@ sitemap: true
   <p data-fr-i18n-zh="LEADERS 关注管理系统能否持续兑现，Darwin 评分关注财务硬度、动态护城河和高成本诚实信号。这个样本池每半年复盘一次，用来识别网络热度、创始人光环、融资叙事和财务不透明对评分的误导。" data-fr-i18n-en="LEADERS examines whether a management system can deliver consistently. Darwin focuses on financial hardness, a dynamic moat, and costly honest signals. Reviewed every six months, this pool helps identify distortions caused by online attention, founder halo, financing narratives, and opaque financials.">LEADERS 关注管理系统能否持续兑现，Darwin 评分关注财务硬度、动态护城河和高成本诚实信号。这个样本池每半年复盘一次，用来识别网络热度、创始人光环、融资叙事和财务不透明对评分的误导。</p>
 </section>
 
-<section class="leaders-benchmark" id="darwin-leaders-benchmark" data-source="{{ '/assets/data/darwin-leaders-benchmark.json' | relative_url }}" data-model="{{ '/assets/data/leaders-score-rubric.json' | relative_url }}">
+<section class="leaders-benchmark" id="darwin-leaders-benchmark" data-source="{{ '/assets/data/darwin-leaders-benchmark.json' | relative_url }}" data-companies="{{ '/assets/data/leaders-companies.json' | relative_url }}" data-model="{{ '/assets/data/leaders-score-rubric.json' | relative_url }}" aria-busy="true">
   <div class="leaders-tool__header">
     <p class="leaders-kicker">2026-H1 Sample Pool</p>
     <h2 data-fr-i18n-zh="15家对照企业" data-fr-i18n-en="15 benchmark companies">15家对照企业</h2>
@@ -52,6 +52,7 @@ sitemap: true
   </div>
   <div class="leaders-benchmark__table-wrap">
     <table class="leaders-benchmark__table">
+      <caption class="visually-hidden" data-fr-i18n-zh="Darwin优质企业评分与LEADERS管理评分对照表" data-fr-i18n-en="Comparison of Darwin company-quality scores and LEADERS management scores">Darwin优质企业评分与LEADERS管理评分对照表</caption>
       <thead>
         <tr>
           <th data-fr-i18n-zh="企业" data-fr-i18n-en="Company">企业</th>
@@ -90,133 +91,4 @@ sitemap: true
   </div>
 </section>
 
-<script>
-document.addEventListener("DOMContentLoaded", async () => {
-  const root = document.querySelector("#darwin-leaders-benchmark");
-  const rows = document.querySelector("#leaders-benchmark-rows");
-  const summary = document.querySelector("#leaders-benchmark-summary");
-  if (!root || !rows) return;
-
-  const ui = {
-    zh: {
-      samples: "样本数量",
-      reviewCycle: "复盘频率",
-      version: "版本",
-      core: "核心",
-      satellite: "卫星",
-      normal: "正常",
-      track: "跟踪",
-      review: "复核",
-      pending: "待评分",
-      missing: "待补",
-      loadError: "样本池加载失败，请稍后再试。"
-    },
-    en: {
-      samples: "Samples",
-      reviewCycle: "Review cycle",
-      version: "Version",
-      core: "Core",
-      satellite: "Satellite",
-      normal: "Normal",
-      track: "Track",
-      review: "Review",
-      pending: "Pending",
-      missing: "Pending",
-      loadError: "The benchmark pool could not be loaded. Please try again later."
-    }
-  };
-
-  let benchmarkState = null;
-  let loadFailed = false;
-
-  const language = () => document.documentElement.getAttribute("data-fr-ui-lang") === "en" ? "en" : "zh";
-  const t = (key) => ui[language()][key];
-
-  const escapeHTML = (value) => String(value || "").replace(/[&<>"']/g, (char) => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  }[char]));
-  const average = (values) => values.reduce((sum, value) => sum + Number(value || 0), 0) / values.length;
-
-  const actionKey = (delta, warnDelta, reviewDelta) => {
-    const abs = Math.abs(delta);
-    if (abs <= warnDelta) return "normal";
-    if (abs <= reviewDelta) return "track";
-    return "review";
-  };
-
-  const renderError = () => {
-    rows.innerHTML = `<tr><td colspan="8">${escapeHTML(t("loadError"))}</td></tr>`;
-  };
-
-  const render = () => {
-    if (!benchmarkState) return;
-
-    const { data, companyMap, leadersScore, darwinScore, warnDelta, reviewDelta } = benchmarkState;
-    const lang = language();
-
-    rows.innerHTML = data.companies.map((company) => {
-      const source = companyMap.get(company.name);
-      const leaders = source ? leadersScore(source) : null;
-      const darwin = source ? darwinScore(source) : null;
-      const delta = leaders !== null && darwin !== null ? darwin - leaders : null;
-      const action = delta !== null ? actionKey(delta, warnDelta, reviewDelta) : "pending";
-      const deltaText = delta !== null ? `${delta >= 0 ? "+" : ""}${delta.toFixed(1)}` : t("missing");
-      const companyName = lang === "en" ? company.name_en || company.name : company.name;
-      const reason = lang === "en" ? company.reason_en || company.reason : company.reason;
-
-      return `<tr>
-        <td><strong>${escapeHTML(companyName)}</strong>${source && source.darwin ? `<small>${escapeHTML(source.darwin.evidence || source.evidence || "")}</small>` : ""}</td>
-        <td>${escapeHTML(company.tier === "core" ? t("core") : t("satellite"))}</td>
-        <td><span class="leaders-benchmark__quality">${escapeHTML(company.info_quality)}</span></td>
-        <td>${leaders !== null ? leaders.toFixed(1) : escapeHTML(t("missing"))}</td>
-        <td>${darwin !== null ? darwin.toFixed(1) : escapeHTML(t("missing"))}</td>
-        <td><span class="leaders-benchmark__delta leaders-benchmark__delta--${action}">${escapeHTML(deltaText)}</span></td>
-        <td>${escapeHTML(t(action))}</td>
-        <td>${escapeHTML(reason)}</td>
-      </tr>`;
-    }).join("");
-
-    const reviewCycle = lang === "en" ? data.review_cycle_en || data.review_cycle : data.review_cycle;
-    summary.innerHTML = `
-      <div><span>${escapeHTML(t("samples"))}</span><strong>${data.companies.length}</strong></div>
-      <div><span>${escapeHTML(t("reviewCycle"))}</span><strong>${escapeHTML(reviewCycle)}</strong></div>
-      <div><span>${escapeHTML(t("version"))}</span><strong>${escapeHTML(data.version)}</strong></div>
-    `;
-  };
-
-  document.addEventListener("facereader:ui-language", () => {
-    if (benchmarkState) render();
-    if (loadFailed) renderError();
-  });
-
-  try {
-    const [benchmarkResponse, companyResponse, modelResponse] = await Promise.all([
-      fetch(root.dataset.source),
-      fetch("{{ '/assets/data/leaders-companies.json' | relative_url }}"),
-      fetch(root.dataset.model)
-    ]);
-    if (!benchmarkResponse.ok || !companyResponse.ok || !modelResponse.ok) {
-      throw new Error("Benchmark data request failed.");
-    }
-    const data = await benchmarkResponse.json();
-    const companies = await companyResponse.json();
-    const model = await modelResponse.json();
-    const scoreKeys = model.dimension_order || Object.keys(model.dimensions || {});
-    const darwinKeys = model.darwin_dimension_order || Object.keys(model.darwin_dimensions || {});
-    const leadersScore = (company) => average(scoreKeys.map((key) => company.scores && company.scores[key]));
-    const darwinScore = (company) => company.darwin ? average(darwinKeys.map((key) => company.darwin[key])) : null;
-    const warnDelta = Number(model.guardrails?.darwin_feedback?.warn_delta ?? 0.5);
-    const reviewDelta = Number(model.guardrails?.darwin_feedback?.review_delta ?? 1.2);
-    const companyMap = new Map(companies.map((company) => [company.name, company]));
-    benchmarkState = { data, companyMap, leadersScore, darwinScore, warnDelta, reviewDelta };
-    render();
-  } catch (error) {
-    loadFailed = true;
-    renderError();
-  }
-});
-</script>
+<script src="{{ '/assets/js/darwin-benchmark.js' | relative_url }}" defer></script>

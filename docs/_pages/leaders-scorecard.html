@@ -125,6 +125,10 @@ sitemap: true
   <div class="leaders-table__toolbar" aria-label="企业评分筛选" data-fr-i18n-aria-label-zh="企业评分筛选" data-fr-i18n-aria-label-en="Company rating filters">
     <div class="leaders-table__filters">
       <label>
+        <span data-fr-i18n-zh="企业名称或别名" data-fr-i18n-en="Company or alias">企业名称或别名</span>
+        <input id="leaders-table-query" type="search" autocomplete="off" placeholder="输入企业名称、代码或别名" data-fr-i18n-placeholder-zh="输入企业名称、代码或别名" data-fr-i18n-placeholder-en="Enter a company, ticker, or alias">
+      </label>
+      <label>
         <span data-fr-i18n-zh="行业" data-fr-i18n-en="Industry">行业</span>
         <select id="leaders-industry-filter" aria-label="按行业筛选" data-fr-i18n-aria-label-zh="按行业筛选" data-fr-i18n-aria-label-en="Filter by industry"></select>
       </label>
@@ -135,7 +139,7 @@ sitemap: true
     </div>
     <div class="leaders-table__actions">
       <button class="btn" id="leaders-filter-reset" type="button" data-fr-i18n-zh="重置" data-fr-i18n-en="Reset">重置</button>
-      <p id="leaders-table-count" data-fr-i18n-zh="正在加载企业数据…" data-fr-i18n-en="Loading company data...">正在加载企业数据…</p>
+      <p id="leaders-table-count" role="status" aria-live="polite" aria-atomic="true" data-fr-i18n-zh="正在加载企业数据…" data-fr-i18n-en="Loading company data...">正在加载企业数据…</p>
     </div>
   </div>
   <div class="leaders-table__wrap">
@@ -233,8 +237,8 @@ sitemap: true
     </article>
   </div>
   <div class="leaders-method__notes">
-    <p data-fr-i18n-zh="证据等级：A 代表年报、公告、审计报告、招股书等强证据；B 代表多方一致但仍需复核的公开资料；C 代表推断性材料较多，结论需要保守使用。" data-fr-i18n-en="Evidence level: A means strong evidence such as annual reports, announcements, audit reports, and prospectuses; B means public materials that are consistent across sources but still need review; C means more inferred material, so conclusions should be used conservatively."><strong>证据等级：</strong>A 代表年报、公告、审计报告、招股书等强证据；B 代表多方一致但仍需复核的公开资料；C 代表推断性材料较多，结论需要保守使用。</p>
-    <p data-fr-i18n-zh="使用边界：免费版适合快速比较和线索判断；涉及投资、合作、招聘高管或供应商准入时，应结合专业版底稿、原始材料和人工复核。" data-fr-i18n-en="Usage boundary: the free version is for quick comparison and clue judgment. Investment, partnership, executive hiring, or supplier admission should be combined with professional notes, original materials, and manual review."><strong>使用边界：</strong>免费版适合快速比较和线索判断；涉及投资、合作、招聘高管或供应商准入时，应结合专业版底稿、原始材料和人工复核。</p>
+    <p><strong data-fr-i18n-zh="证据等级：" data-fr-i18n-en="Evidence level: ">证据等级：</strong><span data-fr-i18n-zh="A 代表年报、公告、审计报告、招股书等强证据；B 代表多方一致但仍需复核的公开资料；C 代表推断性材料较多，结论需要保守使用。" data-fr-i18n-en="A means strong evidence such as annual reports, announcements, audit reports, and prospectuses; B means public materials that are consistent across sources but still need review; C means more inferred material, so conclusions should be used conservatively.">A 代表年报、公告、审计报告、招股书等强证据；B 代表多方一致但仍需复核的公开资料；C 代表推断性材料较多，结论需要保守使用。</span></p>
+    <p><strong data-fr-i18n-zh="使用边界：" data-fr-i18n-en="Usage boundary: ">使用边界：</strong><span data-fr-i18n-zh="免费版适合快速比较和线索判断；涉及投资、合作、招聘高管或供应商准入时，应结合专业版底稿、原始材料和人工复核。" data-fr-i18n-en="The free version is for quick comparison and clue judgment. Investment, partnership, executive hiring, or supplier admission should be combined with professional notes, original materials, and manual review.">免费版适合快速比较和线索判断；涉及投资、合作、招聘高管或供应商准入时，应结合专业版底稿、原始材料和人工复核。</span></p>
   </div>
 
 </section>
@@ -257,7 +261,7 @@ sitemap: true
       <p data-fr-i18n-zh="弱化乐观业绩指引，优先看高成本真信号：持续研发、员工福利、长期人才投入、透明披露和逆风期的资本纪律。" data-fr-i18n-en="Discounts optimistic guidance and prioritizes costly true signals: sustained R&D, employee welfare, long-term talent investment, transparent disclosure, and capital discipline in adverse periods.">弱化乐观业绩指引，优先看高成本真信号：持续研发、员工福利、长期人才投入、透明披露和逆风期的资本纪律。</p>
     </article>
   </div>
-  <p data-fr-i18n-zh="反馈规则：偏差小于0.5分视为正常；0.5到1.2分进入跟踪；超过1.2分触发人工复核，并调整 LEADERS 的权重、证据折扣或 Darwin 的财务阈值。" data-fr-i18n-en="Feedback rule: a deviation below 0.5 is normal; 0.5 to 1.2 enters tracking; above 1.2 triggers manual review and adjustment to LEADERS weights, evidence discount, or Darwin financial thresholds."><strong>反馈规则：</strong>偏差小于0.5分视为正常；0.5到1.2分进入跟踪；超过1.2分触发人工复核，并调整 LEADERS 的权重、证据折扣或 Darwin 的财务阈值。</p>
+  <p><strong data-fr-i18n-zh="反馈规则：" data-fr-i18n-en="Feedback rule: ">反馈规则：</strong><span data-fr-i18n-zh="偏差小于0.5分视为正常；0.5到1.2分进入跟踪；超过1.2分触发人工复核，并调整 LEADERS 的权重、证据折扣或 Darwin 的财务阈值。" data-fr-i18n-en="A deviation below 0.5 is normal; 0.5 to 1.2 enters tracking; above 1.2 triggers manual review and adjustment to LEADERS weights, evidence discount, or Darwin financial thresholds.">偏差小于0.5分视为正常；0.5到1.2分进入跟踪；超过1.2分触发人工复核，并调整 LEADERS 的权重、证据折扣或 Darwin 的财务阈值。</span></p>
 </section>
 
-<script src="{{ '/assets/js/leaders-scorecard.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/leaders-scorecard.js' | relative_url }}" type="module"></script>

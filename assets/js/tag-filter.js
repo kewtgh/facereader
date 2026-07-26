@@ -1,6 +1,9 @@
 function scrollToCurrentTag() {
   const anchor = document.getElementById("current-tag-anchor");
-  if (anchor) anchor.scrollIntoView({ behavior: "smooth", block: "start" });
+  if (anchor) {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    anchor.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  }
 }
 
 function parseTags(tagsStr) {
@@ -21,7 +24,10 @@ function setActiveTag(tag) {
 
   // 让选中的按钮尽量滚到可见位置（尤其是从文章页跳转进来时）
   const activeBtn = document.querySelector(`.tag-filter-btn[data-tag="${CSS.escape(tag)}"]`);
-  if (activeBtn) activeBtn.scrollIntoView({ behavior: "smooth", block: "center" });
+  if (activeBtn) {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    activeBtn.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+  }
 }
 
 function updateCurrentTagMeta(tag) {
@@ -47,9 +53,10 @@ function updateCurrentTagMeta(tag) {
 
 function applyFilter(tag, { push = false } = {}) {
   const posts = document.querySelectorAll(".tag-post-item");
+  const emptyEl = document.getElementById("tag-posts-empty");
 
   if (!tag) {
-    posts.forEach(p => (p.style.display = "block"));
+    posts.forEach(p => { p.hidden = false; });
 
     const currentTagEl = document.getElementById("current-tag");
     const lang = (document.documentElement.getAttribute("data-fr-ui-lang") || "zh").slice(0, 2);
@@ -61,6 +68,7 @@ function applyFilter(tag, { push = false } = {}) {
       b.setAttribute("aria-pressed", "false");
     });
     updateCurrentTagMeta("");
+    if (emptyEl) emptyEl.hidden = true;
 
     if (push) history.pushState(null, "", location.pathname);
     else history.replaceState(null, "", location.pathname);
@@ -69,9 +77,12 @@ function applyFilter(tag, { push = false } = {}) {
     return;
   }
 
+  let visibleCount = 0;
   posts.forEach(post => {
     const tags = parseTags(post.dataset.tags);
-    post.style.display = tags.includes(tag) ? "block" : "none";
+    const matched = tags.includes(tag);
+    post.hidden = !matched;
+    if (matched) visibleCount += 1;
   });
 
   const currentTagEl = document.getElementById("current-tag");
@@ -79,6 +90,7 @@ function applyFilter(tag, { push = false } = {}) {
 
   setActiveTag(tag);
   updateCurrentTagMeta(tag);
+  if (emptyEl) emptyEl.hidden = visibleCount > 0;
 
   const url = `?tag=${encodeURIComponent(tag)}`;
   if (push) history.pushState(null, "", url);
@@ -93,6 +105,49 @@ function filterByTag(tag) {
 
 function resetFilter() {
   applyFilter("", { push: true });
+}
+
+function tagSearchText(button) {
+  return `${button.dataset.tag || ""} ${button.dataset.description || ""}`.toLocaleLowerCase();
+}
+
+function updateTagDirectory() {
+  const input = document.getElementById("tag-directory-query");
+  const status = document.getElementById("tag-directory-status");
+  if (!input || !status) return;
+
+  const query = input.value.trim().toLocaleLowerCase();
+  const buttons = Array.from(document.querySelectorAll(".tag-filter-btn"));
+  let visible = 0;
+
+  document.querySelectorAll(".tag-group").forEach(section => {
+    const groupButtons = Array.from(section.querySelectorAll(".tag-filter-btn"));
+    let groupVisible = 0;
+    groupButtons.forEach(button => {
+      const matched = !query || tagSearchText(button).includes(query);
+      button.hidden = !matched;
+      if (matched) {
+        visible += 1;
+        groupVisible += 1;
+      }
+    });
+    section.hidden = groupVisible === 0;
+
+    if (query && groupVisible > 0) {
+      const toggle = section.querySelector(".tag-group-toggle");
+      const list = section.querySelector(".tag-group-list");
+      list?.classList.remove("hidden");
+      list?.setAttribute("aria-hidden", "false");
+      toggle?.setAttribute("aria-expanded", "true");
+    }
+  });
+
+  const lang = (document.documentElement.getAttribute("data-fr-ui-lang") || "zh").slice(0, 2);
+  const dictionary = window.FaceReaderUiText?.[lang] || window.FaceReaderUiText?.zh || {};
+  const template = dictionary.tag_search_results || "显示 {visible}/{total} 个标签";
+  status.textContent = template
+    .replace("{visible}", String(visible))
+    .replace("{total}", String(buttons.length));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -113,6 +168,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const p = new URLSearchParams(window.location.search);
     applyFilter(p.get("tag") || "", { push: false });
   });
+  document.getElementById("tag-filter-reset")?.addEventListener("click", resetFilter);
+  document.getElementById("tag-directory-query")?.addEventListener("input", updateTagDirectory);
+  updateTagDirectory();
 
   document.addEventListener("facereader:ui-language", () => {
     const currentTagEl = document.getElementById("current-tag");
@@ -125,5 +183,6 @@ document.addEventListener("DOMContentLoaded", () => {
       currentTagEl.innerText = dictionary.tag_all || "All";
     }
     updateCurrentTagMeta(tag);
+    updateTagDirectory();
   });
 });

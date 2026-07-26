@@ -18,6 +18,16 @@ JEKYLL_ENV=production npm run site:build
 npm run site:check
 ```
 
+`site:check` validates LEADERS scoring and data, bilingual UI metadata,
+GitHub Actions workflows, Sass warnings, internal links, generated HTML
+accessibility, image dimensions/loading attributes, and production artifact
+exclusions. Run it after a successful build before publishing.
+
+Browser-facing JavaScript belongs in `assets/js`. Build-only validation and
+deployment utilities belong in `assets/scripts`, which is excluded from the
+published site. `bundle exec rake js` regenerates `assets/js/main.min.js`
+without publishing a source map.
+
 ## Bilingual Articles
 
 FaceReader supports paired Chinese and English article versions through front matter.

@@ -160,7 +160,7 @@ JS_FILES = ["assets/js/vendor/jquery/jquery-3.6.0.js"] + Dir.glob("assets/js/plu
 JS_TARGET = "assets/js/main.min.js"
 task :js => JS_TARGET
 file JS_TARGET => ["_includes/copyright.js"] + JS_FILES do |t|
-  sh Shellwords.join(%w[npx uglifyjs -c --comments /@mmistakes/ --source-map -m -o] +
+  sh Shellwords.join(%w[npx uglifyjs -c --comments /@mmistakes/ -m -o] +
     [t.name] + t.prerequisites)
 end
 

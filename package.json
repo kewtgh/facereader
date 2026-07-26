@@ -1,7 +1,7 @@
 {
   "name": "facereader",
   "private": true,
-  "version": "6.12.4",
+  "version": "6.13.0",
   "description": "FaceReader production site for enterprise observation and leadership analysis.",
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "type": "module",
   "scripts": {
     "build": "npm run site:build",
+    "leaders:test": "node assets/scripts/test-leaders-scoring.mjs",
     "leaders:validate": "node assets/scripts/validate-leaders-data.mjs",
     "leaders:audit": "node assets/scripts/audit-leaders-score-rubric.mjs",
     "i18n:validate": "node assets/scripts/validate-i18n.mjs",
@@ -31,7 +32,8 @@
     "site:build": "bundle exec ruby -EUTF-8 -S jekyll build",
     "site:sass:warnings": "node assets/scripts/check-sass-warnings.mjs",
     "site:links": "node assets/scripts/check-internal-links.mjs",
-    "site:check": "npm run leaders:validate && npm run leaders:audit && npm run i18n:validate && npm run site:sass:warnings && npm run site:links",
+    "site:html:audit": "bundle exec ruby scripts/audit_generated_html.rb",
+    "site:check": "npm run leaders:test && npm run leaders:validate && npm run leaders:audit && npm run i18n:validate && npm run actions:lint && npm run site:sass:warnings && npm run site:links && npm run site:html:audit",
     "algolia:push": "node assets/scripts/push-algolia.mjs _site/algolia-records.json",
     "algolia:protect": "node assets/scripts/protect-algolia-search-key.mjs"
   },

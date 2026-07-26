@@ -1,0 +1,258 @@
+(function () {
+  var storageKey = "facereader.uiLanguage";
+  var supported = { zh: true, en: true };
+
+  function normalizeLanguage(value) {
+    value = String(value || "").slice(0, 2).toLowerCase();
+    return supported[value] ? value : "zh";
+  }
+
+  function readStoredLanguage() {
+    try {
+      return window.localStorage.getItem(storageKey);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function storeLanguage(language) {
+    try {
+      window.localStorage.setItem(storageKey, language);
+    } catch (error) {
+      // Local storage can be unavailable in strict privacy contexts.
+    }
+  }
+
+  function textForKey(language, key) {
+    var dictionary = window.FaceReaderUiText && window.FaceReaderUiText[language];
+    return dictionary && Object.prototype.hasOwnProperty.call(dictionary, key)
+      ? dictionary[key]
+      : null;
+  }
+
+  function withSuffix(element, language, value) {
+    var suffix = element.getAttribute("data-fr-i18n-suffix-" + language);
+    if (suffix === null) suffix = element.getAttribute("data-fr-i18n-suffix") || "";
+    return value + suffix;
+  }
+
+  function setElementText(element, language) {
+    var key = element.getAttribute("data-fr-i18n-key");
+    var value = key ? textForKey(language, key) : null;
+
+    if (value === null) {
+      value = element.getAttribute("data-fr-i18n-" + language);
+    }
+
+    if (value !== null) {
+      element.textContent = withSuffix(element, language, value);
+      element.setAttribute("lang", language === "en" ? "en" : "zh-CN");
+    }
+  }
+
+  function setElementAlt(element, language) {
+    var key = element.getAttribute("data-fr-i18n-alt-key");
+    var alt = key ? textForKey(language, key) : null;
+
+    if (alt === null) {
+      alt = element.getAttribute("data-fr-i18n-alt-" + language);
+    }
+
+    if (alt !== null) element.setAttribute("alt", alt);
+  }
+
+  function setElementAriaLabel(element, language) {
+    var key = element.getAttribute("data-fr-i18n-aria-label-key");
+    var label = key ? textForKey(language, key) : null;
+
+    if (label === null) {
+      label = element.getAttribute("data-fr-i18n-aria-label-" + language);
+    }
+
+    if (label !== null) element.setAttribute("aria-label", label);
+  }
+
+  function setElementPlaceholder(element, language) {
+    var key = element.getAttribute("data-fr-i18n-placeholder-key");
+    var placeholder = key ? textForKey(language, key) : null;
+
+    if (placeholder === null) {
+      placeholder = element.getAttribute("data-fr-i18n-placeholder-" + language);
+    }
+
+    if (placeholder !== null) element.setAttribute("placeholder", placeholder);
+  }
+
+  function syncTocLabels() {
+    var tocLinks = Array.prototype.slice.call(document.querySelectorAll(".toc__menu a[href^='#']"));
+    var visibleBlock = document.querySelector("[data-fr-i18n-block]:not([hidden])");
+
+    if (visibleBlock && tocLinks.length) {
+      var visibleHeadings = Array.prototype.slice.call(visibleBlock.querySelectorAll("h2[id], h3[id]"));
+      if (visibleHeadings.length > 0) {
+        tocLinks.forEach(function (link, index) {
+          var item = link.closest("li");
+          if (index >= visibleHeadings.length) {
+            if (item) item.hidden = true;
+            link.hidden = true;
+            return;
+          }
+
+          var heading = visibleHeadings[index];
+          if (item) item.hidden = false;
+          link.hidden = false;
+          link.setAttribute("href", "#" + heading.id);
+          link.textContent = heading.textContent.trim();
+        });
+        return;
+      }
+    }
+
+    tocLinks.forEach(function (link) {
+      var href = link.getAttribute("href");
+      if (!href || href.length < 2) return;
+
+      var id = href.slice(1);
+      try {
+        id = decodeURIComponent(id);
+      } catch (error) {
+        // Keep the original id if it is not URI-encoded.
+      }
+
+      var target = document.getElementById(id);
+      if (target) link.textContent = target.textContent.trim();
+    });
+  }
+
+  function applyLanguage(language) {
+    language = normalizeLanguage(language);
+    document.documentElement.lang = language === "en" ? "en" : "zh-CN";
+    document.documentElement.setAttribute("data-fr-ui-lang", language);
+
+    document.querySelectorAll("[data-fr-i18n-key], [data-fr-i18n-zh][data-fr-i18n-en]").forEach(function (element) {
+      setElementText(element, language);
+    });
+
+    document.querySelectorAll("[data-fr-i18n-alt-key], [data-fr-i18n-alt-zh][data-fr-i18n-alt-en]").forEach(function (element) {
+      setElementAlt(element, language);
+    });
+
+    document.querySelectorAll("[data-fr-i18n-aria-label-key], [data-fr-i18n-aria-label-zh][data-fr-i18n-aria-label-en]").forEach(function (element) {
+      setElementAriaLabel(element, language);
+    });
+
+    document.querySelectorAll("[data-fr-i18n-placeholder-key], [data-fr-i18n-placeholder-zh][data-fr-i18n-placeholder-en]").forEach(function (element) {
+      setElementPlaceholder(element, language);
+    });
+
+    document.querySelectorAll("[data-fr-i18n-block]").forEach(function (element) {
+      element.hidden = element.getAttribute("data-fr-i18n-block") !== language;
+      element.setAttribute("lang", element.getAttribute("data-fr-i18n-block") === "en" ? "en" : "zh-CN");
+    });
+
+    document.querySelectorAll("[data-fr-ui-lang-option]").forEach(function (button) {
+      var isCurrent = button.getAttribute("data-fr-ui-lang-option") === language;
+      button.classList.toggle("is-current", isCurrent);
+      button.setAttribute("aria-pressed", isCurrent ? "true" : "false");
+    });
+
+    syncTocLabels();
+    window.setTimeout(function () {
+      window.dispatchEvent(new Event("resize"));
+    }, 0);
+
+    document.dispatchEvent(new CustomEvent("facereader:ui-language", {
+      detail: { language: language }
+    }));
+  }
+
+  function initialLanguage() {
+    var switcher = document.querySelector("[data-fr-ui-lang-switcher]");
+    var defaultLanguage = switcher ? switcher.getAttribute("data-fr-default-ui-lang") : document.documentElement.lang;
+    return normalizeLanguage(readStoredLanguage() || defaultLanguage);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    applyLanguage(initialLanguage());
+
+    document.querySelectorAll("[data-fr-ui-lang-option]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        var nextLanguage = normalizeLanguage(button.getAttribute("data-fr-ui-lang-option"));
+        storeLanguage(nextLanguage);
+        applyLanguage(nextLanguage);
+      });
+    });
+  });
+})();
+
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get("from") !== "leaders-scorecard") return;
+
+  function currentLanguage() {
+    return (document.documentElement.getAttribute("data-fr-ui-lang") || "zh").slice(0, 2) === "en" ? "en" : "zh";
+  }
+
+  function label() {
+    return currentLanguage() === "en" ? "Back to rating search" : "返回评级搜索";
+  }
+
+  var link = document.createElement("a");
+  link.className = "leaders-floating-back";
+  link.href = "/leaders-scorecard/#leaders-search";
+  link.textContent = label();
+  document.body.appendChild(link);
+
+  document.addEventListener("facereader:ui-language", function () {
+    link.textContent = label();
+  });
+})();
+
+(function () {
+  function currentLanguage() {
+    return (document.documentElement.getAttribute("data-fr-ui-lang") || "zh").slice(0, 2) === "en" ? "en" : "zh";
+  }
+
+  function applyNoteLanguage(note) {
+    var language = currentLanguage();
+    note.querySelectorAll("[data-fr-i18n-zh][data-fr-i18n-en]").forEach(function (element) {
+      element.textContent = element.getAttribute("data-fr-i18n-" + language);
+      element.setAttribute("lang", language === "en" ? "en" : "zh-CN");
+    });
+  }
+
+  function enhanceScoreTables() {
+    document.querySelectorAll(".page__content table.fr-score-table").forEach(function (table) {
+      if (table.closest(".fr-score-card")) return;
+
+      var card = document.createElement("div");
+      card.className = "fr-score-card";
+
+      var note = document.createElement("aside");
+      note.className = "fr-score-card__note";
+      note.innerHTML = [
+        "<div>",
+        "<h4 data-fr-i18n-zh=\"LEADERS 团队评分\" data-fr-i18n-en=\"LEADERS team rating\">LEADERS 团队评分</h4>",
+        "<p data-fr-i18n-zh=\"左侧为文章中的团队七项评分，用来呈现创始人、二三号位、岗位完整度与治理结构的组织画像。\" data-fr-i18n-en=\"The seven team dimensions summarize the founder, key executives, role coverage, and governance structure described in the article.\">左侧为文章中的团队七项评分，用来呈现创始人、二三号位、岗位完整度与治理结构的组织画像。</p>",
+        "<p data-fr-i18n-zh=\"搜索页会在此基础上叠加 Darwin 投资视角，用资本回报韧性、动态护城河和诚实信号进行复核。\" data-fr-i18n-en=\"The search page adds the Darwin investment lens to review return resilience, dynamic moats, and honest signals.\">搜索页会在此基础上叠加 Darwin 投资视角，用资本回报韧性、动态护城河和诚实信号进行复核。</p>",
+        "</div>",
+        "<a class=\"btn btn--primary\" href=\"/leaders-scorecard/#leaders-search\" data-fr-i18n-zh=\"查看 LEADERS 评分页\" data-fr-i18n-en=\"Open the LEADERS scorecard\">查看 LEADERS 评分页</a>"
+      ].join("");
+
+      applyNoteLanguage(note);
+      table.parentNode.insertBefore(card, table);
+      card.appendChild(table);
+      card.appendChild(note);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", enhanceScoreTables);
+  } else {
+    enhanceScoreTables();
+  }
+
+  document.addEventListener("facereader:ui-language", function () {
+    document.querySelectorAll(".fr-score-card__note").forEach(applyNoteLanguage);
+  });
+})();

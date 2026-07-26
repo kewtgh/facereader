@@ -29,3 +29,4 @@ codekit-config.json
 .sass-cache
 _asset_bundler_cache
 _site
+assets/js/main.min.js.map

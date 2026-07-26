@@ -3,11 +3,6 @@ layout: null
 permalink: /robots.txt
 ---
 
-User-agent: *
-
-Disallow: /docs/_pages/
-Disallow: /norobots/
-
 # robots.txt for facereader.witbacon.com
 User-agent: ClaudeBot
 Disallow: /
@@ -34,6 +29,8 @@ User-agent: DotBot
 Disallow: /
 
 User-agent: *
+Disallow: /docs/_pages/
+Disallow: /norobots/
 Disallow: /search
 Disallow: /tag/
 Disallow: /tags/

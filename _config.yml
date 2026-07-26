@@ -28,7 +28,7 @@ subtitle_i18n:
   zh: "解读人性，分析企业，洞悉社会，掌握趋势。"
   en: "Reading people, companies, society, and trends."
 name                     : &name "FaceReader-企业观察"
-description              : &description "For Profound Thinkers."
+description              : &description "从人物、组织与治理出发，提供企业管理、领导力与长期经营质量分析。"
 url                      : "https://facereader.witbacon.com" # the base hostname & protocol for your site e.g. "https://kewtgh.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "kewtgh/facereader" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -122,13 +122,13 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : # Open Graph/Twitter default site image
-og_image_alt             : # Alt text for Open Graph/Twitter default site image
+og_image                 : "/assets/img/page-header-og-image.png"
+og_image_alt             : "FaceReader企业观察"
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
+  type                   : "Organization"
+  name                   : "FaceReader企业观察"
   links: # An array of links to social media profiles
 
 # Analytics
@@ -204,7 +204,9 @@ exclude:
   - .sass-cache
   - assets/js/plugins
   - assets/js/_main.js
+  - assets/js/main.min.js.map
   - assets/js/vendor
+  - assets/scripts
   - Capfile
   - CHANGELOG
   - config

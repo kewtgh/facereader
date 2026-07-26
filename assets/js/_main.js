@@ -27,6 +27,9 @@ $(document).ready(function () {
       .toggleClass("is--hidden", isVisible)
       .attr("aria-hidden", String(isVisible));
     $searchToggle.attr("aria-expanded", String(isVisible));
+    if (isVisible) {
+      document.dispatchEvent(new CustomEvent("facereader:search-open"));
+    }
   }
 
   // Close search screen with Esc key
@@ -250,21 +253,6 @@ $(document).ready(function () {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const btn = document.getElementById("toggle-tags");
-  const wrapper = document.getElementById("tags-wrapper");
-
-  if (!btn || !wrapper) return;
-
-  btn.addEventListener("click", function () {
-    wrapper.classList.toggle("tags-collapsed");
-
-    btn.textContent = wrapper.classList.contains("tags-collapsed")
-      ? "{{ site.data.ui-text[site.locale].tags_expand }}"
-      : "{{ site.data.ui-text[site.locale].tags_collapse }}";
-  });
-});
-
 document.querySelectorAll(".tag-group-toggle").forEach(function (toggle) {
   toggle.addEventListener("click", function () {
     var list = document.getElementById(toggle.getAttribute("aria-controls"));
@@ -272,5 +260,6 @@ document.querySelectorAll(".tag-group-toggle").forEach(function (toggle) {
     var shouldOpen = list.classList.contains("hidden");
     list.classList.toggle("hidden", !shouldOpen);
     toggle.setAttribute("aria-expanded", String(shouldOpen));
+    list.setAttribute("aria-hidden", String(!shouldOpen));
   });
 });
