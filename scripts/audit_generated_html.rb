@@ -106,6 +106,49 @@ html_files.each do |file|
   end
 end
 
+# Targeted UI regressions that previously left the company database unusable
+# or made the masthead controls difficult to operate.
+company_table_file = SITE_ROOT.join("most_popular", "企业评析总表", "index.html")
+if company_table_file.file?
+  company_table_document = Nokogiri::HTML(company_table_file.read(encoding: "UTF-8"))
+  add_error(errors, company_table_file, "company table section is not unique") unless
+    company_table_document.css("#leaders-companies-table").length == 1
+  add_error(errors, company_table_file, "company table body is not unique") unless
+    company_table_document.css("#leaders-table-body").length == 1
+  add_error(errors, company_table_file, "company table module script is missing") unless
+    company_table_document.at_css(%(script[type="module"][src="/assets/js/leaders-scorecard.js"]))
+  add_error(errors, company_table_file, "company name filter is missing") unless
+    company_table_document.at_css("#leaders-table-query")
+  add_error(errors, company_table_file, "company table uses the duplicated legacy heading") if
+    company_table_document.css("h2").any? { |heading| heading.text.strip == "企业评分总表" }
+else
+  add_error(errors, company_table_file, "company table page was not generated")
+end
+
+compiled_css_file = SITE_ROOT.join("assets", "css", "main.css")
+if compiled_css_file.file?
+  compiled_css = compiled_css_file.read(encoding: "UTF-8")
+  ui_css_checks = {
+    "masthead logo ratio rule is missing" =>
+      ".greedy-nav .site-logo img{display:block;width:auto !important;height:2rem !important",
+    "collapsed menu hit-area rule is missing" =>
+      ".greedy-nav__toggle{box-sizing:border-box;flex:0 0 44px;width:44px;min-width:44px;height:44px;min-height:44px",
+    "masthead title stacking rule is missing" =>
+      ".greedy-nav .site-title{min-width:0;flex:1 1 auto;flex-direction:column",
+    "English masthead title protection is missing" =>
+      "html[lang^=en] .greedy-nav .site-title{min-width:5.25rem}",
+    "narrow article sidebar rule is missing at the large breakpoint" =>
+      ".layout--single .sidebar{width:200px",
+    "narrow article sidebar rule is missing at the x-large breakpoint" =>
+      ".layout--single .sidebar{width:240px"
+  }
+  ui_css_checks.each do |message, expected_css|
+    add_error(errors, compiled_css_file, message) unless compiled_css.include?(expected_css)
+  end
+else
+  add_error(errors, compiled_css_file, "compiled site CSS is missing")
+end
+
 [
   ["assets/scripts", "private build scripts were published"],
   ["assets/js/main.min.js.map", "JavaScript source map was published"]
