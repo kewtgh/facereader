@@ -1,7 +1,7 @@
 {
   "name": "facereader",
   "private": true,
-  "version": "6.13.2",
+  "version": "6.13.3",
   "description": "FaceReader production site for enterprise observation and leadership analysis.",
   "repository": {
     "type": "git",

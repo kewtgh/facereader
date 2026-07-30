@@ -3849,6 +3849,12 @@ article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
   align-items: baseline;
 }
 
+.tag-group-list.hidden,
+.tag-group-list[aria-hidden="true"] {
+  display: none;
+  visibility: hidden;
+}
+
 .tag-group-toggle {
   display: flex;
   width: 100%;
