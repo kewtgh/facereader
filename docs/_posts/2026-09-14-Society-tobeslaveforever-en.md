@@ -610,51 +610,131 @@ It becomes:
 
 > **Is the remaining 6.1% enough to cover the institutional costs that have not yet entered the model?**
 
-## 8. What exactly does the 1.7% education figure measure?
+## 8. Where Does the 1.7% Education Cost Come From?
 
-Chinese households spend heavily on education.
+Education is one of the easiest components of this model to miscalculate.
 
-But if we simply classified all education expenditure as institutional extraction because education is expensive, the model would be meaningless.
+Chinese households spend heavily on their children’s education, but that does not mean all education spending should be classified as institutional extraction. Ordinary tuition, books, school supplies, and voluntarily chosen educational consumption are normal costs of raising a child.
 
-Children need education in any society.
+What this model attempts to measure is narrower:
 
-Normal tuition, books, and ordinary enrichment activities are household consumption.
+> **How much additional private education spending do Chinese households bear above a reasonable baseline because of the intensity of educational competition?**
 
-So this article is not measuring:
+Start with the Chinese data.
 
-**Chinese household education expenditure.**
+Research based on CFPS household microdata finds that Chinese households with school-age children spend, on average:
 
-It is measuring:
+**17.1% of household income**
 
-> **Chinese household education expenditure minus Japanese household education expenditure.**
+on education.
 
-More precisely, Japan is used as a benchmark: a highly urbanized East Asian society with a high level of education and some cultural comparability, but with relatively lower intensity of private educational competition. The purpose is to estimate the additional private education cost borne by Chinese households because of more intense institutionally structured competition.
+Measured against total household expenditure, education accounts for approximately:
 
-Why not use South Korea?
+**7.9%.**
 
-Because South Korea is itself an extreme case of education competition.
+That 7.9% cannot simply be added to the lifecycle extraction rate. Families in every country incur some education costs when they have children in school.
 
-Using one extreme as the benchmark for another would artificially compress the estimate of China's excess education cost.
+We therefore need a benchmark.
 
-The key word here is **excess**.
+This model uses Japan.
 
-If no child received private tutoring, a household could of course choose not to buy tutoring.
+Stanford’s international comparison of the relevant research places Japanese household education spending at approximately:
 
-But if surrounding families continuously increase education spending while school selection, exam rankings, credential screening, and employment thresholds remain based on relative position, then a household that unilaterally exits the competition is not merely “saving money at no cost.”
+**1%–2% of total household expenditure.**
 
-It may directly reduce the child's future relative position.
+The excess private education spending borne by Chinese households is therefore approximately:
 
-The mechanism is straightforward:
+**7.9% − 1%–2% = 5.9%–6.9% of total household expenditure.**
 
-> **Each household spends more in order not to fall behind → all households increase spending together → the total ranking does not expand → the competitive baseline rises → spending that once looked optional gradually becomes necessary simply to maintain relative position.**
+Using the midpoint gives:
 
-That is why education-competition expenditure can have a strong element of institutional coercion even when no government agency sends parents a bill.
+**approximately 6.4%.**
 
-Using the excess of Chinese private education expenditure over the Japanese benchmark, and then spreading that excess only over the years in which a household actually incurs child-education expenses, the model uses:
+In other words, during the years in which a child is in education, for every 100 yuan of household expenditure, roughly 6.4 yuan represents education spending above the Japanese benchmark.
+
+Japan is also not an especially lenient benchmark.
+
+It is not a society without private tutoring or intense educational competition. OECD data indicate that at the lower-secondary level alone, Japanese households may spend the equivalent of approximately:
+
+**4.6%–6.5% of average annual earnings per child**
+
+on juku, or private cram schools.
+
+So the comparison is not between China and a country in which families face virtually no educational competition.
+
+Quite the opposite:
+
+> **Japan already has a mature tutoring culture and substantial competition for educational advancement. Yet Chinese households with school-age children still spend roughly 5.9%–6.9% more of total household expenditure on education.**
+
+But that 6.4% still cannot be inserted directly into the lifecycle model.
+
+The reason is important.
+
+**The 6.4% figure represents excess household expenditure during the years when children are in education. The denominator of this article, however, is the total lifecycle labor value created by both spouses over 35 working years.**
+
+A household does not bear school-age education costs in every one of those 35 years.
+
+The calculation therefore requires one further conversion:
+
+**Chinese household education expenditure: 7.9%
+− Japanese household education expenditure: 1%–2%
+= excess education expenditure during schooling years: 5.9%–6.9%
+→ apply the excess only to the years in which the household actually bears child-education costs
+→ discount those expenditures to the beginning of the household’s working lifecycle at a 2% real discount rate
+→ divide the resulting present value by the couple’s total 35-year lifecycle labor cost.**
+
+Once that adjustment is made, an annual excess education burden of roughly 5.9%–6.9% during the child-education period becomes approximately:
+
+**1.6%–1.9% of total lifecycle labor value.**
+
+This article uses the midpoint:
+
+**1.7%.**
+
+The distinction matters.
+
+**6.4% is the estimated excess spending rate during the education years.**
+
+**1.7% is the corresponding burden after those costs are discounted according to when they occur and then spread across the household’s entire 35-year lifecycle labor value.**
+
+It would therefore be incorrect to say:
+
+“Chinese households spend 6.4 percentage points more than Japanese households, so the lifecycle extraction rate rises by 6.4 percentage points.”
+
+That would implicitly assume that the household pays this excess education cost every year throughout the couple’s entire 35-year working life.
+
+The model does not make that assumption.
+
+It includes only the lifecycle-adjusted amount:
 
 **1.7 percentage points.**
 
-Therefore:
+Why should even this excess portion be treated as institutional in character?
+
+Because educational competition is fundamentally competition over relative position.
+
+When school selection, university admission, credential screening, and eventually access to desirable jobs depend heavily on where a child ranks relative to others, a household that cuts education spending is not merely choosing to buy fewer lessons.
+
+It may also be accepting a deterioration in the child’s relative competitive position.
+
+That creates a familiar escalation mechanism:
+
+> **One household spends more to avoid falling behind
+> → other households respond in the same way
+> → aggregate education spending rises
+> → the number of elite schools, selective university places, and high-quality jobs does not rise proportionally
+> → the competitive baseline moves upward
+> → spending that was once optional increasingly becomes necessary merely to preserve the same relative position.**
+
+The model therefore does not classify all education consumption as extraction.
+
+It includes only the **excess private education spending of Chinese households relative to the Japanese benchmark**, and then converts that excess into a lifecycle burden based on the years in which those costs are actually incurred.
+
+The resulting estimate is:
+
+**Additional education-system competition cost ≈ 1.7% of lifecycle labor value.**
+
+Adding this to the 93.9% already accounted for in the Shanghai model gives:
 
 **93.9% + 1.7% = 95.6%.**
 
