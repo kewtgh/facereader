@@ -30,12 +30,12 @@ toc: true
 toc_sticky: true
 locale: en-US
 translation_key: society-article-0001-2026
-last_modified_at: 2026-09-14T19:55:52-05:00
+last_modified_at: 2026-09-14T17:55:52-05:00
 ---
 
 Suppose someone told you this:
 
-> For an ordinary dual-income Shanghai household employed in the private sector, the amount extracted over its lifetime through taxes and fees, social insurance, land finance, housing finance, institutionally induced education competition, upstream monopoly, and related channels can, under the model used in this article, amount to roughly **100%** of the labor value the household creates over its working life.
+> For an ordinary dual-income Shanghai household employed in the private sector, the amount extracted over its lifetime through taxes and fees, social insurance, land finance, housing finance, institutionally induced education competition, upstream monopoly, and related channels can, under the model used in this article, exceed **100%** of the labor value the household creates over its working life.
 
 The first reaction is likely to be:
 
@@ -45,7 +45,7 @@ The numbers we normally see look nothing like this.
 
 China's personal income tax is not especially high. For a large share of ordinary salaried households, personal income tax is not even one of the most visible items in the monthly budget. And if we look at the tax-and-social-insurance measures commonly used by international institutions, China's explicit fiscal burden is nowhere near 70% or 80%, let alone 100%.
 
-So either this 100% figure is so absurd that it is not worth discussing, or the conventional idea of the “tax burden” has been missing, from the beginning, some of the largest channels through which wealth is transferred out of ordinary Chinese households.
+So either this result above 100% is so absurd that it is not worth discussing, or the conventional idea of the “tax burden” has been missing, from the beginning, some of the largest channels through which wealth is transferred out of ordinary Chinese households.
 
 I believe the latter is closer to the truth.
 
@@ -187,153 +187,455 @@ That RMB 6.10 million is the denominator of the Shanghai model.
 
 Every extraction item below is measured against that same RMB 6.10 million denominator.
 
-## 2. The first layer of extraction: how should taxes and social insurance actually be counted?
+## 2. The first layer of extraction: what is the actual net burden from social insurance and taxes?
 
-Start with the most familiar component: social insurance.
+Start with the most visible layer:
 
-There are two opposite mistakes that are easy to make here.
+taxes and social insurance.
 
-The first is to say:
+Around 2021, the combined social-insurance contribution rate borne by Shanghai employers and employees was approximately:
 
-**Whatever the government collects in social-insurance contributions should be counted in full as a household loss.**
+**27.16% + 10.5% = 37.66%.**
 
-That is clearly unreasonable.
+Applied to the couple's annual cash wages of RMB 192,022, total social-insurance contributions were approximately:
 
-Pensions are paid later. Health insurance covers part of medical expenditure. Unemployment, work-injury, and maternity insurance also provide real benefits.
+**192,022 × 37.66% ≈ RMB 72,315 per year.**
 
-The opposite error is to say:
+Over a 35-year working life, discounted at the same 2% real rate, the present value of those contributions is approximately:
 
-**All social-insurance contributions are eventually returned as benefits, so every yuan paid in is economically equivalent to a yuan received back.**
+**RMB 1.81 million.**
 
-That is equally difficult to defend.
+That is equivalent to:
 
-The principle used in this article is simple:
+**about 29.6%**
 
-> **The model does not treat “how much the government collected” as the loss. It calculates: contributions minus the effective benefits that can actually be attributed back to the household.**
+of the household's RMB 6.10 million in lifetime labor value.
 
-Start with pensions.
+If we stopped here and said that “29.6% of the household's lifetime labor value is taken away by social insurance,” that would obviously be wrong.
 
-Independent research has long placed the effective pension replacement rate for urban enterprise employees in the low-40% range, with public-sector replacement rates substantially higher. World Inequality Lab data likewise show the replacement rate for formal urban workers falling from roughly 70% in earlier periods to around 44% in more recent years.
+The household receives a pension after retirement. Health insurance pays part of its medical costs. Unemployment, work-injury, and maternity insurance also provide benefits.
 
-For an ordinary formal employee outside the public sector, this article therefore assumes:
+So this article does not equate:
 
-**Retirement-income replacement rate: 45%.**
+**“how much was collected”**
 
-Assume:
+with household loss.
 
-35 years of work;
+The relevant calculation is:
 
-20 years of retirement;
+> **Net extraction = present value of compulsory contributions and taxes − present value of effective benefits that can reasonably be attributed back to the household.**
 
-and a 2% real discount rate.
+The question therefore becomes:
 
-Under these assumptions, the lifecycle present value of pension contributions is equivalent to approximately:
+How much of that RMB 1.81 million ultimately returns to this household?
 
-**19.0% of household labor cost.**
+### Start with pension insurance
 
-The present value of the pension income eventually received is only about:
+Employer and employee pension contributions are 16% and 8% of cash wages respectively, for a combined rate of:
 
-**11.7% of household labor cost.**
+**24%.**
 
-The lifecycle net gap for pensions is therefore:
+The couple therefore contributes approximately:
 
-**19.0% − 11.7% = 7.3 percentage points.**
+**192,022 × 24% ≈ RMB 46,085 per year.**
+
+Over 35 years, the present value of pension contributions is approximately:
+
+**RMB 1.152 million.**
+
+That is equivalent to:
+
+**18.9%**
+
+of lifetime labor value.
+
+But contributions alone are not the relevant cost.
+
+The pension income actually received after retirement has to be deducted.
+
+This article does not use the higher retirement benefits available to public-sector employees, nor does it attempt to forecast the exact Shanghai pension formula 35 years into the future.
+
+Doing the latter would require simultaneous assumptions about Shanghai's future average wage, contribution index, individual-account crediting rate, retirement policy, and minimum contribution base—variables that cannot be forecast reliably over such a long horizon.
+
+Instead, the model uses a simpler and more testable parameter:
+
+**Retirement-income replacement rate for an ordinary enterprise employee: 45%.**
+
+For a private-sector worker earning RMB 96,011 per year before retirement, that implies a pension, in today's purchasing power, of approximately:
+
+**96,011 × 45% ≈ RMB 43,205 per year.**
+
+The two spouses are calculated separately.
+
+A second issue is just as important:
+
+**For how many years is the pension actually received?**
+
+It would be incorrect simply to take life expectancy at birth and subtract 60.
+
+The model has already conditioned on the worker surviving to retirement. Mortality before age 60 cannot be deducted a second time when calculating the retirement period.
+
+The relevant quantity is:
+
+**how long a person who has already reached age 60 can expect to live.**
+
+A Shanghai life table that adjusts for underreported mortality in China's population census estimates remaining life expectancy at age 60 at approximately:
+
+**21.89 years for men;**
+
+**25.65 years for women.**
+
+The model therefore calculates the pension stream for each spouse separately and discounts every payment received after age 60 back to age 25 at a 2% real discount rate.
+
+The present value of the couple's pension benefits is approximately:
+
+**RMB 810,000.**
+
+That is equivalent to:
+
+**about 13.3%**
+
+of lifetime labor value.
+
+The lifecycle net gap from pension insurance is therefore not 18.9%, but:
+
+**18.9% − 13.3% ≈ 5.6%.**
 
 In other words:
 
-> **On a lifecycle present-value basis, the household pays in the equivalent of 19.0, receives back about 11.7, and is left with a net gap of roughly 7.3 percentage points.**
+> **Over the household's working life, the present value of pension contributions is about RMB 1.15 million, while the present value of future pension benefits is about RMB 810,000. The net gap is roughly RMB 340,000, or 5.6% of lifetime labor value.**
 
-Now consider medical insurance.
+There is one factor that could push this figure higher:
 
-Employer and employee medical-insurance contributions together are roughly 11% of cash wages. Converted into the labor-cost denominator used in this article, their lifecycle present value is equivalent to approximately:
+**Shanghai's minimum social-insurance contribution base.**
 
-**8.7%.**
+In 2021, the typical worker in this model earned approximately:
 
-Under a very simple government-accounting approach, it would be easy to say that if 8.7% is collected in medical-insurance contributions, then 8.7% has also been converted into medical benefits.
+**RMB 8,001 per month.**
 
-I do not use that assumption.
+Shanghai's minimum social-insurance contribution base that year was approximately:
 
-Being enrolled in medical insurance and receiving benefits equal in value to the contributions are not the same thing.
+**RMB 5,975 per month.**
 
-CFPS household-survey evidence and research on catastrophic health expenditure show that Chinese households continue to face substantial out-of-pocket medical risk even after enrolling in basic health insurance.
+So at the beginning of the model, the floor did not bind.
 
-World Bank household-level modeling likewise finds high out-of-pocket medical expenditure in China and explicitly notes that such burdens can deter households from using medically necessary care.
+By 2026, however, Shanghai's minimum contribution base had risen above RMB 7,500 per month, bringing it much closer to the earnings of an ordinary private-sector worker.
 
-This means that looking only at how much the insurance fund spends does not tell us how much effective benefit an ordinary household actually receives.
+The real issue appears later in the career.
 
-Some medical needs are not reimbursed.
+If a worker is laid off, accepts a lower-paying job, or experiences a substantial income decline after age 40, wages may fall from RMB 8,000 per month to RMB 6,000.
 
-Some costs remain out of pocket.
+But social-insurance contributions do not necessarily fall to the same level.
 
-Some medicines and treatments fall outside reimbursement catalogues.
+If the statutory minimum contribution base at that time is RMB 8,000, contributions are still assessed on RMB 8,000.
 
-Some households delay or forgo necessary care because they cannot afford the unreimbursed share.
+In other words:
 
-So the neutral case in this model does not assume that:
+> **Wages can fall, while the social-insurance contribution base is constrained by a statutory floor that does not fall with them.**
 
-**100% of the value of medical-insurance contributions is converted into effective household medical benefits.**
+Because the real purchasing-power path of Shanghai's minimum contribution base over the next 35 years cannot be forecast reliably, this additional burden is not included in the central estimate.
 
-Instead, I assume:
+The pension net gap therefore remains:
 
-**Effective benefit-conversion rate = 75%.**
+**5.6%.**
 
-Thus:
+That is still a relatively conservative estimate.
 
-Lifecycle present value of medical-insurance contributions:
+### Now consider medical insurance
 
-**8.7%.**
+Medical insurance is more complicated than pension insurance.
 
-Effective medical benefits attributable to the household:
+Pensions are paid largely after retirement in a regular stream. Medical expenditure is not distributed evenly across a lifetime.
 
-**8.7% × 75% ≈ 6.5%.**
+It is low when people are young, rises through middle age, and becomes concentrated in old age.
 
-Net gap:
+The system also contains:
 
-**8.7% − 6.5% ≈ 2.2%.**
+deductibles;
 
-If we instead used a more pessimistic, but still not extreme, effective-return rate of 60%, the net medical gap would rise to:
+out-of-pocket thresholds;
 
-**about 3.5 percentage points.**
+reimbursement catalogues;
 
-This article does not use that higher figure.
+different payment rates across hospital tiers;
 
-It keeps the 75% neutral assumption.
+fund-payment ceilings;
 
-There is also one category that I deliberately do not quantify:
+and medicines and treatments outside the reimbursement catalogue.
 
-**special medical treatment for senior officials and other privileged groups.**
+So the reimbursement percentage written in a policy document is not the same as the share of a household's total medical expenditure that is actually paid by medical insurance.
 
-China has long had institutional and historical evidence of special medical services and unequal treatment across status groups.
+This article therefore works from actual Shanghai medical utilization and actual insurance-fund payments.
 
-But I do not currently have a sufficiently reliable national total from which to calculate the additional loss imposed on ordinary households by that allocation of medical resources.
+Start with contributions.
 
-So I leave it out.
+Around 2021, Shanghai collected medical and maternity insurance together. After separating the portion attributable to maternity insurance, the medical-insurance contribution rate used in this model is approximately:
 
-That means that, at least in the medical-insurance component, the current model is more likely to **understate the loss borne by ordinary households from privileged allocation of medical resources than to overstate it.**
+**11.5% of cash wages.**
 
-Pensions and medical insurance alone therefore produce a lifecycle net gap of:
+The couple therefore contributes approximately:
 
-**7.3% + 2.2% = 9.5%.**
+**192,022 × 11.5% ≈ RMB 22,083 per year.**
 
-We then add the net gap from other social-insurance programs, personal income tax, and the value-added tax, consumption tax, and other taxes embedded in ordinary consumption.
+Over 35 years, the present value is approximately:
 
-The model's central estimate for the combined lifecycle net burden of social insurance and taxes is therefore approximately:
+**RMB 552,000.**
 
-**14%.**
+That is equivalent to:
 
-That is:
+**about 9.0%**
 
-**RMB 6.10 million × 14% ≈ RMB 850,000.**
+of lifetime labor value.
 
-One point needs to be emphasized again:
+Now calculate the medical benefits actually received.
 
-> **The 14% figure is not the amount the government collected. It is the lifecycle net burden after deducting pensions, health-insurance benefits, and other effective benefits that can reasonably be attributed back to the household.**
+Actuarial research using Shanghai medical-insurance data provides age-specific medical-consumption weights.
 
-At this point, the result still does not look extraordinary.
+The age profile matters.
 
-A household creates RMB 6.10 million in lifetime labor value, and the net burden from explicit taxes and social insurance is about RMB 850,000.
+Medical consumption among workers aged 25–30 is only about 30% of the overall average;
 
-The factor that changes the scale of the model is the next one:
+it begins to rise materially after age 55–60;
+
+at age 65–70 it approaches twice the average;
+
+and after age 75 it can exceed three times the average.
+
+This means that a 25-year-old cannot be treated as if he or she receives the same medical-insurance benefit every year from the beginning of the working life.
+
+Medical expenditure is heavily concentrated in later life.
+
+And a medical-insurance payment made at age 80 has a much smaller present value at age 25 than the same nominal real payment made today.
+
+The model therefore uses the following procedure:
+
+> **Estimate medical-use intensity by age, anchor it to actual per-capita expenditure by Shanghai's employee medical-insurance fund, calculate the benefits received by each spouse from age 25 until death, and discount those benefits back to the start of the working life at a 2% real rate.**
+
+Because this method starts from actual fund expenditure rather than a nominal reimbursement percentage, deductibles, out-of-pocket portions, costs outside the reimbursement catalogue, payment rates, and fund ceilings are already reflected in what the fund actually paid. Deducting them again would amount to double counting.
+
+Using this method, the present value of payments from the pooled medical-insurance fund over the couple's lifetime is approximately:
+
+**RMB 218,000.**
+
+The employee medical-insurance individual account must also be included.
+
+Using the account-crediting rules at different ages and the worker's own contributions, the present value of the couple's individual-account benefits is approximately:
+
+**RMB 150,000.**
+
+Total medical-insurance benefits attributable to the household are therefore approximately:
+
+**218,000 + 150,000 = RMB 368,000.**
+
+The present value of medical-insurance contributions is about:
+
+**RMB 552,000.**
+
+The net gap is therefore approximately:
+
+**RMB 184,000.**
+
+Relative to RMB 6.10 million in lifetime labor value:
+
+**about 3.0%.**
+
+So:
+
+> **The central estimate for the lifecycle net extraction rate from medical insurance is approximately 3%.**
+
+This calculation does not assume that medical-insurance protection will become less generous in the future, nor does it separately quantify redistribution created by differences in medical treatment across status groups.
+
+Actuarial research on Shanghai has already found persistent pressure from per-capita medical expenditure growing faster than the contribution base. Even if nominal reimbursement rates do not visibly fall, the share of total medical costs actually borne by the insurance system may therefore be difficult to maintain indefinitely.
+
+The model nevertheless uses the protection level that can currently be observed.
+
+### What about unemployment, work-injury, and maternity insurance?
+
+These programs are smaller, but estimating them precisely over a 35-year life requires a large number of household-specific assumptions.
+
+We would have to estimate:
+
+how many times the household experiences unemployment;
+
+how long each unemployment spell lasts;
+
+whether unemployment benefits are actually claimed;
+
+whether either spouse suffers a work injury;
+
+how many children the household has;
+
+and how much maternity benefit is ultimately received.
+
+Those assumptions would quickly turn the model into an actuarial projection highly dependent on individual life events.
+
+So the article makes a deliberately conservative assumption in favor of the system:
+
+> **All contributions to unemployment, work-injury, and maternity insurance are assumed to be returned in benefits of equal value.**
+
+Their net extraction rate is therefore:
+
+**0%.**
+
+This does not mean that every household in reality receives back 100% of those contributions.
+
+It means that, without reliable lifecycle data, the model does not use additional assumptions to push the estimate upward.
+
+The social-insurance components that remain in the central estimate are therefore:
+
+**Pension insurance: about 5.6%;**
+
+**Medical insurance: about 3.0%.**
+
+Combined:
+
+**about 8.6%.**
+
+### Then comes personal income tax
+
+When people discuss the burden on Chinese households, personal income tax is often the first item that comes to mind.
+
+For the household in this model, however, it is small.
+
+Each worker earns:
+
+**RMB 96,011 per year.**
+
+Employee social-insurance contributions are deductible first.
+
+There is then the annual basic deduction of:
+
+**RMB 60,000.**
+
+That leaves relatively little taxable income.
+
+The household also has one child and purchases its first home in the tenth year of the working life, so for part of the lifecycle it can claim deductions related to:
+
+children's education;
+
+and interest on a first-home mortgage.
+
+Under the household timeline used in this model, the present value of personal income tax paid by the couple over 35 years is approximately:
+
+**RMB 29,000.**
+
+That is only:
+
+**about 0.5%**
+
+of lifetime labor value.
+
+So:
+
+> **The lifecycle extraction rate from personal income tax is approximately 0.5%.**
+
+This is why looking only at personal income tax severely understates the institutional burden borne by an ordinary urban household.
+
+The important taxes are not confined to the payslip.
+
+### The larger tax is embedded in consumption: value-added tax
+
+Households do not see a separate line showing how much value-added tax they pay every time they buy something.
+
+VAT is formally remitted by firms.
+
+But the economic burden is distributed through product prices, wages, and profits, and a substantial part ultimately reaches consumer prices.
+
+We therefore cannot calculate household VAT by simply multiplying:
+
+**the 13% statutory VAT rate × household consumption.**
+
+Different goods face different rates;
+
+firms receive input credits;
+
+some goods and services are taxed at lower rates or are exempt;
+
+and housing, education, and healthcare are already treated separately elsewhere in the model, so double counting has to be avoided.
+
+This article therefore uses fiscal-incidence research based on CFPS household data and input-output tables.
+
+That research estimates that the VAT ultimately borne by urban households was equivalent to approximately:
+
+**7.9% of market income**
+
+under the tax structure around 2018.
+
+China then implemented a major VAT reduction in 2019, cutting the main rates from 16% to 13% and from 10% to 9%.
+
+The model therefore further adjusts the 2018 fiscal-incidence result using the change in domestic VAT revenue relative to GDP between 2018 and 2021.
+
+After that adjustment, the VAT borne by urban households in 2021 is approximately:
+
+**6.5% of cash income.**
+
+But the denominator used in this article is not cash wages. It is full labor cost, including employer social-insurance contributions.
+
+Converting to that denominator:
+
+**6.5% ÷ 1.2716 ≈ 5.1%.**
+
+Therefore:
+
+> **The central estimate for the VAT ultimately borne by the household is approximately 5.1% of lifetime labor value.**
+
+The household fiscal-incidence research used here already excludes real estate and some durable goods when estimating VAT, which helps avoid mechanically counting the housing and land-finance components a second time.
+
+### Then add consumption tax
+
+The same fiscal-incidence research estimates that consumption tax borne by urban households is equivalent to approximately:
+
+**1.7% of market income.**
+
+After adjusting to 2021 tax levels and converting to the labor-cost denominator used in this article, the lifecycle burden from general consumption tax is approximately:
+
+**1.4%.**
+
+This component is driven mainly by items such as tobacco, alcohol, and fuel.
+
+That means that the later 0.6-percentage-point “incremental cost of typical gasoline transportation” must be defined only as the gasoline-vehicle burden above what is already captured in this general consumption-tax estimate.
+
+The full fuel excise burden cannot be counted a second time.
+
+### Recalculate the first layer: approximately 15.6%
+
+The components are now:
+
+| Item | Share of lifetime labor value |
+| --- | ---: |
+| Net pension-insurance gap | **5.6%** |
+| Net medical-insurance gap | **3.0%** |
+| Net unemployment/work-injury/maternity gap | **0%** |
+| Personal income tax | **0.5%** |
+| VAT incidence | **5.1%** |
+| General consumption tax | **1.4%** |
+| **Total** | **15.6%** |
+
+So, after recalculation:
+
+> **For an ordinary dual-income Shanghai private-sector household, the central estimate for the first layer of institutional extraction—net social-insurance gaps, personal income tax, VAT, and consumption tax—is approximately 15.6% of lifetime labor value.**
+
+In monetary terms:
+
+**RMB 6.10 million × 15.6% ≈ RMB 950,000.**
+
+In other words:
+
+> **Of the roughly RMB 6.10 million in lifetime labor value created by this household, approximately RMB 950,000 is absorbed by the net burden of social insurance and the major taxes counted here.**
+
+The 15.6% estimate still does not include any additional burden that could arise if Shanghai's future minimum social-insurance contribution base exceeds a worker's actual wage. It assigns zero net extraction to unemployment, work-injury, and maternity insurance, and it does not separately quantify redistribution created by differences in pension and medical treatment across status groups.
+
+At this point:
+
+**Lifetime household labor value: approximately RMB 6.10 million.**
+
+**Net extraction through taxes and social insurance: approximately RMB 950,000.**
+
+**Lifecycle Comprehensive Extraction Rate so far: approximately 15.6%.**
+
+What changes the scale of the model is not this 15.6%.
+
+It is the next layer:
 
 **land.**
 
@@ -493,11 +795,11 @@ In other words:
 
 > **The land and real-estate fiscal chain embedded in a single average Shanghai commodity home is equivalent to about 49% of the lifetime labor value created by this ordinary dual-income household.**
 
-Now combine that with the 14% net tax-and-social-insurance burden:
+Now combine that with the 15.6% net tax-and-social-insurance burden:
 
 Taxes and net social-insurance burden:
 
-**14.0%.**
+**15.6%.**
 
 Land and real-estate fiscal chain:
 
@@ -505,7 +807,7 @@ Land and real-estate fiscal chain:
 
 The total is already:
 
-**63.1%.**
+**64.7%.**
 
 And we have not yet counted the mortgage.
 
@@ -581,20 +883,20 @@ Mortgage interest in this model is therefore not treated as an isolated market p
 
 It is the second-stage cost created when the first institutional cost is transmitted through housing finance into the household's lifetime income stream.
 
-## 7. With only three components, the total already reaches 93.9%
+## 7. With only three components, the total already reaches 95.5%
 
 At this point, we have counted only three broad categories:
 
 | Item | Share of lifetime labor value |
 | --- | ---: |
-| Net burden of social insurance, personal income tax, and consumption taxes | **14.0%** |
+| Net burden of social insurance, personal income tax, and consumption taxes | **15.6%** |
 | Land and real-estate fiscal chain | **49.1%** |
 | Total mortgage interest | **30.8%** |
-| **Total** | **93.9%** |
+| **Total** | **95.5%** |
 
 In other words:
 
-> **Once we count only explicit taxes and the net social-insurance gap, the land and real-estate fiscal chain, and the financing cost created by housing leverage, roughly 94% of the lifetime labor value of an ordinary Shanghai dual-income household has already entered these systems.**
+> **Once we count only explicit taxes and the net social-insurance gap, the land and real-estate fiscal chain, and the financing cost created by housing leverage, roughly 95% of the lifetime labor value of an ordinary Shanghai dual-income household has already entered these systems.**
 
 We still have not counted education competition.
 
@@ -608,19 +910,19 @@ So the real question is no longer:
 
 It becomes:
 
-> **Is the remaining 6.1% enough to cover the institutional costs that have not yet entered the model?**
+> **Is the remaining 4.5% enough to cover the institutional costs that have not yet entered the model?**
 
-## 8. Where Does the 1.7% Education Cost Come From?
+## 8. Where does the 1.7% education cost come from?
 
-Education is one of the easiest components of this model to miscalculate.
+Education is one of the easiest components of the model to miscalculate.
 
-Chinese households spend heavily on their children’s education, but that does not mean all education spending should be classified as institutional extraction. Ordinary tuition, books, school supplies, and voluntarily chosen educational consumption are normal costs of raising a child.
+Chinese households spend heavily on their children's education, but that does not mean all education spending should be classified as institutional extraction. Ordinary tuition, books, school supplies, and voluntarily chosen educational consumption are normal costs of raising a child.
 
 What this model attempts to measure is narrower:
 
-> **How much additional private education spending do Chinese households bear above a reasonable baseline because of the intensity of educational competition?**
+> **How much additional private education spending do Chinese households bear above a normal education-spending benchmark because of the greater intensity of educational competition?**
 
-Start with the Chinese data.
+Start with China.
 
 Research based on CFPS household microdata finds that Chinese households with school-age children spend, on average:
 
@@ -632,13 +934,13 @@ Measured against total household expenditure, education accounts for approximate
 
 **7.9%.**
 
-That 7.9% cannot simply be added to the lifecycle extraction rate. Families in every country incur some education costs when they have children in school.
+That 7.9% cannot simply be added to the Lifecycle Comprehensive Extraction Rate. Families in every country incur some education costs when they have children in school.
 
-We therefore need a benchmark.
+So we need a benchmark.
 
-This model uses Japan.
+This article uses Japan.
 
-Stanford’s international comparison of the relevant research places Japanese household education spending at approximately:
+Stanford's international comparison of the relevant research places Japanese household education spending at approximately:
 
 **1%–2% of total household expenditure.**
 
@@ -648,19 +950,19 @@ The excess private education spending borne by Chinese households is therefore a
 
 Using the midpoint gives:
 
-**approximately 6.4%.**
+**about 6.4%.**
 
-In other words, during the years in which a child is in education, for every 100 yuan of household expenditure, roughly 6.4 yuan represents education spending above the Japanese benchmark.
+In other words, during the years when a child is in education, for every RMB 100 of household expenditure, roughly RMB 6.4 represents education spending above the Japanese benchmark.
 
-Japan is also not an especially lenient benchmark.
+Japan is also a demanding benchmark rather than a low-competition one.
 
-It is not a society without private tutoring or intense educational competition. OECD data indicate that at the lower-secondary level alone, Japanese households may spend the equivalent of approximately:
+It is not a society without private tutoring or significant educational competition. OECD data indicate that, at the lower-secondary level alone, Japanese households can spend the equivalent of approximately:
 
 **4.6%–6.5% of average annual earnings per child**
 
 on juku, or private cram schools.
 
-So the comparison is not between China and a country in which families face virtually no educational competition.
+So the comparison is not between China and a society in which families face virtually no educational competition.
 
 Quite the opposite:
 
@@ -668,20 +970,20 @@ Quite the opposite:
 
 But that 6.4% still cannot be inserted directly into the lifecycle model.
 
-The reason is important.
+The reason is simple.
 
-**The 6.4% figure represents excess household expenditure during the years when children are in education. The denominator of this article, however, is the total lifecycle labor value created by both spouses over 35 working years.**
+**The 6.4% figure represents excess household expenditure during the years when children are in education, while the denominator in this article is the total labor value created by both spouses over 35 working years.**
 
 A household does not bear school-age education costs in every one of those 35 years.
 
 The calculation therefore requires one further conversion:
 
-**Chinese household education expenditure: 7.9%
-− Japanese household education expenditure: 1%–2%
-= excess education expenditure during schooling years: 5.9%–6.9%
-→ apply the excess only to the years in which the household actually bears child-education costs
-→ discount those expenditures to the beginning of the household’s working lifecycle at a 2% real discount rate
-→ divide the resulting present value by the couple’s total 35-year lifecycle labor cost.**
+**Chinese household education expenditure: 7.9%  
+− Japanese household education expenditure: 1%–2%  
+= excess education expenditure during the schooling years: 5.9%–6.9%  
+→ apply the excess only to the years in which the household actually bears child-education costs  
+→ discount those expenditures to the beginning of the working lifecycle at a 2% real discount rate  
+→ divide the resulting present value by the couple's total 35-year lifecycle labor cost.**
 
 Once that adjustment is made, an annual excess education burden of roughly 5.9%–6.9% during the child-education period becomes approximately:
 
@@ -693,15 +995,15 @@ This article uses the midpoint:
 
 The distinction matters.
 
-**6.4% is the estimated excess spending rate during the education years.**
+**6.4% is the estimated annual excess spending rate during the education years.**
 
-**1.7% is the corresponding burden after those costs are discounted according to when they occur and then spread across the household’s entire 35-year lifecycle labor value.**
+**1.7% is the corresponding burden after those costs are discounted according to when they occur and then placed against the household's entire 35-year lifecycle labor value.**
 
 It would therefore be incorrect to say:
 
-“Chinese households spend 6.4 percentage points more than Japanese households, so the lifecycle extraction rate rises by 6.4 percentage points.”
+“Chinese households spend 6.4 percentage points more than Japanese households, so the Lifecycle Comprehensive Extraction Rate rises by 6.4 percentage points.”
 
-That would implicitly assume that the household pays this excess education cost every year throughout the couple’s entire 35-year working life.
+That would implicitly assume that the household pays this excess education cost every year throughout the couple's entire 35-year working life.
 
 The model does not make that assumption.
 
@@ -713,17 +1015,17 @@ Why should even this excess portion be treated as institutional in character?
 
 Because educational competition is fundamentally competition over relative position.
 
-When school selection, university admission, credential screening, and eventually access to desirable jobs depend heavily on where a child ranks relative to others, a household that cuts education spending is not merely choosing to buy fewer lessons.
+When school selection, university admission, credential screening, and later access to desirable jobs depend heavily on where a child ranks relative to others, a household that reduces education spending is not merely choosing to buy fewer lessons.
 
-It may also be accepting a deterioration in the child’s relative competitive position.
+It may also be accepting a deterioration in the child's relative competitive position.
 
 That creates a familiar escalation mechanism:
 
-> **One household spends more to avoid falling behind
-> → other households respond in the same way
-> → aggregate education spending rises
-> → the number of elite schools, selective university places, and high-quality jobs does not rise proportionally
-> → the competitive baseline moves upward
+> **One household spends more to avoid falling behind  
+> → other households respond in the same way  
+> → aggregate education spending rises  
+> → the number of elite schools, selective university places, and high-quality jobs does not rise proportionally  
+> → the competitive baseline moves upward  
 > → spending that was once optional increasingly becomes necessary merely to preserve the same relative position.**
 
 The model therefore does not classify all education consumption as extraction.
@@ -734,9 +1036,9 @@ The resulting estimate is:
 
 **Additional education-system competition cost ≈ 1.7% of lifecycle labor value.**
 
-Adding this to the 93.9% already accounted for in the Shanghai model gives:
+The first three components of the Shanghai model have already reached 95.5%, so adding education produces:
 
-**93.9% + 1.7% = 95.6%.**
+**95.5% + 1.7% = 97.2%.**
 
 ## 9. Upstream monopoly: households do not need to pay a firm directly for the cost to reach them
 
@@ -804,9 +1106,9 @@ It also keeps a sensitivity range of:
 
 Therefore:
 
-**95.6% + 4.0% = 99.6%.**
+**97.2% + 4.0% = 101.2%.**
 
-At this point, only 0.4 percentage points remain.
+At this point, the central estimate is already 1.2 percentage points above 100%.
 
 ## 10. The final 0.6 percentage points come from a deliberately conservative gasoline-transport increment
 
@@ -826,23 +1128,21 @@ The full Shanghai calculation is therefore:
 
 | Item | Share of lifetime labor value |
 | --- | ---: |
-| Net burden of social insurance, personal income tax, and consumption taxes | **14.0%** |
+| Net burden of social insurance, personal income tax, and consumption taxes | **15.6%** |
 | Land and real-estate fiscal chain | **49.1%** |
 | Total mortgage interest | **30.8%** |
 | Excess education-competition cost | **1.7%** |
 | Upstream SOE monopoly/resource-misallocation cost | **4.0%** |
 | Incremental cost of typical gasoline transportation | **0.6%** |
-| **Total** | **100.2%** |
+| **Total** | **101.8%** |
 
 So under the model's central assumptions:
 
-> **The Lifecycle Comprehensive Extraction Rate for the typical Shanghai household modeled here is about 100%.**
+> **The Lifecycle Comprehensive Extraction Rate for the typical Shanghai household modeled here is about 102%.**
 
 The direct sum is:
 
-**100.2%.**
-
-The 0.2 percentage point itself obviously has no statistical significance.
+**101.8%.**
 
 The model is not precise enough to justify a number to the nearest one-tenth of one percentage point.
 
@@ -934,7 +1234,7 @@ For a specific household, that is of course possible.
 
 A renter does not directly incur the down payment and mortgage on that particular home.
 
-So the Shanghai 100% scenario in this article is explicitly defined as:
+So the Shanghai scenario in this article is explicitly defined as:
 
 > **Two ordinary private-sector workers who buy an average Shanghai commodity home during the high-price period, finance 70% of the purchase with debt, work for 35 years, and raise one child.**
 
@@ -988,7 +1288,7 @@ It is an upstream institutional cost capable of propagating through the wider ur
 
 ## 13. If Shanghai is too extreme, what happens in Nanjing?
 
-Once the Shanghai figure reaches 100%, a very reasonable objection is:
+Once the Shanghai figure exceeds 100%, a very reasonable objection is:
 
 > Shanghai's housing market is abnormal. Using Shanghai to say something about Chinese urban households more generally is not representative.
 
@@ -1138,82 +1438,372 @@ But one important fact remains unchanged:
 
 > **The land-and-housing-finance system alone still consumes the equivalent of roughly half of the lifetime labor value of an ordinary household.**
 
-## 15. Put the other institutional costs back in, and Nanjing still reaches about 71%
+## 15. Put the other institutional costs back in, and Nanjing still reaches about 75%
 
-Now apply the same remaining components used in the Shanghai model.
+The two housing-related components in Nanjing are already:
 
-Net taxes and social-insurance burden:
+Land and real-estate fiscal chain:
 
-**about 14.0%.**
+**28.9%.**
 
-Therefore:
+Mortgage interest:
 
-**50.9% + 14.0% = 64.9%.**
+**22.0%.**
 
-Excess education-competition cost:
+Combined:
 
-**the excess of Chinese household education expenditure over the Japanese benchmark, equal to about 1.7% over the full lifecycle.**
+**50.9%.**
 
-That raises the figure to:
+Now put taxes and social insurance back into the model.
 
-**66.6%.**
+We should not simply copy Shanghai's 15.6% figure.
 
-Central estimate for upstream SOE monopoly and resource misallocation:
+Although the broad pension and tax systems are similar, Nanjing has different wages, retirement life expectancy, medical-insurance contributions, and medical expenditure. The Nanjing calculation therefore uses the same principle but its own parameters:
 
-**4.0%.**
+> **Present value of compulsory contributions and taxes − present value of pension, medical, and other benefits that can actually be attributed back to the household.**
 
-That raises the figure to:
+### Pension insurance: a net gap of about 6.1%
 
-**70.6%.**
+Around 2021, Nanjing's enterprise pension-insurance contribution rate was 16% for employers and 8% for employees, for a combined rate of:
 
-Incremental cost of typical gasoline transportation:
+**24%.**
 
-**about 0.8%.**
+The two private-sector workers in the Nanjing model earn combined annual cash wages of:
 
-The final central estimate becomes:
+**RMB 151,676.**
 
-**71.4%.**
+Annual pension contributions are therefore approximately:
 
-The complete Nanjing model is:
+**151,676 × 24% ≈ RMB 36,402.**
+
+Over a 35-year working life, discounted at 2%, the present value of those contributions is approximately:
+
+**RMB 910,000.**
+
+The household's lifetime labor value is about RMB 4.87 million, so pension contributions are equivalent to:
+
+**910,000 ÷ 4.87 million ≈ 18.7%.**
+
+The benefit side uses the same conservative assumption as Shanghai:
+
+**a 45% retirement-income replacement rate for an ordinary enterprise employee.**
+
+For a worker earning RMB 75,838 per year, that implies annual pension income, in today's purchasing power, of approximately:
+
+**75,838 × 45% ≈ RMB 34,127.**
+
+The retirement period is based on remaining life expectancy at age 60 in Nanjing.
+
+A 2023 life-table study for Nanjing estimates remaining life expectancy at age 60 at approximately:
+
+**20.61 years for men;**
+
+**24.63 years for women.**
+
+Using Nanjing-specific life expectancy rather than a national figure increases the value of pension benefits and therefore reduces the net extraction estimate.
+
+Calculating the spouses separately over 20.61 and 24.63 years, and discounting the post-retirement pension stream back to age 25, gives a combined present value of approximately:
+
+**RMB 615,000.**
+
+That is equivalent to:
+
+**615,000 ÷ 4.87 million ≈ 12.6%.**
+
+The lifecycle net pension gap in Nanjing is therefore approximately:
+
+**18.7% − 12.6% = 6.1%.**
+
+So:
+
+> **The lifecycle net extraction rate from pension insurance is approximately 6.1%.**
+
+As in Shanghai, this calculation does not assume that the future minimum social-insurance contribution base will rise above the worker's actual wage. If wages fall later in the career while the statutory contribution floor begins to bind, the present value of contributions would rise further.
+
+### Medical insurance: a net gap of about 5.2%
+
+Nanjing medical insurance has to be calculated separately.
+
+The employee basic medical-insurance system has long used a 9% employer contribution and a 2% employee contribution, for a combined rate of:
+
+**11%.**
+
+Applied to the couple's annual cash wages of RMB 151,676:
+
+**151,676 × 11% ≈ RMB 16,684 per year.**
+
+Over 35 years, the present value of medical-insurance contributions is approximately:
+
+**RMB 417,000.**
+
+That is equivalent to:
+
+**about 8.6%**
+
+of the household's RMB 4.87 million in lifetime labor value.
+
+But contributions are not the final cost.
+
+We still have to deduct the medical expenses actually paid on the household's behalf by the insurance system.
+
+Nanjing provides a useful set of data for doing this.
+
+Research on Nanjing's employee medical-insurance system finds that average annual medical expenditure for elderly participants is approximately:
+
+**RMB 6,382.**
+
+That is about:
+
+**4.72 times**
+
+the expenditure of other age groups.
+
+This implies average annual medical expenditure for non-elderly participants of only about:
+
+**6,382 ÷ 4.72 ≈ RMB 1,352.**
+
+The age difference matters.
+
+It again shows why the average medical spending of all insured participants cannot simply be assigned to a 25-year-old from the beginning of the working life.
+
+Medical benefits are heavily concentrated in old age.
+
+A younger participant uses only a little over RMB 1,000 in medical resources per year on average, while usage rises several-fold after retirement.
+
+In 2020, total medical expenditure by Nanjing employee-medical-insurance participants was approximately:
+
+**RMB 25.272 billion.**
+
+Employee medical-insurance fund expenditure in the same period was approximately:
+
+**RMB 22.341 billion.**
+
+The ratio was therefore:
+
+**22.341 ÷ 25.272 ≈ 88.4%.**
+
+Fund expenditure here includes both pooled-fund and individual-account payments, so from the household lifecycle perspective it can be treated as medical-insurance resources flowing back to insured participants.
+
+To avoid understating benefits, the model applies that 88.4% share to the observed medical expenditure.
+
+For a non-elderly participant, annual medical-insurance benefits are therefore approximately:
+
+**1,352 × 88.4% ≈ RMB 1,195.**
+
+For an elderly participant:
+
+**6,382 × 88.4% ≈ RMB 5,642.**
+
+The lifecycle calculation then assumes:
+
+both spouses begin working at age 25;
+
+they work until age 60;
+
+medical use during the working years follows the non-elderly amount;
+
+after retirement, elderly medical use continues for 20.61 years for the man and 24.63 years for the woman;
+
+and all medical-insurance benefits are discounted back to age 25 at a 2% real rate.
+
+The resulting present value of medical-insurance benefits over the couple's lifetime is approximately:
+
+**RMB 161,000.**
+
+That is equivalent to:
+
+**about 3.3%**
+
+of lifetime labor value.
+
+The present value of contributions is approximately:
+
+**RMB 417,000, or 8.6%.**
+
+The lifecycle net gap is therefore approximately:
+
+**8.6% − 3.3% = 5.2%.**
+
+So:
+
+> **The lifecycle net extraction rate from medical insurance is approximately 5.2%.**
+
+This figure is substantially higher than Shanghai's, but that does not by itself mean that Nanjing's medical-insurance system is necessarily “worse.”
+
+The main reason is the timing structure of the lifecycle.
+
+Contributions begin at age 25, while a large share of medical benefits is concentrated decades later. Even if the system pays substantial medical costs in old age, a RMB 5,000 benefit received many decades later has a much lower present value at age 25 than an equal amount contributed near the beginning of the career.
+
+The 88.4% fund-expenditure-to-medical-expenditure ratio is also a relatively favorable assumption for the system, because it treats both pooled-fund and individual-account payments as benefits returned to the household.
+
+### Unemployment, work-injury, and maternity insurance remain at zero net extraction
+
+As in the Shanghai model, this article does not attempt to forecast how many times the household becomes unemployed over 35 years, whether either spouse suffers a work injury, or exactly how much maternity benefit is received.
+
+In 2021, the unemployment-insurance contribution rate in Nanjing was 0.5% for employers and 0.5% for employees, while work-injury insurance was paid by employers according to industry risk.
+
+To avoid pushing the estimate upward through life-event assumptions that cannot be verified, the model again assumes:
+
+> **All unemployment, work-injury, and maternity contributions are ultimately returned in benefits of equal value.**
+
+Their net extraction rate is therefore:
+
+**0%.**
+
+The net social-insurance gap in Nanjing is therefore:
+
+**6.1% for pensions + 5.2% for medical insurance ≈ 11.3%.**
+
+### Personal income tax is even smaller than in Shanghai: about 0.1%
+
+The typical private-sector worker in the Nanjing model earns only:
+
+**RMB 75,838 per year.**
+
+After deducting employee pension, medical, and unemployment contributions and the RMB 60,000 annual basic deduction, very little taxable income remains.
+
+Even before applying deductions for children's education and first-home mortgage interest, annual personal income tax per worker is only a few hundred yuan.
+
+Using the same household timeline as in Shanghai—no mortgage-interest deduction early in the career, followed by a period with a home purchase and one child—the present value of the couple's personal income tax over 35 years is approximately:
+
+**RMB 4,000.**
+
+That is equivalent to only:
+
+**about 0.1%**
+
+of the household's RMB 4.87 million in lifetime labor value.
+
+So in Nanjing:
+
+> **Personal income tax is almost irrelevant to the overall burden.**
+
+### The larger taxes are still on the consumption side
+
+VAT and consumption tax use the same household fiscal-incidence method applied in the Shanghai model.
+
+The underlying research uses CFPS household data and input-output tables to estimate the VAT ultimately borne by households, and the result is then adjusted for the post-2019 VAT reduction and 2021 tax levels.
+
+The relationship between cash wages and the labor-cost denominator is slightly different in Nanjing, but the resulting adjustment is small.
+
+The VAT ultimately borne by an ordinary Nanjing household is approximately:
+
+**5.1% of lifetime labor value.**
+
+General consumption tax contributes another:
+
+**1.4%.**
+
+The recalculated first-layer burden in Nanjing is therefore:
 
 | Item | Share of lifetime labor value |
 | --- | ---: |
-| Net burden of social insurance and taxes | **14.0%** |
+| Net pension-insurance gap | **6.1%** |
+| Net medical-insurance gap | **5.2%** |
+| Net unemployment/work-injury/maternity gap | **0%** |
+| Personal income tax | **0.1%** |
+| VAT incidence | **5.1%** |
+| General consumption tax | **1.4%** |
+| **Total** | **17.9%** |
+
+In other words:
+
+> **For an ordinary dual-income Nanjing household, the net social-insurance gap and major taxes alone are equivalent to approximately 17.9% of lifetime labor value.**
+
+In monetary terms:
+
+**RMB 4.87 million × 17.9% ≈ RMB 870,000.**
+
+This is actually higher than Shanghai's 15.6%.
+
+That is not contradictory.
+
+Shanghai wages are higher, so the absolute value of pension and medical benefits is also higher. Nanjing wages are lower and personal income tax is smaller, but social-insurance contributions are still paid as a fixed share of wages over a long career, while pension benefits—and especially medical benefits—are concentrated decades later.
+
+On a lifecycle present-value basis, the net social-insurance gap for an ordinary Nanjing worker can therefore be larger.
+
+### Recalculate the complete Nanjing model
+
+The two housing-related channels already account for:
+
+**50.9%.**
+
+Add the net burden from social insurance and taxes:
+
+**50.9% + 17.9% = 68.8%.**
+
+Add the excess education-competition cost:
+
+**1.7%.**
+
+That gives:
+
+**70.5%.**
+
+Add the central estimate for upstream SOE monopoly and resource misallocation:
+
+**4.0%.**
+
+That gives:
+
+**74.5%.**
+
+Finally add the incremental cost of typical gasoline transportation:
+
+**0.8%.**
+
+The final result is:
+
+**75.3%.**
+
+The complete Nanjing model is therefore:
+
+| Item | Share of lifetime labor value |
+| --- | ---: |
+| Net burden of social insurance and taxes | **17.9%** |
 | Land and real-estate fiscal chain | **28.9%** |
 | Total mortgage interest | **22.0%** |
 | Excess education-competition cost | **1.7%** |
 | Upstream SOE monopoly/resource-misallocation cost | **4.0%** |
 | Incremental cost of typical gasoline transportation | **0.8%** |
-| **Total** | **71.4%** |
+| **Total** | **75.3%** |
 
-We now have two cities at very different levels:
+The two cities now look like this:
 
-> **Shanghai: about 100%**  
-> **Nanjing: about 71%**
+> **Shanghai: about 102%**  
+> **Nanjing: about 75%**
 
-Shanghai is obviously extreme.
+Shanghai remains an extreme case.
 
-But Nanjing can no longer be dismissed with a single sentence such as:
+But the significance of Nanjing is now clearer.
 
-“That's just what happens in Beijing, Shanghai, Shenzhen, and the other first-tier cities.”
+What falls most sharply outside Shanghai is housing.
 
-Once we leave Shanghai, the number does not collapse back to 20%.
+The land-finance and housing-finance components together are close to 80% in Shanghai, but fall to:
 
-It does not even fall to 40%.
+**50.9%**
 
-It remains above 70%.
+in Nanjing.
 
-This means we are probably not looking at a simple “Shanghai housing problem.”
+The other institutional costs do not disappear with them.
 
-The larger question is:
+The result is that even in a strong second-tier city such as Nanjing, the Lifecycle Comprehensive Extraction Rate for an ordinary dual-income private-sector household still reaches:
 
-**What happens to the lifetime flow of wealth of ordinary Chinese urban households when land finance, housing finance, compulsory social insurance, education competition, and upstream administrative monopoly are layered on top of one another?**
+**roughly three-quarters of lifetime labor value.**
 
-## 16. And even this 100% is still an extremely conservative figure
+That is difficult to dismiss as:
+
+“Shanghai housing is simply too expensive.”
+
+The more important question becomes:
+
+> **Why, after leaving China's most expensive first-tier housing markets, does an ordinary urban household still bear institutional costs equivalent to roughly three-quarters of the labor value it creates over a lifetime?**
+
+## 16. And even this 101.8% is still an extremely conservative figure
 
 This point matters.
 
-When people see 100%, their instinctive reaction is often:
+When people see 101.8%, their instinctive reaction is often:
 
 Surely the model has already thrown in every cost it can find.
 
@@ -1257,21 +1847,21 @@ But if the data are not reliable enough, or if an item cannot be separated clean
 
 So:
 
-> **100% is not an aggressive upper bound obtained by stuffing every imaginable cost into the model.**
+> **101.8% is not an aggressive upper bound obtained by stuffing every imaginable cost into the model.**
 
 It is a central estimate produced after many known but difficult-to-quantify items have been deliberately excluded.
 
-That is why the most troubling feature of the 100% figure is not that it looks too high.
+That is why the most troubling feature of this result is not that it looks too high.
 
 It is this:
 
-**The model makes numerous conservative choices, and the result still reaches 100%.**
+**The model makes numerous conservative choices, and the result still exceeds 100%.**
 
 ## 17. The question we should be asking is no longer “How high is China's tax burden?”
 
 Return now to the question at the beginning.
 
-Why can conventional statistics create the impression of a burden of only around 20%, while this model reaches 100% in Shanghai and 71% in Nanjing?
+Why can conventional statistics create the impression of a burden of only around 20%, while this model reaches 101.8% in Shanghai and about 75% in Nanjing?
 
 Because conventional tax-burden statistics capture only the most visible and easily recorded layer of the broader wealth-transfer structure.
 
@@ -1319,21 +1909,21 @@ There is no contradiction.
 
 The largest channels of wealth extraction may never have been located mainly in the personal-income-tax line.
 
-## 18. What does 100% actually mean?
+## 18. What does 101.8% actually mean?
 
-The most important meaning of the Shanghai model's 100.2% result is not:
+The most important meaning of the Shanghai model's 101.8% result is not:
 
 “Shanghai households are left with nothing.”
 
 Nor is it:
 
-“The Shanghai government directly takes 100% of household wages.”
+“The Shanghai government directly takes 101.8% of household wages.”
 
 Both interpretations are wrong.
 
 What the result means is:
 
-> **For the specific Shanghai household defined in this article—an ordinary dual-income private-sector household that buys an average commodity home with typical leverage—the identifiable direct levies and institutionally generated indirect extraction, when converted into the same lifecycle labor-value denominator, reach a central estimate roughly equal to the entire labor value created by that generation.**
+> **For the specific Shanghai household defined in this article—an ordinary dual-income private-sector household that buys an average commodity home with typical leverage—the identifiable direct levies and institutionally generated indirect extraction, when converted into the same lifecycle labor-value denominator, reach a central estimate slightly greater than the entire labor value created by that generation.**
 
 And once a one-generation model can reach 100%, a larger question appears immediately:
 
