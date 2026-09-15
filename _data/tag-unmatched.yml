@@ -27,11 +27,15 @@ unmatched:
     count: 1
   - tag: "变故"
     count: 1
+  - tag: "财富分配"
+    count: 1
   - tag: "沉默的大多数"
     count: 1
   - tag: "打破规则"
     count: 1
   - tag: "大快人心"
+    count: 1
+  - tag: "代际财富"
     count: 1
   - tag: "倒台"
     count: 1
@@ -55,6 +59,8 @@ unmatched:
     count: 1
   - tag: "规章"
     count: 1
+  - tag: "国企垄断"
+    count: 1
   - tag: "火药桶"
     count: 1
   - tag: "简单问题"
@@ -62,6 +68,10 @@ unmatched:
   - tag: "简单系统"
     count: 1
   - tag: "经营"
+    count: 1
+  - tag: "居民财富"
+    count: 1
+  - tag: "居民消费"
     count: 1
   - tag: "决策逻辑"
     count: 1
@@ -85,6 +95,8 @@ unmatched:
     count: 1
   - tag: "纳什均衡"
     count: 1
+  - tag: "南京房价"
+    count: 1
   - tag: "怒其不争"
     count: 1
   - tag: "平头哥"
@@ -93,9 +105,13 @@ unmatched:
     count: 1
   - tag: "齐奥塞斯库"
     count: 1
+  - tag: "上海房价"
+    count: 1
   - tag: "上进"
     count: 1
   - tag: "生命"
+    count: 1
+  - tag: "生命周期综合汲取率"
     count: 1
   - tag: "失败者标签"
     count: 1
@@ -133,6 +149,10 @@ unmatched:
     count: 1
   - tag: "兴趣"
     count: 1
+  - tag: "养老金"
+    count: 1
+  - tag: "医疗保险"
+    count: 1
   - tag: "以德报怨"
     count: 1
   - tag: "勇敢的心"
@@ -143,23 +163,47 @@ unmatched:
     count: 1
   - tag: "制度"
     count: 1
+  - tag: "中国经济"
+    count: 1
   - tag: "自由"
     count: 1
   - tag: "authoritarianism"
+    count: 1
+  - tag: "Chinese Economy"
     count: 1
   - tag: "collective action"
     count: 1
   - tag: "common knowledge"
     count: 1
+  - tag: "Education Costs"
+    count: 1
   - tag: "face"
     count: 1
   - tag: "game theory"
     count: 1
+  - tag: "Health Insurance"
+    count: 1
+  - tag: "Household Balance Sheet"
+    count: 1
+  - tag: "Household Consumption"
+    count: 1
+  - tag: "Household Wealth"
+    count: 1
+  - tag: "Intergenerational Wealth"
+    count: 1
+  - tag: "Land Finance"
+    count: 1
   - tag: "Nash equilibrium"
+    count: 1
+  - tag: "Pensions"
     count: 1
   - tag: "regime collapse"
     count: 1
   - tag: "Romania"
     count: 1
   - tag: "silent majority"
+    count: 1
+  - tag: "SOE Monopoly"
+    count: 1
+  - tag: "Wealth Distribution"
     count: 1
