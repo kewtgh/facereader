@@ -3360,8 +3360,6 @@ html[lang^="en"] .page__hero--overlay .page__title {
 
 /* 英文文章采用拉丁字体、较紧凑行距和无首行缩进。 */
 article.page[lang^="en"] .page__content {
-  max-width: 72ch;
-  margin-inline: auto;
   font-family: $sans-serif-latin;
   line-height: 1.68;
 }
