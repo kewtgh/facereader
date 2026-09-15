@@ -1,6 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 只在该类页面执行
   const body = document.body;
+  const contentTables = document.querySelectorAll(
+    ".page__content table:not(.rouge-table):not(.fr-score-table):not(.table-wrap):not(.leaders-benchmark__table):not(.leaders-compare__table)"
+  );
+
+  contentTables.forEach((table) => {
+    if (
+      table.closest(
+        ".highlight, .highlighter-rouge, .fr-score-card, .leaders-scorecard, .leaders-table, .leaders-table__wrap, .leaders-compare__table-wrap"
+      ) || table.parentElement?.classList.contains("fr-table-scroll")
+    ) {
+      return;
+    }
+
+    const wrapper = document.createElement("div");
+    const isEnglish = document.documentElement.lang.toLowerCase().startsWith("en");
+    wrapper.className = "fr-table-scroll";
+    wrapper.tabIndex = 0;
+    wrapper.setAttribute("role", "region");
+    wrapper.setAttribute(
+      "aria-label",
+      isEnglish ? "Scrollable article table" : "可横向滚动的文章表格"
+    );
+
+    table.parentNode.insertBefore(wrapper, table);
+    wrapper.appendChild(table);
+    table.classList.add("fr-content-table");
+  });
+
+  // 评分总表继续使用原有的专用滚动和排序逻辑。
   if (!body.classList.contains("score-table")) return;
 
   const scope = document.querySelector(".initial-content") || document;

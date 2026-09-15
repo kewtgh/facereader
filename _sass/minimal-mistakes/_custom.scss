@@ -2421,6 +2421,30 @@ body { line-height: 1.7; }
   border-bottom: none !important;
 }
 
+/* 普通正文表格用独立容器滚动，表格本体始终填满可用宽度。 */
+.page__content .fr-table-scroll {
+  width: 100%;
+  margin: 1.6rem 0 2rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+  border-radius: 0.5rem;
+}
+
+.page__content .fr-table-scroll > table.fr-content-table {
+  display: table;
+  width: 100%;
+  min-width: 100%;
+  margin: 0 !important;
+  table-layout: auto;
+  overflow: visible;
+}
+
+.page__content .fr-table-scroll:focus-visible {
+  outline: 2px solid $link-color;
+  outline-offset: 3px;
+}
+
 @media (max-width: 760px) {
   .page__content table:not(.rouge-table):not(.fr-score-table):not(.table-wrap):not(.leaders-benchmark__table):not(.leaders-compare__table) th,
   .page__content table:not(.rouge-table):not(.fr-score-table):not(.table-wrap):not(.leaders-benchmark__table):not(.leaders-compare__table) td {
