@@ -155,6 +155,9 @@ body { line-height: 1.7; }
 .page__title { line-height: 1.25; }
 
 .page-language-switcher {
+  // The article metadata above it is floated by the theme. Without clearing it,
+  // a wide layout can place the language controls in the remaining right column.
+  clear: both;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
