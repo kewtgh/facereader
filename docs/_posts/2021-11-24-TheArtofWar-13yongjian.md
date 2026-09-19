@@ -10,6 +10,7 @@ tags:
   - 中国传统文化
   - 读书方法
 share: true
+most_popular: true
 toc: true
 toc_sticky: true
 header:
@@ -22,6 +23,7 @@ classes: wide
 last_modified_at: 2021-11-24T22:25:52-05:00
 redirect_from:
   - /docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-13yongjian/
+  - /most_popular/2021-11-24-TheArtofWar-13yongjian/
 
 ---
 

@@ -28,10 +28,12 @@ tags:
   - 成长
   - 心理学
 toc: true
+most_popular: true
 toc_sticky: true
 last_modified_at: 2022-12-31T23:59:59-05:00
 redirect_from:
   - /docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/Psy-ToBeYourself-2/
+  - /most_popular/2022-12-31-Psy-ToBeYourself-2/
 
 ---
 

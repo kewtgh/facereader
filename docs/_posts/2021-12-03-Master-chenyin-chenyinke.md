@@ -20,6 +20,7 @@ tags:
   - 中国
   - 大师
 share: true
+most_popular: true
 toc: true
 toc_sticky: true
 sidebar:
@@ -28,6 +29,7 @@ sidebar:
 last_modified_at: 2021-12-03T19:25:52-05:00
 redirect_from:
   - /docs/%E5%A4%A7%E5%B8%88%E7%99%BE%E7%9B%B8/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/Master-chenyin-chenyinke/
+  - /most_popular/2021-12-03-Master-chenyin-chenyinke/
 
 ---
 

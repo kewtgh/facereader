@@ -56,6 +56,20 @@ npm run i18n:validate
 English posts are listed at `/en/posts/`. A page-level English button should be
 disabled until a matching English post exists for the current `translation_key`.
 
+## Popular Articles
+
+Add an article to `/most_popular/` from its canonical post file in
+`docs/_posts`:
+
+```yaml
+most_popular: true
+```
+
+The popular-articles page reads these posts directly and links to their canonical
+URLs. Do not copy article content into `docs/_most_popular`; that collection is
+reserved for standalone resources such as the company review table and the RSS
+guide.
+
 ## Markdown Reading Styles
 
 Article front matter supplies the page title, so article bodies should normally

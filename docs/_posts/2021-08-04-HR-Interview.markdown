@@ -20,12 +20,14 @@ tags:
   - SMART
   - 企业管理
 share: true
+most_popular: true
 no_indent: true
 toc: true
 toc_sticky: true
 last_modified_at: 2021-08-04T20:25:52-05:00
 redirect_from:
   - /docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90/HR-Interview/
+  - /most_popular/2021-08-04-HR-Interview/
 
 ---
 
