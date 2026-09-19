@@ -28,6 +28,10 @@ tags:
   - 社会评论
 toc: true
 toc_sticky: true
+most_popular: true
+sidebar:
+  title: "生命周期综合汲取率"
+  nav: sidebar-series-lifecycle-extraction
 locale: zh-CN
 translation_key: society-article-0001-2026
 last_modified_at: 2026-09-14T17:55:52-05:00

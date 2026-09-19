@@ -188,6 +188,12 @@ sidebar-series-wayofrunningbusiness:
        - title: "三、制度与体系"
          url: /%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/management-wayofrunningbusiness03/
 
+sidebar-series-lifecycle-extraction:
+  - title: "生命周期综合汲取率"
+    children:
+       - title: "一、中国：上海普通家庭的测算"
+         url: /%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/Society-tobeslaveforever/
+
 sidebar-about:
   - title: "开始阅读"
     children:
