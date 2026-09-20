@@ -37,6 +37,7 @@ Disallow: /tags/
 Disallow: /category/
 Disallow: /*?q=
 Disallow: /*?s=
+Disallow: /research/
 
 Sitemap: https://facereader.witbacon.com/sitemap.xml
 
