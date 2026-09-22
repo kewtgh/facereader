@@ -31,7 +31,6 @@ tags:
   - 社会评论
 toc: true
 toc_sticky: true
-most_popular: true
 sidebar:
   title: "经典系列"
   nav: sidebar-series-lifecycle-extraction
