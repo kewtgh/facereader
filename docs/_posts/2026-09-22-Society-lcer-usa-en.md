@@ -6,7 +6,7 @@ header:
   overlay_image: /assets/img/page-header-image-smallfamily.jpg # Add image post (optional)
   overlay_filter: 0.4
 categories:
-  - Society Commentary
+  - Social Commentary
 tags: 
   - LCER
   - Household Wealth
