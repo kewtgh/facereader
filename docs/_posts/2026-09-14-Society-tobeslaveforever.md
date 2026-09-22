@@ -30,7 +30,7 @@ toc: true
 toc_sticky: true
 most_popular: true
 sidebar:
-  title: "生命周期综合汲取率"
+  title: "经典系列"
   nav: sidebar-series-lifecycle-extraction
 locale: zh-CN
 translation_key: society-article-0001-2026

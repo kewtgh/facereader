@@ -191,8 +191,10 @@ sidebar-series-wayofrunningbusiness:
 sidebar-series-lifecycle-extraction:
   - title: "生命周期综合汲取率"
     children:
-       - title: "一、中国：上海普通家庭的测算"
+       - title: "一、中国：上海和南京家庭的测算"
          url: /%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/Society-tobeslaveforever/
+       - title: "二、美国：纽约和芝加哥家庭的测算"
+         url: /%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/Society-lcer-usa/
 
 sidebar-about:
   - title: "开始阅读"
