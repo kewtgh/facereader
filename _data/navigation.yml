@@ -195,6 +195,18 @@ sidebar-series-lifecycle-extraction:
          url: /%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/Society-tobeslaveforever/
        - title: "二、美国：纽约和芝加哥家庭的测算"
          url: /%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/Society-lcer-usa/
+       - title: "三、加拿大：多伦多和温尼伯家庭的测算"
+         url: /%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/Society-lcer-canada/
+
+sidebar-series-lifecycle-extraction-en:
+  - title: "Lifecycle Comprehensive Extraction Rate"
+    children:
+       - title: "一、China：Shanghai & Nanjing"
+         url: /%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/Society-tobeslaveforever-en/
+       - title: "二、USA：New York & Chicago"
+         url: /%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/Society-lcer-usa-en/
+       - title: "三、Canada：Toronto & Winnipeg"
+         url: /%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/Society-lcer-canada-en/
 
 sidebar-about:
   - title: "开始阅读"

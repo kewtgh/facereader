@@ -28,6 +28,9 @@ tags:
   - Social Commentary
 toc: true
 toc_sticky: true
+sidebar:
+  title: "Classic Series"
+  nav: sidebar-series-lifecycle-extraction-en
 locale: en-US
 translation_key: society-article-0001-2026
 last_modified_at: 2026-09-14T17:55:52-05:00
