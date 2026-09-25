@@ -37,6 +37,24 @@ layout: archive
           </span>
         </a>
       {% endif %}
+      <div class="fr-pillar__more" aria-label="{{ editorial_pillar[category_lang] }}">
+        {% assign more_count = 0 %}
+        {% for post in site.posts %}
+          {% if post.locale == 'en-US' or post.url == featured_post.url or post.hidden == true %}{% continue %}{% endif %}
+          {% assign matches_pillar = false %}
+          {% for category_name in editorial_pillar.categories %}
+            {% if post.categories contains category_name %}{% assign matches_pillar = true %}{% break %}{% endif %}
+          {% endfor %}
+          {% unless matches_pillar %}{% continue %}{% endunless %}
+          {% assign more_image = post.header.teaser | default: post.header.overlay_image | default: site.teaser %}
+          <a class="fr-pillar__more-item" href="{{ post.url | relative_url }}">
+            <img src="{{ more_image | relative_url }}" alt="" loading="lazy" decoding="async">
+            <span>{{ post.title | escape }}</span>
+          </a>
+          {% assign more_count = more_count | plus: 1 %}
+          {% if more_count >= 2 %}{% break %}{% endif %}
+        {% endfor %}
+      </div>
       <ul class="fr-pillar__categories">
         {% for category_name in editorial_pillar.categories %}
           {% assign category_count = site.categories[category_name] | size %}
@@ -67,7 +85,13 @@ layout: archive
   </ul>
 </section>
 <section class="fr-category-detail" id="category-detail" aria-live="polite" hidden>
-  <h2 id="category-detail-title"></h2>
+  <header class="fr-category-detail__header">
+    <div>
+      <span data-fr-i18n-zh="分类文章" data-fr-i18n-en="Category essays">分类文章</span>
+      <h2 id="category-detail-title"></h2>
+    </div>
+    <a href="#page-title" data-fr-i18n-zh="返回阅读地图 ↑" data-fr-i18n-en="Back to reading map ↑">返回阅读地图 ↑</a>
+  </header>
   <ul id="category-detail-posts"></ul>
 </section>
 <noscript><p><a href="{{ '/posts/' | relative_url }}">{{ category_text.all_posts_label }}</a></p></noscript>

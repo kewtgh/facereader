@@ -133,9 +133,9 @@ layout: default
     </aside>
   {% endif %}
 
-  {% if page.id and page.related and site.related_posts.size > 0 %}
-    {% include page__related.html locale=locale posts=site.related_posts %}
-  {% elsif page.id and page.related %}
-    {% include page__related.html locale=locale posts=site.posts %}
-  {% endif %}
 </div>
+{% if page.id and page.related and site.related_posts.size > 0 %}
+  {% include page__related.html locale=locale posts=site.related_posts %}
+{% elsif page.id and page.related %}
+  {% include page__related.html locale=locale posts=site.posts %}
+{% endif %}

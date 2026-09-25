@@ -27,17 +27,36 @@
       }
       title.textContent = category.name;
       list.replaceChildren();
+      var cards = document.createDocumentFragment();
       category.posts.forEach(function (post) {
         var item = document.createElement("li");
         var link = document.createElement("a");
+        var image = document.createElement("img");
+        var copy = document.createElement("span");
+        var heading = document.createElement("strong");
         var date = document.createElement("time");
+        var excerpt = document.createElement("span");
+        link.className = "fr-category-detail__card";
         link.href = post.url;
-        link.textContent = post.title;
+        image.src = post.image;
+        image.alt = "";
+        image.loading = "lazy";
+        image.decoding = "async";
+        image.width = 500;
+        image.height = 300;
+        copy.className = "fr-category-detail__copy";
+        heading.textContent = post.title;
         date.dateTime = post.date;
         date.textContent = post.date;
-        item.append(link, date);
-        list.appendChild(item);
+        excerpt.className = "fr-category-detail__excerpt";
+        excerpt.textContent = post.excerpt || "";
+        copy.append(heading, date);
+        if (post.excerpt) copy.appendChild(excerpt);
+        link.append(image, copy);
+        item.appendChild(link);
+        cards.appendChild(item);
       });
+      list.appendChild(cards);
       detail.hidden = false;
       detail.scrollIntoView({ block: "start" });
     }).catch(function () {
