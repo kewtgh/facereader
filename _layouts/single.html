@@ -37,11 +37,9 @@ layout: default
 {% endif %}
 
 <div id="main" role="main"{% if page.id %} class="fr-article-layout"{% endif %}>
-  {% if page.id %}
-    {% include article-left-rail.html locale=locale %}
-  {% else %}
+  {% unless page.id %}
     {% include sidebar.html locale=locale %}
-  {% endif %}
+  {% endunless %}
 
   <article class="page h-entry{% if page.no_indent %} no-indent{% endif %}" itemscope itemtype="https://schema.org/CreativeWork"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | replace: '|', '&#124;' | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
@@ -52,7 +50,10 @@ layout: default
     <div class="page__inner-wrap">
       {% if page.id and has_overlay_hero == false %}
         <header class="fr-article-header">
-          {% if pillar %}<a class="fr-article-header__pillar" href="{{ '/categories/' | relative_url }}#{{ pillar.id }}">{{ pillar[article_lang] }}</a>{% endif %}
+          <div class="fr-article-eyebrow">
+            {% if pillar %}<a class="fr-article-header__pillar" href="{{ '/categories/' | relative_url }}#{{ pillar.id }}">{{ pillar[article_lang] }}</a>{% endif %}
+            {% if page.series and site.data.series[page.series] %}<span>／</span><a href="{{ site.data.series[page.series].url | relative_url }}">{{ site.data.series[page.series][article_lang] }}{% if page.series_order %} · {{ page.series_order | prepend: '0' | slice: -2, 2 }}{% endif %}</a>{% endif %}
+          </div>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">{{ page.title }}</h1>
           {% if page.excerpt %}<p class="fr-article-header__excerpt">{{ page.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}</p>{% endif %}
           {% include page__meta.html locale=locale %}
@@ -110,7 +111,6 @@ layout: default
 
       {% if page.id %}
         {% include article-bottom.html locale=locale %}
-        {% include article-related.html locale=locale %}
       {% else %}
         {% include post_pagination.html locale=locale %}
       {% endif %}
@@ -133,4 +133,9 @@ layout: default
     </aside>
   {% endif %}
 
+  {% if page.id and page.related and site.related_posts.size > 0 %}
+    {% include page__related.html locale=locale posts=site.related_posts %}
+  {% elsif page.id and page.related %}
+    {% include page__related.html locale=locale posts=site.posts %}
+  {% endif %}
 </div>

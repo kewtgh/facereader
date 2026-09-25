@@ -1,42 +1,42 @@
 - id: people-business
   zh: 人 · 企业
   en: People · Business
-  description_zh: 从人物判断走向企业观察，理解性格、团队与商业决策。
-  description_en: People, teams and the decisions that shape businesses.
+  description_zh: "从人物判断走向企业观察：性格、欲望与决策如何经过组织，最终变成公司的气质与命运。"
+  description_en: "From people to businesses: how character, ambition and decisions become an organization's fate."
   featured_slug: NEV-nio/
   categories: [阅相识人, 企业剖析, 大师百相]
 - id: management
   zh: 管理 · 组织
   en: Management · Organization
-  description_zh: 领导者如何影响组织，制度又如何塑造人的行为。
-  description_en: How leaders and institutions shape organizations.
+  description_zh: "不把管理问题简单归咎于个人能力，而去看权责、激励、信息与组织结构如何塑造行为。"
+  description_en: "Beyond individual ability: how authority, incentives, information and structure shape behavior."
   featured_slug: manage-leadership/
   categories: [不靠谱领导力, 管理思想, 人力资源]
 - id: technology
   zh: 科技 · 产业
   en: Technology · Industry
-  description_zh: 透过技术热潮，辨认产业结构与企业的真实能力。
-  description_en: Reading industry structure beyond technology hype.
+  description_zh: "把技术放回产业链：位置、成本、替代与约束。少讲技术叙事，多问真实能力从哪里来。"
+  description_en: "Technology in its industrial context: position, cost, substitution and constraints."
   featured_slug: IC-wingtech/
   categories: [AI, 新能源汽车, 芯片半导体, TMT]
 - id: society
   zh: 社会 · 机制
   en: Society · Systems
-  description_zh: 从家庭、社会与政治现象出发，追问背后的运行机制。
-  description_en: The mechanisms behind households, society and politics.
+  description_zh: "从家庭、社会与政治现象进入，追问权力、制度、激励和成本究竟怎样传导到普通人身上。"
+  description_en: How power, institutions, incentives and costs reach ordinary households and lives.
   featured_slug: Society-tobeslaveforever/
   categories: [社会杂论, Social Commentary, Society and Politics, 政治领袖]
 - id: classics
   zh: 经典 · 历史
   en: Classics · History
-  description_zh: 回到原典与历史现场，寻找仍能解释今天的问题。
-  description_en: Classics and history as tools for reading the present.
+  description_zh: "把文字放回作者与时代，先还原处境，再讨论经典究竟还能解释今天的什么。"
+  description_en: Read texts in their own time before asking what the classics can explain today.
   featured_slug: TheArtofWar-0wordsbefore/
   categories: [经典解读, 孙子兵法, 文言经典]
 - id: life
   zh: 人生 · 思想
   en: Life · Thought
-  description_zh: 关于成长、选择、自我认知和生活判断的思考。
-  description_en: Essays on growth, choices and self-understanding.
+  description_zh: "写成长、选择、自我认识与存在困境。不批发答案，只保留那些值得反复想的问题。"
+  description_en: Growth, choices and self-understanding, with questions worth returning to rather than ready-made answers.
   featured_slug: Psy-ToBeYourself-1/
   categories: [人格成长, 轶事杂说]

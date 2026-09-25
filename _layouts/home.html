@@ -4,26 +4,55 @@ description: 全站文章列表（按时间）：企业观察、识人方法与�
 sitemap: true
 title: 全部文章
 ---
-{%- assign locale = page.locale | default: layout.locale | default: locale %}
+{%- assign locale = page.locale | default: layout.locale | default: site.locale %}
+{% assign archive_lang = locale | slice: 0, 2 %}
 
 {{ content }}
 
-<p class="fr-archive-intro" data-fr-i18n-zh="所有 FaceReader 文章，按发布时间排列。" data-fr-i18n-en="All FaceReader essays, ordered by publication date.">所有 FaceReader 文章，按发布时间排列。</p>
+<header class="fr-editorial-head">
+  <span class="fr-editorial-head__kicker">Archive</span>
+  <h1 id="page-title" class="page__title" data-fr-i18n-zh="{{ page.title_i18n.zh | default: page.title | escape }}" data-fr-i18n-en="{{ page.title_i18n.en | default: page.title | escape }}">{{ page.title }}</h1>
+  <p class="fr-editorial-head__lead" data-fr-i18n-zh="完整的写作时间线。这里不替你安排阅读顺序，只把所有文章按时间留下。" data-fr-i18n-en="The complete writing timeline: every essay, in publication order.">完整的写作时间线。这里不替你安排阅读顺序，只把所有文章按时间留下。</p>
+  <nav class="fr-editorial-head__nav" aria-label="Archive navigation">
+    <a href="{{ '/posts/' | relative_url }}" aria-current="page" data-fr-i18n-zh="最新" data-fr-i18n-en="Latest">最新</a>
+    <a href="{{ '/categories/' | relative_url }}" data-fr-i18n-zh="按主题" data-fr-i18n-en="By topic">按主题</a>
+    <a href="{{ '/series/lcer/' | relative_url }}" data-fr-i18n-zh="专题系列" data-fr-i18n-en="Series">专题系列</a>
+  </nav>
+</header>
 <div class="fr-posts-layout">
-  {% include archive-context-rail.html locale=locale %}
   <div class="fr-posts-list">
-
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
-
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html locale=locale entries=posts type=entries_layout %}
-</div>
-
-{% include paginator.html locale=locale %}
+    {% assign archive_posts = paginator.posts | default: site.posts | where_exp: "post", "post.hidden != true" %}
+    {% assign archive_year = '' %}
+    {% for post in archive_posts %}
+      {% assign post_year = post.date | date: '%Y' %}
+      {% if post_year != archive_year %}
+        <h2 class="fr-posts-year" id="year-{{ post_year }}">{{ post_year }}</h2>
+        {% assign archive_year = post_year %}
+      {% endif %}
+      {% assign post_pillar = nil %}
+      {% if post.pillar %}
+        {% for candidate in site.data.editorial_pillars %}{% if candidate.id == post.pillar %}{% assign post_pillar = candidate %}{% break %}{% endif %}{% endfor %}
+      {% else %}
+        {% for post_category in post.categories %}
+          {% for candidate in site.data.editorial_pillars %}{% if candidate.categories contains post_category %}{% assign post_pillar = candidate %}{% break %}{% endif %}{% endfor %}
+          {% if post_pillar %}{% break %}{% endif %}
+        {% endfor %}
+      {% endif %}
+      <article class="fr-posts-card">
+        <div class="fr-posts-card__meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d' }}</time>
+          {% if post.read_time %}
+            {% assign post_words = post.content | strip_html | strip_newlines | split: '' | size %}
+            {% assign post_minutes = post_words | divided_by: 450 | at_least: 1 %}
+            <span aria-hidden="true">·</span><span>{{ post_minutes }} {{ site.data.ui-text[post.locale].minute_read | default: '分钟阅读' }}</span>
+          {% endif %}
+          {% if post_pillar %}<span aria-hidden="true">·</span><a href="{{ '/categories/' | relative_url }}#{{ post_pillar.id }}">{{ post_pillar[archive_lang] }}</a>{% endif %}
+        </div>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title | markdownify | strip_html | normalize_whitespace | escape }}</a></h3>
+        {% if post.excerpt %}<p>{{ post.excerpt | markdownify | strip_html | normalize_whitespace | truncate: 180 }}</p>{% endif %}
+      </article>
+    {% endfor %}
+    {% include paginator.html locale=locale %}
   </div>
+  {% include archive-context-rail.html locale=locale %}
 </div>

@@ -1,15 +1,21 @@
 {% assign context_locale = include.locale | default: page.locale | default: site.locale %}
 {% assign context_lang = context_locale | slice: 0, 2 %}
 {% assign context_text = site.data.ui-text[context_locale] | default: site.data.ui-text[site.locale] %}
-<div class="fr-article-context">
-  {% if pillar %}
-    <a href="{{ '/categories/' | relative_url }}#{{ pillar.id }}" class="fr-article-context__pillar">{{ pillar[context_lang] }}</a>
-  {% endif %}
-  {% if page.series and site.data.series[page.series] %}
-    {% assign context_series = site.data.series[page.series] %}
-    <a href="{{ context_series.url | relative_url }}" class="fr-article-context__series">{{ context_series[context_lang] }}</a>
-  {% endif %}
-  {% unless page.article_language_switcher == false %}
-    {% include language-switcher.html locale=context_locale %}
-  {% endunless %}
-</div>
+{% unless page.article_language_switcher == false %}
+  <div class="fr-article-language">{% include language-switcher.html locale=context_locale %}</div>
+{% endunless %}
+{% if page.series and site.data.series[page.series] %}
+  {% assign context_series = site.data.series[page.series] %}
+  {% assign context_posts = site.posts | where: "series", page.series | where: "locale", context_locale | sort: "series_order" %}
+  <nav class="fr-series-strip" aria-label="{{ context_text.series_label }}">
+    <a class="fr-series-strip__label" href="{{ context_series.url | relative_url }}">{{ context_text.series_label }}</a>
+    <div class="fr-series-strip__steps">
+      {% for series_post in context_posts %}
+        <a href="{{ series_post.url | relative_url }}"{% if series_post.url == page.url %} aria-current="page"{% endif %}>
+          <span>{{ series_post.series_order | prepend: '0' | slice: -2, 2 }}</span>
+          {{ series_post.series_label | default: series_post.title | escape }}
+        </a>
+      {% endfor %}
+    </div>
+  </nav>
+{% endif %}

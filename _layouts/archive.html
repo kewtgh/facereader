@@ -19,7 +19,7 @@ layout: default
   {% include sidebar.html locale=locale %}
 
   <div class="archive">
-    {% unless page.header.overlay_color or page.header.overlay_image %}
+    {% unless page.header.overlay_color or page.header.overlay_image or page.layout == 'home' or page.layout == 'categories' %}
       {% assign page_title_zh = page.title_i18n.zh | default: page.title %}
       {% assign page_title_en = page.title_i18n.en | default: page.title %}
       <h1

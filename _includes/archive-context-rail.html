@@ -3,15 +3,7 @@
 {% assign archive_text = site.data.ui-text[archive_locale] | default: site.data.ui-text[site.locale] %}
 <aside class="fr-archive-rail">
   <section>
-    <h2 data-fr-i18n-key="start_here_label">{{ archive_text.start_here_label }}</h2>
-    <ul>
-      {% for entry in site.data.start_here %}
-        <li><a href="{{ entry.url | relative_url }}" data-fr-i18n-zh="{{ entry.zh | escape }}" data-fr-i18n-en="{{ entry.en | escape }}">{{ entry[archive_lang] }}</a></li>
-      {% endfor %}
-    </ul>
-  </section>
-  <section>
-    <h2 data-fr-i18n-key="series_label">{{ archive_text.series_label }}</h2>
+    <h2 data-fr-i18n-zh="专题 SERIES" data-fr-i18n-en="SERIES">专题 SERIES</h2>
     <ul>
       {% for pair in site.data.series %}
         {% assign series_id = pair[0] %}
@@ -24,12 +16,13 @@
         <li><a href="{{ series.url | relative_url }}" data-fr-i18n-zh="{{ series.zh | escape }}" data-fr-i18n-en="{{ series.en | escape }}">{{ series[archive_lang] }}</a> <span>{{ series_count }}</span></li>
       {% endfor %}
     </ul>
+    <p class="fr-archive-rail__note" data-fr-i18n-zh="系列不是分类，而是一条可以连续读下去的写作路径。" data-fr-i18n-en="A series is a reading path, not a category.">系列不是分类，而是一条可以连续读下去的写作路径。</p>
   </section>
   <section>
-    <h2 data-fr-i18n-key="explore_topic_label">{{ archive_text.explore_topic_label }}</h2>
+    <h2 data-fr-i18n-zh="主题 TOPICS" data-fr-i18n-en="TOPICS">主题 TOPICS</h2>
     <ul>
       {% for editorial_pillar in site.data.editorial_pillars %}
-        <li><a href="{{ '/categories/' | relative_url }}#{{ editorial_pillar.id }}" data-fr-i18n-zh="{{ editorial_pillar.zh }}" data-fr-i18n-en="{{ editorial_pillar.en }}">{{ editorial_pillar[archive_lang] }}</a></li>
+        <li><a href="{{ '/categories/' | relative_url }}#{{ editorial_pillar.id }}" data-fr-i18n-zh="{{ editorial_pillar.zh }}" data-fr-i18n-en="{{ editorial_pillar.en }}">{{ editorial_pillar[archive_lang] }}</a><span aria-hidden="true">→</span></li>
       {% endfor %}
     </ul>
   </section>

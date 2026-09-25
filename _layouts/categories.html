@@ -1,18 +1,43 @@
 ---
 layout: archive
 ---
-{%- assign locale = page.locale | default: layout.locale | default: locale %}
-
+{%- assign locale = page.locale | default: layout.locale | default: site.locale %}
 {% assign category_lang = locale | slice: 0, 2 %}
 {% assign category_text = site.data.ui-text[locale] | default: site.data.ui-text[site.locale] %}
+
 {{ content }}
-<p class="fr-archive-intro" data-fr-i18n-zh="从问题进入 FaceReader：先选择研究主题，再沿着文章继续阅读。" data-fr-i18n-en="Explore FaceReader by question and follow a path through related essays.">从问题进入 FaceReader：先选择研究主题，再沿着文章继续阅读。</p>
+<header class="fr-editorial-head fr-map-head">
+  <div>
+    <span class="fr-editorial-head__kicker">Explore</span>
+    <h1 id="page-title" class="page__title" data-fr-i18n-zh="{{ page.title_i18n.zh | default: page.title | escape }}" data-fr-i18n-en="{{ page.title_i18n.en | default: page.title | escape }}">{{ page.title }}</h1>
+    <p class="fr-editorial-head__lead" data-fr-i18n-zh="不是按发布时间，而是按问题进入 FaceReader。六条主线，代表六种观察世界的入口。" data-fr-i18n-en="Explore FaceReader by question, not by publication date. Six ways into the work.">不是按发布时间，而是按问题进入 FaceReader。六条主线，代表六种观察世界的入口。</p>
+  </div>
+  <p class="fr-map-head__note" data-fr-i18n-zh="分类告诉你一篇文章谈什么；专题告诉你一组文章怎样连续读。" data-fr-i18n-en="A category tells you what an essay explores; a series shows how to read essays together.">分类告诉你一篇文章谈什么；专题告诉你一组文章怎样连续读。</p>
+</header>
+
 <section class="fr-pillars" aria-label="{{ category_text.explore_topic_label }}">
   {% for editorial_pillar in site.data.editorial_pillars %}
-    <section class="fr-pillar" id="{{ editorial_pillar.id }}">
+    <article class="fr-pillar" id="{{ editorial_pillar.id }}">
+      <span class="fr-pillar__number">{{ forloop.index | prepend: '0' | slice: -2, 2 }} / {{ editorial_pillar.en | upcase }}</span>
       <h2 data-fr-i18n-zh="{{ editorial_pillar.zh }}" data-fr-i18n-en="{{ editorial_pillar.en }}">{{ editorial_pillar[category_lang] }}</h2>
       <p class="fr-pillar__description" data-fr-i18n-zh="{{ editorial_pillar.description_zh | escape }}" data-fr-i18n-en="{{ editorial_pillar.description_en | escape }}">{{ editorial_pillar.description_zh }}</p>
-      <ul>
+      {% assign featured_post = nil %}
+      {% for candidate in site.posts %}
+        {% if candidate.url contains editorial_pillar.featured_slug and candidate.locale != 'en-US' %}
+          {% assign featured_post = candidate %}{% break %}
+        {% endif %}
+      {% endfor %}
+      {% if featured_post %}
+        {% assign preview_image = featured_post.header.teaser | default: featured_post.header.overlay_image %}
+        <a class="fr-pillar__preview" href="{{ featured_post.url | relative_url }}">
+          {% if preview_image %}<img src="{{ preview_image | relative_url }}" alt="" loading="lazy" decoding="async">{% endif %}
+          <span class="fr-pillar__preview-copy">
+            <small data-fr-i18n-zh="精选文章" data-fr-i18n-en="Featured essay">精选文章</small>
+            <strong>{{ featured_post.title | escape }}</strong>
+          </span>
+        </a>
+      {% endif %}
+      <ul class="fr-pillar__categories">
         {% for category_name in editorial_pillar.categories %}
           {% assign category_count = site.categories[category_name] | size %}
           {% if category_count > 0 %}
@@ -20,41 +45,15 @@ layout: archive
           {% endif %}
         {% endfor %}
       </ul>
-      <div class="fr-pillar__reading">
-        <h3 data-fr-i18n-key="latest_in_topic_label">{{ category_text.latest_in_topic_label }}</h3>
-        <ul>
-          {% assign featured_post = nil %}
-          {% for candidate in site.posts %}
-            {% if candidate.url contains editorial_pillar.featured_slug and candidate.locale != 'en-US' %}
-              {% assign featured_post = candidate %}{% break %}
-            {% endif %}
-          {% endfor %}
-          {% if featured_post %}
-            <li class="fr-pillar__featured">
-              <a href="{{ featured_post.url | relative_url }}">{{ featured_post.title | escape }}</a>
-              {% if featured_post.excerpt %}<p>{{ featured_post.excerpt | markdownify | strip_html | normalize_whitespace | truncate: 125 }}</p>{% endif %}
-            </li>
-          {% endif %}
-          {% assign listed_count = 0 %}
-          {% for post in site.posts %}
-            {% if post.locale == 'en-US' or post.url == featured_post.url %}{% continue %}{% endif %}
-            {% assign post_matches_pillar = false %}
-            {% for category_name in editorial_pillar.categories %}
-              {% if post.categories contains category_name %}{% assign post_matches_pillar = true %}{% break %}{% endif %}
-            {% endfor %}
-            {% if post_matches_pillar %}
-              <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
-              {% assign listed_count = listed_count | plus: 1 %}
-            {% endif %}
-            {% if listed_count >= 2 %}{% break %}{% endif %}
-          {% endfor %}
-        </ul>
-      </div>
-    </section>
+    </article>
   {% endfor %}
 </section>
+
 <section class="fr-category-directory">
-  <h2 data-fr-i18n-key="all_categories_label">{{ category_text.all_categories_label }}</h2>
+  <header>
+    <h2 data-fr-i18n-key="all_categories_label">{{ category_text.all_categories_label }}</h2>
+    <small data-fr-i18n-zh="按文章数量排列 · {{ site.categories.size }} 个分类" data-fr-i18n-en="By article count · {{ site.categories.size }} categories">按文章数量排列 · {{ site.categories.size }} 个分类</small>
+  </header>
   <ul>
     {% assign category_max = 0 %}
     {% for category in site.categories %}{% if category[1].size > category_max %}{% assign category_max = category[1].size %}{% endif %}{% endfor %}
