@@ -83,7 +83,7 @@ layout: default
         {% if page.id and page.toc %}
           <details class="fr-article-toc-mobile">
             <summary>{{ article_text.toc_label }}</summary>
-            {% include toc.html locale=locale sanitize=true html=content h_min=2 h_max=2 class="toc__menu" skip_no_ids=true %}
+            {% include toc.html locale=locale sanitize=true html=content h_min=2 h_max=4 class="toc__menu" skip_no_ids=true %}
           </details>
         {% elsif page.toc %}
           <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
@@ -129,6 +129,7 @@ layout: default
   </article>
   {% if page.id and page.toc %}
     <aside class="fr-article-toc" aria-label="{{ article_text.toc_label }}">
+      {% include article-series-rail.html %}
       {% include article-toc.html locale=locale %}
     </aside>
   {% endif %}

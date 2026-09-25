@@ -134,7 +134,7 @@ if compiled_css_file.file?
     "collapsed menu hit-area rule is missing" =>
       ".greedy-nav__toggle{box-sizing:border-box;flex:0 0 44px;width:44px;min-width:44px;height:44px;min-height:44px",
     "masthead title stacking rule is missing" =>
-      ".greedy-nav .site-title{min-width:0;flex:1 1 auto;flex-direction:column",
+      ".greedy-nav .site-title{min-width:0;flex:0 0 auto;flex-direction:column",
     "English masthead title protection is missing" =>
       "html[lang^=en] .greedy-nav .site-title{min-width:5.25rem}",
     "narrow article sidebar rule is missing at the large breakpoint" =>

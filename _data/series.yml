@@ -4,13 +4,70 @@ lcer:
   description_zh: 不同国家普通家庭的制度性生命周期成本比较
   description_en: Comparing the lifetime institutional costs borne by ordinary households across countries
   url: /series/lcer/
+manufacture:
+  navigation: sidebar-series-manufacture
+  zh: 制造业企业观察
+  en: Manufacturing Companies
+  description_zh: 新能源汽车与通用电气两条企业评析线索，观察管理者和组织如何应对产业转折。
+  description_en: Two reading paths on new-energy vehicles and GE, following management through industrial change.
+  categories:
+    - 新能源汽车
+    - GE
+  url: /series/manufacture/
+ic:
+  navigation: sidebar-series-IC
+  zh: 芯片半导体企业解析
+  en: Semiconductor Companies
+  description_zh: 从寒武纪到闻泰科技，连续阅读芯片与半导体企业的管理评析。
+  description_en: Management analyses of chip and semiconductor companies, from Cambricon to Wingtech.
+  category: 芯片半导体
+  url: /series/ic/
+ai:
+  navigation: sidebar-series-AI
+  zh: AI 企业评析
+  en: AI Companies
+  description_zh: 从 AI 四小龙到其他人工智能企业，按写作顺序阅读企业与管理层评析。
+  description_en: A reading path through the AI Four Dragons and other AI companies.
+  category: AI
+  url: /series/ai/
 leadership:
+  navigation: sidebar-series-leadership
   zh: 不靠谱领导力
   en: Leadership
+  description_zh: 从权威、勇气、正直到知人善任，连续阅读领导者如何建立可信的组织能力。
+  description_en: A reading path on authority, courage, integrity, and building a dependable organization.
   category: 不靠谱领导力
-  url: /%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E4%B8%8D%E9%9D%A0%E8%B0%B1%E9%A2%86%E5%AF%BC%E5%8A%9B/manage-leadership/
+  url: /series/leadership/
 sunzi:
+  navigation: sidebar-sunzi
   zh: 孙子兵法
   en: The Art of War
+  description_zh: 按篇章阅读《孙子兵法》，回到原文理解其战争思想与决策方法。
+  description_en: Read The Art of War chapter by chapter, returning to the text and its strategic reasoning.
   category: 孙子兵法
-  url: /%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-0wordsbefore/
+  url: /series/sunzi/
+masters:
+  navigation: sidebar-series-masters
+  zh: 大师百相
+  en: Historical Scholars
+  description_zh: 通过近代史学家的经历与人物评析，理解不同学术气质。
+  description_en: Portraits of modern Chinese historians and their distinctive scholarly approaches.
+  category: 大师百相
+  url: /series/masters/
+edu:
+  navigation: sidebar-series-edu
+  zh: 教育观点
+  en: Education Essays
+  description_zh: 关于教培、教育理念和学校管理的连续观察。
+  description_en: Essays on tutoring, educational ideas, and school management.
+  category: 教育行业
+  url: /series/edu/
+business:
+  navigation: sidebar-series-wayofrunningbusiness
+  zh: 中小企业经营之道
+  en: Running a Small Business
+  description_zh: 从创业基础、招募人才到制度建设，依次阅读中小企业经营三篇。
+  description_en: Three essays on foundations, hiring, and systems for smaller businesses.
+  category: 管理思想
+  slug_contains: management-wayofrunningbusiness
+  url: /series/business/

@@ -533,7 +533,7 @@
 
 .greedy-nav .site-title {
   min-width: 0;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
@@ -603,6 +603,13 @@ html[lang^="en"] .page__hero--overlay .page__title {
 }
 
 @media (max-width: 480px) {
+  .greedy-nav .site-logo { margin-inline-end: 0.25rem; }
+
+  .greedy-nav .site-logo img {
+    height: 1.5rem !important;
+    max-height: 1.5rem;
+  }
+
   .greedy-nav .site-title {
     max-width: 6.5rem;
   }

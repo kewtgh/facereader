@@ -8,11 +8,26 @@
       {% for pair in site.data.series %}
         {% assign series_id = pair[0] %}
         {% assign series = pair[1] %}
+        {% assign rail_posts = '' | split: ',' %}
         {% if series.category %}
-          {% assign series_count = site.categories[series.category] | size %}
+          {% assign rail_posts = site.categories[series.category] %}
+        {% elsif series.categories %}
+          {% for category_name in series.categories %}
+            {% assign category_posts = site.categories[category_name] %}
+            {% assign rail_posts = rail_posts | concat: category_posts %}
+          {% endfor %}
         {% else %}
-          {% assign series_count = site.posts | where: "series", series_id | where: "locale", "zh-CN" | size %}
+          {% assign rail_posts = site.posts | where: "series", series_id | where: "locale", "zh-CN" %}
         {% endif %}
+        {% assign rail_posts = rail_posts | uniq %}
+        {% if series.slug_contains %}
+          {% assign filtered_posts = '' | split: ',' %}
+          {% for post in rail_posts %}
+            {% if post.url contains series.slug_contains %}{% assign filtered_posts = filtered_posts | push: post %}{% endif %}
+          {% endfor %}
+          {% assign rail_posts = filtered_posts %}
+        {% endif %}
+        {% assign series_count = rail_posts.size %}
         <li><a href="{{ series.url | relative_url }}" data-fr-i18n-zh="{{ series.zh | escape }}" data-fr-i18n-en="{{ series.en | escape }}">{{ series[archive_lang] }}</a> <span>{{ series_count }}</span></li>
       {% endfor %}
     </ul>

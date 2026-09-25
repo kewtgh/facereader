@@ -88,7 +88,7 @@
     var visibleBlock = document.querySelector("[data-fr-i18n-block]:not([hidden])");
 
     if (visibleBlock && tocLinks.length) {
-      var visibleHeadings = Array.prototype.slice.call(visibleBlock.querySelectorAll("h2[id], h3[id]"));
+      var visibleHeadings = Array.prototype.slice.call(visibleBlock.querySelectorAll("h2[id], h3[id], h4[id]"));
       if (visibleHeadings.length > 0) {
         tocLinks.forEach(function (link, index) {
           var item = link.closest("li");
@@ -157,10 +157,6 @@
     });
 
     syncTocLabels();
-    window.setTimeout(function () {
-      window.dispatchEvent(new Event("resize"));
-    }, 0);
-
     document.dispatchEvent(new CustomEvent("facereader:ui-language", {
       detail: { language: language }
     }));

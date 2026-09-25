@@ -1,0 +1,12 @@
+{% assign series_card_post = include.post %}
+{% assign series_card_image = series_card_post.header.teaser | default: series_card_post.header.overlay_image | default: site.teaser %}
+<li>
+  <a class="fr-category-detail__card" href="{{ series_card_post.url | relative_url }}">
+    {% if series_card_image %}<img src="{{ series_card_image | relative_url }}" alt="" loading="lazy" decoding="async">{% endif %}
+    <span class="fr-category-detail__copy">
+      <small class="fr-series-detail__number">{{ include.number | prepend: '0' | slice: -2, 2 }}</small>
+      <strong>{{ series_card_post.title | escape }}</strong>
+      <span class="fr-category-detail__excerpt">{{ series_card_post.excerpt | default: series_card_post.description | markdownify | strip_html | strip_newlines | truncate: 115 | escape }}</span>
+    </span>
+  </a>
+</li>

@@ -8,7 +8,8 @@
   {% assign context_series = site.data.series[page.series] %}
   {% assign context_posts = site.posts | where: "series", page.series | where: "locale", context_locale | sort: "series_order" %}
   <nav class="fr-series-strip" aria-label="{{ context_text.series_label }}">
-    <a class="fr-series-strip__label" href="{{ context_series.url | relative_url }}">{{ context_text.series_label }}</a>
+    <a class="fr-series-strip__label" href="{{ '/series/' | relative_url }}">{{ context_text.series_label }}</a>
+    <a class="fr-series-strip__title" href="{{ context_series.url | relative_url }}" data-fr-i18n-zh="{{ context_series.zh | escape }}" data-fr-i18n-en="{{ context_series.en | escape }}">{{ context_series[context_lang] }}</a>
     <div class="fr-series-strip__steps">
       {% for series_post in context_posts %}
         <a href="{{ series_post.url | relative_url }}"{% if series_post.url == page.url %} aria-current="page"{% endif %}>
@@ -18,4 +19,24 @@
       {% endfor %}
     </div>
   </nav>
+{% elsif page.sidebar.nav %}
+  {% assign legacy_series_id = nil %}
+  {% case page.sidebar.nav %}
+    {% when 'sidebar-series-manufacture' %}{% assign legacy_series_id = 'manufacture' %}
+    {% when 'sidebar-series-IC' %}{% assign legacy_series_id = 'ic' %}
+    {% when 'sidebar-series-AI' %}{% assign legacy_series_id = 'ai' %}
+    {% when 'sidebar-sunzi' %}{% assign legacy_series_id = 'sunzi' %}
+    {% when 'sidebar-series-masters' %}{% assign legacy_series_id = 'masters' %}
+    {% when 'sidebar-series-edu' %}{% assign legacy_series_id = 'edu' %}
+    {% when 'sidebar-series-leadership' %}{% assign legacy_series_id = 'leadership' %}
+    {% when 'sidebar-series-wayofrunningbusiness' %}{% assign legacy_series_id = 'business' %}
+  {% endcase %}
+  {% if legacy_series_id and site.data.series[legacy_series_id] %}
+    {% assign legacy_series = site.data.series[legacy_series_id] %}
+    <nav class="fr-series-strip fr-series-strip--legacy" aria-label="{{ context_text.series_label }}">
+      <a class="fr-series-strip__label" href="{{ '/series/' | relative_url }}">{{ context_text.series_label }}</a>
+      <a class="fr-series-strip__title" href="{{ legacy_series.url | relative_url }}" data-fr-i18n-zh="{{ legacy_series.zh | escape }}" data-fr-i18n-en="{{ legacy_series.en | escape }}">{{ legacy_series[context_lang] }}</a>
+      <a class="fr-series-strip__all" href="{{ legacy_series.url | relative_url }}">{{ context_text.view_full_series }} →</a>
+    </nav>
+  {% endif %}
 {% endif %}

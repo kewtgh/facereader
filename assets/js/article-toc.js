@@ -18,6 +18,16 @@
       if (active) entry.link.setAttribute("aria-current", "true");
       else entry.link.removeAttribute("aria-current");
     });
+    var rail = nav.closest(".fr-article-toc");
+    if (!rail) return;
+    var bounds = rail.getBoundingClientRect();
+    var linkBounds = pair.link.getBoundingClientRect();
+    if (linkBounds.top < bounds.top + 16 || linkBounds.bottom > bounds.bottom - 16) {
+      rail.scrollBy({
+        top: linkBounds.top - bounds.top - rail.clientHeight / 3,
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+      });
+    }
   }
 
   var current = pairs[0];

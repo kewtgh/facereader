@@ -1,0 +1,137 @@
+---
+layout: archive
+---
+{% assign series_locale = page.locale | default: site.locale %}
+{% assign series_lang = series_locale | slice: 0, 2 %}
+{% assign current_series = site.data.series[page.series_id] %}
+<header class="fr-editorial-head fr-series-head">
+  <span class="fr-editorial-head__kicker">Series / 阅读路径</span>
+  <h1 id="page-title" class="page__title" data-fr-i18n-zh="{{ page.title_i18n.zh | default: page.title | escape }}" data-fr-i18n-en="{{ page.title_i18n.en | default: page.title | escape }}">{{ page.title }}</h1>
+  {% if current_series %}
+    <p class="fr-editorial-head__lead" data-fr-i18n-zh="{{ current_series.description_zh | escape }}" data-fr-i18n-en="{{ current_series.description_en | escape }}">{{ current_series.description_zh }}</p>
+  {% else %}
+    <p class="fr-editorial-head__lead" data-fr-i18n-zh="专题不是分类，而是一条从第一篇延伸到下一篇的阅读路径。" data-fr-i18n-en="A series is a reading path, connecting one essay to the next.">专题不是分类，而是一条从第一篇延伸到下一篇的阅读路径。</p>
+  {% endif %}
+  <nav class="fr-editorial-head__nav" aria-label="Series navigation">
+    <a href="{{ '/series/' | relative_url }}"{% unless current_series %} aria-current="page"{% endunless %} data-fr-i18n-zh="全部专题" data-fr-i18n-en="All series">全部专题</a>
+    <a href="{{ '/categories/' | relative_url }}" data-fr-i18n-zh="阅读地图" data-fr-i18n-en="Reading map">阅读地图</a>
+  </nav>
+</header>
+
+{% if current_series %}
+  {% assign series_posts = '' | split: ',' %}
+  {% if current_series.category %}
+    {% assign series_posts = site.categories[current_series.category] %}
+  {% elsif current_series.categories %}
+    {% for category_name in current_series.categories %}
+      {% assign category_posts = site.categories[category_name] %}
+      {% assign series_posts = series_posts | concat: category_posts %}
+    {% endfor %}
+  {% else %}
+    {% assign series_posts = site.posts | where: 'series', page.series_id | where: 'locale', 'zh-CN' | sort: 'series_order' %}
+  {% endif %}
+  {% if current_series.category or current_series.categories %}{% assign series_posts = series_posts | uniq | sort: 'date' %}{% endif %}
+  {% if current_series.slug_contains %}
+    {% assign filtered_posts = '' | split: ',' %}
+    {% for post in series_posts %}
+      {% if post.url contains current_series.slug_contains %}{% assign filtered_posts = filtered_posts | push: post %}{% endif %}
+    {% endfor %}
+    {% assign series_posts = filtered_posts %}
+  {% endif %}
+  <section class="fr-category-detail fr-series-detail" aria-label="{{ current_series.zh }}">
+    <header class="fr-category-detail__header">
+      <div>
+        <span data-fr-i18n-zh="连续阅读" data-fr-i18n-en="Reading order">连续阅读</span>
+        <h2 data-fr-i18n-zh="{{ series_posts.size }} 篇文章" data-fr-i18n-en="{{ series_posts.size }} essays">{{ series_posts.size }} 篇文章</h2>
+      </div>
+    </header>
+    <ul{% unless current_series.category or current_series.categories %} data-fr-i18n-block="zh"{% endunless %}>
+      {% if current_series.navigation %}
+        {% assign series_number = 0 %}
+        {% assign navigation_groups = site.data.navigation[current_series.navigation] %}
+        {% for navigation_group in navigation_groups %}
+          {% for navigation_item in navigation_group.children %}
+            {% assign navigation_post = nil %}
+            {% for post in series_posts %}
+              {% assign post_href = post.url | relative_url %}
+              {% if post_href == navigation_item.url %}{% assign navigation_post = post %}{% break %}{% endif %}
+            {% endfor %}
+            {% if navigation_post and navigation_post.hidden != true %}
+              {% assign series_number = series_number | plus: 1 %}
+              {% include series-article-card.html post=navigation_post number=series_number %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+        {% for post in series_posts %}
+          {% assign post_href = post.url | relative_url %}
+          {% assign already_listed = false %}
+          {% for navigation_group in navigation_groups %}
+            {% for navigation_item in navigation_group.children %}
+              {% if post_href == navigation_item.url %}{% assign already_listed = true %}{% break %}{% endif %}
+            {% endfor %}
+            {% if already_listed %}{% break %}{% endif %}
+          {% endfor %}
+          {% unless already_listed or post.hidden == true %}
+            {% assign series_number = series_number | plus: 1 %}
+            {% include series-article-card.html post=post number=series_number %}
+          {% endunless %}
+        {% endfor %}
+      {% else %}
+        {% for post in series_posts %}
+          {% if post.hidden != true %}{% include series-article-card.html post=post number=forloop.index %}{% endif %}
+        {% endfor %}
+      {% endif %}
+    </ul>
+    {% unless current_series.category or current_series.categories %}
+      {% assign english_posts = site.posts | where: 'series', page.series_id | where: 'locale', 'en-US' | sort: 'series_order' %}
+      <ul data-fr-i18n-block="en" hidden>
+        {% for post in english_posts %}
+          {% if post.hidden != true %}{% include series-article-card.html post=post number=forloop.index %}{% endif %}
+        {% endfor %}
+      </ul>
+    {% endunless %}
+  </section>
+{% else %}
+  <section class="fr-series-overview" aria-label="Series">
+    {% for pair in site.data.series %}
+      {% assign series_id = pair[0] %}
+      {% assign series = pair[1] %}
+      {% assign series_posts = '' | split: ',' %}
+      {% if series.category %}
+        {% assign series_posts = site.categories[series.category] %}
+      {% elsif series.categories %}
+        {% for category_name in series.categories %}
+          {% assign category_posts = site.categories[category_name] %}
+          {% assign series_posts = series_posts | concat: category_posts %}
+        {% endfor %}
+      {% else %}
+        {% assign series_posts = site.posts | where: 'series', series_id | where: 'locale', 'zh-CN' | sort: 'series_order' %}
+      {% endif %}
+      {% if series.category or series.categories %}{% assign series_posts = series_posts | uniq | sort: 'date' %}{% endif %}
+      {% if series.slug_contains %}
+        {% assign filtered_posts = '' | split: ',' %}
+        {% for post in series_posts %}
+          {% if post.url contains series.slug_contains %}{% assign filtered_posts = filtered_posts | push: post %}{% endif %}
+        {% endfor %}
+        {% assign series_posts = filtered_posts %}
+      {% endif %}
+      {% assign featured_post = series_posts | first %}
+      {% assign featured_image = featured_post.header.teaser | default: featured_post.header.overlay_image | default: site.teaser %}
+      <article class="fr-series-overview__item">
+        <span class="fr-pillar__number">{{ forloop.index | prepend: '0' | slice: -2, 2 }} / SERIES</span>
+        <h2><a href="{{ series.url | relative_url }}" data-fr-i18n-zh="{{ series.zh | escape }}" data-fr-i18n-en="{{ series.en | escape }}">{{ series.zh }}</a></h2>
+        <p data-fr-i18n-zh="{{ series.description_zh | escape }}" data-fr-i18n-en="{{ series.description_en | escape }}">{{ series.description_zh }}</p>
+        {% if featured_post %}
+          <a class="fr-pillar__preview" href="{{ series.url | relative_url }}">
+            {% if featured_image %}<img src="{{ featured_image | relative_url }}" alt="" loading="lazy" decoding="async">{% endif %}
+            <span class="fr-pillar__preview-copy">
+              <small data-fr-i18n-zh="从这里开始 · {{ series_posts.size }} 篇" data-fr-i18n-en="Start here · {{ series_posts.size }} essays">从这里开始 · {{ series_posts.size }} 篇</small>
+              <strong>{{ featured_post.title | escape }}</strong>
+            </span>
+          </a>
+        {% endif %}
+        <a class="fr-series-overview__more" href="{{ series.url | relative_url }}" data-fr-i18n-zh="查看完整专题 →" data-fr-i18n-en="View full series →">查看完整专题 →</a>
+      </article>
+    {% endfor %}
+  </section>
+{% endif %}
