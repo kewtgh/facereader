@@ -3,6 +3,42 @@ layout: archive
 ---
 {%- assign locale = page.locale | default: layout.locale | default: locale %}
 
+{% assign category_lang = locale | slice: 0, 2 %}
+{% assign category_text = site.data.ui-text[locale] | default: site.data.ui-text[site.locale] %}
 {{ content }}
-
-{% include posts-taxonomy.html locale=locale taxonomies=site.categories %}
+<p class="fr-archive-intro" data-fr-i18n-zh="按问题进入 FaceReader。" data-fr-i18n-en="Explore FaceReader by subject rather than chronology.">按问题进入 FaceReader。</p>
+<section class="fr-pillars" aria-label="{{ category_text.explore_topic_label }}">
+  {% for editorial_pillar in site.data.editorial_pillars %}
+    <section class="fr-pillar" id="{{ editorial_pillar.id }}">
+      <h2 data-fr-i18n-zh="{{ editorial_pillar.zh }}" data-fr-i18n-en="{{ editorial_pillar.en }}">{{ editorial_pillar[category_lang] }}</h2>
+      <ul>
+        {% for category_name in editorial_pillar.categories %}
+          {% assign category_count = site.categories[category_name] | size %}
+          {% if category_count > 0 %}
+            <li><a href="#{{ category_name | slugify }}">{{ category_name }}</a><span>{{ category_count }}</span></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+</section>
+<section class="fr-category-directory">
+  <h2 data-fr-i18n-key="all_categories_label">{{ category_text.all_categories_label }}</h2>
+  <ul>
+    {% assign category_max = 0 %}
+    {% for category in site.categories %}{% if category[1].size > category_max %}{% assign category_max = category[1].size %}{% endif %}{% endfor %}
+    {% for count in (1..category_max) reversed %}
+      {% for category in site.categories %}
+        {% if category[1].size == count %}
+          <li><a href="#{{ category[0] | slugify }}">{{ category[0] }}</a><span>{{ count }}</span></li>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </ul>
+</section>
+<section class="fr-category-detail" id="category-detail" aria-live="polite" hidden>
+  <h2 id="category-detail-title"></h2>
+  <ul id="category-detail-posts"></ul>
+</section>
+<noscript><p><a href="{{ '/posts/' | relative_url }}">{{ category_text.all_posts_label }}</a></p></noscript>
+<script defer src="{{ '/assets/js/category-map.js' | relative_url }}"></script>

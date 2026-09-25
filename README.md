@@ -56,6 +56,26 @@ npm run i18n:validate
 English posts are listed at `/en/posts/`. A page-level English button should be
 disabled until a matching English post exists for the current `translation_key`.
 
+## Editorial Navigation
+
+The reading map at `/categories/` groups existing Jekyll categories into six
+reader-facing pillars. Edit `_data/editorial_pillars.yml` to change the mapping;
+do not rename historical categories or permalinks. A post can override the
+inferred pillar with its front matter ID, for example `pillar: society`.
+
+For a curated series, define its display names and destination in
+`_data/series.yml`, then mark each article:
+
+```yaml
+series: lcer
+series_order: 1
+series_label: 中国：上海与南京
+```
+
+Chinese and English entries use the same series ID and order but are shown in
+separate language lists. Articles without these fields keep working normally.
+The `/posts/` entry selections are maintained in `_data/start_here.yml`.
+
 ## Popular Articles
 
 Add an article to `/most_popular/` from its canonical post file in

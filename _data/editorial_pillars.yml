@@ -1,0 +1,24 @@
+- id: people-business
+  zh: 人 · 企业
+  en: People · Business
+  categories: [阅相识人, 企业剖析, 大师百相]
+- id: management
+  zh: 管理 · 组织
+  en: Management · Organization
+  categories: [不靠谱领导力, 管理思想, 人力资源]
+- id: technology
+  zh: 科技 · 产业
+  en: Technology · Industry
+  categories: [AI, 新能源汽车, 芯片半导体, TMT]
+- id: society
+  zh: 社会 · 机制
+  en: Society · Systems
+  categories: [社会杂论, Social Commentary, Society and Politics, 政治领袖]
+- id: classics
+  zh: 经典 · 历史
+  en: Classics · History
+  categories: [经典解读, 孙子兵法, 文言经典]
+- id: life
+  zh: 人生 · 思想
+  en: Life · Thought
+  categories: [人格成长, 轶事杂说]

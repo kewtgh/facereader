@@ -30,6 +30,9 @@ tags:
   - Social Commentary
 toc: true
 toc_sticky: true
+series: lcer
+series_order: 2
+series_label: "USA: New York & Chicago"
 sidebar:
   title: "Classic Series"
   nav: sidebar-series-lifecycle-extraction-en

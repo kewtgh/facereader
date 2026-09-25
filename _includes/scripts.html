@@ -23,6 +23,7 @@
 
 <script defer src="{{ '/assets/js/table-wrap.js' | relative_url }}?v={{ site.data.theme.version }}"></script>
 <script defer src="{{ '/assets/js/reader-tools.js' | relative_url }}"></script>
+{% if page.id and page.toc %}<script defer src="{{ '/assets/js/article-toc.js' | relative_url }}"></script>{% endif %}
 
 {% if site.after_footer_scripts %}
   {% for script in site.after_footer_scripts %}

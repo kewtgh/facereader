@@ -11,7 +11,7 @@
     {% include head/custom.html locale=locale %}
   </head>
 
-  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}{% if page.id and page.layout == 'single' %} fr-article{% endif %}{% if page.url contains '/posts/' %} fr-posts{% endif %}{% if page.layout == 'categories' %} fr-categories{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
     {% include_cached skip-links.html locale=locale %}
     {% include_cached masthead.html locale=locale %}
 

@@ -1,0 +1,47 @@
+{% assign rail_locale = include.locale | default: page.locale | default: site.locale %}
+{% assign rail_lang = rail_locale | slice: 0, 2 %}
+{% assign rail_text = site.data.ui-text[rail_locale] | default: site.data.ui-text[site.locale] %}
+<aside class="fr-article-rail" aria-label="{{ rail_text.article_context_label }}">
+  <a class="fr-article-rail__identity" href="{{ '/about/' | relative_url }}">FACE READER</a>
+  {% if pillar %}
+    <div class="fr-article-rail__block">
+      <h2>{{ rail_text.editorial_pillar_label }}</h2>
+      <a href="{{ '/categories/' | relative_url }}#{{ pillar.id }}">{{ pillar[rail_lang] }}</a>
+    </div>
+  {% endif %}
+  {% if page.series and site.data.series[page.series] %}
+    {% assign rail_series = site.data.series[page.series] %}
+    {% assign rail_posts = site.posts | where: "series", page.series | where: "locale", rail_locale | sort: "series_order" %}
+    <div class="fr-article-rail__block">
+      <h2>{{ rail_text.series_label }}</h2>
+      <a class="fr-article-rail__series-title" href="{{ rail_series.url | relative_url }}">{{ rail_series[rail_lang] }}</a>
+      <ol class="fr-article-rail__series-list">
+        {% for series_post in rail_posts %}
+          {% assign distance = series_post.series_order | minus: page.series_order %}
+          {% assign absolute_distance = distance | abs %}
+          {% if rail_posts.size <= 8 or absolute_distance <= 2 %}
+            <li>
+              <a href="{{ series_post.url | relative_url }}"{% if series_post.url == page.url %} aria-current="page"{% endif %}>
+                <span>{{ series_post.series_order | prepend: '0' | slice: -2, 2 }}</span>
+                {{ series_post.series_label | default: series_post.title | escape }}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ol>
+      {% if rail_posts.size > 8 %}
+        <a class="fr-article-rail__all" href="{{ rail_series.url | relative_url }}">{{ rail_text.view_full_series }}</a>
+      {% endif %}
+    </div>
+  {% elsif page.sidebar.nav %}
+    <div class="fr-article-rail__block fr-article-rail__legacy">
+      <h2>{{ rail_text.series_label }}</h2>
+      {% include nav_list locale=rail_locale nav=page.sidebar.nav %}
+    </div>
+  {% endif %}
+  {% unless page.article_language_switcher == false %}
+    <div class="fr-article-rail__block fr-article-rail__language">
+      {% include language-switcher.html locale=rail_locale %}
+    </div>
+  {% endunless %}
+</aside>

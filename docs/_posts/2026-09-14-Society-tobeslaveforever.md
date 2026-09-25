@@ -28,6 +28,9 @@ tags:
   - 社会评论
 toc: true
 toc_sticky: true
+series: lcer
+series_order: 1
+series_label: 中国：上海与南京
 most_popular: true
 sidebar:
   title: "经典系列"

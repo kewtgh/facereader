@@ -1,0 +1,6 @@
+{% assign toc_locale = include.locale | default: page.locale | default: site.locale %}
+{% assign toc_text = site.data.ui-text[toc_locale] | default: site.data.ui-text[site.locale] %}
+<nav class="fr-article-toc__nav" aria-label="{{ toc_text.toc_label }}">
+  <h2>{{ toc_text.toc_label }}</h2>
+  {% include toc.html locale=toc_locale sanitize=true html=content h_min=2 h_max=2 class="toc__menu" skip_no_ids=true %}
+</nav>

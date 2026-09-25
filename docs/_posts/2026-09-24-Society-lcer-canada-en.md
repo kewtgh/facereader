@@ -30,6 +30,9 @@ tags:
   - Social Commentary
 toc: true
 toc_sticky: true
+series: lcer
+series_order: 3
+series_label: "Canada: Toronto & Winnipeg"
 sidebar:
   title: "Classic Series"
   nav: sidebar-series-lifecycle-extraction-en

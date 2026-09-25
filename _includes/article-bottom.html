@@ -1,0 +1,24 @@
+{% assign bottom_locale = include.locale | default: page.locale | default: site.locale %}
+{% assign bottom_lang = bottom_locale | slice: 0, 2 %}
+{% assign bottom_text = site.data.ui-text[bottom_locale] | default: site.data.ui-text[site.locale] %}
+{% if page.series and site.data.series[page.series] %}
+  {% assign bottom_series = site.data.series[page.series] %}
+  {% assign bottom_posts = site.posts | where: "series", page.series | where: "locale", bottom_locale | sort: "series_order" %}
+  {% assign previous_order = page.series_order | minus: 1 %}
+  {% assign next_order = page.series_order | plus: 1 %}
+  <nav class="fr-series-next" aria-label="{{ bottom_text.series_label }}">
+    <p><a href="{{ bottom_series.url | relative_url }}">{{ bottom_series[bottom_lang] }}</a></p>
+    {% for series_post in bottom_posts %}
+      {% if series_post.series_order == previous_order %}
+        <a rel="prev" href="{{ series_post.url | relative_url }}">← {{ series_post.series_label | default: series_post.title | escape }}</a>
+      {% endif %}
+      {% if series_post.series_order == next_order %}
+        <a rel="next" href="{{ series_post.url | relative_url }}">{{ series_post.series_label | default: series_post.title | escape }} →</a>
+      {% endif %}
+    {% endfor %}
+  </nav>
+{% endif %}
+<div class="fr-article-author">
+  <span>FACE READER</span>
+  <a href="{{ '/about/' | relative_url }}">{{ bottom_text.about_author_label }} →</a>
+</div>

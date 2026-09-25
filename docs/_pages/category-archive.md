@@ -1,11 +1,11 @@
 ---
-title: "按分类浏览"
+title: "阅读地图"
 title_i18n:
-  zh: "按分类浏览"
-  en: "Browse by Categories"
+  zh: "阅读地图"
+  en: "Reading Map"
 layout: categories
 permalink: /categories/
-author_profile: true
+author_profile: false
 sitemap: false
 search: false
 robots: noindex

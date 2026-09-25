@@ -1,0 +1,16 @@
+lcer:
+  zh: 生命周期综合汲取率
+  en: Lifecycle Comprehensive Extraction Rate
+  description_zh: 不同国家普通家庭的制度性生命周期成本比较
+  description_en: Comparing the lifetime institutional costs borne by ordinary households across countries
+  url: /series/lcer/
+leadership:
+  zh: 不靠谱领导力
+  en: Leadership
+  category: 不靠谱领导力
+  url: /%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E4%B8%8D%E9%9D%A0%E8%B0%B1%E9%A2%86%E5%AF%BC%E5%8A%9B/manage-leadership/
+sunzi:
+  zh: 孙子兵法
+  en: The Art of War
+  category: 孙子兵法
+  url: /%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-0wordsbefore/

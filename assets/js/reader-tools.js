@@ -184,7 +184,7 @@
   function createFloatingTools() {
     if (document.querySelector(".fr-reader-tools")) return;
 
-    var toc = document.querySelector("nav.toc");
+    var toc = document.body.classList.contains("fr-article") ? null : document.querySelector("nav.toc");
     var panel = toc ? createTocPanel(toc) : null;
     var rail = document.createElement("div");
     rail.className = "fr-reader-tools";

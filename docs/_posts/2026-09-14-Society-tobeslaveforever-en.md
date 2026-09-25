@@ -28,6 +28,9 @@ tags:
   - Social Commentary
 toc: true
 toc_sticky: true
+series: lcer
+series_order: 1
+series_label: "China: Shanghai & Nanjing"
 sidebar:
   title: "Classic Series"
   nav: sidebar-series-lifecycle-extraction-en

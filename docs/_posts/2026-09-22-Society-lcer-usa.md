@@ -31,6 +31,9 @@ tags:
   - 社会评论
 toc: true
 toc_sticky: true
+series: lcer
+series_order: 2
+series_label: 美国：纽约与芝加哥
 sidebar:
   title: "经典系列"
   nav: sidebar-series-lifecycle-extraction

@@ -1,0 +1,15 @@
+{% assign context_locale = include.locale | default: page.locale | default: site.locale %}
+{% assign context_lang = context_locale | slice: 0, 2 %}
+{% assign context_text = site.data.ui-text[context_locale] | default: site.data.ui-text[site.locale] %}
+<div class="fr-article-context">
+  {% if pillar %}
+    <a href="{{ '/categories/' | relative_url }}#{{ pillar.id }}" class="fr-article-context__pillar">{{ pillar[context_lang] }}</a>
+  {% endif %}
+  {% if page.series and site.data.series[page.series] %}
+    {% assign context_series = site.data.series[page.series] %}
+    <a href="{{ context_series.url | relative_url }}" class="fr-article-context__series">{{ context_series[context_lang] }}</a>
+  {% endif %}
+  {% unless page.article_language_switcher == false %}
+    {% include language-switcher.html locale=context_locale %}
+  {% endunless %}
+</div>

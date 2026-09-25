@@ -8,7 +8,9 @@ title: 全部文章
 
 {{ content }}
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[locale].recent_posts | default: "Recent Posts" }}</h3>
+<p class="fr-archive-intro" data-fr-i18n-zh="所有 FaceReader 文章，按发布时间排列。" data-fr-i18n-en="All FaceReader essays, ordered by publication date.">所有 FaceReader 文章，按发布时间排列。</p>
+<div class="fr-posts-layout">
+  <div class="fr-posts-list">
 
 {% if paginator %}
   {% assign posts = paginator.posts %}
@@ -22,3 +24,6 @@ title: 全部文章
 </div>
 
 {% include paginator.html locale=locale %}
+  </div>
+  {% include archive-context-rail.html locale=locale %}
+</div>

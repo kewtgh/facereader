@@ -1,0 +1,17 @@
+---
+layout: null
+permalink: /category-index.json
+sitemap: false
+---
+{
+{% for category in site.categories %}
+  {{ category[0] | slugify | jsonify }}: {
+    "name": {{ category[0] | jsonify }},
+    "posts": [
+      {% for post in category[1] %}
+        {"title": {{ post.title | jsonify }}, "url": {{ post.url | relative_url | jsonify }}, "date": {{ post.date | date: "%Y-%m-%d" | jsonify }}}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+}

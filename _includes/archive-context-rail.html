@@ -1,0 +1,36 @@
+{% assign archive_locale = include.locale | default: page.locale | default: site.locale %}
+{% assign archive_lang = archive_locale | slice: 0, 2 %}
+{% assign archive_text = site.data.ui-text[archive_locale] | default: site.data.ui-text[site.locale] %}
+<aside class="fr-archive-rail">
+  <section>
+    <h2 data-fr-i18n-key="start_here_label">{{ archive_text.start_here_label }}</h2>
+    <ul>
+      {% for entry in site.data.start_here %}
+        <li><a href="{{ entry.url | relative_url }}" data-fr-i18n-zh="{{ entry.zh | escape }}" data-fr-i18n-en="{{ entry.en | escape }}">{{ entry[archive_lang] }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  <section>
+    <h2 data-fr-i18n-key="series_label">{{ archive_text.series_label }}</h2>
+    <ul>
+      {% for pair in site.data.series %}
+        {% assign series_id = pair[0] %}
+        {% assign series = pair[1] %}
+        {% if series.category %}
+          {% assign series_count = site.categories[series.category] | size %}
+        {% else %}
+          {% assign series_count = site.posts | where: "series", series_id | where: "locale", "zh-CN" | size %}
+        {% endif %}
+        <li><a href="{{ series.url | relative_url }}" data-fr-i18n-zh="{{ series.zh | escape }}" data-fr-i18n-en="{{ series.en | escape }}">{{ series[archive_lang] }}</a> <span>{{ series_count }}</span></li>
+      {% endfor %}
+    </ul>
+  </section>
+  <section>
+    <h2 data-fr-i18n-key="explore_topic_label">{{ archive_text.explore_topic_label }}</h2>
+    <ul>
+      {% for editorial_pillar in site.data.editorial_pillars %}
+        <li><a href="{{ '/categories/' | relative_url }}#{{ editorial_pillar.id }}" data-fr-i18n-zh="{{ editorial_pillar.zh }}" data-fr-i18n-en="{{ editorial_pillar.en }}">{{ editorial_pillar[archive_lang] }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+</aside>
