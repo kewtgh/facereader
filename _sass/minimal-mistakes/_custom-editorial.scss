@@ -6,8 +6,8 @@
 :root {
   --fr-shell-max: 1280px;
   --fr-content-max: 820px;
-  --fr-toc-width: 260px;
-  --fr-column-gap: 72px;
+  --fr-toc-width: 240px;
+  --fr-column-gap: 20px;
   --fr-header-height: 4rem;
 }
 
@@ -22,7 +22,7 @@
 
 .fr-article-layout {
   display: grid;
-  grid-template-columns: minmax(0, var(--fr-content-max)) minmax(var(--fr-toc-width), 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, var(--fr-content-max)) var(--fr-toc-width);
   gap: var(--fr-column-gap);
   align-items: start;
   padding-top: 2.5rem;
@@ -32,7 +32,7 @@
 .fr-article-layout::after { content: none; }
 
 .fr-article .fr-article-layout > .page {
-  grid-column: 1;
+  grid-column: 2;
   float: none;
   width: 100%;
   min-width: 0;
@@ -209,7 +209,7 @@
 .fr-article-series-rail a[aria-current="page"] { font-weight: 700; }
 .fr-article-series-rail__all { display: inline-block; margin-top: 0.4rem; font-size: 0.73rem; }
 .fr-article-toc {
-  grid-column: 2;
+  grid-column: 3;
   position: sticky;
   top: calc(var(--fr-header-height) + 1.5rem);
   max-height: calc(100vh - var(--fr-header-height) - 3rem);
@@ -598,7 +598,7 @@
   .fr-posts-layout { grid-template-columns: minmax(0, 1fr) 230px; gap: 3rem; }
   .fr-map-head { grid-template-columns: 1fr; gap: 1.3rem; }
 }
-@media (max-width: 1079px) {
+@media (max-width: 1279px) {
   .fr-article-layout { display: block; }
   .fr-article .fr-article-layout > .page { width: min(100%, 820px); max-width: 820px; margin-inline: auto; }
   .fr-article .page__related { width: min(calc(100% - 56px), 820px); max-width: 820px; }

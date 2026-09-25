@@ -1,7 +1,7 @@
 # for use with in-page templates
 ---
 name: FaceReader
-version: 7.1.3
+version: 7.1.4
 upstream_theme:
   name: Minimal Mistakes
   version: 4.28.0
