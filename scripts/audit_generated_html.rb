@@ -125,6 +125,33 @@ else
   add_error(errors, company_table_file, "company table page was not generated")
 end
 
+# Series navigation belongs to the article context, never above the TOC.
+series_cases = [
+  ["人格成长/不靠谱领导力/manage-leadership5/index.html", 4, "/series/leadership/"],
+  ["经典解读/孙子兵法/TheArtofWar-5bingshi/index.html", 4, "/series/sunzi/"],
+  ["社会杂论/Society-tobeslaveforever/index.html", 3, "/series/lcer/"]
+]
+series_cases.each do |relative_path, expected_links, series_url|
+  file = SITE_ROOT.join(relative_path)
+  next add_error(errors, file, "series article was not generated") unless file.file?
+
+  document = Nokogiri::HTML(file.read(encoding: "UTF-8"))
+  links = document.css(".fr-article-series-rail ol a")
+  add_error(errors, file, "adjacent series links are incomplete") unless links.length == expected_links
+  add_error(errors, file, "current series article is not marked") unless links.any? { |link| link["aria-current"] == "page" }
+  add_error(errors, file, "series points to the wrong collection") unless
+    document.at_css(".fr-article-series-rail__all")&.[]("href") == series_url
+  add_error(errors, file, "series list is obstructing the TOC") if
+    document.at_css(".fr-article-toc .fr-article-series-rail")
+end
+
+unrelated_article = SITE_ROOT.join("人格成长", "ending-recommendationthought", "index.html")
+if unrelated_article.file?
+  document = Nokogiri::HTML(unrelated_article.read(encoding: "UTF-8"))
+  add_error(errors, unrelated_article, "unrelated article gained a series") if
+    document.at_css(".fr-article-series-rail")
+end
+
 compiled_css_file = SITE_ROOT.join("assets", "css", "main.css")
 if compiled_css_file.file?
   compiled_css = compiled_css_file.read(encoding: "UTF-8")

@@ -129,7 +129,6 @@ layout: default
   </article>
   {% if page.id and page.toc %}
     <aside class="fr-article-toc" aria-label="{{ article_text.toc_label }}">
-      {% include article-series-rail.html %}
       {% include article-toc.html locale=locale %}
     </aside>
   {% endif %}

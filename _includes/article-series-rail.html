@@ -1,9 +1,9 @@
 {% assign rail_series_id = page.series %}
-{% unless rail_series_id %}
+{% if rail_series_id == nil and page.sidebar.nav %}
   {% for pair in site.data.series %}
     {% if pair[1].navigation == page.sidebar.nav %}{% assign rail_series_id = pair[0] %}{% break %}{% endif %}
   {% endfor %}
-{% endunless %}
+{% endif %}
 {% assign rail_series = site.data.series[rail_series_id] %}
 {% if rail_series %}
   {% assign rail_posts = '' | split: ',' %}
@@ -25,45 +25,45 @@
     {% endfor %}
     {% assign rail_posts = filtered_posts %}
   {% endif %}
-  {% if rail_posts.size > 0 %}
-    <section class="fr-article-series-rail">
-      <details>
-        <summary><span>{{ rail_series[article_lang] }}</span><small>{{ rail_posts.size }}</small></summary>
-        <ol>
-          {% if rail_series.navigation %}
-            {% assign navigation_groups = site.data.navigation[rail_series.navigation] %}
-            {% for navigation_group in navigation_groups %}
-              {% for navigation_item in navigation_group.children %}
-                {% for post in rail_posts %}
-                  {% assign post_href = post.url | relative_url %}
-                  {% if post_href == navigation_item.url and post.hidden != true %}
-                    <li><a href="{{ post_href }}"{% if post.url == page.url %} aria-current="page"{% endif %}>{{ post.title | escape }}</a></li>
-                    {% break %}
-                  {% endif %}
-                {% endfor %}
-              {% endfor %}
-            {% endfor %}
-            {% for post in rail_posts %}
-              {% assign post_href = post.url | relative_url %}
-              {% assign already_listed = false %}
-              {% for navigation_group in navigation_groups %}
-                {% for navigation_item in navigation_group.children %}
-                  {% if post_href == navigation_item.url %}{% assign already_listed = true %}{% break %}{% endif %}
-                {% endfor %}
-                {% if already_listed %}{% break %}{% endif %}
-              {% endfor %}
-              {% unless already_listed or post.hidden == true %}
-                <li><a href="{{ post_href }}"{% if post.url == page.url %} aria-current="page"{% endif %}>{{ post.title | escape }}</a></li>
-              {% endunless %}
-            {% endfor %}
-          {% else %}
-            {% for post in rail_posts %}
-              {% if post.hidden != true %}<li><a href="{{ post.url | relative_url }}"{% if post.url == page.url %} aria-current="page"{% endif %}>{{ post.series_label | default: post.title | escape }}</a></li>{% endif %}
-            {% endfor %}
+  {% assign ordered_posts = '' | split: ',' %}
+  {% if rail_series.navigation %}
+    {% assign navigation_groups = site.data.navigation[rail_series.navigation] %}
+    {% for navigation_group in navigation_groups %}
+      {% for navigation_item in navigation_group.children %}
+        {% for post in rail_posts %}
+          {% assign post_href = post.url | relative_url %}
+          {% if post_href == navigation_item.url and post.hidden != true %}
+            {% assign ordered_posts = ordered_posts | push: post %}
+            {% break %}
           {% endif %}
-        </ol>
-      </details>
-      <a class="fr-article-series-rail__all" href="{{ rail_series.url | relative_url }}">{{ article_text.view_full_series }} →</a>
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}
+  {% endif %}
+  {% for post in rail_posts %}
+    {% unless post.hidden == true or ordered_posts contains post %}
+      {% assign ordered_posts = ordered_posts | push: post %}
+    {% endunless %}
+  {% endfor %}
+
+  {% assign current_index = nil %}
+  {% for post in ordered_posts %}
+    {% if post.url == page.url %}{% assign current_index = forloop.index0 %}{% break %}{% endif %}
+  {% endfor %}
+  {% if current_index != nil %}
+    {% assign start_index = current_index | minus: 1 %}
+    {% assign last_start = ordered_posts.size | minus: 4 %}
+    {% if last_start < 0 %}{% assign last_start = 0 %}{% endif %}
+    {% if start_index < 0 %}{% assign start_index = 0 %}{% endif %}
+    {% if start_index > last_start %}{% assign start_index = last_start %}{% endif %}
+    <section class="fr-article-series-rail" aria-label="{{ rail_series[article_lang] }}">
+      <h2><a href="{{ rail_series.url | relative_url }}" data-fr-i18n-zh="{{ rail_series.zh | escape }}" data-fr-i18n-en="{{ rail_series.en | escape }}">{{ rail_series[article_lang] }}</a> <small>{{ ordered_posts.size }}</small></h2>
+      <ol start="{{ start_index | plus: 1 }}">
+        {% for post in ordered_posts offset:start_index limit:4 %}
+          <li><a href="{{ post.url | relative_url }}"{% if post.url == page.url %} aria-current="page"{% endif %}>{{ post.series_label | default: post.title | escape }}</a></li>
+        {% endfor %}
+      </ol>
+      <a class="fr-article-series-rail__all" href="{{ rail_series.url | relative_url }}" data-fr-i18n-zh="{{ site.data.ui-text['zh-CN'].view_full_series | escape }} →" data-fr-i18n-en="{{ site.data.ui-text['en-US'].view_full_series | default: site.data.ui-text.en.view_full_series | escape }} →">{{ article_text.view_full_series }} →</a>
     </section>
   {% endif %}
 {% endif %}
