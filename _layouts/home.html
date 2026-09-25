@@ -10,6 +10,7 @@ title: 全部文章
 
 <p class="fr-archive-intro" data-fr-i18n-zh="所有 FaceReader 文章，按发布时间排列。" data-fr-i18n-en="All FaceReader essays, ordered by publication date.">所有 FaceReader 文章，按发布时间排列。</p>
 <div class="fr-posts-layout">
+  {% include archive-context-rail.html locale=locale %}
   <div class="fr-posts-list">
 
 {% if paginator %}
@@ -25,5 +26,4 @@ title: 全部文章
 
 {% include paginator.html locale=locale %}
   </div>
-  {% include archive-context-rail.html locale=locale %}
 </div>

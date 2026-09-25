@@ -1,0 +1,591 @@
+@use "support" as *;
+@use "sass:color";
+@use "fr-tokens" as *;
+/* =====================================================
+ * FaceReader · Custom SCSS (FINAL - Stable)
+ * based on original custom SCSS, merged + cleaned
+ * - 不再改布局为 flex（避免混乱）
+ * - 精准覆盖：空白 / TOC / caption / table / lists / about专题 / 作者&专题协调
+ * ===================================================== */
+
+/* =========================
+ * 统一的卡片风格变量
+ * ========================= */
+
+/* =========================
+ * 全局排版
+ * ========================= */
+body { line-height: 1.7; }
+
+.masthead__menu-item a { font-weight: 500; }
+
+.search__toggle:focus-visible,
+.greedy-nav__toggle:focus-visible,
+.author__urls-wrapper > button:focus-visible {
+  outline: 2px solid $fr-action-color;
+  outline-offset: 3px;
+}
+
+.masthead-language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  margin-inline-start: 0.55rem;
+  padding: 0.16rem;
+  border: 1px solid rgba(34, 48, 66, 0.10);
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 252, 242, 0.64));
+  box-shadow: 0 6px 16px rgba(34, 48, 66, 0.07);
+  font-family: $sans-serif;
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.masthead-language-switcher a,
+.masthead-language-switcher button,
+.masthead-language-switcher .is-current {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  padding: 0.12rem 0.48rem;
+  border-radius: 999px;
+  text-decoration: none;
+  letter-spacing: 0;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.masthead-language-switcher button {
+  border: 0;
+  background: transparent;
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.masthead-language-switcher a,
+.masthead-language-switcher button {
+  color: #5f6770;
+}
+
+.masthead-language-switcher a:hover,
+.masthead-language-switcher a:focus-visible,
+.masthead-language-switcher button:hover,
+.masthead-language-switcher button:focus-visible {
+  background: rgba(47, 95, 159, 0.08);
+  color: color.mix($fr-action-color, $text-color, 72%);
+}
+
+/* Preserve the intrinsic logo ratio after width/height attributes are added. */
+.greedy-nav .site-logo {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.greedy-nav .site-logo img {
+  display: block;
+  width: auto !important;
+  height: 2rem !important;
+  max-width: none;
+  max-height: 2rem;
+  object-fit: contain;
+}
+
+/* Give the collapsed menu a complete touch target instead of the icon width. */
+.greedy-nav__toggle {
+  box-sizing: border-box;
+  flex: 0 0 44px;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  min-height: 44px;
+  padding: 0;
+  touch-action: manipulation;
+}
+
+.masthead-language-switcher .is-current {
+  background: color.mix($fr-action-color, #ffffff, 14%);
+  box-shadow:
+    0 1px 2px rgba(34, 48, 66, 0.08),
+    inset 0 0 0 1px rgba(47, 95, 159, 0.08);
+  color: color.mix($fr-action-color, $text-color, 82%);
+  cursor: default;
+}
+
+@media (max-width: 760px) {
+  .masthead-language-switcher {
+    margin-inline-start: 0.25rem;
+    font-size: 0.72rem;
+    padding: 0.12rem;
+  }
+
+  .masthead-language-switcher a,
+  .masthead-language-switcher button,
+  .masthead-language-switcher .is-current {
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    padding-inline: 0.34rem;
+  }
+}
+
+.page__title { line-height: 1.25; }
+
+.page-language-switcher {
+  // The article metadata above it is floated by the theme. Without clearing it,
+  // a wide layout can place the language controls in the remaining right column.
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.75rem 0 1.2rem;
+  color: $fr-panel-muted;
+  font-family: $sans-serif;
+  font-size: 0.84rem;
+}
+
+.page-language-switcher__label {
+  font-weight: 700;
+}
+
+.page-language-switcher ul {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page-language-switcher a,
+.page-language-switcher .is-current,
+.page-language-switcher .is-disabled {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: 0.18rem 0.65rem;
+  border: 1px solid rgba(34, 48, 66, 0.10);
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.page-language-switcher a {
+  color: color.mix($fr-action-color, $text-color, 70%);
+  background: rgba(255, 255, 255, 0.54);
+}
+
+.page-language-switcher a:hover,
+.page-language-switcher a:focus-visible {
+  background: color.mix($fr-action-color, #ffffff, 11%);
+  color: color.mix($fr-action-color, $text-color, 80%);
+}
+
+.page-language-switcher .is-current {
+  color: color.mix($text-color, #000000, 82%);
+  background: color.mix($fr-action-color, #ffffff, 10%);
+  font-weight: 700;
+}
+
+.page-language-switcher .is-disabled {
+  color: $fr-muted-text;
+  background: rgba(255, 255, 255, 0.28);
+  cursor: not-allowed;
+}
+
+.page__content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* =====================================================
+ * 0) 撤销任何会把正文 clear 到侧栏下方的行为
+ * ===================================================== */
+.layout--single .page__content,
+.layout--single .page__inner-wrap,
+.layout--single .initial-content,
+.layout--single .archive {
+  clear: none !important;
+}
+
+/* Hero 后的内容不额外拉开 */
+.layout--single .page__hero + .page__content,
+.layout--single .page__hero--overlay + .page__content,
+.layout--single .page__hero + .page__inner-wrap,
+.layout--single .page__hero--overlay + .page__inner-wrap,
+.layout--single .page__hero + .initial-content,
+.layout--single .page__hero--overlay + .initial-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* 单篇文章页：版心更协调（避免 截图那种右侧巨空白） */
+@include breakpoint($large) {
+  .layout--single .page {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* =====================================================
+ * 图片和Caption (fr-figure + Markdown img+em fallback)
+ * ===================================================== */
+
+/* ---- A) figure.fr-figure 标准写法 ---- */
+.page__content figure.fr-figure {
+  margin: 1.2rem auto 1.5rem !important;
+  text-align: center !important;
+
+  /* 覆盖 _base.scss 的 figure:flex + space-between */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+}
+
+.page__content figure.fr-figure > img {
+  display: block !important;
+  margin: 0 auto !important;
+  max-width: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  border-radius: 0.6rem;
+}
+
+.page__content figure.fr-figure > figcaption {
+  display: block !important;
+  margin: 0.22rem auto 0 !important; /* ✅紧贴图片 */
+  padding: 0 !important;
+
+  max-width: min(92%, 42rem) !important;
+  text-align: center !important;
+
+  font-size: 0.9rem !important;
+  line-height: 1.45 !important;
+  color: rgba(60, 55, 45, 0.62) !important;
+
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.page__content figure.fr-figure > figcaption:empty {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 可选分隔线（不想要就删掉这一段） */
+.page__content figure.fr-figure > figcaption::after {
+  content: "";
+  display: block;
+  width: min(360px, 78%);
+  height: 1px;
+  margin: 0.35rem auto 0;
+  background: rgba(34, 48, 66, 0.10);
+}
+
+/* ---- B) Markdown 常见兜底：img + em / img + br + em ---- */
+
+/* 结构1：<img> 紧跟 <em> */
+.page__content img + em {
+  display: block !important;
+  margin: 0.22rem auto 1rem !important; /* ✅贴图 */
+  max-width: min(92%, 42rem) !important;
+  text-align: center !important;
+
+  font-style: normal !important;
+  font-size: 0.9rem !important;
+  line-height: 1.45 !important;
+  color: rgba(60, 55, 45, 0.62) !important;
+}
+
+/* 结构2：<img><br><em> */
+.page__content img + br {
+  display: none !important;
+}
+.page__content img + br + em {
+  display: block !important;
+  margin: 0.22rem auto 1rem !important;
+  max-width: min(92%, 42rem) !important;
+  text-align: center !important;
+
+  font-style: normal !important;
+  font-size: 0.9rem !important;
+  line-height: 1.45 !important;
+  color: rgba(60, 55, 45, 0.62) !important;
+}
+
+/* 结构3：常见 Markdown：<p><img></p><p><em>caption</em></p>
+   只命中紧跟图片段落后的“仅包含 em”的段落，避免误伤正文斜体 */
+.page__content p > img {
+  margin-bottom: 0 !important;
+}
+.page__content p:has(> img) {
+  margin-bottom: 0.25rem !important;
+}
+.page__content p:has(> img) + p > em:only-child {
+  display: block !important;
+  margin: 0.22rem auto 1rem !important;
+  max-width: min(92%, 42rem) !important;
+  text-align: center !important;
+
+  font-style: normal !important;
+  font-size: 0.9rem !important;
+  line-height: 1.45 !important;
+  color: rgba(60, 55, 45, 0.62) !important;
+}
+.page__content p:has(> img) + p:has(> em:only-child) {
+  margin-top: 0 !important;
+}
+
+
+/* =====================================================
+ * 2) ✅ 作者栏：淡化 + 略微缩窄 + 与专题栏统一卡片语言
+ * ===================================================== */
+.layout--single .sidebar .h-card {
+  background: $fr-panel-bg !important;
+  border: 1px solid $fr-panel-border !important;
+  border-radius: $fr-card-radius !important;
+  box-shadow: none !important;
+  padding: 1.1rem 0.95rem 1.05rem !important;
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto 1rem;
+}
+
+.layout--single .sidebar .author__avatar {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 0.6rem;
+}
+
+.layout--single .sidebar .author__avatar img { border-radius: 50%; }
+
+.layout--single .sidebar .author__name {
+  font-size: 1.04rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: color.mix($text-color, #000, 82%);
+}
+
+.layout--single .sidebar .author__bio {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $muted-text-color;
+}
+
+.layout--single .sidebar .author__urls-wrapper { margin-top: 0.85rem; }
+.layout--single .sidebar .author__urls-wrapper > .btn { display: none; }
+.layout--single .sidebar .author__urls {
+  width: max-content;
+  max-width: 100%;
+  margin-inline: auto;
+  font-size: 1rem;
+  text-align: left;
+  opacity: 0.9;
+}
+
+.layout--single .sidebar .author__urls li {
+  margin-bottom: 0.18rem;
+  text-align: left;
+}
+
+.layout--single .sidebar .author__urls li > a,
+.layout--single .sidebar .author__urls li[itemprop="homeLocation"] {
+  display: grid;
+  grid-template-columns: 1.5rem minmax(0, 1fr);
+  column-gap: 0.4rem;
+  align-items: center;
+}
+
+.layout--single .sidebar .author__urls li > a > i,
+.layout--single .sidebar .author__urls li > a > .svg-inline--fa,
+.layout--single .sidebar .author__urls li[itemprop="homeLocation"] > i,
+.layout--single .sidebar .author__urls li[itemprop="homeLocation"] > .svg-inline--fa {
+  width: 1.25rem;
+  margin: 0;
+  justify-self: center;
+  text-align: center;
+}
+
+.layout--single .sidebar .author__urls .label,
+.layout--single .sidebar .author__urls .p-locality {
+  min-width: 0;
+  padding-inline-start: 0;
+  text-align: left;
+}
+
+/* =====================================================
+ * 3) ✅ 专题栏（About 也要生效）—— 不依赖 layout--about
+ * ===================================================== */
+.sidebar .nav__list {
+  background: $fr-panel-bg !important;
+  border: 1px solid $fr-panel-border !important;
+  box-shadow: $fr-card-shadow;
+  border-radius: $fr-card-radius !important;
+  padding: 1.1rem 1.05rem 1.2rem !important;
+  max-width: 100%;
+  margin: 0 auto 1rem;
+}
+
+.sidebar .nav__title {
+  margin: 0 0 0.55rem;
+  font-family: $sans-serif;
+  font-size: 1.1rem;
+  font-weight: 650;
+}
+
+.sidebar .nav__sub-title {
+  margin: 0.7rem 0 0.35rem;
+  font-family: $sans-serif;
+  font-size: 1.02rem;
+  font-weight: 650;
+  text-transform: none;
+  border-bottom: none !important;
+}
+
+@include breakpoint($large) {
+  .about-page.layout--single .page {
+    float: none !important;
+    width: 100% !important;
+    padding-inline-end: 200px;
+  }
+}
+
+@include breakpoint($x-large) {
+  .about-page.layout--single .page {
+    padding-inline-end: 300px;
+  }
+}
+
+.about-page .about-entry-panel {
+  margin: 1.4rem 0 1.75rem;
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(34, 48, 66, 0.10);
+  border-left: 4px solid color.mix($fr-action-color, $fr-warm-accent, 64%);
+  border-radius: 0.55rem;
+  background: rgba(255, 255, 255, 0.46);
+  color: color.mix($text-color, $fr-ink, 84%);
+  font-family: $sans-serif;
+  line-height: 1.72;
+  text-indent: 0 !important;
+}
+
+.about-page .about-entry-panel strong {
+  color: $fr-ink;
+}
+
+.about-page .about-entry-panel--leaders {
+  border-left-color: $fr-action-color;
+  background: color.mix($fr-action-color, #ffffff, 5%);
+}
+
+.about-page .about-entry-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.85rem;
+  text-indent: 0 !important;
+}
+
+.about-page .about-entry-actions--inline {
+  margin: 0.9rem 0 1.4rem;
+}
+
+.about-page .about-entry-actions .btn {
+  margin: 0;
+  border: 1px solid rgba(34, 48, 66, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  color: color.mix($text-color, $fr-ink, 82%) !important;
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.about-page .about-entry-actions .btn:hover,
+.about-page .about-entry-actions .btn:focus-visible {
+  border-color: rgba(168, 100, 42, 0.34);
+  background: rgba(255, 246, 220, 0.66);
+  color: color.mix($fr-warm-accent, $text-color, 72%) !important;
+}
+
+.about-page .about-entry-mail {
+  margin-left: auto !important;
+}
+
+.about-page .about-entry-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0 1.6rem;
+  text-indent: 0 !important;
+}
+
+.about-page .about-entry-links a {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid rgba(34, 48, 66, 0.10);
+  border-radius: 0.55rem;
+  background: rgba(255, 255, 255, 0.40);
+  color: color.mix($text-color, $fr-ink, 84%);
+  text-decoration: none;
+}
+
+.about-page .about-entry-links a:hover,
+.about-page .about-entry-links a:focus-visible {
+  border-color: color.mix($fr-action-color, $border-color, 42%);
+  background: color.mix($fr-action-color, #ffffff, 7%);
+  text-decoration: none;
+}
+
+.about-page .about-entry-links strong {
+  color: $fr-ink;
+  font-family: $sans-serif;
+  font-size: 0.95rem;
+}
+
+.about-page .about-entry-links span {
+  color: $fr-panel-muted;
+  font-family: $sans-serif;
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+@include breakpoint($large) {
+  .layout--single .sidebar {
+    width: 200px;
+  }
+
+  .layout--single .page {
+    width: calc(100% - 200px);
+  }
+}
+
+@include breakpoint($x-large) {
+  .layout--single .sidebar {
+    width: 240px;
+  }
+
+  .layout--single .page {
+    width: calc(100% - 240px);
+  }
+}

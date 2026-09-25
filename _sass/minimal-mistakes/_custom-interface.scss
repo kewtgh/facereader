@@ -1,0 +1,866 @@
+@use "support" as *;
+@use "sass:color";
+@use "fr-tokens" as *;
+
+/* =====================================================
+ * Home: Start-here & Picks (scoped ONLY)
+ * - force grid (avoid being flattened by theme flex/width rules)
+ * - keep Recent Updates untouched
+ * ===================================================== */
+
+/* isolate layout flow (avoid overlap/float leftovers) */
+.home-section--start-here,
+.home-section--picks {
+  display: flow-root;
+}
+
+.home-section__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgba(34, 48, 66, 0.10);
+}
+
+.home-section__title {
+  margin: 0;
+  color: $fr-ink;
+}
+
+.home-section__desc {
+  max-width: 46rem;
+  margin: 0.35rem 0 0;
+  color: $fr-panel-muted;
+}
+
+@media (max-width: 640px) {
+  .home-section__header {
+    display: block;
+    padding-bottom: 0.45rem;
+  }
+}
+
+/* force grid only inside these two sections */
+.home-section--start-here .entries-grid,
+.home-section--picks .entries-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+/* make sure children don't stretch to full row due to width rules elsewhere */
+.home-section--start-here .entries-grid > .archive__item,
+.home-section--picks .entries-grid > .archive__item {
+  width: auto !important;
+  max-width: none !important;
+  border-radius: $fr-card-radius;
+  overflow: hidden;
+  background: $fr-card-bg;
+  border: 1px solid $fr-card-border;
+  box-shadow: $fr-card-shadow;
+  padding: 1.05rem 1.05rem 1rem;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.home-section--start-here .entries-grid > .archive__item:hover,
+.home-section--picks .entries-grid > .archive__item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+  border-color: rgba(34, 48, 66, 0.18);
+}
+
+/* teaser image: make it behave like "Recent updates" */
+.home-section--start-here .archive__item-teaser--home,
+.home-section--picks .archive__item-teaser--home {
+  border-radius: 0.45rem;
+  overflow: hidden;
+  margin-bottom: 0.9rem;
+}
+
+.home-section--start-here .archive__item-teaser--home img,
+.home-section--picks .archive__item-teaser--home img {
+  width: 100% !important;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+/* chips */
+.home-section--start-here .home-chips,
+.home-section--picks .home-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+  margin-top: 0.8rem;
+}
+
+.home-section--start-here .home-chips__label,
+.home-section--picks .home-chips__label {
+  color: rgba(34, 48, 66, 0.70);
+  white-space: nowrap;
+}
+
+.home-section--start-here .home-chip,
+.home-section--picks .home-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.22rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(34, 48, 66, 0.14);
+  background: rgba(255, 255, 255, 0.58);
+  text-decoration: none !important;
+  line-height: 1.2;
+}
+
+.home-section--start-here .home-chip:hover,
+.home-section--picks .home-chip:hover {
+  background: color.mix($fr-action-color, #ffffff, 9%);
+  border-color: rgba(34, 48, 66, 0.22);
+}
+
+/* Start-here: force 3 columns on desktop */
+@include breakpoint($large) {
+  .home-section--start-here .entries-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* optional: 2 columns on medium screens */
+@include breakpoint($medium) {
+  .home-section--start-here .entries-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Space between Start-here and About CTA */
+.home-section--start-here {
+  margin-bottom: 2.2rem;
+}
+
+.home-section--picks,
+.home-section--posts {
+  margin-top: 3.2rem;
+}
+
+.home-section--picks .home-section__header,
+.home-section--posts .home-section__header {
+  margin-bottom: 1.15rem;
+}
+
+@include breakpoint(max-width $small - 1px) {
+  .home-section--picks,
+  .home-section--posts {
+    margin-top: 2.35rem;
+  }
+}
+
+/* 段落首行缩进 */
+
+/* 默认：正文段落首行缩进 */
+.page__content > p {
+  text-indent: 2em;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}
+
+/* 关闭缩进的文章：外层加 no-indent */
+.no-indent .page__content > p {
+  text-indent: 0;
+}
+
+/* 局部块不缩进 */
+.no-indent-block p { text-indent: 0 !important; }
+
+/* 英文文章采用拉丁字体、较紧凑行距和无首行缩进。 */
+article.page[lang^="en"] .page__content {
+  font-family: $sans-serif-latin;
+  line-height: 1.68;
+}
+
+article.page[lang^="en"] .page__content > p {
+  text-indent: 0;
+  margin-bottom: 1.15em;
+}
+
+article.page[lang^="en"] .page__content h1,
+article.page[lang^="en"] .page__content h2,
+article.page[lang^="en"] .page__content h3,
+article.page[lang^="en"] .page__content h4,
+article.page[lang^="en"] .page__content h5,
+article.page[lang^="en"] .page__content h6,
+article.page[lang^="en"] .page__content blockquote {
+  font-family: $serif-latin;
+}
+
+.page__content [data-fr-i18n-block="en"] {
+  font-family: $sans-serif-latin;
+  line-height: 1.68;
+}
+
+.page__content [data-fr-i18n-block="en"] p {
+  margin-bottom: 1.15em;
+  text-indent: 0;
+}
+
+.page__content [data-fr-i18n-block="en"] h1,
+.page__content [data-fr-i18n-block="en"] h2,
+.page__content [data-fr-i18n-block="en"] h3,
+.page__content [data-fr-i18n-block="en"] h4,
+.page__content [data-fr-i18n-block="en"] h5,
+.page__content [data-fr-i18n-block="en"] h6,
+.page__content [data-fr-i18n-block="en"] blockquote {
+  font-family: $serif-latin;
+}
+
+@include breakpoint($x-large) {
+  article.page[lang^="en"] .page__content,
+  .page__content [data-fr-i18n-block="en"] {
+    font-size: 20px;
+  }
+}
+
+/* Markdown 行内语义：以暖棕、青绿、蓝色和浅金区分不同强调层级。 */
+.page__content :where(p, li, dd, blockquote) :is(strong, b) {
+  color: #74420f;
+  font-weight: 800;
+  text-decoration-line: underline;
+  text-decoration-color: rgba($fr-warm-accent, 0.42);
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.12em;
+  text-decoration-skip-ink: auto;
+}
+
+article.page:not([lang^="en"]) .page__content :where(p, li, dd, blockquote) em {
+  color: #2f6f68;
+  font-weight: 650;
+  font-style: normal;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgba(#2f6f68, 0.58);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.18em;
+}
+
+article.page .page__content [data-fr-i18n-block="en"] :where(p, li, dd, blockquote) em {
+  color: #2f6f68;
+  font-weight: 600;
+  font-style: italic;
+  text-decoration: none;
+}
+
+article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
+  color: #2f6f68;
+  font-weight: 600;
+}
+
+.page__content :where(p, li, dd, blockquote) a:not(.btn) {
+  text-decoration-line: underline;
+  text-decoration-color: rgba($fr-action-color, 0.38);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  text-decoration-skip-ink: auto;
+}
+
+.page__content :where(p, li, dd, blockquote) a:not(.btn):hover,
+.page__content :where(p, li, dd, blockquote) a:not(.btn):focus-visible {
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
+}
+
+.page__content > hr {
+  width: 100%;
+  margin: 2.4rem auto;
+  border: 0;
+  border-top: 1px solid color.mix($border-color, $fr-warm-accent, 72%);
+}
+
+.page__content > hr.hr--short {
+  width: min(9rem, 32%);
+}
+
+.page__content mark {
+  padding-inline: 0.12em;
+  color: inherit;
+  background: rgba(240, 198, 116, 0.42);
+  box-decoration-break: clone;
+}
+
+.page__content del {
+  color: $muted-text-color;
+  text-decoration-thickness: 1px;
+}
+
+.page__content kbd {
+  display: inline-block;
+  padding: 0.08em 0.42em;
+  border: 1px solid color.mix(#000, $border-color, 12%);
+  border-bottom-width: 2px;
+  border-radius: 0.3rem;
+  background: rgba(255, 255, 255, 0.64);
+  box-shadow: 0 1px 0 rgba(34, 48, 66, 0.08);
+  font-size: 0.82em;
+  line-height: 1.4;
+}
+
+/* =====================================================
+ * Search: algolia
+ * ===================================================== */
+
+.algolia-page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.algolia-searchbox {
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 100%;
+  .ais-SearchBox-form {
+    display: flex;
+    gap: .5rem;
+  }
+
+  .ais-SearchBox-input {
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,.12);
+    padding: 0 .9rem;
+    font-size: 16px;
+    box-shadow: 0 1px 0 rgba(0,0,0,.03);
+  }
+
+  .ais-SearchBox-submit,
+  .ais-SearchBox-reset {
+    border-radius: 10px;
+  }
+}
+
+.algolia-hits {
+  .ais-Hits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 14px;
+  }
+}
+
+.algolia-hit {
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: $fr-card-radius;
+  overflow: hidden;
+  background: #fff;
+  transition: transform .12s ease, box-shadow .12s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(0,0,0,.08);
+  }
+}
+
+.algolia-hit__link {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.algolia-hit__media {
+  background: #f3f3f3;
+}
+
+.algolia-hit__img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16/10;
+}
+
+.algolia-hit__body {
+  padding: 12px 14px 12px 0;
+}
+
+.algolia-hit__title {
+  margin: 0 0 .35rem 0;
+  font-size: 1.05rem;
+  line-height: 1.3;
+
+  em {
+    font-style: normal;
+    background: rgba(255, 213, 79, .55);
+    border-radius: 4px;
+    padding: 0 .2em;
+  }
+}
+
+.algolia-hit__desc {
+  margin: 0 0 .5rem 0;
+  color: rgba(0,0,0,.70);
+  line-height: 1.5;
+
+  em {
+    font-style: normal;
+    background: rgba(255, 213, 79, .35);
+    border-radius: 4px;
+    padding: 0 .2em;
+  }
+}
+
+.algolia-hit__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+  font-size: .85rem;
+  color: rgba(0,0,0,.55);
+}
+
+.algolia-stats {
+  margin: 0 0 0.85rem;
+  color: rgba(0,0,0,.58);
+  font-size: 0.9rem;
+}
+
+.algolia-hit__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.55rem;
+}
+
+.algolia-hit__tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.45rem;
+  padding: 0.12rem 0.48rem;
+  border: 1px solid rgba(31, 95, 115, 0.16);
+  border-radius: 999px;
+  background: rgba(31, 95, 115, 0.07);
+  color: rgba(31, 95, 115, 0.90);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.algolia-pagination {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+
+  .ais-Pagination-link {
+    border-radius: 10px;
+  }
+}
+
+.algolia-empty {
+  padding: 1rem;
+  border: 1px dashed rgba(0,0,0,.25);
+  border-radius: 12px;
+  color: rgba(0,0,0,.7);
+  background: rgba(255,255,255,.7);
+}
+
+/* 移动端优化 */
+@media (max-width: 640px) {
+  .algolia-hit__link {
+    grid-template-columns: 120px 1fr;
+  }
+}
+
+.algolia-searchbox .ais-SearchBox-form {
+  position: relative;
+  display: block !important; // 不用 flex，避免按钮参与输入框宽度计算
+  width: 100%;
+  max-width: 100%;
+  height: 52px;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.algolia-searchbox .ais-SearchBox-input {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 52px !important;
+  line-height: 44px;
+
+  padding: 0 58px 0 58px !important;
+  border-radius: 0.5rem !important;
+
+  border: 1px solid rgba(0,0,0,.14) !important;
+  background: #fff !important;
+
+  font-size: 16px !important;
+  line-height: 1 !important;   // 关键：防止文字撑高
+  display: block !important;
+  outline: none !important;
+}
+
+/* 隐藏 Algolia 默认 SVG 图标 */
+.algolia-searchbox .ais-SearchBox-submit,
+.algolia-searchbox .ais-SearchBox-reset {
+  appearance: none !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 40px !important;
+  height: 40px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  cursor: pointer !important;
+  z-index: 2 !important;
+  line-height: 1 !important;
+}
+
+.algolia-searchbox .ais-SearchBox-submit svg,
+.algolia-searchbox .ais-SearchBox-reset svg,
+.algolia-searchbox .ais-SearchBox-submitIcon,
+.algolia-searchbox .ais-SearchBox-resetIcon {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* 左侧按钮：我们用 ::before 自绘/替换图标 */
+.algolia-searchbox .ais-SearchBox-submit {
+  left: 6px !important;
+  background: transparent !important;
+}
+
+/* 左侧自定义图标：方案1（纯 CSS 放大镜，简单耐用） */
+.algolia-searchbox .ais-SearchBox-submit::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0,0,0,.55);
+  border-radius: 50%;
+  position: relative;
+  display: block;
+}
+.algolia-searchbox .ais-SearchBox-submit::after {
+  content: "";
+  width: 10px;
+  height: 2px;
+  background: rgba(0,0,0,.55);
+  border-radius: 2px;
+  position: absolute;
+  transform: translate(10px, 10px) rotate(45deg);
+}
+
+/* 右侧清空按钮：更大 + 圆形 + 居中对齐 */
+.algolia-searchbox .ais-SearchBox-reset {
+  right: 6px !important;
+  border-radius: 999px !important;
+  background: rgba(0,0,0,.06) !important;
+}
+
+.algolia-searchbox .ais-SearchBox-reset[hidden] {
+  display: none !important;
+}
+
+/* 右侧自定义 “X” */
+.algolia-searchbox .ais-SearchBox-reset::before,
+.algolia-searchbox .ais-SearchBox-reset::after {
+  content: "";
+  width: 16px;
+  height: 2px;
+  background: rgba(0,0,0,.55);
+  border-radius: 2px;
+  position: absolute;
+}
+.algolia-searchbox .ais-SearchBox-reset::before { transform: rotate(45deg); }
+.algolia-searchbox .ais-SearchBox-reset::after  { transform: rotate(-45deg); }
+
+.algolia-searchbox .ais-SearchBox-reset:hover {
+  background: rgba(0,0,0,.10) !important;
+}
+
+.algolia-searchbox .ais-SearchBox-submit:focus-visible,
+.algolia-searchbox .ais-SearchBox-reset:focus-visible {
+  outline: 2px solid $fr-action-color;
+  outline-offset: 2px;
+}
+
+/* 防止按钮撑开/影响布局 */
+.algolia-searchbox .ais-SearchBox-submit,
+.algolia-searchbox .ais-SearchBox-reset {
+  box-sizing: border-box;
+}
+
+/* focus 更清爽 */
+.algolia-searchbox .ais-SearchBox-input:focus {
+  border-color: rgba(47, 95, 159, .55) !important;
+  box-shadow: 0 0 0 4px rgba(47, 95, 159, .12) !important;
+}
+
+/* ✅ 干掉 satellite-min.css 注入的 form::before 放大镜 */
+.algolia-searchbox form.ais-SearchBox-form::before {
+  content: none !important;
+  background: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+/* ✅ 白色背景框就是它：让它变大并包住 input */
+.algolia-searchbox .ais-SearchBox {
+  background: #fff;
+  padding: 14px;              // 让白底更厚实
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+ * Tags: descriptions and counts
+ * ===================================================== */
+
+.tag-directory-search {
+  margin: 0 0 1.2rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid $fr-card-border;
+  border-radius: $fr-card-radius;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.tag-directory-search label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: $fr-ink;
+  font-family: $sans-serif;
+  font-weight: 700;
+}
+
+.tag-directory-search input {
+  width: 100%;
+  min-height: 2.55rem;
+  border-color: rgba(34, 48, 66, 0.18);
+  border-radius: 0.4rem;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.tag-directory-search p {
+  min-height: 1.35em;
+  margin: 0.4rem 0 0;
+  color: $muted-text-color;
+  font-family: $sans-serif;
+  font-size: 0.82rem;
+}
+
+.tag-group-title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: baseline;
+}
+
+.tag-group-list.hidden,
+.tag-group-list[aria-hidden="true"] {
+  display: none;
+  visibility: hidden;
+}
+
+.tag-group-toggle {
+  display: flex;
+  width: 100%;
+  align-items: baseline;
+  gap: 0.45rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: start;
+}
+
+.tag-group-toggle::after {
+  content: "▾";
+  margin-inline-start: auto;
+  transition: transform 160ms ease;
+}
+
+.tag-group-toggle[aria-expanded="false"]::after {
+  transform: rotate(-90deg);
+}
+
+.tag-group-toggle:focus-visible,
+.tag-filter-btn:focus-visible {
+  outline: 2px solid $fr-action-color;
+  outline-offset: 3px;
+}
+
+.tag-group-count,
+.tag-filter-count {
+  color: $muted-text-color;
+  font-family: $sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.tag-filter-description {
+  margin: -0.35rem 0 1rem;
+  padding: 0.75rem 0.9rem;
+  border-left: 4px solid color.mix($primary-color, $border-color, 60%);
+  background: rgba(255, 255, 255, 0.48);
+  color: color.mix($text-color, $muted-text-color, 76%);
+  text-indent: 0 !important;
+}
+
+.tag-posts-empty {
+  padding: 1rem;
+  border: 1px dashed rgba(34, 48, 66, 0.2);
+  border-radius: $fr-card-radius;
+  background: rgba(255, 255, 255, 0.55);
+  color: $muted-text-color;
+  text-align: center;
+}
+
+/* =====================================================
+ * Reader tools: progress, mobile TOC, top button
+ * ===================================================== */
+
+.fr-reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  height: 3px;
+  pointer-events: none;
+  background: transparent;
+}
+
+.fr-reading-progress i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: linear-gradient(90deg, color.mix($primary-color, #ffffff, 42%), $primary-color);
+}
+
+.fr-reader-tools {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 9998;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.fr-reader-tools__btn,
+.fr-mobile-toc__close {
+  display: inline-grid;
+  place-items: center;
+  width: 2.55rem;
+  height: 2.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(34, 48, 66, 0.88);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.16);
+  cursor: pointer;
+}
+
+.fr-reader-tools__btn:hover,
+.fr-reader-tools__btn:focus,
+.fr-mobile-toc__close:hover,
+.fr-mobile-toc__close:focus {
+  background: color.mix(#223042, $primary-color, 78%);
+}
+
+.fr-mobile-toc {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.fr-mobile-toc.is-open {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.fr-mobile-toc__shade {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.12);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.16s ease;
+}
+
+.fr-mobile-toc.is-open .fr-mobile-toc__shade {
+  opacity: 1;
+}
+
+.fr-mobile-toc__panel {
+  position: absolute;
+  top: 4.25rem;
+  right: 0.75rem;
+  width: min(86vw, 23rem);
+  max-height: min(72vh, 34rem);
+  overflow-y: auto;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 1rem;
+  background: rgba(246, 243, 236, 0.84);
+  -webkit-backdrop-filter: blur(18px) saturate(1.12);
+  backdrop-filter: blur(18px) saturate(1.12);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.20);
+  transform: translate3d(calc(100% + 1rem), -0.35rem, 0);
+  transition: transform 0.18s ease, opacity 0.18s ease;
+  opacity: 0;
+}
+
+.fr-mobile-toc.is-open .fr-mobile-toc__panel {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+.fr-mobile-toc__close {
+  position: sticky;
+  top: 0.25rem;
+  margin-left: auto;
+  margin-bottom: 0.75rem;
+}
+
+.fr-mobile-toc-open {
+  overflow: hidden;
+}
+
+@media (max-width: 63.99em) {
+  .page__content > .sidebar__right {
+    display: none;
+  }
+}
+
+@media (min-width: 64em) {
+  .fr-reader-tools__btn--toc {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

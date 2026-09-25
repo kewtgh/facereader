@@ -1,24 +1,42 @@
 - id: people-business
   zh: 人 · 企业
   en: People · Business
+  description_zh: 从人物判断走向企业观察，理解性格、团队与商业决策。
+  description_en: People, teams and the decisions that shape businesses.
+  featured_slug: NEV-nio/
   categories: [阅相识人, 企业剖析, 大师百相]
 - id: management
   zh: 管理 · 组织
   en: Management · Organization
+  description_zh: 领导者如何影响组织，制度又如何塑造人的行为。
+  description_en: How leaders and institutions shape organizations.
+  featured_slug: manage-leadership/
   categories: [不靠谱领导力, 管理思想, 人力资源]
 - id: technology
   zh: 科技 · 产业
   en: Technology · Industry
+  description_zh: 透过技术热潮，辨认产业结构与企业的真实能力。
+  description_en: Reading industry structure beyond technology hype.
+  featured_slug: IC-wingtech/
   categories: [AI, 新能源汽车, 芯片半导体, TMT]
 - id: society
   zh: 社会 · 机制
   en: Society · Systems
+  description_zh: 从家庭、社会与政治现象出发，追问背后的运行机制。
+  description_en: The mechanisms behind households, society and politics.
+  featured_slug: Society-tobeslaveforever/
   categories: [社会杂论, Social Commentary, Society and Politics, 政治领袖]
 - id: classics
   zh: 经典 · 历史
   en: Classics · History
+  description_zh: 回到原典与历史现场，寻找仍能解释今天的问题。
+  description_en: Classics and history as tools for reading the present.
+  featured_slug: TheArtofWar-0wordsbefore/
   categories: [经典解读, 孙子兵法, 文言经典]
 - id: life
   zh: 人生 · 思想
   en: Life · Thought
+  description_zh: 关于成长、选择、自我认知和生活判断的思考。
+  description_en: Essays on growth, choices and self-understanding.
+  featured_slug: Psy-ToBeYourself-1/
   categories: [人格成长, 轶事杂说]

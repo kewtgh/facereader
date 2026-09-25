@@ -28,6 +28,11 @@ deployment utilities belong in `assets/scripts`, which is excluded from the
 published site. `bundle exec rake js` regenerates `assets/js/main.min.js`
 without publishing a source map.
 
+Custom styles are organized as Sass modules under `_sass/minimal-mistakes/`.
+`_custom.scss` loads them in cascade order; Jekyll still emits one minified
+`assets/css/main.css`, so the source split adds no browser requests. Run
+`npm run site:css:budget` after a build to check its compressed size.
+
 ## Bilingual Articles
 
 FaceReader supports paired Chinese and English article versions through front matter.

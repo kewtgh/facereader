@@ -17,8 +17,10 @@ layout: default
 {% endif %}
 {% assign article_text = site.data.ui-text[locale] | default: site.data.ui-text[site.locale] %}
 {% assign article_lang = locale | slice: 0, 2 %}
+{% assign has_overlay_hero = false %}
+{% if page.header.overlay_color or page.header.overlay_image %}{% assign has_overlay_hero = true %}{% endif %}
 
-{% if page.id == nil and page.header.overlay_color or page.id == nil and page.header.overlay_image or page.id == nil and page.header.image %}
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html locale=locale %}
 {% elsif page.header.video.id and page.header.video.provider %}
   {% include page__hero_video.html %}
@@ -48,14 +50,14 @@ layout: default
     {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
 
     <div class="page__inner-wrap">
-      {% if page.id %}
+      {% if page.id and has_overlay_hero == false %}
         <header class="fr-article-header">
           {% if pillar %}<a class="fr-article-header__pillar" href="{{ '/categories/' | relative_url }}#{{ pillar.id }}">{{ pillar[article_lang] }}</a>{% endif %}
           <h1 id="page-title" class="page__title p-name" itemprop="headline">{{ page.title }}</h1>
           {% if page.excerpt %}<p class="fr-article-header__excerpt">{{ page.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}</p>{% endif %}
           {% include page__meta.html locale=locale %}
         </header>
-      {% else %}
+      {% elsif page.id == nil %}
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
           {% if page.title -%}

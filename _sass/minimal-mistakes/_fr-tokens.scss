@@ -1,0 +1,19 @@
+@use "support" as *;
+@use "sass:color";
+
+$fr-card-bg: color.mix(#ffffff, $background-color, 92%);
+$fr-card-border: color.mix(#000000, $border-color, 7%);
+$fr-card-shadow: 0 6px 18px rgba(15, 23, 42, 0.045);
+$fr-card-radius: 0.5rem;
+
+$fr-ink: #223042;
+$fr-action-color: #2f5f9f;
+$fr-action-hover: color.adjust($fr-action-color, $lightness: -8%);
+$fr-warm-accent: #a8642a;
+$fr-accent-text: #8a4c10;
+$fr-muted-text: #64615c;
+
+$fr-panel-bg: rgba(255, 255, 255, 0.45);
+$fr-panel-border: rgba(34, 48, 66, 0.08);
+$fr-panel-text: rgba(34, 48, 66, 0.86);
+$fr-panel-muted: #646b74;

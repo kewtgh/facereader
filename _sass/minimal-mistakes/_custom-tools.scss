@@ -1,0 +1,497 @@
+@use "support" as *;
+@use "sass:color";
+@use "fr-tokens" as *;
+
+/* =====================================================
+ * 加类：data-page / score-table，工具页与评分表
+ * ===================================================== */
+
+/* 1) 先解除主题容器裁切（只在该页面） */
+.score-table .page,
+.data-page .page,
+.score-table .page__inner-wrap,
+.data-page .page__inner-wrap,
+.score-table .page__content,
+.data-page .page__content,
+.score-table .page__main {
+  overflow: visible !important;
+  height: auto !important;
+  max-height: none !important;
+}
+
+@media (min-width: 1024px) {
+  .data-page.layout--single .page,
+  .score-table.layout--single .page {
+    float: none;
+    width: 100%;
+    max-width: none;
+    padding-inline: 0;
+  }
+}
+
+/* 2) 的“table-wrap”现在是 table 自己，所以把那两段改成命中 table.table-wrap */
+
+/* ✅ 关键：不要撑满整页，按内容收缩并居中（提醒的这段） */
+.score-table table.table-wrap {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+
+  /* 可选：视觉 */
+  border-radius: 10px;
+
+  /* 让它成为滚动容器（纵向 + 横向） */
+  display: block;
+  max-height: 70vh;      /* 超出就内部滚动，表头 sticky 才明显，默认移动端 */
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  /* 表格本体布局（提醒的第二段核心思想） */
+  table-layout: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* 桌面端固定像素 */
+@media (min-width: 1024px) {
+  .score-table table.table-wrap {
+    max-height: 720px;
+  }
+}
+
+/* 表头固定（ DOM 里有 thead，用这个最准） */
+.score-table table.table-wrap thead th {
+  position: sticky;
+  top: 0;                /* 若有固定导航栏，改成 64px/72px */
+  z-index: 10;
+  background: #fff2c6;   /* 表头底色 */
+}
+
+/* 第二列不换行 */
+.score-table table.table-wrap th:nth-child(2),
+.score-table table.table-wrap td:nth-child(2) {
+  white-space: nowrap;
+}
+
+/* 可选：整体更紧凑 */
+.score-table table.table-wrap th,
+.score-table table.table-wrap td {
+  padding: 10px 12px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.score-table .leaders-table__wrap table.table-wrap {
+  display: table;
+  width: 100%;
+  max-width: none;
+  max-height: none;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible;
+  margin: 0 !important;
+}
+
+.page__content table.fr-score-table {
+  display: table !important;
+  width: 100%;
+  max-width: 360px;
+  margin: 1rem 0 1.65rem;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid rgba(31, 95, 115, 0.20);
+  border-radius: $fr-card-radius;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 252, 250, 0.92)),
+    rgba(31, 95, 115, 0.06);
+  box-shadow: 0 16px 30px rgba(31, 95, 115, 0.10);
+  font-variant-numeric: tabular-nums;
+}
+
+.page__content table.fr-score-table th {
+  padding: 0.74rem 0.85rem;
+  background: #fff2c6;
+  color: #0f3142;
+  font-family: $sans-serif;
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-align: center;
+  border: 0;
+}
+
+.page__content table.fr-score-table td {
+  padding: 0.68rem 0.85rem;
+  border: 0;
+  border-bottom: 1px solid rgba(31, 95, 115, 0.12);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.page__content table.fr-score-table tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.page__content table.fr-score-table tr:last-child td {
+  border-bottom: 0;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.page__content table.fr-score-table td:first-child {
+  text-align: left;
+  font-weight: 700;
+  color: #17384a;
+}
+
+.page__content table.fr-score-table td:last-child {
+  width: 5.2rem;
+  color: $fr-action-color;
+  font-family: $sans-serif;
+  font-weight: 800;
+  font-size: 1.02rem;
+}
+
+.page__content table.fr-score-table tr:last-child td:first-child {
+  color: #17384a;
+}
+
+.page__content table.fr-score-table tr:last-child td:last-child {
+  color: $fr-action-color;
+  font-size: 1.08rem;
+}
+
+.fr-score-card {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(280px, 1fr);
+  gap: 1.1rem;
+  width: min(100%, 820px);
+  margin: 0.85rem auto 1.8rem;
+  align-items: start;
+}
+
+.page__content .fr-score-card table.fr-score-table {
+  margin: 0 !important;
+}
+
+.fr-score-card__note {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  padding: 1.05rem 1.1rem;
+  border-radius: $fr-card-radius;
+  border: 1px solid rgba(31, 95, 115, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 252, 250, 0.92)),
+    rgba(31, 95, 115, 0.06);
+  box-shadow: 0 16px 30px rgba(31, 95, 115, 0.08);
+}
+
+.fr-score-card__note h4 {
+  margin: 0 0 0.65rem;
+  color: #17384a;
+  font-family: $sans-serif;
+  font-size: 1rem;
+}
+
+.fr-score-card__note p {
+  margin: 0 0 0.75rem;
+  color: color.mix($text-color, #17384a, 74%);
+  font-size: 0.88rem;
+  line-height: 1.76;
+  text-indent: 0;
+}
+
+.fr-score-card__note .btn {
+  align-self: flex-start;
+  margin: 0.35rem 0 0;
+  border-radius: 999px;
+}
+
+@media (max-width: 760px) {
+  .fr-score-card {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .page__content table.fr-score-table {
+    width: 100%;
+  }
+}
+
+/* =====================================================
+ * Minimal Mistakes: hero overlay 里列表默认不是白色，手动补齐 *
+ * ===================================================== */
+.page__hero--overlay .page__lead li,
+.page__hero--overlay .page__lead ul,
+.page__hero--overlay .page__lead ol {
+  color: #fff;
+}
+.page__hero--overlay .page__lead a {
+  color: #fff;
+  text-decoration: underline;
+}
+.page__hero--overlay .page__lead ul {
+  margin-top: 0.6rem;
+}
+.page__hero--overlay .page__lead li {
+  margin: 0.2rem 0;
+}
+
+/* ================================
+   Pre / Code block polish (Minimal Mistakes + Rouge)
+   ================================ */
+
+/* 行内 code（不影响代码块） */
+.page__content :not(pre) > code {
+  padding: 0.12em 0.36em;
+  border: 1px solid rgba($fr-action-color, 0.18);
+  border-radius: 0.3rem;
+  background: color.mix($background-color, #d5e2e7, 72%);
+  color: #254b61;
+  font-size: 0.9em;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.page__content :not(pre) > code::before,
+.page__content :not(pre) > code::after {
+  content: none;
+  letter-spacing: 0;
+}
+
+/* Rouge 外容器拥有完整视觉边界，避免行号模式中的多个 pre 重复成框。 */
+.page__content div.highlighter-rouge,
+.page__content figure.highlight {
+  position: relative;
+  display: block;
+  margin: 1.25rem 0 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  background: #0f172a;
+  box-shadow: 0 7px 20px rgba(15, 23, 42, 0.14);
+  overflow: hidden;
+}
+
+.page__content div.highlighter-rouge > .highlight,
+.page__content figure.highlight > .highlight {
+  margin: 0;
+  background: transparent;
+}
+
+/* 独立 pre 保留完整边界；Rouge 内部 pre 复用外容器边界。 */
+.page__content pre,
+.page__content pre.highlight,
+.page__content .highlight pre {
+  position: relative;
+  margin: 1.25rem 0 1.5rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  background: #0f172a;
+  color: #e5e7eb;
+  font-size: 0.86rem;
+  line-height: 1.65;
+  tab-size: 2;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-color: rgba(255, 255, 255, 0.24) rgba(255, 255, 255, 0.05);
+  scrollbar-gutter: stable;
+  box-shadow: 0 7px 20px rgba(15, 23, 42, 0.14);
+}
+
+.page__content div.highlighter-rouge pre,
+.page__content figure.highlight pre {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* 让 code 不再继承怪异背景（避免“黄块里套黄块”） */
+.page__content pre code,
+.page__content .highlight pre code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: 0 !important;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* 代码行过长时保留横向滚动，并让滚动条保持低干扰。 */
+.page__content pre::-webkit-scrollbar {
+  height: 8px;
+}
+.page__content pre::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+}
+.page__content pre::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.page__content pre ::selection {
+  background: rgba($fr-warm-accent, 0.58);
+  color: #ffffff;
+}
+
+/* Rouge 行号表格继承同一个容器，不参与正文表格皮肤。 */
+.page__content .rouge-table {
+  display: table;
+  width: 100%;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  font-size: inherit;
+  box-shadow: none !important;
+}
+
+.page__content .rouge-table td {
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  vertical-align: top;
+}
+
+.page__content .rouge-table pre {
+  padding: 0;
+  overflow: visible;
+  scrollbar-gutter: auto;
+}
+
+.page__content .rouge-gutter,
+.page__content .rouge-table .gutter {
+  user-select: none;
+  width: 1%;
+  padding-inline-end: 0.8rem !important;
+  border-inline-end: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: rgba(229, 231, 235, 0.55);
+  text-align: end;
+  white-space: nowrap;
+}
+
+.page__content .rouge-code,
+.page__content .rouge-table .code {
+  padding-inline-start: 0.9rem !important;
+}
+
+/* =========================================================
+   FaceReader width fixes
+   Target:
+   - posts / categories / tags: keep left author sidebar, expand right content
+   - most-popular / leaders-scorecard: full width aligned with masthead
+   ========================================================= */
+
+:root {
+  --fr-sidebar-width: 250px;
+  --fr-sidebar-gap: 52px;
+}
+
+/* ---------- posts / categories / tags ---------- */
+
+@media (min-width: 64em) {
+  body.fr-wide-sidebar #main {
+    display: grid !important;
+    grid-template-columns: var(--fr-sidebar-width) minmax(0, 1fr);
+    column-gap: var(--fr-sidebar-gap);
+    align-items: start;
+  }
+
+  body.fr-wide-sidebar #main::before,
+  body.fr-wide-sidebar #main::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  body.fr-wide-sidebar #main > .sidebar {
+    grid-column: 1;
+    float: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  body.fr-wide-sidebar #main > .sidebar.sticky {
+    align-self: start;
+  }
+
+  body.fr-wide-sidebar #main > .archive,
+  body.fr-wide-sidebar #main > .page {
+    grid-column: 2;
+    float: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  body.fr-wide-sidebar #main > .archive *,
+  body.fr-wide-sidebar #main > .page .page__content {
+    max-width: none;
+  }
+}
+
+/* ---------- most-popular / leaders-scorecard ---------- */
+
+@media (min-width: 64em) {
+  body.fr-wide-full #main > .archive,
+  body.fr-wide-full #main > .page {
+    float: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  body.fr-wide-full #main > .page .page__inner-wrap,
+  body.fr-wide-full #main > .page .page__content,
+  body.fr-wide-full #main > .archive {
+    float: none !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  body.fr-wide-full #main .grid__wrapper,
+  body.fr-wide-full #main .archive__entries,
+  body.fr-wide-full #main .entries-grid,
+  body.fr-wide-full #main .popular-grid,
+  body.fr-wide-full #main .leaders-scorecard,
+  body.fr-wide-full #main .leaders-scorecard-wrap,
+  body.fr-wide-full #main .scorecard-wrap {
+    width: 100%;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* ---------- mobile safety ---------- */
+
+@media (max-width: 63.99em) {
+  body.fr-wide-sidebar #main,
+  body.fr-wide-full #main {
+    display: block;
+  }
+
+  body.fr-wide-sidebar #main > .sidebar,
+  body.fr-wide-sidebar #main > .archive,
+  body.fr-wide-sidebar #main > .page,
+  body.fr-wide-full #main > .archive,
+  body.fr-wide-full #main > .page {
+    float: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}

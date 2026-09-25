@@ -6,11 +6,12 @@ layout: archive
 {% assign category_lang = locale | slice: 0, 2 %}
 {% assign category_text = site.data.ui-text[locale] | default: site.data.ui-text[site.locale] %}
 {{ content }}
-<p class="fr-archive-intro" data-fr-i18n-zh="按问题进入 FaceReader。" data-fr-i18n-en="Explore FaceReader by subject rather than chronology.">按问题进入 FaceReader。</p>
+<p class="fr-archive-intro" data-fr-i18n-zh="从问题进入 FaceReader：先选择研究主题，再沿着文章继续阅读。" data-fr-i18n-en="Explore FaceReader by question and follow a path through related essays.">从问题进入 FaceReader：先选择研究主题，再沿着文章继续阅读。</p>
 <section class="fr-pillars" aria-label="{{ category_text.explore_topic_label }}">
   {% for editorial_pillar in site.data.editorial_pillars %}
     <section class="fr-pillar" id="{{ editorial_pillar.id }}">
       <h2 data-fr-i18n-zh="{{ editorial_pillar.zh }}" data-fr-i18n-en="{{ editorial_pillar.en }}">{{ editorial_pillar[category_lang] }}</h2>
+      <p class="fr-pillar__description" data-fr-i18n-zh="{{ editorial_pillar.description_zh | escape }}" data-fr-i18n-en="{{ editorial_pillar.description_en | escape }}">{{ editorial_pillar.description_zh }}</p>
       <ul>
         {% for category_name in editorial_pillar.categories %}
           {% assign category_count = site.categories[category_name] | size %}
@@ -19,6 +20,36 @@ layout: archive
           {% endif %}
         {% endfor %}
       </ul>
+      <div class="fr-pillar__reading">
+        <h3 data-fr-i18n-key="latest_in_topic_label">{{ category_text.latest_in_topic_label }}</h3>
+        <ul>
+          {% assign featured_post = nil %}
+          {% for candidate in site.posts %}
+            {% if candidate.url contains editorial_pillar.featured_slug and candidate.locale != 'en-US' %}
+              {% assign featured_post = candidate %}{% break %}
+            {% endif %}
+          {% endfor %}
+          {% if featured_post %}
+            <li class="fr-pillar__featured">
+              <a href="{{ featured_post.url | relative_url }}">{{ featured_post.title | escape }}</a>
+              {% if featured_post.excerpt %}<p>{{ featured_post.excerpt | markdownify | strip_html | normalize_whitespace | truncate: 125 }}</p>{% endif %}
+            </li>
+          {% endif %}
+          {% assign listed_count = 0 %}
+          {% for post in site.posts %}
+            {% if post.locale == 'en-US' or post.url == featured_post.url %}{% continue %}{% endif %}
+            {% assign post_matches_pillar = false %}
+            {% for category_name in editorial_pillar.categories %}
+              {% if post.categories contains category_name %}{% assign post_matches_pillar = true %}{% break %}{% endif %}
+            {% endfor %}
+            {% if post_matches_pillar %}
+              <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
+              {% assign listed_count = listed_count | plus: 1 %}
+            {% endif %}
+            {% if listed_count >= 2 %}{% break %}{% endif %}
+          {% endfor %}
+        </ul>
+      </div>
     </section>
   {% endfor %}
 </section>
@@ -41,4 +72,4 @@ layout: archive
   <ul id="category-detail-posts"></ul>
 </section>
 <noscript><p><a href="{{ '/posts/' | relative_url }}">{{ category_text.all_posts_label }}</a></p></noscript>
-<script defer src="{{ '/assets/js/category-map.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/category-map.js' | relative_url }}?v={{ site.data.theme.version }}"></script>

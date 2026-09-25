@@ -1,0 +1,1017 @@
+@use "support" as *;
+@use "sass:color";
+@use "fr-tokens" as *;
+
+/* =====================================================
+ * 4) ✅ TOC（右侧目录）美化 —— 与作者/专题统一风格
+ * TOC (Sidebar) — Clean, Book-like, Hierarchical Indents
+ * One-shot replacement for your previous TOC SCSS
+   ========================================================= */
+
+.sidebar__right .toc,
+.sidebar .toc {
+  background: rgba(255, 255, 255, 0.55) !important;
+  border: 1px solid rgba(34, 48, 66, 0.10) !important;
+  border-radius: 0.95rem !important;
+  box-shadow: none !important;
+  overflow: hidden;
+  backdrop-filter: blur(6px); /* subtle glass, safe to keep */
+}
+
+/* Title bar */
+.sidebar__right .toc__title,
+.sidebar .toc__title {
+  background: rgba(34, 48, 66, 0.06) !important;
+  color: rgba(34, 48, 66, 0.78) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0;
+  padding: 0.42rem 0.70rem !important;
+  border-bottom: 1px solid rgba(34, 48, 66, 0.10) !important;
+  margin: 0 !important;
+}
+
+/* Menu base */
+.sidebar__right .toc__menu,
+.sidebar .toc__menu {
+  margin: 0 !important;
+  padding: 0.25rem 0.15rem !important;
+  font-size: 0.78rem !important;
+  line-height: 1.22 !important;
+}
+
+/* Reset ul/li default spacing completely */
+.sidebar__right .toc__menu ul,
+.sidebar .toc__menu ul,
+.sidebar__right .toc__menu li,
+.sidebar .toc__menu li {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  list-style: none !important;
+}
+
+/* Links: base style */
+.sidebar__right .toc__menu a,
+.sidebar .toc__menu a {
+  position: relative;
+  display: block;
+  border-top: none !important;
+  margin: 0 !important;
+
+  padding: 0.30rem 0.65rem !important;
+  border-radius: 0.55rem;
+
+  color: rgba(111, 78, 55, 0.76) !important; /* paper-ish brown */
+  text-decoration: none !important;
+
+  transition: background 120ms ease, color 120ms ease, transform 120ms ease;
+}
+
+/* Hover */
+.sidebar__right .toc__menu a:hover,
+.sidebar .toc__menu a:hover {
+  background: rgba(176, 127, 74, 0.08) !important;
+  transform: translateX(1px);
+}
+
+/* Active/current */
+.sidebar__right .toc__menu a.active,
+.sidebar .toc__menu a.active,
+.sidebar__right .toc__menu a[aria-current="true"],
+.sidebar .toc__menu a[aria-current="true"] {
+  background: rgba(176, 127, 74, 0.12) !important;
+  font-weight: 800 !important;
+  color: rgba(92, 60, 39, 0.92) !important;
+}
+
+/* =========================================================
+   Hierarchical Indents (h2/h3/h4/h5…)
+   Minimal Mistakes TOC nesting:
+   h2:  ul > li > a
+   h3:  ul > li > ul > li > a
+   h4:  ul > li > ul > li > ul > li > a
+   ========================================================= */
+
+/* Level 1 (usually h2) */
+.sidebar__right .toc__menu > li > a,
+.sidebar .toc__menu > li > a {
+  padding-left: 0.70rem !important;
+  color: $fr-ink !important;
+  font-weight: 700;
+}
+
+/* Level 2 (usually h3) */
+.sidebar__right .toc__menu > li > ul > li > a,
+.sidebar .toc__menu > li > ul > li > a {
+  padding-left: 1.25rem !important;
+  font-size: 0.76rem !important;
+  color: color.mix($fr-ink, $fr-warm-accent, 74%) !important;
+  font-weight: 600;
+  opacity: 0.94;
+}
+
+/* Level 3 (usually h4) — ✅ deeper indent than h3 */
+.sidebar__right .toc__menu > li > ul > li > ul > li > a,
+.sidebar .toc__menu > li > ul > li > ul > li > a {
+  padding-left: 1.85rem !important;
+  font-size: 0.74rem !important;
+  color: color.mix($fr-panel-muted, $fr-action-color, 72%) !important;
+  opacity: 0.90;
+}
+
+/* Level 4 (usually h5) */
+.sidebar__right .toc__menu > li > ul > li > ul > li > ul > li > a,
+.sidebar .toc__menu > li > ul > li > ul > li > ul > li > a {
+  padding-left: 2.35rem !important;
+  font-size: 0.72rem !important;
+  color: $fr-panel-muted !important;
+  opacity: 0.86;
+}
+
+/* =========================================================
+   Book-like structure hint (sub-level marker + subtle spine)
+   ========================================================= */
+
+/* A subtle "spine" line for nested lists */
+.sidebar__right .toc__menu ul ul,
+.sidebar .toc__menu ul ul {
+  border-left: 1px solid rgba(111, 78, 55, 0.12);
+  margin-left: 0.85rem !important;
+  padding-left: 0.15rem !important;
+}
+
+/* Small dot marker for Level 3+ items (h4/h5…) */
+.sidebar__right .toc__menu > li > ul > li > ul > li > a::before,
+.sidebar .toc__menu > li > ul > li > ul > li > a::before,
+.sidebar__right .toc__menu > li > ul > li > ul > li > ul > li > a::before,
+.sidebar .toc__menu > li > ul > li > ul > li > ul > li > a::before {
+  content: "•";
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(111, 78, 55, 0.30);
+  font-size: 0.85em;
+}
+
+/* Reduce dot overlap for very deep levels by shifting a bit */
+.sidebar__right .toc__menu > li > ul > li > ul > li > ul > li > a::before,
+.sidebar .toc__menu > li > ul > li > ul > li > ul > li > a::before {
+  left: 1.35rem;
+}
+
+/* =========================================================
+   Optional: tighten long text wrapping (prettier multi-line)
+   ========================================================= */
+.sidebar__right .toc__menu a,
+.sidebar .toc__menu a {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* =========================================================
+   Mobile friendliness (optional)
+   ========================================================= */
+@media (max-width: 1024px) {
+  .sidebar__right .toc__menu,
+  .sidebar .toc__menu {
+    font-size: 0.80rem !important;
+  }
+}
+
+/* =====================================================
+ * 5) ✅ 表格：调整为浅色高级感（强制覆盖 现在的深蓝主题表头）
+ *    只作用正文表格，排除代码高亮用表格
+ * ===================================================== */
+.page__content table:not(.rouge-table) {
+  width: 100%;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  margin: 1.6rem 0 2rem !important;
+  background: color.mix(#ffffff, $background-color, 97%) !important;
+  border: 1px solid color.mix(#000, $border-color, 9%) !important;
+  border-radius: 0.5rem !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-gutter: stable;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+}
+
+.page__content table:not(.rouge-table) thead th {
+  background: #fff3c4 !important; /* ✅浅黄表头 */
+  color: #223042 !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  padding: 0.6rem 0.65rem !important;
+  border-bottom: 1px solid rgba(138, 104, 60, 0.20) !important;
+  text-align: start;
+}
+
+.page__content table:not(.rouge-table) tbody td {
+  padding: 0.55rem 0.65rem !important;
+  font-size: 0.9rem !important;
+  text-align: start;
+  border-bottom: 1px solid color.mix(#000, $border-color, 7%) !important;
+  background: transparent !important;
+}
+
+/* 极淡斑马纹 */
+.page__content table:not(.rouge-table) tbody tr:nth-child(even) td {
+  background: rgba(34, 48, 66, 0.03) !important;
+}
+
+.page__content table:not(.rouge-table) tbody tr:hover td {
+  background: rgba(255, 210, 90, 0.22) !important;
+}
+
+.page__content table:not(.rouge-table) tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* 普通正文表格用独立容器滚动，表格本体始终填满可用宽度。 */
+.page__content .fr-table-scroll {
+  width: 100%;
+  margin: 1.6rem 0 2rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+  border-radius: 0.5rem;
+}
+
+.page__content .fr-table-scroll > table.fr-content-table {
+  display: table;
+  width: 100%;
+  min-width: 100%;
+  margin: 0 !important;
+  table-layout: auto;
+  overflow: visible;
+}
+
+.page__content .fr-table-scroll:focus-visible {
+  outline: 2px solid $link-color;
+  outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+  .page__content table:not(.rouge-table):not(.fr-score-table):not(.table-wrap):not(.leaders-benchmark__table):not(.leaders-compare__table) th,
+  .page__content table:not(.rouge-table):not(.fr-score-table):not(.table-wrap):not(.leaders-benchmark__table):not(.leaders-compare__table) td {
+    min-width: 6.5rem;
+  }
+}
+
+.page__content table.leaders-compare__table {
+  width: 100%;
+  min-width: 640px;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.page__content table.leaders-compare__table thead th {
+  background: rgba(32, 94, 117, 0.08) !important;
+  color: color.mix($text-color, $primary-color, 76%) !important;
+  text-align: left !important;
+}
+
+.page__content table.leaders-compare__table th,
+.page__content table.leaders-compare__table td {
+  padding: 0.68rem 0.75rem !important;
+  border-bottom: 1px solid rgba(34, 48, 66, 0.08) !important;
+}
+
+.page__content table.leaders-compare__table tbody td,
+.page__content table.leaders-compare__table tbody td:last-child {
+  color: color.mix($text-color, $muted-text-color, 84%) !important;
+  font-weight: 400 !important;
+  text-align: left !important;
+}
+
+.page__content table.leaders-compare__table tbody td.is-best,
+.page__content table.leaders-compare__table tbody td.is-best:last-child {
+  color: $fr-action-color !important;
+  font-family: $sans-serif;
+  font-weight: 800 !important;
+}
+
+/* =====================================================
+ * 6) Markdown 列表：用标记形状、颜色和缩进共同表达层级
+ * ===================================================== */
+.page__content ul,
+.page__content ol {
+  margin: 1.2rem 0 1.4rem;
+  padding-inline-start: 1.55rem;
+}
+
+.page__content li {
+  margin: 0.45rem 0;
+  line-height: 1.75;
+}
+
+/* 顶层列表保持中性，避免每个列表都呈现为提示框。 */
+.page__content > ul,
+.page__content > ol {
+  border-inline-start: 0;
+  padding-inline-start: 1.55rem;
+}
+
+.page__content ul {
+  list-style-type: disc;
+}
+
+.page__content ul ul {
+  list-style-type: circle;
+}
+
+.page__content ul ul ul {
+  list-style-type: square;
+}
+
+.page__content ul ul ul ul {
+  list-style-type: "–  ";
+}
+
+.page__content ol {
+  list-style-position: outside;
+  list-style-type: decimal;
+}
+
+.page__content ol ol {
+  list-style-type: decimal;
+}
+
+.page__content ol ol > li::marker {
+  content: counter(list-item) ") ";
+  font-variant-numeric: tabular-nums;
+}
+
+.page__content ol ol ol {
+  list-style-type: upper-alpha;
+}
+
+.page__content ol ol ol > li::marker {
+  content: counter(list-item, upper-alpha) ". ";
+}
+
+.page__content ol ol ol ol {
+  list-style-type: lower-roman;
+}
+
+.page__content ol ol ol ol > li::marker {
+  content: counter(list-item, lower-roman) ". ";
+}
+
+.page__content ul > li::marker,
+.page__content ol > li::marker {
+  color: $fr-action-color;
+  font-weight: 800;
+}
+
+.page__content ul ul > li::marker,
+.page__content ol ol > li::marker {
+  color: $fr-warm-accent;
+}
+
+.page__content ul ul ul > li::marker,
+.page__content ol ol ol > li::marker {
+  color: #34756e;
+}
+
+.page__content ul ul ul ul > li::marker,
+.page__content ol ol ol ol > li::marker {
+  color: $fr-panel-muted;
+}
+
+.page__content li > ul,
+.page__content li > ol {
+  padding-inline-start: 1.45rem;
+  margin: 0.55rem 0 0.75rem;
+}
+
+.page__content li > ul {
+  border-inline-start: 1px solid rgba($fr-action-color, 0.16);
+}
+
+.page__content li > ol {
+  border-inline-start: 1px solid rgba($fr-warm-accent, 0.18);
+}
+
+.page__content ol ol,
+.page__content ol ol ol,
+.page__content ol ol ol ol {
+  padding-inline-start: 2.15em;
+}
+
+.page__content li > p:first-child {
+  margin-top: 0;
+}
+
+.page__content ol li > p:first-child {
+  display: inline;
+  margin: 0;
+}
+
+/* =====================================================
+ * 7) Markdown 引用
+ * ===================================================== */
+.page__content blockquote {
+  margin: 1.65rem 0;
+  padding: 1.05rem 1.2rem;
+  border: 1px solid rgba($fr-action-color, 0.24);
+  border-inline-start: 5px solid color.mix($primary-color, $fr-warm-accent, 68%) !important;
+  background: color.mix($background-color, #cddfe5, 70%);
+  border-radius: 0.4rem;
+  font-family: $serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.02em;
+  line-height: 1.82;
+  color: #2f4352 !important;
+  box-shadow: 0 5px 16px rgba(34, 48, 66, 0.05);
+}
+.page__content blockquote p { margin: 0.35rem 0; }
+.page__content blockquote p:last-child { margin-bottom: 0; }
+.page__content blockquote::before {
+  content: none;
+}
+
+.page__content blockquote cite {
+  display: block;
+  margin-top: 0.65rem;
+  color: $muted-text-color;
+  font-family: $sans-serif;
+  font-size: 0.84em;
+  font-style: normal;
+}
+
+/* 脚注与回链使用独立的阅读层级，不与普通正文混在一起。 */
+.page__content .footnote {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.35em;
+  margin-inline: 0.08em;
+  padding-inline: 0.28em;
+  border: 1px solid rgba($fr-action-color, 0.24);
+  border-radius: 999px;
+  background: rgba($fr-action-color, 0.08);
+  color: $fr-action-color;
+  font-family: $sans-serif;
+  font-size: 0.72em;
+  font-weight: 800;
+  line-height: 1.35;
+  text-decoration: none !important;
+}
+
+.page__content .footnotes {
+  margin-top: 3rem;
+  padding: 1rem 1.1rem 0.7rem;
+  border-top: 2px solid rgba($fr-warm-accent, 0.46);
+  border-radius: 0.4rem;
+  background: color.mix($background-color, #ead9bd, 88%);
+  color: $fr-panel-muted;
+}
+
+.page__content .footnotes ol {
+  margin: 0;
+  padding-inline-start: 1.6rem;
+}
+
+.page__content .footnotes li {
+  margin: 0.55rem 0;
+  line-height: 1.65;
+}
+
+.page__content .footnotes li::marker {
+  color: $fr-warm-accent;
+  font-weight: 800;
+}
+
+.page__content .footnotes :where(p, li) {
+  font-size: 0.86rem;
+}
+
+.page__content a.reversefootnote {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5em;
+  margin-inline-start: 0.18em;
+  color: $fr-action-color;
+  font-weight: 800;
+  text-decoration: none !important;
+}
+
+.page__content a.reversefootnote:hover,
+.page__content a.reversefootnote:focus-visible {
+  color: $fr-action-hover;
+  background: rgba($fr-action-color, 0.08);
+}
+
+/* =====================================================
+ * 8) 首页 Hero / cards / buttons（保留 原本逻辑，去重不再重复贴两套）
+ * ===================================================== */
+.masthead,
+.masthead__inner-wrap,
+.masthead__menu,
+.greedy-nav {
+  overflow: visible;
+}
+
+.masthead__inner-wrap {
+  width: 100%;
+  max-width: min(100%, 1680px);
+  padding-inline: clamp(0.9rem, 2.4vw, 2rem);
+}
+
+@include breakpoint($x-large) {
+  .masthead__inner-wrap {
+    max-width: min(calc(100% - 2rem), 1680px);
+  }
+}
+
+.greedy-nav .site-title {
+  min-width: 0;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: min(34vw, 24rem);
+  margin-inline-end: 0.6rem;
+}
+
+.greedy-nav .site-title__text,
+.greedy-nav .site-subtitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.greedy-nav .site-title__text {
+  display: block;
+  width: 100%;
+  flex: 0 0 auto;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.greedy-nav .site-subtitle {
+  display: block;
+  width: 100%;
+  line-height: 1.35;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+html[lang^="en"] .greedy-nav .site-title {
+  min-width: 5.25rem;
+}
+
+html[lang^="en"] .page__hero--overlay .page__title {
+  max-width: min(100%, 46rem);
+  line-height: 1.18;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+.greedy-nav .visible-links {
+  min-width: 0;
+  padding-inline-start: 0.35rem;
+}
+
+.greedy-nav .visible-links .masthead__menu-item {
+  overflow: visible;
+}
+
+.greedy-nav .visible-links a {
+  white-space: nowrap;
+}
+
+.greedy-nav .masthead-language-switcher {
+  flex: 0 0 auto;
+}
+
+@include breakpoint(max-width $large - 1px) {
+  .masthead__inner-wrap {
+    padding-inline: 0.75rem;
+  }
+
+  .greedy-nav .site-title {
+    max-width: min(32vw, 10rem);
+    margin-inline-end: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .greedy-nav .site-title {
+    max-width: 6.5rem;
+  }
+
+  .greedy-nav .site-subtitle {
+    display: none;
+  }
+}
+
+.greedy-nav .hidden-links {
+  z-index: 120;
+  min-width: 11rem;
+  margin-top: 0.65rem;
+  padding: 0.35rem;
+  border-color: rgba(34, 48, 66, 0.12);
+  background: rgba(255, 252, 242, 0.98);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.16);
+}
+
+.greedy-nav .hidden-links a {
+  border-radius: 0.35rem;
+  white-space: nowrap;
+}
+
+.page__hero--overlay .wrapper {
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page__hero--overlay .page__title { max-width: 32rem; margin-bottom: 0.6rem; }
+.page__hero--overlay .page__lead { max-width: 32rem; font-size: 1rem; line-height: 1.85; }
+
+.page__hero--overlay .page__hero-actions {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.page__hero--overlay .page__hero-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.97rem;
+  font-weight: 500;
+  min-width: 230px;
+  text-align: center;
+}
+
+.page__hero--overlay .page__hero-actions .btn--primary {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: $fr-action-color !important;
+  box-shadow: 0 10px 24px rgba(255, 255, 255, 0.16);
+}
+.page__hero--overlay .page__hero-actions .btn--primary:hover,
+.page__hero--overlay .page__hero-actions .btn--primary:focus {
+  background-color: #f7fbff;
+  border-color: #f7fbff;
+  color: $fr-action-hover !important;
+  box-shadow: 0 12px 26px rgba(255, 255, 255, 0.20);
+}
+
+.page__hero--overlay .page__hero-actions .btn--secondary {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.9);
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+}
+.page__hero--overlay .page__hero-actions .btn--secondary:hover,
+.page__hero--overlay .page__hero-actions .btn--secondary:focus {
+  background-color: rgba(255, 255, 255, 0.26);
+  border-color: #ffffff;
+}
+
+/* 首页 grid 卡片 */
+.entries-grid .archive__item {
+  border-radius: $fr-card-radius;
+  border: 1px solid $fr-card-border;
+  padding: 1rem 1rem 0.9rem;
+  box-shadow: $fr-card-shadow;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.entries-grid .archive__item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+}
+
+/* 按钮基础（保留 的主色） */
+.btn--primary,
+.btn--primary:visited {
+  background-color: $fr-action-color;
+  border-color: $fr-action-color;
+  color: #fff !important;
+}
+.btn--primary:hover,
+.btn--primary:focus {
+  background-color: $fr-action-hover;
+  border-color: $fr-action-hover;
+  color: #fff !important;
+}
+.btn--secondary {
+  background-color: transparent;
+  border-color: #333;
+  color: #333;
+}
+.btn--secondary:hover,
+.btn--secondary:focus {
+  background-color: rgba(0, 0, 0, 0.03);
+  border-color: #111;
+}
+
+/* 首页：查看全部文章 → 靠右 */
+.home-section--posts .home-section__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between; /* ✅右对齐 */
+  gap: 1rem;
+}
+
+.home-section--posts .home-section__more,
+.home-section__more {
+  margin-left: auto;       /* ✅推到右侧 */
+  text-align: right;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* =====================================================
+ * 9) 手机端收敛（保持 原策略）
+ * ===================================================== */
+@include breakpoint(max-width $small - 1px) {
+  .page__hero--overlay { padding-block: 2.4rem 2.6rem; }
+
+  .page__hero--overlay .page__title {
+    font-size: 1.6rem;
+    line-height: 1.25;
+    margin-bottom: 0.45rem;
+    max-width: 100%;
+  }
+
+  .page__hero--overlay .page__lead {
+    font-size: 0.95rem;
+    max-width: 22rem;
+    line-height: 1.8;
+  }
+
+  .page__hero--overlay .page__hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .page__hero--overlay .page__hero-actions .btn {
+    width: 100%;
+    max-width: 280px;
+    min-height: 2.4rem;
+  }
+
+  /* 首页 Hero 的两个入口在窄屏中保持等宽并围绕阅读区中心对齐。 */
+  .layout--splash .page__hero--overlay .page__hero-actions {
+    width: 100%;
+    max-width: 280px;
+    margin: 1.2rem auto 0;
+    align-items: stretch;
+  }
+
+  .layout--splash .page__hero--overlay .page__hero-actions .btn {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .layout--single .sidebar .h-card,
+  .sidebar .nav__list {
+    max-width: 100%;
+  }
+}
+
+/* =========================
+ * Home About CTA
+ * ========================= */
+.home-section--about-cta {
+  clear: both;
+  padding-top: 0.2rem;
+}
+
+.home-section--about-cta .home-cta--about {
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid $fr-card-border;
+  border-radius: 0.75rem;
+  background: $fr-card-bg;
+  box-shadow: $fr-card-shadow;
+}
+
+.home-section--about-cta .home-cta--about .home-cta__inner {
+  display: grid;
+  grid-template-columns: 38% minmax(0, 1fr);
+  gap: 0;
+  align-items: stretch;
+}
+
+.home-section--about-cta .home-cta--about .home-cta__media {
+  position: relative;
+  min-width: 0;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.home-section--about-cta .home-cta--about .home-cta__media img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover;
+  object-position: 70% center;
+  border-radius: 0;
+}
+
+.home-section--about-cta .home-cta--about .home-cta__text {
+  min-width: 0;
+  padding: 1.35rem 2rem 1.55rem;
+  text-align: left;
+}
+
+.home-section--about-cta .home-cta--about .home-cta__text p {
+  margin: 0 0 0.6rem;
+}
+
+.home-section--about-cta .home-cta--about .home-cta__text p + ul {
+  margin-top: 0.25rem;
+}
+
+.home-section--about-cta .home-cta--about .home-cta__text ul {
+  margin: 0.25rem 0 0.75rem;
+  padding-left: 1.15rem;
+}
+
+.home-section--about-cta .home-cta--about .home-cta__text li {
+  margin: 0.3rem 0;
+}
+
+.home-section--about-cta .home-cta--about .home-cta__note {
+  margin: 0.7rem 0 0;
+}
+
+.home-section--about-cta .home-cta--about .home-cta__actions {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.home-section--about-cta .home-cta--about .home-cta__actions .btn {
+  box-sizing: border-box;
+  display: inline-flex;
+  width: 9em;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  margin: 0;
+  padding: 0.62rem 1.1rem;
+  border-radius: 999px;
+}
+
+.home-section--about-cta .home-cta--about .home-cta__actions .btn--secondary {
+  border: 1px solid color.mix($fr-action-color, #ffffff, 72%);
+  color: $fr-action-color;
+}
+
+.home-section--about-cta .home-cta--about .home-cta__actions .btn--secondary:hover,
+.home-section--about-cta .home-cta--about .home-cta__actions .btn--secondary:focus {
+  border-color: $fr-action-color;
+  background: color.mix($fr-action-color, #ffffff, 8%);
+  color: $fr-action-hover;
+}
+
+@include breakpoint(max-width $medium - 1px) {
+  .home-section--about-cta .home-cta--about .home-cta__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .home-section--about-cta .home-cta--about .home-cta__media {
+    height: 220px;
+  }
+
+  .home-section--about-cta .home-cta--about .home-cta__media img {
+    object-position: center;
+  }
+
+  .home-section--about-cta .home-cta--about .home-cta__text {
+    padding: 1.15rem 1.25rem 1.35rem;
+  }
+
+  .home-section--about-cta .home-cta--about .home-cta__actions {
+    justify-content: center;
+  }
+}
+
+/* =========================
+ * 正文标题：用字号、颜色和边界表达层级
+ * ========================= */
+
+/* h1：正文内部的大主题；页面标题仍由 .page__title 控制。 */
+.page__content h1 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.15rem;
+  padding-inline-start: 0.75rem;
+  border-inline-start: 5px solid $fr-warm-accent;
+  color: $fr-ink;
+  font-size: 1.82rem;
+  font-weight: 800;
+  line-height: 1.28;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+/* h2：章节标题 */
+.page__content h2 {
+  position: relative;
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1.32;
+  letter-spacing: 0;
+  text-wrap: balance;
+  margin-top: 2.2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.35rem;
+  color: $fr-ink;
+  border-bottom: 1px solid rgba(34, 48, 66, 0.15);
+}
+
+.page__content h2::after {
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: -1px;
+  width: 3.2rem;
+  height: 3px;
+  background: $fr-warm-accent;
+  content: "";
+}
+
+/* h3：小节标题 */
+.page__content h3 {
+  font-size: 1.22rem;
+  font-weight: 800;
+  line-height: 1.38;
+  letter-spacing: 0;
+  text-wrap: balance;
+  margin-top: 1.7rem;
+  margin-bottom: 0.85rem;
+  padding-inline-start: 0.65rem;
+  border-inline-start: 3px solid rgba($fr-warm-accent, 0.74);
+  color: #70461f;
+}
+
+/* h4：更细标题 */
+.page__content h4 {
+  width: fit-content;
+  max-width: 100%;
+  font-size: 1.06rem;
+  font-weight: 750;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-wrap: balance;
+  margin-top: 1.3rem;
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.12rem;
+  border-bottom: 2px dotted rgba(#2f6f68, 0.42);
+  color: #2f6f68;
+}
+
+.page__content h5 {
+  margin-top: 1.15rem;
+  margin-bottom: 0.55rem;
+  color: $fr-action-color;
+  font-size: 0.98rem;
+  font-weight: 750;
+  line-height: 1.48;
+  letter-spacing: 0;
+}
+
+.page__content h6 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: $fr-panel-muted;
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+/* =========================
+ * Tags页面
+ * ========================= */
+
+/* 选中tag突出效果 */
+.tag-item.is-active {
+  border-color: $fr-warm-accent;
+  color: $fr-accent-text;
+  background: rgba(168, 100, 42, 0.08);
+  font-weight: 600;
+}
