@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { averageScore, darwinLeadersDelta } from "../js/leaders-scoring.mjs";
 
 const root = process.cwd();
 const companiesFile = path.join(root, "assets/data/leaders-companies.json");
@@ -60,9 +61,9 @@ for (const company of companies) {
   }
 
   if (company.darwin) {
-    const leadersAverage = average(scoreKeys.map((key) => company.scores[key]));
-    const darwinAverage = average(darwinKeys.map((key) => company.darwin[key]));
-    const delta = leadersAverage - darwinAverage;
+    const leadersAverage = averageScore(company.scores, scoreKeys);
+    const darwinAverage = averageScore(company.darwin, darwinKeys);
+    const delta = -darwinLeadersDelta(company, scoreKeys, darwinKeys);
     if (delta > rubric.guardrails.darwin_feedback.review_delta) {
       warnings.push(`${company.name}: LEADERS均分 ${leadersAverage.toFixed(1)} 高于 Darwin ${darwinAverage.toFixed(1)}，偏差 ${delta.toFixed(1)}，需要人工复核。`);
     } else if (delta > rubric.guardrails.darwin_feedback.warn_delta) {

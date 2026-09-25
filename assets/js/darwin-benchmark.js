@@ -1,3 +1,5 @@
+import { averageScore, darwinLeadersDelta } from "./leaders-scoring.mjs";
+
 (() => {
   "use strict";
 
@@ -49,15 +51,9 @@
       '"': "&quot;",
       "'": "&#39;"
     }[char]));
-  const average = (values) => {
-    const validValues = values.map(Number).filter(Number.isFinite);
-    return validValues.length
-      ? validValues.reduce((sum, value) => sum + value, 0) / validValues.length
-      : null;
-  };
 
   const actionKey = (delta, warnDelta, reviewDelta) => {
-    const absoluteDelta = Math.abs(delta);
+    const absoluteDelta = Math.round(Math.abs(delta) * 10) / 10;
     if (absoluteDelta <= warnDelta) return "normal";
     if (absoluteDelta <= reviewDelta) return "track";
     return "review";
@@ -72,7 +68,7 @@
   const render = () => {
     if (!benchmarkState) return;
 
-    const { data, companyMap, leadersScore, darwinScore, warnDelta, reviewDelta } =
+    const { data, companyMap, leadersScore, darwinScore, deltaScore, warnDelta, reviewDelta } =
       benchmarkState;
     const lang = language();
 
@@ -80,7 +76,7 @@
       const source = companyMap.get(company.name);
       const leaders = source ? leadersScore(source) : null;
       const darwin = source ? darwinScore(source) : null;
-      const delta = Number.isFinite(leaders) && Number.isFinite(darwin) ? darwin - leaders : null;
+      const delta = source ? deltaScore(source) : null;
       const action = delta !== null ? actionKey(delta, warnDelta, reviewDelta) : "pending";
       const deltaText = delta !== null ? `${delta >= 0 ? "+" : ""}${delta.toFixed(1)}` : t("missing");
       const companyName = lang === "en" ? company.name_en || company.name : company.name;
@@ -142,10 +138,10 @@
         throw new TypeError("The scoring model has no dimensions.");
       }
 
-      const leadersScore = (company) =>
-        average(scoreKeys.map((key) => company.scores?.[key]));
+      const leadersScore = (company) => averageScore(company.scores, scoreKeys);
       const darwinScore = (company) =>
-        company.darwin ? average(darwinKeys.map((key) => company.darwin[key])) : null;
+        company.darwin ? averageScore(company.darwin, darwinKeys) : null;
+      const deltaScore = (company) => darwinLeadersDelta(company, scoreKeys, darwinKeys);
       const warnDelta = Number(model.guardrails?.darwin_feedback?.warn_delta ?? 0.5);
       const reviewDelta = Number(model.guardrails?.darwin_feedback?.review_delta ?? 1.2);
       const companyMap = new Map(companies.map((company) => [company.name, company]));
@@ -155,6 +151,7 @@
         companyMap,
         leadersScore,
         darwinScore,
+        deltaScore,
         warnDelta,
         reviewDelta
       };

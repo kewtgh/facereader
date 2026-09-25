@@ -58,9 +58,9 @@ sitemap: true
           <th data-fr-i18n-zh="企业" data-fr-i18n-en="Company">企业</th>
           <th data-fr-i18n-zh="层级" data-fr-i18n-en="Tier">层级</th>
           <th data-fr-i18n-zh="信息质量" data-fr-i18n-en="Information quality">信息质量</th>
-          <th>LEADERS</th>
-          <th>Darwin</th>
-          <th data-fr-i18n-zh="偏差" data-fr-i18n-en="Delta">偏差</th>
+          <th data-fr-i18n-zh="LEADERS 简单均分" data-fr-i18n-en="LEADERS simple mean">LEADERS 简单均分</th>
+          <th data-fr-i18n-zh="Darwin 简单均分" data-fr-i18n-en="Darwin simple mean">Darwin 简单均分</th>
+          <th data-fr-i18n-zh="偏差（Darwin − LEADERS）" data-fr-i18n-en="Delta (Darwin − LEADERS)">偏差（Darwin − LEADERS）</th>
           <th data-fr-i18n-zh="动作" data-fr-i18n-en="Action">动作</th>
           <th data-fr-i18n-zh="选择理由" data-fr-i18n-en="Rationale">选择理由</th>
         </tr>
@@ -74,11 +74,11 @@ sitemap: true
 
 <section class="leaders-feedback">
   <h3 data-fr-i18n-zh="半年度修正用法" data-fr-i18n-en="Half-year calibration process">半年度修正用法</h3>
-  <p data-fr-i18n-zh="每半年为这15家企业补齐近三年 ROCE、自由现金流、净负债率、研发投入率和员工/治理信号，再计算 Darwin - LEADERS 偏差。偏差超过 1.2 分的企业强制进入人工复核。" data-fr-i18n-en="Every six months, the review updates three years of ROCE, free cash flow, net leverage, R&D intensity, and employee and governance signals for these 15 companies, then recalculates the Darwin - LEADERS delta. Any absolute delta above 1.2 triggers mandatory manual review.">每半年为这15家企业补齐近三年 ROCE、自由现金流、净负债率、研发投入率和员工/治理信号，再计算 Darwin - LEADERS 偏差。偏差超过 1.2 分的企业强制进入人工复核。</p>
+  <p data-fr-i18n-zh="偏差 = Darwin 三项简单均分 − LEADERS 七项简单均分，不使用阶段加权或证据调整分。两个模型关注不同问题；偏差只是人工复核信号，不表示评分互相验证。每半年应复核近三年 ROCE、自由现金流、净负债率、研发投入率和员工/治理信号；绝对偏差超过 1.2 分进入人工复核。" data-fr-i18n-en="Delta = the Darwin three-dimension simple mean minus the LEADERS seven-dimension simple mean; stage weighting and evidence adjustment are excluded. The models address different questions, so divergence is a review signal, not mutual validation. Review ROCE, free cash flow, leverage, R&D, and employee/governance signals every six months; an absolute delta above 1.2 calls for manual review.">偏差 = Darwin 三项简单均分 − LEADERS 七项简单均分，不使用阶段加权或证据调整分。两个模型关注不同问题；偏差只是人工复核信号，不表示评分互相验证。每半年应复核近三年 ROCE、自由现金流、净负债率、研发投入率和员工/治理信号；绝对偏差超过 1.2 分进入人工复核。</p>
   <div class="leaders-feedback__grid">
     <article>
       <h4 data-fr-i18n-zh="偏差正常" data-fr-i18n-en="Normal divergence">偏差正常</h4>
-      <p data-fr-i18n-zh="绝对偏差不超过0.5分，说明管理评分和优质企业评分基本互相印证。" data-fr-i18n-en="An absolute delta no greater than 0.5 means the management and company-quality scores broadly corroborate each other.">绝对偏差不超过0.5分，说明管理评分和优质企业评分基本互相印证。</p>
+      <p data-fr-i18n-zh="绝对偏差不超过0.5分，暂未因模型分歧触发额外复核；仍须分别检查两个模型的证据。" data-fr-i18n-en="An absolute delta no greater than 0.5 does not trigger an extra divergence review; evidence for both models still needs separate checks.">绝对偏差不超过0.5分，暂未因模型分歧触发额外复核；仍须分别检查两个模型的证据。</p>
     </article>
     <article>
       <h4 data-fr-i18n-zh="进入跟踪" data-fr-i18n-en="Track">进入跟踪</h4>
@@ -91,4 +91,4 @@ sitemap: true
   </div>
 </section>
 
-<script src="{{ '/assets/js/darwin-benchmark.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/darwin-benchmark.js' | relative_url }}" type="module"></script>

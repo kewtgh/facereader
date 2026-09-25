@@ -1,9 +1,11 @@
 import {
   averageScore,
   evidenceAdjustedScore as calculateEvidenceAdjustedScore,
+  darwinLeadersDelta,
   scoreBandLabel,
   weightedScore as calculateWeightedScore
 } from "./leaders-scoring.mjs";
+import { normalizeCompanyName, resolveCompany } from "./leaders-search.mjs";
 
 (function () {
   const hotCompanyNames = [
@@ -64,6 +66,7 @@ import {
       referencesTitle: "参考链接及摘要",
       relatedArticle: "查看关联文章",
       referenceMaterials: "查看参考资料",
+      sourceContext: "以下是关联资料链接；资料本身不等于对每项分数的独立验证。",
       addCompare: "加入对比",
       copyQueryLink: "复制查询链接",
       queryLinkCopied: "查询链接已复制",
@@ -71,7 +74,18 @@ import {
       darwinTitle: "Darwin 优质企业评分",
       darwinEmpty: "该企业尚未完成 Darwin 三项复核。下次半年度复盘时，将补充财务硬度、动态护城河和诚实信号评分，并与 LEADERS 分数比较偏差。",
       darwinIntro: "用财务硬度、动态护城河和诚实信号过滤市场关注度与低成本叙事。",
-      darwinDelta: "Darwin - LEADERS",
+      darwinDelta: "Darwin - LEADERS 简单均分",
+      ambiguousCompany: "该名称对应多家公司，请选择具体企业：",
+      compareUnresolved: "以下对比项尚未匹配到唯一企业，请改用企业全名：",
+      reportPrint: "打印 / 保存 PDF",
+      reportTitle: "企业管理评分简报",
+      reviewDate: "最近复核",
+      reviewMissing: "未标注复核日期",
+      reviewOverdue: "已超过半年度复核周期",
+      modelVersion: "模型版本",
+      noSources: "尚无可公开追溯的原始资料链接；请勿将本评分视为已独立核证。",
+      profileScope: "这是企业层面的管理评估，不是个人领导者档案；评分仅供研究讨论，不构成投资、招聘或准入建议。",
+      reportGenerated: "简报生成日期",
       deviation: "偏差判断",
       evidence: "证据等级",
       pendingReview: "等待半年度复核补充说明。",
@@ -119,6 +133,7 @@ import {
       referencesTitle: "Reference links and summary",
       relatedArticle: "View related article",
       referenceMaterials: "View reference materials",
+      sourceContext: "Related material links are listed below; they do not independently verify every score.",
       addCompare: "Add to comparison",
       copyQueryLink: "Copy query link",
       queryLinkCopied: "Query link copied",
@@ -126,7 +141,18 @@ import {
       darwinTitle: "Darwin quality-company score",
       darwinEmpty: "This company has not completed the three Darwin review dimensions yet. The next half-year review will add scores for financial hardness, dynamic moat, and honest signals, then compare them with the LEADERS score.",
       darwinIntro: "Filters market attention and low-cost narratives through financial hardness, dynamic moat, and honest signals.",
-      darwinDelta: "Darwin - LEADERS",
+      darwinDelta: "Darwin - LEADERS simple mean",
+      ambiguousCompany: "This name refers to multiple companies. Choose one:",
+      compareUnresolved: "These comparison entries do not identify a unique company. Use full company names:",
+      reportPrint: "Print / save PDF",
+      reportTitle: "Company management score brief",
+      reviewDate: "Last reviewed",
+      reviewMissing: "Review date not recorded",
+      reviewOverdue: "Past the semiannual review cycle",
+      modelVersion: "Model version",
+      noSources: "No publicly traceable primary source link is recorded; this score has not been independently verified here.",
+      profileScope: "This is a company-level management assessment, not a personal leader profile. It is for research discussion, not investment, hiring, or admission advice.",
+      reportGenerated: "Brief generated",
       deviation: "Deviation",
       evidence: "Evidence",
       pendingReview: "Waiting for the next half-year review note.",
@@ -220,6 +246,7 @@ import {
   let darwinRatingBands = [];
   let darwinWarnDelta = 0.5;
   let darwinReviewDelta = 1.2;
+  let modelVersion = "";
   const tablePageSize = 25;
   let tablePage = 1;
 
@@ -234,7 +261,7 @@ import {
   const localizedDimensionLabel = (key, fallback) => dimensionLabels[lang()][key] || fallback || key;
   const localizedStageLabel = (key, fallback) => stageLabels[lang()][key] || fallback || key;
   const localizedRatingLabel = (label) => lang() === "en" ? (ratingLabels.en[label] || label) : label;
-  const normalize = (value) => String(value || "").trim().toLowerCase().replace(/\s+/g, "");
+  const normalize = normalizeCompanyName;
   const escapeHtml = (value) => String(value || "")
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
@@ -256,6 +283,7 @@ import {
   }
 
   function configureModel(model) {
+    modelVersion = model.version || "—";
     scoreKeys = modelEntries(model.dimension_order, model.dimensions);
     darwinKeys = modelEntries(model.darwin_dimension_order, model.darwin_dimensions);
     weights = model.stage_weights || {};
@@ -369,7 +397,7 @@ import {
   }
 
   function deviationLabel(delta) {
-    const abs = Math.abs(delta);
+    const abs = Math.round(Math.abs(delta) * 10) / 10;
     if (abs <= darwinWarnDelta) return t("deviationNormal");
     if (abs <= darwinReviewDelta) return t("deviationWatch");
     return t("deviationReview");
@@ -433,9 +461,7 @@ import {
   }
 
   function findCompany(query) {
-    const matches = rankedCompanies(query);
-    const best = matches[0];
-    return best && best.score >= 72 ? best.company : null;
+    return resolveCompany(companies, query, rankedCompanies).company;
   }
 
   function renderBars(company) {
@@ -481,14 +507,11 @@ import {
 
   function referenceSummary(company) {
     if (company.reference_summary) return company.reference_summary;
-    if (company.sources && company.sources.length) {
-      return t("noArticleSummary", company.name, company.summary);
-    }
-    return t("noArticleFallback", company.name);
+    return company.sources?.length ? t("sourceContext") : t("noSources");
   }
 
   function renderReferences(company) {
-    const links = (company.sources && company.sources.length ? company.sources : [company.url])
+    const links = (company.sources || [])
       .filter(Boolean)
       .map((source, index) => `
         <li>
@@ -501,7 +524,7 @@ import {
       <section class="leaders-references" id="leaders-reference-materials">
         <h3>${t("referencesTitle")}</h3>
         <p>${escapeHtml(referenceSummary(company))}</p>
-        <ul>${links}</ul>
+        ${links ? `<ul>${links}</ul>` : ""}
       </section>
     `;
   }
@@ -511,7 +534,9 @@ import {
       return `<a class="btn btn--primary" href="${escapeHtml(addReturnParam(company.url))}">${t("relatedArticle")}</a>`;
     }
 
-    return `<a class="btn btn--primary" href="#leaders-reference-materials" data-show-back="true">${t("referenceMaterials")}</a>`;
+    return company.sources?.length
+      ? `<a class="btn btn--primary" href="#leaders-reference-materials" data-show-back="true">${t("referenceMaterials")}</a>`
+      : "";
   }
 
   function renderCompareButton(company) {
@@ -526,7 +551,7 @@ import {
     `;
   }
 
-  function renderDarwinPanel(company, leadersScore) {
+  function renderDarwinPanel(company) {
     if (!company.darwin) {
       return `
         <section class="leaders-darwin leaders-darwin--empty">
@@ -537,7 +562,7 @@ import {
     }
 
     const score = averageDarwin(company.darwin);
-    const delta = score - leadersScore;
+    const delta = darwinLeadersDelta(company, scoreKeys, darwinKeys);
     const deltaText = `${delta >= 0 ? "+" : ""}${delta.toFixed(1)}`;
 
     return `
@@ -569,6 +594,12 @@ import {
     const adjusted = evidenceAdjustedScore(company, mode);
     const plan = weights[mode] || weights.growth;
     const watch = (company.watch || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    const reviewDate = company.last_reviewed || t("reviewMissing");
+    const reviewAge = company.last_reviewed
+      ? (Date.now() - Date.parse(`${company.last_reviewed}T00:00:00Z`)) / 86400000
+      : null;
+    const reviewWarning = reviewAge !== null && reviewAge > 183 ? ` · ${t("reviewOverdue")}` : "";
+    const generated = new Date().toISOString().slice(0, 10);
 
     $("#leaders-result").innerHTML = `
       <article class="leaders-result" aria-live="polite">
@@ -589,24 +620,44 @@ import {
           <div><span>${t("evidence")}</span><strong>${company.evidence}</strong></div>
         </div>
         <p class="leaders-result__summary">${escapeHtml(company.summary)}</p>
+        <p class="leaders-result__provenance">${t("modelVersion")}: ${escapeHtml(modelVersion)} · ${t("reviewDate")}: ${escapeHtml(reviewDate)}${reviewWarning}</p>
+        <p class="leaders-result__scope">${t("profileScope")}</p>
         ${renderTags(company)}
         <div class="leaders-result__grid">
           <section>
             <h3>${t("leaders7")}</h3>
             ${renderBars(company)}
-            ${renderDarwinPanel(company, adjusted)}
+            ${renderDarwinPanel(company)}
           </section>
           <section>
             <h3>${t("judgmentTracking")}</h3>
             <p><strong>${t("mainRisk")}</strong>${escapeHtml(company.risk)}</p>
             <p><strong>${t("watchPoints")}</strong></p>
             <ul>${watch}</ul>
-            <p class="leaders-result__actions">${renderResourceLink(company)}${renderCompareButton(company)}${renderCopyQueryButton()}</p>
+            <p class="leaders-result__actions">${renderResourceLink(company)}${renderCompareButton(company)}${renderCopyQueryButton()}<button class="btn" type="button" data-print-report>${t("reportPrint")}</button></p>
           </section>
         </div>
-        ${isSiteArticle(company.url) ? "" : renderReferences(company)}
+        ${renderReferences(company)}
       </article>
+      <section class="leaders-print-report" aria-label="${t("reportTitle")}">
+        <h1>${t("reportTitle")} · ${escapeHtml(company.name)}</h1>
+        <p>${t("modelVersion")}: ${escapeHtml(modelVersion)} · ${t("reviewDate")}: ${escapeHtml(reviewDate)}${reviewWarning} · ${t("reportGenerated")}: ${generated}</p>
+        <p>${t("evidence")}: ${escapeHtml(company.evidence)} · ${t("simpleAverage")}: ${raw.toFixed(1)} · ${localizedStageLabel(mode, plan.label)} ${t("weightedSuffix")}: ${weighted.toFixed(1)} · ${t("evidenceAdjusted")}: ${adjusted.toFixed(1)} (${rating(adjusted)})</p>
+        <h2>${t("leaders7")}</h2>
+        <ul>${scoreKeys.map(([key, label]) => `<li>${escapeHtml(localizedDimensionLabel(key, label))}: ${company.scores[key].toFixed(1)}</li>`).join("")}</ul>
+        ${company.darwin ? `<p>${t("darwinTitle")}: ${averageDarwin(company.darwin).toFixed(1)} · ${t("darwinDelta")}: ${darwinLeadersDelta(company, scoreKeys, darwinKeys).toFixed(1)}</p>` : ""}
+        <p>${escapeHtml(company.summary)}</p>
+        <h2>${t("judgmentTracking")}</h2>
+        <p>${t("mainRisk")}${escapeHtml(company.risk)}</p>
+        <p>${t("watchPoints")}</p><ul>${watch}</ul>
+        <h2>${t("referencesTitle")}</h2>
+        <p>${escapeHtml(referenceSummary(company))}</p>
+        <ol>${(company.sources || []).map((source) => `<li>${escapeHtml(source)}</li>`).join("")}</ol>
+        ${isSiteArticle(company.url) ? `<p>${t("relatedArticle")}: ${escapeHtml(company.url)}</p>` : ""}
+        <p>${t("profileScope")}</p>
+      </section>
     `;
+    $("[data-print-report]")?.addEventListener("click", () => window.print());
 
     const referenceLink = document.querySelector("[data-show-back='true']");
     if (referenceLink) {
@@ -642,11 +693,13 @@ import {
   }
 
   function renderEmpty(query) {
+    const resolution = resolveCompany(companies, query, rankedCompanies);
+    const candidates = resolution.candidates.length ? resolution.candidates : rankedCompanies(query).slice(0, 6).map((item) => item.company);
     $("#leaders-result").innerHTML = `
       <article class="leaders-result leaders-result--empty" aria-live="polite">
-        <h2>${t("notCovered")}${escapeHtml(query || t("unknownCompany"))}</h2>
-        <p>${t("notCoveredHint")}</p>
-        ${renderSuggestions(query)}
+        <h2>${resolution.reason === "ambiguous" ? t("ambiguousCompany") : `${t("notCovered")}${escapeHtml(query || t("unknownCompany"))}`}</h2>
+        <p>${resolution.reason === "ambiguous" ? "" : t("notCoveredHint")}</p>
+        <div class="leaders-suggestions"><div>${candidates.map((company) => `<button type="button" data-company="${escapeHtml(company.name)}">${escapeHtml(company.name)}</button>`).join("")}</div></div>
       </article>
     `;
     bindCompanyButtons("#leaders-result");
@@ -784,15 +837,16 @@ import {
 
       bodyEl.innerHTML = pageItems.length ? pageItems.map((company, index) => {
         const score = average(company.scores);
-        const url = company.url || "#";
-        const linkAttributes = isSiteArticle(url) || url === "#"
-          ? ""
-          : ` target="_blank" rel="noopener"`;
+        const reportUrl = new URL(window.location.href);
+        reportUrl.searchParams.set("company", company.name);
+        reportUrl.searchParams.set("stage", $("#leaders-stage")?.value || "growth");
+        reportUrl.hash = "leaders-search";
+        const url = `${reportUrl.pathname}${reportUrl.search}${reportUrl.hash}`;
         return `
           <tr>
             <td data-label="${lang() === "en" ? "#" : "序号"}">${pageStart + index + 1}</td>
             <td data-label="${lang() === "en" ? "Company" : "企业名称"}">
-              <a href="${escapeHtml(url)}"${linkAttributes}>${escapeHtml(company.name)}</a>
+              <a href="${escapeHtml(url)}">${escapeHtml(company.name)}</a>
               <small>${escapeHtml((company.aliases || []).slice(0, 4).join(" / "))}</small>
             </td>
             <td data-label="${lang() === "en" ? "Industry" : "行业"}">${escapeHtml(tagText(company.industry_tags, industryLabels))}</td>
@@ -895,13 +949,20 @@ import {
     const inputs = compareInputs();
     const datalist = $("#leaders-compare-options");
     const sorted = [...companies].sort((a, b) => average(b.scores) - average(a.scores) || a.name.localeCompare(b.name, "zh-Hans-CN"));
+    const aliasCounts = new Map();
+    for (const company of companies) for (const alias of company.aliases || []) {
+      const key = normalize(alias);
+      aliasCounts.set(key, (aliasCounts.get(key) || 0) + 1);
+    }
     if (datalist) {
       datalist.innerHTML = sorted.flatMap((company) => {
         const alias = (company.aliases || []).slice(0, 3).join(" / ");
         const label = [company.industry, alias].filter(Boolean).join(" · ");
         const options = [`<option value="${escapeHtml(company.name)}"${label ? ` label="${escapeHtml(label)}"` : ""}></option>`];
         for (const name of (company.aliases || []).slice(0, 6)) {
-          options.push(`<option value="${escapeHtml(name)}" label="${escapeHtml(company.name)}"></option>`);
+          if (aliasCounts.get(normalize(name)) === 1) {
+            options.push(`<option value="${escapeHtml(name)}" label="${escapeHtml(company.name)}"></option>`);
+          }
         }
         return options;
       }).join("");
@@ -1061,25 +1122,29 @@ import {
     const output = $("#leaders-compare-output");
     if (!output) return;
 
-    const selected = compareInputs()
-      .map((input) => input.value)
-      .filter(Boolean)
+    const inputs = compareInputs().map((input) => input.value.trim()).filter(Boolean);
+    const unresolved = inputs.filter((value) => !compareCompanyFromValue(value));
+    const notice = unresolved.length
+      ? `<p class="leaders-compare__empty" role="status">${t("compareUnresolved")} ${escapeHtml(unresolved.join(" / "))}</p>`
+      : "";
+    const selected = inputs
       .map(compareCompanyFromValue)
       .filter(Boolean)
       .filter((company, index, list) => list.findIndex((item) => item.name === company.name) === index);
     const mode = $("#leaders-stage")?.value || "growth";
 
     if (selected.length < 2) {
-      output.innerHTML = `<p class="leaders-compare__empty">${t("noCompare")}</p>`;
+      output.innerHTML = `${notice}<p class="leaders-compare__empty">${t("noCompare")}</p>`;
       return;
     }
 
-    output.innerHTML = `
+    output.innerHTML = `${notice}
       <div class="leaders-compare__cards">
         ${selected.map((company) => {
           const adjusted = evidenceAdjustedScore(company, mode);
           const darwin = company.darwin ? averageDarwin(company.darwin) : null;
-          const delta = darwin === null ? "" : `${darwin - adjusted >= 0 ? "+" : ""}${(darwin - adjusted).toFixed(1)}`;
+          const gap = darwin === null ? null : darwinLeadersDelta(company, scoreKeys, darwinKeys);
+          const delta = gap === null ? "" : `${gap >= 0 ? "+" : ""}${gap.toFixed(1)}`;
           return `
             <article>
               <h3>${escapeHtml(company.name)}</h3>
@@ -1133,6 +1198,19 @@ import {
   document.addEventListener("DOMContentLoaded", async () => {
     const root = $("#leaders-scorecard-app");
     if (!root) return;
+    window.addEventListener("beforeprint", () => {
+      const report = $(".leaders-print-report");
+      if (!report) return;
+      document.querySelector("#leaders-print-only")?.remove();
+      const copy = report.cloneNode(true);
+      copy.id = "leaders-print-only";
+      document.body.append(copy);
+      document.body.classList.add("leaders-printing");
+    });
+    window.addEventListener("afterprint", () => {
+      document.body.classList.remove("leaders-printing");
+      document.querySelector("#leaders-print-only")?.remove();
+    });
 
     try {
       const modelUrl = root.dataset.model || "/assets/data/leaders-score-rubric.json";
@@ -1155,10 +1233,12 @@ import {
       fillCompareInputs();
       $("#leaders-search-form").addEventListener("submit", runSearch);
       $("#leaders-stage").addEventListener("change", () => {
-        const company = findCompany($("#leaders-company-input").value) || companies[0];
+        const query = $("#leaders-company-input").value;
+        const company = query ? findCompany(query) : companies[0];
         const mode = $("#leaders-stage").value;
-        renderResult(company, mode);
-        syncSearchUrl(company.name, mode, true);
+        if (company) renderResult(company, mode);
+        else renderEmpty(query);
+        syncSearchUrl(query ? (company?.name || query) : "", mode, true);
         renderCompare();
       });
       window.addEventListener("popstate", restoreSearchFromUrl);
