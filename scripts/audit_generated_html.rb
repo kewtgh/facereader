@@ -128,6 +128,7 @@ end
 # Series navigation belongs to the article context, never above the TOC.
 series_cases = [
   ["人格成长/不靠谱领导力/manage-leadership5/index.html", 4, "/series/leadership/"],
+  ["人格成长/不靠谱领导力/manage-leadership12/index.html", 4, "/series/leadership/"],
   ["经典解读/孙子兵法/TheArtofWar-5bingshi/index.html", 4, "/series/sunzi/"],
   ["社会杂论/Society-tobeslaveforever/index.html", 3, "/series/lcer/"]
 ]

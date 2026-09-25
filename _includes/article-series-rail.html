@@ -57,13 +57,19 @@
     {% if start_index < 0 %}{% assign start_index = 0 %}{% endif %}
     {% if start_index > last_start %}{% assign start_index = last_start %}{% endif %}
     <section class="fr-article-series-rail" aria-label="{{ rail_series[article_lang] }}">
-      <h2><a href="{{ rail_series.url | relative_url }}" data-fr-i18n-zh="{{ rail_series.zh | escape }}" data-fr-i18n-en="{{ rail_series.en | escape }}">{{ rail_series[article_lang] }}</a> <small>{{ ordered_posts.size }}</small></h2>
+      <div class="fr-article-series-rail__head">
+        <h2><a href="{{ rail_series.url | relative_url }}" data-fr-i18n-zh="{{ rail_series.zh | escape }}" data-fr-i18n-en="{{ rail_series.en | escape }}">{{ rail_series[article_lang] }}</a> <small>{{ ordered_posts.size }}</small></h2>
+        <a class="fr-article-series-rail__all" href="{{ rail_series.url | relative_url }}" data-fr-i18n-zh="{{ site.data.ui-text['zh-CN'].view_full_series | escape }} →" data-fr-i18n-en="{{ site.data.ui-text['en-US'].view_full_series | default: site.data.ui-text.en.view_full_series | escape }} →">{{ article_text.view_full_series }} →</a>
+      </div>
       <ol start="{{ start_index | plus: 1 }}">
         {% for post in ordered_posts offset:start_index limit:4 %}
-          <li><a href="{{ post.url | relative_url }}"{% if post.url == page.url %} aria-current="page"{% endif %}>{{ post.series_label | default: post.title | escape }}</a></li>
+          {% assign series_link_index = start_index | plus: forloop.index %}
+          <li>
+            <span class="fr-article-series-rail__index" aria-hidden="true">{{ series_link_index | prepend: '0' | slice: -2, 2 }}</span>
+            <a href="{{ post.url | relative_url }}" title="{{ post.title | escape }}"{% if post.url == page.url %} aria-current="page"{% endif %}>{{ post.series_label | default: post.title | escape }}</a>
+          </li>
         {% endfor %}
       </ol>
-      <a class="fr-article-series-rail__all" href="{{ rail_series.url | relative_url }}" data-fr-i18n-zh="{{ site.data.ui-text['zh-CN'].view_full_series | escape }} →" data-fr-i18n-en="{{ site.data.ui-text['en-US'].view_full_series | default: site.data.ui-text.en.view_full_series | escape }} →">{{ article_text.view_full_series }} →</a>
     </section>
   {% endif %}
 {% endif %}
