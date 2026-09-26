@@ -520,6 +520,10 @@ $fr-map-tones: (1: #547392, 2: #a66a52, 3: #677f76, 4: #8b718d, 5: #8a7959, 6: #
 .fr-category-directory h2 { margin: 0; font-size: 1.7rem; }
 .fr-category-directory small { color: $fr-panel-muted; font-family: $sans-serif; font-size: 0.75rem; }
 .fr-category-directory ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.65rem; }
+.fr-category-filter { display: grid; gap: 0.35rem; max-width: 24rem; font-size: 0.85rem; }
+.fr-category-filter input { width: 100%; border-radius: 0.35rem; }
+#category-filter-status { color: $fr-panel-muted; font-size: 0.78rem; }
+.fr-category-directory li[hidden] { display: none; }
 .fr-category-directory li {
   display: flex;
   justify-content: space-between;

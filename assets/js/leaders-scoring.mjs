@@ -1,7 +1,12 @@
 function scoreKeys(dimensions) {
-  return (dimensions || []).map((dimension) => (
+  if (!Array.isArray(dimensions)) throw new TypeError("Scoring dimensions must be an array.");
+  const keys = dimensions.map((dimension) => (
     Array.isArray(dimension) ? dimension[0] : dimension
-  )).filter(Boolean);
+  ));
+  if (!keys.length || keys.some((key) => typeof key !== "string" || !key.trim()) || new Set(keys).size !== keys.length) {
+    throw new TypeError("Scoring dimensions must be nonempty and unique.");
+  }
+  return keys;
 }
 
 function finiteScore(value) {
@@ -54,7 +59,7 @@ export function evidenceAdjustedScore(
 }
 
 export function scoreBandLabel(score, bands, fallback) {
-  if (typeof score !== "number" || !Number.isFinite(score)) return fallback;
+  if (typeof score !== "number" || !Number.isFinite(score) || score < 0 || score > 10) return fallback;
   // Grades follow the same one-decimal precision readers see in the UI.
   const displayedScore = Math.round((score + Number.EPSILON) * 10) / 10;
   const match = (bands || []).find((band) => displayedScore >= band.min);
@@ -66,4 +71,14 @@ export function scoreBandLabel(score, bands, fallback) {
 export function darwinLeadersDelta(company, leaderDimensions, darwinDimensions) {
   if (!company?.darwin) return null;
   return averageScore(company.darwin, darwinDimensions) - averageScore(company.scores, leaderDimensions);
+}
+
+export function scoreBreakdown(scores, mode, dimensions, stageWeights) {
+  // Use the same validation and normalization as the displayed weighted score.
+  weightedScore(scores, mode, dimensions, stageWeights);
+  const keys = scoreKeys(dimensions);
+  const values = stageWeights[mode].values;
+  const total = values.reduce((sum, value) => sum + value, 0);
+  return keys.map((key, index) => ({ key, score: scores[key], weight: values[index] / total,
+    contribution: scores[key] * values[index] / total }));
 }

@@ -79,7 +79,7 @@ layout: default
         {% endunless %}
       {% endif %}
 
-      <section class="page__content e-content" itemprop="text">
+      <section class="page__content e-content" itemprop="text"{% if page.id %} lang="{{ locale }}"{% endif %}>
         {% if page.id and page.toc %}
           <details class="fr-article-toc-mobile">
             <summary>{{ article_text.toc_label }}</summary>

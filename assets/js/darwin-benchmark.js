@@ -1,4 +1,5 @@
 import { averageScore, darwinLeadersDelta } from "./leaders-scoring.mjs";
+import { validateDataset, fetchJson } from "./leaders-data.mjs";
 
 (() => {
   "use strict";
@@ -113,23 +114,15 @@ import { averageScore, darwinLeadersDelta } from "./leaders-scoring.mjs";
 
   const load = async () => {
     try {
-      const [benchmarkResponse, companyResponse, modelResponse] = await Promise.all([
-        fetch(root.dataset.source),
-        fetch(root.dataset.companies),
-        fetch(root.dataset.model)
-      ]);
-      if (!benchmarkResponse.ok || !companyResponse.ok || !modelResponse.ok) {
-        throw new Error("Benchmark data request failed.");
-      }
-
       const [data, companies, model] = await Promise.all([
-        benchmarkResponse.json(),
-        companyResponse.json(),
-        modelResponse.json()
+        fetchJson(root.dataset.source),
+        fetchJson(root.dataset.companies),
+        fetchJson(root.dataset.model)
       ]);
       if (!Array.isArray(data?.companies) || !Array.isArray(companies)) {
         throw new TypeError("Benchmark data has an invalid shape.");
       }
+      validateDataset(companies, model);
 
       const scoreKeys = model.dimension_order || Object.keys(model.dimensions || {});
       const darwinKeys =

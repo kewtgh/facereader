@@ -5,9 +5,11 @@ import {
   darwinLeadersDelta,
   evidenceAdjustedScore,
   scoreBandLabel,
+  scoreBreakdown,
   weightedScore
 } from "../js/leaders-scoring.mjs";
 import { resolveCompany } from "../js/leaders-search.mjs";
+import { validateDataset, validateModel, validDate, validUrl, articleReturnUrl, fetchJson } from "../js/leaders-data.mjs";
 
 const model = JSON.parse(fs.readFileSync("assets/data/leaders-score-rubric.json", "utf8"));
 const dimensions = model.dimension_order;
@@ -102,3 +104,48 @@ assert.equal(scoreBandLabel(8.44, model.rating_bands, "fallback"), "B+档：稳�
 assert.equal(scoreBandLabel(-1, model.rating_bands, "fallback"), "fallback");
 
 console.log("LEADERS scoring tests passed.");
+
+assert.throws(() => averageScore(uniformScores, ["leadership", "leadership"]), TypeError);
+assert.throws(() => averageScore(uniformScores, ["leadership", ""]), TypeError);
+assert.equal(scoreBandLabel(11, model.rating_bands, "fallback"), "fallback");
+assert.equal(resolveCompany([{ name: "A", aliases: [] }, { name: " A ", aliases: [] }], "a", () => []).reason, "ambiguous");
+for (const mode of ["early", "growth", "mature"]) {
+  const rows = scoreBreakdown(variedScores, mode, dimensions, model.stage_weights);
+  assert.ok(Math.abs(rows.reduce((sum, row) => sum + row.contribution, 0) - weightedScore(variedScores, mode, dimensions, model.stage_weights)) < 1e-12);
+}
+validateDataset(realCompanies, model);
+for (const mutate of [
+  (m) => { m.darwin_rating_bands.reverse(); },
+  (m) => { m.guardrails.darwin_feedback.review_delta = -1; },
+  (m) => { m.evidence_coefficients.C = NaN; },
+  (m) => { m.dimension_order[1] = m.dimension_order[0]; }
+]) {
+  const bad = structuredClone(model); mutate(bad);
+  assert.throws(() => validateModel(bad), TypeError);
+}
+for (const mutate of [
+  (c) => { c.sources = "https://example.com"; },
+  (c) => { c.aliases = [null]; },
+  (c) => { c.url = "javascript:alert(1)"; },
+  (c) => { c.last_reviewed = "2999-01-01"; },
+  (c) => { c.last_reviewed = "2026-02-30"; },
+  (c) => { c.scores.leadership = "9"; }
+]) {
+  const bad = structuredClone(realCompanies[0]); mutate(bad);
+  assert.throws(() => validateDataset([bad], model), TypeError);
+}
+assert.throws(() => validateDataset({}, model), TypeError);
+assert.throws(() => validateDataset([realCompanies[0], realCompanies[0]], model), TypeError);
+assert.equal(validDate("2024-02-29"), true);
+assert.equal(validDate("2025-02-29"), false);
+for (const unsafe of ["//example.com", "/\\example.com", "https://a:b@example.com", "javascript:alert(1)", "https://example.com x"]) assert.equal(validUrl(unsafe), false);
+assert.equal(articleReturnUrl("/post/?x=1#part"), "/post/?x=1&from=leaders-scorecard#part");
+assert.equal(articleReturnUrl("https://facereader.witbacon.com/post/#part"), "/post/?from=leaders-scorecard#part");
+const originalFetch = globalThis.fetch;
+try {
+  globalThis.fetch = async () => ({ ok: false, status: 503 });
+  await assert.rejects(fetchJson("/test"), /503/);
+  globalThis.fetch = async (_url, { signal }) => new Promise((_resolve, reject) => signal.addEventListener("abort", () => reject(new Error("aborted"))));
+  await assert.rejects(fetchJson("/test", 5), /aborted/);
+} finally { globalThis.fetch = originalFetch; }
+console.log("LEADERS data contract, explanation, URL, and load-failure tests passed.");

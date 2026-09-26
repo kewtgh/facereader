@@ -86,6 +86,12 @@ function checkPagesAuthority(file, workflow) {
   const buildRuns = asArray(build?.steps).filter((step) => step.run).map((step) => step.run);
   const siteBuilds = buildRuns.filter((run) => /\bnpm run site:build\b/.test(run)).length;
   if (siteBuilds !== 1) fail(`${file}: build job must run exactly one npm run site:build`);
+  const steps = asArray(build?.steps);
+  const checkIndex = steps.findIndex((step) => /\bnpm run site:check\b/.test(step.run || ""));
+  const uploadIndex = steps.findIndex((step) => /actions\/upload-pages-artifact@/.test(step.uses || ""));
+  if (checkIndex < 0 || uploadIndex < 0 || checkIndex >= uploadIndex || steps[checkIndex]?.["continue-on-error"]) {
+    fail(`${file}: site:check must gate the Pages artifact upload.`);
+  }
 
   const protectRuns = buildRuns.filter((run) => /\bnpm run algolia:protect\b/.test(run)).length;
   if (protectRuns !== 1) fail(`${file}: build job must protect the Algolia browser key exactly once before deployment`);

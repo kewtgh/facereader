@@ -54,6 +54,13 @@ jobs:
           ALGOLIA_SEARCH_API_KEY: ${{ secrets.ALGOLIA_SEARCH_API_KEY }}
         run: npm run site:build
 
+      - name: Validate site and application
+        env:
+          BUNDLE_FROZEN: "true"
+          JEKYLL_ENV: production
+          ALGOLIA_SEARCH_API_KEY: ${{ secrets.ALGOLIA_SEARCH_API_KEY }}
+        run: npm run site:check
+
       - name: Validate production outputs
         run: |
           set -euo pipefail

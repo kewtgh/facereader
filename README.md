@@ -23,6 +23,14 @@ GitHub Actions workflows, Sass warnings, internal links, generated HTML
 accessibility, image dimensions/loading attributes, and production artifact
 exclusions. Run it after a successful build before publishing.
 
+The Pages workflow runs `site:check` before uploading the deployment artifact.
+For browser regressions, build first and run `npm run site:browser` with an
+installed Playwright and Chromium. Set `PLAYWRIGHT_MODULE` to its module path
+and `CHROMIUM_EXECUTABLE` to the browser executable when they are not installed
+locally. The suite starts a local-only server, blocks external requests, tests
+responsive pages and failure/retry flows, and saves screenshots under
+`tmp/audit-2026-09-26/`. It does not install browsers or publish anything.
+
 Browser-facing JavaScript belongs in `assets/js`. Build-only validation and
 deployment utilities belong in `assets/scripts`, which is excluded from the
 published site. `bundle exec rake js` regenerates `assets/js/main.min.js`

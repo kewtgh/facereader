@@ -8,9 +8,10 @@
   function loadScript(src) {
     return new Promise(function (resolve, reject) {
       var s = document.createElement("script");
+      var timer = setTimeout(function () { s.remove(); reject(new Error("Search dependency timed out")); }, 15000);
       s.src = src;
-      s.onload = resolve;
-      s.onerror = reject;
+      s.onload = function () { clearTimeout(timer); resolve(); };
+      s.onerror = function () { clearTimeout(timer); s.remove(); reject(new Error("Search dependency unavailable")); };
       document.body.appendChild(s);
     });
   }
@@ -285,6 +286,7 @@
   }
 
   function startAlgoliaSearch() {
+    document.querySelectorAll("[data-fr-search-error]").forEach(function (node) { node.remove(); });
     if (!algoliaInitPromise) {
       algoliaInitPromise = initAlgoliaInstantSearchOnce().catch(function (e) {
         algoliaInitPromise = null;
@@ -293,6 +295,32 @@
     }
     algoliaInitPromise.catch(function (e) {
       console.error("[InstantSearch] init failed:", e);
+      document.querySelectorAll(".algolia-page").forEach(function (root) {
+        if (root.querySelector("[data-fr-search-error]")) return;
+        var error = document.createElement("div");
+        error.setAttribute("data-fr-search-error", "true");
+        var english = currentUiLanguage() === "en";
+        var message = document.createElement("p");
+        message.setAttribute("role", "status");
+        message.setAttribute("data-fr-i18n-zh", "搜索暂时无法加载。你可以重试，或前往文章列表浏览。");
+        message.setAttribute("data-fr-i18n-en", "Search could not load. Retry or browse the article archive.");
+        message.textContent = message.getAttribute("data-fr-i18n-" + (english ? "en" : "zh"));
+        var retry = document.createElement("button");
+        retry.type = "button";
+        retry.className = "btn";
+        retry.setAttribute("data-fr-i18n-zh", "重试搜索");
+        retry.setAttribute("data-fr-i18n-en", "Retry search");
+        retry.textContent = retry.getAttribute("data-fr-i18n-" + (english ? "en" : "zh"));
+        retry.addEventListener("click", startAlgoliaSearch);
+        var archive = document.createElement("a");
+        archive.href = "{{ '/posts/' | relative_url }}";
+        archive.className = "btn";
+        archive.setAttribute("data-fr-i18n-zh", "浏览文章");
+        archive.setAttribute("data-fr-i18n-en", "Browse articles");
+        archive.textContent = archive.getAttribute("data-fr-i18n-" + (english ? "en" : "zh"));
+        error.append(message, retry, archive);
+        root.prepend(error);
+      });
     });
   }
 

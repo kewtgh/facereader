@@ -90,19 +90,21 @@
     if (visibleBlock && tocLinks.length) {
       var visibleHeadings = Array.prototype.slice.call(visibleBlock.querySelectorAll("h2[id], h3[id], h4[id]"));
       if (visibleHeadings.length > 0) {
-        tocLinks.forEach(function (link, index) {
-          var item = link.closest("li");
-          if (index >= visibleHeadings.length) {
-            if (item) item.hidden = true;
-            link.hidden = true;
-            return;
-          }
+        document.querySelectorAll(".toc__menu").forEach(function (menu) {
+          Array.from(menu.querySelectorAll('a[href^="#"]')).forEach(function (link, index) {
+            var item = link.closest("li");
+            if (index >= visibleHeadings.length) {
+              if (item) item.hidden = true;
+              link.hidden = true;
+              return;
+            }
 
-          var heading = visibleHeadings[index];
-          if (item) item.hidden = false;
-          link.hidden = false;
-          link.setAttribute("href", "#" + heading.id);
-          link.textContent = heading.textContent.trim();
+            var heading = visibleHeadings[index];
+            if (item) item.hidden = false;
+            link.hidden = false;
+            link.setAttribute("href", "#" + heading.id);
+            link.textContent = heading.textContent.trim();
+          });
         });
         return;
       }

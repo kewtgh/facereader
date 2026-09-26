@@ -72,6 +72,11 @@ layout: archive
     <h2 data-fr-i18n-key="all_categories_label">{{ category_text.all_categories_label }}</h2>
     <small data-fr-i18n-zh="按文章数量排列 · {{ site.categories.size }} 个分类" data-fr-i18n-en="By article count · {{ site.categories.size }} categories">按文章数量排列 · {{ site.categories.size }} 个分类</small>
   </header>
+  <label class="fr-category-filter" for="category-filter">
+    <span data-fr-i18n-zh="查找分类" data-fr-i18n-en="Find a category">查找分类</span>
+    <input id="category-filter" type="search" autocomplete="off">
+  </label>
+  <p id="category-filter-status" role="status"></p>
   <ul>
     {% assign category_max = 0 %}
     {% for category in site.categories %}{% if category[1].size > category_max %}{% assign category_max = category[1].size %}{% endif %}{% endfor %}
@@ -84,7 +89,7 @@ layout: archive
     {% endfor %}
   </ul>
 </section>
-<section class="fr-category-detail" id="category-detail" aria-live="polite" hidden>
+<section class="fr-category-detail" id="category-detail" data-index-url="{{ '/category-index.json' | relative_url }}" aria-live="polite" hidden>
   <header class="fr-category-detail__header">
     <div>
       <span data-fr-i18n-zh="分类文章" data-fr-i18n-en="Category essays">分类文章</span>
@@ -92,6 +97,8 @@ layout: archive
     </div>
     <a href="#page-title" data-fr-i18n-zh="返回阅读地图 ↑" data-fr-i18n-en="Back to reading map ↑">返回阅读地图 ↑</a>
   </header>
+  <p id="category-detail-status" role="status"></p>
+  <button id="category-detail-retry" type="button" hidden data-fr-i18n-zh="重新加载" data-fr-i18n-en="Try again">重新加载</button>
   <ul id="category-detail-posts"></ul>
 </section>
 <noscript><p><a href="{{ '/posts/' | relative_url }}">{{ category_text.all_posts_label }}</a></p></noscript>

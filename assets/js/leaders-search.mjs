@@ -5,6 +5,7 @@ export function resolveCompany(companies, query, rank) {
   if (!needle) return { company: null, candidates: [], reason: "empty" };
   const canonical = companies.filter((item) => normalizeCompanyName(item.name) === needle);
   if (canonical.length === 1) return { company: canonical[0], candidates: [], reason: "name" };
+  if (canonical.length > 1) return { company: null, candidates: canonical, reason: "ambiguous" };
   const aliases = companies.filter((item) => (item.aliases || []).some((alias) => normalizeCompanyName(alias) === needle));
   if (aliases.length === 1) return { company: aliases[0], candidates: [], reason: "alias" };
   if (aliases.length > 1) return { company: null, candidates: aliases, reason: "ambiguous" };

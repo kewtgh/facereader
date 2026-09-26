@@ -1,5 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
+import { validateDataset } from "../js/leaders-data.mjs";
+import { normalizeCompanyName } from "../js/leaders-search.mjs";
 
 const root = process.cwd();
 const files = {
@@ -9,6 +11,12 @@ const files = {
 };
 
 const rubric = JSON.parse(fs.readFileSync(files.rubric, "utf8"));
+try {
+  validateDataset(JSON.parse(fs.readFileSync(files.companies, "utf8")), rubric);
+} catch (error) {
+  console.error(`LEADERS data contract failed: ${error.message}`);
+  process.exit(1);
+}
 const scoreKeys = rubric.dimension_order || Object.keys(rubric.dimensions || {});
 const darwinKeys = rubric.darwin_dimension_order || Object.keys(rubric.darwin_dimensions || {});
 const evidenceLevels = new Set(["A", "B", "C"]);
@@ -167,7 +175,7 @@ function validateCompanies() {
 
   const aliases = new Map();
   for (const company of companies) {
-    for (const alias of new Set((company.aliases || []).map((item) => item.trim().toLocaleLowerCase()).filter(Boolean))) {
+    for (const alias of new Set((company.aliases || []).map(normalizeCompanyName).filter(Boolean))) {
       if (!aliases.has(alias)) aliases.set(alias, new Set());
       aliases.get(alias).add(company.name);
     }

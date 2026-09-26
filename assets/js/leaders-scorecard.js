@@ -3,9 +3,11 @@ import {
   evidenceAdjustedScore as calculateEvidenceAdjustedScore,
   darwinLeadersDelta,
   scoreBandLabel,
+  scoreBreakdown,
   weightedScore as calculateWeightedScore
 } from "./leaders-scoring.mjs";
 import { normalizeCompanyName, resolveCompany } from "./leaders-search.mjs";
+import { validateDataset, articleReturnUrl, fetchJson } from "./leaders-data.mjs";
 
 (function () {
   const hotCompanyNames = [
@@ -106,6 +108,16 @@ import { normalizeCompanyName, resolveCompany } from "./leaders-search.mjs";
       pageNext: "下一页",
       pageStatus: (current, total) => `第 ${current} / ${total} 页`,
       loadFailure: "评分数据加载失败，请稍后再试。",
+      retry: "重新加载",
+      loading: "正在加载评分数据…",
+      welcome: "输入企业名称或选择下方示例，查看博客中的评分与说明。",
+      calculation: "这些分数如何计算？",
+      weight: "权重",
+      contribution: "加权贡献",
+      score: "分值",
+      calculationNote: "加权分为各项贡献之和，再乘证据系数。下方三种阶段仅改变模型权重，不代表企业事实变化，也不是预测概率。",
+      coefficient: "证据系数",
+      compareFull: "对比栏已满，请先清空一个输入框；不会自动替换你选择的企业。",
       noCompare: "请选择至少两家公司进行横向对比。",
       metric: "指标",
       stageWeighted: "阶段加权",
@@ -173,6 +185,16 @@ import { normalizeCompanyName, resolveCompany } from "./leaders-search.mjs";
       pageNext: "Next",
       pageStatus: (current, total) => `Page ${current} of ${total}`,
       loadFailure: "Rating data failed to load. Please try again later.",
+      retry: "Try again",
+      loading: "Loading rating data…",
+      welcome: "Enter a company name or choose an example to read the blog's scores and notes.",
+      calculation: "How are these scores calculated?",
+      weight: "Weight",
+      contribution: "Contribution",
+      score: "Score",
+      calculationNote: "Contributions sum to the weighted score, then the evidence coefficient is applied. Stage scenarios change model weights, not company facts; they are not probabilities.",
+      coefficient: "Evidence coefficient",
+      compareFull: "Comparison is full. Clear an input first; your choices will not be replaced automatically.",
       noCompare: "Select at least two companies for comparison.",
       metric: "Metric",
       stageWeighted: "Stage-weighted",
@@ -247,6 +269,7 @@ import { normalizeCompanyName, resolveCompany } from "./leaders-search.mjs";
   let darwinWarnDelta = 0.5;
   let darwinReviewDelta = 1.2;
   let modelVersion = "";
+  let comparisonFull = false;
   const tablePageSize = 25;
   let tablePage = 1;
 
@@ -298,18 +321,12 @@ import { normalizeCompanyName, resolveCompany } from "./leaders-search.mjs";
     return /^\//.test(url || "") || /^https?:\/\/facereader\.witbacon\.com\//.test(url || "");
   }
 
-  function localizeUrl(url) {
-    return String(url || "").replace(/^https?:\/\/facereader\.witbacon\.com/i, "");
-  }
-
   function addReturnParam(url) {
-    const localUrl = localizeUrl(url);
-    const separator = localUrl.includes("?") ? "&" : "?";
-    return `${localUrl}${separator}from=leaders-scorecard`;
+    return articleReturnUrl(url);
   }
 
   function validMode(value) {
-    return weights[value] ? value : "growth";
+    return Object.prototype.hasOwnProperty.call(weights, value) ? value : "growth";
   }
 
   function readSearchState() {
@@ -588,6 +605,20 @@ import { normalizeCompanyName, resolveCompany } from "./leaders-search.mjs";
     `;
   }
 
+  function renderCalculation(company, mode) {
+    const rows = scoreBreakdown(company.scores, mode, scoreKeys, weights);
+    return `<details class="leaders-calculation">
+      <summary>${t("calculation")}</summary>
+      <p>${t("calculationNote")}</p>
+      <div class="leaders-calculation__scroll" tabindex="0" role="region" aria-label="${t("calculation")}">
+        <table><thead><tr><th scope="col">${t("metric")}</th><th scope="col">${t("score")}</th><th scope="col">${t("weight")}</th><th scope="col">${t("contribution")}</th></tr></thead>
+        <tbody>${rows.map((row) => `<tr><th scope="row">${escapeHtml(localizedDimensionLabel(row.key))}</th><td>${row.score.toFixed(1)}</td><td>${(row.weight * 100).toFixed(0)}%</td><td>${row.contribution.toFixed(3)}</td></tr>`).join("")}</tbody></table>
+      </div>
+      <p>${t("coefficient")}: ${evidenceCoef[company.evidence]} · ${t("evidenceAdjusted")}: ${weightedScore(company, mode).toFixed(3)} × ${evidenceCoef[company.evidence]} = ${evidenceAdjustedScore(company, mode).toFixed(1)}</p>
+      <ul>${["early", "growth", "mature"].map((stage) => `<li>${localizedStageLabel(stage)}: ${t("stageWeighted")} ${weightedScore(company, stage).toFixed(1)} · ${t("evidenceAdjusted")} ${evidenceAdjustedScore(company, stage).toFixed(1)}</li>`).join("")}</ul>
+    </details>`;
+  }
+
   function renderResult(company, mode) {
     const raw = average(company.scores);
     const weighted = weightedScore(company, mode);
@@ -619,6 +650,7 @@ import { normalizeCompanyName, resolveCompany } from "./leaders-search.mjs";
           <div><span>${t("evidenceAdjusted")}</span><strong>${adjusted.toFixed(1)}</strong></div>
           <div><span>${t("evidence")}</span><strong>${company.evidence}</strong></div>
         </div>
+        ${renderCalculation(company, mode)}
         <p class="leaders-result__summary">${escapeHtml(company.summary)}</p>
         <p class="leaders-result__provenance">${t("modelVersion")}: ${escapeHtml(modelVersion)} · ${t("reviewDate")}: ${escapeHtml(reviewDate)}${reviewWarning}</p>
         <p class="leaders-result__scope">${t("profileScope")}</p>
@@ -705,12 +737,17 @@ import { normalizeCompanyName, resolveCompany } from "./leaders-search.mjs";
     bindCompanyButtons("#leaders-result");
   }
 
+  function renderWelcome() {
+    $("#leaders-result").innerHTML = `<p role="status">${t("welcome")}</p>`;
+  }
+
   function runSearch(event) {
     event.preventDefault();
     const query = $("#leaders-company-input").value;
     const mode = $("#leaders-stage").value;
     const company = findCompany(query);
     if (company) {
+      $("#leaders-company-input").value = company.name;
       renderResult(company, mode);
       syncSearchUrl(company.name, mode, true);
     } else {
@@ -728,7 +765,7 @@ import { normalizeCompanyName, resolveCompany } from "./leaders-search.mjs";
     stage.value = state.mode;
     input.value = state.company;
     if (!state.company) {
-      renderResult(companies[0], state.mode);
+      renderWelcome();
     } else {
       const company = findCompany(state.company);
       if (company) renderResult(company, state.mode);
@@ -968,9 +1005,8 @@ import { normalizeCompanyName, resolveCompany } from "./leaders-search.mjs";
       }).join("");
     }
 
-    inputs.forEach((input, index) => {
-      input.value = sorted[index]?.name || "";
-      input.addEventListener("input", renderCompare);
+    inputs.forEach((input) => {
+      input.addEventListener("input", () => { comparisonFull = false; renderCompare(); });
       input.addEventListener("change", renderCompare);
       input.addEventListener("blur", () => {
         const company = compareCompanyFromValue(input.value);
@@ -982,6 +1018,7 @@ import { normalizeCompanyName, resolveCompany } from "./leaders-search.mjs";
     const clearButton = $("#leaders-compare-clear");
     if (clearButton) {
       clearButton.addEventListener("click", () => {
+        comparisonFull = false;
         inputs.forEach((input) => { input.value = ""; });
         renderCompare();
       });
@@ -1002,7 +1039,15 @@ import { normalizeCompanyName, resolveCompany } from "./leaders-search.mjs";
       return;
     }
 
-    const target = inputs.find((input) => !input.value) || inputs[inputs.length - 1];
+    const target = inputs.find((input) => !input.value.trim());
+    if (!target) {
+      comparisonFull = true;
+      renderCompare();
+      compareRoot.scrollIntoView({ behavior: smoothBehavior(), block: "start" });
+      inputs[inputs.length - 1].focus({ preventScroll: true });
+      return;
+    }
+    comparisonFull = false;
     target.value = name;
     renderCompare();
     compareRoot.scrollIntoView({ behavior: smoothBehavior(), block: "start" });
@@ -1124,9 +1169,9 @@ import { normalizeCompanyName, resolveCompany } from "./leaders-search.mjs";
 
     const inputs = compareInputs().map((input) => input.value.trim()).filter(Boolean);
     const unresolved = inputs.filter((value) => !compareCompanyFromValue(value));
-    const notice = unresolved.length
+    const notice = (comparisonFull ? `<p role="status">${t("compareFull")}</p>` : "") + (unresolved.length
       ? `<p class="leaders-compare__empty" role="status">${t("compareUnresolved")} ${escapeHtml(unresolved.join(" / "))}</p>`
-      : "";
+      : "");
     const selected = inputs
       .map(compareCompanyFromValue)
       .filter(Boolean)
@@ -1179,11 +1224,10 @@ import { normalizeCompanyName, resolveCompany } from "./leaders-search.mjs";
   function refreshLanguageState() {
     if (!companies.length) return;
     renderExamples();
-    const input = $("#leaders-company-input");
-    const mode = $("#leaders-stage")?.value || "growth";
-    const query = input?.value || "";
-    const company = query ? findCompany(query) : companies[0];
-    if (company) {
+    const { company: query, mode } = readSearchState();
+    const company = query ? findCompany(query) : null;
+    if (!query) renderWelcome();
+    else if (company) {
       renderResult(company, mode);
     } else {
       renderEmpty(query);
@@ -1212,40 +1256,62 @@ import { normalizeCompanyName, resolveCompany } from "./leaders-search.mjs";
       document.querySelector("#leaders-print-only")?.remove();
     });
 
-    try {
-      const modelUrl = root.dataset.model || "/assets/data/leaders-score-rubric.json";
-      const [companyResponse, modelResponse] = await Promise.all([
-        fetch(root.dataset.source),
-        fetch(modelUrl)
-      ]);
-      if (!companyResponse.ok || !modelResponse.ok) {
-        throw new Error("LEADERS data request failed.");
-      }
-      const loadedCompanies = await companyResponse.json();
-      const loadedModel = await modelResponse.json();
-      if (!Array.isArray(loadedCompanies) || !loadedCompanies.length) {
-        throw new Error("LEADERS company data is empty.");
-      }
-      companies = loadedCompanies;
-      configureModel(loadedModel);
-      renderExamples();
-      renderLeadersTable();
-      fillCompareInputs();
-      $("#leaders-search-form").addEventListener("submit", runSearch);
-      $("#leaders-stage").addEventListener("change", () => {
-        const query = $("#leaders-company-input").value;
-        const company = query ? findCompany(query) : companies[0];
-        const mode = $("#leaders-stage").value;
-        if (company) renderResult(company, mode);
-        else renderEmpty(query);
-        syncSearchUrl(query ? (company?.name || query) : "", mode, true);
-        renderCompare();
-      });
-      window.addEventListener("popstate", restoreSearchFromUrl);
-      document.addEventListener("facereader:ui-language", refreshLanguageState);
-      restoreSearchFromUrl();
-    } catch (error) {
-      $("#leaders-result").innerHTML = `<p>${t("loadFailure")}</p>`;
+    let loadState = "loading";
+    const controls = document.querySelectorAll("#leaders-search-form input, #leaders-search-form select, #leaders-search-form button, .leaders-compare__selectors input, .leaders-compare__selectors button, .leaders-table__toolbar input, .leaders-table__toolbar select, .leaders-table__toolbar button");
+    function renderLoadState() {
+      const failed = loadState === "error";
+      const message = failed ? t("loadFailure") : t("loading");
+      $("#leaders-result").innerHTML = `<p role="status">${message}</p>${failed ? `<button type="button" class="btn" data-retry-load>${t("retry")}</button>` : ""}`;
+      $("#leaders-table-count").textContent = message;
+      $("#leaders-table-body").innerHTML = `<tr><td colspan="14">${message}</td></tr>`;
+      $("#leaders-compare-output").textContent = message;
+      root.setAttribute("aria-busy", failed ? "false" : "true");
+      $("#leaders-companies-table").setAttribute("aria-busy", failed ? "false" : "true");
+      $("[data-retry-load]")?.addEventListener("click", loadApplication);
     }
+    document.addEventListener("facereader:ui-language", () => {
+      if (loadState === "ready") refreshLanguageState();
+      else renderLoadState();
+    });
+    async function loadApplication() {
+      loadState = "loading";
+      controls.forEach((control) => { control.disabled = true; });
+      renderLoadState();
+      try {
+        const modelUrl = root.dataset.model || "/assets/data/leaders-score-rubric.json";
+        const [loadedCompanies, loadedModel] = await Promise.all([
+          fetchJson(root.dataset.source),
+          fetchJson(modelUrl)
+        ]);
+        validateDataset(loadedCompanies, loadedModel);
+        companies = loadedCompanies;
+        configureModel(loadedModel);
+        renderExamples();
+        renderLeadersTable();
+        fillCompareInputs();
+        $("#leaders-search-form").addEventListener("submit", runSearch);
+        $("#leaders-stage").addEventListener("change", () => {
+          const query = readSearchState().company;
+          const company = query ? findCompany(query) : null;
+          const mode = $("#leaders-stage").value;
+          if (!query) renderWelcome();
+          else if (company) renderResult(company, mode);
+          else renderEmpty(query);
+          syncSearchUrl(query ? (company?.name || query) : "", mode, true);
+          renderLeadersTable();
+          renderCompare();
+        });
+        window.addEventListener("popstate", restoreSearchFromUrl);
+        restoreSearchFromUrl();
+        loadState = "ready";
+        root.setAttribute("aria-busy", "false");
+        controls.forEach((control) => { control.disabled = false; });
+      } catch (error) {
+        companies = [];
+        loadState = "error";
+        renderLoadState();
+      }
+    }
+    loadApplication();
   });
 })();
