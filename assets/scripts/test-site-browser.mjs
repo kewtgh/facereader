@@ -7,7 +7,7 @@ import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "playwright");
 const root = path.resolve("_site");
-const output = path.resolve("tmp/audit-2026-09-26");
+const output = path.resolve("tmp/audit-2026-09-28");
 await fs.mkdir(output, { recursive: true });
 const types = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".mjs": "text/javascript", ".css": "text/css", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".webp": "image/webp", ".woff2": "font/woff2" };
 const server = http.createServer(async (req, res) => {
@@ -46,6 +46,16 @@ try {
       assert.equal(response.status(), 200, url);
       await page.waitForTimeout(150);
       await noOverflow();
+      if (width === 390) {
+        assert.equal(await page.locator(".greedy-nav .site-title__compact").isVisible(), true, "Mobile brand name should not be ellipsized");
+      }
+      if (width === 1440 && ["/posts/", "/categories/", article].includes(url)) {
+        const label = url === article ? "article" : url.slice(1, -1);
+        await page.screenshot({ path: path.join(output, `${label}-desktop.png`), animations: "disabled" });
+      }
+      if (width === 390 && url === article) {
+        await page.screenshot({ path: path.join(output, "article-mobile.png"), animations: "disabled" });
+      }
     }
     console.log(`Page smoke passed at ${width}px.`);
   }
@@ -78,6 +88,24 @@ try {
   assert.equal(await page.locator("#category-detail").evaluate((e) => e.hidden), true);
   await page.unroute("**/category-index.json");
   console.log("Category search, failure/retry, and stale response checks passed.");
+  await goto("/series/lcer/");
+  await page.locator('[data-fr-ui-lang-option="zh"]').click();
+  const zhSeriesCount = await page.locator('.fr-series-detail ul[data-fr-i18n-block="zh"] li').count();
+  assert.ok(zhSeriesCount > 0);
+  assert.equal(await page.locator('.fr-series-detail h2').textContent(), `${zhSeriesCount} 篇文章`);
+  await page.locator('[data-fr-ui-lang-option="en"]').click();
+  const enSeriesCount = await page.locator('.fr-series-detail ul[data-fr-i18n-block="en"] li').count();
+  assert.ok(enSeriesCount > 0);
+  assert.equal(await page.locator('.fr-series-detail ul[data-fr-i18n-block="zh"]').isHidden(), true);
+  assert.equal(await page.locator('.fr-series-detail ul[data-fr-i18n-block="en"]').isVisible(), true);
+  assert.equal(await page.locator('.fr-series-detail h2').textContent(), `${enSeriesCount} essays`);
+  await page.screenshot({ path: path.join(output, "lcer-series-en.png"), animations: "disabled" });
+  await goto("/series/leadership/");
+  const leadershipCount = await page.locator(".fr-series-detail > ul li").count();
+  assert.ok(leadershipCount > 1, "Traditional category series should show its article list");
+  await page.locator('[data-fr-ui-lang-option="zh"]').click();
+  assert.equal(await page.locator(".fr-series-detail > ul li").count(), leadershipCount);
+  console.log("Bilingual and category-based series remain readable after language switching.");
   for (const width of [1440, 390]) {
     await page.setViewportSize({ width, height: 900 });
     await goto("/categories/");
@@ -108,6 +136,8 @@ try {
   await page.route("**/leaders-companies.json", (route) => loadFailures++ === 0 ? route.fulfill({ status: 503, body: "unavailable" }) : route.continue());
   await goto("/leaders-scorecard/");
   await page.locator("[data-retry-load]").waitFor();
+  assert.equal(await page.locator("#leaders-pro, .leaders-entry-grid a[href^='mailto:']").count(), 0);
+  assert.equal(await page.locator('.leaders-entry-grid a[href="#leaders-method"]').count(), 1);
   assert.equal(await page.locator("#leaders-company-input").isDisabled(), true);
   await page.locator("[data-retry-load]").click();
   await page.waitForFunction(() => !document.querySelector("#leaders-company-input").disabled);

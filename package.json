@@ -1,8 +1,8 @@
 {
   "name": "facereader",
   "private": true,
-  "version": "7.1.9",
-  "description": "FaceReader production site for enterprise observation and leadership analysis.",
+  "version": "7.1.10",
+  "description": "FaceReader personal blog on people, companies, society, and ideas.",
   "repository": {
     "type": "git",
     "url": "https://github.com/kewtgh/facereader.git"

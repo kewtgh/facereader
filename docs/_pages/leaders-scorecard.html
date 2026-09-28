@@ -21,8 +21,8 @@ header:
     - label_key: "leaders_hero_query"
       url: "/leaders-scorecard/#leaders-search"
       class: "btn--primary btn--large"
-    - label_key: "leaders_hero_pro"
-      url: "mailto:facereader@witbacon.com?subject=LEADERS%E4%BC%81%E4%B8%9A%E8%AF%84%E7%BA%A7%E4%B8%93%E4%B8%9A%E7%89%88%E5%92%A8%E8%AF%A2"
+    - label_key: "leaders_hero_method"
+      url: "/leaders-scorecard/#leaders-method"
       class: "btn--secondary btn--large"
 categories:
   - 企业剖析
@@ -40,25 +40,25 @@ sitemap: true
   <p><a class="btn btn--primary" href="{{ '/darwin-leaders-benchmark/' | relative_url }}" data-fr-i18n-zh="查看 Darwin-LEADERS 对照样本池" data-fr-i18n-en="View the Darwin-LEADERS benchmark pool">查看 Darwin-LEADERS 对照样本池</a></p>
 </section>
 
-<section class="leaders-entry-grid" id="leaders-free">
+<section class="leaders-entry-grid" id="leaders-reading-guide">
   <article>
-    <h2 data-fr-i18n-zh="免费查询版" data-fr-i18n-en="Free lookup">免费查询版</h2>
-    <p data-fr-i18n-zh="适合快速了解已收录企业的管理能力画像、七项分数、证据等级、主要风险和未来验证点。" data-fr-i18n-en="Use it to quickly inspect a covered company's management profile, seven dimension scores, evidence level, main risks, and future validation points.">适合快速了解已收录企业的管理能力画像、七项分数、证据等级、主要风险和未来验证点。</p>
+    <h2 data-fr-i18n-zh="如何阅读评分" data-fr-i18n-en="How to read the ratings">如何阅读评分</h2>
+    <p data-fr-i18n-zh="把分数当作阅读企业评析的线索，结合证据等级、主要风险和后续验证点理解判断。" data-fr-i18n-en="Treat the scores as a guide to the essays, alongside evidence levels, main risks, and follow-up questions.">把分数当作阅读企业评析的线索，结合证据等级、主要风险和后续验证点理解判断。</p>
     <ul>
       <li data-fr-i18n-zh="覆盖已入库的站内企业评析对象和新增研究企业" data-fr-i18n-en="Covers site-reviewed companies and newly researched companies">覆盖已入库的站内企业评析对象和新增研究企业</li>
       <li data-fr-i18n-zh="按企业名称或英文别名查询" data-fr-i18n-en="Search by company name or English alias">按企业名称或英文别名查询</li>
       <li data-fr-i18n-zh="支持早期、扩张期、规模化三种加权口径" data-fr-i18n-en="Supports early, growth, and mature-stage weighting modes">支持早期、扩张期、规模化三种加权口径</li>
     </ul>
   </article>
-  <article id="leaders-pro">
-    <h2 data-fr-i18n-zh="付费专业版" data-fr-i18n-en="Paid professional version">付费专业版</h2>
-    <p data-fr-i18n-zh="适合投资、合作、招聘高管、供应商准入和风控决策场景。" data-fr-i18n-en="Designed for investment, partnership, executive hiring, supplier admission, and risk-control decisions.">适合投资、合作、招聘高管、供应商准入和风控决策场景。</p>
+  <article>
+    <h2 data-fr-i18n-zh="局限与复核" data-fr-i18n-en="Limits and review">局限与复核</h2>
+    <p data-fr-i18n-zh="这是个人博客的编辑性观察，不是可直接用于商业、投资或人事决策的专业报告。" data-fr-i18n-en="These are editorial observations on a personal blog, not professional reports for business, investment, or hiring decisions.">这是个人博客的编辑性观察，不是可直接用于商业、投资或人事决策的专业报告。</p>
     <ul>
-      <li data-fr-i18n-zh="企业公开信息与材料清单整理" data-fr-i18n-en="Public information and material checklist">企业公开信息与材料清单整理</li>
-      <li data-fr-i18n-zh="证据等级 A/B/C 与不确定性区间" data-fr-i18n-en="Evidence level A/B/C and uncertainty range">证据等级 A/B/C 与不确定性区间</li>
-      <li data-fr-i18n-zh="内部决策版报告、红线项和跟踪指标" data-fr-i18n-en="Internal decision report, red flags, and tracking indicators">内部决策版报告、红线项和跟踪指标</li>
+      <li data-fr-i18n-zh="先看证据等级和来源，再看分数" data-fr-i18n-en="Check evidence levels and sources before scores">先看证据等级和来源，再看分数</li>
+      <li data-fr-i18n-zh="分数会随资料更新和作者复核而变化" data-fr-i18n-en="Scores may change as sources and editorial reviews evolve">分数会随资料更新和作者复核而变化</li>
+      <li data-fr-i18n-zh="重要判断需要查阅原始资料并独立验证" data-fr-i18n-en="Important judgments require primary sources and independent verification">重要判断需要查阅原始资料并独立验证</li>
     </ul>
-    <p><a class="btn btn--primary" href="mailto:facereader@witbacon.com?subject=LEADERS%E4%BC%81%E4%B8%9A%E8%AF%84%E7%BA%A7%E4%B8%93%E4%B8%9A%E7%89%88%E5%92%A8%E8%AF%A2" data-fr-i18n-zh="咨询专业版" data-fr-i18n-en="Ask about the professional version">咨询专业版</a></p>
+    <p><a class="btn btn--primary" href="#leaders-method" data-fr-i18n-zh="阅读评分方法" data-fr-i18n-en="Read the methodology">阅读评分方法</a></p>
   </article>
 </section>
 
@@ -238,7 +238,7 @@ sitemap: true
   </div>
   <div class="leaders-method__notes">
     <p><strong data-fr-i18n-zh="证据等级：" data-fr-i18n-en="Evidence level: ">证据等级：</strong><span data-fr-i18n-zh="A 代表年报、公告、审计报告、招股书等强证据；B 代表多方一致但仍需复核的公开资料；C 代表推断性材料较多，结论需要保守使用。" data-fr-i18n-en="A means strong evidence such as annual reports, announcements, audit reports, and prospectuses; B means public materials that are consistent across sources but still need review; C means more inferred material, so conclusions should be used conservatively.">A 代表年报、公告、审计报告、招股书等强证据；B 代表多方一致但仍需复核的公开资料；C 代表推断性材料较多，结论需要保守使用。</span></p>
-    <p><strong data-fr-i18n-zh="使用边界：" data-fr-i18n-en="Usage boundary: ">使用边界：</strong><span data-fr-i18n-zh="免费版适合快速比较和线索判断；涉及投资、合作、招聘高管或供应商准入时，应结合专业版底稿、原始材料和人工复核。" data-fr-i18n-en="The free version is for quick comparison and clue judgment. Investment, partnership, executive hiring, or supplier admission should be combined with professional notes, original materials, and manual review.">免费版适合快速比较和线索判断；涉及投资、合作、招聘高管或供应商准入时，应结合专业版底稿、原始材料和人工复核。</span></p>
+    <p><strong data-fr-i18n-zh="使用边界：" data-fr-i18n-en="Usage boundary: ">使用边界：</strong><span data-fr-i18n-zh="本站评分仅供阅读和讨论，不应直接用于投资、合作、招聘或供应商准入等决策；重要判断请查阅原始资料并独立复核。" data-fr-i18n-en="These ratings are for reading and discussion, not direct investment, partnership, hiring, or supplier decisions. Consult primary sources and verify important judgments independently.">本站评分仅供阅读和讨论，不应直接用于投资、合作、招聘或供应商准入等决策；重要判断请查阅原始资料并独立复核。</span></p>
   </div>
 
 </section>

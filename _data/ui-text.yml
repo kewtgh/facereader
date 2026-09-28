@@ -85,7 +85,7 @@ en: &DEFAULT_EN
   reader_toc_close: "Close table of contents"
   reader_back_to_top: "Back to top"
   leaders_hero_query: "Start search"
-  leaders_hero_pro: "Professional version"
+  leaders_hero_method: "Read the methodology"
   benchmark_hero_search: "Back to rating search"
   benchmark_hero_table: "View company table"
 
@@ -803,7 +803,7 @@ zh: &DEFAULT_ZH_HANS
   reader_toc_close: "关闭文章目录"
   reader_back_to_top: "返回顶部"
   leaders_hero_query: "开始查询"
-  leaders_hero_pro: "专业版入口"
+  leaders_hero_method: "阅读评分方法"
   benchmark_hero_search: "返回评级搜索"
   benchmark_hero_table: "查看企业总表"
   # 三张卡片

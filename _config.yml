@@ -222,6 +222,7 @@ exclude:
   - Rakefile
   - README
   - README.md
+  - research
   - tmp
   - docs/audits
   - _config.yml.b

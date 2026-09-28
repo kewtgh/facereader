@@ -18,8 +18,9 @@
         {% unless logo_path == empty %}
           <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ masthead_title }}" data-fr-i18n-alt-zh="{{ masthead_title_zh | escape_once }}" data-fr-i18n-alt-en="{{ masthead_title_en | escape_once }}"></a>
         {% endunless %}
-        <a class="site-title" href="{{ '/' | relative_url }}">
+        <a class="site-title" href="{{ '/' | relative_url }}" aria-label="{{ masthead_title | escape_once | strip }}" data-fr-i18n-aria-label-zh="{{ masthead_title_zh | escape_once | strip }}" data-fr-i18n-aria-label-en="{{ masthead_title_en | escape_once | strip }}">
           <span class="site-title__text" data-fr-i18n-zh="{{ masthead_title_zh | escape_once | strip }}" data-fr-i18n-en="{{ masthead_title_en | escape_once | strip }}">{{ masthead_title | escape_once | strip }}</span>
+          <span class="site-title__compact" aria-hidden="true">FaceReader</span>
           {% if site_subtitle %}<span class="site-subtitle" data-fr-i18n-zh="{{ site_subtitle_zh | escape_once | strip }}" data-fr-i18n-en="{{ site_subtitle_en | escape_once | strip }}">{{ site_subtitle | escape_once | strip }}</span>{% endif %}
         </a>
         <ul class="visible-links">

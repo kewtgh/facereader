@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
 require "nokogiri"
+require "json"
 require "pathname"
 require "uri"
 
 SITE_ROOT = Pathname.new(File.expand_path("../_site", __dir__))
+PROJECT_ROOT = SITE_ROOT.parent
 RASTER_EXTENSIONS = %w[.gif .jpeg .jpg .png .webp].freeze
 CRITICAL_IMAGE_PATHS = %w[
   /assets/img/logo-facereader.png
@@ -153,6 +155,19 @@ if unrelated_article.file?
     document.at_css(".fr-article-series-rail")
 end
 
+leaders_file = SITE_ROOT.join("leaders-scorecard", "index.html")
+if leaders_file.file?
+  leaders_document = Nokogiri::HTML(leaders_file.read(encoding: "UTF-8"))
+  add_error(errors, leaders_file, "paid professional offer remains on the blog") if
+    leaders_document.at_css("#leaders-pro") || leaders_document.text.include?("付费专业版")
+  add_error(errors, leaders_file, "methodology entry is missing") unless
+    leaders_document.at_css('.leaders-entry-grid a[href="#leaders-method"]')
+  add_error(errors, leaders_file, "professional consultation CTA remains") if
+    leaders_document.at_css('.leaders-entry-grid a[href^="mailto:"], .page__hero a[href^="mailto:"]')
+else
+  add_error(errors, leaders_file, "LEADERS page was not generated")
+end
+
 compiled_css_file = SITE_ROOT.join("assets", "css", "main.css")
 if compiled_css_file.file?
   compiled_css = compiled_css_file.read(encoding: "UTF-8")
@@ -179,9 +194,56 @@ end
 
 [
   ["assets/scripts", "private build scripts were published"],
-  ["assets/js/main.min.js.map", "JavaScript source map was published"]
+  ["assets/js/main.min.js.map", "JavaScript source map was published"],
+  ["research", "internal editorial research was published"]
 ].each do |relative_path, message|
   add_error(errors, SITE_ROOT.join(relative_path), message) if SITE_ROOT.join(relative_path).exist?
+end
+
+sitemap_file = SITE_ROOT.join("sitemap.xml")
+if sitemap_file.file?
+  sitemap = sitemap_file.read(encoding: "UTF-8")
+  sitemap_locations = Nokogiri::XML(sitemap).xpath("//*[local-name()='loc']").map(&:text)
+  add_error(errors, sitemap_file, "internal editorial research is listed") if
+    sitemap_locations.any? { |location| URI.parse(location).path.start_with?("/research/") }
+  add_error(errors, sitemap_file, "reading map is missing") unless
+    sitemap_locations.any? { |location| URI.parse(location).path == "/categories/" }
+else
+  add_error(errors, sitemap_file, "sitemap was not generated")
+end
+
+categories_file = SITE_ROOT.join("categories", "index.html")
+if categories_file.file?
+  categories_document = Nokogiri::HTML(categories_file.read(encoding: "UTF-8"))
+  add_error(errors, categories_file, "reading map is marked noindex") if
+    categories_document.css('meta[name="robots"]').any? { |meta| meta["content"].to_s.include?("noindex") }
+else
+  add_error(errors, categories_file, "reading map was not generated")
+end
+
+version = JSON.parse(PROJECT_ROOT.join("package.json").read(encoding: "UTF-8")).fetch("version")
+version_banner = "FaceReader #{version}, deeply customized for Witbacon"
+{
+  "index.html" => "HTML version banner",
+  "assets/js/main.min.js" => "JavaScript version banner"
+}.each do |relative_path, label|
+  file = SITE_ROOT.join(relative_path)
+  add_error(errors, file, "#{label} is missing or stale") unless
+    file.file? && file.read(encoding: "UTF-8").include?(version_banner)
+end
+
+lcer_file = SITE_ROOT.join("series", "lcer", "index.html")
+if lcer_file.file?
+  lcer_document = Nokogiri::HTML(lcer_file.read(encoding: "UTF-8"))
+  zh_count = lcer_document.css('.fr-series-detail ul[data-fr-i18n-block="zh"] li').length
+  en_count = lcer_document.css('.fr-series-detail ul[data-fr-i18n-block="en"] li').length
+  add_error(errors, lcer_file, "bilingual series lists are incomplete") unless
+    zh_count.positive? && en_count.positive?
+  add_error(errors, lcer_file, "series counts are not localized") unless
+    lcer_document.at_css(".fr-series-detail h2")&.[]("data-fr-i18n-zh") == "#{zh_count} 篇文章" &&
+    lcer_document.at_css(".fr-series-detail h2")&.[]("data-fr-i18n-en") == "#{en_count} essays"
+else
+  add_error(errors, lcer_file, "LCER series page was not generated")
 end
 
 if errors.any?

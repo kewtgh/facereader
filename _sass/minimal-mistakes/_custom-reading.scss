@@ -547,6 +547,10 @@
   text-overflow: ellipsis;
 }
 
+.greedy-nav .site-title__compact {
+  display: none;
+}
+
 .greedy-nav .site-title__text {
   display: block;
   width: 100%;
@@ -612,6 +616,16 @@ html[lang^="en"] .page__hero--overlay .page__title {
 
   .greedy-nav .site-title {
     max-width: 6.5rem;
+  }
+
+  .greedy-nav .site-title__text {
+    display: none;
+  }
+
+  .greedy-nav .site-title__compact {
+    display: block;
+    white-space: nowrap;
+    line-height: 1.2;
   }
 
   .greedy-nav .site-subtitle {

@@ -38,14 +38,35 @@ layout: archive
     {% endfor %}
     {% assign series_posts = filtered_posts %}
   {% endif %}
+  {% assign english_posts = '' | split: ',' %}
+  {% assign bilingual_series = false %}
+  {% unless current_series.category or current_series.categories %}
+    {% assign english_posts = site.posts | where: 'series', page.series_id | where: 'locale', 'en-US' | sort: 'series_order' %}
+  {% endunless %}
+  {% assign series_visible_count = 0 %}
+  {% for post in series_posts %}
+    {% if post.hidden != true %}{% assign series_visible_count = series_visible_count | plus: 1 %}{% endif %}
+  {% endfor %}
+  {% assign english_visible_count = 0 %}
+  {% for post in english_posts %}
+    {% if post.hidden != true %}{% assign english_visible_count = english_visible_count | plus: 1 %}{% endif %}
+  {% endfor %}
+  {% if series_visible_count == 0 and english_visible_count > 0 %}
+    {% assign series_posts = english_posts %}
+    {% assign series_visible_count = english_visible_count %}
+  {% elsif series_visible_count > 0 and english_visible_count > 0 %}
+    {% assign bilingual_series = true %}
+  {% endif %}
+  {% assign english_display_count = series_visible_count %}
+  {% if bilingual_series %}{% assign english_display_count = english_visible_count %}{% endif %}
   <section class="fr-category-detail fr-series-detail" aria-label="{{ current_series.zh }}">
     <header class="fr-category-detail__header">
       <div>
         <span data-fr-i18n-zh="连续阅读" data-fr-i18n-en="Reading order">连续阅读</span>
-        <h2 data-fr-i18n-zh="{{ series_posts.size }} 篇文章" data-fr-i18n-en="{{ series_posts.size }} essays">{{ series_posts.size }} 篇文章</h2>
+        <h2 data-fr-i18n-zh="{{ series_visible_count }} 篇文章" data-fr-i18n-en="{{ english_display_count }} essays">{{ series_visible_count }} 篇文章</h2>
       </div>
     </header>
-    <ul{% unless current_series.category or current_series.categories %} data-fr-i18n-block="zh"{% endunless %}>
+    <ul{% if bilingual_series %} data-fr-i18n-block="zh"{% elsif current_series.category == nil and current_series.categories == nil and english_visible_count > 0 %} lang="en"{% endif %}>
       {% if current_series.navigation %}
         {% assign series_number = 0 %}
         {% assign navigation_groups = site.data.navigation[current_series.navigation] %}
@@ -77,19 +98,26 @@ layout: archive
           {% endunless %}
         {% endfor %}
       {% else %}
+        {% assign series_number = 0 %}
         {% for post in series_posts %}
-          {% if post.hidden != true %}{% include series-article-card.html post=post number=forloop.index %}{% endif %}
+          {% if post.hidden != true %}
+            {% assign series_number = series_number | plus: 1 %}
+            {% include series-article-card.html post=post number=series_number %}
+          {% endif %}
         {% endfor %}
       {% endif %}
     </ul>
-    {% unless current_series.category or current_series.categories %}
-      {% assign english_posts = site.posts | where: 'series', page.series_id | where: 'locale', 'en-US' | sort: 'series_order' %}
+    {% if bilingual_series %}
       <ul data-fr-i18n-block="en" hidden>
+        {% assign series_number = 0 %}
         {% for post in english_posts %}
-          {% if post.hidden != true %}{% include series-article-card.html post=post number=forloop.index %}{% endif %}
+          {% if post.hidden != true %}
+            {% assign series_number = series_number | plus: 1 %}
+            {% include series-article-card.html post=post number=series_number %}
+          {% endif %}
         {% endfor %}
       </ul>
-    {% endunless %}
+    {% endif %}
   </section>
 {% else %}
   <section class="fr-series-overview" aria-label="Series">
