@@ -780,6 +780,14 @@ article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
   background: color.mix(#223042, $primary-color, 78%);
 }
 
+.fr-reader-tools__btn > span,
+.fr-mobile-toc__close > span {
+  font-family: $sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
 .fr-mobile-toc {
   position: fixed;
   inset: 0;
@@ -834,12 +842,105 @@ article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
 .fr-mobile-toc__close {
   position: sticky;
   top: 0.25rem;
-  margin-left: auto;
+  display: grid;
+  margin-inline-start: auto;
   margin-bottom: 0.75rem;
 }
 
 .fr-mobile-toc-open {
   overflow: hidden;
+}
+
+/* Article TOC stays at the reader's current position on narrow layouts. */
+.fr-article .fr-mobile-toc__panel {
+  display: flex;
+  flex-direction: column;
+  top: auto;
+  right: 1rem;
+  bottom: calc(7.1rem + env(safe-area-inset-bottom, 0px));
+  width: min(calc(100vw - 2rem), 24rem);
+  max-height: min(70dvh, 34rem);
+  overflow: hidden;
+  padding: 1rem 1.1rem 1.2rem;
+  border-color: $border-color;
+  background: $fr-panel-bg;
+  transform: translate3d(0, 0.55rem, 0);
+}
+
+.fr-article .fr-mobile-toc__close {
+  position: static;
+  flex: 0 0 auto;
+  margin-bottom: 0.35rem;
+}
+
+.fr-article .fr-mobile-toc__body {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.fr-article .fr-mobile-toc.is-open .fr-mobile-toc__panel {
+  transform: translate3d(0, 0, 0);
+}
+
+.fr-article .fr-mobile-toc__body h2 {
+  margin: 0 3rem 0.8rem 0;
+  color: $text-color;
+  font-family: $sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.fr-article .fr-mobile-toc__body .toc__menu,
+.fr-article .fr-mobile-toc__body .toc__menu ul,
+.fr-article .fr-mobile-toc__body .toc__menu li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fr-article .fr-mobile-toc__body .toc__menu ul {
+  margin-inline-start: 0.7rem;
+  padding-inline-start: 0.55rem;
+  border-inline-start: 1px solid $border-color;
+}
+
+.fr-article .fr-mobile-toc__body .toc__menu a {
+  display: block;
+  padding: 0.42rem 0.5rem;
+  border-inline-start: 2px solid transparent;
+  color: $text-color;
+  font-family: $sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.fr-article .fr-mobile-toc__body .toc__menu ul a {
+  color: $fr-panel-muted;
+  font-size: 0.85rem;
+}
+
+.fr-article .fr-mobile-toc__body .toc__menu ul ul a {
+  font-size: 0.8rem;
+}
+
+.fr-article .fr-mobile-toc__body .toc__menu a:hover,
+.fr-article .fr-mobile-toc__body .toc__menu a:focus-visible,
+.fr-article .fr-mobile-toc__body .toc__menu a[aria-current="true"] {
+  color: $fr-action-color;
+}
+
+.fr-article .fr-mobile-toc__body .toc__menu a[aria-current="true"] {
+  border-inline-start-color: $fr-action-color;
+  font-weight: 700;
+}
+
+.fr-article .fr-mobile-toc__body .toc__menu a:focus-visible {
+  outline: 2px solid $fr-action-color;
+  outline-offset: -2px;
 }
 
 @media (max-width: 63.99em) {
@@ -851,6 +952,12 @@ article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
 @media (min-width: 64em) {
   .fr-reader-tools__btn--toc {
     display: none;
+  }
+}
+
+@media (min-width: 64em) and (max-width: 1359px) {
+  .fr-article .fr-reader-tools__btn--toc {
+    display: inline-grid;
   }
 }
 

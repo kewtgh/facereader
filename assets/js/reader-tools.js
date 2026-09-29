@@ -60,13 +60,13 @@
     bar.style.transform = "scaleX(" + value + ")";
   }
 
-  function createButton(className, labelKey, iconClass, onClick) {
+  function createButton(className, labelKey, symbol, onClick) {
     var button = document.createElement("button");
     button.type = "button";
     button.className = className;
     button.dataset.labelKey = labelKey;
     setControlLabel(button, text(labelKey));
-    button.innerHTML = "<i class=\"" + iconClass + "\" aria-hidden=\"true\"></i>";
+    button.innerHTML = "<span aria-hidden=\"true\">" + symbol + "</span>";
     button.addEventListener("click", onClick);
     return button;
   }
@@ -97,14 +97,14 @@
     panel._frInertElements = [];
   }
 
-  function closeToc(panel) {
+  function closeToc(panel, restoreFocus) {
     if (!panel.classList.contains("is-open")) return;
     panel.classList.remove("is-open");
     panel.setAttribute("aria-hidden", "true");
     document.body.classList.remove("fr-mobile-toc-open");
     setBackgroundInert(panel, false);
 
-    if (panel._frPreviousFocus && document.contains(panel._frPreviousFocus)) {
+    if (restoreFocus !== false && panel._frPreviousFocus && document.contains(panel._frPreviousFocus)) {
       panel._frPreviousFocus.focus();
     }
   }
@@ -118,7 +118,15 @@
 
     window.requestAnimationFrame(function () {
       var closeButton = panel.querySelector("button[data-close-toc]");
-      if (closeButton) closeButton.focus();
+      if (closeButton) closeButton.focus({ preventScroll: true });
+      var activeLink = panel.querySelector('.toc__menu a[aria-current="true"]');
+      if (activeLink) {
+        var scroller = document.body.classList.contains("fr-article") ?
+          panel.querySelector(".fr-mobile-toc__body") : panel.querySelector(".fr-mobile-toc__panel");
+        var bounds = scroller.getBoundingClientRect();
+        var linkBounds = activeLink.getBoundingClientRect();
+        scroller.scrollTop += linkBounds.top - bounds.top - scroller.clientHeight / 2;
+      }
     });
   }
 
@@ -140,7 +148,7 @@
     panel.innerHTML = [
       "<div class=\"fr-mobile-toc__shade\" data-close-toc></div>",
       "<aside class=\"fr-mobile-toc__panel\" role=\"dialog\" aria-modal=\"true\" tabindex=\"-1\">",
-      "<button class=\"fr-mobile-toc__close\" type=\"button\" data-close-toc data-label-key=\"tocClose\"><i class=\"fas fa-times\" aria-hidden=\"true\"></i></button>",
+      "<button class=\"fr-mobile-toc__close\" type=\"button\" data-close-toc data-label-key=\"tocClose\"><span aria-hidden=\"true\">×</span></button>",
       "<div class=\"fr-mobile-toc__body\"></div>",
       "</aside>"
     ].join("");
@@ -148,17 +156,28 @@
     var clone = sourceToc.cloneNode(true);
     panel.querySelector(".fr-mobile-toc__body").appendChild(clone);
     panel.addEventListener("click", function (event) {
-      if (event.target.closest("[data-close-toc]") || event.target.closest(".toc a")) {
+      var tocLink = event.target.closest('.toc__menu a[href^="#"]');
+      if (tocLink) {
+        var heading = null;
+        try { heading = document.getElementById(decodeURIComponent(tocLink.hash.slice(1))); }
+        catch (error) { /* Keep native anchor navigation. */ }
+        closeToc(panel, false);
+        if (heading) {
+          if (!heading.hasAttribute("tabindex")) heading.setAttribute("tabindex", "-1");
+          window.requestAnimationFrame(function () { heading.focus({ preventScroll: true }); });
+        }
+      } else if (event.target.closest("[data-close-toc]")) {
         closeToc(panel);
       }
     });
-    panel.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && panel.classList.contains("is-open")) {
         event.preventDefault();
         closeToc(panel);
-        return;
       }
+    });
 
+    panel.addEventListener("keydown", function (event) {
       if (event.key !== "Tab") return;
       var controls = focusableControls(panel);
       if (!controls.length) {
@@ -184,18 +203,27 @@
   function createFloatingTools() {
     if (document.querySelector(".fr-reader-tools")) return;
 
-    var toc = document.body.classList.contains("fr-article") ? null : document.querySelector("nav.toc");
-    var panel = toc ? createTocPanel(toc) : null;
+    var article = document.body.classList.contains("fr-article");
+    var toc = article ? document.querySelector(".fr-article-toc__nav") : document.querySelector("nav.toc");
+    var panel = toc && toc.querySelector('.toc__menu a[href^="#"]') ? createTocPanel(toc) : null;
+    if (article && panel) {
+      var topToc = document.querySelector(".fr-article-toc-mobile");
+      if (topToc) topToc.remove();
+      var desktopLayout = window.matchMedia("(min-width: 1360px)");
+      desktopLayout.addEventListener("change", function (event) {
+        if (event.matches) closeToc(panel);
+      });
+    }
     var rail = document.createElement("div");
     rail.className = "fr-reader-tools";
 
     if (panel) {
-      rail.appendChild(createButton("fr-reader-tools__btn fr-reader-tools__btn--toc", "tocOpen", "fas fa-list-ul", function () {
+      rail.appendChild(createButton("fr-reader-tools__btn fr-reader-tools__btn--toc", "tocOpen", "≡", function () {
         openToc(panel, this);
       }));
     }
 
-    rail.appendChild(createButton("fr-reader-tools__btn fr-reader-tools__btn--top", "backToTop", "fas fa-arrow-up", function () {
+    rail.appendChild(createButton("fr-reader-tools__btn fr-reader-tools__btn--top", "backToTop", "↑", function () {
       var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
     }));
