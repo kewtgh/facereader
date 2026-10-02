@@ -41,7 +41,7 @@ translation_key: society-article-0002-2026
 last_modified_at: 2026-09-22T12:55:52-05:00
 ---
 
-In the previous article, I calculated the Lifecycle Comprehensive Extraction Rate, or LCER, for a typical dual-income private-sector household in Shanghai.
+In the previous article, I calculated the Lifecycle Comprehensive Extraction Rate, or LCER[^lcer], for a typical dual-income private-sector household in Shanghai.
 
 The central estimate was:
 
@@ -86,7 +86,7 @@ The previous article already explained in detail what LCER measures, so I will n
 
 The definition remains the same:
 
-> **LCER = present value of net institutional costs ÷ present value of household lifetime labor value.**
+> **LCER = present value[^present-value] of net institutional costs ÷ present value of household lifetime labor value.**
 
 The denominator is not after-tax income.
 
@@ -102,7 +102,7 @@ Housing is treated the same way. A high home price does not mean the entire valu
 
 So the housing component includes only:
 
-**identifiable institutional premiums, property taxes, and transaction taxes.**
+**identifiable institutional premiums, property taxes[^property-tax], and transaction taxes.**
 
 For mortgages, only interest is counted, not principal. For education, only spending above the common cross-country benchmark is treated as excess competitive expenditure.
 
@@ -138,7 +138,7 @@ For people born in 1960 or later, the Social Security full retirement age is 67.
 
 **42 years.**
 
-As before, I assume zero long-run real wage growth, a 2% real discount rate, and a home purchase in the tenth working year with a 30% down payment and 70% mortgage financing.
+As before, I assume zero long-run real wage growth, a 2% real discount rate[^discount-rate], and a home purchase in the tenth working year with a 30% down payment and 70% mortgage financing.
 
 In New York, individual annual pay is:
 
@@ -216,7 +216,7 @@ The part that creates the order-of-magnitude difference between China and the Un
 
 Start with Social Security.
 
-In 2021, the U.S. OASDI payroll tax was 6.2% for the employee and 6.2% for the employer, for a combined rate of 12.4%. Neither representative wage in this model reaches the taxable earnings ceiling.
+In 2021, the U.S. OASDI payroll tax[^oasdi] was 6.2% for the employee and 6.2% for the employer, for a combined rate of 12.4%. Neither representative wage in this model reaches the taxable earnings ceiling.
 
 But the entire 12.4% cannot be treated as a loss.
 
@@ -232,7 +232,7 @@ and
 
 Benefits cannot be estimated using the national average retirement payment. They need to be derived from the benefit formula appropriate to the worker’s earnings history.
 
-Social Security has a strongly progressive replacement structure: lower-income workers receive a higher benefit relative to prior earnings.
+Social Security has a strongly progressive replacement structure[^replacement-rate]: lower-income workers receive a higher benefit relative to prior earnings.
 
 The resulting present value of future Social Security benefits for the couple is approximately:
 
@@ -284,7 +284,7 @@ But Medicare is not a closed system financed only by the 2.9% payroll tax.
 
 In 2021 it also received roughly:
 
-**$405.4 billion in general revenue financing.**
+**$405.4 billion in general revenue financing[^general-revenue].**
 
 That produces an interesting lifecycle result.
 
@@ -430,7 +430,7 @@ The real question is:
 
 **How much have local land-use rules raised the price of housing?**
 
-Gyourko and Krimmel studied residential land markets across multiple U.S. metropolitan areas and estimated what they call a “zoning tax” created by supply restrictions.
+Gyourko and Krimmel studied residential land markets across multiple U.S. metropolitan areas and estimated what they call a “zoning tax”[^zoning-tax] created by supply restrictions.
 
 The term can be misleading if read literally as a tax paid to government.
 
@@ -440,7 +440,7 @@ A better description is:
 
 or:
 
-**scarcity rent created by restrictions on housing supply.**
+**scarcity rent[^scarcity-rent] created by restrictions on housing supply.**
 
 The mechanism is roughly:
 
@@ -653,7 +653,7 @@ What this model measures is:
 
 > **private education spending by an ordinary household that exceeds a common baseline and can reasonably be interpreted as competitive excess expenditure.**
 
-Using Japan’s household education share of roughly 1.5% as the cross-country baseline, the U.S. calculation uses 2021 Consumer Expenditure Survey data for married couples with children.
+Using Japan’s household education share of roughly 1.5% as the cross-country baseline, the U.S. calculation uses 2021 Consumer Expenditure Survey[^cex] data for married couples with children.
 
 Only the portion above the benchmark is counted, and only during the years in which education spending occurs.
 
@@ -845,7 +845,7 @@ You can usually see where the money went.
 
 The largest part of the Shanghai model works differently.
 
-Land finance does not appear on the payslip with a line saying:
+Land finance[^land-finance] does not appear on the payslip with a line saying:
 
 “Land-conveyance revenue deducted today.”
 
@@ -855,7 +855,7 @@ The land price enters the home price.
 
 The home price determines how much the household has to borrow.
 
-The mortgage principal then determines decades of future interest payments.
+The mortgage principal[^mortgage-principal] then determines decades of future interest payments.
 
 And eventually, even the savings of the previous generation may be pulled into the down payment.
 
@@ -886,7 +886,7 @@ Possibly.
 
 There are several real institutional costs that I know exist but have not included in the central estimate.
 
-The first is sales and excise taxes during retirement. The state and local tax-incidence data used here primarily cover non-elderly households, so the model applies them only during the working years. Retirees continue to consume and pay sales taxes, which means this treatment probably creates some downward bias.
+The first is sales and excise taxes during retirement. The state and local tax-incidence[^tax-incidence] data used here primarily cover non-elderly households, so the model applies them only during the working years. Retirees continue to consume and pay sales taxes, which means this treatment probably creates some downward bias.
 
 The second is development fees, impact fees, and permitting delays. These clearly can raise housing costs, but some portion is likely already capitalized into the zoning premium. Adding them again without a reliable decomposition risks counting the same supply restriction twice.
 
@@ -910,7 +910,7 @@ and
 
 are not the same claim.
 
-I have not found a sufficiently robust household-level counterfactual estimate that can also avoid double-counting taxes, housing regulation, and other components.
+I have not found a sufficiently robust household-level counterfactual estimate[^counterfactual] that can also avoid double-counting[^double-counting] taxes, housing regulation, and other components.
 
 So the central estimate remains:
 
@@ -922,7 +922,7 @@ That does not mean:
 
 There is also one particularly important time-specific issue:
 
-**the 2021 Child Tax Credit.**
+**the 2021 Child Tax Credit[^ctc].**
 
 All countries in this project use 2021 as the common base year. That means the U.S. model has to use the actual 2021 tax system.
 
@@ -940,7 +940,7 @@ But it does mean that a future cross-country database should probably keep two U
 
 and
 
-**a pre-ARPA / long-run normalized CTC scenario.**
+**a pre-ARPA[^arpa] / long-run normalized CTC scenario.**
 
 What it should not do is quietly replace the current central estimate with a different year simply because the 2021 U.S. policy happened to be unusual.
 
@@ -1075,3 +1075,47 @@ And what ultimately determines how much freedom a household has over its own lif
 It is what remains on the household balance sheet after all of those channels have run their course:
 
 **how much of the labor value created over a lifetime actually stays with the household.**
+
+---
+
+[^lcer]: **LCER (Lifecycle Comprehensive Extraction Rate)** is the metric used in this series to estimate the share of a household’s lifetime labor value absorbed by identifiable institutional costs. It is calculated as the present value of net institutional costs divided by the present value of lifetime labor value. Unlike a conventional tax rate, LCER can include costs transmitted through taxation, social insurance, housing institutions, financing, and other measurable channels, while deducting attributable benefits returned to the household.
+
+[^present-value]: **Present value (PV)** converts money paid or received at different points in the future into an equivalent value at the beginning of the modeled lifecycle. A dollar paid thirty years from now is therefore assigned a lower present value than a dollar paid today. This allows taxes, pension benefits, mortgage interest, and other cash flows occurring at different ages to be compared on the same basis.
+
+[^discount-rate]: A **real discount rate** is a discount rate after removing inflation. This model uses a 2% real discount rate, meaning future real purchasing power is discounted by 2% per year when translated back to the household’s age-25 starting point.
+
+[^labor-value]: **Lifetime labor value** in this model is broader than the household’s cash salary. It includes cash wages plus legally required employer labor contributions, because those mandatory contributions are part of the economic cost of employing the worker even when they never appear in the worker’s paycheck.
+
+[^oasdi]: **OASDI (Old-Age, Survivors, and Disability Insurance)** is the formal name for the main U.S. Social Security payroll-tax system. In 2021, employees and employers each paid 6.2% of covered wages, subject to an annual taxable earnings ceiling.
+
+[^taxable-ceiling]: The **taxable earnings ceiling** is the maximum amount of annual earnings subject to the Social Security portion of the U.S. payroll tax. Earnings above this ceiling are not subject to the 12.4% combined OASDI payroll tax, although Medicare payroll taxes follow different rules.
+
+[^replacement-rate]: A **replacement rate** measures how much retirement income replaces a worker’s previous earnings. Social Security is progressive in this sense: lower-paid workers generally receive benefits equal to a larger percentage of their prior earnings than higher-paid workers.
+
+[^medicare]: **Medicare** is the U.S. federal health-insurance program primarily serving people aged 65 and over, together with certain younger people who qualify under specific conditions. It is financed through several channels, including payroll taxes, beneficiary premiums, and federal general revenues.
+
+[^general-revenue]: **General revenue financing** means government spending financed from broad federal revenues rather than from a dedicated contribution paid specifically into the program. In Medicare, this is particularly important for Parts B and D. In the LCER model, such financing cannot simply be counted again as an additional “Medicare tax” when the household’s federal income taxes have already been included elsewhere.
+
+[^tax-incidence]: **Tax incidence** refers to who ultimately bears the economic burden of a tax, which may differ from the person or business that formally remits it to the government. For example, part of a sales or business tax can ultimately be passed on to households through higher consumer prices.
+
+[^zoning-tax]: **“Zoning tax”** is an economics term for the additional land or housing value created when land-use regulation constrains housing supply. It is not necessarily a literal tax paid to the government. In this article, the term is better understood as a **regulatory housing premium** attributable to supply restrictions.
+
+[^scarcity-rent]: **Scarcity rent** is the portion of an asset’s value created by artificial or natural scarcity rather than by the direct cost of producing the asset. When regulation sharply limits developable residential land or housing supply, part of the resulting increase in land prices can take the form of scarcity rent.
+
+[^property-tax]: **Property tax** is a recurring tax imposed by state or local governments on the assessed value of real estate. Unlike a one-time purchase premium, it continues during ownership, which means even a relatively modest annual tax rate can become significant when calculated over several decades.
+
+[^land-finance]: **Land finance** in the China comparison refers to the fiscal structure in which local governments obtain substantial revenue from the conveyance of state-owned urban land-use rights and related real-estate activity. It is economically different from the U.S. zoning premium: the former can generate direct fiscal revenue, while the latter primarily operates by restricting supply and capitalizing scarcity into property values.
+
+[^mortgage-principal]: **Mortgage principal** is the amount originally borrowed to purchase a home, excluding interest. This model does not treat repayment of principal as extraction because the household receives financing of equal nominal value and acquires an asset in return. Only the financing cost—primarily mortgage interest—is included.
+
+[^fixed-mortgage]: A **30-year fixed-rate mortgage** is a home loan with a thirty-year repayment term in which the contractual interest rate remains unchanged over the life of the loan. It is one of the standard mortgage structures in the United States and is used here as the representative financing assumption.
+
+[^cex]: **CEX (Consumer Expenditure Survey)** is a U.S. Bureau of Labor Statistics survey that measures household spending, income, and demographic characteristics. In this model, CEX data for married couples with children are used as a proxy for household education expenditure.
+
+[^ctc]: The **Child Tax Credit (CTC)** is a U.S. federal income-tax credit available to qualifying families with children. Its rules have changed over time, which matters in a lifecycle model because a temporary expansion can make a single base year unrepresentative of the long-run tax system.
+
+[^arpa]: **ARPA (American Rescue Plan Act of 2021)** temporarily expanded the U.S. Child Tax Credit, including increasing benefit amounts and altering eligibility and refundability rules. Because the LCER comparison uses 2021 as its common base year, this temporary policy creates an important sensitivity issue for the U.S. estimate.
+
+[^counterfactual]: A **counterfactual estimate** asks what would have happened under an alternative institutional arrangement. For example, estimating the household cost of monopoly protection requires comparing observed prices or income with a credible scenario in which that protection did not exist. Without a defensible counterfactual, such costs can easily become subjective or double-counted.
+
+[^double-counting]: **Double-counting** occurs when the same economic cost is included more than once under different labels. For example, if permitting delays and development restrictions are already capitalized into an estimated zoning premium, adding their full estimated cost again would artificially inflate LCER.

@@ -94,7 +94,7 @@ Because if we look only at conventional fiscal and social-insurance extraction, 
 
 In other words:
 
-**Winnipeg carries the higher net tax and social-insurance burden, yet its final LCER is substantially lower than Toronto’s.**
+**Winnipeg carries the higher net tax and social-insurance burden, yet its final LCER[^1] is substantially lower than Toronto’s.**
 
 Where do those 7.4 percentage points come from?
 
@@ -118,7 +118,7 @@ The previous two articles already explained the LCER framework in detail, so I w
 
 The core formula is still:
 
-> **Lifecycle Comprehensive Extraction Rate = Present Value of Net Institutional Costs ÷ Present Value of Household Lifetime Labor Value**
+> **Lifecycle Comprehensive Extraction Rate = Present Value[^2] of Net Institutional Costs ÷ Present Value of Household Lifetime Labor Value**
 
 Pension contributions cannot be counted without deducting future pension benefits.
 
@@ -134,7 +134,7 @@ Mortgage principal ultimately turns into household equity.
 
 So in housing, I only count what can reasonably be identified as:
 
-**institutional supply premium, transaction taxes, recurring property tax, and mortgage financing cost.**
+**institutional supply premium, transaction taxes, recurring property tax[^16], and mortgage financing cost.**
 
 Education is treated the same way as before: only private education spending above the common international benchmark is counted.
 
@@ -175,7 +175,7 @@ So the working life is:
 
 **40 years.**
 
-The real discount rate remains 2%.
+The real discount rate[^3] remains 2%.
 
 Long-run real wage growth remains 0%.
 
@@ -183,9 +183,9 @@ The household buys a home in year 10, with a 30% down payment and a 70% mortgage
 
 But as in the earlier articles, the denominator is not just cash wages.
 
-An employer also has to pay mandatory labor costs such as CPP, EI, and workers’ compensation.
+An employer also has to pay mandatory labor costs such as CPP[^4], EI[^5], and workers’ compensation.
 
-In 2021, CPP required both employee and employer contributions of 5.45%. EI also imposed mandatory employer contributions, while Ontario and Manitoba had their own WSIB/WCB costs.
+In 2021, CPP required both employee and employer contributions of 5.45%. EI also imposed mandatory employer contributions, while Ontario and Manitoba had their own WSIB/WCB[^6] costs.
 
 Once these are included:
 
@@ -225,7 +225,7 @@ The result is:
 | Personal income tax, net | CAD 705,514 | CAD 614,633 |
 | General sales-tax incidence | CAD 137,323 | CAD 126,873 |
 | Excise / consumption tax | CAD 62,728 | CAD 57,954 |
-| **Net fiscal / social extraction** | **19.6%** | **20.6%** |
+| **Net fiscal / social extraction[^8]** | **19.6%** | **20.6%** |
 
 The first thing that usually surprises people is the pension line.
 
@@ -291,7 +291,7 @@ Canadian public healthcare is financed mainly through:
 
 **general taxation.**
 
-That means the personal income tax, GST/HST/PST already counted above jointly finance healthcare, education, roads, policing, and other public services.
+That means the personal income tax, GST/HST/PST[^7] already counted above jointly finance healthcare, education, roads, policing, and other public services.
 
 If I first count general taxes and then construct a separate “health contribution,” I double count the cost.
 
@@ -378,7 +378,7 @@ That is where the Canadian case becomes interesting.
 
 The C.D. Howe Institute compared market prices of newly built detached homes across major Canadian metropolitan areas with their minimum profitable physical production cost.
 
-Its long-run average estimate suggests that the **supply-barrier gap** is approximately:
+Its long-run average estimate suggests that the **supply-barrier gap**[^9] is approximately:
 
 - Toronto: **32% of final price**
 - Winnipeg: **12%**
@@ -389,7 +389,7 @@ It is not a tax bill issued directly by the government.
 
 But together, these constraints create one result:
 
-> **Housing supply cannot fully respond to demand, so scarcity is capitalized into home prices.**
+> **Housing supply cannot fully respond to demand, so scarcity is capitalized[^10] into home prices.**
 
 I do not directly use the study’s absolute dollar amounts.
 
@@ -404,7 +404,7 @@ This needs to be stated clearly:
 
 it is an:
 
-**inferred estimate.**
+**inferred estimate[^11].**
 
 It does not mean that the government “takes CAD 288,000” from every CAD 900,000 Toronto home.
 
@@ -547,15 +547,15 @@ Mortgage:
 
 > **CAD 238,000.**
 
-At this point, another important difference appears between Canada and the United States.
+At this point, another important difference appears between Canada and the United States[^12].
 
-In the U.S. article, the model used a typical 30-year fixed-rate mortgage.
+In the U.S. article, the model used a typical 30-year fixed-rate mortgage[^13].
 
 That allows a household to lock in the rate for a long period at the time of purchase.
 
 Canada works differently.
 
-Canadian mortgages typically use shorter terms and are repeatedly renewed.
+Canadian mortgages typically use shorter terms and are repeatedly renewed[^14].
 
 In 2021, Canada was still in an unusually low-rate environment.
 
@@ -640,7 +640,7 @@ Winnipeg’s home price is only about 38% of Toronto’s.
 
 But its lifetime property-tax burden does not fall proportionally.
 
-So housing institutional cost cannot be understood only through:
+So housing institutional cost[^17] cannot be understood only through:
 
 **purchase price.**
 
@@ -654,7 +654,7 @@ The other occurs when the household:
 
 **holds housing over time.**
 
-Toronto also imposes both provincial and municipal land-transfer taxes.
+Toronto also imposes both provincial and municipal land-transfer taxes[^15].
 
 Even after first-time buyer rebates, the one-time land-transfer tax on a CAD 900,000 home is approximately:
 
@@ -808,7 +808,7 @@ Without a reliable household-lifecycle counterfactual, I cannot simply add a few
 
 So the model still records:
 
-**Monopoly / Other: Not Included.**
+**Monopoly / Other: Not Included[^19].**
 
 That does not mean:
 
@@ -835,8 +835,8 @@ The Canadian central model is:
 | Mortgage interest | 4.9% | 2.2% |
 | Excess education competition | 0.3% | 0.4% |
 | Monopoly / Other | Not Included | Not Included |
-| **Core LCER** | **34.1%** | **26.7%** |
-| **Total LCER** | **34.1%** | **26.7%** |
+| **Core LCER**[^18] | **34.1%** | **26.7%** |
+| **Total LCER**[^18] | **34.1%** | **26.7%** |
 
 So:
 
@@ -860,7 +860,7 @@ In money terms:
 
 If a simple Canadian summary number is needed for the cross-country database, the equal-weight average of the two cities is:
 
-> **30.4%.**
+> **30.4%[^20].**
 
 But this needs to be stated carefully.
 
@@ -1043,3 +1043,45 @@ What is expensive in Canada may never have been just taxes.
 It may be:
 
 **the right to enter a successful city.**
+
+---
+
+[^1]: **LCER (Lifecycle Comprehensive Extraction Rate)** is defined in this series as the present value of identifiable net institutional costs borne by a household over its lifetime divided by the present value of the household’s lifetime labor value. It is neither a conventional tax rate nor a cost-of-living index. It is designed to place taxation, mandatory social-insurance costs, housing institutions, financing costs, and other measurable institutional burdens on a common lifecycle basis.
+
+[^2]: **Present Value (PV)** converts a future payment or benefit into its value today using a discount rate. This allows taxes paid during working life, housing costs, and pension benefits received decades later to be compared on the same basis. This model uses a 2% real discount rate.
+
+[^3]: **Real discount rate** means the discount rate after inflation. The model also assumes 0% long-run real wage growth, so the calculations compare lifecycle values in real purchasing-power terms rather than nominal amounts inflated by future price increases.
+
+[^4]: **CPP (Canada Pension Plan)** is one of Canada’s principal mandatory public pension programs. Employees and employers both contribute during working life, while retirement benefits depend on contribution history and earnings. In LCER, CPP contributions cannot be counted without also deducting the future pension benefits attributable to the household.
+
+[^5]: **EI (Employment Insurance)** is Canada’s mandatory employment-insurance system, providing income support for qualifying periods of unemployment, parental leave, maternity leave, and certain other interruptions of employment. Employers also make mandatory contributions, so their share forms part of the total cost of employing labor.
+
+[^6]: **WSIB / WCB** refer respectively to Ontario’s **Workplace Safety and Insurance Board** and Manitoba’s **Workers Compensation Board**. These workers’ compensation systems are primarily funded by employers. The model includes such mandatory employer payments in total labor value because they are part of what a firm must pay to employ a worker, even though they do not appear in the worker’s cash salary.
+
+[^7]: **GST / HST / PST** are major forms of Canadian consumption taxation. GST is the federal Goods and Services Tax; HST is the Harmonized Sales Tax used in provinces that combine federal and provincial sales taxes; PST is a Provincial Sales Tax. The model estimates the effective incidence on household consumption rather than mechanically applying statutory headline rates to all spending.
+
+[^8]: **Net fiscal / social extraction** is not simply the sum of income taxes, consumption taxes, and mandatory social-insurance contributions. Clearly attributable pension and other cash benefits are deducted from contributions. A social-insurance component can therefore be negative when the present value of attributable benefits exceeds the present value of contributions.
+
+[^9]: **Supply-barrier gap** refers to the difference between the market price of housing and an estimated minimum profitable physical production cost. Housing research uses this gap as a proxy for the effects of restricted land supply, planning and approval constraints, development charges, infrastructure bottlenecks, and limited development competition. It is not a directly levied tax and should not be interpreted as an amount literally collected by the government.
+
+[^10]: **Capitalization** is the process through which an expected future benefit, scarcity, or institutional constraint becomes reflected in the current price of an asset. If a city offers higher-paying jobs, better schools, infrastructure, and stronger networks while housing supply cannot expand sufficiently, part of those advantages may be capitalized into land and housing prices. This is what the article means when it says that urban productivity can be “capitalized into housing.”
+
+[^11]: **Inferred estimate** means an estimate derived from research evidence and model assumptions rather than a directly observed tax, fee, or household cash flow. The Toronto housing supply-barrier estimate falls into this category, which is why it carries more uncertainty than directly observed items such as income tax or property tax.
+
+[^12]: **Mortgage term and amortization period are different concepts in Canada.** The **amortization period** is the total period over which the mortgage is expected to be repaid, for example 25 years. The **mortgage term** is the period for which the current contract and interest rate apply, commonly five years. When the term expires, the remaining balance normally has to be renewed under new market conditions.
+
+[^13]: **Mortgage renewal** is a central feature of Canadian housing finance. A borrower may have a 25-year amortization period without locking in the same interest rate for 25 years. The mortgage is typically renewed several times, exposing the household to future market rates. Using the unusually low 2021 rate for the entire repayment period would therefore understate lifetime financing costs.
+
+[^14]: **30-year fixed-rate mortgage** refers to a common U.S. mortgage structure under which the interest rate can be locked for the full 30-year term at origination. This differs materially from the Canadian structure of long amortization combined with shorter contractual terms and periodic renewal, creating different long-run interest-rate exposure.
+
+[^15]: **Land Transfer Tax** is a one-time tax imposed when ownership of real estate is transferred. Toronto buyers are subject to both the Ontario provincial Land Transfer Tax and a separate municipal Toronto Land Transfer Tax, meaning the same purchase can face two layers of transaction taxation.
+
+[^16]: **Property Tax** is a recurring local tax generally linked to assessed property value. Unlike a one-time land-transfer tax, it continues for as long as the household owns the property. The LCER model therefore calculates the present value of property-tax payments over the assumed ownership period.
+
+[^17]: **Housing institutional cost is not the same thing as the house price.** The full purchase price is not included in LCER because a home contains construction value, legitimate land and location value, and remains an asset owned by the household. Only identifiable institutional components such as supply barriers, transaction taxes, and recurring property taxes are counted. Mortgage principal is also excluded because repayment builds household housing equity.
+
+[^18]: **Core LCER and Total LCER** distinguish between relatively well-identified institutional costs and additional country-specific costs that can be included only when reliable evidence exists. Core LCER includes net fiscal/social extraction, housing institutional costs, mortgage financing, and excess education spending. In the Canadian calculation, no additional monopoly or country-specific item could be quantified with sufficient reliability without risking double counting, so Core LCER and Total LCER are identical.
+
+[^19]: **“Not Included” does not mean zero.** When the table records “Monopoly / Other: Not Included,” it means that potentially relevant institutional costs may exist, but the available evidence is not strong enough to convert them into a defensible household-lifecycle welfare loss. They are therefore excluded from the central estimate rather than assumed not to exist.
+
+[^20]: **Canada’s 30.4% two-city summary** is the simple equal-weight average of Toronto’s 34.1% and Winnipeg’s 26.7%. It is used only as a convenient cross-country summary. It is not a population-, GDP-, or household-weighted estimate of a national Canadian LCER, so the formal dataset should continue to retain the two city-level results separately.
