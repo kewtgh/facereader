@@ -225,6 +225,14 @@ else
 end
 
 version = JSON.parse(PROJECT_ROOT.join("package.json").read(encoding: "UTF-8")).fetch("version")
+notices_file = SITE_ROOT.join("THIRD_PARTY_NOTICES", "index.html")
+if notices_file.file?
+  notices_document = Nokogiri::HTML(notices_file.read(encoding: "UTF-8"))
+  add_error(errors, notices_file, "third-party notices site version is stale") unless
+    notices_document.at_css("[data-fr-site-version]")&.text == version
+else
+  add_error(errors, notices_file, "third-party notices page was not generated")
+end
 version_banner = "FaceReader #{version}, deeply customized for Witbacon"
 {
   "index.html" => "HTML version banner",

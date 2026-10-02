@@ -83,7 +83,7 @@
     if (!document.querySelector("link[data-fr-instantsearch-css]")) {
       var css = document.createElement("link");
       css.rel = "stylesheet";
-      css.href = "https://cdn.jsdelivr.net/npm/instantsearch.css@8.18.0/themes/satellite-min.css";
+      css.href = "https://cdn.jsdelivr.net/npm/instantsearch.css@8.24.0/themes/satellite-min.css";
       css.setAttribute("data-fr-instantsearch-css", "true");
       document.head.appendChild(css);
     }
@@ -93,7 +93,7 @@
       await loadScript("https://cdn.jsdelivr.net/npm/algoliasearch@4.27.0/dist/algoliasearch-lite.umd.js");
     }
     if (!window.instantsearch) {
-      await loadScript("https://cdn.jsdelivr.net/npm/instantsearch.js@4.106.0/dist/instantsearch.production.min.js");
+      await loadScript("https://cdn.jsdelivr.net/npm/instantsearch.js@4.119.0/dist/instantsearch.production.min.js");
     }
 
     var appId = "{{ site.algolia.application_id }}";

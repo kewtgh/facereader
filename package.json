@@ -1,7 +1,7 @@
 {
   "name": "facereader",
   "private": true,
-  "version": "7.1.12",
+  "version": "7.2.1",
   "description": "FaceReader personal blog on people, companies, society, and ideas.",
   "repository": {
     "type": "git",
@@ -40,10 +40,12 @@
     "algolia:protect": "node assets/scripts/protect-algolia-search-key.mjs"
   },
   "dependencies": {
-    "algoliasearch": "^5.55.2",
-    "yaml": "^2.5.0"
+    "algoliasearch": "^5.59.0",
+    "yaml": "^2.9.1"
   },
   "devDependencies": {
+    "jquery": "^4.0.0",
+    "magnific-popup": "^1.2.0",
     "uglify-js": "^3.17.4"
   }
 }

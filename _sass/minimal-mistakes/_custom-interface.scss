@@ -759,6 +759,10 @@ article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
   gap: 0.5rem;
 }
 
+/* Image dialogs must cover the floating reader controls and progress bar. */
+.mfp-bg { z-index: 11001; }
+.mfp-wrap { z-index: 11002; }
+
 .fr-reader-tools__btn,
 .fr-mobile-toc__close {
   display: inline-grid;

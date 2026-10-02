@@ -156,12 +156,14 @@ task :copyright => COPYRIGHT_FILES
 
 CLEAN.include(*COPYRIGHT_FILES)
 
-JS_FILES = ["assets/js/vendor/jquery/jquery-3.6.0.js"] + Dir.glob("assets/js/plugins/*.js") + ["assets/js/_main.js"]
+JS_FILES = ["node_modules/jquery/dist/jquery.js"] + Dir.glob("assets/js/plugins/*.js") +
+  ["node_modules/magnific-popup/dist/jquery.magnific-popup.js", "assets/js/_main.js"]
 JS_TARGET = "assets/js/main.min.js"
 task :js => JS_TARGET
 file JS_TARGET => ["_includes/copyright.js"] + JS_FILES do |t|
-  sh Shellwords.join(%w[npx uglifyjs -c --comments /@mmistakes/ -m -o] +
-    [t.name] + t.prerequisites)
+  # Pass separate arguments, so Windows cmd cannot interpret regex alternation as pipes.
+  sh "node", "node_modules/uglify-js/bin/uglifyjs", "-c", "--comments",
+    "/@mmistakes|jQuery JavaScript Library|Magnific Popup -/", "-m", "-o", t.name, *t.prerequisites
 end
 
 task :watch_js do

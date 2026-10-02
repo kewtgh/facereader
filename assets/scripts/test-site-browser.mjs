@@ -7,6 +7,7 @@ import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "playwright");
 const root = path.resolve("_site");
+const siteVersion = JSON.parse(await fs.readFile("package.json", "utf8")).version;
 const output = path.resolve("tmp/audit-2026-10-03");
 await fs.mkdir(output, { recursive: true });
 const types = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".mjs": "text/javascript", ".css": "text/css", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".webp": "image/webp", ".woff2": "font/woff2" };
@@ -25,10 +26,15 @@ let browser;
 try {
   browser = await chromium.launch({ headless: true, ...(process.env.CHROMIUM_EXECUTABLE ? { executablePath: process.env.CHROMIUM_EXECUTABLE } : {}) });
   const context = await browser.newContext({ reducedMotion: "reduce" });
-  await context.route("**/*", (route) => new URL(route.request().url()).origin === base ? route.continue() : route.abort());
+  let allowSearchCdn = false;
+  await context.route("**/*", (route) => {
+    const url = new URL(route.request().url());
+    const searchDependency = url.origin === "https://cdn.jsdelivr.net" && /^\/npm\/(algoliasearch@4\.27\.0|instantsearch\.js@4\.119\.0|instantsearch\.css@8\.24\.0)\//.test(url.pathname);
+    return url.origin === base || (allowSearchCdn && searchDependency) ? route.continue() : route.abort();
+  });
   const page = await context.newPage();
   const errors = [];
-  page.on("pageerror", (error) => errors.push(error.message));
+  page.on("pageerror", (error) => errors.push(error.stack || error.message));
   const goto = (url) => page.goto(base + url);
   const noOverflow = async () => {
     const result = await page.evaluate(() => ({ width: innerWidth, scrollWidth: document.documentElement.scrollWidth,
@@ -41,11 +47,15 @@ try {
   const article = "/人格成长/不靠谱领导力/manage-leadership12/";
   for (const width of [1440, 1024, 390]) {
     await page.setViewportSize({ width, height: 900 });
-    for (const url of ["/", "/posts/", "/categories/", "/tags/", "/most_popular/", "/about/", "/leaders-scorecard/", "/darwin-leaders-benchmark/", article, "/social commentary/Society-lcer-canada-en/"]) {
+    for (const url of ["/", "/posts/", "/categories/", "/tags/", "/most_popular/", "/about/", "/THIRD_PARTY_NOTICES/", "/leaders-scorecard/", "/darwin-leaders-benchmark/", article, "/social commentary/Society-lcer-canada-en/"]) {
       const response = await goto(url);
       assert.equal(response.status(), 200, url);
       await page.waitForTimeout(150);
       await noOverflow();
+      if (url === "/THIRD_PARTY_NOTICES/") {
+        assert.equal(await page.locator("[data-fr-site-version]").textContent(), siteVersion);
+        if ([1440, 390].includes(width)) await page.screenshot({ path: path.join(output, `notices-${width}.png`), fullPage: true, animations: "disabled" });
+      }
       if (width === 390) {
         assert.equal(await page.locator(".greedy-nav .site-title__compact").isVisible(), true, "Mobile brand name should not be ellipsized");
       }
@@ -60,6 +70,13 @@ try {
     console.log(`Page smoke passed at ${width}px.`);
   }
   await page.setViewportSize({ width: 1440, height: 900 });
+  await goto("/THIRD_PARTY_NOTICES/");
+  await page.locator('[data-fr-ui-lang-option="en"]').click();
+  assert.equal(await page.locator("#page-title").textContent(), "Third-party Notices & Versions");
+  assert.equal(await page.locator("[data-fr-site-version]").textContent(), siteVersion);
+  await noOverflow();
+  await page.screenshot({ path: path.join(output, "notices-en.png"), fullPage: true, animations: "disabled" });
+  await page.locator('[data-fr-ui-lang-option="zh"]').click();
   await goto("/categories/");
   await page.locator("#category-filter").fill("孙子");
   assert.equal(await page.locator(".fr-category-directory li:not([hidden])").count(), 1);
@@ -125,6 +142,30 @@ try {
     assert.equal(new Set(links).size, links.length, "Duplicate header navigation");
     assert.ok(links.includes("/tags/"));
   }
+  await goto("/阅相识人/企业剖析/ai/AI-advancegroup-1/");
+  assert.equal(await page.evaluate(() => jQuery.fn.jquery), "4.0.0");
+  const lightboxLinks = page.locator(".page__content a.image-popup");
+  assert.ok(await lightboxLinks.count() > 1, "Lightbox regression needs real article gallery links");
+  const imageFixture = await fs.readFile(path.join(root, "assets/img/page-header-image-manufacture-teaser.jpg"));
+  await page.route("https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/**", (route) => route.fulfill({ status: 200, contentType: "image/jpeg", body: imageFixture }));
+  for (const width of [1440, 390]) {
+    await page.setViewportSize({ width, height: 900 });
+    await lightboxLinks.first().click();
+    await page.locator(".mfp-wrap").waitFor({ state: "visible" });
+    await page.waitForFunction(() => document.querySelector(".mfp-img")?.naturalWidth > 0);
+    assert.ok(await page.evaluate(() => Number(getComputedStyle(document.querySelector(".mfp-wrap")).zIndex) > Number(getComputedStyle(document.querySelector(".fr-reader-tools")).zIndex)), "Reader tools must not appear over an image dialog");
+    const firstSource = await page.locator(".mfp-img").getAttribute("src");
+    await page.keyboard.press("ArrowRight");
+    assert.notEqual(await page.locator(".mfp-img").getAttribute("src"), firstSource);
+    await page.locator(".mfp-arrow-left").click();
+    assert.equal(await page.locator(".mfp-img").getAttribute("src"), firstSource);
+    await page.screenshot({ path: path.join(output, `lightbox-${width}.png`), animations: "disabled" });
+    await page.keyboard.press("Escape");
+    await page.locator(".mfp-wrap").waitFor({ state: "hidden" });
+    assert.equal(await lightboxLinks.first().evaluate((e) => document.activeElement === e), true);
+  }
+  await page.unroute("https://fastly.jsdelivr.net/gh/kewtgh/PicSunflowers@main/**");
+  await page.setViewportSize({ width: 1440, height: 900 });
   await goto(article);
   const noteReference = page.locator('.page__content a.footnote[rel="footnote"]').first();
   await noteReference.scrollIntoViewIfNeeded();
@@ -239,6 +280,35 @@ try {
   await page.locator("[data-fr-search-error] button").first().click();
   await page.locator("[data-fr-search-error]").first().waitFor();
   console.log("Unavailable external search dependency has a visible retry and archive fallback.");
+  // Opt-in network smoke: use real CDN libraries but never query the live index.
+  if (process.env.FR_TEST_SEARCH_CDN === "1") {
+    allowSearchCdn = true;
+    let mockedSearchRequests = 0;
+    await page.route(/https:\/\/[^/]+\.algolia(?:net|\.net)\//, async (route) => {
+      // Algolia v4 sends JSON with a form Content-Type to avoid CORS preflight.
+      const requests = JSON.parse(route.request().postData() || "{}").requests || [];
+      mockedSearchRequests += 1;
+      const results = requests.map((request) => ({
+        hits: [{ objectID: "smoke", title: "FaceReader search smoke", url: "/posts/", teaser: "/assets/img/page-header-image-manufacture-teaser.jpg", description: "Local fixture, not a live index query." }],
+        index: request.indexName, params: request.params,
+        nbHits: 1, page: 0, nbPages: 1, hitsPerPage: 20, processingTimeMS: 1,
+        query: typeof request.params === "string" ? new URLSearchParams(request.params).get("query") || "" : request.params?.query || "", exhaustiveNbHits: true
+      }));
+      await route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({ results }) });
+    });
+    await goto("/");
+    await page.locator(".search__toggle").click();
+    await page.locator(".search-content .ais-SearchBox-input").fill("FaceReader");
+    try {
+      await page.locator(".search-content .algolia-hit__title").first().waitFor();
+    } catch (error) {
+      await page.screenshot({ path: path.join(output, "search-dependency-failure.png"), fullPage: true });
+      console.error({ mockedSearchRequests, errors, searchText: await page.locator(".search-content").textContent() });
+      throw error;
+    }
+    assert.equal(await page.locator(".search-content .algolia-hit__title").first().textContent(), "FaceReader search smoke");
+    console.log("Updated CDN search libraries render mocked results; no live index request was sent.");
+  }
   assert.deepEqual(errors, [], "Uncaught browser exceptions");
   console.log(`Browser regression passed. Screenshots: ${output}`);
 } finally {

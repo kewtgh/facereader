@@ -7,7 +7,7 @@ FaceReader builds with Ruby 4.0 and Node.js 24.
 - Ruby: use the stable Ruby 4.0 branch from `.ruby-version`.
 - Windows: use RubyInstaller Ruby+Devkit 4.0 x64 in a Ruby 4.0 directory.
 - Bundler: use Bundler 4.0.16, matching `Gemfile.lock`.
-- Node.js: use Node 24.18.0 from `.node-version` or `.nvmrc`.
+- Node.js: use Node 24.21.0 LTS from `.node-version` or `.nvmrc`.
 
 Install and verify:
 
@@ -29,12 +29,17 @@ installed Playwright and Chromium. Set `PLAYWRIGHT_MODULE` to its module path
 and `CHROMIUM_EXECUTABLE` to the browser executable when they are not installed
 locally. The suite starts a local-only server, blocks external requests, tests
 responsive pages and failure/retry flows, and saves screenshots under
-`tmp/audit-2026-09-26/`. It does not install browsers or publish anything.
+`tmp/audit-2026-10-03/`. It does not install browsers or publish anything.
+Set `FR_TEST_SEARCH_CDN=1` to additionally load the pinned public search libraries
+and verify search rendering against mocked responses; this never queries the live index.
 
 Browser-facing JavaScript belongs in `assets/js`. Build-only validation and
 deployment utilities belong in `assets/scripts`, which is excluded from the
 published site. `bundle exec rake js` regenerates `assets/js/main.min.js`
 without publishing a source map.
+The bundle uses npm-locked jQuery 4.0 and Magnific Popup 1.2, rather than manually
+copied vendor scripts. Run `npm ci` before regenerating it. Third-party notices
+are at `/THIRD_PARTY_NOTICES/`, with the FaceReader version read from `_data/theme.yml`.
 
 Custom styles are organized as Sass modules under `_sass/minimal-mistakes/`.
 `_custom.scss` loads them in cascade order; Jekyll still emits one minified
