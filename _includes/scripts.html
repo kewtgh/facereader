@@ -23,6 +23,7 @@
 
 <script defer src="{{ '/assets/js/table-wrap.js' | relative_url }}?v={{ site.data.theme.version }}"></script>
 <script defer src="{{ '/assets/js/reader-tools.js' | relative_url }}?v={{ site.data.theme.version }}"></script>
+{% if page.id %}<script defer src="{{ '/assets/js/footnote-preview.js' | relative_url }}?v={{ site.data.theme.version }}"></script>{% endif %}
 {% if page.id and page.toc %}<script defer src="{{ '/assets/js/article-toc.js' | relative_url }}?v={{ site.data.theme.version }}"></script>{% endif %}
 
 {% if site.after_footer_scripts %}

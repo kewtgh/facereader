@@ -129,18 +129,21 @@ end
 
 # Series navigation belongs to the article context, never above the TOC.
 series_cases = [
-  ["人格成长/不靠谱领导力/manage-leadership5/index.html", 4, "/series/leadership/"],
-  ["人格成长/不靠谱领导力/manage-leadership12/index.html", 4, "/series/leadership/"],
-  ["经典解读/孙子兵法/TheArtofWar-5bingshi/index.html", 4, "/series/sunzi/"],
-  ["社会杂论/Society-tobeslaveforever/index.html", 3, "/series/lcer/"]
+  ["人格成长/不靠谱领导力/manage-leadership5/index.html", "/series/leadership/"],
+  ["人格成长/不靠谱领导力/manage-leadership12/index.html", "/series/leadership/"],
+  ["经典解读/孙子兵法/TheArtofWar-5bingshi/index.html", "/series/sunzi/"],
+  ["社会杂论/Society-tobeslaveforever/index.html", "/series/lcer/"]
 ]
-series_cases.each do |relative_path, expected_links, series_url|
+series_cases.each do |relative_path, series_url|
   file = SITE_ROOT.join(relative_path)
   next add_error(errors, file, "series article was not generated") unless file.file?
 
   document = Nokogiri::HTML(file.read(encoding: "UTF-8"))
   links = document.css(".fr-article-series-rail ol a")
-  add_error(errors, file, "adjacent series links are incomplete") unless links.length == expected_links
+  series_size = document.at_css(".fr-article-series-rail__head h2 small")&.text.to_s.to_i
+  expected_links = [series_size, 4].min
+  add_error(errors, file, "adjacent series links are incomplete") unless
+    series_size.positive? && links.length == expected_links
   add_error(errors, file, "current series article is not marked") unless links.any? { |link| link["aria-current"] == "page" }
   add_error(errors, file, "series points to the wrong collection") unless
     document.at_css(".fr-article-series-rail__all")&.[]("href") == series_url

@@ -7,7 +7,7 @@ import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "playwright");
 const root = path.resolve("_site");
-const output = path.resolve("tmp/audit-2026-09-28");
+const output = path.resolve("tmp/audit-2026-10-03");
 await fs.mkdir(output, { recursive: true });
 const types = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".mjs": "text/javascript", ".css": "text/css", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".webp": "image/webp", ".woff2": "font/woff2" };
 const server = http.createServer(async (req, res) => {
@@ -125,6 +125,23 @@ try {
     assert.equal(new Set(links).size, links.length, "Duplicate header navigation");
     assert.ok(links.includes("/tags/"));
   }
+  await goto(article);
+  const noteReference = page.locator('.page__content a.footnote[rel="footnote"]').first();
+  await noteReference.scrollIntoViewIfNeeded();
+  await noteReference.hover();
+  await page.locator('.fr-footnote-preview').waitFor({ state: 'visible' });
+  assert.match(await page.locator('.fr-footnote-preview').textContent(), /Repo 105/);
+  assert.equal(await page.locator('.fr-footnote-preview .reversefootnote').count(), 0);
+  assert.ok((await noteReference.getAttribute('aria-describedby')).includes('fr-footnote-preview'));
+  assert.equal(new URL(page.url()).hash, '', 'Hovering should not navigate to the footnote');
+  await page.screenshot({ path: path.join(output, 'footnote-preview-desktop.png'), animations: 'disabled' });
+  await page.keyboard.press('Escape');
+  assert.equal(await page.locator('.fr-footnote-preview').isHidden(), true);
+  await noteReference.focus();
+  await page.locator('.fr-footnote-preview').waitFor({ state: 'visible' });
+  await page.keyboard.press('Escape');
+  await noteReference.click();
+  assert.ok(new URL(page.url()).hash.startsWith('#fn:'), 'Clicking should retain the original footnote jump');
   await goto(article);
   await page.locator('[data-fr-ui-lang-option="en"]').click();
   assert.match(await page.locator(".e-content").getAttribute("lang"), /^zh/);
