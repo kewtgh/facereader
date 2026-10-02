@@ -446,21 +446,31 @@
 }
 
 /* 脚注与回链使用独立的阅读层级，不与普通正文混在一起。 */
+.page__content .footnote,
+.page__content .reversefootnote {
+  text-indent: 0;
+  letter-spacing: normal;
+  text-align: center;
+  white-space: nowrap;
+}
+
 .page__content .footnote {
   display: inline-flex;
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  min-width: 1.35em;
+  min-width: 1.5em;
+  height: 1.5em;
   margin-inline: 0.08em;
-  padding-inline: 0.28em;
+  padding: 0 0.2em;
   border: 1px solid rgba($fr-action-color, 0.24);
-  border-radius: 999px;
+  border-radius: 0.35em;
   background: rgba($fr-action-color, 0.08);
   color: $fr-action-color;
   font-family: $sans-serif;
-  font-size: 0.72em;
-  font-weight: 800;
-  line-height: 1.35;
+  font-size: 0.85em;
+  font-weight: 600;
+  line-height: 1;
   text-decoration: none !important;
 }
 
@@ -468,6 +478,11 @@
 .page__content .footnote:focus-visible {
   border-color: $fr-action-color;
   background: rgba($fr-action-color, 0.16);
+}
+
+.page__content sup:target .footnote {
+  outline: 2px solid $fr-action-color;
+  outline-offset: 2px;
 }
 
 .page__content .footnote:focus-visible {
@@ -539,6 +554,8 @@
   align-items: center;
   justify-content: center;
   min-width: 1.5em;
+  min-height: 1.5em;
+  border-radius: 0.3em;
   margin-inline-start: 0.18em;
   color: $fr-action-color;
   font-weight: 800;
@@ -549,6 +566,34 @@
 .page__content a.reversefootnote:focus-visible {
   color: $fr-action-hover;
   background: rgba($fr-action-color, 0.08);
+}
+
+.page__content .footnotes > ol.fr-footnotes-linked {
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+.page__content .fr-footnotes-linked > li {
+  position: relative;
+  padding-inline-start: 2.1rem;
+}
+
+.page__content .fr-footnotes-linked a.fr-footnote-index {
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0;
+  margin: 0;
+  padding-inline: 0.15em;
+  border: 1px solid rgba($fr-action-color, 0.18);
+  background: rgba($fr-action-color, 0.06);
+  font-family: $sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.page__content a.reversefootnote:focus-visible {
+  outline: 2px solid $fr-action-color;
+  outline-offset: 2px;
 }
 
 /* =====================================================

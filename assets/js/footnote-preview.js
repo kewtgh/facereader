@@ -48,6 +48,58 @@
     return note && note.matches(".footnotes li") ? note : null;
   }
 
+  // The Markdown list marker is not clickable. Add a real return link using
+  // Jekyll's existing backlink, without guessing reference IDs or URLs.
+  document.querySelectorAll(".page__content .footnotes > ol").forEach(function (list) {
+    var notes = Array.prototype.slice.call(list.children);
+    var canLinkAll = notes.every(function (note) {
+      return note.querySelector('a.reversefootnote[href^="#"]') &&
+        references.some(function (reference) { return noteFor(reference) === note; });
+    });
+    if (!canLinkAll) return;
+    notes.forEach(function (note) {
+      var reference = references.find(function (reference) { return noteFor(reference) === note; });
+      var index = document.createElement("a");
+      index.className = "reversefootnote fr-footnote-index";
+      index.href = note.querySelector('a.reversefootnote[href^="#"]').getAttribute("href");
+      index.setAttribute("role", "doc-backlink");
+      index.textContent = reference.textContent.trim();
+      // Append so the existing first paragraph styles and multi-paragraph notes survive.
+      note.appendChild(index);
+    });
+    list.classList.add("fr-footnotes-linked");
+  });
+
+  function labelBacklinks() {
+    var english = document.documentElement.getAttribute("data-fr-ui-lang") === "en";
+    document.querySelectorAll(".page__content .footnotes a.reversefootnote").forEach(function (backlink) {
+      var target;
+      try { target = document.getElementById(decodeURIComponent(backlink.hash.slice(1))); }
+      catch (error) { return; }
+      var reference = target && (target.matches("a.footnote") ? target : target.querySelector("a.footnote"));
+      if (!reference) return;
+      var label = (english ? "Return to note " : "返回正文注释 ") + reference.textContent.trim();
+      backlink.setAttribute("aria-label", label);
+      backlink.title = label;
+    });
+  }
+  labelBacklinks();
+  document.querySelectorAll(".page__content .footnotes a.reversefootnote").forEach(function (backlink) {
+    backlink.addEventListener("click", function (event) {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      hide();
+      // Leave URL/history/scrolling to the original anchor, then restore keyboard focus.
+      window.requestAnimationFrame(function () {
+        var target;
+        try { target = document.getElementById(decodeURIComponent(backlink.hash.slice(1))); }
+        catch (error) { return; }
+        var reference = target && (target.matches("a.footnote") ? target : target.querySelector("a.footnote"));
+        if (reference) reference.focus({ preventScroll: true });
+        hide();
+      });
+    });
+  });
+
   function position() {
     if (!activeReference || preview.hidden) return;
     var anchor = activeReference.getBoundingClientRect();
@@ -95,6 +147,7 @@
   }
 
   references.forEach(function (reference) {
+    reference.addEventListener("click", hide);
     reference.addEventListener("pointerenter", function (event) {
       if (event.pointerType !== "touch") show(reference);
     });
@@ -110,6 +163,7 @@
   window.addEventListener("scroll", position, { passive: true });
   window.addEventListener("resize", position);
   document.addEventListener("facereader:ui-language", function () {
+    labelBacklinks();
     if (activeReference) show(activeReference);
   });
 })();

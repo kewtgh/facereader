@@ -183,6 +183,43 @@ try {
   await page.keyboard.press('Escape');
   await noteReference.click();
   assert.ok(new URL(page.url()).hash.startsWith('#fn:'), 'Clicking should retain the original footnote jump');
+  assert.equal(await page.locator('.fr-footnote-preview').isHidden(), true, 'Following a note should dismiss its preview');
+  for (const [url, width, language] of [[article, 1440, 'zh'], [article, 390, 'zh'], ['/social commentary/Society-lcer-canada-en/', 390, 'en']]) {
+    await page.setViewportSize({ width, height: 900 });
+    await goto(url);
+    await page.locator(`[data-fr-ui-lang-option="${language}"]`).click();
+    const reference = page.locator('.page__content a.footnote').first();
+    const dimensions = await page.locator('.page__content a.footnote').evaluateAll((links) => links.map((link) => {
+      const rect = link.getBoundingClientRect();
+      return { number: link.textContent.trim(), indent: getComputedStyle(link).textIndent, ratio: rect.width / rect.height };
+    }));
+    dimensions.forEach((badge) => {
+      assert.equal(badge.indent, '0px', 'Footnote badges must not inherit paragraph indentation');
+      if (badge.number.length === 1) assert.ok(badge.ratio <= 1.15, `Stretched footnote badge: ${JSON.stringify(badge)}`);
+    });
+    const noteId = decodeURIComponent((await reference.getAttribute('href')).slice(1));
+    const note = page.locator(`[id="${noteId}"]`);
+    const numberLink = note.locator('a.fr-footnote-index');
+    const originalBacklink = note.locator('a.reversefootnote:not(.fr-footnote-index)').first();
+    assert.equal(await numberLink.getAttribute('href'), await originalBacklink.getAttribute('href'));
+    assert.match(await numberLink.getAttribute('aria-label'), language === 'en' ? /Return to note/ : /返回正文注释/);
+    await reference.click();
+    await numberLink.scrollIntoViewIfNeeded();
+    await page.screenshot({ path: path.join(output, `footnote-list-${language}-${width}.png`), animations: 'disabled' });
+    for (const backlink of [numberLink, originalBacklink]) {
+      await backlink.click();
+      await page.waitForFunction(() => document.activeElement?.matches('a.footnote'));
+      assert.equal(new URL(page.url()).hash, await backlink.getAttribute('href'));
+      const rect = await reference.boundingBox();
+      assert.ok(rect.y >= 0 && rect.y < 900, 'The backlink must return the reference into view');
+      await reference.click();
+    }
+    await numberLink.click();
+    await page.keyboard.press('Escape');
+    await page.screenshot({ path: path.join(output, `footnote-badge-${language}-${width}.png`), animations: 'disabled' });
+  }
+  await page.setViewportSize({ width: 1440, height: 900 });
+  console.log('Compact footnotes and numbered/arrow return links passed on desktop, mobile and English articles.');
   await goto(article);
   await page.locator('[data-fr-ui-lang-option="en"]').click();
   assert.match(await page.locator(".e-content").getAttribute("lang"), /^zh/);

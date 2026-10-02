@@ -54,6 +54,9 @@ $(document).ready(function () {
 
   // Smooth scrolling
   var scroll = new SmoothScroll('a[href*="#"]', {
+    // Footnote IDs may contain colons/unicode. Keep their native fragment navigation
+    // and CSS scroll margins instead of applying the generic heading scroll offset.
+    ignore: "[data-scroll-ignore], .footnote, .reversefootnote",
     offset: 20,
     speed: 400,
     speedAsDuration: true,
