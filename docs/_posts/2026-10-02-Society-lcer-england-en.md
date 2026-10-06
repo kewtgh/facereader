@@ -33,7 +33,7 @@ tags:
 toc: true
 toc_sticky: true
 series: lcer
-series_order: 3
+series_order: 4
 series_label: "United Kingdom: London and Manchester"
 sidebar:
   title: "Classic Series"

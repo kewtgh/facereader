@@ -33,7 +33,7 @@ tags:
 toc: true
 toc_sticky: true
 series: lcer
-series_order: 3
+series_order: 4
 series_label: 英国：伦敦与曼彻斯特
 sidebar:
   title: "经典系列"
