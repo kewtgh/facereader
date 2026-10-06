@@ -39,7 +39,15 @@ published site. `bundle exec rake js` regenerates `assets/js/main.min.js`
 without publishing a source map.
 The bundle uses npm-locked jQuery 4.0 and Magnific Popup 1.2, rather than manually
 copied vendor scripts. Run `npm ci` before regenerating it. Third-party notices
-are at `/THIRD_PARTY_NOTICES/`, with the FaceReader version read from `_data/theme.yml`.
+are at `/THIRD_PARTY_NOTICES/`.
+
+Maintain the FaceReader version only in `package.json`; run
+`npm install --package-lock-only` to synchronize npm's lockfile after changing it.
+At build time, `_plugins/site_version.rb` exposes that version as
+`site.data.theme.version` for page notices, copyright banners, and asset cache
+parameters. The JavaScript bundle's Liquid banner is also resolved by Jekyll,
+so a version bump does not require regenerating the bundle. Run
+`npm run site:check` before pushing.
 
 Custom styles are organized as Sass modules under `_sass/minimal-mistakes/`.
 `_custom.scss` loads them in cascade order; Jekyll still emits one minified

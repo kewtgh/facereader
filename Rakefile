@@ -9,8 +9,6 @@ require "yaml"
 
 task :default => %i[copyright changelog js version]
 
-package_json = JSON.parse(File.read("package.json"))
-FACEREADER_VERSION = package_json["version"]
 MINIMAL_MISTAKES_VERSION = "4.28.0"
 
 def listen_ignore_paths(base, options)
@@ -117,7 +115,7 @@ file "docs/_docs/18-history.md" => "CHANGELOG.md" do |t|
 end
 
 COPYRIGHT_LINES = [
-  "FaceReader #{FACEREADER_VERSION}, deeply customized for Witbacon",
+  "FaceReader {{ site.data.theme.version }}, deeply customized for Witbacon",
   "Based on Minimal Mistakes Jekyll Theme #{MINIMAL_MISTAKES_VERSION} by Michael Rose",
   "Copyright 2013-#{Time.now.year} Michael Rose - mademistakes.com | @mmistakes",
   "Free for personal and commercial use under the MIT license",
@@ -134,7 +132,8 @@ def genenerate_copyright_file(filename, header, prefix, footer)
   File.open(filename, "w") do |f|
     f.puts header
     COPYRIGHT_LINES.each do |line|
-      f.puts "#{prefix}#{line}"
+      rendered_line = filename.end_with?(".scss") ? line.sub(" {{ site.data.theme.version }}", "") : line
+      f.puts "#{prefix}#{rendered_line}"
     end
     f.puts footer
   end
@@ -164,6 +163,8 @@ file JS_TARGET => ["_includes/copyright.js"] + JS_FILES do |t|
   # Pass separate arguments, so Windows cmd cannot interpret regex alternation as pipes.
   sh "node", "node_modules/uglify-js/bin/uglifyjs", "-c", "--comments",
     "/@mmistakes|jQuery JavaScript Library|Magnific Popup -/", "-m", "-o", t.name, *t.prerequisites
+  # Let Jekyll resolve the version at site-build time, without rebuilding JS.
+  File.write(t.name, "---\nlayout: null\n---\n" + File.read(t.name))
 end
 
 task :watch_js do
@@ -191,7 +192,6 @@ task :version => ["_data/theme.yml"]
 file "_data/theme.yml" => "package.json" do |t|
   theme = {
     "name" => "FaceReader",
-    "version" => FACEREADER_VERSION,
     "upstream_theme" => {
       "name" => "Minimal Mistakes",
       "version" => MINIMAL_MISTAKES_VERSION,
