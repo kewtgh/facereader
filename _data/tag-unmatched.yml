@@ -99,6 +99,8 @@ unmatched:
     count: 1
   - tag: "革命"
     count: 1
+  - tag: "工业革命"
+    count: 1
   - tag: "共识"
     count: 1
   - tag: "管理"
@@ -155,6 +157,8 @@ unmatched:
     count: 1
   - tag: "齐奥塞斯库"
     count: 1
+  - tag: "全球化"
+    count: 1
   - tag: "上海房价"
     count: 1
   - tag: "上进"
@@ -187,6 +191,8 @@ unmatched:
     count: 1
   - tag: "物种竞争"
     count: 1
+  - tag: "西方文明"
+    count: 1
   - tag: "喜剧"
     count: 1
   - tag: "校长"
@@ -199,7 +205,13 @@ unmatched:
     count: 1
   - tag: "兴趣"
     count: 1
+  - tag: "伊斯兰世界"
+    count: 1
   - tag: "以德报怨"
+    count: 1
+  - tag: "印第安部落"
+    count: 1
+  - tag: "印度文明"
     count: 1
   - tag: "英格兰"
     count: 1
@@ -213,6 +225,8 @@ unmatched:
     count: 1
   - tag: "知识"
     count: 1
+  - tag: "殖民主义"
+    count: 1
   - tag: "制度"
     count: 1
   - tag: "中国经济"
@@ -221,15 +235,23 @@ unmatched:
     count: 1
   - tag: "自由"
     count: 1
+  - tag: "罪恶史"
+    count: 1
+  - tag: "Aggression"
+    count: 1
   - tag: "authoritarianism"
     count: 1
   - tag: "Canada"
+    count: 1
+  - tag: "China"
     count: 1
   - tag: "China-US Comparison"
     count: 1
   - tag: "Chinese Economy"
     count: 1
   - tag: "collective action"
+    count: 1
+  - tag: "Colonialism"
     count: 1
   - tag: "common knowledge"
     count: 1
@@ -240,6 +262,14 @@ unmatched:
   - tag: "face"
     count: 1
   - tag: "game theory"
+    count: 1
+  - tag: "Globalization"
+    count: 1
+  - tag: "History of Guilt"
+    count: 1
+  - tag: "Humanitarianism"
+    count: 1
+  - tag: "Indian Civilization"
     count: 1
   - tag: "Institutional Cost"
     count: 1
@@ -264,6 +294,10 @@ unmatched:
   - tag: "SOE Monopoly"
     count: 1
   - tag: "Toronto"
+    count: 1
+  - tag: "War and Conquest"
+    count: 1
+  - tag: "Western Civilization"
     count: 1
   - tag: "Winnipeg"
     count: 1
