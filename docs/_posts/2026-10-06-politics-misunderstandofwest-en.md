@@ -1,5 +1,5 @@
 ---
-title: "“A Love of Conquest” May Be Our Biggest Misunderstanding of Western Civilization"
+title: “A Love of Conquest” May Be Our Biggest Misunderstanding of Western Civilization
 excerpt: "We often define the West as the aggressor. But across history, many civilizations and empires were more brutal than the modern West—and often just as eager to conquer. So what made us attach this label to the West? And what, exactly, made us more civilized?"
 header:
   teaser: /assets/img/page-header-image-civilizations01-teaser.jpg

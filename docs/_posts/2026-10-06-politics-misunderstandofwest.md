@@ -1,5 +1,5 @@
 ---
-title: "“喜欢侵略”，也许是我们对西方文明最大的误解"
+title: “喜欢侵略”，也许是我们对西方文明最大的误解
 excerpt: "我们经常把西方定义为侵略者，但事实上历史中的各个文明和帝国，比现代的西方更加野蛮，甚至也更爱侵略！那么到底是什么，让我们开始使用这个标签？又是什么，让我们变得文明？"
 header:
   teaser: /assets/img/page-header-image-civilizations01-teaser.jpg
