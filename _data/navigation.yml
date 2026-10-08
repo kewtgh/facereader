@@ -199,7 +199,9 @@ sidebar-series-lifecycle-extraction:
          url: /%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/Society-lcer-canada/
        - title: "四、英国：伦敦和曼彻斯特家庭的测算"
          url: /%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/Society-lcer-england/
-
+       - title: "五、法国：巴黎和里昂家庭的测算"
+         url: /%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/Society-lcer-france/
+         
 sidebar-series-lifecycle-extraction-en:
   - title: "Lifecycle Comprehensive Extraction Rate"
     children:
@@ -211,7 +213,9 @@ sidebar-series-lifecycle-extraction-en:
          url: /%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/Society-lcer-canada-en/
        - title: "4. England：London & Manchester"
          url: /%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/Society-lcer-england-en/
-
+       - title: "5. France：Paris & Lyon"
+         url: /%E7%A4%BE%E4%BC%9A%E6%9D%82%E8%AE%BA/Society-lcer-france-en/
+         
 sidebar-about:
   - title: "开始阅读"
     children:
