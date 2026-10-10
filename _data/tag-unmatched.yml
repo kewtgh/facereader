@@ -2,44 +2,50 @@
 # You can fix by adding to rules.force / match.exact / match.regex
 unmatched:
   - tag: "LCER"
-    count: 6
+    count: 8
   - tag: "财富分配"
-    count: 4
+    count: 5
   - tag: "代际财富"
-    count: 4
+    count: 5
   - tag: "居民财富"
-    count: 4
+    count: 5
   - tag: "居民消费"
-    count: 4
+    count: 5
   - tag: "生命周期综合汲取率"
-    count: 4
+    count: 5
   - tag: "养老金"
-    count: 4
+    count: 5
   - tag: "医疗保险"
-    count: 4
+    count: 5
   - tag: "Household Balance Sheet"
-    count: 4
+    count: 5
   - tag: "Household Consumption"
-    count: 4
+    count: 5
   - tag: "Household Wealth"
-    count: 4
+    count: 5
   - tag: "Intergenerational Wealth"
-    count: 4
+    count: 5
   - tag: "Wealth Distribution"
-    count: 4
+    count: 5
   - tag: "房产税"
-    count: 3
+    count: 4
   - tag: "税负"
-    count: 3
+    count: 4
   - tag: "制度成本"
-    count: 3
+    count: 4
   - tag: "Education Costs"
-    count: 3
+    count: 4
   - tag: "Pensions"
-    count: 3
+    count: 4
   - tag: "Property Tax"
-    count: 3
+    count: 4
   - tag: "Tax Burden"
+    count: 4
+  - tag: "Cost of Living"
+    count: 3
+  - tag: "Health Insurance"
+    count: 3
+  - tag: "Institutional Costs"
     count: 3
   - tag: "奥古斯都"
     count: 2
@@ -57,19 +63,15 @@ unmatched:
     count: 2
   - tag: "组织"
     count: 2
-  - tag: "Cost of Living"
-    count: 2
-  - tag: "Health Insurance"
-    count: 2
   - tag: "Healthcare"
-    count: 2
-  - tag: "Institutional Costs"
     count: 2
   - tag: "2001年"
     count: 1
   - tag: "2009年"
     count: 1
   - tag: "哀其不幸"
+    count: 1
+  - tag: "巴黎"
     count: 1
   - tag: "必要性"
     count: 1
@@ -88,6 +90,8 @@ unmatched:
   - tag: "多伦多"
     count: 1
   - tag: "发展趋势"
+    count: 1
+  - tag: "法国"
     count: 1
   - tag: "法律"
     count: 1
@@ -121,7 +125,11 @@ unmatched:
     count: 1
   - tag: "决策逻辑"
     count: 1
+  - tag: "抗议事件"
+    count: 1
   - tag: "老师"
+    count: 1
+  - tag: "里昂"
     count: 1
   - tag: "利润"
     count: 1
@@ -261,6 +269,8 @@ unmatched:
     count: 1
   - tag: "face"
     count: 1
+  - tag: "France"
+    count: 1
   - tag: "game theory"
     count: 1
   - tag: "Globalization"
@@ -277,13 +287,19 @@ unmatched:
     count: 1
   - tag: "London"
     count: 1
+  - tag: "Lyon"
+    count: 1
   - tag: "Manchester"
     count: 1
   - tag: "Nash equilibrium"
     count: 1
   - tag: "New York"
     count: 1
+  - tag: "Paris"
+    count: 1
   - tag: "Pension"
+    count: 1
+  - tag: "Protests"
     count: 1
   - tag: "regime collapse"
     count: 1
