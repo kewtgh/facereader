@@ -36,7 +36,7 @@ series_order: 6
 series_label: "Germany: Munich and Cologne"
 sidebar:
   title: "Classic Series"
-  nav: sidebar-series-lifecycle-extraction-en
+  nav: sidebar-series-lifecycle-extraction
 locale: en
 translation_key: society-article-0006-2026
 last_modified_at: 2026-10-10T08:55:52-05:00

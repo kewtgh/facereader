@@ -33,7 +33,7 @@ series_order: 1
 series_label: "China: Shanghai & Nanjing"
 sidebar:
   title: "Classic Series"
-  nav: sidebar-series-lifecycle-extraction-en
+  nav: sidebar-series-lifecycle-extraction
 locale: en-US
 translation_key: society-article-0001-2026
 last_modified_at: 2026-09-14T17:55:52-05:00
@@ -1996,3 +1996,4 @@ The real question is:
 Only after that balance sheet is reconstructed can we answer the most basic question:
 
 **Of all the wealth created during China's decades of rapid economic growth, how much has actually accumulated in ordinary household balance sheets?**
+

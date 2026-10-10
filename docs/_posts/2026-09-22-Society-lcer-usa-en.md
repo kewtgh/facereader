@@ -35,7 +35,7 @@ series_order: 2
 series_label: "USA: New York & Chicago"
 sidebar:
   title: "Classic Series"
-  nav: sidebar-series-lifecycle-extraction-en
+  nav: sidebar-series-lifecycle-extraction
 locale: en-US
 translation_key: society-article-0002-2026
 last_modified_at: 2026-09-22T12:55:52-05:00
