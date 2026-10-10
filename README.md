@@ -195,6 +195,10 @@ Use the short decorative variant only where a lighter pause is intended:
 
 Blockquotes, footnote references, footnote bodies, and return links are styled
 automatically. Do not add background colors or layout HTML around them.
+On mobile, tapping a footnote opens its content beside the reference without
+changing the URL or reading position. Close it with the close button, an
+outside tap, or Escape. Desktop hover previews and click-to-footnote links
+remain available, as do the original footnotes when JavaScript is unavailable.
 
 Use fenced code blocks and always declare the language when it is known. Rouge
 then supplies syntax highlighting, while long lines remain horizontally

@@ -270,7 +270,43 @@ try {
     const originalBacklink = note.locator('a.reversefootnote:not(.fr-footnote-index)').first();
     assert.equal(await numberLink.getAttribute('href'), await originalBacklink.getAttribute('href'));
     assert.match(await numberLink.getAttribute('aria-label'), language === 'en' ? /Return to note/ : /返回正文注释/);
-    await reference.click();
+    if (width < 1024) {
+      await reference.scrollIntoViewIfNeeded();
+      await page.waitForTimeout(200);
+      await page.evaluate(() => new Promise(requestAnimationFrame));
+      const before = await page.evaluate(() => ({ scroll: scrollY, hash: location.hash }));
+      await reference.click();
+      const popup = page.locator('.fr-footnote-preview');
+      await popup.waitFor({ state: 'visible' });
+      assert.equal(await popup.getAttribute('role'), 'dialog');
+      assert.equal(new URL(page.url()).hash, before.hash, 'Mobile notes should not change the URL');
+      const afterOpen = await page.evaluate(() => scrollY);
+      assert.ok(Math.abs(afterOpen - before.scroll) < 5, `Opening a note moved reading position on ${url} from ${before.scroll} to ${afterOpen}`);
+      const expectedNote = await note.evaluate((element) => {
+        const clone = element.cloneNode(true);
+        clone.querySelectorAll('.reversefootnote').forEach((link) => link.remove());
+        return clone.textContent.trim();
+      });
+      assert.equal((await popup.locator('.fr-footnote-preview__content').textContent()).trim(), expectedNote);
+      assert.equal(await popup.locator('.reversefootnote').count(), 0);
+      await noOverflow();
+      await page.screenshot({ path: path.join(output, `footnote-popup-mobile-${language}.png`), animations: 'disabled' });
+      await popup.locator('button').click();
+      assert.equal(await popup.isHidden(), true);
+      assert.equal(await reference.evaluate((element) => document.activeElement === element), true);
+      assert.ok(Math.abs((await page.evaluate(() => scrollY)) - before.scroll) < 5);
+      await reference.click();
+      await page.keyboard.press('Escape');
+      assert.equal(await popup.isHidden(), true);
+      await reference.click();
+      await page.mouse.click(1, 1);
+      assert.equal(await popup.isHidden(), true, 'Tapping outside should dismiss the note');
+    }
+    const visitFootnoteList = async () => {
+      if (width < 1024) await page.evaluate((hash) => { location.hash = hash; }, await reference.getAttribute('href'));
+      else await reference.click();
+    };
+    await visitFootnoteList();
     await numberLink.scrollIntoViewIfNeeded();
     await page.screenshot({ path: path.join(output, `footnote-list-${language}-${width}.png`), animations: 'disabled' });
     for (const backlink of [numberLink, originalBacklink]) {
@@ -279,7 +315,7 @@ try {
       assert.equal(new URL(page.url()).hash, await backlink.getAttribute('href'));
       const rect = await reference.boundingBox();
       assert.ok(rect.y >= 0 && rect.y < 900, 'The backlink must return the reference into view');
-      await reference.click();
+      await visitFootnoteList();
     }
     await numberLink.click();
     await page.keyboard.press('Escape');
@@ -287,6 +323,27 @@ try {
   }
   await page.setViewportSize({ width: 1440, height: 900 });
   console.log('Compact footnotes and numbered/arrow return links passed on desktop, mobile and English articles.');
+  const touchContext = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+  try {
+    await touchContext.route('**/*', (route) => new URL(route.request().url()).origin === base ? route.continue() : route.abort());
+    const touchPage = await touchContext.newPage();
+    touchPage.on('pageerror', (error) => errors.push(error.stack || error.message));
+    await touchPage.goto(base + article);
+    const reference = touchPage.locator('.page__content a.footnote').first();
+    await reference.scrollIntoViewIfNeeded();
+    await touchPage.waitForTimeout(200);
+    const before = await touchPage.evaluate(() => ({ scroll: scrollY, hash: location.hash }));
+    await reference.tap();
+    const popup = touchPage.locator('.fr-footnote-preview');
+    await popup.waitFor({ state: 'visible' });
+    assert.equal(new URL(touchPage.url()).hash, before.hash);
+    assert.ok(Math.abs((await touchPage.evaluate(() => scrollY)) - before.scroll) < 5);
+    await touchPage.waitForTimeout(200);
+    assert.equal(await popup.isVisible(), true, 'A tapped note should stay open until dismissed');
+    await popup.locator('button').tap();
+    assert.equal(await popup.isHidden(), true);
+  } finally { await touchContext.close(); }
+  console.log('Mobile notes display in place with close, Escape, outside-click and touch support.');
   await goto(article);
   await page.locator('[data-fr-ui-lang-option="en"]').click();
   assert.match(await page.locator(".e-content").getAttribute("lang"), /^zh/);

@@ -511,6 +511,23 @@
 }
 
 .fr-footnote-preview[hidden] { display: none; }
+.fr-footnote-preview { overscroll-behavior: contain; }
+.fr-footnote-preview.is-pinned .fr-footnote-preview__label { min-height: 2rem; padding-inline-end: 2.5rem; }
+.fr-footnote-preview__close {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: $text-color;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.fr-footnote-preview__close[hidden] { display: none; }
+.fr-footnote-preview__close:focus-visible { outline: 2px solid $fr-action-color; outline-offset: -2px; }
 .fr-footnote-preview__label {
   display: block;
   margin-bottom: 0.35rem;

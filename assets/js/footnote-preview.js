@@ -9,30 +9,41 @@
   preview.id = "fr-footnote-preview";
   preview.setAttribute("role", "tooltip");
   preview.hidden = true;
-  preview.innerHTML = '<span class="fr-footnote-preview__label"></span><div class="fr-footnote-preview__content"></div>';
+  preview.innerHTML = '<span class="fr-footnote-preview__label"></span><button type="button" class="fr-footnote-preview__close" hidden><span aria-hidden="true">×</span></button><div class="fr-footnote-preview__content"></div>';
   document.body.appendChild(preview);
 
   var activeReference = null;
   var hideTimer = null;
+  var pinned = false;
+  var restoringFocus = false;
 
   function cancelHide() {
     if (hideTimer !== null) window.clearTimeout(hideTimer);
     hideTimer = null;
   }
 
-  function hide() {
+  function hide(restoreFocus) {
     cancelHide();
+    var previousReference = activeReference;
     if (activeReference) {
       var descriptions = (activeReference.getAttribute("aria-describedby") || "")
         .split(/\s+/).filter(function (id) { return id && id !== preview.id; });
       if (descriptions.length) activeReference.setAttribute("aria-describedby", descriptions.join(" "));
       else activeReference.removeAttribute("aria-describedby");
+      if (pinned) activeReference.setAttribute("aria-expanded", "false");
     }
     activeReference = null;
+    pinned = false;
     preview.hidden = true;
+    if (restoreFocus === true && previousReference) {
+      restoringFocus = true;
+      previousReference.focus({ preventScroll: true });
+      restoringFocus = false;
+    }
   }
 
   function scheduleHide() {
+    if (pinned) return;
     cancelHide();
     hideTimer = window.setTimeout(function () {
       if (activeReference && document.activeElement === activeReference) return;
@@ -115,11 +126,13 @@
     preview.style.top = top + "px";
   }
 
-  function show(reference) {
+  function show(reference, pin) {
     cancelHide();
     var note = noteFor(reference);
     if (!note) { hide(); return; }
+    var shouldPin = pin === true || (pinned && activeReference === reference);
     if (activeReference !== reference) hide();
+    pinned = shouldPin;
 
     var content = document.createElement("div");
     Array.prototype.forEach.call(note.childNodes, function (node) {
@@ -137,6 +150,18 @@
     var english = document.documentElement.getAttribute("data-fr-ui-lang") === "en";
     preview.querySelector(".fr-footnote-preview__label").textContent =
       (english ? "Note " : "注释 ") + reference.textContent.trim();
+    var closeButton = preview.querySelector(".fr-footnote-preview__close");
+    closeButton.hidden = !pinned;
+    closeButton.setAttribute("aria-label", english ? "Close note" : "关闭注释");
+    preview.classList.toggle("is-pinned", pinned);
+    preview.setAttribute("role", pinned ? "dialog" : "tooltip");
+    if (pinned) {
+      preview.setAttribute("aria-label", preview.querySelector(".fr-footnote-preview__label").textContent);
+      reference.setAttribute("aria-controls", preview.id);
+      reference.setAttribute("aria-expanded", "true");
+    } else {
+      preview.removeAttribute("aria-label");
+    }
     preview.querySelector(".fr-footnote-preview__content").replaceChildren(content);
     activeReference = reference;
     var descriptions = (reference.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
@@ -147,18 +172,32 @@
   }
 
   references.forEach(function (reference) {
-    reference.addEventListener("click", hide);
+    reference.addEventListener("click", function (event) {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      var inlineNote = window.matchMedia("(max-width: 63.99em)").matches || event.pointerType === "touch";
+      if (!inlineNote || !noteFor(reference)) { hide(); return; }
+      event.preventDefault();
+      if (pinned && activeReference === reference) { hide(true); return; }
+      show(reference, true);
+      preview.querySelector(".fr-footnote-preview__close").focus({ preventScroll: true });
+    });
     reference.addEventListener("pointerenter", function (event) {
-      if (event.pointerType !== "touch") show(reference);
+      if (!pinned && event.pointerType !== "touch") show(reference);
     });
     reference.addEventListener("pointerleave", scheduleHide);
-    reference.addEventListener("focus", function () { show(reference); });
+    reference.addEventListener("focus", function () {
+      if (!restoringFocus && !pinned) show(reference);
+    });
     reference.addEventListener("blur", scheduleHide);
   });
   preview.addEventListener("pointerenter", cancelHide);
   preview.addEventListener("pointerleave", scheduleHide);
+  preview.querySelector(".fr-footnote-preview__close").addEventListener("click", function () { hide(true); });
+  document.addEventListener("pointerdown", function (event) {
+    if (pinned && !preview.contains(event.target) && !activeReference.contains(event.target)) hide();
+  });
   document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && activeReference) hide();
+    if (event.key === "Escape" && activeReference) hide(pinned);
   });
   window.addEventListener("scroll", position, { passive: true });
   window.addEventListener("resize", position);
