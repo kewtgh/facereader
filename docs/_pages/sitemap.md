@@ -4,6 +4,7 @@ title: "站点地图"
 permalink: /sitemap/
 author_profile: false
 sitemap: false
+robots: noindex
 ---
 
 这里列出站内主要页面与文章。面向搜索引擎和自动化工具的 XML 版本在 [sitemap.xml]({{ "sitemap.xml" | relative_url }})。
