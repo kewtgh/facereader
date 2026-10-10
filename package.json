@@ -1,7 +1,7 @@
 {
   "name": "facereader",
   "private": true,
-  "version": "7.4.0",
+  "version": "7.4.1",
   "description": "FaceReader personal blog on people, companies, society, and ideas.",
   "repository": {
     "type": "git",

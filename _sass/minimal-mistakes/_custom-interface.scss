@@ -777,6 +777,20 @@ article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
   cursor: pointer;
 }
 
+.fr-reader-tools__btn {
+  opacity: 0.55;
+  transition: opacity 0.16s ease, background-color 0.16s ease;
+}
+
+.fr-reader-tools__btn:focus-visible,
+.fr-reader-tools__btn:active {
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  .fr-reader-tools__btn:hover { opacity: 1; }
+}
+
 .fr-reader-tools__btn:hover,
 .fr-reader-tools__btn:focus,
 .fr-mobile-toc__close:hover,
