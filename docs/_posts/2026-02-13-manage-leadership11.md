@@ -35,12 +35,11 @@ tags:
   - 安全与稳定
   - 治理与崩溃
   - 管理体系
-sidebar:
-  title: "经典系列"
-  nav: sidebar-series-leadership
 toc: true
 toc_sticky: true
 last_modified_at: 2026-02-13T09:25:52-05:00
+series: leadership
+series_order: 11
 ---
 
 前面我们已经逐一讨论过领导者的六项必要品质：

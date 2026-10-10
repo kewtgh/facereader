@@ -108,6 +108,19 @@ series_order: 1
 series_label: 中国：上海与南京
 ```
 
+`series` identifies the reading path, `series_order` is a positive integer
+unique within that series and article language, and `series_label` is an
+optional short title. `_plugins/series_index.rb` supplies one ordered list to
+the series page, article navigation, previous/next links, and mobile series
+dialog. Hidden and unpublished articles are excluded. Invalid series IDs or
+duplicate positions stop the build.
+
+Articles no longer use `sidebar` or hand-maintained navigation URL lists.
+`_data/navigation.yml` contains the main menu and menus used by ordinary pages.
+On desktop and mobile, the floating series button opens a translucent panel
+with the complete list in the article's language, highlights the current
+article, and keeps the reading position.
+
 Chinese and English entries use the same series ID and order but are shown in
 separate language lists. Articles without these fields keep working normally.
 The `/posts/` entry selections are maintained in `_data/start_here.yml`.

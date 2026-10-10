@@ -35,12 +35,11 @@ tags:
   - 安全与稳定
   - 治理与崩溃
   - 管理体系
-sidebar:
-  title: "经典系列"
-  nav: sidebar-series-leadership
 toc: true
 toc_sticky: true
 last_modified_at: 2026-02-15T11:35:52-05:00
+series: leadership
+series_order: 12
 ---
 
 前面我们讨论了“**尽责**”品质的必要性和稀缺性，下面我们来看看“**尽责**”缺失的后果，以及如何确保做到尽责。

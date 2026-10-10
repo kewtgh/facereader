@@ -35,9 +35,6 @@ toc_sticky: true
 series: lcer
 series_order: 4
 series_label: 英国：伦敦与曼彻斯特
-sidebar:
-  title: "经典系列"
-  nav: sidebar-series-lifecycle-extraction
 locale: zh-CN
 translation_key: society-article-0004-2026
 last_modified_at: 2026-10-02T07:55:52-05:00

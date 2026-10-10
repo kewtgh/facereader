@@ -14,15 +14,14 @@ tags:
   - 轻轻家教
   - 刘常科
   - 义务教育新规
-sidebar:
-  title: "经典系列"
-  nav: sidebar-series-edu
 toc: true
 toc_sticky: true
 last_modified_at: 2021-06-03T19:25:52-05:00
 redirect_from:
   - /docs/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A/EDU-qingqing/
 
+series: edu
+series_order: 1
 ---
 
 

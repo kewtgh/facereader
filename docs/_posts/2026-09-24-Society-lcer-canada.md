@@ -33,9 +33,6 @@ toc_sticky: true
 series: lcer
 series_order: 3
 series_label: 加拿大：多伦多与温尼伯
-sidebar:
-  title: "经典系列"
-  nav: sidebar-series-lifecycle-extraction
 locale: zh-CN
 translation_key: society-article-0003-2026
 last_modified_at: 2026-09-24T07:55:52-05:00

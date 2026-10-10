@@ -35,9 +35,6 @@ toc_sticky: true
 series: lcer
 series_order: 5
 series_label: 法国：巴黎与里昂
-sidebar:
-  title: "经典系列"
-  nav: sidebar-series-lifecycle-extraction
 locale: zh-CN
 translation_key: society-article-0005-2026
 last_modified_at: 2026-10-08T10:55:52-05:00

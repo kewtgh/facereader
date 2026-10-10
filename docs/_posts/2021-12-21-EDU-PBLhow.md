@@ -16,15 +16,14 @@ tags:
   - 问题式学习
   - NBA
   - NFL
-sidebar:
-  title: "经典系列"
-  nav: sidebar-series-edu
 toc: true
 toc_sticky: true
 last_modified_at: 2021-12-21T19:25:52-05:00
 redirect_from:
   - /docs/%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A/EDU-PBLhow/
 
+series: edu
+series_order: 3
 ---
 
 

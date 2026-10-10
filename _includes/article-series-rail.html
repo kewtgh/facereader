@@ -1,75 +1,37 @@
-{% assign rail_series_id = page.series %}
-{% if rail_series_id == nil and page.sidebar.nav %}
-  {% for pair in site.data.series %}
-    {% if pair[1].navigation == page.sidebar.nav %}{% assign rail_series_id = pair[0] %}{% break %}{% endif %}
-  {% endfor %}
-{% endif %}
-{% assign rail_series = site.data.series[rail_series_id] %}
+{% assign rail_series = site.data.series[page.series] %}
 {% if rail_series %}
-  {% assign rail_posts = '' | split: ',' %}
-  {% if rail_series.category %}
-    {% assign rail_posts = site.categories[rail_series.category] %}
-  {% elsif rail_series.categories %}
-    {% for rail_category in rail_series.categories %}
-      {% assign category_posts = site.categories[rail_category] %}
-      {% assign rail_posts = rail_posts | concat: category_posts %}
-    {% endfor %}
-    {% assign rail_posts = rail_posts | uniq %}
-  {% else %}
-    {% assign rail_posts = site.posts | where: 'series', rail_series_id | where: 'locale', locale | sort: 'series_order' %}
-  {% endif %}
-  {% if rail_series.slug_contains %}
-    {% assign filtered_posts = '' | split: ',' %}
-    {% for post in rail_posts %}
-      {% if post.url contains rail_series.slug_contains %}{% assign filtered_posts = filtered_posts | push: post %}{% endif %}
-    {% endfor %}
-    {% assign rail_posts = filtered_posts %}
-  {% endif %}
-  {% assign ordered_posts = '' | split: ',' %}
-  {% if rail_series.navigation %}
-    {% assign navigation_groups = site.data.navigation[rail_series.navigation] %}
-    {% for navigation_group in navigation_groups %}
-      {% for navigation_item in navigation_group.children %}
-        {% for post in rail_posts %}
-          {% assign post_href = post.url | relative_url %}
-          {% if post_href == navigation_item.url and post.hidden != true %}
-            {% assign ordered_posts = ordered_posts | push: post %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
-    {% endfor %}
-  {% endif %}
-  {% for post in rail_posts %}
-    {% unless post.hidden == true or ordered_posts contains post %}
-      {% assign ordered_posts = ordered_posts | push: post %}
-    {% endunless %}
-  {% endfor %}
-
+  {% assign ordered_posts = site.data.series_index[page.series][context_lang] %}
   {% assign current_index = nil %}
   {% for post in ordered_posts %}
     {% if post.url == page.url %}{% assign current_index = forloop.index0 %}{% break %}{% endif %}
   {% endfor %}
   {% if current_index != nil %}
     {% assign start_index = current_index | minus: 1 %}
-    {% assign last_start = ordered_posts.size | minus: 4 %}
-    {% if last_start < 0 %}{% assign last_start = 0 %}{% endif %}
-    {% if start_index < 0 %}{% assign start_index = 0 %}{% endif %}
-    {% if start_index > last_start %}{% assign start_index = last_start %}{% endif %}
-    <section class="fr-article-series-rail" aria-label="{{ rail_series[article_lang] }}">
+    {% assign last_start = ordered_posts.size | minus: 4 | at_least: 0 %}
+    {% assign start_index = start_index | at_least: 0 | at_most: last_start %}
+    <section class="fr-article-series-rail" aria-label="{{ rail_series[context_lang] | escape }}">
       <div class="fr-article-series-rail__head">
-        <h2><a href="{{ rail_series.url | relative_url }}" data-fr-i18n-zh="{{ rail_series.zh | escape }}" data-fr-i18n-en="{{ rail_series.en | escape }}">{{ rail_series[article_lang] }}</a> <small>{{ ordered_posts.size }}</small></h2>
-        <a class="fr-article-series-rail__all" href="{{ rail_series.url | relative_url }}" data-fr-i18n-zh="{{ site.data.ui-text['zh-CN'].view_full_series | escape }} →" data-fr-i18n-en="{{ site.data.ui-text['en-US'].view_full_series | default: site.data.ui-text.en.view_full_series | escape }} →">{{ article_text.view_full_series }} →</a>
+        <h2><a href="{{ rail_series.url | relative_url }}" data-fr-i18n-zh="{{ rail_series.zh | escape }}" data-fr-i18n-en="{{ rail_series.en | escape }}">{{ rail_series[context_lang] }}</a> <small>{{ ordered_posts.size }}</small></h2>
+        <a class="fr-article-series-rail__all" href="{{ rail_series.url | relative_url }}" data-fr-i18n-zh="{{ site.data.ui-text['zh-CN'].view_full_series | escape }} →" data-fr-i18n-en="{{ site.data.ui-text['en-US'].view_full_series | escape }} →">{{ context_text.view_full_series }} →</a>
       </div>
       <ol start="{{ start_index | plus: 1 }}">
         {% for post in ordered_posts offset:start_index limit:4 %}
-          {% assign series_link_index = start_index | plus: forloop.index %}
           <li>
-            <span class="fr-article-series-rail__index" aria-hidden="true">{{ series_link_index | prepend: '0' | slice: -2, 2 }}</span>
+            <span class="fr-article-series-rail__index" aria-hidden="true">{{ post.series_order | prepend: '0' | slice: -2, 2 }}</span>
             <a href="{{ post.url | relative_url }}" title="{{ post.title | escape }}"{% if post.url == page.url %} aria-current="page"{% endif %}>{{ post.series_label | default: post.title | escape }}</a>
           </li>
         {% endfor %}
       </ol>
     </section>
+    <template id="fr-series-list">
+      <nav class="fr-series-list" lang="{{ context_locale }}" aria-label="{{ rail_series[context_lang] | escape }}">
+        <h2><a href="{{ rail_series.url | relative_url }}" data-fr-i18n-zh="{{ rail_series.zh | escape }}" data-fr-i18n-en="{{ rail_series.en | escape }}">{{ rail_series[context_lang] }}</a></h2>
+        <ol>
+          {% for post in ordered_posts %}
+            <li><a href="{{ post.url | relative_url }}"{% if post.url == page.url %} aria-current="page"{% endif %}><span aria-hidden="true">{{ post.series_order | prepend: '0' | slice: -2, 2 }}</span> {{ post.series_label | default: post.title | escape }}</a></li>
+          {% endfor %}
+        </ol>
+      </nav>
+    </template>
   {% endif %}
 {% endif %}

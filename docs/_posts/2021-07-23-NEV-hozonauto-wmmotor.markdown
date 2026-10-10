@@ -28,9 +28,6 @@ tags:
   - 首席运营官
   - 首席技术官
   - 董事长
-sidebar:
-  title: "经典系列"
-  nav: sidebar-series-manufacture
 share: true
 toc: true
 toc_sticky: true
@@ -38,6 +35,8 @@ last_modified_at: 2021-07-23T20:25:52-05:00
 redirect_from:
   - /docs/%E9%98%85%E7%9B%B8%E8%AF%86%E4%BA%BA/%E4%BC%81%E4%B8%9A%E5%89%96%E6%9E%90/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6/NEV-hozonauto-wmmotor/
 
+series: manufacture
+series_order: 5
 ---
 
 >目前新能源汽车领域一片火热，短短三年之内有三家公司在美上市，而未上市的数家公司估值也超过数十亿，到底这些企业都怎么样呢？下面我就给大家扒一扒这些公司的管理团队，分析一下到底哪些公司更有潜力。

@@ -34,9 +34,6 @@ toc_sticky: true
 series: lcer
 series_order: 2
 series_label: 美国：纽约与芝加哥
-sidebar:
-  title: "经典系列"
-  nav: sidebar-series-lifecycle-extraction
 locale: zh-CN
 translation_key: society-article-0002-2026
 last_modified_at: 2026-09-22T12:55:52-05:00

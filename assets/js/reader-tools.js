@@ -4,12 +4,18 @@
       tocOpen: "打开文章目录",
       tocClose: "关闭文章目录",
       tocLabel: "文章目录",
+      seriesOpen: "打开专题文章列表",
+      seriesClose: "关闭专题文章列表",
+      seriesLabel: "专题文章",
       backToTop: "返回顶部"
     },
     en: {
       tocOpen: "Open table of contents",
       tocClose: "Close table of contents",
       tocLabel: "Table of contents",
+      seriesOpen: "Open series articles",
+      seriesClose: "Close series articles",
+      seriesLabel: "Series articles",
       backToTop: "Back to top"
     }
   };
@@ -101,6 +107,7 @@
     if (!panel.classList.contains("is-open")) return;
     panel.classList.remove("is-open");
     panel.setAttribute("aria-hidden", "true");
+    if (panel._frTrigger) panel._frTrigger.setAttribute("aria-expanded", "false");
     document.body.classList.remove("fr-mobile-toc-open");
     setBackgroundInert(panel, false);
 
@@ -110,6 +117,11 @@
   }
 
   function openToc(panel, trigger) {
+    document.querySelectorAll(".fr-mobile-toc.is-open").forEach(function (other) {
+      if (other !== panel) closeToc(other, false);
+    });
+    panel._frTrigger = trigger;
+    if (trigger) trigger.setAttribute("aria-expanded", "true");
     panel._frPreviousFocus = trigger || document.activeElement;
     panel.classList.add("is-open");
     panel.setAttribute("aria-hidden", "false");
@@ -119,7 +131,7 @@
     window.requestAnimationFrame(function () {
       var closeButton = panel.querySelector("button[data-close-toc]");
       if (closeButton) closeButton.focus({ preventScroll: true });
-      var activeLink = panel.querySelector('.toc__menu a[aria-current="true"]');
+      var activeLink = panel.querySelector('a[aria-current]');
       if (activeLink) {
         var scroller = document.body.classList.contains("fr-article") ?
           panel.querySelector(".fr-mobile-toc__body") : panel.querySelector(".fr-mobile-toc__panel");
@@ -136,14 +148,16 @@
     });
 
     document.querySelectorAll(".fr-mobile-toc__panel").forEach(function (dialog) {
-      dialog.setAttribute("aria-label", text("tocLabel"));
+      dialog.setAttribute("aria-label", text(dialog.dataset.dialogLabel || "tocLabel"));
       dialog.setAttribute("lang", currentLanguage() === "en" ? "en" : "zh-CN");
     });
   }
 
-  function createTocPanel(sourceToc) {
+  function createTocPanel(sourceToc, kind) {
+    var series = kind === "series";
     var panel = document.createElement("div");
-    panel.className = "fr-mobile-toc";
+    panel.className = "fr-mobile-toc" + (series ? " fr-mobile-series" : "");
+    panel.id = series ? "fr-series-panel" : "fr-toc-panel";
     panel.setAttribute("aria-hidden", "true");
     panel.innerHTML = [
       "<div class=\"fr-mobile-toc__shade\" data-close-toc></div>",
@@ -152,10 +166,16 @@
       "<div class=\"fr-mobile-toc__body\"></div>",
       "</aside>"
     ].join("");
+    panel.querySelector(".fr-mobile-toc__panel").dataset.dialogLabel = series ? "seriesLabel" : "tocLabel";
+    panel.querySelector("button[data-close-toc]").dataset.labelKey = series ? "seriesClose" : "tocClose";
 
     var clone = sourceToc.cloneNode(true);
     panel.querySelector(".fr-mobile-toc__body").appendChild(clone);
     panel.addEventListener("click", function (event) {
+      if (series && event.target.closest("a[href]")) {
+        closeToc(panel);
+        return;
+      }
       var tocLink = event.target.closest('.toc__menu a[href^="#"]');
       if (tocLink) {
         var heading = null;
@@ -206,6 +226,9 @@
     var article = document.body.classList.contains("fr-article");
     var toc = article ? document.querySelector(".fr-article-toc__nav") : document.querySelector("nav.toc");
     var panel = toc && toc.querySelector('.toc__menu a[href^="#"]') ? createTocPanel(toc) : null;
+    var seriesTemplate = article && document.getElementById("fr-series-list");
+    var seriesSource = seriesTemplate && seriesTemplate.content.querySelector("nav");
+    var seriesPanel = seriesSource ? createTocPanel(seriesSource, "series") : null;
     if (article && panel) {
       var topToc = document.querySelector(".fr-article-toc-mobile");
       if (topToc) topToc.remove();
@@ -217,10 +240,19 @@
     var rail = document.createElement("div");
     rail.className = "fr-reader-tools";
 
+    function addPanelButton(target, className, label, symbol) {
+      var button = createButton("fr-reader-tools__btn " + className, label, symbol, function () {
+        openToc(target, this);
+      });
+      button.setAttribute("aria-controls", target.id);
+      button.setAttribute("aria-expanded", "false");
+      button.setAttribute("aria-haspopup", "dialog");
+      rail.appendChild(button);
+    }
+    if (seriesPanel) addPanelButton(seriesPanel, "fr-reader-tools__btn--series", "seriesOpen", "▤");
+
     if (panel) {
-      rail.appendChild(createButton("fr-reader-tools__btn fr-reader-tools__btn--toc", "tocOpen", "≡", function () {
-        openToc(panel, this);
-      }));
+      addPanelButton(panel, "fr-reader-tools__btn--toc", "tocOpen", "≡");
     }
 
     rail.appendChild(createButton("fr-reader-tools__btn fr-reader-tools__btn--top", "backToTop", "↑", function () {

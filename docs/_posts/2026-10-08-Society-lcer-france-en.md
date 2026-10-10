@@ -34,9 +34,6 @@ toc_sticky: true
 series: lcer
 series_order: 5
 series_label: "France: Paris and Lyon"
-sidebar:
-  title: "Classic Series"
-  nav: sidebar-series-lifecycle-extraction
 locale: en-US
 translation_key: society-article-0005-2026
 last_modified_at: 2026-10-08T10:55:52-05:00

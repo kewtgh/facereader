@@ -23,15 +23,14 @@ tags:
   - 腐败治理
   - 清朝统治
   - 治大国若烹小鲜
-sidebar:
-  title: "经典系列"
-  nav: sidebar-series-leadership
 toc: true
 toc_sticky: true
 last_modified_at: 2022-01-16T19:25:52-05:00
 redirect_from:
   - /docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E4%B8%8D%E9%9D%A0%E8%B0%B1%E9%A2%86%E5%AF%BC%E5%8A%9B/manage-leadership9/
 
+series: leadership
+series_order: 9
 ---
 
 

@@ -19,30 +19,9 @@ layout: archive
 </header>
 
 {% if current_series %}
-  {% assign series_posts = '' | split: ',' %}
-  {% if current_series.category %}
-    {% assign series_posts = site.categories[current_series.category] %}
-  {% elsif current_series.categories %}
-    {% for category_name in current_series.categories %}
-      {% assign category_posts = site.categories[category_name] %}
-      {% assign series_posts = series_posts | concat: category_posts %}
-    {% endfor %}
-  {% else %}
-    {% assign series_posts = site.posts | where: 'series', page.series_id | where: 'locale', 'zh-CN' | sort: 'series_order' %}
-  {% endif %}
-  {% if current_series.category or current_series.categories %}{% assign series_posts = series_posts | uniq | sort: 'date' %}{% endif %}
-  {% if current_series.slug_contains %}
-    {% assign filtered_posts = '' | split: ',' %}
-    {% for post in series_posts %}
-      {% if post.url contains current_series.slug_contains %}{% assign filtered_posts = filtered_posts | push: post %}{% endif %}
-    {% endfor %}
-    {% assign series_posts = filtered_posts %}
-  {% endif %}
-  {% assign english_posts = '' | split: ',' %}
+  {% assign series_posts = site.data.series_index[page.series_id].zh %}
+  {% assign english_posts = site.data.series_index[page.series_id].en %}
   {% assign bilingual_series = false %}
-  {% unless current_series.category or current_series.categories %}
-    {% assign english_posts = site.posts | where: 'series', page.series_id | where: 'locale', 'en-US' | sort: 'series_order' %}
-  {% endunless %}
   {% assign series_visible_count = 0 %}
   {% for post in series_posts %}
     {% if post.hidden != true %}{% assign series_visible_count = series_visible_count | plus: 1 %}{% endif %}
@@ -66,54 +45,16 @@ layout: archive
         <h2 data-fr-i18n-zh="{{ series_visible_count }} 篇文章" data-fr-i18n-en="{{ english_display_count }} essays">{{ series_visible_count }} 篇文章</h2>
       </div>
     </header>
-    <ul{% if bilingual_series %} data-fr-i18n-block="zh"{% elsif current_series.category == nil and current_series.categories == nil and english_visible_count > 0 %} lang="en"{% endif %}>
-      {% if current_series.navigation %}
-        {% assign series_number = 0 %}
-        {% assign navigation_groups = site.data.navigation[current_series.navigation] %}
-        {% for navigation_group in navigation_groups %}
-          {% for navigation_item in navigation_group.children %}
-            {% assign navigation_post = nil %}
-            {% for post in series_posts %}
-              {% assign post_href = post.url | relative_url %}
-              {% if post_href == navigation_item.url %}{% assign navigation_post = post %}{% break %}{% endif %}
-            {% endfor %}
-            {% if navigation_post and navigation_post.hidden != true %}
-              {% assign series_number = series_number | plus: 1 %}
-              {% include series-article-card.html post=navigation_post number=series_number %}
-            {% endif %}
-          {% endfor %}
-        {% endfor %}
-        {% for post in series_posts %}
-          {% assign post_href = post.url | relative_url %}
-          {% assign already_listed = false %}
-          {% for navigation_group in navigation_groups %}
-            {% for navigation_item in navigation_group.children %}
-              {% if post_href == navigation_item.url %}{% assign already_listed = true %}{% break %}{% endif %}
-            {% endfor %}
-            {% if already_listed %}{% break %}{% endif %}
-          {% endfor %}
-          {% unless already_listed or post.hidden == true %}
-            {% assign series_number = series_number | plus: 1 %}
-            {% include series-article-card.html post=post number=series_number %}
-          {% endunless %}
-        {% endfor %}
-      {% else %}
-        {% assign series_number = 0 %}
-        {% for post in series_posts %}
-          {% if post.hidden != true %}
-            {% assign series_number = series_number | plus: 1 %}
-            {% include series-article-card.html post=post number=series_number %}
-          {% endif %}
-        {% endfor %}
-      {% endif %}
+    <ul{% if bilingual_series %} data-fr-i18n-block="zh"{% elsif bilingual_series == false and english_visible_count > 0 %} lang="en"{% endif %}>
+      {% for post in series_posts %}
+        {% include series-article-card.html post=post number=post.series_order %}
+      {% endfor %}
     </ul>
     {% if bilingual_series %}
       <ul data-fr-i18n-block="en" hidden>
-        {% assign series_number = 0 %}
         {% for post in english_posts %}
           {% if post.hidden != true %}
-            {% assign series_number = series_number | plus: 1 %}
-            {% include series-article-card.html post=post number=series_number %}
+            {% include series-article-card.html post=post number=post.series_order %}
           {% endif %}
         {% endfor %}
       </ul>
@@ -124,25 +65,8 @@ layout: archive
     {% for pair in site.data.series %}
       {% assign series_id = pair[0] %}
       {% assign series = pair[1] %}
-      {% assign series_posts = '' | split: ',' %}
-      {% if series.category %}
-        {% assign series_posts = site.categories[series.category] %}
-      {% elsif series.categories %}
-        {% for category_name in series.categories %}
-          {% assign category_posts = site.categories[category_name] %}
-          {% assign series_posts = series_posts | concat: category_posts %}
-        {% endfor %}
-      {% else %}
-        {% assign series_posts = site.posts | where: 'series', series_id | where: 'locale', 'zh-CN' | sort: 'series_order' %}
-      {% endif %}
-      {% if series.category or series.categories %}{% assign series_posts = series_posts | uniq | sort: 'date' %}{% endif %}
-      {% if series.slug_contains %}
-        {% assign filtered_posts = '' | split: ',' %}
-        {% for post in series_posts %}
-          {% if post.url contains series.slug_contains %}{% assign filtered_posts = filtered_posts | push: post %}{% endif %}
-        {% endfor %}
-        {% assign series_posts = filtered_posts %}
-      {% endif %}
+      {% assign series_posts = site.data.series_index[series_id].zh %}
+      {% if series_posts.size == 0 %}{% assign series_posts = site.data.series_index[series_id].en %}{% endif %}
       {% assign featured_post = series_posts | first %}
       {% assign featured_image = featured_post.header.teaser | default: featured_post.header.overlay_image | default: site.teaser %}
       <article class="fr-series-overview__item">

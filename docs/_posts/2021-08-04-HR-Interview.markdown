@@ -6,9 +6,6 @@ header:
   overlay_image: /assets/img/page-header-image-tech7.jpg
   overlay_filter: linear-gradient(rgba(255, 215, 0, 0.5), rgba(0, 255, 255, 0.5))
   teaser: /assets/img/page-header-image-tech7-teaser.jpg
-sidebar:
-  title: "经典系列"
-  nav: sidebar-series
 categories:
   - 人格成长
   - 人力资源

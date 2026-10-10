@@ -753,7 +753,7 @@ article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
 .fr-reader-tools {
   position: fixed;
   right: 1rem;
-  bottom: 1rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
   z-index: 9998;
   display: grid;
   gap: 0.5rem;
@@ -958,6 +958,35 @@ article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
     display: none;
   }
 }
+
+.fr-article .fr-mobile-series .fr-mobile-toc__panel {
+  bottom: calc(10.15rem + env(safe-area-inset-bottom, 0px));
+  background: rgba($fr-panel-bg, 0.88);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+@media (min-width: 1360px) {
+  .fr-article .fr-mobile-series .fr-mobile-toc__panel {
+    bottom: calc(7.1rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+.fr-series-list ol { margin: 0; padding: 0; list-style: none; }
+.fr-series-list li + li { margin-top: 0.3rem; }
+.fr-series-list a {
+  display: block;
+  padding: 0.55rem 0.5rem;
+  border-radius: 0.35rem;
+  color: $text-color;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.fr-series-list li a span { margin-inline-end: 0.4rem; color: $fr-panel-muted; font-variant-numeric: tabular-nums; }
+.fr-series-list a[aria-current="page"] { color: $fr-action-color; background: rgba($fr-action-color, 0.08); font-weight: 700; }
+.fr-series-list a:focus-visible { outline: 2px solid $fr-action-color; outline-offset: -2px; }
 
 @media (min-width: 64em) and (max-width: 1359px) {
   .fr-article .fr-reader-tools__btn--toc {

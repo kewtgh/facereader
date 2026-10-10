@@ -32,9 +32,6 @@ series: lcer
 series_order: 1
 series_label: 中国：上海与南京
 most_popular: true
-sidebar:
-  title: "经典系列"
-  nav: sidebar-series-lifecycle-extraction
 locale: zh-CN
 translation_key: society-article-0001-2026
 last_modified_at: 2026-09-14T17:55:52-05:00

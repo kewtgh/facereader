@@ -35,9 +35,6 @@ toc_sticky: true
 series: lcer
 series_order: 4
 series_label: "United Kingdom: London and Manchester"
-sidebar:
-  title: "Classic Series"
-  nav: sidebar-series-lifecycle-extraction
 locale: en-US
 translation_key: society-article-0004-2026
 last_modified_at: 2026-10-02T07:55:52-05:00

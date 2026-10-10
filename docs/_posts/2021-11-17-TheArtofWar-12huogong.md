@@ -14,14 +14,13 @@ toc_sticky: true
 header:
   teaser: /assets/img/sunzi-teaser.jpg
   image: /assets/img/sunzi.jpg # Add image post (optional)
-sidebar:
-  title: "相关系列"
-  nav: sidebar-sunzi
 classes: wide
 last_modified_at: 2021-11-17T22:25:52-05:00
 redirect_from:
   - /docs/%E7%BB%8F%E5%85%B8%E8%A7%A3%E8%AF%BB/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95/TheArtofWar-12huogong/
 
+series: sunzi
+series_order: 13
 ---
 
 

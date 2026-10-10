@@ -18,15 +18,14 @@ tags:
   - 制度与体系
   - 物种竞争
   - 企业管理
-sidebar:
-  title: "经典系列"
-  nav: sidebar-series-wayofrunningbusiness
 toc: true
 toc_sticky: true
 last_modified_at: 2022-07-20T19:25:52-05:00
 redirect_from:
   - /docs/%E4%BA%BA%E6%A0%BC%E6%88%90%E9%95%BF/%E7%AE%A1%E7%90%86%E6%80%9D%E6%83%B3/management-wayofrunningbusiness03/
 
+series: business
+series_order: 3
 ---
 
 
