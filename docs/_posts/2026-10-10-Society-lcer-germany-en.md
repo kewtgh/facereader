@@ -34,7 +34,7 @@ toc_sticky: true
 series: lcer
 series_order: 6
 series_label: "Germany: Munich and Cologne"
-locale: en
+locale: en-US
 translation_key: society-article-0006-2026
 last_modified_at: 2026-10-10T08:55:52-05:00
 ---
