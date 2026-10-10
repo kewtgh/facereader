@@ -41,6 +41,16 @@ The bundle uses npm-locked jQuery 4.0 and Magnific Popup 1.2, rather than manual
 copied vendor scripts. Run `npm ci` before regenerating it. Third-party notices
 are at `/THIRD_PARTY_NOTICES/`.
 
+Search loads the Algolia 5.59.0 lite client, InstantSearch.js 4.119.0, and
+InstantSearch.css 8.24.0 from pinned CDN URLs. After updating those URLs, update
+the CDN allowlist in `assets/scripts/test-site-browser.mjs` and run the browser
+suite with `FR_TEST_SEARCH_CDN=1` to check mocked search results.
+
+Ruby dependencies resolve to the latest stable versions allowed by the Jekyll
+plugin dependency graph. Jekyll 4.4 requires JSON 2.x, Liquid 4.x, Rouge 4.x,
+and terminal-table 3.x; jemoji requires html-pipeline 2.x, and jekyll-gist
+requires Octokit 4.x. Newer incompatible major versions remain excluded.
+
 Maintain the FaceReader version only in `package.json`; run
 `npm install --package-lock-only` to synchronize npm's lockfile after changing it.
 At build time, `_plugins/site_version.rb` exposes that version as

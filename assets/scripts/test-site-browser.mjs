@@ -29,7 +29,7 @@ try {
   let allowSearchCdn = false;
   await context.route("**/*", (route) => {
     const url = new URL(route.request().url());
-    const searchDependency = url.origin === "https://cdn.jsdelivr.net" && /^\/npm\/(algoliasearch@4\.27\.0|instantsearch\.js@4\.119\.0|instantsearch\.css@8\.24\.0)\//.test(url.pathname);
+    const searchDependency = url.origin === "https://cdn.jsdelivr.net" && /^\/npm\/(algoliasearch@5\.59\.0|instantsearch\.js@4\.119\.0|instantsearch\.css@8\.24\.0)\//.test(url.pathname);
     return url.origin === base || (allowSearchCdn && searchDependency) ? route.continue() : route.abort();
   });
   const page = await context.newPage();
@@ -322,14 +322,16 @@ try {
     allowSearchCdn = true;
     let mockedSearchRequests = 0;
     await page.route(/https:\/\/[^/]+\.algolia(?:net|\.net)\//, async (route) => {
-      // Algolia v4 sends JSON with a form Content-Type to avoid CORS preflight.
+      // Algolia v5 sends search parameters directly on each request.
       const requests = JSON.parse(route.request().postData() || "{}").requests || [];
+      assert.ok(requests.length > 0, "Search should send at least one request");
+      assert.ok(requests.every((request) => request.indexName && request.query === "FaceReader"), "Search should preserve the index and query in the v5 request");
       mockedSearchRequests += 1;
       const results = requests.map((request) => ({
         hits: [{ objectID: "smoke", title: "FaceReader search smoke", url: "/posts/", teaser: "/assets/img/page-header-image-manufacture-teaser.jpg", description: "Local fixture, not a live index query." }],
-        index: request.indexName, params: request.params,
+        index: request.indexName, params: new URLSearchParams({ query: request.query }).toString(),
         nbHits: 1, page: 0, nbPages: 1, hitsPerPage: 20, processingTimeMS: 1,
-        query: typeof request.params === "string" ? new URLSearchParams(request.params).get("query") || "" : request.params?.query || "", exhaustiveNbHits: true
+        query: request.query, exhaustiveNbHits: true
       }));
       await route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({ results }) });
     });

@@ -89,8 +89,8 @@
     }
 
     // 加载依赖
-    if (!window.algoliasearch) {
-      await loadScript("https://cdn.jsdelivr.net/npm/algoliasearch@4.27.0/dist/algoliasearch-lite.umd.js");
+    if (!window["algoliasearch/lite"]) {
+      await loadScript("https://cdn.jsdelivr.net/npm/algoliasearch@5.59.0/dist/lite/builds/browser.umd.js");
     }
     if (!window.instantsearch) {
       await loadScript("https://cdn.jsdelivr.net/npm/instantsearch.js@4.119.0/dist/instantsearch.production.min.js");
@@ -100,7 +100,7 @@
     var apiKey = "{{ site.algolia.search_only_api_key }}";
     var indexName = "{{ site.algolia.index_name }}";
 
-    var rawSearchClient = algoliasearch(appId, apiKey);
+    var rawSearchClient = window["algoliasearch/lite"].liteClient(appId, apiKey);
     var searchResponseCache = new Map();
 
     function emptySearchResult(request) {
@@ -138,7 +138,11 @@
         var cacheKey = JSON.stringify(normalizedRequests);
         if (searchResponseCache.has(cacheKey)) return searchResponseCache.get(cacheKey);
 
-        var pending = rawSearchClient.search(normalizedRequests).catch(function (error) {
+        var pending = rawSearchClient.search({
+          requests: normalizedRequests.map(function (request) {
+            return Object.assign({}, request.params, { indexName: request.indexName });
+          })
+        }).catch(function (error) {
           searchResponseCache.delete(cacheKey);
           throw error;
         });
