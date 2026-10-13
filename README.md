@@ -120,6 +120,9 @@ Articles no longer use `sidebar` or hand-maintained navigation URL lists.
 On desktop and mobile, the floating series button opens a translucent panel
 with the complete list in the article's language, highlights the current
 article, and keeps the reading position.
+On mobile, articles with a series share one reading-navigation button with
+TOC and series tabs. It opens on the TOC every time; the other floating button
+returns to the top. Articles without a series keep their TOC button.
 
 Chinese and English entries use the same series ID and order but are shown in
 separate language lists. Articles without these fields keep working normally.

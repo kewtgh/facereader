@@ -7,6 +7,9 @@
       seriesOpen: "打开专题文章列表",
       seriesClose: "关闭专题文章列表",
       seriesLabel: "专题文章",
+      navigationOpen: "打开阅读导航",
+      navigationClose: "关闭阅读导航",
+      navigationLabel: "阅读导航",
       backToTop: "返回顶部"
     },
     en: {
@@ -16,6 +19,9 @@
       seriesOpen: "Open series articles",
       seriesClose: "Close series articles",
       seriesLabel: "Series articles",
+      navigationOpen: "Open reading navigation",
+      navigationClose: "Close reading navigation",
+      navigationLabel: "Reading navigation",
       backToTop: "Back to top"
     }
   };
@@ -81,7 +87,7 @@
     return Array.prototype.slice.call(panel.querySelectorAll(
       "a[href], button:not([disabled]), [tabindex]:not([tabindex='-1'])"
     )).filter(function (element) {
-      return !element.hidden && element.getAttribute("aria-hidden") !== "true";
+      return element.tabIndex >= 0 && element.getClientRects().length && !element.hidden && !element.closest('[hidden]') && element.getAttribute("aria-hidden") !== "true";
     });
   }
 
@@ -117,6 +123,7 @@
   }
 
   function openToc(panel, trigger) {
+    if (panel._frSelectTab) panel._frSelectTab("toc");
     document.querySelectorAll(".fr-mobile-toc.is-open").forEach(function (other) {
       if (other !== panel) closeToc(other, false);
     });
@@ -131,7 +138,7 @@
     window.requestAnimationFrame(function () {
       var closeButton = panel.querySelector("button[data-close-toc]");
       if (closeButton) closeButton.focus({ preventScroll: true });
-      var activeLink = panel.querySelector('a[aria-current]');
+      var activeLink = Array.prototype.find.call(panel.querySelectorAll('a[aria-current]'), function (link) { return !link.closest('[hidden]'); });
       if (activeLink) {
         var scroller = document.body.classList.contains("fr-article") ?
           panel.querySelector(".fr-mobile-toc__body") : panel.querySelector(".fr-mobile-toc__panel");
@@ -150,6 +157,12 @@
     document.querySelectorAll(".fr-mobile-toc__panel").forEach(function (dialog) {
       dialog.setAttribute("aria-label", text(dialog.dataset.dialogLabel || "tocLabel"));
       dialog.setAttribute("lang", currentLanguage() === "en" ? "en" : "zh-CN");
+    });
+    document.querySelectorAll('[data-tab-label]').forEach(function (tab) {
+      tab.textContent = text(tab.dataset.tabLabel);
+    });
+    document.querySelectorAll('.fr-navigation-tabs').forEach(function (tabs) {
+      tabs.setAttribute('aria-label', text('navigationLabel'));
     });
   }
 
@@ -172,7 +185,7 @@
     var clone = sourceToc.cloneNode(true);
     panel.querySelector(".fr-mobile-toc__body").appendChild(clone);
     panel.addEventListener("click", function (event) {
-      if (series && event.target.closest("a[href]")) {
+      if (event.target.closest(".fr-series-list a[href]")) {
         closeToc(panel);
         return;
       }
@@ -220,6 +233,61 @@
     return panel;
   }
 
+  function addNavigationTabs(panel, seriesSource) {
+    var body = panel.querySelector('.fr-mobile-toc__body');
+    var tocSection = document.createElement('section');
+    tocSection.id = 'fr-navigation-toc';
+    tocSection.appendChild(body.firstElementChild);
+    var seriesSection = document.createElement('section');
+    seriesSection.id = 'fr-navigation-series';
+    seriesSection.appendChild(seriesSource.cloneNode(true));
+    seriesSection.hidden = true;
+    var tabs = document.createElement('div');
+    tabs.className = 'fr-navigation-tabs';
+    tabs.setAttribute('role', 'tablist');
+    tabs.setAttribute('aria-label', text('navigationLabel'));
+    var buttons = [];
+    var sections = [tocSection, seriesSection];
+    ['toc', 'series'].forEach(function (name, index) {
+      var tab = document.createElement('button');
+      tab.type = 'button';
+      tab.id = 'fr-navigation-tab-' + name;
+      tab.dataset.tabLabel = name === 'toc' ? 'tocLabel' : 'seriesLabel';
+      tab.setAttribute('role', 'tab');
+      tab.setAttribute('aria-controls', sections[index].id);
+      sections[index].setAttribute('role', 'tabpanel');
+      sections[index].setAttribute('aria-labelledby', tab.id);
+      tab.addEventListener('click', function () { panel._frSelectTab(name); });
+      buttons.push(tab);
+      tabs.appendChild(tab);
+    });
+    panel._frSelectTab = function (name) {
+      buttons.forEach(function (tab, index) {
+        var selected = index === (name === 'series' ? 1 : 0);
+        tab.setAttribute('aria-selected', String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+        sections[index].hidden = !selected;
+      });
+      body.scrollTop = 0;
+      if (name === 'series') {
+        var current = seriesSection.querySelector('[aria-current="page"]');
+        if (current && panel.classList.contains('is-open')) current.scrollIntoView({ block: 'nearest' });
+      }
+    };
+    tabs.addEventListener('keydown', function (event) {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      var selected = buttons[0].getAttribute('aria-selected') === 'true' ? 0 : 1;
+      var next = event.key === 'Home' ? 0 : event.key === 'End' ? 1 : 1 - selected;
+      panel._frSelectTab(next ? 'series' : 'toc');
+      buttons[next].focus({ preventScroll: true });
+    });
+    body.append(tocSection, seriesSection);
+    body.before(tabs);
+    panel.classList.add('fr-combined-navigation');
+    panel._frSelectTab('toc');
+  }
+
   function createFloatingTools() {
     if (document.querySelector(".fr-reader-tools")) return;
 
@@ -229,6 +297,7 @@
     var seriesTemplate = article && document.getElementById("fr-series-list");
     var seriesSource = seriesTemplate && seriesTemplate.content.querySelector("nav");
     var seriesPanel = seriesSource ? createTocPanel(seriesSource, "series") : null;
+    if (panel && seriesSource) addNavigationTabs(panel, seriesSource);
     if (article && panel) {
       var topToc = document.querySelector(".fr-article-toc-mobile");
       if (topToc) topToc.remove();
@@ -239,6 +308,7 @@
     }
     var rail = document.createElement("div");
     rail.className = "fr-reader-tools";
+    if (panel && seriesSource) rail.classList.add('fr-reader-tools--combined');
 
     function addPanelButton(target, className, label, symbol) {
       var button = createButton("fr-reader-tools__btn " + className, label, symbol, function () {
@@ -260,6 +330,19 @@
       window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
     }));
     document.body.appendChild(rail);
+    function updateNavigationLayout() {
+      var mobile = window.matchMedia('(max-width: 63.99em)').matches;
+      if (!panel || !seriesSource) return;
+      closeToc(panel, false);
+      closeToc(seriesPanel, false);
+      panel._frSelectTab('toc');
+      panel.querySelector('.fr-mobile-toc__panel').dataset.dialogLabel = mobile ? 'navigationLabel' : 'tocLabel';
+      panel.querySelector('[data-close-toc].fr-mobile-toc__close').dataset.labelKey = mobile ? 'navigationClose' : 'tocClose';
+      rail.querySelector('.fr-reader-tools__btn--toc').dataset.labelKey = mobile ? 'navigationOpen' : 'tocOpen';
+      updateToolLanguage();
+    }
+    window.matchMedia('(max-width: 63.99em)').addEventListener('change', updateNavigationLayout);
+    updateNavigationLayout();
   }
 
   ready(function () {
