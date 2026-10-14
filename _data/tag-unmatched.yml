@@ -2,50 +2,50 @@
 # You can fix by adding to rules.force / match.exact / match.regex
 unmatched:
   - tag: "LCER"
-    count: 10
+    count: 12
   - tag: "财富分配"
-    count: 6
-  - tag: "代际财富"
-    count: 6
+    count: 7
   - tag: "居民财富"
+    count: 7
+  - tag: "生命周期综合汲取率"
+    count: 7
+  - tag: "养老金"
+    count: 7
+  - tag: "Household Wealth"
+    count: 7
+  - tag: "Wealth Distribution"
+    count: 7
+  - tag: "代际财富"
     count: 6
   - tag: "居民消费"
     count: 6
-  - tag: "生命周期综合汲取率"
-    count: 6
-  - tag: "养老金"
+  - tag: "税负"
     count: 6
   - tag: "医疗保险"
     count: 6
-  - tag: "Household Consumption"
+  - tag: "制度成本"
     count: 6
-  - tag: "Household Wealth"
+  - tag: "Household Consumption"
     count: 6
   - tag: "Intergenerational Wealth"
     count: 6
-  - tag: "Wealth Distribution"
+  - tag: "Pensions"
+    count: 6
+  - tag: "Tax Burden"
     count: 6
   - tag: "房产税"
-    count: 5
-  - tag: "税负"
-    count: 5
-  - tag: "制度成本"
     count: 5
   - tag: "Education Costs"
     count: 5
   - tag: "Household Balance Sheet"
     count: 5
-  - tag: "Pensions"
+  - tag: "Institutional Costs"
     count: 5
   - tag: "Property Tax"
-    count: 5
-  - tag: "Tax Burden"
     count: 5
   - tag: "Cost of Living"
     count: 4
   - tag: "Health Insurance"
-    count: 4
-  - tag: "Institutional Costs"
     count: 4
   - tag: "奥古斯都"
     count: 2
@@ -97,6 +97,8 @@ unmatched:
     count: 1
   - tag: "法律"
     count: 1
+  - tag: "芬兰"
+    count: 1
   - tag: "风格"
     count: 1
   - tag: "风险"
@@ -107,6 +109,8 @@ unmatched:
     count: 1
   - tag: "工业革命"
     count: 1
+  - tag: "公共医疗"
+    count: 1
   - tag: "共识"
     count: 1
   - tag: "管理"
@@ -114,6 +118,8 @@ unmatched:
   - tag: "规章"
     count: 1
   - tag: "国企垄断"
+    count: 1
+  - tag: "赫尔辛基"
     count: 1
   - tag: "火药桶"
     count: 1
@@ -191,6 +197,8 @@ unmatched:
     count: 1
   - tag: "锁链"
     count: 1
+  - tag: "坦佩雷"
+    count: 1
   - tag: "团队"
     count: 1
   - tag: "推翻暴政"
@@ -247,6 +255,8 @@ unmatched:
     count: 1
   - tag: "中美比较"
     count: 1
+  - tag: "住房金融"
+    count: 1
   - tag: "自由"
     count: 1
   - tag: "罪恶史"
@@ -273,9 +283,13 @@ unmatched:
     count: 1
   - tag: "Education Cost"
     count: 1
+  - tag: "Education Spending"
+    count: 1
   - tag: "England"
     count: 1
   - tag: "face"
+    count: 1
+  - tag: "Finland"
     count: 1
   - tag: "France"
     count: 1
@@ -284,6 +298,8 @@ unmatched:
   - tag: "Germany"
     count: 1
   - tag: "Globalization"
+    count: 1
+  - tag: "Helsinki"
     count: 1
   - tag: "History of Guilt"
     count: 1
@@ -303,6 +319,8 @@ unmatched:
     count: 1
   - tag: "Manchester"
     count: 1
+  - tag: "Mortgage Financing"
+    count: 1
   - tag: "Nash equilibrium"
     count: 1
   - tag: "New York"
@@ -320,6 +338,8 @@ unmatched:
   - tag: "silent majority"
     count: 1
   - tag: "SOE Monopoly"
+    count: 1
+  - tag: "Tampere"
     count: 1
   - tag: "Toronto"
     count: 1
