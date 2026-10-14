@@ -842,7 +842,7 @@ We now have data for four countries:
 
 In the next article, we will move from the UK to continental Europe and look at the LCER of a typical continental European country.
 
----
+## Notes
 
 [^pv]: **PV (Present Value)**: Future income, contributions, benefits, or costs are converted into today's value using a discount rate. This article uses a 2% real discount rate throughout, so that £1 received or paid decades from now can be compared on the same basis with £1 today.
 

@@ -1041,10 +1041,9 @@ It may be:
 
 **the right to enter a successful city.**
 
----
+## Notes
 
 [^1]: **LCER (Lifecycle Comprehensive Extraction Rate)** is defined in this series as the present value of identifiable net institutional costs borne by a household over its lifetime divided by the present value of the household’s lifetime labor value. It is neither a conventional tax rate nor a cost-of-living index. It is designed to place taxation, mandatory social-insurance costs, housing institutions, financing costs, and other measurable institutional burdens on a common lifecycle basis.
-
 [^2]: **Present Value (PV)** converts a future payment or benefit into its value today using a discount rate. This allows taxes paid during working life, housing costs, and pension benefits received decades later to be compared on the same basis. This model uses a 2% real discount rate.
 
 [^3]: **Real discount rate** means the discount rate after inflation. The model also assumes 0% long-run real wage growth, so the calculations compare lifecycle values in real purchasing-power terms rather than nominal amounts inflated by future price increases.

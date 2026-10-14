@@ -1073,7 +1073,7 @@ It is what remains on the household balance sheet after all of those channels ha
 
 **how much of the labor value created over a lifetime actually stays with the household.**
 
----
+## Notes
 
 [^lcer]: **LCER (Lifecycle Comprehensive Extraction Rate)** is the metric used in this series to estimate the share of a household’s lifetime labor value absorbed by identifiable institutional costs. It is calculated as the present value of net institutional costs divided by the present value of lifetime labor value. Unlike a conventional tax rate, LCER can include costs transmitted through taxation, social insurance, housing institutions, financing, and other measurable channels, while deducting attributable benefits returned to the household.
 

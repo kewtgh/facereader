@@ -693,7 +693,7 @@ Whether welfare benefits can offset those costs cannot be answered by attaching 
 
 We have to account for the money paid in and the benefits that come back, item by item.
 
----
+## Notes
 
 [^lcer]: **LCER (Lifecycle Comprehensive Extraction Rate)** is the measure used in this series: the present value of identifiable net institutional costs over a household's lifetime, divided by the present value of its lifetime labor value. It covers taxes and mandatory social insurance, as well as housing institutions, financing, and other institutional costs that meet the model's criteria. Pension and healthcare benefits attributable to the household are deducted. LCER is not a conventional tax rate, nor does it measure the quality of public services on its own.
 

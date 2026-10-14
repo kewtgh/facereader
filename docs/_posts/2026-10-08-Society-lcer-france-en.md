@@ -745,7 +745,7 @@ LCER does not explain the protests themselves, but it does make one question har
 
 **After the money is collected, where does it actually go?**
 
----
+## Notes
 
 [^lcer]: **LCER (Lifecycle Comprehensive Extraction Rate)** is the measure used in this series to estimate how much of a household's labor value is transferred away through identifiable institutional costs over the full lifecycle. It is calculated as: **present value of net institutional costs ÷ present value of household lifetime labor value**. Unlike a conventional tax rate, LCER can include not only taxes and social insurance, but also housing institutions, financing and other quantifiable channels, while pension, healthcare and other benefits attributable to the household must be deducted.
 
