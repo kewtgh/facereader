@@ -275,7 +275,7 @@ if posts_file.file?
     primary_count = series_document.css('.fr-series-detail > ul:not([data-fr-i18n-block="en"]) > li').length
     english_count = series_document.css('.fr-series-detail > ul[data-fr-i18n-block="en"] > li').length
     english_count = primary_count if english_count.zero?
-    count = row.at_css("span")
+    count = row.at_css(".fr-archive-rail__count")
     unless count&.text == primary_count.to_s && count["data-fr-i18n-zh"] == primary_count.to_s && count["data-fr-i18n-en"] == english_count.to_s
       add_error(errors, posts_file, "sidebar count differs from series article list: #{href}")
     end

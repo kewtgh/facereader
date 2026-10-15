@@ -73,6 +73,21 @@ try {
   // Image cards and tag discovery stay readable on desktop and mobile.
   for (const width of [1440, 390]) {
     await page.setViewportSize({ width, height: 900 });
+    const checkTeaserCenter = async () => {
+      const cards = await page.locator('.fr-posts-card--image:visible').evaluateAll((cards) => cards.slice(0, 6).map((card) => {
+        const image = card.querySelector('.fr-posts-card__image').getBoundingClientRect();
+        const body = card.querySelector('.fr-posts-card__body');
+        let top, bottom;
+        if (getComputedStyle(body).display === 'contents') {
+          top = card.querySelector('.fr-posts-card__meta').getBoundingClientRect().top;
+          bottom = card.querySelector('h3').getBoundingClientRect().bottom;
+        } else {
+          const bounds = body.getBoundingClientRect(); top = bounds.top; bottom = bounds.bottom;
+        }
+        return Math.abs((image.top + image.bottom) / 2 - (top + bottom) / 2);
+      }));
+      cards.forEach((difference) => assert.ok(difference < 2, `Teaser center offset: ${difference}px`));
+    };
     await goto('/posts/');
     const image = page.locator('.fr-posts-card__image img').first();
     await image.waitFor();
@@ -80,9 +95,14 @@ try {
     assert.ok(await image.getAttribute('width'));
     const geometry = await image.evaluate((element) => ({ image: element.getBoundingClientRect().toJSON(), title: element.closest('article').querySelector('h3').getBoundingClientRect().toJSON() }));
     assert.ok(geometry.image.right <= geometry.title.left + 1, 'Teaser should appear to the left of the title');
+    await checkTeaserCenter();
+    const seriesRows = await page.locator('.fr-archive-rail > section:first-child li').evaluateAll((rows) => rows.map((row) => ({ count: row.querySelector('.fr-archive-rail__count').textContent, label: row.querySelector('.fr-archive-rail__label').textContent, wholeLink: !!row.querySelector('a .fr-archive-rail__count') })));
+    assert.ok(seriesRows.length > 1);
+    seriesRows.forEach((row) => { assert.ok(Number(row.count) > 0, row.label); assert.ok(row.wholeLink); });
     await noOverflow();
     await page.screenshot({ path: path.join(output, `posts-teasers-${width}.png`), animations: 'disabled' });
     await goto('/tags/');
+    await checkTeaserCenter();
     assert.equal(await page.locator('#page-title').count(), 1);
     assert.equal(await page.locator('#tag-posts .tag-post-item:not([hidden])').count(), 12);
     const directory = page.locator('#tag-directory');

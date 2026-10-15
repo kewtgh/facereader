@@ -3,7 +3,7 @@
 {% assign archive_text = site.data.ui-text[archive_locale] | default: site.data.ui-text[site.locale] %}
 <aside class="fr-archive-rail" tabindex="0">
   <section>
-    <h2 data-fr-i18n-zh="专题 SERIES" data-fr-i18n-en="SERIES">专题 SERIES</h2>
+    <h2 data-fr-i18n-zh="专题系列" data-fr-i18n-en="Series">专题系列</h2>
     <ul>
       {% for pair in site.data.series %}
         {% assign series_id = pair[0] %}
@@ -14,16 +14,16 @@
         {% if en_count == 0 %}{% assign en_count = zh_count %}{% endif %}
         {% assign series_count = zh_count %}
         {% if archive_lang == 'en' %}{% assign series_count = en_count %}{% endif %}
-        <li><a href="{{ series.url | relative_url }}" data-fr-i18n-zh="{{ series.zh | escape }}" data-fr-i18n-en="{{ series.en | escape }}">{{ series[archive_lang] }}</a> <span data-fr-i18n-zh="{{ zh_count }}" data-fr-i18n-en="{{ en_count }}">{{ series_count }}</span></li>
+        <li><a href="{{ series.url | relative_url }}"><span class="fr-archive-rail__label" data-fr-i18n-zh="{{ series.zh | escape }}" data-fr-i18n-en="{{ series.en | escape }}">{{ series[archive_lang] }}</span><span class="fr-archive-rail__count" data-fr-i18n-zh="{{ zh_count }}" data-fr-i18n-en="{{ en_count }}">{{ series_count }}</span></a></li>
       {% endfor %}
     </ul>
-    <p class="fr-archive-rail__note" data-fr-i18n-zh="系列不是分类，而是一条可以连续读下去的写作路径。" data-fr-i18n-en="A series is a reading path, not a category.">系列不是分类，而是一条可以连续读下去的写作路径。</p>
+    <p class="fr-archive-rail__note" data-fr-i18n-zh="按写作顺序，连续阅读一个专题。" data-fr-i18n-en="Follow a series in reading order.">按写作顺序，连续阅读一个专题。</p>
   </section>
   <section>
-    <h2 data-fr-i18n-zh="主题 TOPICS" data-fr-i18n-en="TOPICS">主题 TOPICS</h2>
+    <h2 data-fr-i18n-zh="按主题探索" data-fr-i18n-en="Explore topics">按主题探索</h2>
     <ul>
       {% for editorial_pillar in site.data.editorial_pillars %}
-        <li><a href="{{ '/categories/' | relative_url }}#{{ editorial_pillar.id }}" data-fr-i18n-zh="{{ editorial_pillar.zh }}" data-fr-i18n-en="{{ editorial_pillar.en }}">{{ editorial_pillar[archive_lang] }}</a><span aria-hidden="true">→</span></li>
+        <li><a href="{{ '/categories/' | relative_url }}#{{ editorial_pillar.id }}"><span class="fr-archive-rail__label" data-fr-i18n-zh="{{ editorial_pillar.zh }}" data-fr-i18n-en="{{ editorial_pillar.en }}">{{ editorial_pillar[archive_lang] }}</span><span class="fr-archive-rail__count" aria-hidden="true">→</span></a></li>
       {% endfor %}
     </ul>
   </section>
