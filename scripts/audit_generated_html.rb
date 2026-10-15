@@ -257,6 +257,33 @@ else
   add_error(errors, lcer_file, "LCER series page was not generated")
 end
 
+posts_file = SITE_ROOT.join("posts", "index.html")
+if posts_file.file?
+  posts_document = Nokogiri::HTML(posts_file.read(encoding: "UTF-8"))
+  series_rows = posts_document.css('.fr-archive-rail > section:first-child > ul > li')
+  add_error(errors, posts_file, "sidebar series list is missing") if series_rows.empty?
+  series_rows.each do |row|
+    href = row.at_css("a")&.[]("href")
+    next unless href
+
+    series_file = SITE_ROOT.join(URI::DEFAULT_PARSER.unescape(URI.parse(href).path).delete_prefix("/"), "index.html")
+    unless series_file.file?
+      add_error(errors, posts_file, "sidebar series page is missing: #{href}")
+      next
+    end
+    series_document = Nokogiri::HTML(series_file.read(encoding: "UTF-8"))
+    primary_count = series_document.css('.fr-series-detail > ul:not([data-fr-i18n-block="en"]) > li').length
+    english_count = series_document.css('.fr-series-detail > ul[data-fr-i18n-block="en"] > li').length
+    english_count = primary_count if english_count.zero?
+    count = row.at_css("span")
+    unless count&.text == primary_count.to_s && count["data-fr-i18n-zh"] == primary_count.to_s && count["data-fr-i18n-en"] == english_count.to_s
+      add_error(errors, posts_file, "sidebar count differs from series article list: #{href}")
+    end
+  end
+else
+  add_error(errors, posts_file, "posts page was not generated")
+end
+
 if errors.any?
   warn "Generated HTML audit failed with #{errors.length} error(s):"
   errors.first(MAX_REPORTED_ERRORS).each { |error| warn "- #{error}" }

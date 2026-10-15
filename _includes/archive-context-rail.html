@@ -8,27 +8,13 @@
       {% for pair in site.data.series %}
         {% assign series_id = pair[0] %}
         {% assign series = pair[1] %}
-        {% assign rail_posts = '' | split: ',' %}
-        {% if series.category %}
-          {% assign rail_posts = site.categories[series.category] %}
-        {% elsif series.categories %}
-          {% for category_name in series.categories %}
-            {% assign category_posts = site.categories[category_name] %}
-            {% assign rail_posts = rail_posts | concat: category_posts %}
-          {% endfor %}
-        {% else %}
-          {% assign rail_posts = site.posts | where: "series", series_id | where: "locale", "zh-CN" %}
-        {% endif %}
-        {% assign rail_posts = rail_posts | uniq %}
-        {% if series.slug_contains %}
-          {% assign filtered_posts = '' | split: ',' %}
-          {% for post in rail_posts %}
-            {% if post.url contains series.slug_contains %}{% assign filtered_posts = filtered_posts | push: post %}{% endif %}
-          {% endfor %}
-          {% assign rail_posts = filtered_posts %}
-        {% endif %}
-        {% assign series_count = rail_posts.size %}
-        <li><a href="{{ series.url | relative_url }}" data-fr-i18n-zh="{{ series.zh | escape }}" data-fr-i18n-en="{{ series.en | escape }}">{{ series[archive_lang] }}</a> <span>{{ series_count }}</span></li>
+        {% assign zh_count = site.data.series_index[series_id].zh.size %}
+        {% assign en_count = site.data.series_index[series_id].en.size %}
+        {% if zh_count == 0 %}{% assign zh_count = en_count %}{% endif %}
+        {% if en_count == 0 %}{% assign en_count = zh_count %}{% endif %}
+        {% assign series_count = zh_count %}
+        {% if archive_lang == 'en' %}{% assign series_count = en_count %}{% endif %}
+        <li><a href="{{ series.url | relative_url }}" data-fr-i18n-zh="{{ series.zh | escape }}" data-fr-i18n-en="{{ series.en | escape }}">{{ series[archive_lang] }}</a> <span data-fr-i18n-zh="{{ zh_count }}" data-fr-i18n-en="{{ en_count }}">{{ series_count }}</span></li>
       {% endfor %}
     </ul>
     <p class="fr-archive-rail__note" data-fr-i18n-zh="系列不是分类，而是一条可以连续读下去的写作路径。" data-fr-i18n-en="A series is a reading path, not a category.">系列不是分类，而是一条可以连续读下去的写作路径。</p>
