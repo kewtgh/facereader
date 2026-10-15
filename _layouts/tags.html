@@ -2,94 +2,65 @@
 layout: archive
 sitemap: false
 ---
-{%- assign locale = page.locale | default: layout.locale | default: site.locale %}
-
-{{ content }}
-
-<div class="tag-directory-search">
-  <label for="tag-directory-query" data-fr-i18n-key="tag_search_label">{{ site.data.ui-text[locale].tag_search_label | default: '搜索标签' }}</label>
-  <input
-    id="tag-directory-query"
-    type="search"
-    autocomplete="off"
-    placeholder="{{ site.data.ui-text[locale].tag_search_placeholder | default: '输入标签名称或说明' }}"
-    data-fr-i18n-placeholder-key="tag_search_placeholder"
-    aria-describedby="tag-directory-status"
-  >
-  <p id="tag-directory-status" role="status" aria-live="polite" aria-atomic="true"></p>
-</div>
-
-<div class="tag-groups">
-
-  {% for group in site.data.tag-groups %}
-    {% assign g = group[1] %}
-
-    <section class="tag-group">
-      <h2 class="tag-group-title">
-        <button
-          class="tag-group-toggle"
-          type="button"
-          aria-expanded="true"
-          aria-controls="tag-group-{{ forloop.index }}"
-        >
-          {% assign lang = locale | slice: 0, 2 %}
-          <span data-fr-i18n-zh="{{ g.title_zh | escape_once }}" data-fr-i18n-en="{{ g.title_en | escape_once }}">
-            {% if lang == "zh" %}
-              {{ g.title_zh }}
-            {% else %}
-              {{ g.title_en }}
-            {% endif %}
-          </span>
-          <span class="tag-group-count">{{ g.tags | size }} <span data-fr-i18n-key="tag_group_count_label">{{ site.data.ui-text[locale].tag_group_count_label | default: 'tags' }}</span></span>
-        </button>
-      </h2>
-
-      <div id="tag-group-{{ forloop.index }}" class="tag-group-list" aria-hidden="false">
-        {% for tag in g.tags %}
-          {% if site.tags[tag] %}
-            {% assign tag_description = site.data.tag_descriptions[tag] | default: "" | strip %}
-            <button type="button"
-                    class="tag-item tag-filter-btn"
-                    data-tag="{{ tag }}"
-                    data-count="{{ site.tags[tag].size }}"
-                    data-description="{{ tag_description | strip_html | strip_newlines | escape }}"
-                    {% unless tag_description == empty %}title="{{ tag_description | strip_html | strip_newlines | escape }}"{% endunless %}
-                    aria-pressed="false">
-              {{ tag }}
-              <span class="tag-count">({{ site.tags[tag].size }})</span>
-            </button>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </section>
-
-  {% endfor %}
-
-</div>
-
-<hr>
-
-<!-- 当前筛选状态 -->
-<div class="tag-filter-status" id="current-tag-anchor" role="status" aria-live="polite" aria-atomic="true">
-  <strong><span data-fr-i18n-key="tag_current">{{ site.data.ui-text[locale].tag_current }}</span>:</strong>
-  <span id="current-tag" data-fr-tag-all-label>{{ site.data.ui-text[locale].tag_all | default: 'All' }}</span>
-  <span id="current-tag-count" class="tag-filter-count" data-fr-tag-count="{{ site.posts | size }}">{{ site.posts | size }} {{ site.data.ui-text[locale].tag_posts_count_label | default: 'posts' }}</span>
-
-  <button type="button" id="tag-filter-reset" class="btn btn--small btn--light-outline tag-clear-btn">
-    <span data-fr-i18n-key="tag_clear">{{ site.data.ui-text[locale].tag_clear }}</span>
-  </button>
-</div>
-<p class="tag-filter-description" id="current-tag-description" data-fr-i18n-key="tag_filter_empty_desc">选择标签后，会显示该标签说明和对应文章列表。</p>
-
-<!-- 文章列表（使用主题原生样式） -->
-<div class="entries-list" id="tag-posts">
-  {% for post in site.posts %}
-    <div class="tag-post-item"
-         data-tags="{{ post.tags | join: ',' }}">
-      {% include archive-single.html locale=locale %}
+{% assign locale = page.locale | default: site.locale %}
+{% assign visible_posts = site.posts | where_exp: 'post', 'post.hidden != true' %}
+<header class="fr-editorial-head">
+  <span class="fr-editorial-head__kicker">Tags / 阅读线索</span>
+  <h1 id="page-title" class="page__title" data-fr-i18n-zh="按标签浏览" data-fr-i18n-en="Browse by Tags">按标签浏览</h1>
+  <p class="fr-editorial-head__lead" data-fr-i18n-zh="从一个关键词出发，找到值得继续读的文章。" data-fr-i18n-en="Start with a keyword. Find your next essay.">从一个关键词出发，找到值得继续读的文章。</p>
+  <nav class="fr-editorial-head__nav" aria-label="Archive navigation">
+    <a href="{{ '/posts/' | relative_url }}" data-fr-i18n-zh="全部文章" data-fr-i18n-en="All essays">全部文章</a>
+    <a href="{{ '/categories/' | relative_url }}" data-fr-i18n-zh="阅读地图" data-fr-i18n-en="Reading map">阅读地图</a>
+    <a href="{{ '/tags/' | relative_url }}" aria-current="page" data-fr-i18n-zh="标签" data-fr-i18n-en="Tags">标签</a>
+  </nav>
+</header>
+<div class="fr-tags-layout">
+  <details class="fr-tags-directory" id="tag-directory" open>
+    <summary data-fr-i18n-zh="查找与筛选标签" data-fr-i18n-en="Find and filter tags">查找与筛选标签</summary>
+    <div class="tag-directory-search">
+      <label for="tag-directory-query" data-fr-i18n-key="tag_search_label">搜索标签</label>
+      <input id="tag-directory-query" type="search" autocomplete="off" placeholder="输入标签或关键词" data-fr-i18n-placeholder-key="tag_search_placeholder" aria-describedby="tag-directory-status">
+      <p id="tag-directory-status" role="status" aria-live="polite" aria-atomic="true"></p>
     </div>
-  {% endfor %}
+    <div class="tag-groups">
+      {% assign grouped_tags = '' | split: ',' %}
+      {% for group in site.data.tag-groups %}
+        {% assign definition = group[1] %}
+        {% assign grouped_tags = grouped_tags | concat: definition.tags %}
+        <details class="tag-group"{% if forloop.first %} open{% endif %}>
+          <summary><span data-fr-i18n-zh="{{ definition.title_zh | escape }}" data-fr-i18n-en="{{ definition.title_en | escape }}">{{ definition.title_zh }}</span><small class="tag-group-count"></small></summary>
+          <div class="tag-group-list">
+            {% for tag in definition.tags %}{% include tag-chip.html tag=tag %}{% endfor %}
+          </div>
+        </details>
+      {% endfor %}
+      <details class="tag-group">
+        <summary><span data-fr-i18n-zh="其他线索" data-fr-i18n-en="More keywords">其他线索</span><small class="tag-group-count"></small></summary>
+        <div class="tag-group-list">
+          {% assign sorted_tags = site.tags | sort %}
+          {% for tag_pair in sorted_tags %}
+            {% assign other_tag = tag_pair[0] %}
+            {% unless grouped_tags contains other_tag %}{% include tag-chip.html tag=other_tag %}{% endunless %}
+          {% endfor %}
+        </div>
+      </details>
+    </div>
+    <p id="tag-directory-empty" hidden data-fr-i18n-zh="没有匹配的标签，试试其他关键词。" data-fr-i18n-en="No matching tags. Try another keyword.">没有匹配的标签，试试其他关键词。</p>
+  </details>
+  <section class="fr-tags-results" aria-labelledby="current-tag">
+    <header id="current-tag-anchor" class="fr-tags-results__head">
+      <div><span class="fr-editorial-head__kicker" data-fr-i18n-zh="按时间阅读" data-fr-i18n-en="Latest first">按时间阅读</span><h2 id="current-tag" tabindex="-1">全部文章</h2></div>
+      <button type="button" id="tag-filter-reset" hidden data-fr-i18n-zh="清除筛选" data-fr-i18n-en="Clear filter">清除筛选</button>
+      <p id="current-tag-count" role="status" aria-live="polite" aria-atomic="true">{{ visible_posts.size }} 篇文章</p>
+      <p class="tag-filter-description" id="current-tag-description" hidden></p>
+    </header>
+    <div id="tag-posts">
+      {% for post in visible_posts %}
+        <div class="tag-post-item" data-tags="{{ post.tags | jsonify | escape }}">{% include reading-card.html post=post %}</div>
+      {% endfor %}
+    </div>
+    <p id="tag-posts-empty" class="tag-posts-empty" hidden data-fr-i18n-zh="这个标签暂时没有可显示的文章。请选择其他标签。" data-fr-i18n-en="No essays for this tag. Choose another keyword.">这个标签暂时没有可显示的文章。请选择其他标签。</p>
+    <div class="fr-tags-more"><p id="tag-posts-progress"></p><button type="button" id="tag-posts-more" hidden data-fr-i18n-zh="再看 12 篇" data-fr-i18n-en="Show 12 more">再看 12 篇</button></div>
+  </section>
 </div>
-<p id="tag-posts-empty" class="tag-posts-empty" hidden data-fr-i18n-key="tag_filter_no_posts">{{ site.data.ui-text[locale].tag_filter_no_posts | default: '没有找到该标签对应的文章。' }}</p>
-
-<script src="{{ '/assets/js/tag-filter.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/tag-filter.js' | relative_url }}?v={{ site.data.theme.version }}"></script>

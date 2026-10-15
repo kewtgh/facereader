@@ -38,19 +38,7 @@ title: 全部文章
           {% if post_pillar %}{% break %}{% endif %}
         {% endfor %}
       {% endif %}
-      <article class="fr-posts-card">
-        <div class="fr-posts-card__meta">
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d' }}</time>
-          {% if post.read_time %}
-            {% assign post_words = post.content | strip_html | strip_newlines | split: '' | size %}
-            {% assign post_minutes = post_words | divided_by: 450 | at_least: 1 %}
-            <span aria-hidden="true">·</span><span>{{ post_minutes }} {{ site.data.ui-text[post.locale].minute_read | default: '分钟阅读' }}</span>
-          {% endif %}
-          {% if post_pillar %}<span aria-hidden="true">·</span><a href="{{ '/categories/' | relative_url }}#{{ post_pillar.id }}">{{ post_pillar[archive_lang] }}</a>{% endif %}
-        </div>
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title | markdownify | strip_html | normalize_whitespace | escape }}</a></h3>
-        {% if post.excerpt %}<p>{{ post.excerpt | markdownify | strip_html | normalize_whitespace | truncate: 180 }}</p>{% endif %}
-      </article>
+      {% include reading-card.html post=post pillar=post_pillar %}
     {% endfor %}
     {% include paginator.html locale=locale %}
   </div>

@@ -5,9 +5,9 @@ title_i18n:
   en: "Browse by Tags"
 permalink: /tags/
 layout: tags
-author_profile: true
+author_profile: false
 classes:
-  - fr-wide-sidebar
+  - fr-tags
 robots: noindex
 sitemap: false
 search: false

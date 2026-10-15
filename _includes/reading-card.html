@@ -1,0 +1,22 @@
+{% assign card_post = include.post %}
+{% assign card_image = card_post.header.teaser | default: card_post.header.overlay_image | default: site.teaser %}
+<article class="fr-posts-card{% if card_image %} fr-posts-card--image{% endif %}"{% if card_post.locale %} lang="{{ card_post.locale }}"{% endif %}>
+  {% if card_image %}
+    <a class="fr-posts-card__image" href="{{ card_post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+      <img src="{{ card_image | relative_url }}" alt="" loading="lazy" decoding="async">
+    </a>
+  {% endif %}
+  <div class="fr-posts-card__body">
+    <div class="fr-posts-card__meta">
+      <time datetime="{{ card_post.date | date_to_xmlschema }}">{{ card_post.date | date: '%Y-%m-%d' }}</time>
+      {% if card_post.read_time %}
+        {% assign card_words = card_post.content | strip_html | strip_newlines | split: '' | size %}
+        {% assign card_minutes = card_words | divided_by: 450 | at_least: 1 %}
+        <span aria-hidden="true">·</span><span>{{ card_minutes }} {{ site.data.ui-text[card_post.locale].minute_read | default: '分钟阅读' }}</span>
+      {% endif %}
+      {% if include.pillar %}<span aria-hidden="true">·</span><a href="{{ '/categories/' | relative_url }}#{{ include.pillar.id }}">{{ include.pillar[archive_lang] }}</a>{% endif %}
+    </div>
+    <h3><a href="{{ card_post.url | relative_url }}">{{ card_post.title | markdownify | strip_html | normalize_whitespace | escape }}</a></h3>
+    {% if card_post.excerpt %}<p>{{ card_post.excerpt | markdownify | strip_html | normalize_whitespace | truncate: 180 | escape }}</p>{% endif %}
+  </div>
+</article>

@@ -1,0 +1,47 @@
+@use "support" as *;
+@use "fr-tokens" as *;
+
+.fr-tags-layout { display: grid; grid-template-columns: 290px minmax(0, 1fr); gap: 2.5rem; align-items: start; margin-top: 2rem; }
+.fr-tags-directory { position: sticky; top: calc(var(--fr-header-height) + 1rem); padding: 1rem; border: 1px solid $border-color; border-radius: 0.65rem; background: rgba(255,255,255,0.5); }
+.fr-tags-directory > summary { cursor: pointer; font-weight: 600; }
+.fr-tags-directory .tag-directory-search { padding: 0; margin: 0 0 0.8rem; border: 0; background: transparent; }
+.fr-tags-directory .tag-directory-search label { font-size: 0.85rem; font-weight: 500; }
+.fr-tags-directory input { font-size: 0.8rem; }
+.fr-tags-directory .tag-groups { display: grid; gap: 0; max-height: calc(100dvh - var(--fr-header-height) - 13rem); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+.fr-tags-directory .tag-group { padding: 0.7rem 0; border-top: 1px solid $border-color; }
+.fr-tags-directory .tag-group summary { cursor: pointer; color: $text-color; font-size: 0.82rem; line-height: 1.6; }
+.fr-tags-directory .tag-group-count { float: right; padding-inline: 0.2rem; font-size: 0.7rem; font-weight: 400; }
+.fr-tags-directory .tag-group-list { display: grid; gap: 0.2rem; max-height: 13rem; overflow-y: auto; overscroll-behavior: contain; padding: 0.6rem 0.15rem 0; scrollbar-width: thin; }
+.fr-tags-directory .tag-filter-btn { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; padding: 0.4rem 0.55rem; border-radius: 0.3rem; color: $fr-panel-muted; font-size: 0.78rem; text-decoration: none; line-height: 1.5; }
+.fr-tags-directory .tag-filter-btn span { min-width: 0; overflow-wrap: anywhere; }
+.fr-tags-directory .tag-filter-btn small { flex-shrink: 0; font-size: 0.68rem; font-variant-numeric: tabular-nums; }
+.fr-tags-directory .tag-filter-btn:hover,
+.fr-tags-directory .tag-filter-btn.is-active { background: rgba($fr-action-color,0.08); color: $fr-action-color; }
+.fr-tags-directory .tag-filter-btn.is-active { font-weight: 600; }
+.fr-tags-directory [hidden],
+.fr-tags-results [hidden] { display: none !important; }
+.fr-tags-results { min-width: 0; }
+.fr-tags-results__head { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; align-items: center; scroll-margin-top: calc(var(--fr-header-height) + 1rem); }
+.fr-tags-results__head > div { flex: 1; min-width: 0; }
+.fr-tags-results__head h2 { margin: 0.25rem 0; font-size: 1.35rem; overflow-wrap: anywhere; }
+.fr-tags-results__head > p { flex-basis: 100%; margin: 0; color: $fr-panel-muted; font-size: 0.8rem; }
+.fr-tags-results__head .tag-filter-description { padding: 0.65rem 0.8rem; font-size: 0.85rem; line-height: 1.7; }
+.fr-tags-results .fr-posts-card h3 { font-size: 1.2rem; }
+.fr-tags-results .fr-posts-card__body > p { font-size: 0.88rem; }
+.fr-tags-results button { padding: 0.5rem 0.85rem; border: 1px solid $border-color; border-radius: 0.4rem; background: transparent; color: $fr-action-color; font-size: 0.8rem; cursor: pointer; }
+.fr-tags-more { padding: 1.5rem 0; text-align: center; }
+.fr-tags-more p, #tag-directory-empty { color: $fr-panel-muted; font-size: 0.78rem; }
+.fr-tags a:focus-visible,
+.fr-tags button:focus-visible,
+.fr-tags summary:focus-visible { outline: 2px solid $fr-action-color; outline-offset: 2px; }
+@media (min-width: 64em) { .fr-tags-directory.is-enhanced > summary { display: none; } }
+@media (max-width: 63.99em) {
+  .fr-tags-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+  .fr-tags-directory { position: static; }
+  .fr-tags-directory[open] > summary { margin-bottom: 1rem; }
+  .fr-tags-directory .tag-groups { max-height: 45dvh; }
+}
+@media (max-width: 600px) {
+  .fr-tags .archive { padding-top: 1.5rem; }
+  .fr-tags-results .fr-posts-card h3 { font-size: 1.05rem; }
+}

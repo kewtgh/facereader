@@ -70,6 +70,63 @@ try {
     console.log(`Page smoke passed at ${width}px.`);
   }
   await page.setViewportSize({ width: 1440, height: 900 });
+  // Image cards and tag discovery stay readable on desktop and mobile.
+  for (const width of [1440, 390]) {
+    await page.setViewportSize({ width, height: 900 });
+    await goto('/posts/');
+    const image = page.locator('.fr-posts-card__image img').first();
+    await image.waitFor();
+    assert.equal(await image.getAttribute('loading'), 'lazy');
+    assert.ok(await image.getAttribute('width'));
+    const geometry = await image.evaluate((element) => ({ image: element.getBoundingClientRect().toJSON(), title: element.closest('article').querySelector('h3').getBoundingClientRect().toJSON() }));
+    assert.ok(geometry.image.right <= geometry.title.left + 1, 'Teaser should appear to the left of the title');
+    await noOverflow();
+    await page.screenshot({ path: path.join(output, `posts-teasers-${width}.png`), animations: 'disabled' });
+    await goto('/tags/');
+    assert.equal(await page.locator('#page-title').count(), 1);
+    assert.equal(await page.locator('#tag-posts .tag-post-item:not([hidden])').count(), 12);
+    const directory = page.locator('#tag-directory');
+    if (width === 390) {
+      assert.equal(await directory.getAttribute('open'), null);
+      await directory.locator(':scope > summary').click();
+    }
+    const search = page.locator('#tag-directory-query');
+    await search.fill('不存在的标签-xyz');
+    assert.equal(await page.locator('#tag-directory-empty').isVisible(), true);
+    await search.fill('孙子兵法');
+    const tag = page.locator('.tag-filter-btn:not([hidden])').filter({ hasText: '孙子兵法' }).first();
+    const selected = await tag.getAttribute('data-tag');
+    const expected = await page.locator('.tag-post-item').evaluateAll((posts, tag) => posts.filter((post) => JSON.parse(post.dataset.tags).includes(tag)).length, selected);
+    await tag.click();
+    assert.equal(new URL(page.url()).searchParams.get('tag'), selected);
+    assert.match(await page.locator('#current-tag-count').textContent(), new RegExp(String(expected)));
+    assert.equal(await page.locator('#tag-posts .tag-post-item:not([hidden])').count(), Math.min(12, expected));
+    assert.equal(await page.locator('#tag-posts .tag-post-item:not([hidden])').evaluateAll((posts, tag) => posts.every((post) => JSON.parse(post.dataset.tags).includes(tag)), selected), true);
+    await noOverflow();
+    await page.screenshot({ path: path.join(output, `tags-results-${width}.png`), animations: 'disabled' });
+    if (expected > 12) {
+      await page.locator('#tag-posts-more').click();
+      assert.equal(await page.locator('#tag-posts .tag-post-item:not([hidden])').count(), Math.min(24, expected));
+    }
+    await page.locator('[data-fr-ui-lang-option="en"]').click();
+    assert.equal(await page.locator('#current-tag').textContent(), selected);
+    assert.match(await page.locator('#current-tag-count').textContent(), /essays/);
+    await page.locator('#tag-filter-reset').click();
+    assert.equal(new URL(page.url()).searchParams.has('tag'), false);
+    assert.equal(await page.locator('#tag-posts .tag-post-item:not([hidden])').count(), 12);
+    await page.goBack();
+    assert.equal(await page.locator('#current-tag').textContent(), selected);
+    await page.reload();
+    assert.equal(await page.locator('#current-tag').textContent(), selected);
+    await goto('/tags/?tag=unknown-tag-xyz');
+    assert.equal(await page.locator('#tag-posts-empty').isVisible(), true);
+    await page.locator('#tag-filter-reset').click();
+    assert.equal(await page.locator('#tag-posts-empty').isHidden(), true);
+  }
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await goto('/tags/');
+  await page.screenshot({ path: path.join(output, 'tags-directory-desktop.png'), animations: 'disabled' });
+  console.log('Teaser layout, tag search, counts, pagination, history, deep links and bilingual states passed.');
   await goto("/THIRD_PARTY_NOTICES/");
   await page.locator('[data-fr-ui-lang-option="en"]').click();
   assert.equal(await page.locator("#page-title").textContent(), "Third-party Notices & Versions");

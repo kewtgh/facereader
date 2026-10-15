@@ -128,6 +128,12 @@ Chinese and English entries use the same series ID and order but are shown in
 separate language lists. Articles without these fields keep working normally.
 The `/posts/` entry selections are maintained in `_data/start_here.yml`.
 
+The timeline and tag results share `_includes/reading-card.html`. Cards use
+`header.teaser`, then `header.overlay_image`, then the site teaser when available.
+The tags page has a searchable, grouped directory and shows results in batches
+of 12. Tag links use `?tag=`, support browser history, and filter published,
+visible articles. Tags outside `_data/tag-groups.yml` appear under More keywords.
+
 ## Popular Articles
 
 Add an article to `/most_popular/` from its canonical post file in
