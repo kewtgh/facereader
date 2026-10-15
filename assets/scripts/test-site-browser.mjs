@@ -96,6 +96,10 @@ try {
     const geometry = await image.evaluate((element) => ({ image: element.getBoundingClientRect().toJSON(), title: element.closest('article').querySelector('h3').getBoundingClientRect().toJSON() }));
     assert.ok(geometry.image.right <= geometry.title.left + 1, 'Teaser should appear to the left of the title');
     await checkTeaserCenter();
+    const railScroll = await page.locator('.fr-archive-rail').evaluate((element) => ({ position: getComputedStyle(element).position, overflow: getComputedStyle(element).overflowY, maxHeight: getComputedStyle(element).maxHeight }));
+    assert.equal(railScroll.position, 'static', 'Sidebar should scroll with the page');
+    assert.equal(railScroll.overflow, 'visible');
+    assert.equal(railScroll.maxHeight, 'none');
     const seriesRows = await page.locator('.fr-archive-rail > section:first-child li').evaluateAll((rows) => rows.map((row) => ({ count: row.querySelector('.fr-archive-rail__count').textContent, label: row.querySelector('.fr-archive-rail__label').textContent, wholeLink: !!row.querySelector('a .fr-archive-rail__count') })));
     assert.ok(seriesRows.length > 1);
     seriesRows.forEach((row) => { assert.ok(Number(row.count) > 0, row.label); assert.ok(row.wholeLink); });
