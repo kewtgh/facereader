@@ -35,6 +35,13 @@ sitemap: true
   </article>
 </section>
 
+<section class="fr-notices__explanation" aria-labelledby="math-notice">
+  <span class="fr-notices__eyebrow" data-fr-i18n-zh="数学排版" data-fr-i18n-en="Mathematical typesetting">数学排版</span>
+  <h2 id="math-notice">KaTeX 0.19.0</h2>
+  <p data-fr-i18n-zh="含公式的文章使用 Khan Academy 及贡献者开发的 KaTeX。脚本、样式和字体随本站发布；KaTeX 采用 MIT 许可。" data-fr-i18n-en="Articles with equations use KaTeX by Khan Academy and contributors. Scripts, styles and fonts are hosted with this site. KaTeX is MIT-licensed.">含公式的文章使用 Khan Academy 及贡献者开发的 KaTeX。脚本、样式和字体随本站发布；KaTeX 采用 MIT 许可。</p>
+  <a href="{{ '/assets/math/katex/LICENSE.txt' | relative_url }}" data-fr-i18n-zh="阅读 KaTeX 许可" data-fr-i18n-en="Read the KaTeX license">阅读 KaTeX 许可</a>
+</section>
+
 <section class="fr-notices__explanation" aria-labelledby="version-explanation">
   <span class="fr-notices__eyebrow" data-fr-i18n-zh="版本关系" data-fr-i18n-en="How the versions relate">版本关系</span>
   <h2 id="version-explanation" data-fr-i18n-zh="两个版本号，各自记录一条演进路径。" data-fr-i18n-en="Two version numbers, two development paths.">两个版本号，各自记录一条演进路径。</h2>

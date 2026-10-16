@@ -34,6 +34,12 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.data.theme.version }}">
+{% if page.math %}
+  <link rel="stylesheet" href="{{ '/assets/math/katex/katex.min.css' | relative_url }}?v={{ site.data.theme.version }}">
+  <script defer src="{{ '/assets/math/katex/katex.min.js' | relative_url }}?v={{ site.data.theme.version }}"></script>
+  <script defer src="{{ '/assets/math/katex/auto-render.min.js' | relative_url }}?v={{ site.data.theme.version }}"></script>
+  <script defer src="{{ '/assets/js/math-render.js' | relative_url }}?v={{ site.data.theme.version }}"></script>
+{% endif %}
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"></noscript>
 <link rel="shortcut icon" type="image/png" href="{{ "/assets/img/favicon.png" | relative_url }}">

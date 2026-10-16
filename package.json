@@ -1,7 +1,7 @@
 {
   "name": "facereader",
   "private": true,
-  "version": "7.6.2",
+  "version": "7.6.3",
   "description": "FaceReader personal blog on people, companies, society, and ideas.",
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "type": "module",
   "scripts": {
     "build": "npm run site:build",
+    "math:vendor": "node assets/scripts/vendor-katex.mjs",
     "leaders:test": "node assets/scripts/test-leaders-scoring.mjs",
     "leaders:validate": "node assets/scripts/validate-leaders-data.mjs",
     "leaders:audit": "node assets/scripts/audit-leaders-score-rubric.mjs",
@@ -46,6 +47,7 @@
   },
   "devDependencies": {
     "jquery": "^4.0.0",
+    "katex": "^0.19.0",
     "magnific-popup": "^1.2.0",
     "uglify-js": "^3.19.3"
   }

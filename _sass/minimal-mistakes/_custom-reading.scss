@@ -538,6 +538,29 @@
 .fr-footnote-preview__content :where(p, ul, ol) { margin: 0 0 0.55rem; }
 .fr-footnote-preview__content :last-child { margin-bottom: 0; }
 
+// Long display equations scroll locally without widening the reading column.
+.page__content .katex-display,
+.fr-footnote-preview .katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.4rem 0.1rem;
+  scrollbar-width: thin;
+  overscroll-behavior-x: contain;
+  text-indent: 0;
+}
+.page__content .katex { text-indent: 0; }
+.page__content .katex:not(.katex-display > .katex),
+.fr-footnote-preview .katex:not(.katex-display > .katex) {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-block: 0.15em;
+  vertical-align: middle;
+  scrollbar-width: thin;
+}
+
 .page__content .footnotes {
   margin-top: 3rem;
   padding: 1rem 1.1rem 0.7rem;

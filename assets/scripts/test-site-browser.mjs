@@ -70,6 +70,41 @@ try {
     console.log(`Page smoke passed at ${width}px.`);
   }
   await page.setViewportSize({ width: 1440, height: 900 });
+  // Math is rendered locally only on opted-in pages, including footnotes.
+  for (const width of [1440, 390]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const [url, language] of [['/社会杂论/Society-lcer-finland/', 'zh'], ['/society/Society-lcer-finland-en/', 'en']]) {
+      await goto(url);
+      await page.locator('.page__content .katex-display').first().waitFor();
+      await page.evaluate(() => document.fonts.ready);
+      assert.equal(await page.locator('.page__content .katex-display').count(), 2);
+      assert.ok(await page.locator('.page__content .katex:not(.katex-display .katex)').count() >= 4);
+      assert.equal(await page.locator('.katex-error').count(), 0);
+      const equations = await page.locator('.page__content .katex annotation').allTextContents();
+      assert.ok(equations.some((tex) => tex.includes('53\\%') && tex.includes('\\times')));
+      assert.ok(equations.some((tex) => tex.includes('\\sum') && tex.includes('\\frac')));
+      assert.ok(equations.some((tex) => tex === 't=43'));
+      assert.equal(await page.locator('.page__content .katex math').count(), equations.length);
+      const rawDelimiters = await page.locator('.page__content').evaluate((content) => {
+        const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+        let node;
+        while ((node = walker.nextNode())) {
+          if (!node.parentElement.closest('.katex, code, pre') && /\\[\[\]()]/.test(node.textContent)) return true;
+        }
+        return false;
+      });
+      assert.equal(rawDelimiters, false, 'No raw formula delimiters should remain');
+      await noOverflow();
+      const equation = page.locator('.page__content .katex-display').first();
+      await equation.scrollIntoViewIfNeeded();
+      await page.screenshot({ path: path.join(output, `finland-math-${language}-${width}.png`), animations: 'disabled' });
+      assert.equal(await page.locator('script[src*="cdn"][src*="katex"]').count(), 0);
+      if (language === 'en') assert.ok(await page.locator('.footnotes .katex').count() > 0);
+    }
+  }
+  await goto(article);
+  assert.equal(await page.locator('script[src*="math-render"], script[src*="katex"], link[href*="katex"]').count(), 0);
+  console.log('Finnish article math, inline equations, footnotes, MathML and mobile overflow checks passed without a CDN.');
   // Image cards and tag discovery stay readable on desktop and mobile.
   for (const width of [1440, 390]) {
     await page.setViewportSize({ width, height: 900 });

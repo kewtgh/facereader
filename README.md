@@ -209,6 +209,19 @@ changing the URL or reading position. Close it with the close button, an
 outside tap, or Escape. Desktop hover previews and click-to-footnote links
 remain available, as do the original footnotes when JavaScript is unavailable.
 
+For mathematical notation, add `math: true` to the article front matter.
+Kramdown uses `$$t=43$$` for inline math and a separate `$$` line above and
+below a display equation. Do not write `\(...\)` or `\[...\]` directly in
+Markdown: its escape processing removes their backslashes. Kramdown preserves
+the `$$` content and emits the delimiters consumed by the local KaTeX renderer.
+Only opted-in pages load KaTeX; equations include accessible MathML and long
+display equations scroll within the reading column. Code blocks and currency
+amounts outside math are not processed.
+
+KaTeX 0.19.0 is served from `assets/math/katex/`, including its fonts and MIT
+license. After updating the npm dependency, run `npm run math:vendor` and
+commit the regenerated assets before building the site.
+
 Use fenced code blocks and always declare the language when it is known. Rouge
 then supplies syntax highlighting, while long lines remain horizontally
 scrollable on narrow screens:
