@@ -275,9 +275,10 @@ sass:
 permalink: /:categories/:title/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
-# Pagination with jekyll-paginate
-paginate: 10 # amount of posts to show
-paginate_path: /posts/page/:num/
+# Language-aware pagination supplied by _plugins/language_archives.rb
+archive_pagination:
+  per_page: 10
+  path: /posts/page/:num/
 
 # Pagination with jekyll-paginate-v2
 # See https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
@@ -302,7 +303,6 @@ paginate_path: /posts/page/:num/
 
 # Plugins (previously gems:)
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-default-layout
@@ -318,7 +318,6 @@ plugins:
 
 # mimic GitHub Pages with --safe
 whitelist:
-  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-default-layout
   - jekyll-optional-front-matter

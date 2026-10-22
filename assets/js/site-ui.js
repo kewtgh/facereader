@@ -170,18 +170,43 @@
   }
 
   function initialLanguage() {
+    var stored = readStoredLanguage();
+    if (stored && supported[stored]) return stored;
+
+    // Use IANA regions, not UTC offsets shared by unrelated language regions.
+    var chineseTimeZones = [
+      "Asia/Shanghai", "Asia/Chongqing", "Asia/Chungking", "Asia/Harbin",
+      "Asia/Urumqi", "Asia/Kashgar", "Asia/Taipei", "Asia/Hong_Kong",
+      "Asia/Macau", "Asia/Macao", "Asia/Singapore", "PRC", "ROC",
+      "Hongkong", "Singapore"
+    ];
+    try {
+      var timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (timeZone) return chineseTimeZones.indexOf(timeZone) >= 0 ? "zh" : "en";
+    } catch (error) {
+      // Fall back to browser language when time-zone detection is unavailable.
+    }
+    var browserLanguage = String(navigator.language || "").slice(0, 2).toLowerCase();
+    if (supported[browserLanguage]) return browserLanguage;
     var switcher = document.querySelector("[data-fr-ui-lang-switcher]");
-    var defaultLanguage = switcher ? switcher.getAttribute("data-fr-default-ui-lang") : document.documentElement.lang;
-    return normalizeLanguage(readStoredLanguage() || defaultLanguage);
+    return normalizeLanguage(switcher ? switcher.getAttribute("data-fr-default-ui-lang") : document.documentElement.lang);
   }
 
   document.addEventListener("DOMContentLoaded", function () {
     applyLanguage(initialLanguage());
 
+    var resetArchive = document.querySelector("[data-fr-archive-reset-path]:not([hidden])");
+    if (resetArchive) window.location.replace(resetArchive.getAttribute("data-fr-archive-reset-path"));
+
     document.querySelectorAll("[data-fr-ui-lang-option]").forEach(function (button) {
       button.addEventListener("click", function () {
         var nextLanguage = normalizeLanguage(button.getAttribute("data-fr-ui-lang-option"));
         storeLanguage(nextLanguage);
+        var archiveReset = document.querySelector('[data-fr-i18n-block="' + nextLanguage + '"][data-fr-archive-reset-path]');
+        if (archiveReset) {
+          window.location.assign(archiveReset.getAttribute("data-fr-archive-reset-path"));
+          return;
+        }
         applyLanguage(nextLanguage);
       });
     });

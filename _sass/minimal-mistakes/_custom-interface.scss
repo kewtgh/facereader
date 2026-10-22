@@ -2,6 +2,8 @@
 @use "sass:color";
 @use "fr-tokens" as *;
 
+[data-fr-i18n-block][hidden] { display: none !important; }
+
 /* =====================================================
  * Home: Start-here & Picks (scoped ONLY)
  * - force grid (avoid being flattened by theme flex/width rules)

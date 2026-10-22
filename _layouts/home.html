@@ -21,12 +21,16 @@ title: 全部文章
 </header>
 <div class="fr-posts-layout">
   <div class="fr-posts-list">
-    {% assign archive_posts = paginator.posts | default: site.posts | where_exp: "post", "post.hidden != true" %}
+    {% for language_archive in page.language_archives %}
+    {% assign archive_lang = language_archive.language %}
+    {% assign archive_locale = language_archive.locale %}
+    {% assign archive_posts = language_archive.paginator.posts %}
+    <div data-fr-i18n-block="{{ archive_lang }}" lang="{{ archive_locale }}"{% if archive_lang != 'zh' %} hidden{% endif %}{% if language_archive.reset_path %} data-fr-archive-reset-path="{{ language_archive.reset_path | relative_url }}"{% endif %}>
     {% assign archive_year = '' %}
     {% for post in archive_posts %}
       {% assign post_year = post.date | date: '%Y' %}
       {% if post_year != archive_year %}
-        <h2 class="fr-posts-year" id="year-{{ post_year }}">{{ post_year }}</h2>
+        <h2 class="fr-posts-year" id="year-{{ archive_lang }}-{{ post_year }}">{{ post_year }}</h2>
         {% assign archive_year = post_year %}
       {% endif %}
       {% assign post_pillar = nil %}
@@ -40,7 +44,12 @@ title: 全部文章
       {% endif %}
       {% include reading-card.html post=post pillar=post_pillar %}
     {% endfor %}
-    {% include paginator.html locale=locale %}
+    {% include paginator-v1.html locale=archive_locale paginator=language_archive.paginator %}
+    {% if archive_posts.size == 0 %}
+      <p>{% if archive_lang == 'en' %}No English articles have been published yet.{% else %}暂无中文文章。{% endif %}</p>
+    {% endif %}
+    </div>
+    {% endfor %}
   </div>
   {% include archive-context-rail.html locale=locale %}
 </div>

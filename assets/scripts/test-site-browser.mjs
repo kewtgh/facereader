@@ -25,7 +25,48 @@ const base = `http://127.0.0.1:${server.address().port}`;
 let browser;
 try {
   browser = await chromium.launch({ headless: true, ...(process.env.CHROMIUM_EXECUTABLE ? { executablePath: process.env.CHROMIUM_EXECUTABLE } : {}) });
-  const context = await browser.newContext({ reducedMotion: "reduce" });
+  // Fresh visitors, remembered choices, unavailable APIs and equal UTC offsets.
+  for (const scenario of [
+    { timezoneId: 'Asia/Shanghai', locale: 'en-US', expected: 'zh' },
+    { timezoneId: 'Asia/Taipei', locale: 'en-US', expected: 'zh' },
+    { timezoneId: 'Asia/Hong_Kong', expected: 'zh' },
+    { timezoneId: 'Asia/Macau', expected: 'zh' },
+    { timezoneId: 'Asia/Singapore', expected: 'zh' },
+    { timezoneId: 'Asia/Urumqi', expected: 'zh' },
+    { timezoneId: 'America/New_York', locale: 'zh-CN', expected: 'en' },
+    { timezoneId: 'Europe/London', expected: 'en' },
+    { timezoneId: 'Asia/Manila', expected: 'en' },
+    { timezoneId: 'Australia/Perth', expected: 'en' },
+    { timezoneId: 'UTC', expected: 'en' },
+    { timezoneId: 'Asia/Taipei', stored: 'en', expected: 'en' },
+    { timezoneId: 'America/New_York', stored: 'zh', expected: 'zh' },
+    { timezoneId: 'Asia/Taipei', stored: 'invalid', expected: 'zh' },
+    { timezoneId: 'UTC', unavailable: true, locale: 'zh-TW', expected: 'zh' },
+    { timezoneId: 'UTC', unavailable: true, locale: 'en-US', expected: 'en' },
+    { timezoneId: 'UTC', unavailable: true, locale: 'fr-FR', expected: 'zh' },
+    { timezoneId: 'Asia/Taipei', blockedStorage: true, expected: 'zh' }
+  ]) {
+    const visitor = await browser.newContext({ timezoneId: scenario.timezoneId, locale: scenario.locale || 'en-US' });
+    await visitor.route('**/*', route => new URL(route.request().url()).origin === base ? route.continue() : route.abort());
+    await visitor.addInitScript(({ stored, unavailable, blockedStorage }) => {
+      if (stored) localStorage.setItem('facereader.uiLanguage', stored);
+      if (unavailable) Intl.DateTimeFormat = () => { throw new Error('Time zone unavailable'); };
+      if (blockedStorage) Object.defineProperty(window, 'localStorage', { get() { throw new Error('Storage blocked'); } });
+    }, scenario);
+    const visitorPage = await visitor.newPage();
+    await visitorPage.goto(base + '/');
+    assert.equal(await visitorPage.locator('html').getAttribute('data-fr-ui-lang'), scenario.expected, JSON.stringify(scenario));
+    assert.equal(await visitorPage.locator('.home-section--posts .archive__item:visible').count(), 8);
+    assert.equal(await visitorPage.locator('.home-section--posts .archive__item:visible').evaluateAll((cards, language) => cards.every(card => card.lang.startsWith(language)), scenario.expected), true);
+    if (!scenario.blockedStorage && !scenario.stored) assert.equal(await visitorPage.evaluate(() => localStorage.getItem('facereader.uiLanguage')), null);
+    if (scenario.blockedStorage) {
+      await visitorPage.locator('[data-fr-ui-lang-option="en"]').click();
+      assert.equal(await visitorPage.locator('html').getAttribute('data-fr-ui-lang'), 'en');
+    }
+    await visitor.close();
+  }
+  console.log('Time-zone defaults, browser fallback, remembered choices and blocked storage passed.');
+  const context = await browser.newContext({ reducedMotion: "reduce", timezoneId: "Asia/Taipei", locale: "zh-CN" });
   let allowSearchCdn = false;
   await context.route("**/*", (route) => {
     const url = new URL(route.request().url());
@@ -45,6 +86,54 @@ try {
     assert.ok(result.scrollWidth <= result.width + 1, `Horizontal overflow: ${page.url()} ${JSON.stringify(result)}`);
   };
   const article = "/人格成长/不靠谱领导力/manage-leadership12/";
+  let lastChinesePage;
+  for (const width of [1440, 390]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const language of ['zh', 'en']) {
+      await goto('/posts/');
+      await page.locator(`[data-fr-ui-lang-option="${language}"]`).click();
+      const visibleArchive = page.locator('.fr-posts-list > [data-fr-i18n-block]:visible');
+      const pages = await visibleArchive.locator('.pagination a').evaluateAll(links => links.map(link => ({ url: link.getAttribute('href'), number: Number(link.textContent) })).filter(link => Number.isFinite(link.number)));
+      const totalPages = Math.max(1, ...pages.map(link => link.number));
+      if (language === 'zh') lastChinesePage = totalPages;
+      const seen = new Set();
+      for (let number = 1; number <= totalPages; number++) {
+        await goto(number === 1 ? '/posts/' : `/posts/page/${number}/`);
+        const cards = page.locator('.fr-posts-card:visible');
+        const items = await cards.evaluateAll(cards => cards.map(card => ({ language: card.lang, url: card.querySelector('h3 a').getAttribute('href') })));
+        assert.ok(items.length > 0 && items.length <= 10);
+        if (number < totalPages) assert.equal(items.length, 10);
+        for (const item of items) {
+          assert.ok(item.language.startsWith(language));
+          assert.ok(!seen.has(item.url), `Repeated ${language} article: ${item.url}`);
+          seen.add(item.url);
+        }
+        await noOverflow();
+      }
+      await goto('/');
+      const recent = await page.locator('.home-section--posts .archive__item:visible a.u-url').evaluateAll(links => links.map(link => link.getAttribute('href')));
+      assert.deepEqual(recent, [...seen].slice(0, 8));
+      await page.locator('.home-section--posts').screenshot({ path: path.join(output, `language-recent-${language}-${width}.png`), animations: 'disabled' });
+      await page.locator(`[data-fr-ui-lang-option="${language === 'zh' ? 'en' : 'zh'}"]`).click();
+      assert.equal(await page.locator('.home-section--posts .archive__item:visible').evaluateAll((cards, language) => cards.every(card => card.lang.startsWith(language)), language === 'zh' ? 'en' : 'zh'), true);
+      await noOverflow();
+    }
+  }
+  await page.evaluate(() => localStorage.setItem('facereader.uiLanguage', 'zh'));
+  await goto(`/posts/page/${lastChinesePage}/`);
+  await page.locator('[data-fr-ui-lang-option="en"]').click();
+  await page.waitForURL(base + '/posts/');
+  assert.equal(await page.locator('.fr-posts-card:visible').evaluateAll(cards => cards.every(card => card.lang.startsWith('en'))), true);
+  await goto(`/posts/page/${lastChinesePage}/`);
+  await page.waitForURL(base + '/posts/');
+  await page.locator('[data-fr-ui-lang-option="zh"]').click();
+  const noScript = await browser.newContext({ javaScriptEnabled: false });
+  await noScript.route('**/*', route => new URL(route.request().url()).origin === base ? route.continue() : route.abort());
+  const fallbackPage = await noScript.newPage();
+  await fallbackPage.goto(base + '/posts/');
+  assert.equal(await fallbackPage.locator('.fr-posts-card:visible').evaluateAll(cards => cards.every(card => card.lang.startsWith('zh'))), true);
+  await noScript.close();
+  console.log('Both language archives have complete independent pagination; recent updates, mobile layout, language switching and no-JS fallback passed.');
   for (const width of [1440, 1024, 390]) {
     await page.setViewportSize({ width, height: 900 });
     for (const url of ["/", "/posts/", "/categories/", "/tags/", "/most_popular/", "/about/", "/THIRD_PARTY_NOTICES/", "/leaders-scorecard/", "/darwin-leaders-benchmark/", article, "/social commentary/Society-lcer-canada-en/"]) {
@@ -124,7 +213,7 @@ try {
       cards.forEach((difference) => assert.ok(difference < 2, `Teaser center offset: ${difference}px`));
     };
     await goto('/posts/');
-    const image = page.locator('.fr-posts-card__image img').first();
+    const image = page.locator('.fr-posts-card:visible .fr-posts-card__image img').first();
     await image.waitFor();
     assert.equal(await image.getAttribute('loading'), 'lazy');
     assert.ok(await image.getAttribute('width'));

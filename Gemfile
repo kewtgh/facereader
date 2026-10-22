@@ -10,7 +10,8 @@ group :jekyll_plugins do
   gem "jekyll-default-layout", "~> 0.1"
   gem "jekyll-include-cache", "~> 0.2"
   gem "jekyll-optional-front-matter", "~> 0.3"
-  gem "jekyll-paginate", "~> 1.1"
+  # Kept for theme compatibility; language_archives.rb owns site pagination.
+  gem "jekyll-paginate", "~> 1.1", require: false
   gem "jekyll-redirect-from", "~> 0.16"
   gem "jekyll-seo-tag", "~> 2.8"
   gem "jekyll-sitemap", "~> 1.4"

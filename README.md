@@ -66,6 +66,19 @@ Custom styles are organized as Sass modules under `_sass/minimal-mistakes/`.
 
 ## Bilingual Articles
 
+The interface remembers manual language choices. On a first visit, device IANA
+time zones for mainland China, Taiwan, Hong Kong, Macau, and Singapore default
+to Chinese; other time zones default to English. If time-zone detection is
+unavailable, the browser language (Chinese or English), then the page default,
+is used. This runs locally without a geolocation service.
+
+The homepage's recent updates and `/posts/` use article `locale` metadata
+(missing metadata inherits `site.locale`). They exclude hidden posts and show
+only the selected interface language. `_plugins/language_archives.rb` filters
+before paginating, retaining `/posts/page/:num/` with independent language
+totals. Selecting a language without the current page returns to `/posts/`.
+Without JavaScript these two lists show Chinese articles.
+
 FaceReader supports paired Chinese and English article versions through front matter.
 Keep the existing Chinese URL unchanged, and give both language versions the same
 `translation_key`:

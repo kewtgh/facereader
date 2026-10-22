@@ -298,9 +298,14 @@ feature_row:
   </header>
 
   {% assign entries_layout = 'grid' %}
-  <div class="entries-{{ entries_layout }}">
-    {% for post in site.posts limit: 8 %}
-      {% include archive-single.html locale=locale type=entries_layout %}
+  {% for language_posts in site.data.posts_by_language %}
+  {% assign recent_lang = language_posts[0] %}
+  {% assign recent_locale = 'zh-CN' %}
+  {% if recent_lang == 'en' %}{% assign recent_locale = 'en-US' %}{% endif %}
+  <div class="entries-{{ entries_layout }}" data-fr-i18n-block="{{ recent_lang }}" lang="{{ recent_locale }}"{% if recent_lang != 'zh' %} hidden{% endif %}>
+    {% for post in language_posts[1] limit: 8 %}
+      {% include archive-single.html locale=recent_locale type=entries_layout %}
     {% endfor %}
   </div>
+  {% endfor %}
 </section>
