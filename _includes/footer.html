@@ -17,8 +17,8 @@
 
     {% unless site.atom_feed.hide %}
       <li class="page__footer-feeds">
-        <a href="{{ '/feed/zh.xml' | relative_url }}" type="application/atom+xml" hreflang="zh" data-fr-i18n-zh="中文 Feed" data-fr-i18n-en="Chinese Feed">中文 Feed</a>
-        <a href="{{ '/feed/en.xml' | relative_url }}" type="application/atom+xml" hreflang="en" data-fr-i18n-zh="英文 Feed" data-fr-i18n-en="English Feed">英文 Feed</a>
+        <a href="{{ '/feed/zh.xml' | relative_url }}" type="application/atom+xml" hreflang="zh"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i><span data-fr-i18n-zh="中文 Feed" data-fr-i18n-en="Chinese Feed">中文 Feed</span></a>
+        <a href="{{ '/feed/en.xml' | relative_url }}" type="application/atom+xml" hreflang="en"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i><span data-fr-i18n-zh="英文 Feed" data-fr-i18n-en="English Feed">英文 Feed</span></a>
       </li>
     {% endunless %}
   </ul>
