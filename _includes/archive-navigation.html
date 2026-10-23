@@ -1,0 +1,6 @@
+<nav class="fr-editorial-head__nav" aria-label="文章导航" data-fr-i18n-aria-label-zh="文章导航" data-fr-i18n-aria-label-en="Article navigation">
+  <a href="{{ '/posts/' | relative_url }}"{% if include.current == 'posts' %} aria-current="page"{% endif %} data-fr-i18n-zh="最新" data-fr-i18n-en="Latest">最新</a>
+  <a href="{{ '/categories/' | relative_url }}" data-fr-i18n-zh="按主题" data-fr-i18n-en="By topic">按主题</a>
+  <a href="{{ '/series/' | relative_url }}" data-fr-i18n-zh="专题系列" data-fr-i18n-en="Series">专题系列</a>
+  <a href="{{ '/reading-list/' | relative_url }}"{% if include.current == 'reading-list' %} aria-current="page"{% endif %} data-fr-i18n-zh="稍后阅读" data-fr-i18n-en="Read later">稍后阅读</a>
+</nav>

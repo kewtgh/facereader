@@ -1,5 +1,8 @@
 <div class="fr-article-save" lang="zh-CN">
-  <button type="button" class="btn" data-fr-save-article="{{ page.url | relative_url }}" aria-pressed="false" hidden>稍后阅读</button>
-  <a href="{{ '/reading-list/' | relative_url }}" data-fr-i18n-zh="我的阅读列表" data-fr-i18n-en="My reading list">我的阅读列表</a>
-  <span data-fr-save-status role="status" aria-live="polite"></span>
+  <button type="button" class="fr-article-action" data-fr-save-article="{{ page.url | relative_url }}" aria-pressed="false" hidden>
+    <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M5 3h10v14l-5-3-5 3z"/></svg><span data-fr-save-label>稍后阅读</span>
+  </button>
+  <a class="fr-article-action" href="{{ '/reading-list/' | relative_url }}">
+    <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M7 5h10M7 10h10M7 15h10M3 5h.1M3 10h.1M3 15h.1"/></svg><span data-fr-i18n-zh="我的阅读列表" data-fr-i18n-en="My reading list">我的阅读列表</span>
+  </a>
 </div>

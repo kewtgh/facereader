@@ -721,8 +721,6 @@ try {
     rejectMockedSearch = true;
     await page.locator(".search-content .ais-SearchBox-input").fill("Recovery query");
     await page.locator(".search-content [data-fr-search-error]").waitFor();
-    const recovery = await page.locator('.search-content [data-fr-search-error] a[href^="/search/"]').getAttribute("href");
-    assert.equal(new URL(recovery, base).searchParams.get("q"), "Recovery query");
     rejectMockedSearch = false;
     await Promise.all([
       page.waitForResponse(response => /\.algolia(?:net|\.net)\//.test(response.url()) && response.status() === 200),

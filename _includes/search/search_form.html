@@ -1,6 +1,5 @@
 {% assign locale = include.locale | default: site.locale %}
 <div class="search-content__inner-wrap">
-  <p><a href="{{ '/search/' | relative_url }}" data-fr-i18n-zh="使用站内文章搜索" data-fr-i18n-en="Use local article search">使用站内文章搜索</a> · <a href="{{ '/reading-list/' | relative_url }}" data-fr-i18n-zh="稍后阅读" data-fr-i18n-en="Reading list">稍后阅读</a></p>
   {%- assign search_provider = site.search_provider | default: "lunr" -%}
   {%- case search_provider -%}
   {%- when "lunr" -%}

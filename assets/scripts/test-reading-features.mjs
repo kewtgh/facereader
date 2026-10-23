@@ -3,130 +3,161 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 export async function testReadingFeatures({ browser, base, output, siteRoot }) {
-  const catalog = JSON.parse(await fs.readFile(path.join(siteRoot, "article-index.json"), "utf8")).posts;
-  const article = catalog.find(post => post.language === "zh");
-  const english = catalog.find(post => post.language === "en");
   const savedKey = "facereader.readingList.v1";
-  const consentKey = "facereader.analyticsConsent.v1";
   const context = await browser.newContext({ timezoneId: "Asia/Taipei", reducedMotion: "reduce" });
   const errors = [];
-  const optionalRequests = [];
-  await context.route("**/*", route => new URL(route.request().url()).origin === base ? route.continue() : route.abort());
+  const serviceRequests = [];
+  await context.route("**/*", route => {
+    const url = route.request().url();
+    if (new URL(url).origin === base) return route.continue();
+    if (/googletagmanager\.com\/gtag/.test(url)) return route.fulfill({ contentType: "application/javascript", body: "window.__frAnalyticsLoaded = true;" });
+    return route.abort();
+  });
   context.on("page", page => page.on("pageerror", error => errors.push(error.message)));
-  context.on("request", request => { if (/googletagmanager\.com\/gtag|\.disqus\.com\/embed/.test(request.url())) optionalRequests.push(request.url()); });
+  context.on("request", request => { if (/googletagmanager\.com\/gtag|\.disqus\.com\/embed/.test(request.url())) serviceRequests.push(request.url()); });
   const page = await context.newPage();
-  const goto = url => page.goto(base + url);
-  const waitCatalog = () => page.waitForFunction(() => document.querySelector("[data-fr-local-search], [data-fr-reading-list]")?.getAttribute("aria-busy") === "false");
-  const noOverflow = async () => {
-    const geometry = await page.evaluate(() => ({ width: innerWidth, scroll: document.documentElement.scrollWidth,
-      offenders: [...document.querySelectorAll("body *")].filter(element => { const box = element.getBoundingClientRect(); return box.width && box.right > innerWidth + 1 && getComputedStyle(element).position !== "fixed"; }).slice(0, 12).map(element => `${element.tagName}.${element.className}`) }));
-    assert.ok(geometry.scroll <= geometry.width + 1, `${page.url()} ${JSON.stringify(geometry)}`);
+  const goto = async (url, options) => {
+    await page.goto(base + url, options);
+    await page.evaluate(() => document.fonts.ready);
   };
+  const waitList = () => page.waitForFunction(() => document.querySelector("[data-fr-reading-list]")?.dataset.frReady === "true");
+  const setLanguage = language => page.locator(`[data-fr-ui-lang-option="${language}"]`).click();
+  const noOverflow = async () => {
+    const size = await page.evaluate(() => ({ width: innerWidth, scroll: document.documentElement.scrollWidth }));
+    assert.ok(size.scroll <= size.width + 1, `${page.url()} ${JSON.stringify(size)}`);
+  };
+  const layout = () => page.evaluate(() => ["#main", "#main > .archive", ".fr-posts-layout", ".fr-posts-list", ".fr-archive-rail"].map(selector => {
+    const box = document.querySelector(selector).getBoundingClientRect();
+    return { selector, x: box.x, width: box.width };
+  }));
+  async function checkFooter() {
+    const footer = page.locator("#footer");
+    assert.equal(await footer.locator(".page__footer-follow").count(), 1);
+    for (const href of ["/feed/zh.xml", "/feed/en.xml", "https://x.com/", "https://facebook.com/", "https://linkedin.com/"]) {
+      assert.equal(await footer.locator(`.page__footer-follow a[href="${href}"]`).count(), 1, href);
+    }
+    assert.equal(await footer.locator('#privacy-settings, a[href="/search/"], a[href="/reading-list/"]').count(), 0);
+    const feedRows = await footer.locator('.page__footer-feeds a').evaluateAll(links => links.map(link => link.getBoundingClientRect().top));
+    assert.equal(feedRows[0], feedRows[1], "Chinese and English feeds must stay together");
+  }
+  let article;
+  let english;
   try {
+    await goto("/reading-list/");
+    await waitList();
+    const posts = await page.locator("template[data-fr-reading-template]").evaluateAll(templates => templates.map(template => ({
+      url: template.dataset.frReadingTemplate,
+      title: template.content.querySelector("h3").textContent.trim(),
+      language: template.content.querySelector("article").lang.slice(0, 2)
+    })));
+    article = posts.find(post => post.language === "zh");
+    english = posts.find(post => post.language === "en");
+    assert.ok(article && english);
+    assert.equal(serviceRequests.length, 0, "Reading lists must not load analytics or comments");
+    for (const removed of ["article-index.json", "search/index.html", "assets/js/privacy-controls.js", "assets/js/catalog-search.mjs"]) {
+      await assert.rejects(fs.access(path.join(siteRoot, removed)), { code: "ENOENT" });
+    }
     await goto(article.url);
-    assert.deepEqual(optionalRequests, [], "Analytics and comments must not load on a first visit");
+    await page.waitForFunction(() => window.__frAnalyticsLoaded === true);
+    assert.equal(serviceRequests.filter(url => url.includes("disqus")).length, 0);
     const save = page.locator("[data-fr-save-article]");
     await save.click();
     assert.equal(await save.getAttribute("aria-pressed"), "true");
+    assert.equal(await save.locator("svg").count(), 1, "Saving must preserve the button icon");
     const listPage = await context.newPage();
     await listPage.goto(base + "/reading-list/");
-    await listPage.locator(".fr-library__card").waitFor();
-    assert.equal(await listPage.locator(".fr-library__card h2").textContent(), article.title);
-    await listPage.locator(".fr-library__card button").click();
+    await listPage.locator(".fr-saved-entry .fr-posts-card").waitFor();
+    assert.equal((await listPage.locator(".fr-saved-entry h3").textContent()).trim(), article.title);
+    await listPage.locator("[data-fr-saved-remove]").click();
     await page.waitForFunction(() => document.querySelector("[data-fr-save-article]").getAttribute("aria-pressed") === "false");
-    assert.equal(await listPage.locator(".fr-library__card").count(), 0);
+    assert.equal(await listPage.locator(".fr-saved-entry").count(), 0);
+    assert.equal(await listPage.locator("[data-fr-library-status]").evaluate(element => document.activeElement === element), true);
     await listPage.close();
 
     await page.evaluate(({ key, url }) => localStorage.setItem(key, JSON.stringify([url, url, "//evil.example/", "javascript:alert(1)"])), { key: savedKey, url: article.url });
     await goto("/reading-list/");
-    await waitCatalog();
-    assert.equal(await page.locator(".fr-library__card").count(), 1);
-    assert.equal(await page.locator('.fr-library__card a[href^="//"]').count(), 0);
+    await waitList();
+    assert.equal(await page.locator(".fr-saved-entry").count(), 1);
+    assert.equal(await page.locator('.fr-saved-entry a[href^="//"]').count(), 0);
     await page.evaluate(key => localStorage.setItem(key, "broken JSON"), savedKey);
     await page.reload();
-    await waitCatalog();
-    assert.equal(await page.locator(".fr-library__card").count(), 0);
+    await waitList();
+    assert.equal(await page.locator(".fr-saved-entry").count(), 0);
+    await page.evaluate(key => localStorage.setItem(key, JSON.stringify(Array.from({ length: 100 }, (_, i) => `/unavailable/${i}/`))), savedKey);
     await goto(article.url);
-    await page.evaluate(key => localStorage.setItem(key, JSON.stringify(Array.from({ length: 100 }, (_, i) => `/synthetic/${i}/`))), savedKey);
     await save.click();
     assert.equal(await save.getAttribute("aria-pressed"), "false");
     assert.match(await page.locator("[data-fr-save-status]").textContent(), /100/);
     await goto("/reading-list/");
-    await waitCatalog();
+    await waitList();
+    assert.equal(await page.evaluate(key => JSON.parse(localStorage.getItem(key)).length, savedKey), 100, "Unavailable URLs remain until explicit cleanup");
     await page.locator("[data-fr-clear-unavailable]").click();
     assert.equal(await page.evaluate(key => JSON.parse(localStorage.getItem(key)).length, savedKey), 0);
-    await goto(article.url);
-    await save.click();
+    await page.evaluate(({ key, urls }) => localStorage.setItem(key, JSON.stringify(urls)), { key: savedKey, urls: [article.url, english.url] });
 
+    for (const width of [1440, 1024, 768, 390, 320]) {
+      await page.setViewportSize({ width, height: 900 });
+      for (const language of ["zh", "en"]) {
+        await goto("/posts/");
+        await setLanguage(language);
+        await checkFooter();
+        await noOverflow();
+        assert.equal(await page.locator('.fr-editorial-head__nav a[href="/reading-list/"]').textContent(), language === "zh" ? "稍后阅读" : "Read later");
+        assert.equal(await page.locator('.fr-editorial-head__nav a[href="/search/"]').count(), 0);
+        const archiveLayout = await layout();
+        const firstCard = page.locator(".fr-posts-card:visible").first();
+        const cardColumns = await firstCard.evaluate(element => getComputedStyle(element).gridTemplateColumns);
+        const cardMinutes = await firstCard.locator(".fr-posts-card__meta time, .fr-posts-card__meta span:not([aria-hidden])").allTextContents();
+        const cardTopic = await firstCard.locator(".fr-posts-card__meta a").allTextContents();
+        const cardUrl = await firstCard.locator("h3 a").getAttribute("href");
+        await goto("/reading-list/");
+        await waitList();
+        const savedLayout = await layout();
+        for (let i = 0; i < archiveLayout.length; i++) {
+          assert.ok(Math.abs(archiveLayout[i].width - savedLayout[i].width) <= 1 && Math.abs(archiveLayout[i].x - savedLayout[i].x) <= 1,
+            `${language} ${width}px ${JSON.stringify({ archive: archiveLayout[i], saved: savedLayout[i] })}`);
+        }
+        const matchingCard = page.locator(`.fr-saved-entry .fr-posts-card:has(h3 a[href="${cardUrl}"])`);
+        assert.equal(await matchingCard.evaluate(element => getComputedStyle(element).gridTemplateColumns), cardColumns);
+        assert.deepEqual(await matchingCard.locator(".fr-posts-card__meta time, .fr-posts-card__meta span:not([aria-hidden])").allTextContents(), cardMinutes, "Archive and reading list must share the same reading duration");
+        assert.deepEqual(await matchingCard.locator(".fr-posts-card__meta a").allTextContents(), cardTopic);
+        assert.equal(await page.locator(".fr-saved-entry").count(), 2, "Both article languages stay in the reader's list");
+        assert.equal(await page.locator("[data-fr-clear-unavailable]").isVisible(), false);
+        await noOverflow();
+        if ([1440, 390, 320].includes(width)) {
+          await page.screenshot({ path: path.join(output, `reading-list-${language}-${width}.png`), animations: "disabled" });
+          await page.locator("#footer").scrollIntoViewIfNeeded();
+          await page.waitForFunction(() => document.querySelector(".fr-reader-tools").getBoundingClientRect().bottom <= document.getElementById("footer").getBoundingClientRect().top - 10);
+          await page.screenshot({ path: path.join(output, `footer-${language}-${width}.png`), animations: "disabled" });
+        }
+        await goto(article.url);
+        await noOverflow();
+        const [left, right] = await page.evaluate(() => [".fr-article-save", ".fr-article-language"].map(selector => {
+          const box = document.querySelector(selector).getBoundingClientRect();
+          return { x: box.x, y: box.y, width: box.width, height: box.height };
+        }));
+        assert.ok(Math.abs(left.y + left.height / 2 - right.y - right.height / 2) <= 2,
+          `Article actions and version must share one row: ${language} ${width}px ${JSON.stringify({ left, right })}`);
+        assert.ok(left.x + left.width <= right.x + 1, "Article actions must precede the version switcher without overlap");
+        const targets = await page.locator(".fr-article-action, .fr-article-toolbar .is-current").evaluateAll(elements => elements.map(element => element.getBoundingClientRect().height));
+        assert.ok(targets.every(height => height >= 44), "Article toolbar controls need 44px touch targets");
+        assert.equal(await save.locator("svg").count(), 1);
+        if ([1440, 390, 320].includes(width)) await page.screenshot({ path: path.join(output, `article-tools-${language}-${width}.png`), animations: "disabled" });
+      }
+    }
+    await page.setViewportSize({ width: 390, height: 900 });
+    await goto("/404.html");
+    await page.locator("[data-fr-open-search]").click();
+    assert.equal(await page.locator(".search__toggle").getAttribute("aria-expanded"), "true");
+    assert.equal(await page.locator("#site-search").getAttribute("aria-hidden"), "false");
+    await page.locator(".search__toggle").click();
+    await noOverflow();
+    await goto(article.url);
     await page.evaluate(() => {
       const content = document.querySelector(".page__content").getBoundingClientRect();
       scrollTo(0, scrollY + content.bottom - innerHeight + 10);
     });
     await page.waitForFunction(() => Number(getComputedStyle(document.querySelector(".fr-reading-progress i")).transform.split("(")[1].split(",")[0]) > .99);
-
-    let failures = 0;
-    await page.route("**/article-index.json", route => failures++ === 0 ? route.fulfill({ status: 503, body: "unavailable" }) : route.continue());
-    await goto(`/search/?q=${encodeURIComponent(english.title)}&lang=en`);
-    await page.locator("[data-fr-catalog-retry]:not([hidden])").waitFor();
-    await page.locator("[data-fr-catalog-retry]").click();
-    await page.locator(".fr-library__card").first().waitFor();
-    await waitCatalog();
-    assert.equal(await page.locator("[data-fr-catalog-retry]").isVisible(), false);
-    assert.equal(await page.locator("#local-language").inputValue(), "en");
-    assert.equal(await page.locator(".fr-library__card").evaluateAll(cards => cards.every(card => card.lang === "en")), true);
-    assert.ok((await page.locator(".fr-library__card h2").allTextContents()).includes(english.title));
-    await page.unroute("**/article-index.json");
-    assert.equal(await page.locator(".fr-reading-progress").count(), 0);
-
-    await page.locator("#local-query").fill("missing-article-20261024-xyz");
-    await page.locator("#local-query").press("Enter");
-    assert.equal(new URL(page.url()).searchParams.get("q"), "missing-article-20261024-xyz");
-    assert.equal(await page.locator(".fr-library__card").count(), 0);
-    await page.goBack();
-    await page.waitForFunction(title => document.querySelector("#local-query").value === title, english.title);
-    assert.ok(await page.locator(".fr-library__card").count());
-    await page.goForward();
-    assert.equal(await page.locator(".fr-library__card").count(), 0);
-    await page.locator("[data-fr-search-clear]").click();
-    assert.equal(await page.locator("#local-query").inputValue(), "");
-    const topic = english.categories[0];
-    await page.locator("#local-category").selectOption(topic);
-    const links = await page.locator(".fr-library__card h2 a").evaluateAll(links => links.map(link => link.getAttribute("href")));
-    assert.ok(links.length);
-    assert.equal(links.every(url => catalog.find(post => post.url === url)?.categories.includes(topic)), true);
-    await page.locator('[data-fr-ui-lang-option="en"]').click();
-    assert.equal(await page.locator("#page-title").textContent(), "Find articles");
-    await page.locator('[data-fr-ui-lang-option="zh"]').click();
-    await page.locator("[data-fr-search-clear]").click();
-    assert.equal(await page.locator(".fr-library__card").count(), 12);
-    await page.locator("[data-fr-library-more]").click();
-    assert.equal(await page.locator(".fr-library__card").count(), 24);
-
-    for (const width of [1440, 1024, 390, 320]) {
-      await page.setViewportSize({ width, height: 900 });
-      for (const language of ["zh", "en"]) {
-        await goto(`/search/?lang=${language}`);
-        await waitCatalog();
-        await page.locator(`[data-fr-ui-lang-option="${language}"]`).click();
-        await noOverflow();
-        const searchTarget = await page.locator(".search__toggle").boundingBox();
-        assert.ok(searchTarget.width >= 44 && searchTarget.height >= 44, "Search needs a usable touch target");
-        await page.waitForFunction(() => getComputedStyle(document.querySelector("#main")).opacity === "1");
-        if ([1440, 390].includes(width)) await page.screenshot({ path: path.join(output, `local-search-${language}-${width}.png`), animations: "disabled" });
-        await goto("/reading-list/");
-        await waitCatalog();
-        assert.equal(await page.locator("[data-fr-clear-unavailable]").isVisible(), false);
-        await noOverflow();
-        if ([1440, 390].includes(width)) await page.screenshot({ path: path.join(output, `reading-list-${language}-${width}.png`), animations: "disabled" });
-        await goto("/404.html");
-        assert.equal(await page.locator('#main form').getAttribute("action"), "/search/");
-        await noOverflow();
-        if (width === 390) await page.screenshot({ path: path.join(output, `404-${language}-${width}.png`), animations: "disabled" });
-      }
-    }
-    await page.setViewportSize({ width: 390, height: 900 });
-    await goto(article.url);
-    await page.screenshot({ path: path.join(output, "article-save-mobile.png"), animations: "disabled" });
     let commentAttempts = 0;
     await page.route("**/*.disqus.com/embed.js", route => ++commentAttempts === 1 ? route.abort() : route.fulfill({ contentType: "application/javascript", body: "window.__frCommentsLoaded = true;" }));
     await page.locator("[data-fr-disqus] button").click();
@@ -134,64 +165,52 @@ export async function testReadingFeatures({ browser, base, output, siteRoot }) {
     await page.locator("[data-fr-disqus] button").click();
     await page.waitForFunction(() => window.__frCommentsLoaded === true);
     assert.equal(commentAttempts, 2);
-    await goto(article.url);
-    assert.equal(commentAttempts, 2, "Comments must require a new choice on every page");
-    let analytics = 0;
-    await page.route("**/www.googletagmanager.com/gtag/**", route => { analytics++; return route.fulfill({ contentType: "application/javascript", body: "window.__frAnalyticsLoaded = true;" }); });
-    await page.locator("#privacy-settings summary").click();
-    await page.locator("#fr-analytics-consent").check();
-    await Promise.all([page.waitForEvent("load"), page.locator("[data-fr-privacy-form] button").click()]);
+    await goto(article.url + "?source=verification#test", { referer: base + article.url + "?source=private" });
     await page.waitForFunction(() => window.__frAnalyticsLoaded === true);
-    assert.equal(analytics, 1);
-    await goto(`/search/?q=${encodeURIComponent(article.title)}&lang=zh`);
-    await waitCatalog();
-    assert.equal(analytics, 1, "Local search must not load analytics");
-    await page.locator(".fr-library__card h2 a").first().click();
-    await page.waitForFunction(() => window.__frAnalyticsLoaded === true);
-    assert.equal(analytics, 2);
-    const analyticsConfig = await page.evaluate(() => Array.from(window.dataLayer.find(event => event[0] === "config"))[2]);
-    assert.equal(analyticsConfig.page_referrer, base + "/search/", "Search parameters must not leak via analytics referrers");
-    assert.equal(analyticsConfig.page_location.includes("?"), false);
-    await page.locator("#privacy-settings summary").click();
-    await page.locator("#fr-analytics-consent").uncheck();
-    assert.equal(await page.locator(".fr-reader-tools").isVisible(), false, "Privacy controls must not be covered by reading tools");
-    await page.locator("[data-fr-privacy-form]").scrollIntoViewIfNeeded();
-    await page.screenshot({ path: path.join(output, "privacy-mobile.png"), animations: "disabled" });
-    await Promise.all([page.waitForEvent("load"), page.locator("[data-fr-privacy-form] button").click()]);
-    assert.equal(analytics, 2, "Analytics must remain off after withdrawal");
-    assert.equal(await page.evaluate(key => localStorage.getItem(key), consentKey), "disabled");
+    assert.equal(commentAttempts, 2, "Comments require a new choice on every page");
+    const config = await page.evaluate(() => Array.from(window.dataLayer.find(event => event[0] === "config"))[2]);
+    assert.equal(config.page_location, base + article.url);
+    assert.equal(config.page_referrer, base + article.url);
+    assert.equal(await page.locator("#privacy-settings").count(), 0);
     assert.deepEqual(errors, []);
   } catch (error) {
-    console.error({ url: page.url(), status: await page.locator("[data-fr-library-status]").allTextContents(),
-      query: await page.locator("#local-query").inputValue().catch(() => ""), language: await page.locator("#local-language").inputValue().catch(() => ""), errors });
+    console.error({ url: page.url(), status: await page.locator("[data-fr-library-status]").allTextContents(), errors });
     await page.screenshot({ path: path.join(output, "reading-feature-failure.png"), fullPage: true });
     throw error;
   } finally { await context.close(); }
 
-  for (const signal of ["globalPrivacyControl", "doNotTrack", "storageBlocked"]) {
+  for (const signal of ["globalPrivacyControl", "doNotTrack", "storageBlocked", "storageReadOnly"]) {
     const visitor = await browser.newContext({ timezoneId: "Asia/Taipei" });
     const requests = [];
-    await visitor.route("**/*", route => new URL(route.request().url()).origin === base ? route.continue() : route.abort());
+    await visitor.route("**/*", route => {
+      const url = route.request().url();
+      if (new URL(url).origin === base) return route.continue();
+      if (/googletagmanager\.com\/gtag/.test(url)) return route.fulfill({ contentType: "application/javascript", body: "" });
+      return route.abort();
+    });
     visitor.on("request", request => { if (/googletagmanager\.com\/gtag|\.disqus\.com\/embed/.test(request.url())) requests.push(request.url()); });
-    await visitor.addInitScript(({ signal, key }) => {
+    await visitor.addInitScript(signal => {
       if (signal === "storageBlocked") Object.defineProperty(window, "localStorage", { get() { throw new Error("Storage blocked"); } });
-      else {
-        localStorage.setItem(key, "enabled");
-        Object.defineProperty(navigator, signal, { get() { return signal === "globalPrivacyControl" ? true : "1"; } });
-      }
-    }, { signal, key: consentKey });
+      else if (signal === "storageReadOnly") Storage.prototype.setItem = () => { throw new Error("Storage full"); };
+      else Object.defineProperty(navigator, signal, { get() { return signal === "globalPrivacyControl" ? true : "1"; } });
+    }, signal);
     try {
       const blocked = await visitor.newPage();
       const errors = [];
       blocked.on("pageerror", error => errors.push(error.message));
       await blocked.goto(base + article.url);
-      assert.deepEqual(requests, [], signal);
+      const button = blocked.locator("[data-fr-save-article]");
+      await button.waitFor({ state: "visible" });
       if (signal === "storageBlocked") {
-        assert.equal(await blocked.locator("[data-fr-save-article]").isDisabled(), true);
+        assert.equal(await button.isDisabled(), true);
         await blocked.goto(base + "/reading-list/");
-        await blocked.waitForFunction(() => document.querySelector("[data-fr-reading-list]")?.getAttribute("aria-busy") === "false");
+        await blocked.waitForFunction(() => document.querySelector("[data-fr-reading-list]")?.dataset.frReady === "true");
         assert.match(await blocked.locator("[data-fr-library-status]").textContent(), /存储|storage/i);
-      } else assert.equal(await blocked.locator("#fr-analytics-consent").isDisabled(), true);
+      } else if (signal === "storageReadOnly") {
+        await button.click();
+        assert.equal(await button.getAttribute("aria-pressed"), "false");
+        assert.match(await blocked.locator("[data-fr-save-status]").textContent(), /存储|storage/i);
+      } else assert.deepEqual(requests, [], signal);
       assert.deepEqual(errors, []);
     } finally { await visitor.close(); }
   }
@@ -199,8 +218,8 @@ export async function testReadingFeatures({ browser, base, output, siteRoot }) {
   await noJs.route("**/*", route => new URL(route.request().url()).origin === base ? route.continue() : route.abort());
   try {
     const fallback = await noJs.newPage();
-    await fallback.goto(base + "/search/");
+    await fallback.goto(base + "/reading-list/");
     assert.equal(await fallback.locator('noscript a[href="/posts/"]').isVisible(), true);
   } finally { await noJs.close(); }
-  console.log("Local search, URL history, saved articles, storage failures, content progress, privacy choices, comment retry and 320–1440px bilingual layouts passed.");
+  console.log("Reading-list archive geometry, footer, article toolbar, saved data, storage failures, configured services and 320–1440px bilingual layouts passed.");
 }

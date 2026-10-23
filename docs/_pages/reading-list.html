@@ -1,5 +1,6 @@
 ---
-layout: library
+layout: reading-list
+classes: [fr-posts, fr-reading-list]
 permalink: /reading-list/
 title: 稍后阅读
 title_i18n:
@@ -12,12 +13,20 @@ analytics: false
 sitemap: false
 robots: noindex
 ---
-<section data-fr-reading-list data-fr-catalog-url="{{ '/article-index.json' | relative_url }}">
-  <p data-fr-i18n-zh="在文章页点击「稍后阅读」即可保存。最多 100 篇，仅保存在此浏览器、此域名下；清除浏览器数据后会丢失。" data-fr-i18n-en="Save an article with its Read later button. Up to 100 articles are stored in this browser for this domain; clearing browser data removes the list.">在文章页点击「稍后阅读」即可保存。最多 100 篇，仅保存在此浏览器、此域名下；清除浏览器数据后会丢失。</p>
+<section data-fr-reading-list>
   <p data-fr-library-status role="status" aria-live="polite"></p>
-  <button type="button" class="btn" data-fr-catalog-retry hidden data-fr-i18n-zh="重试加载" data-fr-i18n-en="Retry loading">重试加载</button>
-  <div data-fr-library-results></div>
+  <div id="reading-list-results" data-fr-library-results></div>
   <button type="button" class="btn" data-fr-clear-unavailable hidden data-fr-i18n-zh="清除失效记录" data-fr-i18n-en="Remove unavailable articles">清除失效记录</button>
-  <p><a href="{{ '/search/' | relative_url }}" data-fr-i18n-zh="继续查找文章 →" data-fr-i18n-en="Find more articles →">继续查找文章 →</a></p>
+  <p class="fr-reading-list__note" data-fr-i18n-zh="最多保存 100 篇，仅保存在此浏览器中。" data-fr-i18n-en="Up to 100 articles, saved only in this browser.">最多保存 100 篇，仅保存在此浏览器中。</p>
+  <p><a href="{{ '/posts/' | relative_url }}" data-fr-i18n-zh="浏览全部文章 →" data-fr-i18n-en="Browse all articles →">浏览全部文章 →</a></p>
+  {% assign saved_posts = site.data.posts_by_language.zh | concat: site.data.posts_by_language.en %}
+  {% for saved_post in saved_posts %}
+    <template data-fr-reading-template="{{ saved_post.url | relative_url }}">
+      <div class="fr-saved-entry">
+        {% include reading-card.html post=saved_post show_pillar=true %}
+        <button type="button" class="fr-saved-entry__remove" data-fr-saved-remove>移除</button>
+      </div>
+    </template>
+  {% endfor %}
   <noscript><p>稍后阅读需要 JavaScript。<a href="{{ '/posts/' | relative_url }}">浏览全部文章 / Browse all articles</a>.</p></noscript>
 </section>

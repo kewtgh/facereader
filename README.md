@@ -21,13 +21,13 @@ npm run site:check
 ```
 
 `site:check` validates LEADERS scoring and data, the shared content catalog,
-reading duration, local search and saved-URL contracts, bilingual UI metadata,
+reading duration and saved-URL contracts, bilingual UI metadata,
 GitHub Actions workflows, Sass warnings, internal links, generated HTML
 accessibility, image dimensions/loading attributes, and production artifact
 exclusions. Run it after a successful build before publishing.
 
 The Pages workflow runs `site:check` before uploading the deployment artifact.
-For browser regressions, build first and run `npm run site:browser` with an
+For browser regressions, build first and run `npm run site:browser` with
 the npm-locked Playwright and its Chromium (`npx playwright install --only-shell chromium`). Set `PLAYWRIGHT_MODULE` to its module path
 and `CHROMIUM_EXECUTABLE` to the browser executable when they are not installed
 locally. The suite starts a local-only server, blocks external requests, tests
@@ -35,7 +35,7 @@ responsive pages and failure/retry flows, and saves screenshots under
 `tmp/browser-regression/`. It does not install browsers or publish anything.
 `FR_BROWSER_OUTPUT` selects another screenshot directory. `FR_SITE_ROOT` can
 select a separately built site, and `FR_READING_ONLY=1` runs only the new reading
-and privacy checks during development; release validation runs the complete suite.
+tools and layout checks during development; release validation runs the complete suite.
 The Pages build installs Chromium and runs the complete suite before uploading.
 Set `FR_TEST_SEARCH_CDN=1` to additionally load the pinned public search libraries
 and verify search rendering against mocked responses; this never queries the live index.
@@ -77,18 +77,13 @@ Custom styles are organized as Sass modules under `_sass/minimal-mistakes/`.
 `assets/css/main.css`, so the source split adds no browser requests. Run
 `npm run site:css:budget` after a build to check its compressed size.
 
-## Local Discovery and Reading List
+## Reading List and Content Policy
 
-`/search/` searches titles, summaries, tags and topics in the browser without
-Algolia, a search CDN, or a paid API. Submit a query or change the language/topic
-to update its shareable URL; Back/Forward restores the selection. The article
-language can be shared with `?lang=en` or `?lang=zh`, independently of the
-remembered interface language. Changing the interface language updates the
-article filter. Results load in batches of 12 with explicit retry and empty states.
+The masthead's global search is the site's search entry. `/posts/` links to
+Read later alongside its topic and series navigation.
 
-`_plugins/content_catalog.rb` builds `/article-index.json` from visible, published
-articles. It omits full bodies, hidden posts and `search: false` records. The same
-content policy supplies language archives, series visibility, reading duration
+`_plugins/content_catalog.rb` supplies the shared visible-content policy for
+language archives, series visibility, reading duration
 and up to four recommendations in the article's language, excluding its translation
 group. Reading duration counts Han characters and other words separately, honors
 site/article reading rates and rounds up. The article progress bar measures the
@@ -99,20 +94,24 @@ saved article URLs in `facereader.readingList.v1` in localStorage, supports remo
 and cross-tab updates, and reports unavailable storage. It does not record browsing
 history, synchronize accounts, or cache article bodies. Lists belong to each
 browser and domain; clearing browser data removes them. Rendering resolves saved
-URLs against the current catalog and never trusts saved HTML or external URLs.
+URLs against server-rendered, inert card templates and never trusts saved HTML
+or external URLs. The list reuses `/posts/` containers, columns, sidebar and
+article cards at every breakpoint; it needs no separate catalog request.
+Article save/list actions share the top row with article-version navigation.
+The audit, implementation plan and acceptance results for this revision are in
+[`docs/audits/release-7.7.1-2026-10-24.md`](docs/audits/release-7.7.1-2026-10-24.md).
 
 The existing mixed `/feed.xml` remains available. `/feed/zh.xml` and `/feed/en.xml`
 provide the latest 20 visible articles in each language with summaries and canonical
 article links. Both feeds are discoverable from the head and footer.
 
-## Optional Analytics and Comments
+## Analytics and Comments
 
-Google Analytics is off by default. Footer Privacy settings stores an explicit
-choice in `facereader.analyticsConsent.v1`; Save and reload applies or withdraws it.
-Global Privacy Control and Do Not Track keep analytics off. Browser storage failures
-keep it off, and a cross-tab preference change reloads other pages to apply it.
-Local search and the reading list do not load analytics. Analytics configuration
-on other pages strips query parameters and fragments from page and referrer URLs.
+Google Analytics follows the site's production analytics configuration. There
+is no footer settings panel or saved analytics preference. Global Privacy
+Control and Do Not Track keep analytics off. The reading list does not load
+analytics. Configuration on other pages strips query parameters and fragments
+from page and referrer URLs.
 Disqus loads only when the reader presses Load Disqus comments on the current
 article, with a visible retry if the script fails. This choice does not persist to
 other articles. `/terms/` describes these controls and the local preferences;

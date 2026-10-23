@@ -1,8 +1,8 @@
 {% assign locale = include.locale | default: site.locale %}
-<div class="page__footer-follow">
+<nav class="page__footer-follow" aria-label="关注和订阅" data-fr-i18n-aria-label-zh="关注和订阅" data-fr-i18n-aria-label-en="Follow and subscribe">
   <ul class="social-icons">
     {% if site.data.ui-text[locale].follow_label %}
-      <li><strong>{{ site.data.ui-text[locale].follow_label }}</strong></li>
+      <li class="page__footer-label"><strong data-fr-i18n-key="follow_label">{{ site.data.ui-text[locale].follow_label }}</strong></li>
     {% endif %}
 
     {% if site.footer.links %}
@@ -13,20 +13,18 @@
       {% endfor %}
     {% endif %}
 
-          <li><a href="mailto:facereader@witbacon.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+    <li><a href="mailto:facereader@witbacon.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
 
     {% unless site.atom_feed.hide %}
-      <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> {{ site.data.ui-text[locale].feed_label | default: "Feed" }}</a></li>
+      <li class="page__footer-feeds">
+        <a href="{{ '/feed/zh.xml' | relative_url }}" type="application/atom+xml" hreflang="zh" data-fr-i18n-zh="中文 Feed" data-fr-i18n-en="Chinese Feed">中文 Feed</a>
+        <a href="{{ '/feed/en.xml' | relative_url }}" type="application/atom+xml" hreflang="en" data-fr-i18n-zh="英文 Feed" data-fr-i18n-en="English Feed">英文 Feed</a>
+      </li>
     {% endunless %}
   </ul>
-</div>
-
-<nav aria-label="阅读入口" data-fr-i18n-aria-label-zh="阅读入口" data-fr-i18n-aria-label-en="Reading links">
-  <a href="{{ '/search/' | relative_url }}" data-fr-i18n-zh="查找文章" data-fr-i18n-en="Find articles">查找文章</a> ·
-  <a href="{{ '/reading-list/' | relative_url }}" data-fr-i18n-zh="稍后阅读" data-fr-i18n-en="Reading list">稍后阅读</a> ·
-  <a href="{{ '/feed/zh.xml' | relative_url }}" lang="zh-CN">中文 RSS</a> ·
-  <a href="{{ '/feed/en.xml' | relative_url }}" lang="en">English RSS</a>
 </nav>
-{% include privacy-controls.html %}
 
-<div class="page__footer-copyright">&copy; {% assign site_time = site.time | date: '%Y' %}{% if site.footer.since and site_time != site.footer.since %}{{ site.footer.since }} - {% endif %}{{ site_time }} <a href="{{ site.copyright_url | default: site.url }}">{{ site.copyright | default: site.title | escape_once | strip }}</a>. FaceReader v{{ site.data.theme.version }}. {{ site.data.ui-text[locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>. Based on <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes {{ site.data.theme.upstream_theme.version | default: "4.28.1" }}</a>, rebuilt as a deeply customized FaceReader edition by <a href="https://facereader.witbacon.com" rel="nofollow">Witbacon.com</a>.</div>
+<div class="page__footer-copyright">
+  <span>&copy; {% assign site_time = site.time | date: '%Y' %}{% if site.footer.since and site_time != site.footer.since %}{{ site.footer.since }}–{% endif %}{{ site_time }} <a href="{{ '/' | relative_url }}">{{ site.copyright | default: site.title | escape_once | strip }}</a> · v{{ site.data.theme.version }}</span>
+  <span class="page__footer-credit"><a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> · <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes {{ site.data.theme.upstream_theme.version }}</a> · <a href="https://facereader.witbacon.com" rel="nofollow">Witbacon</a></span>
+</div>

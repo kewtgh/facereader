@@ -303,8 +303,8 @@
     var english = currentUiLanguage() === "en";
     var message = document.createElement("p");
     message.setAttribute("role", "status");
-    message.setAttribute("data-fr-i18n-zh", "增强搜索暂时无法使用。可切换站内文章搜索，或重试。");
-    message.setAttribute("data-fr-i18n-en", "Enhanced search is unavailable. Use local article search or retry.");
+    message.setAttribute("data-fr-i18n-zh", "全站搜索暂时无法使用，请重试或浏览文章列表。");
+    message.setAttribute("data-fr-i18n-en", "Search is temporarily unavailable. Retry or browse the article archive.");
     message.textContent = message.getAttribute("data-fr-i18n-" + (english ? "en" : "zh"));
     var retry = document.createElement("button");
     retry.type = "button";
@@ -321,24 +321,13 @@
       }
       else startAlgoliaSearch();
     });
-    var local = document.createElement("a");
-    var localUrl = new URL("{{ '/search/' | relative_url }}", location.origin);
-    var input = root.querySelector("input[type='search']");
-    var query = input ? input.value : new URLSearchParams(location.search).get("q");
-    if (query) localUrl.searchParams.set("q", query.slice(0, 200));
-    localUrl.searchParams.set("lang", currentUiLanguage() === "en" ? "en" : "zh");
-    local.href = localUrl.pathname + localUrl.search;
-    local.className = "btn btn--primary";
-    local.setAttribute("data-fr-i18n-zh", "站内文章搜索");
-    local.setAttribute("data-fr-i18n-en", "Local article search");
-    local.textContent = local.getAttribute("data-fr-i18n-" + (english ? "en" : "zh"));
     var archive = document.createElement("a");
     archive.href = "{{ '/posts/' | relative_url }}";
     archive.className = "btn";
     archive.setAttribute("data-fr-i18n-zh", "浏览文章");
     archive.setAttribute("data-fr-i18n-en", "Browse articles");
     archive.textContent = archive.getAttribute("data-fr-i18n-" + (english ? "en" : "zh"));
-    error.append(message, local, retry, archive);
+    error.append(message, retry, archive);
     root.prepend(error);
   }
 

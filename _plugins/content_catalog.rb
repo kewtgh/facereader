@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require "json"
 require "nokogiri"
 
 module FaceReader
@@ -65,19 +64,6 @@ module FaceReader
       end
       site.data["posts_by_language"] = by_language
       posts.each { |post| post.data["related_articles"] = ContentPolicy.related(post, posts, site.config["locale"]) }
-
-      records = posts.select do |post|
-        by_language.key?(post.data["article_language"]) && post.data["search"] != false
-      end.map do |post|
-        { "url" => "#{site.baseurl}#{post.url}", "title" => plain.call(post.data["title"]),
-          "excerpt" => post.data["catalog_excerpt"], "language" => post.data["article_language"],
-          "date" => post.date.strftime("%Y-%m-%d"), "tags" => Array(post.data["tags"]),
-          "categories" => Array(post.data["categories"]), "minutes" => post.data["reading_minutes"] }
-      end
-      page = Jekyll::PageWithoutAFile.new(site, site.source, "", "article-index.json")
-      page.data.merge!("layout" => nil, "sitemap" => false, "search" => false, "render_with_liquid" => false)
-      page.content = JSON.generate("version" => 1, "posts" => records)
-      site.pages << page
     end
   end
 end

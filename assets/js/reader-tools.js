@@ -75,6 +75,15 @@
     bar.style.transform = "scaleX(" + value + ")";
   }
 
+  function updateToolPosition() {
+    var rail = document.querySelector(".fr-reader-tools");
+    var footer = document.getElementById("footer");
+    if (!rail || !footer) return;
+    var overlap = Math.max(0, Math.ceil(window.innerHeight - footer.getBoundingClientRect().top));
+    var bottom = overlap ? "calc(1rem + " + overlap + "px + env(safe-area-inset-bottom, 0px))" : "";
+    if (rail.style.bottom !== bottom) rail.style.bottom = bottom;
+  }
+
   function createButton(className, labelKey, symbol, onClick) {
     var button = document.createElement("button");
     button.type = "button";
@@ -353,12 +362,13 @@
     if (document.body.classList.contains("fr-article")) createProgressBar();
     createFloatingTools();
     updateToolLanguage();
-    updateProgress();
-    window.addEventListener("scroll", updateProgress, { passive: true });
-    window.addEventListener("resize", updateProgress);
+    function updatePosition() { updateProgress(); updateToolPosition(); }
+    updatePosition();
+    window.addEventListener("scroll", updatePosition, { passive: true });
+    window.addEventListener("resize", updatePosition);
     if (window.ResizeObserver && document.body.classList.contains("fr-article")) {
-      new ResizeObserver(updateProgress).observe(document.querySelector(".page__content"));
+      new ResizeObserver(updatePosition).observe(document.querySelector(".page__content"));
     }
-    document.addEventListener("facereader:ui-language", function () { updateToolLanguage(); updateProgress(); });
+    document.addEventListener("facereader:ui-language", function () { updateToolLanguage(); updatePosition(); });
   });
 })();

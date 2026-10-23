@@ -1,0 +1,14 @@
+---
+layout: archive
+---
+{% assign locale = page.locale | default: site.locale %}
+<header class="fr-editorial-head">
+  <span class="fr-editorial-head__kicker">Reading list</span>
+  <h1 id="page-title" class="page__title" data-fr-i18n-zh="稍后阅读" data-fr-i18n-en="Read later">稍后阅读</h1>
+  <p class="fr-editorial-head__lead" data-fr-i18n-zh="把想读的文章留在这里，下次接着读。" data-fr-i18n-en="Keep articles here and come back to them when you have time.">把想读的文章留在这里，下次接着读。</p>
+  {% include archive-navigation.html current="reading-list" %}
+</header>
+<div class="fr-posts-layout">
+  <div class="fr-posts-list">{{ content }}</div>
+  {% include archive-context-rail.html locale=locale %}
+</div>

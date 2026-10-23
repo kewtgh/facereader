@@ -1,6 +1,19 @@
 {% assign card_post = include.post %}
 {% assign card_image = card_post.header.teaser | default: card_post.header.overlay_image | default: site.teaser %}
 {% assign card_locale = card_post.locale | default: site.locale %}
+{% assign card_language = card_locale | slice: 0, 2 %}
+{% assign card_pillar = include.pillar %}
+{% if include.show_pillar %}
+  {% assign card_pillar = nil %}
+  {% if card_post.pillar %}
+    {% for candidate in site.data.editorial_pillars %}{% if candidate.id == card_post.pillar %}{% assign card_pillar = candidate %}{% break %}{% endif %}{% endfor %}
+  {% else %}
+    {% for post_category in card_post.categories %}
+      {% for candidate in site.data.editorial_pillars %}{% if candidate.categories contains post_category %}{% assign card_pillar = candidate %}{% break %}{% endif %}{% endfor %}
+      {% if card_pillar %}{% break %}{% endif %}
+    {% endfor %}
+  {% endif %}
+{% endif %}
 <article class="fr-posts-card{% if card_image %} fr-posts-card--image{% endif %}" lang="{{ card_locale }}">
   {% if card_image %}
     <a class="fr-posts-card__image" href="{{ card_post.url | relative_url }}" tabindex="-1" aria-hidden="true">
@@ -11,11 +24,10 @@
     <div class="fr-posts-card__meta">
       <time datetime="{{ card_post.date | date_to_xmlschema }}">{{ card_post.date | date: '%Y-%m-%d' }}</time>
       {% if card_post.read_time %}
-        {% assign card_words = card_post.content | strip_html | strip_newlines | split: '' | size %}
-        {% assign card_minutes = card_words | divided_by: 450 | at_least: 1 %}
+        {% assign card_minutes = card_post.reading_minutes | default: 1 %}
         <span aria-hidden="true">·</span><span>{{ card_minutes }} {{ site.data.ui-text[card_locale].minute_read | default: '分钟阅读' }}</span>
       {% endif %}
-      {% if include.pillar %}<span aria-hidden="true">·</span><a href="{{ '/categories/' | relative_url }}#{{ include.pillar.id }}">{{ include.pillar[archive_lang] }}</a>{% endif %}
+      {% if card_pillar %}<span aria-hidden="true">·</span><a href="{{ '/categories/' | relative_url }}#{{ card_pillar.id }}">{{ card_pillar[card_language] }}</a>{% endif %}
     </div>
     <h3><a href="{{ card_post.url | relative_url }}">{{ card_post.title | markdownify | strip_html | normalize_whitespace | escape }}</a></h3>
     {% if card_post.excerpt %}<p>{{ card_post.excerpt | markdownify | strip_html | normalize_whitespace | truncate: 180 | escape }}</p>{% endif %}

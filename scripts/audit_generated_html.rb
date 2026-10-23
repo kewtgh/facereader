@@ -105,7 +105,7 @@ html_files.each do |file|
   end
 
   if document.at_css('script[src*="googletagmanager.com"], script[src*=".disqus.com/embed.js"]')
-    add_error(errors, file, "optional analytics or comments are loaded before a reader choice")
+    add_error(errors, file, "third-party services bypass the deferred site loader")
   end
   article = document.at_css("body.fr-article .page__content")
   if article
@@ -229,22 +229,30 @@ end
   add_error(errors, SITE_ROOT.join(relative_path), message) if SITE_ROOT.join(relative_path).exist?
 end
 
-catalog_file = SITE_ROOT.join("article-index.json")
-if catalog_file.file?
-  catalog = JSON.parse(catalog_file.read(encoding: "UTF-8"))
-  records = catalog.fetch("posts")
-  urls = records.map { |record| record.fetch("url") }
-  add_error(errors, catalog_file, "duplicate catalog articles") unless urls.uniq.size == urls.size
-  records.each do |record|
-    path = record.fetch("url")
-    target = SITE_ROOT.join(URI::DEFAULT_PARSER.unescape(path).delete_prefix("/"), "index.html")
-    add_error(errors, catalog_file, "catalog article is missing: #{path}") unless target.file?
-    add_error(errors, catalog_file, "invalid catalog language") unless %w[zh en].include?(record["language"])
-    add_error(errors, catalog_file, "invalid reading duration") unless record["minutes"].is_a?(Integer) && record["minutes"].positive?
-    add_error(errors, catalog_file, "full content or research leaked into catalog") if record.key?("content") || record.key?("research_file")
+reading_list_file = SITE_ROOT.join("reading-list", "index.html")
+if reading_list_file.file?
+  list = Nokogiri::HTML(reading_list_file.read(encoding: "UTF-8"))
+  templates = list.css("template[data-fr-reading-template]")
+  urls = templates.map { |template| template["data-fr-reading-template"] }
+  add_error(errors, reading_list_file, "reading list has missing or duplicate articles") if urls.empty? || urls.uniq.size != urls.size
+  add_error(errors, reading_list_file, "reading list does not use the archive layout") unless
+    list.at_css("body.fr-posts .fr-posts-layout > .fr-posts-list [data-fr-reading-list]")
+  templates.each do |template|
+    url = template["data-fr-reading-template"]
+    target = SITE_ROOT.join(URI::DEFAULT_PARSER.unescape(url).delete_prefix("/"), "index.html")
+    add_error(errors, reading_list_file, "saved article is missing: #{url}") unless target.file?
+    add_error(errors, reading_list_file, "saved article does not use an archive card: #{url}") unless
+      template.at_css('.fr-posts-card h3 a')&.[]("href") == url
+  end
+  footer = list.at_css("#footer")
+  add_error(errors, reading_list_file, "footer still contains removed controls") if
+    footer.at_css('#privacy-settings, a[href="/search/"], a[href="/reading-list/"]')
+  %w[zh en].each do |language|
+    add_error(errors, reading_list_file, "footer language feed is missing") unless
+      footer.at_css(%(.page__footer-follow a[href="/feed/#{language}.xml"]))
   end
 else
-  add_error(errors, catalog_file, "local article catalog was not generated")
+  add_error(errors, reading_list_file, "reading list was not generated")
 end
 
 %w[zh en].each do |language|
