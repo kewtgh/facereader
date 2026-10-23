@@ -1051,7 +1051,9 @@ article.page[lang^="en"] .page__content :where(p, li, dd, blockquote) em {
   *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
     animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
     animation-iteration-count: 1 !important;
   }
 }

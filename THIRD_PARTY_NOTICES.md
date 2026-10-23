@@ -49,6 +49,7 @@ sitemap: true
 </section>
 
 <section class="fr-notices__license" aria-labelledby="license-notice">
+  <p data-fr-i18n-zh="阅读工具使用 jQuery 4.0.0、Magnific Popup 1.2.0、Gumshoe 5.1.2、Smooth Scroll 16.1.3，以及原 jQuery FitVids 的稳定 v1.2.0 源码（上游版权头仍为 1.1）。各源码保留原作者及许可声明。" data-fr-i18n-en="Reading utilities use jQuery 4.0.0, Magnific Popup 1.2.0, Gumshoe 5.1.2, Smooth Scroll 16.1.3, and the original jQuery FitVids source at stable tag v1.2.0 (its upstream header still says 1.1). Original author and license notices remain in the sources.">阅读工具使用 jQuery 4.0.0、Magnific Popup 1.2.0、Gumshoe 5.1.2、Smooth Scroll 16.1.3，以及原 jQuery FitVids 的稳定 v1.2.0 源码（上游版权头仍为 1.1）。各源码保留原作者及许可声明。</p>
   <div class="fr-notices__license-head">
     <div>
       <span class="fr-notices__eyebrow" data-fr-i18n-zh="许可与署名" data-fr-i18n-en="License & attribution">许可与署名</span>

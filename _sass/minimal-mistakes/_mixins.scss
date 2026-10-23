@@ -87,10 +87,10 @@
   $threshold: $yiq-contrasted-threshold
 ) {
   @if yiq-is-light($color, $threshold) {
-    @return $yiq-contrasted-dark-default;
+    @return $dark;
   }
 
-  @return $yiq-contrasted-light-default;
+  @return $light;
 }
 
 @mixin yiq-contrasted(

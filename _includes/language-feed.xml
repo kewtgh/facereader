@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ include.language }}">
+  <title>{{ site.title_i18n[include.language] | default: site.title | xml_escape }}</title>
+  <subtitle>{{ site.subtitle_i18n[include.language] | default: site.subtitle | xml_escape }}</subtitle>
+  <link href="{{ page.url | absolute_url | xml_escape }}" rel="self" type="application/atom+xml"/>
+  <link href="{{ '/' | absolute_url | xml_escape }}" rel="alternate" type="text/html"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ page.url | absolute_url | xml_escape }}</id>
+  <author><name>{{ site.author.name | xml_escape }}</name></author>
+  {% for post in site.data.posts_by_language[include.language] limit: 20 %}
+  <entry xml:lang="{{ post.locale | default: site.locale | replace: '_', '-' }}">
+    <title type="text">{{ post.title | strip_html | xml_escape }}</title>
+    <link href="{{ post.url | absolute_url | xml_escape }}" rel="alternate" type="text/html"/>
+    <id>{{ post.url | absolute_url | xml_escape }}</id>
+    <published>{{ post.date | date_to_xmlschema }}</published>
+    <updated>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</updated>
+    <summary type="text">{{ post.catalog_excerpt | xml_escape }}</summary>
+  </entry>
+  {% endfor %}
+</feed>

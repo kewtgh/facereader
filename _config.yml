@@ -207,6 +207,10 @@ exclude:
   - assets/js/main.min.js.map
   - assets/js/vendor
   - assets/scripts
+  - scripts
+  - banner.js
+  - staticman.yml
+  - vercel.json
   - Capfile
   - CHANGELOG
   - config

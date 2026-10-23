@@ -1,0 +1,22 @@
+@use "fr-tokens" as *;
+
+#main.fr-library { max-width: 920px; padding-block: 2rem; }
+.fr-library__form { display: flex; flex-wrap: wrap; align-items: end; gap: .6rem; }
+.fr-library__form > div { flex: 1 1 9rem; min-width: 0; }
+.fr-library__form .fr-library__query { flex-basis: 100%; }
+.fr-library__form label { font-size: .8rem; }
+.fr-library__form input, .fr-library__form select { width: 100%; min-height: 44px; margin: 0; }
+.fr-library .btn, .fr-article-save .btn { min-height: 44px; margin: 0; }
+.fr-library__card { padding: 1.2rem 0; border-bottom: 1px solid $fr-card-border; overflow-wrap: anywhere; }
+.fr-library__card h2 { margin: 0 0 .4rem; font-size: 1.1rem; }
+.fr-library__card p { margin: .4rem 0; font-size: .85rem; }
+.fr-library__meta, .fr-article-save [role=status] { font-size: .75rem; color: $fr-muted-text; }
+.fr-article-save { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-block: 1rem; font-size: .8rem; }
+.fr-article-save [role=status] { flex-basis: 100%; }
+.fr-privacy { margin-block: 1rem; font-size: .8rem; max-width: 42rem; }
+.fr-privacy summary { cursor: pointer; padding-block: .5rem; }
+.fr-privacy button, .fr-comment-consent button { min-height: 44px; }
+.fr-privacy label { display: inline; }
+.fr-privacy [type=checkbox] { margin-inline-end: .5rem; }
+body:has(#privacy-settings[open]) .fr-reader-tools { display: none; }
+@media print { .fr-article-save, .fr-privacy, .fr-comment-consent { display: none; } }

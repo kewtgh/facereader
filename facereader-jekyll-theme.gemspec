@@ -9,9 +9,10 @@ Gem::Specification.new do |spec|
   spec.version                 = package_json["version"]
   spec.authors                 = ["FaceReader", "Michael Rose", "iBug"]
 
-  spec.summary                 = %q{FaceReader site theme, deeply customized from Minimal Mistakes 4.28.0.}
+  spec.summary                 = %q{FaceReader site theme, deeply customized from Minimal Mistakes 4.28.1.}
   spec.homepage                = "https://facereader.witbacon.com/"
   spec.license                 = "MIT"
+  spec.required_ruby_version   = "~> 4.0.9"
 
   spec.metadata["plugin_type"] = "theme"
   

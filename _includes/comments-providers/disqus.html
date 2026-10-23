@@ -1,25 +1,9 @@
 {% if site.comments.disqus.shortname %}
-  <script>
-    var disqus_config = function () {
-      this.page.url = "{{ page.url | absolute_url }}";
-      this.page.identifier = "{{ page.id | default: page.url }}";
-      this.page.title = {{ page.title | default: site.title | jsonify }};
-    };
-
-    (function() {
-      var d = document;
-      var thread = d.getElementById('disqus_thread');
-
-      if (!thread || thread.dataset.disqusLoaded === 'true') {
-        return;
-      }
-
-      var s = d.createElement('script');
-      s.src = 'https://{{ site.comments.disqus.shortname }}.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', String(+new Date()));
-      thread.dataset.disqusLoaded = 'true';
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<div class="fr-comment-consent" data-fr-disqus="{{ site.comments.disqus.shortname | escape }}" data-fr-comment-url="{{ page.url | absolute_url | escape }}" data-fr-comment-id="{{ page.id | default: page.url | escape }}" data-fr-comment-title="{{ page.title | default: site.title | escape }}">
+  <p data-fr-i18n-zh="评论由 Disqus 提供。点击后将连接第三方服务，可能使用 Cookie 并处理访问数据。" data-fr-i18n-en="Comments are provided by Disqus. Loading them connects to a third-party service that may use cookies and process visit data.">评论由 Disqus 提供。点击后将连接第三方服务，可能使用 Cookie 并处理访问数据。</p>
+  <button type="button" class="btn" data-fr-i18n-zh="加载 Disqus 评论" data-fr-i18n-en="Load Disqus comments" hidden>加载 Disqus 评论</button>
+  <p data-fr-comment-status role="status" aria-live="polite"></p>
+  <noscript>评论需要 JavaScript / Comments require JavaScript.</noscript>
+</div>
+<section id="disqus_thread"></section>
 {% endif %}

@@ -16,6 +16,7 @@
  * 全局排版
  * ========================= */
 body { line-height: 1.7; }
+[hidden] { display: none !important; }
 
 .masthead__menu-item a { font-weight: 500; }
 
@@ -110,6 +111,18 @@ body { line-height: 1.7; }
   min-height: 44px;
   padding: 0;
   touch-action: manipulation;
+}
+
+.greedy-nav .search__toggle {
+  box-sizing: border-box;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  margin-inline: 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .masthead-language-switcher .is-current {

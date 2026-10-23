@@ -131,7 +131,7 @@
     });
   }
 
-  function applyLanguage(language) {
+  function applyLanguage(language, initial) {
     language = normalizeLanguage(language);
     document.documentElement.lang = language === "en" ? "en" : "zh-CN";
     document.documentElement.setAttribute("data-fr-ui-lang", language);
@@ -165,7 +165,7 @@
 
     syncTocLabels();
     document.dispatchEvent(new CustomEvent("facereader:ui-language", {
-      detail: { language: language }
+      detail: { language: language, initial: initial === true }
     }));
   }
 
@@ -193,7 +193,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    applyLanguage(initialLanguage());
+    applyLanguage(initialLanguage(), true);
 
     var resetArchive = document.querySelector("[data-fr-archive-reset-path]:not([hidden])");
     if (resetArchive) window.location.replace(resetArchive.getAttribute("data-fr-archive-reset-path"));

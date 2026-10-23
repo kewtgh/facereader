@@ -8,6 +8,8 @@
 
 {% unless site.atom_feed.hide %}
   <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site_title }} Feed">
+  <link href="{{ '/feed/zh.xml' | relative_url }}" type="application/atom+xml" rel="alternate" hreflang="zh" title="FaceReader 中文">
+  <link href="{{ '/feed/en.xml' | relative_url }}" type="application/atom+xml" rel="alternate" hreflang="en" title="FaceReader English">
 {% endunless %}
 
 {%- comment %} https://docs.google.com/presentation/d/1rmxwWa9P6_xHqonmh5ONXRS-jPc5XKbnv99Rjkhe04s/present {% endcomment -%}

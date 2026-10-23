@@ -27,7 +27,7 @@ toc_sticky: true
 most_popular: true
 locale: zh-CN
 translation_key: politics-article-0001-2026
-last_modified_at: 2026-07-09T7:55:52-05:00
+last_modified_at: 2026-07-09T07:55:52-05:00
 ---
 
 我们经常用一种非常简单的方式理解革命：

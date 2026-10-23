@@ -1,0 +1,23 @@
+---
+layout: library
+permalink: /reading-list/
+title: 稍后阅读
+title_i18n:
+  zh: 稍后阅读
+  en: Reading list
+description: 保存在此浏览器中的稍后阅读文章。
+reader_library: true
+search: false
+analytics: false
+sitemap: false
+robots: noindex
+---
+<section data-fr-reading-list data-fr-catalog-url="{{ '/article-index.json' | relative_url }}">
+  <p data-fr-i18n-zh="在文章页点击「稍后阅读」即可保存。最多 100 篇，仅保存在此浏览器、此域名下；清除浏览器数据后会丢失。" data-fr-i18n-en="Save an article with its Read later button. Up to 100 articles are stored in this browser for this domain; clearing browser data removes the list.">在文章页点击「稍后阅读」即可保存。最多 100 篇，仅保存在此浏览器、此域名下；清除浏览器数据后会丢失。</p>
+  <p data-fr-library-status role="status" aria-live="polite"></p>
+  <button type="button" class="btn" data-fr-catalog-retry hidden data-fr-i18n-zh="重试加载" data-fr-i18n-en="Retry loading">重试加载</button>
+  <div data-fr-library-results></div>
+  <button type="button" class="btn" data-fr-clear-unavailable hidden data-fr-i18n-zh="清除失效记录" data-fr-i18n-en="Remove unavailable articles">清除失效记录</button>
+  <p><a href="{{ '/search/' | relative_url }}" data-fr-i18n-zh="继续查找文章 →" data-fr-i18n-en="Find more articles →">继续查找文章 →</a></p>
+  <noscript><p>稍后阅读需要 JavaScript。<a href="{{ '/posts/' | relative_url }}">浏览全部文章 / Browse all articles</a>.</p></noscript>
+</section>

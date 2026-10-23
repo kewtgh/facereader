@@ -40,12 +40,24 @@ const errors = [];
 const warnings = [];
 const groups = new Map();
 
+function validTimestamp(value) {
+  const match = String(value).match(/^(\d{4}-\d{2}-\d{2})(?:T(\d{2}):(\d{2}):(\d{2})(?:\.\d+)?(Z|[+-]\d{2}:\d{2}))?$/);
+  if (!match || !Number.isFinite(Date.parse(String(value)))) return false;
+  if (new Date(`${match[1]}T00:00:00Z`).toISOString().slice(0, 10) !== match[1]) return false;
+  return !match[2] || (Number(match[2]) < 24 && Number(match[3]) < 60 && Number(match[4]) < 60 &&
+    (match[5] === "Z" || (Number(match[5].slice(1, 3)) < 24 && Number(match[5].slice(4)) < 60)));
+}
+
 for (const post of posts) {
   const fm = post.frontMatter;
   const locale = fm.locale || defaultLocale;
-  const lang = String(locale).slice(0, 2);
+  const lang = String(locale).slice(0, 2).toLowerCase();
   const translationKey = fm.translation_key;
   const permalink = String(fm.permalink || "");
+
+  for (const key of ["date", "last_modified_at"]) {
+    if (fm[key] != null && !validTimestamp(fm[key])) errors.push(`${post.relative}: ${key} must be a valid ISO date or timestamp with a timezone.`);
+  }
 
   if (!supportedLocales.has(locale) && !supportedLocales.has(lang)) {
     errors.push(`${post.relative}: locale "${locale}" has no _data/ui-text.yml entry.`);
@@ -71,12 +83,12 @@ for (const [key, translations] of groups) {
   const seenTitles = new Map();
   const seenLangs = new Set();
   for (const translation of translations) {
-    const lang = String(translation.locale).slice(0, 2);
+    const lang = String(translation.locale).slice(0, 2).toLowerCase();
     const title = String(translation.frontMatter.title || "").trim();
-    if (seenLocales.has(translation.locale)) {
-      errors.push(`${key}: duplicate locale "${translation.locale}" in ${seenLocales.get(translation.locale)} and ${translation.relative}.`);
+    if (seenLocales.has(lang)) {
+      errors.push(`${key}: duplicate language "${lang}" in ${seenLocales.get(lang)} and ${translation.relative}.`);
     }
-    seenLocales.set(translation.locale, translation.relative);
+    seenLocales.set(lang, translation.relative);
     seenLangs.add(lang);
 
     if (title) {

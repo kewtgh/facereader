@@ -1,7 +1,7 @@
 ---
 permalink: /terms/
 title: "条款与隐私政策 / Terms & Privacy Policy"
-last_modified_at: 2026-02-25T00:00:00-08:00
+last_modified_at: 2026-10-24T00:00:00+08:00
 layout: single
 toc: true
 description: 本网站的条款、隐私政策与第三方服务说明（Google Analytics、Disqus、AdSense 计划）。
@@ -31,12 +31,14 @@ classes: wide
 
 ### 2.2 评论系统（Disqus）
 本网站使用 Disqus 提供评论功能。你在 Disqus 发表评论、登录或与评论组件交互时，Disqus 可能会收集并处理与你相关的信息（例如账号信息、评论内容、Cookie 标识符、设备信息等）。  
+本站仅在你点击「加载 Disqus 评论」后连接 Disqus；不加载评论不会影响文章阅读。此选择仅针对当前页面，不会自动授权后续页面加载评论。
 Disqus 设置的 Cookie 可能用于登录状态维持与反垃圾/安全目的（例如让你下次评论更便捷）。
 
 > 你对 Disqus 数据的控制与权利，请以 Disqus 的隐私政策为准。
 
 ### 2.3 访问统计（Google Analytics）
 本网站使用 Google Analytics（GA）用于了解访问趋势与页面使用情况（例如哪些页面更受欢迎、访问量变化等）。  
+访问统计默认关闭。只有在页脚「隐私设置」明确选择允许并保存后，本站才会加载 GA。你可在同一位置取消允许，保存并刷新后停止后续页面的统计加载。浏览器的 Global Privacy Control 或 Do Not Track 信号开启时，本站保持统计关闭。撤回选择不会删除第三方此前已收到的数据；你仍可通过浏览器清除既有 Cookie。
 GA 通常通过 Cookie 或类似技术生成统计信息并发送给 Google。该统计信息一般用于汇总分析，而非让我们直接识别个人身份。
 
 > 你可以通过浏览器设置或相关工具限制 Cookie、阻止追踪脚本，从而减少/阻止 GA 的数据收集。
@@ -45,6 +47,8 @@ GA 通常通过 Cookie 或类似技术生成统计信息并发送给 Google。�
 Cookies 是网站存储在你浏览器中的小型数据文件。本网站可能因以下原因使用 Cookies 或类似技术：
 - Disqus 评论功能（登录、互动、反垃圾、安全等）
 - Google Analytics（统计分析）
+
+本站也使用浏览器 `localStorage` 保存手动界面语言、访问统计选择及你主动添加的稍后阅读文章 URL（最多 100 篇）。这些偏好和列表不上传到服务器，分别属于当前浏览器和当前域名，主站和分站不会自动同步。文章搜索在浏览器中检索本站提供的标题、摘要、标签和主题目录，不将查询发送给第三方。导航栏中的外部增强搜索仍使用 Algolia，只有你主动打开该搜索并输入关键词时才发送查询。静态托管和 CDN 仍可能记录资源访问日志；这不等于本站完全没有第三方请求。清除浏览器数据会同时清除本地偏好和阅读列表。
 
 你可以在浏览器中管理、清除或禁用 Cookies。禁用后，评论等功能可能无法正常使用或体验下降。
 
@@ -101,12 +105,14 @@ These logs are generally not used to directly identify you.
 
 ### 2.2 Comments (Disqus)
 The Site uses Disqus for comments. When you post a comment, log in, or interact with the Disqus widget, Disqus may collect and process information such as account details, comment content, cookie identifiers, and device information.  
+The Site connects to Disqus only after you click “Load Disqus comments”. Reading does not require comments. Loading comments on one page does not authorize automatic loading on later pages.
 Disqus cookies may be used for login convenience, anti-spam, and security purposes.
 
 > For your rights and controls related to Disqus data, please refer to Disqus’ own privacy policy.
 
 ### 2.3 Analytics (Google Analytics)
 The Site uses Google Analytics (“GA”) to understand traffic and usage trends (e.g., popular pages, traffic changes).  
+Analytics is off by default. GA loads only after you explicitly allow it in the footer's Privacy settings and save. You can withdraw permission there; saving and reloading stops analytics from loading on subsequent pages. When Global Privacy Control or Do Not Track is enabled, the Site keeps analytics off. Withdrawal cannot erase data a third party already received; existing cookies can be cleared in your browser.
 GA typically uses cookies or similar technologies to generate analytics data that may be transmitted to Google. This data is usually used in aggregate and is not intended to directly identify individual visitors by us.
 
 > You can limit or block GA data collection by adjusting your browser settings or using privacy tools that block tracking scripts/cookies.
@@ -115,6 +121,8 @@ GA typically uses cookies or similar technologies to generate analytics data tha
 Cookies are small data files stored in your browser. The Site may use cookies/similar technologies for:
 - Disqus comments (login, interaction, anti-spam, security)
 - Google Analytics (analytics measurement)
+
+The Site also uses browser `localStorage` for your manual interface language, analytics choice, and article URLs you explicitly add to your reading list (up to 100). These preferences and lists are not uploaded to a server and belong to the current browser and domain; the main site and mirror do not synchronize them. Local article search checks a site-provided catalog of titles, summaries, tags and topics in your browser without sending queries to a third party. The enhanced search in the navigation still uses Algolia and sends queries only after you open it and enter a keyword. Static hosting and CDNs may still record resource access logs; these controls do not mean the Site makes no third-party requests. Clearing browser data removes local preferences and the reading list.
 
 You can manage, clear, or disable cookies in your browser. If disabled, some features (e.g., comments) may not work properly.
 

@@ -4,6 +4,7 @@ require "nokogiri"
 require "json"
 require "pathname"
 require "uri"
+require "time"
 
 SITE_ROOT = Pathname.new(File.expand_path("../_site", __dir__))
 PROJECT_ROOT = SITE_ROOT.parent
@@ -103,6 +104,26 @@ html_files.each do |file|
     end
   end
 
+  if document.at_css('script[src*="googletagmanager.com"], script[src*=".disqus.com/embed.js"]')
+    add_error(errors, file, "optional analytics or comments are loaded before a reader choice")
+  end
+  article = document.at_css("body.fr-article .page__content")
+  if article
+    language = article["lang"].to_s[0, 2]
+    recommendations = document.css(".page__related .archive__item")
+    add_error(errors, file, "too many related articles") if recommendations.size > 4
+    recommendations.each do |recommendation|
+      add_error(errors, file, "related article has a different language") unless recommendation["lang"].to_s[0, 2] == language
+    end
+  end
+  document.css('meta[property="article:published_time"], meta[property="article:modified_time"]').each do |meta|
+    begin
+      Time.iso8601(meta["content"].to_s)
+    rescue ArgumentError
+      add_error(errors, file, "invalid article timestamp")
+    end
+  end
+
   if html.include?("{{") || html.include?("{%")
     add_error(errors, file, "unrendered Liquid syntax remains in generated HTML")
   end
@@ -197,10 +218,60 @@ end
 
 [
   ["assets/scripts", "private build scripts were published"],
+  ["scripts", "root build and test scripts were published"],
+  ["banner.js", "legacy build script was published"],
+  ["staticman.yml", "comment backend configuration was published"],
+  ["vercel.json", "deployment configuration was published"],
+  ["docs/audits", "private audit reports were published"],
   ["assets/js/main.min.js.map", "JavaScript source map was published"],
   ["research", "internal editorial research was published"]
 ].each do |relative_path, message|
   add_error(errors, SITE_ROOT.join(relative_path), message) if SITE_ROOT.join(relative_path).exist?
+end
+
+catalog_file = SITE_ROOT.join("article-index.json")
+if catalog_file.file?
+  catalog = JSON.parse(catalog_file.read(encoding: "UTF-8"))
+  records = catalog.fetch("posts")
+  urls = records.map { |record| record.fetch("url") }
+  add_error(errors, catalog_file, "duplicate catalog articles") unless urls.uniq.size == urls.size
+  records.each do |record|
+    path = record.fetch("url")
+    target = SITE_ROOT.join(URI::DEFAULT_PARSER.unescape(path).delete_prefix("/"), "index.html")
+    add_error(errors, catalog_file, "catalog article is missing: #{path}") unless target.file?
+    add_error(errors, catalog_file, "invalid catalog language") unless %w[zh en].include?(record["language"])
+    add_error(errors, catalog_file, "invalid reading duration") unless record["minutes"].is_a?(Integer) && record["minutes"].positive?
+    add_error(errors, catalog_file, "full content or research leaked into catalog") if record.key?("content") || record.key?("research_file")
+  end
+else
+  add_error(errors, catalog_file, "local article catalog was not generated")
+end
+
+%w[zh en].each do |language|
+  file = SITE_ROOT.join("feed", "#{language}.xml")
+  unless file.file?
+    add_error(errors, file, "language feed was not generated")
+    next
+  end
+  begin
+    feed = Nokogiri::XML(file.read(encoding: "UTF-8")) { |config| config.strict.nonet }
+    entries = feed.xpath("//*[local-name()='entry']")
+    ids = entries.map { |entry| entry.at_xpath("./*[local-name()='id']")&.text }
+    add_error(errors, file, "feed entries are duplicated or exceed 20") unless ids.uniq.size == ids.size && ids.size <= 20
+    entries.each do |entry|
+      add_error(errors, file, "feed contains another language") unless entry["xml:lang"].to_s.start_with?(language)
+      %w[published updated].each { |field| Time.iso8601(entry.at_xpath("./*[local-name()='#{field}']").text) }
+    end
+  rescue Nokogiri::XML::SyntaxError, ArgumentError => error
+    add_error(errors, file, "invalid Atom XML: #{error.message}")
+  end
+end
+
+legacy_sitemap = SITE_ROOT.join("site.xml")
+if legacy_sitemap.file?
+  document = Nokogiri::XML(legacy_sitemap.read(encoding: "UTF-8")) { |config| config.strict.nonet }
+  locations = document.xpath("//*[local-name()='loc']").map(&:text)
+  add_error(errors, legacy_sitemap, "legacy sitemap index is not synchronized") unless locations == ["https://facereader.witbacon.com/sitemap.xml"]
 end
 
 sitemap_file = SITE_ROOT.join("sitemap.xml")

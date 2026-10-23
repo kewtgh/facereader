@@ -1,92 +1,11 @@
-{% assign locale = include.locale | default: site.locale %}
-{%- comment -%}
-  智能相关文章推荐（兼容 GitHub Pages + Jekyll 3.9）
-  优先级：
-  1. strong_tag_matches：与当前文章有 ≥2 个相同 tag 的文章（按时间倒序）
-  2. weak_tag_matches：与当前文章有 1 个相同 tag 的文章
-  3. same_cat：与当前文章同主分类（page.categories 的第一个）
-  4. fallback：全站最新文章补齐
-{%- endcomment -%}
-
-{%- assign related        = "" | split: "" -%}
-{%- assign strong_tags    = "" | split: "" -%}
-{%- assign weak_tags      = "" | split: "" -%}
-{%- assign same_cat       = "" | split: "" -%}
-
-{%- assign main_cat = page.categories | first -%}
-
-{%- for post in site.posts -%}
-  {%- if post.id == page.id -%}{% continue %}{%- endif -%}
-
-  {%- assign shared_tags = 0 -%}
-  {%- if page.tags and post.tags -%}
-    {%- for tag in page.tags -%}
-      {%- if post.tags contains tag -%}
-        {%- assign shared_tags = shared_tags | plus: 1 -%}
-      {%- endif -%}
-    {%- endfor -%}
-  {%- endif -%}
-
-  {%- if shared_tags >= 2 -%}
-    {%- assign strong_tags = strong_tags | push: post -%}
-  {%- elsif shared_tags == 1 -%}
-    {%- assign weak_tags = weak_tags | push: post -%}
-  {%- endif -%}
-
-  {%- if main_cat and post.categories contains main_cat -%}
-    {%- assign same_cat = same_cat | push: post -%}
-  {%- endif -%}
-{%- endfor -%}
-
-{%- comment -%} 1. 高度相关（≥2 相同标签） {%- endcomment -%}
-{%- for post in strong_tags -%}
-  {%- unless related contains post -%}
-    {%- assign related = related | push: post -%}
-  {%- endunless -%}
-  {%- if related.size >= 4 -%}{% break %}{%- endif -%}
-{%- endfor -%}
-
-{%- comment -%} 2. 一般相关（1 个相同标签） {%- endcomment -%}
-{%- if related.size < 4 -%}
-  {%- for post in weak_tags -%}
-    {%- unless related contains post -%}
-      {%- assign related = related | push: post -%}
-    {%- endunless -%}
-    {%- if related.size >= 4 -%}{% break %}{%- endif -%}
-  {%- endfor -%}
-{%- endif -%}
-
-{%- comment -%} 3. 同主分类补齐 {%- endcomment -%}
-{%- if related.size < 4 and same_cat.size > 0 -%}
-  {%- for post in same_cat -%}
-    {%- unless related contains post -%}
-      {%- assign related = related | push: post -%}
-    {%- endunless -%}
-    {%- if related.size >= 4 -%}{% break %}{%- endif -%}
-  {%- endfor -%}
-{%- endif -%}
-
-{%- comment -%} 4. 全站最新文章兜底补齐 {%- endcomment -%}
-{%- if related.size < 4 -%}
-  {%- for post in site.posts -%}
-    {%- if post.id == page.id -%}{% continue %}{%- endif -%}
-    {%- unless related contains post -%}
-      {%- assign related = related | push: post -%}
-    {%- endunless -%}
-    {%- if related.size >= 4 -%}{% break %}{%- endif -%}
-  {%- endfor -%}
-{%- endif -%}
-
-{%- if related.size > 0 -%}
+{% assign locale = include.locale | default: page.locale | default: site.locale %}
+{% if page.related_articles.size > 0 %}
 <div class="page__related">
-  <h2 class="page__related-title">
-    {{ site.data.ui-text[locale].related_label }}
-  </h2>
-
+  <h2 class="page__related-title" data-fr-i18n-zh="{{ site.data.ui-text['zh-CN'].related_label }}" data-fr-i18n-en="{{ site.data.ui-text.en.related_label }}">{{ site.data.ui-text[locale].related_label }}</h2>
   <div class="grid__wrapper">
-    {%- for post in related limit: 4 -%}
-      {%- include archive-single.html type="grid" -%}
-    {%- endfor -%}
+    {% for post in page.related_articles %}
+      {% include archive-single.html locale=locale type="grid" %}
+    {% endfor %}
   </div>
 </div>
-{%- endif -%}
+{% endif %}

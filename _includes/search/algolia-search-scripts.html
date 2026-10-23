@@ -83,17 +83,17 @@
     if (!document.querySelector("link[data-fr-instantsearch-css]")) {
       var css = document.createElement("link");
       css.rel = "stylesheet";
-      css.href = "https://cdn.jsdelivr.net/npm/instantsearch.css@8.24.0/themes/satellite-min.css";
+      css.href = "https://cdn.jsdelivr.net/npm/instantsearch.css@8.24.1/themes/satellite-min.css";
       css.setAttribute("data-fr-instantsearch-css", "true");
       document.head.appendChild(css);
     }
 
     // 加载依赖
     if (!window["algoliasearch/lite"]) {
-      await loadScript("https://cdn.jsdelivr.net/npm/algoliasearch@5.59.0/dist/lite/builds/browser.umd.js");
+      await loadScript("https://cdn.jsdelivr.net/npm/algoliasearch@5.60.0/dist/lite/builds/browser.umd.js");
     }
     if (!window.instantsearch) {
-      await loadScript("https://cdn.jsdelivr.net/npm/instantsearch.js@4.119.0/dist/instantsearch.production.min.js");
+      await loadScript("https://cdn.jsdelivr.net/npm/instantsearch.js@4.120.0/dist/instantsearch.production.min.js");
     }
 
     var appId = "{{ site.algolia.application_id }}";
@@ -121,6 +121,10 @@
     // requests in this page session. Server-side API-key limits remain the
     // authoritative protection against callers that bypass the website.
     var searchClient = {
+      clearCache: function () {
+        searchResponseCache.clear();
+        return rawSearchClient.clearCache();
+      },
       search: function (requests) {
         var normalizedRequests = (requests || []).map(function (request) {
           var params = Object.assign({}, request.params || {});
@@ -269,6 +273,9 @@
 
       search.addWidgets(widgets);
 
+      root._frSearch = search;
+      search.on("error", function () { showAlgoliaError(root); });
+
       search.start();
       setTimeout(refreshAlgoliaUiLanguage, 0);
 
@@ -289,6 +296,52 @@
     });
   }
 
+  function showAlgoliaError(root) {
+    if (root.querySelector("[data-fr-search-error]")) return;
+    var error = document.createElement("div");
+    error.setAttribute("data-fr-search-error", "true");
+    var english = currentUiLanguage() === "en";
+    var message = document.createElement("p");
+    message.setAttribute("role", "status");
+    message.setAttribute("data-fr-i18n-zh", "增强搜索暂时无法使用。可切换站内文章搜索，或重试。");
+    message.setAttribute("data-fr-i18n-en", "Enhanced search is unavailable. Use local article search or retry.");
+    message.textContent = message.getAttribute("data-fr-i18n-" + (english ? "en" : "zh"));
+    var retry = document.createElement("button");
+    retry.type = "button";
+    retry.className = "btn";
+    retry.setAttribute("data-fr-i18n-zh", "重试搜索");
+    retry.setAttribute("data-fr-i18n-en", "Retry search");
+    retry.textContent = retry.getAttribute("data-fr-i18n-" + (english ? "en" : "zh"));
+    retry.addEventListener("click", function () {
+      if (root._frSearch) {
+        var input = root.querySelector("input[type='search']");
+        if (input) root._frSearch.helper.setQuery(input.value.trim());
+        error.remove();
+        root._frSearch.refresh();
+      }
+      else startAlgoliaSearch();
+    });
+    var local = document.createElement("a");
+    var localUrl = new URL("{{ '/search/' | relative_url }}", location.origin);
+    var input = root.querySelector("input[type='search']");
+    var query = input ? input.value : new URLSearchParams(location.search).get("q");
+    if (query) localUrl.searchParams.set("q", query.slice(0, 200));
+    localUrl.searchParams.set("lang", currentUiLanguage() === "en" ? "en" : "zh");
+    local.href = localUrl.pathname + localUrl.search;
+    local.className = "btn btn--primary";
+    local.setAttribute("data-fr-i18n-zh", "站内文章搜索");
+    local.setAttribute("data-fr-i18n-en", "Local article search");
+    local.textContent = local.getAttribute("data-fr-i18n-" + (english ? "en" : "zh"));
+    var archive = document.createElement("a");
+    archive.href = "{{ '/posts/' | relative_url }}";
+    archive.className = "btn";
+    archive.setAttribute("data-fr-i18n-zh", "浏览文章");
+    archive.setAttribute("data-fr-i18n-en", "Browse articles");
+    archive.textContent = archive.getAttribute("data-fr-i18n-" + (english ? "en" : "zh"));
+    error.append(message, local, retry, archive);
+    root.prepend(error);
+  }
+
   function startAlgoliaSearch() {
     document.querySelectorAll("[data-fr-search-error]").forEach(function (node) { node.remove(); });
     if (!algoliaInitPromise) {
@@ -300,30 +353,7 @@
     algoliaInitPromise.catch(function (e) {
       console.error("[InstantSearch] init failed:", e);
       document.querySelectorAll(".algolia-page").forEach(function (root) {
-        if (root.querySelector("[data-fr-search-error]")) return;
-        var error = document.createElement("div");
-        error.setAttribute("data-fr-search-error", "true");
-        var english = currentUiLanguage() === "en";
-        var message = document.createElement("p");
-        message.setAttribute("role", "status");
-        message.setAttribute("data-fr-i18n-zh", "搜索暂时无法加载。你可以重试，或前往文章列表浏览。");
-        message.setAttribute("data-fr-i18n-en", "Search could not load. Retry or browse the article archive.");
-        message.textContent = message.getAttribute("data-fr-i18n-" + (english ? "en" : "zh"));
-        var retry = document.createElement("button");
-        retry.type = "button";
-        retry.className = "btn";
-        retry.setAttribute("data-fr-i18n-zh", "重试搜索");
-        retry.setAttribute("data-fr-i18n-en", "Retry search");
-        retry.textContent = retry.getAttribute("data-fr-i18n-" + (english ? "en" : "zh"));
-        retry.addEventListener("click", startAlgoliaSearch);
-        var archive = document.createElement("a");
-        archive.href = "{{ '/posts/' | relative_url }}";
-        archive.className = "btn";
-        archive.setAttribute("data-fr-i18n-zh", "浏览文章");
-        archive.setAttribute("data-fr-i18n-en", "Browse articles");
-        archive.textContent = archive.getAttribute("data-fr-i18n-" + (english ? "en" : "zh"));
-        error.append(message, retry, archive);
-        root.prepend(error);
+        showAlgoliaError(root);
       });
     });
   }

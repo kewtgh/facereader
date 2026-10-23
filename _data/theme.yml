@@ -4,6 +4,6 @@ name: FaceReader
 # version is loaded from package.json by _plugins/site_version.rb
 upstream_theme:
   name: Minimal Mistakes
-  version: 4.28.0
+  version: 4.28.1
   license: MIT
   url: https://github.com/mmistakes/minimal-mistakes

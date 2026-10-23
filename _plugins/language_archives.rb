@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative "content_catalog"
+
 module FaceReader
   # Keep the existing /posts/page/:num/ URLs, with independent language totals.
   class LanguageArchives < Jekyll::Generator
@@ -13,10 +15,10 @@ module FaceReader
     end
 
     def generate(site)
-      posts = site.posts.docs.reverse.reject { |post| post.data["hidden"] }
+      posts = site.posts.docs.reverse.select { |post| ContentPolicy.visible?(post, site) }
       by_language = { "zh" => [], "en" => [] }
       posts.each do |post|
-        language = (post.data["locale"] || site.config["locale"]).to_s.tr("_", "-").split("-").first.downcase
+        language = ContentPolicy.language(post.data["locale"], site.config["locale"])
         by_language[language]&.push(post)
       end
       site.data["posts_by_language"] = by_language

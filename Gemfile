@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "~> 4.0"
+ruby file: ".ruby-version"
 
 group :jekyll_plugins do
   gem "jekyll", "~> 4.4"

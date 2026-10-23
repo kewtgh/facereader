@@ -4,11 +4,12 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import http from "node:http";
 import { createRequire } from "node:module";
+import { testReadingFeatures } from "./test-reading-features.mjs";
 const require = createRequire(import.meta.url);
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "playwright");
-const root = path.resolve("_site");
+const root = path.resolve(process.env.FR_SITE_ROOT || "_site");
 const siteVersion = JSON.parse(await fs.readFile("package.json", "utf8")).version;
-const output = path.resolve("tmp/audit-2026-10-03");
+const output = path.resolve(process.env.FR_BROWSER_OUTPUT || "tmp/browser-regression");
 await fs.mkdir(output, { recursive: true });
 const types = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".mjs": "text/javascript", ".css": "text/css", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".webp": "image/webp", ".woff2": "font/woff2" };
 const server = http.createServer(async (req, res) => {
@@ -25,6 +26,7 @@ const base = `http://127.0.0.1:${server.address().port}`;
 let browser;
 try {
   browser = await chromium.launch({ headless: true, ...(process.env.CHROMIUM_EXECUTABLE ? { executablePath: process.env.CHROMIUM_EXECUTABLE } : {}) });
+  if (!process.env.FR_READING_ONLY) {
   // Fresh visitors, remembered choices, unavailable APIs and equal UTC offsets.
   for (const scenario of [
     { timezoneId: 'Asia/Shanghai', locale: 'en-US', expected: 'zh' },
@@ -68,9 +70,13 @@ try {
   console.log('Time-zone defaults, browser fallback, remembered choices and blocked storage passed.');
   const context = await browser.newContext({ reducedMotion: "reduce", timezoneId: "Asia/Taipei", locale: "zh-CN" });
   let allowSearchCdn = false;
-  await context.route("**/*", (route) => {
+  await context.route("**/*", async (route) => {
     const url = new URL(route.request().url());
-    const searchDependency = url.origin === "https://cdn.jsdelivr.net" && /^\/npm\/(algoliasearch@5\.59\.0|instantsearch\.js@4\.119\.0|instantsearch\.css@8\.24\.0)\//.test(url.pathname);
+    const searchDependency = url.origin === "https://cdn.jsdelivr.net" && /^\/npm\/(algoliasearch@5\.60\.0|instantsearch\.js@4\.120\.0|instantsearch\.css@8\.24\.1)\//.test(url.pathname);
+    if (allowSearchCdn && searchDependency && process.env.FR_SEARCH_FIXTURES) {
+      const filename = url.pathname.includes("algoliasearch@") ? "algolia.js" : url.pathname.includes("instantsearch.js@") ? "instantsearch.js" : "instantsearch.css";
+      return route.fulfill({ contentType: filename.endsWith("css") ? "text/css" : "application/javascript", body: await fs.readFile(path.join(process.env.FR_SEARCH_FIXTURES, filename)) });
+    }
     return url.origin === base || (allowSearchCdn && searchDependency) ? route.continue() : route.abort();
   });
   const page = await context.newPage();
@@ -683,12 +689,16 @@ try {
   if (process.env.FR_TEST_SEARCH_CDN === "1") {
     allowSearchCdn = true;
     let mockedSearchRequests = 0;
+    const mockedQueries = [];
+    let rejectMockedSearch = false;
     await page.route(/https:\/\/[^/]+\.algolia(?:net|\.net)\//, async (route) => {
       // Algolia v5 sends search parameters directly on each request.
       const requests = JSON.parse(route.request().postData() || "{}").requests || [];
       assert.ok(requests.length > 0, "Search should send at least one request");
-      assert.ok(requests.every((request) => request.indexName && request.query === "FaceReader"), "Search should preserve the index and query in the v5 request");
+      assert.ok(requests.every((request) => request.indexName && ["FaceReader", "Recovery query"].includes(request.query)), "Search should preserve the index and query in the v5 request");
       mockedSearchRequests += 1;
+      mockedQueries.push(requests[0].query);
+      if (rejectMockedSearch) return route.fulfill({ status: 403, contentType: "application/json", body: '{"message":"Mocked search unavailable","status":403}' });
       const results = requests.map((request) => ({
         hits: [{ objectID: "smoke", title: "FaceReader search smoke", url: "/posts/", teaser: "/assets/img/page-header-image-manufacture-teaser.jpg", description: "Local fixture, not a live index query." }],
         index: request.indexName, params: new URLSearchParams({ query: request.query }).toString(),
@@ -708,9 +718,24 @@ try {
       throw error;
     }
     assert.equal(await page.locator(".search-content .algolia-hit__title").first().textContent(), "FaceReader search smoke");
+    rejectMockedSearch = true;
+    await page.locator(".search-content .ais-SearchBox-input").fill("Recovery query");
+    await page.locator(".search-content [data-fr-search-error]").waitFor();
+    const recovery = await page.locator('.search-content [data-fr-search-error] a[href^="/search/"]').getAttribute("href");
+    assert.equal(new URL(recovery, base).searchParams.get("q"), "Recovery query");
+    rejectMockedSearch = false;
+    await Promise.all([
+      page.waitForResponse(response => /\.algolia(?:net|\.net)\//.test(response.url()) && response.status() === 200),
+      page.locator(".search-content [data-fr-search-error] button").click()
+    ]);
+    assert.equal(mockedQueries.at(-1), "Recovery query", "Retry must preserve the failed query instead of a previous result");
+    assert.equal(await page.locator(".search-content .ais-SearchBox-input").inputValue(), "Recovery query");
+    assert.equal(await page.locator(".search-content [data-fr-search-error]").count(), 0);
     console.log("Updated CDN search libraries render mocked results; no live index request was sent.");
   }
   assert.deepEqual(errors, [], "Uncaught browser exceptions");
+  }
+  await testReadingFeatures({ browser, base, output, siteRoot: root });
   console.log(`Browser regression passed. Screenshots: ${output}`);
 } finally {
   if (browser) await browser.close();

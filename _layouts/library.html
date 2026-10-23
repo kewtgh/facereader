@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<main id="main" class="fr-library">
+  <header class="fr-editorial-head">
+    <span class="fr-editorial-head__kicker">FaceReader · Reading</span>
+    <h1 id="page-title" data-fr-i18n-zh="{{ page.title_i18n.zh | escape }}" data-fr-i18n-en="{{ page.title_i18n.en | escape }}">{{ page.title }}</h1>
+    <nav class="fr-editorial-head__nav" aria-label="阅读工具" data-fr-i18n-aria-label-zh="阅读工具" data-fr-i18n-aria-label-en="Reading tools">
+      <a href="{{ '/search/' | relative_url }}"{% if page.url == '/search/' %} aria-current="page"{% endif %} data-fr-i18n-zh="查找文章" data-fr-i18n-en="Find articles">查找文章</a>
+      <a href="{{ '/reading-list/' | relative_url }}"{% if page.url == '/reading-list/' %} aria-current="page"{% endif %} data-fr-i18n-zh="稍后阅读" data-fr-i18n-en="Reading list">稍后阅读</a>
+      <a href="{{ '/posts/' | relative_url }}" data-fr-i18n-zh="全部文章" data-fr-i18n-en="All articles">全部文章</a>
+    </nav>
+  </header>
+  {{ content }}
+</main>

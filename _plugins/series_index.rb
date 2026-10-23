@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative "content_catalog"
+
 # Every series view shares membership, language filtering and reading order.
 Jekyll::Hooks.register :site, :post_read do |site|
   definitions = site.data.fetch("series")
@@ -10,7 +12,7 @@ Jekyll::Hooks.register :site, :post_read do |site|
     next unless id
 
     order = post.data["series_order"]
-    language = (post.data["locale"] || site.config["locale"]).to_s.split("-").first
+    language = FaceReader::ContentPolicy.language(post.data["locale"], site.config["locale"])
     unless index.key?(id) && index[id].key?(language) && order.is_a?(Integer) && order.positive?
       raise Jekyll::Errors::FatalException, "Invalid series metadata: #{post.path}"
     end
@@ -19,8 +21,7 @@ Jekyll::Hooks.register :site, :post_read do |site|
       raise Jekyll::Errors::FatalException, "Duplicate series order: #{post.path} and #{orders[key]}"
     end
     orders[key] = post.path
-    next if post.data["hidden"] == true || post.data["published"] == false
-    next if !site.config["future"] && post.date > site.time
+    next unless FaceReader::ContentPolicy.visible?(post, site)
 
     index[id][language] << post
   end

@@ -2,12 +2,14 @@
 
 ## Development Runtime
 
-FaceReader builds with Ruby 4.0 and Node.js 24.
+FaceReader builds with Ruby 4.0.9 and Node.js 24.22.1 LTS.
 
-- Ruby: use the stable Ruby 4.0 branch from `.ruby-version`.
-- Windows: use RubyInstaller Ruby+Devkit 4.0 x64 in a Ruby 4.0 directory.
-- Bundler: use Bundler 4.0.16, matching `Gemfile.lock`.
-- Node.js: use Node 24.21.0 LTS from `.node-version` or `.nvmrc`.
+- Ruby: use the stable version in `.ruby-version`; `Gemfile` reads that file.
+- Windows: use a matching RubyInstaller Ruby+Devkit x64 release. While its
+  installer trails a new Ruby patch, use Linux/WSL or a container with the pinned Ruby.
+- Bundler: use 4.0.23 from `.bundler-version`, matching `Gemfile.lock`.
+- Node.js: use 24.22.1 LTS from `.node-version` or `.nvmrc`.
+- npm: use 12.2.1 from `.npm-version` and `package.json#packageManager`.
 
 Install and verify:
 
@@ -18,38 +20,49 @@ JEKYLL_ENV=production npm run site:build
 npm run site:check
 ```
 
-`site:check` validates LEADERS scoring and data, bilingual UI metadata,
+`site:check` validates LEADERS scoring and data, the shared content catalog,
+reading duration, local search and saved-URL contracts, bilingual UI metadata,
 GitHub Actions workflows, Sass warnings, internal links, generated HTML
 accessibility, image dimensions/loading attributes, and production artifact
 exclusions. Run it after a successful build before publishing.
 
 The Pages workflow runs `site:check` before uploading the deployment artifact.
 For browser regressions, build first and run `npm run site:browser` with an
-installed Playwright and Chromium. Set `PLAYWRIGHT_MODULE` to its module path
+the npm-locked Playwright and its Chromium (`npx playwright install --only-shell chromium`). Set `PLAYWRIGHT_MODULE` to its module path
 and `CHROMIUM_EXECUTABLE` to the browser executable when they are not installed
 locally. The suite starts a local-only server, blocks external requests, tests
 responsive pages and failure/retry flows, and saves screenshots under
-`tmp/audit-2026-10-03/`. It does not install browsers or publish anything.
+`tmp/browser-regression/`. It does not install browsers or publish anything.
+`FR_BROWSER_OUTPUT` selects another screenshot directory. `FR_SITE_ROOT` can
+select a separately built site, and `FR_READING_ONLY=1` runs only the new reading
+and privacy checks during development; release validation runs the complete suite.
+The Pages build installs Chromium and runs the complete suite before uploading.
 Set `FR_TEST_SEARCH_CDN=1` to additionally load the pinned public search libraries
 and verify search rendering against mocked responses; this never queries the live index.
+`FR_SEARCH_FIXTURES` may point to a directory containing `algolia.js`,
+`instantsearch.js` and `instantsearch.css` from those pinned URLs to exercise
+the same libraries without browser network access.
 
 Browser-facing JavaScript belongs in `assets/js`. Build-only validation and
 deployment utilities belong in `assets/scripts`, which is excluded from the
 published site. `bundle exec rake js` regenerates `assets/js/main.min.js`
 without publishing a source map.
-The bundle uses npm-locked jQuery 4.0 and Magnific Popup 1.2, rather than manually
-copied vendor scripts. Run `npm ci` before regenerating it. Third-party notices
+The bundle uses npm-locked jQuery 4.0, Magnific Popup 1.2, Gumshoe 5.1.2 and
+Smooth Scroll 16.1.3. The original jQuery FitVids source follows its stable v1.2.0
+tag (whose upstream copyright header still says 1.1). Run `npm ci` before regenerating it. Third-party notices
 are at `/THIRD_PARTY_NOTICES/`.
 
-Search loads the Algolia 5.59.0 lite client, InstantSearch.js 4.119.0, and
-InstantSearch.css 8.24.0 from pinned CDN URLs. After updating those URLs, update
+Enhanced search loads the Algolia 5.60.0 lite client, InstantSearch.js 4.120.0, and
+InstantSearch.css 8.24.1 from pinned CDN URLs. After updating those URLs, update
 the CDN allowlist in `assets/scripts/test-site-browser.mjs` and run the browser
 suite with `FR_TEST_SEARCH_CDN=1` to check mocked search results.
 
 Ruby dependencies resolve to the latest stable versions allowed by the Jekyll
 plugin dependency graph. Jekyll 4.4 requires JSON 2.x, Liquid 4.x, Rouge 4.x,
-and terminal-table 3.x; jemoji requires html-pipeline 2.x, and jekyll-gist
-requires Octokit 4.x. Newer incompatible major versions remain excluded.
+and terminal-table 3.x; jemoji requires html-pipeline 2.x, jekyll-gist
+requires Octokit 4.x, and IRB requires Prism 1.x. Newer incompatible major
+versions remain excluded. Runtime and registry checks for this release are in
+`docs/audits/implementation-plan-2026-10-24.md`.
 
 Maintain the FaceReader version only in `package.json`; run
 `npm install --package-lock-only` to synchronize npm's lockfile after changing it.
@@ -63,6 +76,47 @@ Custom styles are organized as Sass modules under `_sass/minimal-mistakes/`.
 `_custom.scss` loads them in cascade order; Jekyll still emits one minified
 `assets/css/main.css`, so the source split adds no browser requests. Run
 `npm run site:css:budget` after a build to check its compressed size.
+
+## Local Discovery and Reading List
+
+`/search/` searches titles, summaries, tags and topics in the browser without
+Algolia, a search CDN, or a paid API. Submit a query or change the language/topic
+to update its shareable URL; Back/Forward restores the selection. The article
+language can be shared with `?lang=en` or `?lang=zh`, independently of the
+remembered interface language. Changing the interface language updates the
+article filter. Results load in batches of 12 with explicit retry and empty states.
+
+`_plugins/content_catalog.rb` builds `/article-index.json` from visible, published
+articles. It omits full bodies, hidden posts and `search: false` records. The same
+content policy supplies language archives, series visibility, reading duration
+and up to four recommendations in the article's language, excluding its translation
+group. Reading duration counts Han characters and other words separately, honors
+site/article reading rates and rounds up. The article progress bar measures the
+body rather than recommendations, comments or the footer.
+
+Article pages offer Read later. `/reading-list/` stores up to 100 explicitly
+saved article URLs in `facereader.readingList.v1` in localStorage, supports removal
+and cross-tab updates, and reports unavailable storage. It does not record browsing
+history, synchronize accounts, or cache article bodies. Lists belong to each
+browser and domain; clearing browser data removes them. Rendering resolves saved
+URLs against the current catalog and never trusts saved HTML or external URLs.
+
+The existing mixed `/feed.xml` remains available. `/feed/zh.xml` and `/feed/en.xml`
+provide the latest 20 visible articles in each language with summaries and canonical
+article links. Both feeds are discoverable from the head and footer.
+
+## Optional Analytics and Comments
+
+Google Analytics is off by default. Footer Privacy settings stores an explicit
+choice in `facereader.analyticsConsent.v1`; Save and reload applies or withdraws it.
+Global Privacy Control and Do Not Track keep analytics off. Browser storage failures
+keep it off, and a cross-tab preference change reloads other pages to apply it.
+Local search and the reading list do not load analytics. Analytics configuration
+on other pages strips query parameters and fragments from page and referrer URLs.
+Disqus loads only when the reader presses Load Disqus comments on the current
+article, with a visible retry if the script fails. This choice does not persist to
+other articles. `/terms/` describes these controls and the local preferences;
+hosting and other CDN resource requests remain separate from optional analytics.
 
 ## Bilingual Articles
 

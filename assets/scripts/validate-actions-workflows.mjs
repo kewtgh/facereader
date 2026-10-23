@@ -4,7 +4,7 @@ import YAML from "yaml";
 
 const WORKFLOW_DIR = path.join(".github", "workflows");
 const NODE20_RE = /node-version:\s*['"]?20['"]?/;
-const OLD_ACTION_RE = /actions\/(?:checkout@v4|setup-node@v4|github-script@v7)/;
+const OLD_ACTION_RE = /actions\/(?:checkout@v[4-6](?:\D|$)|setup-node@v[4-6](?:\D|$)|github-script@v[7-8](?:\D|$))/;
 const RAW_JEKYLL_BUILD_RE = /(?:bundle exec\s+)?jekyll build/;
 
 function fail(message) {
@@ -92,6 +92,10 @@ function checkPagesAuthority(file, workflow) {
   if (checkIndex < 0 || uploadIndex < 0 || checkIndex >= uploadIndex || steps[checkIndex]?.["continue-on-error"]) {
     fail(`${file}: site:check must gate the Pages artifact upload.`);
   }
+  const browserIndex = steps.findIndex(step => /\bnpm run site:browser\b/.test(step.run || ""));
+  if (browserIndex < 0 || browserIndex >= uploadIndex || steps[browserIndex]?.["continue-on-error"]) {
+    fail(`${file}: browser regression must gate the Pages artifact upload.`);
+  }
 
   const protectRuns = buildRuns.filter((run) => /\bnpm run algolia:protect\b/.test(run)).length;
   if (protectRuns !== 1) fail(`${file}: build job must protect the Algolia browser key exactly once before deployment`);
@@ -113,6 +117,14 @@ function checkPagesAuthority(file, workflow) {
   const rawBuilds = allRuns.filter((run) => RAW_JEKYLL_BUILD_RE.test(run) && !/\bnpm run site:build\b/.test(run));
   if (rawBuilds.length > 0) fail(`${file}: Pages/Algolia pipeline contains a second raw Jekyll build`);
 }
+
+const versionFile = file => fs.readFileSync(file, "utf8").trim();
+const packageJson = JSON.parse(versionFile("package.json"));
+if (versionFile(".node-version") !== versionFile(".nvmrc")) fail("Node version files disagree.");
+if (packageJson.packageManager !== `npm@${versionFile(".npm-version")}`) fail("npm version files disagree.");
+const lock = versionFile("Gemfile.lock");
+if (lock.match(/BUNDLED WITH\s+(\S+)/)?.[1] !== versionFile(".bundler-version")) fail("Bundler version files disagree.");
+if (lock.match(/RUBY VERSION\s+ruby (\S+)/)?.[1] !== versionFile(".ruby-version")) fail("Ruby version files disagree.");
 
 for (const file of workflowFiles()) {
   const raw = fs.readFileSync(file, "utf8");

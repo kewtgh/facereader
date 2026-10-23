@@ -66,9 +66,12 @@
     var bar = document.querySelector(".fr-reading-progress i");
     if (!bar) return;
 
-    var doc = document.documentElement;
-    var scrollable = doc.scrollHeight - window.innerHeight;
-    var value = scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0;
+    var content = document.querySelector(".fr-article .page__content");
+    if (!content) return;
+    var bounds = content.getBoundingClientRect();
+    var start = bounds.top + window.scrollY;
+    var scrollable = content.offsetHeight - window.innerHeight;
+    var value = scrollable > 0 ? Math.min(1, Math.max(0, (window.scrollY - start) / scrollable)) : (bounds.bottom <= window.innerHeight ? 1 : 0);
     bar.style.transform = "scaleX(" + value + ")";
   }
 
@@ -347,12 +350,15 @@
 
   ready(function () {
     if (!document.querySelector(".page__content, .archive")) return;
-    createProgressBar();
+    if (document.body.classList.contains("fr-article")) createProgressBar();
     createFloatingTools();
     updateToolLanguage();
     updateProgress();
     window.addEventListener("scroll", updateProgress, { passive: true });
     window.addEventListener("resize", updateProgress);
-    document.addEventListener("facereader:ui-language", updateToolLanguage);
+    if (window.ResizeObserver && document.body.classList.contains("fr-article")) {
+      new ResizeObserver(updateProgress).observe(document.querySelector(".page__content"));
+    }
+    document.addEventListener("facereader:ui-language", function () { updateToolLanguage(); updateProgress(); });
   });
 })();

@@ -9,7 +9,7 @@ require "yaml"
 
 task :default => %i[copyright changelog js version]
 
-MINIMAL_MISTAKES_VERSION = "4.28.0"
+MINIMAL_MISTAKES_VERSION = "4.28.1"
 
 def listen_ignore_paths(base, options)
   [
@@ -155,7 +155,8 @@ task :copyright => COPYRIGHT_FILES
 
 CLEAN.include(*COPYRIGHT_FILES)
 
-JS_FILES = ["node_modules/jquery/dist/jquery.js"] + Dir.glob("assets/js/plugins/*.js") +
+JS_FILES = ["node_modules/jquery/dist/jquery.js", "node_modules/gumshoejs/dist/gumshoe.js",
+  "node_modules/smooth-scroll/dist/smooth-scroll.js"] + Dir.glob("assets/js/plugins/*.js") +
   ["node_modules/magnific-popup/dist/jquery.magnific-popup.js", "assets/js/_main.js"]
 JS_TARGET = "assets/js/main.min.js"
 task :js => JS_TARGET

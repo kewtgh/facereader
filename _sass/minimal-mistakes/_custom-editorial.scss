@@ -798,6 +798,10 @@ $fr-map-tones: (1: #547392, 2: #a66a52, 3: #677f76, 4: #8b718d, 5: #8a7959, 6: #
 .fr-article [id],
 .fr-posts [id],
 .fr-categories [id] { scroll-margin-top: calc(var(--fr-header-height) + 1.5rem); }
+@media (max-width: 360px) {
+  .masthead__inner-wrap { width: calc(100% - 24px); }
+  .greedy-nav .site-logo { display: none; }
+}
 .fr-article a:focus-visible,
 .fr-posts a:focus-visible,
 .fr-categories a:focus-visible,

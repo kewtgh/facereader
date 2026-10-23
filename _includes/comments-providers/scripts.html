@@ -2,7 +2,7 @@
 {% if site.comments.provider and page.comments %}
 {% case site.comments.provider %}
   {% when "disqus" %}
-    {% include /comments-providers/disqus.html %}
+    {% comment %}Disqus loads only after the reader presses the comments button.{% endcomment %}
   {% when "discourse" %}
     {% include /comments-providers/discourse.html %}
   {% when "facebook" %}

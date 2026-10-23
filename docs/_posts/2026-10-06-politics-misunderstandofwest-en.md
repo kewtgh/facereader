@@ -27,7 +27,7 @@ toc_sticky: true
 most_popular: true
 locale: en-US
 translation_key: politics-article-0002-2026
-last_modified_at: 2026-10-06T9:55:52-05:00
+last_modified_at: 2026-10-06T09:55:52-05:00
 ---
 
 When we talk about modern world history, it is very easy to form a certain impression:

@@ -1,7 +1,7 @@
 {
   "name": "facereader",
   "private": true,
-  "version": "7.6.4",
+  "version": "7.7.0",
   "description": "FaceReader personal blog on people, companies, society, and ideas.",
   "repository": {
     "type": "git",
@@ -19,9 +19,11 @@
   },
   "homepage": "https://facereader.witbacon.com/",
   "engines": {
-    "node": ">=24.0.0 <25"
+    "node": ">=24.22.1 <25",
+    "npm": ">=12.2.1 <13"
   },
   "type": "module",
+  "packageManager": "npm@12.2.1",
   "scripts": {
     "build": "npm run site:build",
     "math:vendor": "node assets/scripts/vendor-katex.mjs",
@@ -31,6 +33,7 @@
     "i18n:validate": "node assets/scripts/validate-i18n.mjs",
     "series:test": "bundle exec ruby scripts/test_series_index.rb",
     "archives:test": "bundle exec ruby scripts/test_language_archives.rb",
+    "catalog:test": "bundle exec ruby scripts/test_content_catalog.rb && node assets/scripts/test-catalog-search.mjs",
     "actions:lint": "node assets/scripts/validate-actions-workflows.mjs",
     "site:build": "bundle exec ruby -EUTF-8 -S jekyll build",
     "site:sass:warnings": "node assets/scripts/check-sass-warnings.mjs",
@@ -38,15 +41,18 @@
     "site:links": "node assets/scripts/check-internal-links.mjs",
     "site:html:audit": "bundle exec ruby scripts/audit_generated_html.rb",
     "site:browser": "node assets/scripts/test-site-browser.mjs",
-    "site:check": "npm run leaders:test && npm run leaders:validate && npm run leaders:audit && npm run series:test && npm run archives:test && npm run i18n:validate && npm run actions:lint && npm run site:sass:warnings && npm run site:css:budget && npm run site:links && npm run site:html:audit",
+    "site:check": "npm run leaders:test && npm run leaders:validate && npm run leaders:audit && npm run series:test && npm run archives:test && npm run catalog:test && npm run i18n:validate && npm run actions:lint && npm run site:sass:warnings && npm run site:css:budget && npm run site:links && npm run site:html:audit",
     "algolia:push": "node assets/scripts/push-algolia.mjs _site/algolia-records.json",
     "algolia:protect": "node assets/scripts/protect-algolia-search-key.mjs"
   },
   "dependencies": {
-    "algoliasearch": "^5.59.0",
+    "algoliasearch": "^5.60.0",
     "yaml": "^2.9.1"
   },
   "devDependencies": {
+    "playwright": "1.64.1",
+    "gumshoejs": "5.1.2",
+    "smooth-scroll": "16.1.3",
     "jquery": "^4.0.0",
     "katex": "^0.19.0",
     "magnific-popup": "^1.2.0",
