@@ -4,6 +4,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import http from "node:http";
 import { createRequire } from "node:module";
+import { testPublicationFeatures } from "./test-publication-features.mjs";
 import { testReadingFeatures } from "./test-reading-features.mjs";
 const require = createRequire(import.meta.url);
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "playwright");
@@ -72,7 +73,7 @@ try {
   let allowSearchCdn = false;
   await context.route("**/*", async (route) => {
     const url = new URL(route.request().url());
-    const searchDependency = url.origin === "https://cdn.jsdelivr.net" && /^\/npm\/(algoliasearch@5\.60\.0|instantsearch\.js@4\.120\.0|instantsearch\.css@8\.24\.1)\//.test(url.pathname);
+    const searchDependency = url.origin === "https://cdn.jsdelivr.net" && /^\/npm\/(algoliasearch@5\.60\.0|instantsearch\.js@4\.121\.0|instantsearch\.css@8\.25\.0)\//.test(url.pathname);
     if (allowSearchCdn && searchDependency && process.env.FR_SEARCH_FIXTURES) {
       const filename = url.pathname.includes("algoliasearch@") ? "algolia.js" : url.pathname.includes("instantsearch.js@") ? "instantsearch.js" : "instantsearch.css";
       return route.fulfill({ contentType: filename.endsWith("css") ? "text/css" : "application/javascript", body: await fs.readFile(path.join(process.env.FR_SEARCH_FIXTURES, filename)) });
@@ -295,18 +296,18 @@ try {
   assert.equal(await page.locator(".fr-category-directory li:not([hidden])").count(), 0);
   await page.locator("#category-filter").fill("");
   let failures = 0;
-  await page.route("**/category-index.json", (route) => failures++ === 0 ? route.fulfill({ status: 503, body: "unavailable" }) : route.continue());
+  await page.route("**/category-index.json*", (route) => failures++ === 0 ? route.fulfill({ status: 503, body: "unavailable" }) : route.continue());
   await page.locator(".fr-category-directory a").first().click();
   await page.locator("#category-detail-retry:not([hidden])").waitFor();
   await page.locator("#category-detail-retry").click();
   await page.locator("#category-detail-posts li").first().waitFor();
   assert.ok(await page.locator("#category-detail-posts img").count());
-  await page.unroute("**/category-index.json");
+  await page.unroute("**/category-index.json*");
   // A pending category response must not undo navigation back to the map.
   await goto("/categories/");
   let release;
   const gate = new Promise((resolve) => { release = resolve; });
-  await page.route("**/category-index.json", async (route) => { await gate; await route.continue(); });
+  await page.route("**/category-index.json*", async (route) => { await gate; await route.continue(); });
   await page.locator(".fr-category-directory a").first().click();
   await page.waitForFunction(() => document.querySelector("#category-detail").getAttribute("aria-busy") === "true");
   await page.evaluate(() => { location.hash = "page-title"; });
@@ -314,7 +315,7 @@ try {
   release();
   await page.waitForTimeout(200);
   assert.equal(await page.locator("#category-detail").evaluate((e) => e.hidden), true);
-  await page.unroute("**/category-index.json");
+  await page.unroute("**/category-index.json*");
   console.log("Category search, failure/retry, and stale response checks passed.");
   await goto("/series/lcer/");
   await page.locator('[data-fr-ui-lang-option="zh"]').click();
@@ -734,6 +735,7 @@ try {
   assert.deepEqual(errors, [], "Uncaught browser exceptions");
   }
   await testReadingFeatures({ browser, base, output, siteRoot: root });
+  await testPublicationFeatures({ browser, base, root, output });
   console.log(`Browser regression passed. Screenshots: ${output}`);
 } finally {
   if (browser) await browser.close();

@@ -9,7 +9,9 @@ export async function testReadingFeatures({ browser, base, output, siteRoot }) {
   const serviceRequests = [];
   await context.route("**/*", route => {
     const url = route.request().url();
-    if (new URL(url).origin === base) return route.continue();
+    const request = new URL(url);
+    if (request.pathname.endsWith("/reading-list-data.mjs") && !request.search) return route.fulfill({ contentType: "text/javascript", body: "export const readSaved = () => []; export const validPath = () => true; export const readingListKey = 'legacy'; export const readingListLimit = 100;" });
+    if (request.origin === base) return route.continue();
     if (/googletagmanager\.com\/gtag/.test(url)) return route.fulfill({ contentType: "application/javascript", body: "window.__frAnalyticsLoaded = true;" });
     return route.abort();
   });
@@ -91,8 +93,33 @@ export async function testReadingFeatures({ browser, base, output, siteRoot }) {
     await goto("/reading-list/");
     await waitList();
     assert.equal(await page.evaluate(key => JSON.parse(localStorage.getItem(key)).length, savedKey), 100, "Unavailable URLs remain until explicit cleanup");
+    const uploadBackup = async value => {
+      await page.locator("[data-fr-reading-file]").setInputFiles({ name: "backup.json", mimeType: "application/json", buffer: Buffer.from(typeof value === "string" ? value : JSON.stringify(value)) });
+      await page.waitForFunction(() => document.querySelector("[data-fr-reading-list]").getAttribute("aria-busy") === "false");
+    };
+    await uploadBackup({ format: "facereader.readingList", version: 1, urls: [article.url] });
+    assert.match(await page.locator("[data-fr-transfer-status]").textContent(), /100/);
+    assert.equal(await page.evaluate(key => JSON.parse(localStorage.getItem(key)).length, savedKey), 100);
     await page.locator("[data-fr-clear-unavailable]").click();
     assert.equal(await page.evaluate(key => JSON.parse(localStorage.getItem(key)).length, savedKey), 0);
+    await uploadBackup({ format: "facereader.readingList", version: 1, urls: [article.url, english.url, article.url, "/missing-article/"] });
+    assert.equal(await page.locator(".fr-saved-entry").count(), 2);
+    const savedBeforeImport = await page.evaluate(key => localStorage.getItem(key), savedKey);
+    await uploadBackup("not valid JSON");
+    assert.equal(await page.evaluate(key => localStorage.getItem(key), savedKey), savedBeforeImport);
+    await uploadBackup({ format: "facereader.readingList", version: 1, urls: ["https://evil.example/"] });
+    assert.equal(await page.evaluate(key => localStorage.getItem(key), savedKey), savedBeforeImport);
+    await uploadBackup(" ".repeat(102401));
+    assert.match(await page.locator("[data-fr-transfer-status]").textContent(), /100KB/);
+    assert.equal(await page.evaluate(key => localStorage.getItem(key), savedKey), savedBeforeImport);
+    const downloadEvent = page.waitForEvent("download");
+    await page.locator("[data-fr-reading-export]").click();
+    const download = await downloadEvent;
+    const backupFile = path.join(output, "reading-list-backup.json");
+    await download.saveAs(backupFile);
+    const backup = JSON.parse(await fs.readFile(backupFile, "utf8"));
+    assert.equal(backup.format, "facereader.readingList");
+    assert.deepEqual(backup.urls, [article.url, english.url]);
     await page.evaluate(({ key, urls }) => localStorage.setItem(key, JSON.stringify(urls)), { key: savedKey, urls: [article.url, english.url] });
 
     for (const width of [1440, 1024, 768, 390, 320]) {
@@ -126,6 +153,8 @@ export async function testReadingFeatures({ browser, base, output, siteRoot }) {
         await noOverflow();
         if ([1440, 390, 320].includes(width)) {
           await page.screenshot({ path: path.join(output, `reading-list-${language}-${width}.png`), animations: "disabled" });
+          await page.locator("[data-fr-library-tools]").scrollIntoViewIfNeeded();
+          await page.screenshot({ path: path.join(output, `reading-backup-${language}-${width}.png`), animations: "disabled" });
           await page.locator("#footer").scrollIntoViewIfNeeded();
           await page.waitForFunction(() => document.querySelector(".fr-reader-tools").getBoundingClientRect().bottom <= document.getElementById("footer").getBoundingClientRect().top - 10);
           await page.screenshot({ path: path.join(output, `footer-${language}-${width}.png`), animations: "disabled" });
@@ -206,10 +235,18 @@ export async function testReadingFeatures({ browser, base, output, siteRoot }) {
         await blocked.goto(base + "/reading-list/");
         await blocked.waitForFunction(() => document.querySelector("[data-fr-reading-list]")?.dataset.frReady === "true");
         assert.match(await blocked.locator("[data-fr-library-status]").textContent(), /存储|storage/i);
+        assert.equal(await blocked.locator("[data-fr-reading-import]").isDisabled(), true);
       } else if (signal === "storageReadOnly") {
         await button.click();
         assert.equal(await button.getAttribute("aria-pressed"), "false");
         assert.match(await blocked.locator("[data-fr-save-status]").textContent(), /存储|storage/i);
+        await blocked.goto(base + "/reading-list/");
+        await blocked.waitForFunction(() => document.querySelector("[data-fr-reading-list]")?.dataset.frReady === "true");
+        const original = await blocked.evaluate(key => localStorage.getItem(key), savedKey);
+        await blocked.locator("[data-fr-reading-file]").setInputFiles({ name: "backup.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify({ format: "facereader.readingList", version: 1, urls: [article.url] })) });
+        await blocked.waitForFunction(() => document.querySelector("[data-fr-reading-list]").getAttribute("aria-busy") === "false");
+        assert.match(await blocked.locator("[data-fr-transfer-status]").textContent(), /存储|storage/i);
+        assert.equal(await blocked.evaluate(key => localStorage.getItem(key), savedKey), original);
       } else assert.deepEqual(requests, [], signal);
       assert.deepEqual(errors, []);
     } finally { await visitor.close(); }

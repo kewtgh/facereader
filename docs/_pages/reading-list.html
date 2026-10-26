@@ -17,6 +17,12 @@ robots: noindex
   <p data-fr-library-status role="status" aria-live="polite"></p>
   <div id="reading-list-results" data-fr-library-results></div>
   <button type="button" class="btn" data-fr-clear-unavailable hidden data-fr-i18n-zh="清除失效记录" data-fr-i18n-en="Remove unavailable articles">清除失效记录</button>
+  <div class="fr-reading-list__tools" data-fr-library-tools hidden>
+    <button type="button" class="fr-article-action" data-fr-reading-export data-fr-i18n-zh="导出备份" data-fr-i18n-en="Export backup">导出备份</button>
+    <button type="button" class="fr-article-action" data-fr-reading-import data-fr-i18n-zh="导入备份" data-fr-i18n-en="Import backup">导入备份</button>
+    <input type="file" accept="application/json,.json" data-fr-reading-file aria-label="导入阅读列表备份" data-fr-i18n-aria-label-zh="导入阅读列表备份" data-fr-i18n-aria-label-en="Import a reading-list backup" hidden>
+  </div>
+  <p class="fr-reading-list__note" data-fr-transfer-status role="status" aria-live="polite" hidden></p>
   <p class="fr-reading-list__note" data-fr-i18n-zh="最多保存 100 篇，仅保存在此浏览器中。" data-fr-i18n-en="Up to 100 articles, saved only in this browser.">最多保存 100 篇，仅保存在此浏览器中。</p>
   <p><a href="{{ '/posts/' | relative_url }}" data-fr-i18n-zh="浏览全部文章 →" data-fr-i18n-en="Browse all articles →">浏览全部文章 →</a></p>
   {% assign saved_posts = site.data.posts_by_language.zh | concat: site.data.posts_by_language.en %}

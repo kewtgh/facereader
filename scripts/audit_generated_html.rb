@@ -45,6 +45,7 @@ end
 html_files.each do |file|
   html = file.read(encoding: "UTF-8")
   document = Nokogiri::HTML(html)
+  add_error(errors, file, "duplicate robots meta directives") if document.css('meta[name="robots"]').size > 1
 
   ids = Hash.new(0)
   document.css("[id]").each { |node| ids[node["id"]] += 1 unless node["id"].to_s.empty? }

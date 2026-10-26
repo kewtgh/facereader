@@ -2,15 +2,16 @@
 layout: null
 permalink: /category-index.json
 sitemap: false
+search: false
 ---
 {
-{% for category in site.categories %}
-  {{ category[0] | slugify | jsonify }}: {
-    "name": {{ category[0] | jsonify }},
+{% for category in site.data.category_catalog %}
+  {{ category.id | jsonify }}: {
+    "name": {{ category.name | jsonify }},
     "posts": [
-      {% for post in category[1] %}
+      {% for post in category.posts %}
         {% assign teaser = post.header.teaser | default: post.header.overlay_image | default: site.teaser %}
-        {"title": {{ post.title | jsonify }}, "url": {{ post.url | relative_url | jsonify }}, "date": {{ post.date | date: "%Y-%m-%d" | jsonify }}, "image": {{ teaser | relative_url | jsonify }}, "excerpt": {{ post.excerpt | markdownify | strip_html | normalize_whitespace | truncate: 145 | jsonify }}}{% unless forloop.last %},{% endunless %}
+        {"title": {{ post.title | jsonify }}, "url": {{ post.url | relative_url | jsonify }}, "language": {{ post.article_language | jsonify }}, "date": {{ post.date | date: "%Y-%m-%d" | jsonify }}, "image": {{ teaser | relative_url | jsonify }}, "excerpt": {{ post.catalog_excerpt | truncate: 145 | jsonify }}}{% unless forloop.last %},{% endunless %}
       {% endfor %}
     ]
   }{% unless forloop.last %},{% endunless %}

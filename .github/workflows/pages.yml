@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v7.0.1
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1.334.0
+        uses: ruby/setup-ruby@v1.335.0
         with:
           ruby-version: .ruby-version
           bundler: "4.0.23"
@@ -70,7 +70,7 @@ jobs:
           set -euo pipefail
 
           expected_domain="facereader.witbacon.com"
-          for required in _site/index.html _site/assets/css/main.css _site/algolia-records.json _site/CNAME; do
+          for required in _site/index.html _site/assets/css/main.css tmp/build/algolia-records.json _site/CNAME; do
             if [[ ! -f "$required" ]]; then
               echo "::error file=$required::Missing required production output: $required"
               exit 1
@@ -113,7 +113,7 @@ jobs:
         uses: actions/upload-artifact@v7.0.2
         with:
           name: algolia-records
-          path: _site/algolia-records.json
+          path: tmp/build/algolia-records.json
           if-no-files-found: error
           retention-days: 1
 
@@ -263,7 +263,7 @@ jobs:
         uses: actions/download-artifact@v8.0.2
         with:
           name: algolia-records
-          path: _site
+          path: tmp/build
 
       - name: Push records to Algolia
         env:

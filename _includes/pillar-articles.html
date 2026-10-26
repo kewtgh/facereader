@@ -1,0 +1,41 @@
+{% assign pillar = include.pillar %}
+{% assign language = include.language %}
+<div data-fr-i18n-block="{{ language }}" lang="{{ language }}"{% if language != 'zh' %} hidden{% endif %}>
+  {% assign featured_post = nil %}
+  {% assign matching_posts = '' | split: ',' %}
+  {% for candidate in site.data.posts_by_language[language] %}
+    {% assign matches = false %}
+    {% for category_name in pillar.categories %}{% if candidate.categories contains category_name %}{% assign matches = true %}{% break %}{% endif %}{% endfor %}
+    {% if matches %}
+      {% assign single_post = site.data.posts_by_language[language] | where: 'url', candidate.url %}
+      {% assign matching_posts = matching_posts | concat: single_post %}
+      {% if candidate.url contains pillar.featured_slug %}{% assign featured_post = candidate %}{% endif %}
+    {% endif %}
+  {% endfor %}
+  {% assign featured_post = featured_post | default: matching_posts.first %}
+  {% if featured_post %}
+    {% assign preview_image = featured_post.header.teaser | default: featured_post.header.overlay_image | default: site.teaser %}
+    <a class="fr-pillar__preview" href="{{ featured_post.url | relative_url }}">
+      <img src="{{ preview_image | relative_url }}" alt="" loading="lazy" decoding="async">
+      <span class="fr-pillar__preview-copy"><small data-fr-i18n-zh="精选文章" data-fr-i18n-en="Featured essay">精选文章</small><strong>{{ featured_post.title | escape }}</strong></span>
+    </a>
+    <div class="fr-pillar__more">
+      {% assign more_count = 0 %}
+      {% for post in matching_posts %}
+        {% if post.url == featured_post.url %}{% continue %}{% endif %}
+        {% assign more_image = post.header.teaser | default: post.header.overlay_image | default: site.teaser %}
+        <a class="fr-pillar__more-item" href="{{ post.url | relative_url }}"><img src="{{ more_image | relative_url }}" alt="" loading="lazy" decoding="async"><span>{{ post.title | escape }}</span></a>
+        {% assign more_count = more_count | plus: 1 %}{% if more_count >= 2 %}{% break %}{% endif %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p data-fr-i18n-zh="暂无此语言的文章。" data-fr-i18n-en="No essays in this language yet.">暂无此语言的文章。</p>
+  {% endif %}
+  <ul class="fr-pillar__categories">
+    {% for category_name in pillar.categories %}
+      {% assign category = site.data.category_catalog | where: 'name', category_name | first %}
+      {% assign category_count = category.counts[language] | default: 0 %}
+      {% if category_count > 0 %}<li><a href="#{{ category.id }}">{{ category.name }}</a><span>{{ category_count }}</span></li>{% endif %}
+    {% endfor %}
+  </ul>
+</div>

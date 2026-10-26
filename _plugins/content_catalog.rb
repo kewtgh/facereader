@@ -20,6 +20,26 @@ module FaceReader
       rate && rate.finite? && rate.positive? ? rate : fallback
     end
 
+    def plain_text(value, converter)
+      fragment = Nokogiri::HTML.fragment(converter.convert(value.to_s.gsub(/\{%.*?%\}|\{\{.*?\}\}/m, "")))
+      fragment.css("script, style").remove
+      fragment.text.gsub(/\s+/, " ").strip
+    end
+
+    def categories(posts)
+      groups = posts.each_with_object({}) do |post, index|
+        Array(post.data["categories"]).uniq.each { |name| (index[name] ||= []) << post }
+      end
+      ids = {}
+      groups.map do |name, articles|
+        id = Jekyll::Utils.slugify(name)
+        raise Jekyll::Errors::FatalException, "Empty or duplicate category slug: #{name}" if id.empty? || ids.key?(id)
+        ids[id] = true
+        { "id" => id, "name" => name, "posts" => articles,
+          "counts" => %w[zh en].to_h { |language| [language, articles.count { |post| post.data["article_language"] == language }] } }
+      end.sort_by { |category| [-category["posts"].size, category["name"]] }
+    end
+
     def reading_minutes(text, config, data = {})
       chinese = text.scan(/\p{Han}/).size
       words = text.gsub(/\p{Han}/, " ").scan(/[\p{L}\p{N}]+(?:['’-][\p{L}\p{N}]+)*/).size
@@ -48,10 +68,9 @@ module FaceReader
 
     def generate(site)
       converter = site.find_converter_instance(Jekyll::Converters::Markdown)
-      plain = lambda do |value|
-        fragment = Nokogiri::HTML.fragment(converter.convert(value.to_s.gsub(/\{%.*?%\}|\{\{.*?\}\}/m, "")))
-        fragment.css("script, style").remove
-        fragment.text.gsub(/\s+/, " ").strip
+      plain = ->(value) { ContentPolicy.plain_text(value, converter) }
+      site.posts.docs.reject { |post| ContentPolicy.visible?(post, site) }.each do |post|
+        post.data.merge!("sitemap" => false, "robots" => "noindex")
       end
       posts = site.posts.docs.reverse.select { |post| ContentPolicy.visible?(post, site) }
       by_language = { "zh" => [], "en" => [] }
@@ -63,6 +82,11 @@ module FaceReader
         post.data["catalog_excerpt"] = plain.call(post.data["excerpt"])[0, 240]
       end
       site.data["posts_by_language"] = by_language
+      site.data["visible_posts"] = posts
+      site.data["category_catalog"] = ContentPolicy.categories(posts)
+      site.data["public_tags"] = posts.each_with_object({}) do |post, tags|
+        Array(post.data["tags"]).uniq.each { |tag| (tags[tag] ||= []) << post }
+      end
       posts.each { |post| post.data["related_articles"] = ContentPolicy.related(post, posts, site.config["locale"]) }
     end
   end

@@ -10,59 +10,25 @@ layout: archive
   <div>
     <span class="fr-editorial-head__kicker">Explore</span>
     <h1 id="page-title" class="page__title" data-fr-i18n-zh="{{ page.title_i18n.zh | default: page.title | escape }}" data-fr-i18n-en="{{ page.title_i18n.en | default: page.title | escape }}">{{ page.title }}</h1>
-    <p class="fr-editorial-head__lead" data-fr-i18n-zh="不是按发布时间，而是按问题进入 FaceReader。六条主线，代表六种观察世界的入口。" data-fr-i18n-en="Explore FaceReader by question, not by publication date. Six ways into the work.">不是按发布时间，而是按问题进入 FaceReader。六条主线，代表六种观察世界的入口。</p>
+    <p class="fr-editorial-head__lead" data-fr-i18n-zh="不是按发布时间，而是按问题进入 FaceReader。六条主线，代表六种观察世界的入口。" data-fr-i18n-en="Explore FaceReader by question, not by publication date. Choose a topic to start reading.">不是按发布时间，而是按问题进入 FaceReader。六条主线，代表六种观察世界的入口。</p>
   </div>
   <p class="fr-map-head__note" data-fr-i18n-zh="分类告诉你一篇文章谈什么；专题告诉你一组文章怎样连续读。" data-fr-i18n-en="A category tells you what an essay explores; a series shows how to read essays together.">分类告诉你一篇文章谈什么；专题告诉你一组文章怎样连续读。</p>
 </header>
 
 <section class="fr-pillars" aria-label="{{ category_text.explore_topic_label }}">
   {% for editorial_pillar in site.data.editorial_pillars %}
-    <article class="fr-pillar" id="{{ editorial_pillar.id }}">
+    {% assign pillar_zh_count = 0 %}{% assign pillar_en_count = 0 %}
+    {% for name in editorial_pillar.categories %}
+      {% assign pillar_category = site.data.category_catalog | where: 'name', name | first %}
+      {% assign zh_count = pillar_category.counts.zh | default: 0 %}{% assign en_count = pillar_category.counts.en | default: 0 %}
+      {% assign pillar_zh_count = pillar_zh_count | plus: zh_count %}{% assign pillar_en_count = pillar_en_count | plus: en_count %}
+    {% endfor %}
+    <article class="fr-pillar" id="{{ editorial_pillar.id }}" data-fr-pillar-count-zh="{{ pillar_zh_count }}" data-fr-pillar-count-en="{{ pillar_en_count }}">
       <span class="fr-pillar__number">{{ forloop.index | prepend: '0' | slice: -2, 2 }} / {{ editorial_pillar.en | upcase }}</span>
       <h2 data-fr-i18n-zh="{{ editorial_pillar.zh }}" data-fr-i18n-en="{{ editorial_pillar.en }}">{{ editorial_pillar[category_lang] }}</h2>
       <p class="fr-pillar__description" data-fr-i18n-zh="{{ editorial_pillar.description_zh | escape }}" data-fr-i18n-en="{{ editorial_pillar.description_en | escape }}">{{ editorial_pillar.description_zh }}</p>
-      {% assign featured_post = nil %}
-      {% for candidate in site.posts %}
-        {% if candidate.url contains editorial_pillar.featured_slug and candidate.locale != 'en-US' %}
-          {% assign featured_post = candidate %}{% break %}
-        {% endif %}
-      {% endfor %}
-      {% if featured_post %}
-        {% assign preview_image = featured_post.header.teaser | default: featured_post.header.overlay_image %}
-        <a class="fr-pillar__preview" href="{{ featured_post.url | relative_url }}">
-          {% if preview_image %}<img src="{{ preview_image | relative_url }}" alt="" loading="lazy" decoding="async">{% endif %}
-          <span class="fr-pillar__preview-copy">
-            <small data-fr-i18n-zh="精选文章" data-fr-i18n-en="Featured essay">精选文章</small>
-            <strong>{{ featured_post.title | escape }}</strong>
-          </span>
-        </a>
-      {% endif %}
-      <div class="fr-pillar__more" aria-label="{{ editorial_pillar[category_lang] }}">
-        {% assign more_count = 0 %}
-        {% for post in site.posts %}
-          {% if post.locale == 'en-US' or post.url == featured_post.url or post.hidden == true %}{% continue %}{% endif %}
-          {% assign matches_pillar = false %}
-          {% for category_name in editorial_pillar.categories %}
-            {% if post.categories contains category_name %}{% assign matches_pillar = true %}{% break %}{% endif %}
-          {% endfor %}
-          {% unless matches_pillar %}{% continue %}{% endunless %}
-          {% assign more_image = post.header.teaser | default: post.header.overlay_image | default: site.teaser %}
-          <a class="fr-pillar__more-item" href="{{ post.url | relative_url }}">
-            <img src="{{ more_image | relative_url }}" alt="" loading="lazy" decoding="async">
-            <span>{{ post.title | escape }}</span>
-          </a>
-          {% assign more_count = more_count | plus: 1 %}
-          {% if more_count >= 2 %}{% break %}{% endif %}
-        {% endfor %}
-      </div>
-      <ul class="fr-pillar__categories">
-        {% for category_name in editorial_pillar.categories %}
-          {% assign category_count = site.categories[category_name] | size %}
-          {% if category_count > 0 %}
-            <li><a href="#{{ category_name | slugify }}">{{ category_name }}</a><span>{{ category_count }}</span></li>
-          {% endif %}
-        {% endfor %}
-      </ul>
+      {% include pillar-articles.html pillar=editorial_pillar language="zh" %}
+      {% include pillar-articles.html pillar=editorial_pillar language="en" %}
     </article>
   {% endfor %}
 </section>
@@ -70,7 +36,7 @@ layout: archive
 <section class="fr-category-directory">
   <header>
     <h2 data-fr-i18n-key="all_categories_label">{{ category_text.all_categories_label }}</h2>
-    <small data-fr-i18n-zh="按文章数量排列 · {{ site.categories.size }} 个分类" data-fr-i18n-en="By article count · {{ site.categories.size }} categories">按文章数量排列 · {{ site.categories.size }} 个分类</small>
+    <small data-fr-i18n-zh="按文章数量排列 · {{ site.data.category_catalog.size }} 个分类" data-fr-i18n-en="By article count · {{ site.data.category_catalog.size }} categories">按文章数量排列 · {{ site.data.category_catalog.size }} 个分类</small>
   </header>
   <label class="fr-category-filter" for="category-filter">
     <span data-fr-i18n-zh="查找分类" data-fr-i18n-en="Find a category">查找分类</span>
@@ -78,14 +44,8 @@ layout: archive
   </label>
   <p id="category-filter-status" role="status"></p>
   <ul>
-    {% assign category_max = 0 %}
-    {% for category in site.categories %}{% if category[1].size > category_max %}{% assign category_max = category[1].size %}{% endif %}{% endfor %}
-    {% for count in (1..category_max) reversed %}
-      {% for category in site.categories %}
-        {% if category[1].size == count %}
-          <li><a href="#{{ category[0] | slugify }}">{{ category[0] }}</a><span>{{ count }}</span></li>
-        {% endif %}
-      {% endfor %}
+    {% for category in site.data.category_catalog %}
+      <li data-fr-category-count-zh="{{ category.counts.zh }}" data-fr-category-count-en="{{ category.counts.en }}"><a href="#{{ category.id }}">{{ category.name }}</a><span data-fr-category-count>{{ category.counts.zh }}</span></li>
     {% endfor %}
   </ul>
 </section>
@@ -102,4 +62,4 @@ layout: archive
   <ul id="category-detail-posts"></ul>
 </section>
 <noscript><p><a href="{{ '/posts/' | relative_url }}">{{ category_text.all_posts_label }}</a></p></noscript>
-<script defer src="{{ '/assets/js/category-map.js' | relative_url }}?v={{ site.data.theme.version }}"></script>
+<script type="module" src="{{ '/assets/js/category-map.js' | relative_url }}?v={{ site.data.theme.version }}"></script>

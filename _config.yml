@@ -206,7 +206,9 @@ exclude:
   - assets/js/_main.js
   - assets/js/main.min.js.map
   - assets/js/vendor
+  - assets/js/lunr
   - assets/scripts
+  - algolia-records.json
   - scripts
   - banner.js
   - staticman.yml
@@ -334,6 +336,9 @@ whitelist:
 #  - jekyll-paginate-v2
 
 # Archives
+redirect_from:
+  json: false
+
 #  Type
 #  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
 #  - Jekyll Archives plugin archive pages ~> type: jekyll-archives

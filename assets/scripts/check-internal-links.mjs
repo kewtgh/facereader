@@ -10,7 +10,6 @@ const ignoredPrefixes = [
   "/feed.xml",
   "/sitemap.xml",
   "/robots.txt",
-  "/algolia-records.json",
   "/site.xml",
   "/site.webmanifest"
 ];

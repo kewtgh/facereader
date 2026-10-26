@@ -18,6 +18,7 @@
 .fr-saved-entry__remove { position: absolute; right: 0; bottom: .55rem; min-height: 32px; padding: .2rem .5rem; border: 0; border-radius: .3rem; color: $fr-muted-text; background: transparent; font: inherit; font-size: .75rem; cursor: pointer; }
 .fr-saved-entry__remove:hover { color: $fr-action-color; background: rgba($fr-action-color,.06); }
 .fr-reading-list__note { margin-top: 1.5rem; font-size: .75rem; color: $fr-muted-text; }
+.fr-reading-list__tools { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.5rem; font-family: sans-serif; }
 .fr-comment-consent button { min-height: 44px; }
 @media (max-width: 640px) {
   .fr-article-toolbar { gap: .4rem; }

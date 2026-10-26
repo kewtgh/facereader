@@ -44,7 +44,9 @@ module FaceReader
             "first_page_path" => template.url,
             "page_path" => settings.fetch("path"),
             "previous_page" => current > 1 ? current - 1 : nil,
-            "next_page" => current < totals[language] ? current + 1 : nil
+            "next_page" => current < totals[language] ? current + 1 : nil,
+            "previous_page_path" => current > 1 ? (current == 2 ? template.url : settings.fetch("path").sub(":num", (current - 1).to_s)) : nil,
+            "next_page_path" => current < totals[language] ? settings.fetch("path").sub(":num", (current + 1).to_s) : nil
           }
           { "language" => language, "locale" => language == "en" ? "en-US" : "zh-CN",
             "paginator" => pagination, "reset_path" => number == current ? nil : template.url }

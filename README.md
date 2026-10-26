@@ -52,8 +52,8 @@ Smooth Scroll 16.1.3. The original jQuery FitVids source follows its stable v1.2
 tag (whose upstream copyright header still says 1.1). Run `npm ci` before regenerating it. Third-party notices
 are at `/THIRD_PARTY_NOTICES/`.
 
-Enhanced search loads the Algolia 5.60.0 lite client, InstantSearch.js 4.120.0, and
-InstantSearch.css 8.24.1 from pinned CDN URLs. After updating those URLs, update
+Enhanced search loads the Algolia 5.60.0 lite client, InstantSearch.js 4.121.0, and
+InstantSearch.css 8.25.0 from pinned CDN URLs. After updating those URLs, update
 the CDN allowlist in `assets/scripts/test-site-browser.mjs` and run the browser
 suite with `FR_TEST_SEARCH_CDN=1` to check mocked search results.
 
@@ -98,6 +98,11 @@ URLs against server-rendered, inert card templates and never trusts saved HTML
 or external URLs. The list reuses `/posts/` containers, columns, sidebar and
 article cards at every breakpoint; it needs no separate catalog request.
 Article save/list actions share the top row with article-version navigation.
+The reading list can export a local JSON backup and merge a backup back into
+this browser. Files are limited to 100KB and 100 URLs. Imports add known published
+articles, preserve existing order, skip unavailable articles, and reject invalid
+files or over-capacity merges without replacing the current list. Files never
+leave the browser.
 The audit, implementation plan and acceptance results for this revision are in
 [`docs/audits/release-7.7.1-2026-10-24.md`](docs/audits/release-7.7.1-2026-10-24.md).
 
@@ -284,7 +289,7 @@ Only opted-in pages load KaTeX; equations include accessible MathML and long
 display equations scroll within the reading column. Code blocks and currency
 amounts outside math are not processed.
 
-KaTeX 0.19.0 is served from `assets/math/katex/`, including its fonts and MIT
+KaTeX 0.19.1 is served from `assets/math/katex/`, including its fonts and MIT
 license. After updating the npm dependency, run `npm run math:vendor` and
 commit the regenerated assets before building the site.
 
@@ -342,3 +347,27 @@ repository. This is a browser search-only key and will still be visible in the
 rendered JavaScript; never use or inject the Algolia Admin API key. After moving
 to the environment secret, rotate the previously committed search key in the
 Algolia dashboard and revoke the old key.
+
+## Machine Data and Search Publication
+
+All published JSON endpoints, including nested paths and query variants, are
+blocked by the wildcard rules in robots.txt. This is a crawler policy; browser
+features may still fetch category and rating data. JSON endpoints are excluded
+from the sitemap. Robots exclusions do not immediately erase Search Console
+history or remove an already known URL from search results.
+
+Algolia synchronization input is generated after rendering into
+`tmp/build/algolia-records.json`. It must never be inside `_site`. The Pages
+workflow uploads it separately for the Algolia job, whose validation rejects
+invalid configuration, duplicate URLs, empty input and over-size records before
+creating the API client. No administrative key is needed to build this artifact.
+The redundant redirects.json map is disabled; HTML redirects remain enabled.
+This Algolia site also excludes the unused `assets/js/lunr` tree so its legacy
+index cannot publish another copy of the content. Changing search providers
+requires updating that exclusion and the publication checks together.
+
+Category previews, counts and detail lists use the same visible-content and
+normalized language policy as article archives. Language switching updates the
+current category; categories without essays in that language have an explicit
+empty state. See `docs/audits/implementation-plan-2026-10-27.md` for the full
+audit, changes and acceptance results.

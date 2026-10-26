@@ -1,4 +1,4 @@
-{% assign chip_posts = site.tags[include.tag] | where_exp: 'post', 'post.hidden != true' %}
+{% assign chip_posts = site.data.public_tags[include.tag] %}
 {% if chip_posts.size > 0 %}
   {% assign chip_description = site.data.tag_descriptions[include.tag] | default: '' | strip_html | normalize_whitespace %}
   <a class="tag-filter-btn" href="{{ '/tags/' | relative_url }}?tag={{ include.tag | url_encode }}" data-tag="{{ include.tag | escape }}" data-description="{{ chip_description | escape }}"{% if chip_description != empty %} title="{{ chip_description | escape }}"{% endif %}>

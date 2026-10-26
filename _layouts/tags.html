@@ -3,7 +3,7 @@ layout: archive
 sitemap: false
 ---
 {% assign locale = page.locale | default: site.locale %}
-{% assign visible_posts = site.posts | where_exp: 'post', 'post.hidden != true' %}
+{% assign visible_posts = site.data.visible_posts %}
 <header class="fr-editorial-head">
   <span class="fr-editorial-head__kicker">Tags / 阅读线索</span>
   <h1 id="page-title" class="page__title" data-fr-i18n-zh="按标签浏览" data-fr-i18n-en="Browse by Tags">按标签浏览</h1>
@@ -37,7 +37,7 @@ sitemap: false
       <details class="tag-group">
         <summary><span data-fr-i18n-zh="其他线索" data-fr-i18n-en="More keywords">其他线索</span><small class="tag-group-count"></small></summary>
         <div class="tag-group-list">
-          {% assign sorted_tags = site.tags | sort %}
+          {% assign sorted_tags = site.data.public_tags | sort %}
           {% for tag_pair in sorted_tags %}
             {% assign other_tag = tag_pair[0] %}
             {% unless grouped_tags contains other_tag %}{% include tag-chip.html tag=other_tag %}{% endunless %}

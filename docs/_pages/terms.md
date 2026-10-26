@@ -48,7 +48,7 @@ Cookies 是网站存储在你浏览器中的小型数据文件。本网站可能
 - Disqus 评论功能（登录、互动、反垃圾、安全等）
 - Google Analytics（统计分析）
 
-本站也使用浏览器 `localStorage` 保存手动界面语言及你主动添加的稍后阅读文章 URL（最多 100 篇）。这些偏好和列表不上传到服务器，分别属于当前浏览器和当前域名，主站和分站不会自动同步。导航栏中的全站搜索使用 Algolia，只有你主动打开搜索并输入关键词时才发送查询。静态托管和 CDN 仍可能记录资源访问日志。清除浏览器数据会同时清除本地偏好和阅读列表。
+本站也使用浏览器 `localStorage` 保存手动界面语言及你主动添加的稍后阅读文章 URL（最多 100 篇）。这些偏好和列表不上传到服务器，分别属于当前浏览器和当前域名，主站和分站不会自动同步。导航栏中的全站搜索使用 Algolia，只有你主动打开搜索并输入关键词时才发送查询。静态托管和 CDN 仍可能记录资源访问日志。清除浏览器数据会同时清除本地偏好和阅读列表。你可以在稍后阅读页面导出备份或手动导入备份；备份文件只在浏览器中处理，不上传到服务器。
 
 你可以在浏览器中管理、清除或禁用 Cookies。禁用后，评论等功能可能无法正常使用或体验下降。
 
@@ -122,7 +122,7 @@ Cookies are small data files stored in your browser. The Site may use cookies/si
 - Disqus comments (login, interaction, anti-spam, security)
 - Google Analytics (analytics measurement)
 
-The Site also uses browser `localStorage` for your manual interface language and article URLs you explicitly add to your reading list (up to 100). These preferences and lists are not uploaded to a server and belong to the current browser and domain; the main site and mirror do not synchronize them. Global search in the navigation uses Algolia and sends queries only after you open it and enter a keyword. Static hosting and CDNs may still record resource access logs. Clearing browser data removes local preferences and the reading list.
+The Site also uses browser `localStorage` for your manual interface language and article URLs you explicitly add to your reading list (up to 100). These preferences and lists are not uploaded to a server and belong to the current browser and domain; the main site and mirror do not synchronize them. Global search in the navigation uses Algolia and sends queries only after you open it and enter a keyword. Static hosting and CDNs may still record resource access logs. Clearing browser data removes local preferences and the reading list. You can export a backup or import one manually from the reading-list page; backup files are processed only in your browser and are not uploaded.
 
 You can manage, clear, or disable cookies in your browser. If disabled, some features (e.g., comments) may not work properly.
 
