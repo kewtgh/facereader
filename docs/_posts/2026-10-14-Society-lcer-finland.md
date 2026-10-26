@@ -31,9 +31,6 @@ toc_sticky: true
 series: lcer
 series_order: 7
 series_label: 芬兰：赫尔辛基与坦佩雷
-sidebar:
-  title: "经典系列"
-  nav: sidebar-series-lifecycle-extraction
 locale: zh-CN
 translation_key: society-article-0007-2026
 last_modified_at: 2026-10-14T01:55:52-05:00

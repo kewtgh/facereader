@@ -6,7 +6,7 @@ header:
   overlay_image: /assets/img/page-header-image-smallfamily.jpg
   overlay_filter: 0.4
 categories:
-  - Society
+  - Social Commentary
 tags:
   - LCER
   - Lifecycle Comprehensive Extraction Rate
@@ -31,9 +31,6 @@ toc_sticky: true
 series: lcer
 series_order: 7
 series_label: "Finland: Helsinki and Tampere"
-sidebar:
-  title: "Classic Series"
-  nav: sidebar-series-lifecycle-extraction
 locale: en
 translation_key: society-article-0007-2026
 last_modified_at: 2026-10-14T01:55:52-05:00
