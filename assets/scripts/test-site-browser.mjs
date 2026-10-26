@@ -28,6 +28,18 @@ let browser;
 try {
   browser = await chromium.launch({ headless: true, ...(process.env.CHROMIUM_EXECUTABLE ? { executablePath: process.env.CHROMIUM_EXECUTABLE } : {}) });
   if (!process.env.FR_READING_ONLY) {
+  // Categories are editorial metadata and can change the permalink. Resolve
+  // representative articles from the generated catalog by their stable slug.
+  const catalog = JSON.parse(await fs.readFile(path.join(root, "category-index.json"), "utf8"));
+  const publishedUrls = [...new Set(Object.values(catalog).flatMap(category => category.posts.map(post => post.url)))];
+  const articleUrl = slug => {
+    const matches = publishedUrls.filter(url => decodeURIComponent(url).split("/").filter(Boolean).at(-1) === slug);
+    assert.equal(matches.length, 1, `Expected one published browser fixture for ${slug}; found ${matches.length}`);
+    return matches[0];
+  };
+  const article = articleUrl("manage-leadership12");
+  const englishFootnotes = articleUrl("Society-lcer-canada-en");
+  const mathArticles = [[articleUrl("Society-lcer-finland"), "zh"], [articleUrl("Society-lcer-finland-en"), "en"]];
   // Fresh visitors, remembered choices, unavailable APIs and equal UTC offsets.
   for (const scenario of [
     { timezoneId: 'Asia/Shanghai', locale: 'en-US', expected: 'zh' },
@@ -83,7 +95,11 @@ try {
   const page = await context.newPage();
   const errors = [];
   page.on("pageerror", (error) => errors.push(error.stack || error.message));
-  const goto = (url) => page.goto(base + url);
+  const goto = async (url) => {
+    const response = await page.goto(base + url);
+    assert.equal(response.status(), 200, `Browser fixture ${url} returned HTTP ${response.status()}`);
+    return response;
+  };
   const noOverflow = async () => {
     const result = await page.evaluate(() => ({ width: innerWidth, scrollWidth: document.documentElement.scrollWidth,
       offenders: [...document.querySelectorAll("body *")].filter((e) => {
@@ -92,7 +108,6 @@ try {
     if (result.scrollWidth > result.width + 1) await page.screenshot({ path: path.join(output, "overflow.png") });
     assert.ok(result.scrollWidth <= result.width + 1, `Horizontal overflow: ${page.url()} ${JSON.stringify(result)}`);
   };
-  const article = "/人格成长/不靠谱领导力/manage-leadership12/";
   let lastChinesePage;
   for (const width of [1440, 390]) {
     await page.setViewportSize({ width, height: 900 });
@@ -143,9 +158,8 @@ try {
   console.log('Both language archives have complete independent pagination; recent updates, mobile layout, language switching and no-JS fallback passed.');
   for (const width of [1440, 1024, 390]) {
     await page.setViewportSize({ width, height: 900 });
-    for (const url of ["/", "/posts/", "/categories/", "/tags/", "/most_popular/", "/about/", "/THIRD_PARTY_NOTICES/", "/leaders-scorecard/", "/darwin-leaders-benchmark/", article, "/social commentary/Society-lcer-canada-en/"]) {
-      const response = await goto(url);
-      assert.equal(response.status(), 200, url);
+    for (const url of ["/", "/posts/", "/categories/", "/tags/", "/most_popular/", "/about/", "/THIRD_PARTY_NOTICES/", "/leaders-scorecard/", "/darwin-leaders-benchmark/", article, englishFootnotes]) {
+      await goto(url);
       await page.waitForTimeout(150);
       await noOverflow();
       if (url === "/THIRD_PARTY_NOTICES/") {
@@ -169,8 +183,9 @@ try {
   // Math is rendered locally only on opted-in pages, including footnotes.
   for (const width of [1440, 390]) {
     await page.setViewportSize({ width, height: 900 });
-    for (const [url, language] of [['/社会杂论/Society-lcer-finland/', 'zh'], ['/society/Society-lcer-finland-en/', 'en']]) {
+    for (const [url, language] of mathArticles) {
       await goto(url);
+      assert.equal(await page.locator('script[src*="/assets/js/math-render.js"]').count(), 1, `${url}: local math renderer must be enabled`);
       await page.locator('.page__content .katex-display').first().waitFor();
       await page.evaluate(() => document.fonts.ready);
       assert.equal(await page.locator('.page__content .katex-display').count(), 2);
@@ -483,7 +498,7 @@ try {
   await noteReference.click();
   assert.ok(new URL(page.url()).hash.startsWith('#fn:'), 'Clicking should retain the original footnote jump');
   assert.equal(await page.locator('.fr-footnote-preview').isHidden(), true, 'Following a note should dismiss its preview');
-  for (const [url, width, language] of [[article, 1440, 'zh'], [article, 390, 'zh'], ['/social commentary/Society-lcer-canada-en/', 390, 'en']]) {
+  for (const [url, width, language] of [[article, 1440, 'zh'], [article, 390, 'zh'], [englishFootnotes, 390, 'en']]) {
     await page.setViewportSize({ width, height: 900 });
     await goto(url);
     await page.locator(`[data-fr-ui-lang-option="${language}"]`).click();

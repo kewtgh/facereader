@@ -33,6 +33,9 @@ and `CHROMIUM_EXECUTABLE` to the browser executable when they are not installed
 locally. The suite starts a local-only server, blocks external requests, tests
 responsive pages and failure/retry flows, and saves screenshots under
 `tmp/browser-regression/`. It does not install browsers or publish anything.
+Representative articles are resolved by slug from the generated category catalog,
+so editorial category changes do not leave browser checks visiting old permalinks.
+The main browser checks require HTTP 200 before inspecting a page.
 `FR_BROWSER_OUTPUT` selects another screenshot directory. `FR_SITE_ROOT` can
 select a separately built site, and `FR_READING_ONLY=1` runs only the new reading
 tools and layout checks during development; release validation runs the complete suite.
