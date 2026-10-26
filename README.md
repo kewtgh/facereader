@@ -351,6 +351,16 @@ rendered JavaScript; never use or inject the Algolia Admin API key. After moving
 to the environment secret, rotate the previously committed search key in the
 Algolia dashboard and revoke the old key.
 
+## Writing Footnotes
+
+Use ASCII names such as `[^method]` or `[^1]` for both the reference and its
+matching `[^method]:` definition. Footnote text can be Chinese. The current
+kramdown parser does not recognize Chinese names such as `[^口径]`; definitions
+may disappear while the unconverted marker remains in the article.
+See the [kramdown footnote syntax](https://kramdown.gettalong.org/syntax.html#footnotes).
+`site:check` tests the article footnotes and rejects unconverted markers in
+article text, while allowing Markdown examples inside inline or fenced code.
+
 ## Machine Data and Search Publication
 
 All published JSON endpoints, including nested paths and query variants, are

@@ -39,6 +39,7 @@ try {
   };
   const article = articleUrl("manage-leadership12");
   const englishFootnotes = articleUrl("Society-lcer-canada-en");
+  const japanArticles = [articleUrl("Society-lcer-japan"), articleUrl("Society-lcer-japan-en")];
   const mathArticles = [[articleUrl("Society-lcer-finland"), "zh"], [articleUrl("Society-lcer-finland-en"), "en"]];
   // Fresh visitors, remembered choices, unavailable APIs and equal UTC offsets.
   for (const scenario of [
@@ -498,10 +499,16 @@ try {
   await noteReference.click();
   assert.ok(new URL(page.url()).hash.startsWith('#fn:'), 'Clicking should retain the original footnote jump');
   assert.equal(await page.locator('.fr-footnote-preview').isHidden(), true, 'Following a note should dismiss its preview');
-  for (const [url, width, language] of [[article, 1440, 'zh'], [article, 390, 'zh'], [englishFootnotes, 390, 'en']]) {
+  for (const [url, width, language] of [[article, 1440, 'zh'], [article, 390, 'zh'], [englishFootnotes, 390, 'en'],
+    [japanArticles[0], 1440, 'zh'], [japanArticles[0], 390, 'zh'], [japanArticles[1], 1440, 'en'], [japanArticles[1], 390, 'en']]) {
     await page.setViewportSize({ width, height: 900 });
     await goto(url);
     await page.locator(`[data-fr-ui-lang-option="${language}"]`).click();
+    const caseSuffix = japanArticles.includes(url) ? '-japan' : '';
+    if (caseSuffix) {
+      assert.equal(await page.locator('.page__content a.footnote').count(), 16, 'Japan: every reference must render');
+      assert.equal(await page.locator('.page__content .footnotes > ol > li').count(), 16, 'Japan: every note must remain visible');
+    }
     const reference = page.locator('.page__content a.footnote').first();
     const dimensions = await page.locator('.page__content a.footnote').evaluateAll((links) => links.map((link) => {
       const rect = link.getBoundingClientRect();
@@ -538,7 +545,7 @@ try {
       assert.equal((await popup.locator('.fr-footnote-preview__content').textContent()).trim(), expectedNote);
       assert.equal(await popup.locator('.reversefootnote').count(), 0);
       await noOverflow();
-      await page.screenshot({ path: path.join(output, `footnote-popup-mobile-${language}.png`), animations: 'disabled' });
+      await page.screenshot({ path: path.join(output, `footnote-popup-mobile-${language}${caseSuffix}.png`), animations: 'disabled' });
       await popup.locator('button').click();
       assert.equal(await popup.isHidden(), true);
       assert.equal(await reference.evaluate((element) => document.activeElement === element), true);
@@ -556,7 +563,7 @@ try {
     };
     await visitFootnoteList();
     await numberLink.scrollIntoViewIfNeeded();
-    await page.screenshot({ path: path.join(output, `footnote-list-${language}-${width}.png`), animations: 'disabled' });
+    await page.screenshot({ path: path.join(output, `footnote-list-${language}-${width}${caseSuffix}.png`), animations: 'disabled' });
     for (const backlink of [numberLink, originalBacklink]) {
       await backlink.click();
       await page.waitForFunction(() => document.activeElement?.matches('a.footnote'));
@@ -567,7 +574,7 @@ try {
     }
     await numberLink.click();
     await page.keyboard.press('Escape');
-    await page.screenshot({ path: path.join(output, `footnote-badge-${language}-${width}.png`), animations: 'disabled' });
+    await page.screenshot({ path: path.join(output, `footnote-badge-${language}-${width}${caseSuffix}.png`), animations: 'disabled' });
   }
   await page.setViewportSize({ width: 1440, height: 900 });
   console.log('Compact footnotes and numbered/arrow return links passed on desktop, mobile and English articles.');

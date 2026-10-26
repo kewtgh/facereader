@@ -5,6 +5,7 @@ require "json"
 require "pathname"
 require "uri"
 require "time"
+require_relative "footnote_audit"
 
 SITE_ROOT = Pathname.new(File.expand_path("../_site", __dir__))
 PROJECT_ROOT = SITE_ROOT.parent
@@ -110,6 +111,10 @@ html_files.each do |file|
   end
   article = document.at_css("body.fr-article .page__content")
   if article
+    markers = FaceReader::FootnoteAudit.unrendered_markers(article)
+    unless markers.empty?
+      add_error(errors, file, "unrendered footnote markers: #{markers.join(', ')}; use ASCII footnote names and matching definitions")
+    end
     language = article["lang"].to_s[0, 2]
     recommendations = document.css(".page__related .archive__item")
     add_error(errors, file, "too many related articles") if recommendations.size > 4
