@@ -20,6 +20,7 @@ tags:
   - 社会观察
   - 中国网民
 toc: true
+most_popular: true
 toc_sticky: true
 locale: zh-CN
 translation_key: society-article-0008-2026
